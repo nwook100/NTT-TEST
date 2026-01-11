@@ -4,6 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 외부 이미지 서버의 차단을 방지하기 위한 핵심 설정 -->
+    <meta name="referrer" content="no-referrer">
     <title>NTT PUBG CLAN</title>
     <script type="importmap">
 {
@@ -51,7 +53,6 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- Explicitly load the entry point module -->
     <script type="module" src="index.tsx"></script>
     <noscript>이 웹사이트를 보려면 자바스크립트를 활성화해야 합니다.</noscript>
   </body>
