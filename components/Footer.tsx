@@ -67,11 +67,14 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="bg-[#ff6b35] rounded-[2.5rem] p-12 text-white flex flex-col justify-between items-start min-h-[320px] group overflow-hidden relative">
-            {/* Decorative background circle */}
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-colors duration-500"></div>
             
-            <h3 className="text-4xl md:text-5xl font-black mb-8 leading-tight relative z-10">클랜 가입문의<br/><span className="text-black/60 text-2xl uppercase tracking-tighter">Join the elite</span></h3>
-            <div className="space-y-4 relative z-10">
+            <h3 className="text-4xl md:text-5xl font-black mb-8 leading-tight relative z-10">
+              클랜 가입문의<br/>
+              <span className="text-black/60 text-2xl uppercase tracking-tighter">Join the elite</span>
+            </h3>
+            
+            <div className="space-y-4 relative z-10 w-full">
               <div className="p-3 border border-white/20 rounded-xl hover:bg-white/10 transition-colors">
                 <p className="text-xs uppercase opacity-60 font-bold mb-1">Master 2nd</p>
                 <p className="text-xl font-bold tracking-tight">ID:LiveOctopus <span className="mx-2 opacity-30">|</span> Discord: beom:_0722</p>
@@ -80,9 +83,10 @@ const Footer: React.FC = () => {
                 <p className="text-xs uppercase opacity-60 font-bold mb-1">Recruitment</p>
                 <p className="text-xl font-bold tracking-tight">ID:NTT_Sopy <span className="mx-2 opacity-30">|</span> Discord: bbunhin3319</p>
               </div>
-                            <div className="p-3 border border-white/20 rounded-xl hover:bg-white/10 transition-colors">
+              <div className="p-3 border border-white/20 rounded-xl hover:bg-white/10 transition-colors">
                 <p className="text-xs uppercase opacity-60 font-bold mb-1">Recruitment</p>
                 <p className="text-xl font-bold tracking-tight">ID:Moon_GoRi <span className="mx-2 opacity-30">|</span> Discord: .moon37</p>
+              </div>
             </div>
           </div>
         </div>
