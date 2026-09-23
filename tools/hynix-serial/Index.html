@@ -67,6 +67,15 @@
   .hidden { display: none; }
   .check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
   .check input { width: auto; }
+  .scanbox { border-radius: 12px; padding: 4px; transition: background .15s; }
+  .scanbox.flash-ok { background: var(--ok-weak); }
+  .scanbox.flash-bad { background: var(--accent); }
+  .counts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .counts span { padding: 4px 12px; border-radius: 99px; font-weight: 700; font-size: 14px; }
+  .scanlist { max-height: 420px; overflow: auto; }
+  tr.row-dup td, tr.row-invalid td, tr.row-self td { background: var(--accent-weak); }
+  tr.row-wait td { color: var(--muted); }
+  tr.row-dup .tag.dup, tr.row-self .tag.dup { background: var(--accent); color: #fff; }
   @media (max-width: 600px) { input.big { font-size: 18px; } }
 </style>
 </head>
@@ -102,15 +111,29 @@
         <div><label for="worker">작업자</label><input id="worker" placeholder="이름"></div>
         <div><label for="note">비고</label><input id="note"></div>
       </div>
-      <div style="margin-top:12px">
-        <label for="serial">바코드 (스캐너 사용 가능 · Enter로 등록)</label>
-        <input id="serial" class="big" autocomplete="off" maxlength="30" placeholder="예: BX3812260630B02051">
+      <div style="margin-top:12px" class="scanbox" id="scanbox">
+        <label for="serial">바코드 — 스캐너로 <b>계속 찍으세요</b>. 찍는 즉시 중복 검사 + 기록됩니다.</label>
+        <input id="serial" class="big" autocomplete="off" maxlength="30" placeholder="여기에 커서를 두고 스캔 (예: BX3812260630B02051)">
       </div>
       <div class="row">
         <button class="btn" id="btnRegister">등록</button>
-        <button class="btn sub" id="btnCheck">중복만 확인</button>
+        <button class="btn sub" id="btnCheck">중복만 확인 (등록 안 함)</button>
+        <label class="check"><input type="checkbox" id="autoFocus" checked> 스캔 입력칸 항상 선택</label>
       </div>
       <div id="regResult" class="result"></div>
+      <div class="counts">
+        <span class="tag ok">등록 <b id="cOk">0</b></span>
+        <span class="tag dup">중복 <b id="cDup">0</b></span>
+        <span class="tag bad">형식오류 <b id="cBad">0</b></span>
+        <span class="tag warn">처리 대기 <b id="cWait">0</b></span>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>이번 스캔 기록 <button class="btn sub" id="btnRetry" style="padding:4px 10px;font-size:13px" hidden>실패 항목 다시 보내기</button>
+        <button class="btn sub" id="btnClearScans" style="padding:4px 10px;font-size:13px">목록 비우기</button></h2>
+      <p class="muted">최근 스캔이 맨 위에 옵니다. 빨간 줄은 등록되지 않은 바코드입니다(중복·형식오류). 목록을 비워도 시트 기록은 그대로입니다.</p>
+      <div class="table-wrap scanlist"><table><thead><tr><th>#</th><th>시각</th><th>바코드</th><th>본호</th><th>결과</th><th>상세</th></tr></thead>
+        <tbody id="scanBody"><tr><td colspan="6" class="muted">아직 스캔한 바코드가 없습니다.</td></tr></tbody></table></div>
     </div>
     <div class="panel">
       <h2>최근 등록 10건 <button class="btn sub" id="btnRefresh" style="padding:4px 10px;font-size:13px">새로고침</button></h2>
@@ -262,33 +285,129 @@
   }
   $("btnRefresh").onclick = loadDashboard;
 
-  // ---------- 등록 탭 ----------
-  var regBtns = [$("btnRegister"), $("btnCheck")];
-  var pending = false;
-  function registerOne(onlyCheck) {
-    if (pending) return;
-    var input = $("serial"), out = $("regResult");
-    var raw = input.value.trim();
-    if (!raw) { show(out, "warn", "바코드를 입력하세요."); input.focus(); return; }
-    pending = true;
-    show(out, "warn", "확인 중… " + esc(raw));
-    var p = onlyCheck ? call("checkSerial", raw) : call("registerSerial", raw, meta());
-    busy(regBtns, p).then(function (res) {
-      if (res.status === "invalid") {
-        beep(false); show(out, "dup", "⚠ 형식 오류: <b>" + esc(res.input) + "</b><br><span style='font-size:14px'>" + esc(res.reason) + "</span>");
-        input.select(); if (!onlyCheck) loadDashboard(); return;
-      }
-      if (res.status === "dup") { beep(false); show(out, "dup", dupMessage(res)); input.select(); if (!onlyCheck) loadDashboard(); return; }
-      beep(true);
-      if (onlyCheck) { show(out, "ok", "✅ 사용 가능한 본호입니다: <b>" + esc(res.parsed.barcode) + "</b>" + parts(res.parsed)); input.select(); return; }
-      show(out, "ok", "✅ 등록 완료: <b>" + esc(res.parsed.barcode) + "</b>" + parts(res.parsed));
-      if (input.value.trim() === raw) input.value = "";
-      loadDashboard();
-    }).catch(function (e) { beep(false); showErr(out)(e); }).finally(function () { pending = false; input.focus(); });
+  // ---------- 등록 탭 : 연속 스캔 ----------
+  // 스캔 → 바로 대기열에 넣고 입력칸 비움 → 쌓인 것을 한 번에 서버로 보내 중복 검사 + 등록.
+  // 서버 처리 중에 들어온 스캔도 버리지 않고 다음 묶음으로 보냅니다.
+  var scans = [], queue = [], inflight = false, seq = 0;
+  var counts = { ok: 0, dup: 0, bad: 0 };
+  var dashTimer = null;
+
+  function nowText() { var d = new Date(); return [d.getHours(), d.getMinutes(), d.getSeconds()].map(function (n) { return String(n).padStart(2, "0"); }).join(":"); }
+
+  function flash(ok) {
+    var box = $("scanbox");
+    box.classList.remove("flash-ok", "flash-bad");
+    void box.offsetWidth;
+    box.classList.add(ok ? "flash-ok" : "flash-bad");
+    setTimeout(function () { box.classList.remove("flash-ok", "flash-bad"); }, ok ? 250 : 900);
   }
-  $("btnRegister").onclick = function () { registerOne(false); };
-  $("btnCheck").onclick = function () { registerOne(true); };
-  $("serial").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); registerOne(false); } });
+
+  var LABEL = { wait: '<span class="tag warn">처리 중…</span>', ok: '<span class="tag ok">등록</span>',
+    dup: '<span class="tag dup">중복</span>', self: '<span class="tag dup">중복(방금 스캔)</span>',
+    invalid: '<span class="tag bad">형식오류</span>', error: '<span class="tag bad">전송 실패</span>' };
+
+  function renderScans() {
+    $("cOk").textContent = counts.ok; $("cDup").textContent = counts.dup; $("cBad").textContent = counts.bad;
+    $("cWait").textContent = scans.filter(function (x) { return x.status === "wait"; }).length;
+    $("btnRetry").hidden = !scans.some(function (x) { return x.status === "error"; });
+    $("scanBody").innerHTML = scans.slice(0, 300).map(function (x) {
+      return '<tr class="row-' + x.status + '"><td>' + x.id + "</td><td>" + x.time + '</td><td class="mono">' + esc(x.raw) +
+        '</td><td class="mono">' + esc(x.serial || "") + "</td><td>" + LABEL[x.status] + "</td><td>" + esc(x.detail || "") + "</td></tr>";
+    }).join("") || '<tr><td colspan="6" class="muted">아직 스캔한 바코드가 없습니다.</td></tr>';
+  }
+
+  function enqueue(raw) {
+    raw = String(raw || "").trim();
+    if (!raw) return;
+    var item = { id: ++seq, time: nowText(), raw: raw, status: "wait" };
+    scans.unshift(item);
+    if (scans.length > 1000) scans.length = 1000;
+    queue.push(item);
+    renderScans();
+    pump();
+  }
+
+  function pump() {
+    if (inflight || !queue.length) return;
+    var batch = queue.splice(0, 200);
+    inflight = true;
+    renderScans();
+    call("bulkProcess", batch.map(function (x) { return x.raw; }), meta(), true).then(function (res) {
+      var bad = null, last = null;
+      res.rows.forEach(function (r, i) {
+        var x = batch[i];
+        x.serial = r.parsed && r.parsed.serial;
+        if (r.status === "new") { x.status = "ok"; x.detail = r.parsed.dateText + " · " + r.parsed.typeName; counts.ok++; }
+        else if (r.status === "dup") { x.status = "dup"; x.detail = "이미 등록됨: " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · 시트 " + r.existing.row + "행"; counts.dup++; }
+        else if (r.status === "self") { x.status = "self"; x.detail = "같은 바코드를 연달아 찍음 (한 번만 등록됨)"; counts.dup++; }
+        else { x.status = "invalid"; x.detail = r.reason; counts.bad++; }
+        if (x.status !== "ok") bad = { x: x, r: r };
+        last = { x: x, r: r };
+      });
+      var out = $("regResult");
+      if (bad) {
+        beep(false); flash(false);
+        if (bad.r.status === "dup") show(out, "dup", dupMessage(bad.r));
+        else show(out, "dup", "⛔ " + (bad.x.status === "invalid" ? "형식 오류" : "중복") + ": <b>" + esc(bad.x.raw) + "</b><br><span style='font-size:14px'>" + esc(bad.x.detail) + "</span>");
+      } else if (last) {
+        beep(true); flash(true);
+        show(out, "ok", "✅ 등록 완료: <b>" + esc(last.x.raw) + "</b>" + (batch.length > 1 ? " 외 " + (batch.length - 1) + "건" : "") + parts(last.r.parsed));
+      }
+    }).catch(function (e) {
+      batch.forEach(function (x) { x.status = "error"; x.detail = (e && e.message) || String(e); });
+      beep(false); flash(false);
+      show($("regResult"), "dup", "⚠ 서버 전송 실패 " + batch.length + "건 — 인터넷 연결을 확인하고 [실패 항목 다시 보내기]를 누르세요.<br><span style='font-size:14px'>" + esc((e && e.message) || e) + "</span>");
+    }).finally(function () {
+      inflight = false;
+      renderScans();
+      if (queue.length) pump();
+      else { clearTimeout(dashTimer); dashTimer = setTimeout(loadDashboard, 1500); }
+    });
+  }
+
+  $("btnRetry").onclick = function () {
+    scans.filter(function (x) { return x.status === "error"; }).reverse().forEach(function (x) { x.status = "wait"; x.detail = ""; queue.push(x); });
+    renderScans(); pump(); $("serial").focus();
+  };
+  $("btnClearScans").onclick = function () {
+    scans = scans.filter(function (x) { return x.status === "wait"; });
+    counts = { ok: 0, dup: 0, bad: 0 };
+    renderScans(); $("serial").focus();
+  };
+
+  // 스캐너는 바코드 뒤에 Enter(또는 Tab)를 붙여 보냅니다 → 즉시 대기열로
+  $("serial").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || (e.key === "Tab" && this.value.trim())) {
+      e.preventDefault();
+      var v = this.value; this.value = "";
+      enqueue(v);
+    }
+  });
+  $("btnRegister").onclick = function () { var v = $("serial").value; $("serial").value = ""; enqueue(v); $("serial").focus(); };
+
+  // 중복만 확인 (등록하지 않음)
+  $("btnCheck").onclick = function () {
+    var input = $("serial"), out = $("regResult"), raw = input.value.trim();
+    if (!raw) { show(out, "warn", "확인할 바코드를 입력하세요."); input.focus(); return; }
+    show(out, "warn", "확인 중… " + esc(raw));
+    busy([$("btnCheck")], call("checkSerial", raw)).then(function (res) {
+      if (res.status === "invalid") { beep(false); show(out, "dup", "⚠ 형식 오류: <b>" + esc(res.input) + "</b><br><span style='font-size:14px'>" + esc(res.reason) + "</span>"); }
+      else if (res.status === "dup") { beep(false); show(out, "dup", dupMessage(res)); }
+      else { beep(true); show(out, "ok", "✅ 사용 가능 (아직 등록 안 됨): <b>" + esc(res.parsed.barcode) + "</b>" + parts(res.parsed)); }
+    }).catch(showErr(out)).finally(function () { input.select(); });
+  };
+
+  // 스캔 입력칸 항상 선택: 빈 곳을 클릭하거나 창으로 돌아오면 커서를 입력칸으로
+  function refocus() {
+    if (!$("autoFocus").checked || $("tab-register").classList.contains("hidden")) return;
+    var a = document.activeElement;
+    if (a && a !== document.body && /^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(a.tagName) && a.id !== "serial") return;
+    $("serial").focus();
+  }
+  document.addEventListener("click", function () { setTimeout(refocus, 0); });
+  window.addEventListener("focus", refocus);
+  // 작업 중 창을 닫으려 하면 경고
+  window.addEventListener("beforeunload", function (e) { if (queue.length || inflight) { e.preventDefault(); e.returnValue = ""; } });
 
   // 작업자 / LOT 는 이 PC에 기억
   ["worker", "lot"].forEach(function (id) {
