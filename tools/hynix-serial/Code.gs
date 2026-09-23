@@ -33,12 +33,18 @@ var HEADERS = ['바코드', '고정번호', '날짜', '구분', '본호', '품�
 var LOG_HEADERS = ['입력값', '사유', '시도일시', '작업자', '기존 바코드', '기존 등록일시', '기존 LOT/PO'];
 var COL_CREATED = 9; // HEADERS 안에서 '등록일시' 위치 (0부터)
 var ITEMS = ['Magazine', 'Cassette', 'Ring', 'Pin Boat', '기타'];
+var TZ = 'Asia/Seoul';
 var LOCK_WAIT_MS = 20000;
 var MAX_BATCH = 5000;
 
 // ===== 웹앱 진입점 =====
 function doGet() {
-  return HtmlService.createHtmlOutputFromFile('Index')
+  ensureSetup_();
+  // 설치용 한 파일 버전은 화면(HTML)이 INDEX_HTML 상수로 들어 있습니다.
+  var out = typeof INDEX_HTML !== 'undefined'
+    ? HtmlService.createHtmlOutput(INDEX_HTML)
+    : HtmlService.createHtmlOutputFromFile('Index');
+  return out
     .setTitle('시리얼 중복 관리')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
 }
@@ -53,7 +59,18 @@ function onOpen() {
 }
 
 // ===== 초기 설정 =====
+// 시트가 없으면 자동으로 만듭니다 (웹앱을 처음 열 때 자동 실행)
+function ensureSetup_() {
+  var ss = SpreadsheetApp.getActive();
+  if (!ss.getSheetByName(DB_SHEET) || !ss.getSheetByName(LOG_SHEET)) createSheets_();
+}
+
 function setup() {
+  createSheets_();
+  try { SpreadsheetApp.getUi().alert('설정 완료! [배포 > 새 배포 > 웹 앱] 으로 화면을 배포하세요.'); } catch (e) {}
+}
+
+function createSheets_() {
   var ss = SpreadsheetApp.getActive();
   var db = ss.getSheetByName(DB_SHEET) || ss.insertSheet(DB_SHEET);
   if (db.getLastRow() === 0) db.appendRow(HEADERS);
@@ -81,7 +98,11 @@ function setup() {
   log.getRange('A:A').setNumberFormat('@');
   log.getRange('E:E').setNumberFormat('@');
 
-  try { SpreadsheetApp.getUi().alert('설정 완료! [배포 > 새 배포 > 웹 앱] 으로 화면을 배포하세요.'); } catch (e) {}
+  // 새 시트에 기본으로 있던 빈 '시트1' 은 정리
+  ['시트1', 'Sheet1'].forEach(function (n) {
+    var blank = ss.getSheetByName(n);
+    if (blank && ss.getSheets().length > 1 && blank.getLastRow() === 0) ss.deleteSheet(blank);
+  });
 }
 
 // ===== 바코드 해석 =====
@@ -141,13 +162,13 @@ function dupKey_(p) {
 // ===== 내부 유틸 =====
 function dbSheet_() {
   var sh = SpreadsheetApp.getActive().getSheetByName(DB_SHEET);
-  if (!sh) throw new Error('[' + DB_SHEET + '] 시트가 없습니다. 시트 메뉴 [시리얼 관리 > 초기 설정] 을 먼저 실행하세요.');
+  if (!sh) { createSheets_(); sh = SpreadsheetApp.getActive().getSheetByName(DB_SHEET); }
   return sh;
 }
 
 function fmt_(d) {
   if (!(d instanceof Date)) return d ? String(d) : '';
-  return Utilities.formatDate(d, Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss');
+  return Utilities.formatDate(d, TZ, 'yyyy-MM-dd HH:mm:ss');
 }
 
 function rowToRecord_(r, rowNo) {
@@ -344,7 +365,7 @@ function generateSerials(p, meta, commit) {
 /** 첫 화면용: 통계 + 최근 10건 + 설정값 */
 function getDashboard() {
   var idx = readIndex_();
-  var today = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd');
+  var today = Utilities.formatDate(new Date(), TZ, 'yyyy-MM-dd');
   var todayCount = 0;
   idx.rows.forEach(function (r) { if (String(r[0]).trim() && fmt_(r[COL_CREATED]).indexOf(today) === 0) todayCount++; });
 
