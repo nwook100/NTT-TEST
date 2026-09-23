@@ -4,8 +4,9 @@
  * 바코드 형식 (18자리):  BX3812 260630 B 02051
  *   고정번호(6) + 날짜 YYMMDD(6) + 구분(A=노멀, B=비드)(1) + 본호(5)
  *
- * 본호는 날짜가 바뀌면 00001 부터 다시 시작합니다.
- * 중복 판정은 "같은 날짜 안의 본호" 기준입니다. 같은 날짜에서 A/B 가 달라도 본호가 같으면 막습니다.
+ * 본호는 날짜가 바뀌면 00001 부터 다시 시작하고, A(노멀)와 B(비드)는 본호를 따로 매깁니다.
+ * 중복 판정은 "같은 고정번호 + 같은 날짜 + 같은 구분(A/B) 안의 본호" 기준입니다.
+ *   예) 0630 B02051 등록 후 → 0630 B02051 중복 / 0630 A02051 정상 / 0701 B02051 정상
  *
  * 구글 시트를 DB로 사용합니다.
  *  - [시리얼DB]     : 등록된 바코드
@@ -19,10 +20,10 @@
 // 허용할 고정번호 목록. 품목별로 고정번호가 다르면 여기에 추가하세요. 빈 배열([])이면 영문/숫자 6자리 아무거나 허용.
 var ALLOWED_CODES = ['BX3812'];
 // 중복 판정 범위 (본호가 어느 범위 안에서 겹치면 안 되는지)
-//   'DATE_SERIAL' : 고정번호 + 날짜가 같을 때 본호 중복 금지. A/B 는 번호를 같이 씀 (기본)
-//   'FULL'        : 고정번호 + 날짜 + 구분이 같을 때 본호 중복 금지. A/B 가 번호를 따로 씀 (= 18자리 전체 비교)
-//   'CODE_SERIAL' : 날짜와 상관없이 고정번호 안에서 본호 중복 금지 (본호가 초기화되지 않는 경우)
-var DUP_SCOPE = 'DATE_SERIAL';
+//   'DATE_TYPE_SERIAL' : 고정번호 + 날짜 + 구분(A/B)이 같을 때 본호 중복 금지. A/B 가 번호를 따로 씀 (기본, 현재 운영 규칙)
+//   'DATE_SERIAL'      : 고정번호 + 날짜가 같을 때 본호 중복 금지. A/B 가 번호를 같이 쓰는 경우
+//   'CODE_SERIAL'      : 날짜와 상관없이 고정번호 안에서 본호 중복 금지 (본호가 초기화되지 않는 경우)
+var DUP_SCOPE = 'DATE_TYPE_SERIAL';
 
 var TYPE_NAMES = { A: '노멀', B: '비드' };
 var SERIAL_MAX = 99999;
@@ -63,7 +64,7 @@ function setup() {
   db.getRange('J:J').setNumberFormat('yyyy-mm-dd hh:mm:ss');
 
   // 시트에 직접 입력했을 때도 본호 중복이 빨갛게 보이도록 조건부 서식
-  var formula = DUP_SCOPE === 'FULL' ? '=AND($A2<>"",COUNTIF($A:$A,$A2)>1)'
+  var formula = DUP_SCOPE === 'DATE_TYPE_SERIAL' ? '=AND($A2<>"",COUNTIF($A:$A,$A2)>1)'
     : DUP_SCOPE === 'CODE_SERIAL' ? '=AND($E2<>"",COUNTIFS($B:$B,$B2,$E:$E,$E2)>1)'
     : '=AND($E2<>"",COUNTIFS($B:$B,$B2,$C:$C,$C2,$E:$E,$E2)>1)';
   var rule = SpreadsheetApp.newConditionalFormatRule()
@@ -120,13 +121,13 @@ function buildBarcode_(code, yymmdd, type, n) {
 
 /** 본호 번호가 이어지는 묶음 (이 묶음 안에서 본호가 겹치면 안 됨) */
 function groupKey_(p) {
-  if (DUP_SCOPE === 'FULL') return p.code + ':' + p.date + ':' + p.type;
+  if (DUP_SCOPE === 'DATE_TYPE_SERIAL') return p.code + ':' + p.date + ':' + p.type;
   if (DUP_SCOPE === 'CODE_SERIAL') return p.code;
   return p.code + ':' + p.date;
 }
 
 function groupLabel_(p) {
-  if (DUP_SCOPE === 'FULL') return '날짜 ' + p.date + ' ' + p.type + '(' + p.typeName + ')';
+  if (DUP_SCOPE === 'DATE_TYPE_SERIAL') return '날짜 ' + p.date + ' ' + p.typeName + '(' + p.type + ')';
   if (DUP_SCOPE === 'CODE_SERIAL') return p.code;
   return '날짜 ' + p.date;
 }

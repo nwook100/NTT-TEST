@@ -73,7 +73,7 @@
 <body>
 <header>
   <h1>하이닉스 시리얼 본호 중복 관리</h1>
-  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 같은 날짜 안에서 본호 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
+  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 같은 날짜·같은 구분(A/B) 안에서 본호 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
 </header>
 
 <main>
@@ -122,13 +122,13 @@
   <!-- 연속 발번 -->
   <section id="tab-generate" class="hidden">
     <div class="panel">
-      <h2>연속 발번 (그 날짜의 마지막 본호 다음부터 · 새 날짜는 00001부터)</h2>
+      <h2>연속 발번 (그 날짜·구분의 마지막 본호 다음부터 · 새 날짜는 00001부터)</h2>
       <div class="grid">
         <div><label for="gCode">고정번호</label><select id="gCode"></select></div>
         <div><label for="gDate">날짜</label><input id="gDate" type="date"></div>
         <div><label for="gType">구분</label>
           <select id="gType"><option value="A">A - 노멀</option><option value="B">B - 비드</option></select></div>
-        <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 그 날짜 마지막+1"></div>
+        <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 마지막+1"></div>
         <div><label for="gCount">발번 수량</label><input id="gCount" type="number" min="1" max="5000" value="10"></div>
         <div><label for="gItem">품목</label>
           <select id="gItem"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
@@ -324,7 +324,7 @@
   $("btnGenerate").onclick = function () {
     var p = genParams();
     if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?\n(" +
-      (p.start ? "본호 " + p.start + "번부터" : "그 날짜의 마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
+      (p.start ? "본호 " + p.start + "번부터" : "그 날짜·구분의 마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
     busy(genBtns, call("generateSerials", p, genMeta(), true)).then(function (plan) {
       if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 본호가 없습니다."); return; }
       $("gStart").value = "";
