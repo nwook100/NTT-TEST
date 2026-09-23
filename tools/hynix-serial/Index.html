@@ -73,12 +73,12 @@
 <body>
 <header>
   <h1>하이닉스 시리얼 본호 중복 관리</h1>
-  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 본호 기준 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
+  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 같은 날짜 안에서 본호 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
 </header>
 
 <main>
   <div class="stats">
-    <div class="stat"><b id="statTotal">-</b><span>등록된 본호</span></div>
+    <div class="stat"><b id="statTotal">-</b><span>등록된 바코드</span></div>
     <div class="stat"><b id="statToday">-</b><span>오늘 등록</span></div>
     <div class="stat"><b id="statBlocked">-</b><span>오늘 차단 (중복·형식오류)</span></div>
     <div class="stat"><b id="statLast">-</b><span id="statLastLabel">마지막 본호</span></div>
@@ -122,13 +122,13 @@
   <!-- 연속 발번 -->
   <section id="tab-generate" class="hidden">
     <div class="panel">
-      <h2>연속 발번 (마지막 본호 다음부터, 이미 쓴 본호는 건너뜀)</h2>
+      <h2>연속 발번 (그 날짜의 마지막 본호 다음부터 · 새 날짜는 00001부터)</h2>
       <div class="grid">
         <div><label for="gCode">고정번호</label><select id="gCode"></select></div>
         <div><label for="gDate">날짜</label><input id="gDate" type="date"></div>
         <div><label for="gType">구분</label>
           <select id="gType"><option value="A">A - 노멀</option><option value="B">B - 비드</option></select></div>
-        <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 마지막+1"></div>
+        <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 그 날짜 마지막+1"></div>
         <div><label for="gCount">발번 수량</label><input id="gCount" type="number" min="1" max="5000" value="10"></div>
         <div><label for="gItem">품목</label>
           <select id="gItem"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
@@ -231,7 +231,7 @@
   }
   function dupMessage(res) {
     var r = res.existing;
-    return "⛔ 중복! 본호 <b>" + esc(res.parsed.serial) + "</b> 는 이미 사용되었습니다." + parts(res.parsed) +
+    return "⛔ 중복! " + esc(res.reason) + " — 이미 사용된 번호입니다." + parts(res.parsed) +
       "<div style='font-size:14px;margin-top:8px'>기존 등록: <b>" + esc(r.barcode) + "</b> · " + esc(r.item) +
       " · LOT " + esc(r.lot || "-") + " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (시트 " + r.row + "행)</div>";
   }
@@ -250,7 +250,7 @@
       $("statToday").textContent = d.today.toLocaleString();
       $("statBlocked").textContent = d.blocked.toLocaleString();
       $("statLast").textContent = d.lastSerial;
-      $("statLastLabel").textContent = "마지막 본호 (남은 " + d.remaining.toLocaleString() + "개)";
+      $("statLastLabel").textContent = "마지막 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
       $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden");
       $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
         '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
@@ -307,7 +307,7 @@
     var range = plan.list.length ? " (" + plan.list[0] + " ~ " + plan.list[plan.list.length - 1] + ")" : "";
     var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") + range +
       (plan.skipped ? " · 이미 사용된 본호 " + plan.skipped + "개 건너뜀" : "") +
-      (plan.short ? " · ⚠ 본호가 99999를 넘어 요청 수량보다 적음" : "");
+      (plan.short ? " · ⚠ 본호 99999 초과로 요청 수량보다 적음" : "");
     show($("genResult"), plan.short ? "warn" : "ok", esc(msg));
     $("genOut").classList.remove("hidden");
     $("genOut").value = plan.list.join("\n");
@@ -315,7 +315,7 @@
   $("btnNext").onclick = function () {
     busy(genBtns, call("nextAvailable", genParams())).then(function (r) {
       if (!r) { show($("genResult"), "dup", "남은 본호가 없습니다 (99999 초과)."); return; }
-      show($("genResult"), "ok", "마지막 본호 " + String(r.last).padStart(5, "0") + " → 다음 사용 가능: <b>" + esc(r.barcode) + "</b>");
+      show($("genResult"), "ok", esc(r.group) + " 마지막 본호 " + (r.last ? String(r.last).padStart(5, "0") : "없음(새 날짜)") + " → 다음 사용 가능: <b>" + esc(r.barcode) + "</b>");
     }).catch(showErr($("genResult")));
   };
   $("btnPreview").onclick = function () {
@@ -324,7 +324,7 @@
   $("btnGenerate").onclick = function () {
     var p = genParams();
     if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?\n(" +
-      (p.start ? "본호 " + p.start + "번부터" : "마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
+      (p.start ? "본호 " + p.start + "번부터" : "그 날짜의 마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
     busy(genBtns, call("generateSerials", p, genMeta(), true)).then(function (plan) {
       if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 본호가 없습니다."); return; }
       $("gStart").value = "";

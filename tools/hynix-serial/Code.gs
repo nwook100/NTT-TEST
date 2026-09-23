@@ -4,7 +4,8 @@
  * 바코드 형식 (18자리):  BX3812 260630 B 02051
  *   고정번호(6) + 날짜 YYMMDD(6) + 구분(A=노멀, B=비드)(1) + 본호(5)
  *
- * 중복 판정은 "본호" 기준입니다. 날짜나 A/B 가 달라도 본호가 같으면 중복으로 막습니다.
+ * 본호는 날짜가 바뀌면 00001 부터 다시 시작합니다.
+ * 중복 판정은 "같은 날짜 안의 본호" 기준입니다. 같은 날짜에서 A/B 가 달라도 본호가 같으면 막습니다.
  *
  * 구글 시트를 DB로 사용합니다.
  *  - [시리얼DB]     : 등록된 바코드
@@ -17,11 +18,11 @@
 // ===== 설정 =====
 // 허용할 고정번호 목록. 품목별로 고정번호가 다르면 여기에 추가하세요. 빈 배열([])이면 영문/숫자 6자리 아무거나 허용.
 var ALLOWED_CODES = ['BX3812'];
-// 중복 판정 범위
-//   'CODE_SERIAL' : 같은 고정번호 안에서 본호가 같으면 중복 (기본, 권장)
-//   'SERIAL'      : 고정번호와 상관없이 본호가 같으면 중복
-//   'FULL'        : 18자리 전체가 같을 때만 중복 (날짜·구분이 다르면 같은 본호 허용)
-var DUP_SCOPE = 'CODE_SERIAL';
+// 중복 판정 범위 (본호가 어느 범위 안에서 겹치면 안 되는지)
+//   'DATE_SERIAL' : 고정번호 + 날짜가 같을 때 본호 중복 금지. A/B 는 번호를 같이 씀 (기본)
+//   'FULL'        : 고정번호 + 날짜 + 구분이 같을 때 본호 중복 금지. A/B 가 번호를 따로 씀 (= 18자리 전체 비교)
+//   'CODE_SERIAL' : 날짜와 상관없이 고정번호 안에서 본호 중복 금지 (본호가 초기화되지 않는 경우)
+var DUP_SCOPE = 'DATE_SERIAL';
 
 var TYPE_NAMES = { A: '노멀', B: '비드' };
 var SERIAL_MAX = 99999;
@@ -62,9 +63,9 @@ function setup() {
   db.getRange('J:J').setNumberFormat('yyyy-mm-dd hh:mm:ss');
 
   // 시트에 직접 입력했을 때도 본호 중복이 빨갛게 보이도록 조건부 서식
-  var formula = DUP_SCOPE === 'SERIAL' ? '=AND($E2<>"",COUNTIF($E:$E,$E2)>1)'
-    : DUP_SCOPE === 'FULL' ? '=AND($A2<>"",COUNTIF($A:$A,$A2)>1)'
-    : '=AND($E2<>"",COUNTIFS($B:$B,$B2,$E:$E,$E2)>1)';
+  var formula = DUP_SCOPE === 'FULL' ? '=AND($A2<>"",COUNTIF($A:$A,$A2)>1)'
+    : DUP_SCOPE === 'CODE_SERIAL' ? '=AND($E2<>"",COUNTIFS($B:$B,$B2,$E:$E,$E2)>1)'
+    : '=AND($E2<>"",COUNTIFS($B:$B,$B2,$C:$C,$C2,$E:$E,$E2)>1)';
   var rule = SpreadsheetApp.newConditionalFormatRule()
     .whenFormulaSatisfied(formula)
     .setBackground('#f8d7da').setFontColor('#a50e0e')
@@ -117,12 +118,23 @@ function buildBarcode_(code, yymmdd, type, n) {
   return code + yymmdd + type + ('00000' + n).slice(-5);
 }
 
+/** 본호 번호가 이어지는 묶음 (이 묶음 안에서 본호가 겹치면 안 됨) */
+function groupKey_(p) {
+  if (DUP_SCOPE === 'FULL') return p.code + ':' + p.date + ':' + p.type;
+  if (DUP_SCOPE === 'CODE_SERIAL') return p.code;
+  return p.code + ':' + p.date;
+}
+
+function groupLabel_(p) {
+  if (DUP_SCOPE === 'FULL') return '날짜 ' + p.date + ' ' + p.type + '(' + p.typeName + ')';
+  if (DUP_SCOPE === 'CODE_SERIAL') return p.code;
+  return '날짜 ' + p.date;
+}
+
 /** 중복 판정용 키 */
 function dupKey_(p) {
   if (!p.ok) return 'RAW:' + p.barcode;
-  if (DUP_SCOPE === 'SERIAL') return p.serial;
-  if (DUP_SCOPE === 'FULL') return p.barcode;
-  return p.code + ':' + p.serial;
+  return groupKey_(p) + '#' + p.serial;
 }
 
 // ===== 내부 유틸 =====
@@ -158,15 +170,16 @@ function readIndex_() {
     var k = dupKey_(p);
     if (!map[k]) map[k] = rowToRecord_(rows[i], i + 2);
     if (p.ok) {
-      var mk = DUP_SCOPE === 'SERIAL' ? '*' : p.code;
-      maxSerial[mk] = Math.max(maxSerial[mk] || 0, +p.serial);
+      var gk = groupKey_(p);
+      maxSerial[gk] = Math.max(maxSerial[gk] || 0, +p.serial);
     }
   }
   return { sheet: sh, map: map, rows: rows, maxSerial: maxSerial };
 }
 
-function lastSerialOf_(idx, code) {
-  return idx.maxSerial[DUP_SCOPE === 'SERIAL' ? '*' : code] || 0;
+/** 해당 묶음(예: 같은 날짜)에서 가장 큰 본호. 새 날짜면 0 → 00001 부터 시작 */
+function lastSerialOf_(idx, p) {
+  return idx.maxSerial[groupKey_(p)] || 0;
 }
 
 function withLock_(fn) {
@@ -218,7 +231,7 @@ function judge_(idx, raw) {
   var p = parseBarcode(raw);
   if (!p.ok) return { status: 'invalid', input: String(raw || '').trim(), parsed: p, reason: p.reason };
   var hit = idx.map[dupKey_(p)];
-  if (hit) return { status: 'dup', input: String(raw).trim(), parsed: p, existing: hit, reason: '본호 ' + p.serial + ' 중복' };
+  if (hit) return { status: 'dup', input: String(raw).trim(), parsed: p, existing: hit, reason: groupLabel_(p) + ' 의 본호 ' + p.serial + ' 중복' };
   return { status: 'new', input: String(raw).trim(), parsed: p };
 }
 
@@ -284,23 +297,23 @@ function genInput_(p) {
   var type = clean_(p.type) || 'A';
   var probe = parseBarcode(buildBarcode_(code, date, type, 1));
   if (!probe.ok) throw new Error(probe.reason);
-  return { code: code, date: date, type: type };
+  return { code: code, date: date, type: type, probe: probe };
 }
 
-/** 다음 사용 가능 본호. start 가 비어 있으면 "마지막 본호 + 1" 부터 찾습니다. */
+/** 다음 사용 가능 본호. start 가 비어 있으면 "그 날짜의 마지막 본호 + 1" 부터 찾습니다. (새 날짜면 00001) */
 function nextAvailable(p) {
   var g = genInput_(p);
   var idx = readIndex_();
-  var last = lastSerialOf_(idx, g.code);
+  var last = lastSerialOf_(idx, g.probe);
   var n = p.start ? Math.max(1, parseInt(p.start, 10) || 1) : last + 1;
   while (n <= SERIAL_MAX && idx.map[dupKey_(parseBarcode(buildBarcode_(g.code, g.date, g.type, n)))]) n++;
   if (n > SERIAL_MAX) return null;
-  return { n: n, last: last, barcode: buildBarcode_(g.code, g.date, g.type, n) };
+  return { n: n, last: last, group: groupLabel_(g.probe), barcode: buildBarcode_(g.code, g.date, g.type, n) };
 }
 
 /**
  * 연속 발번: 고정번호 + 날짜 + 구분 + 본호.
- * start 가 비어 있으면 마지막 본호 다음부터, 이미 쓰인 본호는 건너뜁니다.
+ * start 가 비어 있으면 그 날짜의 마지막 본호 다음부터(새 날짜면 00001), 이미 쓰인 본호는 건너뜁니다.
  * commit=false 이면 미리보기만 합니다.
  */
 function generateSerials(p, meta, commit) {
@@ -311,7 +324,7 @@ function generateSerials(p, meta, commit) {
 
   var run = function () {
     var idx = readIndex_();
-    var n = p.start ? Math.max(1, parseInt(p.start, 10) || 1) : lastSerialOf_(idx, g.code) + 1;
+    var n = p.start ? Math.max(1, parseInt(p.start, 10) || 1) : lastSerialOf_(idx, g.probe) + 1;
     var list = [], skipped = 0;
     while (list.length < count && n <= SERIAL_MAX) {
       var parsed = parseBarcode(buildBarcode_(g.code, g.date, g.type, n));
@@ -345,11 +358,15 @@ function getDashboard() {
   for (var i = idx.rows.length - 1; i >= 0 && recent.length < 10; i--) {
     if (String(idx.rows[i][0]).trim()) recent.push(rowToRecord_(idx.rows[i], i + 2));
   }
-  var code = ALLOWED_CODES[0] || '';
-  var last = lastSerialOf_(idx, code);
+  // 가장 최근에 등록한 바코드의 날짜 기준 마지막 본호
+  var lastSerial = '-', lastGroup = '';
+  for (var j = idx.rows.length - 1; j >= 0; j--) {
+    var lp = parseBarcode(idx.rows[j][0]);
+    if (lp.ok) { lastSerial = ('00000' + lastSerialOf_(idx, lp)).slice(-5); lastGroup = groupLabel_(lp); break; }
+  }
   return {
     total: Object.keys(idx.map).length, today: todayCount, blocked: blocked, recent: recent,
-    lastSerial: last ? ('00000' + last).slice(-5) : '-', remaining: SERIAL_MAX - last,
+    lastSerial: lastSerial, lastGroup: lastGroup,
     codes: ALLOWED_CODES, scope: DUP_SCOPE, url: SpreadsheetApp.getActive().getUrl()
   };
 }
@@ -377,7 +394,7 @@ function auditDuplicates() {
     var p = parseBarcode(r[0]);
     if (!p.ok) bad.push((i + 2) + '행 ' + r[0] + ' : ' + p.reason);
     var k = dupKey_(p);
-    if (first[k]) dups.push('본호 ' + (p.serial || r[0]) + ' (' + first[k] + '행 / ' + (i + 2) + '행)');
+    if (first[k]) dups.push((p.ok ? groupLabel_(p) + ' 본호 ' + p.serial : r[0]) + ' (' + first[k] + '행 / ' + (i + 2) + '행)');
     else first[k] = i + 2;
   });
   var msg = (dups.length ? '중복 ' + dups.length + '건:\n' + dups.slice(0, 40).join('\n') : '중복 없음 ✅') +
