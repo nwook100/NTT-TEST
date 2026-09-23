@@ -90,7 +90,7 @@
     <div class="stat"><b id="statTotal">-</b><span>등록된 바코드</span></div>
     <div class="stat"><b id="statToday">-</b><span>오늘 등록</span></div>
     <div class="stat"><b id="statBlocked">-</b><span>오늘 차단 (중복·형식오류)</span></div>
-    <div class="stat"><b id="statLast">-</b><span id="statLastLabel">마지막 본호</span></div>
+    <div class="stat"><b id="statLast">-</b><span id="statLastLabel">마지막 등록 본호</span></div>
   </div>
 
   <div class="tabs" role="tablist">
@@ -188,13 +188,13 @@
     <div class="panel">
       <h2>이력 조회</h2>
       <div class="grid">
-        <div><label for="q">검색 (바코드·본호·LOT·작업자)</label><input id="q"></div>
+        <div><label for="q">검색 (바코드·LOT·작업자) — 바코드 앞 10자리 이상 입력하면 빠름</label><input id="q"></div>
         <div><label for="qItem">품목</label>
           <select id="qItem"><option value="">전체</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
       </div>
       <div class="row"><button class="btn" id="btnSearch">조회</button></div>
       <p class="muted" id="histCount"></p>
-      <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>시트 행</th></tr></thead>
+      <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>위치</th></tr></thead>
         <tbody id="histBody"></tbody></table></div>
       <p class="muted">잘못 등록한 번호는 구글 시트 [시리얼DB]에서 해당 행을 삭제하면 다시 사용할 수 있습니다.</p>
     </div>
@@ -256,13 +256,13 @@
     var r = res.existing;
     return "⛔ 중복! " + esc(res.reason) + " — 이미 사용된 번호입니다." + parts(res.parsed) +
       "<div style='font-size:14px;margin-top:8px'>기존 등록: <b>" + esc(r.barcode) + "</b> · " + esc(r.item) +
-      " · LOT " + esc(r.lot || "-") + " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (시트 " + r.row + "행)</div>";
+      " · LOT " + esc(r.lot || "-") + " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (" + esc(r.where) + ")</div>";
   }
   function recordRow(r, full) {
     return '<tr><td class="mono">' + esc(r.barcode) + '</td><td class="mono">' + esc(r.serial) + "</td><td>" + esc(r.date) +
       "</td><td>" + esc(r.type) + "</td><td>" + esc(r.item) + "</td><td>" + esc(r.lot) + "</td><td>" + esc(r.worker) + "</td>" +
       (full ? "<td>" + esc(r.note) + "</td>" : "") + "<td>" + esc(r.createdAt) + "</td>" +
-      (full ? "<td>" + r.row + "</td>" : "") + "</tr>";
+      (full ? "<td>" + esc(r.where) + "</td>" : "") + "</tr>";
   }
 
   // ---------- 대시보드 ----------
@@ -273,7 +273,7 @@
       $("statToday").textContent = d.today.toLocaleString();
       $("statBlocked").textContent = d.blocked.toLocaleString();
       $("statLast").textContent = d.lastSerial;
-      $("statLastLabel").textContent = "마지막 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
+      $("statLastLabel").textContent = "마지막 등록 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
       $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden");
       $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
         '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
@@ -338,7 +338,7 @@
         var x = batch[i];
         x.serial = r.parsed && r.parsed.serial;
         if (r.status === "new") { x.status = "ok"; x.detail = r.parsed.dateText + " · " + r.parsed.typeName; counts.ok++; }
-        else if (r.status === "dup") { x.status = "dup"; x.detail = "이미 등록됨: " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · 시트 " + r.existing.row + "행"; counts.dup++; }
+        else if (r.status === "dup") { x.status = "dup"; x.detail = "이미 등록됨: " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · " + r.existing.where; counts.dup++; }
         else if (r.status === "self") { x.status = "self"; x.detail = "같은 바코드를 연달아 찍음 (한 번만 등록됨)"; counts.dup++; }
         else { x.status = "invalid"; x.detail = r.reason; counts.bad++; }
         if (x.status !== "ok") bad = { x: x, r: r };
@@ -463,7 +463,7 @@
       n[r.status]++;
       var tag, detail = r.reason || "";
       if (r.status === "new") tag = '<span class="tag ok">' + (res.committed ? "등록됨" : "신규") + "</span>";
-      else if (r.status === "dup") { tag = '<span class="tag dup">기존 중복</span>'; detail = "기존 " + r.existing.barcode + " · " + r.existing.createdAt + " · 시트 " + r.existing.row + "행"; }
+      else if (r.status === "dup") { tag = '<span class="tag dup">기존 중복</span>'; detail = "기존 " + r.existing.barcode + " · " + r.existing.createdAt + " · " + r.existing.where; }
       else if (r.status === "self") tag = '<span class="tag warn">목록 내 중복</span>';
       else tag = '<span class="tag bad">형식 오류</span>';
       return "<tr><td>" + r.no + '</td><td class="mono">' + esc(r.input) + '</td><td class="mono">' + esc(r.parsed.serial || "") +
@@ -490,7 +490,7 @@
   function search() {
     $("histCount").textContent = "조회 중…";
     busy([$("btnSearch")], call("searchRecords", $("q").value, $("qItem").value)).then(function (res) {
-      $("histCount").textContent = res.total + "건" + (res.total > 500 ? " (최근 500건만 표시)" : "");
+      $("histCount").textContent = res.total + "건" + (res.more ? " (최근 " + res.total + "건까지만 표시 — 바코드를 더 길게 입력하면 빨리 찾습니다)" : "");
       $("histBody").innerHTML = res.rows.map(function (r) { return recordRow(r, true); }).join("");
     }).catch(function (e) { $("histCount").textContent = "오류: " + (e && e.message || e); });
   }
