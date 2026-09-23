@@ -67,6 +67,13 @@
   .hidden { display: none; }
   .check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
   .check input { width: auto; }
+  .userbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 14px; }
+  .banner { display: none; background: var(--accent); color: #fff; font-weight: 700; padding: 10px 16px; text-align: center; }
+  .banner.show { display: block; }
+  #login { position: fixed; inset: 0; background: rgba(10,12,16,.72); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
+  #login.show { display: flex; }
+  #login .box { background: var(--panel); color: var(--text); border-radius: 14px; padding: 22px; width: 100%; max-width: 380px; }
+  #login h2 { margin: 0 0 6px; font-size: 18px; }
   .scanbox { border-radius: 12px; padding: 4px; transition: background .15s; }
   .scanbox.flash-ok { background: var(--ok-weak); }
   .scanbox.flash-bad { background: var(--accent); }
@@ -83,7 +90,17 @@
 <header>
   <h1>하이닉스 시리얼 본호 중복 관리</h1>
   <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 같은 날짜·같은 구분(A/B) 안에서 본호 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
+  <div class="userbar"><span id="whoami" class="muted"></span><button class="btn sub hidden" id="btnLogout" style="padding:4px 10px;font-size:13px">로그아웃</button></div>
 </header>
+<div class="banner" id="offline">⚠ 인터넷 연결이 끊겼습니다. 스캔은 계속 하셔도 됩니다 — 연결되면 자동으로 보냅니다.</div>
+<div id="login" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="box">
+    <h2 id="loginTitle">작업자 로그인</h2>
+    <p class="muted" style="margin:0 0 12px">관리자에게 받은 PIN 을 입력하세요. 로그인 전에 찍은 스캔은 보관했다가 로그인 후 처리합니다.</p>
+    <input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="64" placeholder="PIN">
+    <div class="row"><button class="btn" id="btnLogin">로그인</button><span id="loginMsg" class="muted"></span></div>
+  </div>
+</div>
 
 <main>
   <div class="stats">
@@ -108,7 +125,6 @@
         <div><label for="item">품목</label>
           <select id="item"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
         <div><label for="lot">LOT / PO</label><input id="lot" placeholder="예: PO-2609-001"></div>
-        <div><label for="worker">작업자</label><input id="worker" placeholder="이름"></div>
         <div><label for="note">비고</label><input id="note"></div>
       </div>
       <div style="margin-top:12px" class="scanbox" id="scanbox">
@@ -205,14 +221,21 @@
 (function () {
   "use strict";
 
-  // ---------- 서버 호출 (google.script.run → Promise) ----------
+  // ---------- 서버 호출 (google.script.run → Promise, 로그인 토큰 자동 첨부) ----------
+  var token = "", onLoginCallbacks = [];
   function call(fn) {
-    var args = Array.prototype.slice.call(arguments, 1);
+    var args = [token].concat(Array.prototype.slice.call(arguments, 1));
     return new Promise(function (resolve, reject) {
-      var r = google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      var r = google.script.run.withSuccessHandler(resolve).withFailureHandler(function (e) {
+        var msg = (e && e.message) || String(e);
+        if (/AUTH:/.test(msg)) { var err = new Error(msg.replace(/^.*AUTH:/, "")); err.auth = true; requireLogin(err.message); reject(err); return; }
+        reject(e instanceof Error ? e : new Error(msg));
+      });
       r[fn].apply(r, args);
     });
   }
+  function newBatchId() { return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12); }
+
   // 버튼을 잠가서 두 번 눌러 중복 등록되는 것을 막음
   function busy(btns, promise) {
     btns.forEach(function (b) { b.disabled = true; });
@@ -227,7 +250,7 @@
     });
   }
   function show(el, cls, html) { el.className = "result " + cls; el.innerHTML = html; }
-  function showErr(el) { return function (e) { show(el, "dup", "오류: " + esc(e && e.message || e)); }; }
+  function showErr(el) { return function (e) { show(el, e && e.auth ? "warn" : "dup", (e && e.auth ? "로그인이 필요합니다: " : "오류: ") + esc(e && e.message || e)); }; }
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ""; localStorage.setItem(k, v); } catch (e) { return ""; } }
   function todayISO() { var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
 
@@ -245,7 +268,7 @@
   }
 
   function meta() {
-    return { item: $("item").value, lot: $("lot").value.trim(), worker: $("worker").value.trim(), note: $("note").value.trim() };
+    return { item: $("item").value, lot: $("lot").value.trim(), note: $("note").value.trim() };
   }
   // 바코드 분해 표시: [고정 BX3812] [날짜 2026-06-30] [B 비드] [본호 02051]
   function parts(p) {
@@ -269,12 +292,13 @@
   var codesLoaded = false;
   function loadDashboard() {
     return call("getDashboard").then(function (d) {
+      $("whoami").textContent = "작업자: " + d.user; $("btnLogout").classList.remove("hidden");
       $("statTotal").textContent = d.total.toLocaleString();
       $("statToday").textContent = d.today.toLocaleString();
       $("statBlocked").textContent = d.blocked.toLocaleString();
       $("statLast").textContent = d.lastSerial;
       $("statLastLabel").textContent = "마지막 등록 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
-      $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden");
+      if (d.url) { $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden"); }
       $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
         '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
       if (!codesLoaded) {
@@ -316,10 +340,11 @@
     }).join("") || '<tr><td colspan="6" class="muted">아직 스캔한 바코드가 없습니다.</td></tr>';
   }
 
-  function enqueue(raw) {
+  function enqueue(raw, note) {
     raw = String(raw || "").trim();
     if (!raw) return;
-    var item = { id: ++seq, time: nowText(), raw: raw, status: "wait" };
+    if (raw.length > 64) raw = raw.slice(0, 64);
+    var item = { id: ++seq, time: nowText(), raw: raw, status: "wait", detail: note || "" };
     scans.unshift(item);
     if (scans.length > 1000) scans.length = 1000;
     queue.push(item);
@@ -327,12 +352,34 @@
     pump();
   }
 
+  // 아직 처리 안 된 스캔은 이 PC에 보관 (창이 닫히거나 PC가 꺼져도 다음에 다시 보냄)
+  var PENDING_KEY = "hynixSerial.pending";
+  function savePending() {
+    var pending = scans.filter(function (x) { return x.status === "wait" || x.status === "error"; })
+      .map(function (x) { return { raw: x.raw, time: x.time }; }).reverse();
+    try { if (pending.length) localStorage.setItem(PENDING_KEY, JSON.stringify(pending)); else localStorage.removeItem(PENDING_KEY); } catch (e) {}
+  }
+  function restorePending() {
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem(PENDING_KEY) || "[]"); } catch (e) {}
+    if (!Array.isArray(list) || !list.length) return;
+    list.forEach(function (x) { if (x && x.raw) enqueue(String(x.raw), "이전에 못 보낸 스캔 — 자동 재전송"); });
+    show($("regResult"), "warn", "이전에 보내지 못한 스캔 " + list.length + "건을 다시 보냅니다.");
+  }
+
+  var RETRY_DELAYS = [2000, 5000, 10000, 20000];
   function pump() {
-    if (inflight || !queue.length) return;
-    var batch = queue.splice(0, 200);
+    savePending();
+    if (inflight || !queue.length || !token || !navigator.onLine) return;
+    var batch = queue.splice(0, 100);
+    send(batch, newBatchId(), 0);
+  }
+
+  function send(batch, batchId, attempt) {
     inflight = true;
     renderScans();
-    call("bulkProcess", batch.map(function (x) { return x.raw; }), meta(), true).then(function (res) {
+    call("bulkProcess", batch.map(function (x) { return x.raw; }), meta(), true, batchId).then(function (res) {
+      if (!res || !res.rows || res.rows.length !== batch.length) throw new Error("서버 응답이 올바르지 않습니다.");
       var bad = null, last = null;
       res.rows.forEach(function (r, i) {
         var x = batch[i];
@@ -353,20 +400,52 @@
         beep(true); flash(true);
         show(out, "ok", "✅ 등록 완료: <b>" + esc(last.x.raw) + "</b>" + (batch.length > 1 ? " 외 " + (batch.length - 1) + "건" : "") + parts(last.r.parsed));
       }
+      done();
     }).catch(function (e) {
+      if (e && e.auth) {
+        // 로그인 만료: 버리지 않고 대기열 맨 앞으로 되돌린 뒤 로그인 후 같은 묶음 번호로 다시 보냄
+        batch.forEach(function (x) { x.detail = "로그인 후 처리"; });
+        queue.unshift.apply(queue, batch);
+        inflight = false; renderScans(); savePending();
+        return;
+      }
+      if (attempt < RETRY_DELAYS.length) {
+        // 같은 묶음 번호로 재전송 → 서버가 이미 처리했으면 그 결과를 그대로 돌려줌 (두 번 등록/가짜 중복 없음)
+        batch.forEach(function (x) { x.detail = "재전송 " + (attempt + 1) + "회차 대기…"; });
+        show($("regResult"), "warn", "⚠ 전송 실패 — " + Math.round(RETRY_DELAYS[attempt] / 1000) + "초 뒤 자동으로 다시 보냅니다. (" + esc((e && e.message) || e) + ")");
+        renderScans();
+        setTimeout(function () {
+          if (!navigator.onLine) { waitOnline(function () { send(batch, batchId, attempt + 1); }); return; }
+          send(batch, batchId, attempt + 1);
+        }, RETRY_DELAYS[attempt]);
+        return;
+      }
       batch.forEach(function (x) { x.status = "error"; x.detail = (e && e.message) || String(e); });
       beep(false); flash(false);
-      show($("regResult"), "dup", "⚠ 서버 전송 실패 " + batch.length + "건 — 인터넷 연결을 확인하고 [실패 항목 다시 보내기]를 누르세요.<br><span style='font-size:14px'>" + esc((e && e.message) || e) + "</span>");
-    }).finally(function () {
-      inflight = false;
-      renderScans();
-      if (queue.length) pump();
-      else { clearTimeout(dashTimer); dashTimer = setTimeout(loadDashboard, 1500); }
+      show($("regResult"), "dup", "⚠ 서버 전송 실패 " + batch.length + "건 — [실패 항목 다시 보내기]를 누르세요. 계속되면 관리자에게 알려주세요.<br><span style='font-size:14px'>" + esc((e && e.message) || e) + "</span>");
+      done();
     });
   }
 
+  function done() {
+    inflight = false;
+    renderScans();
+    savePending();
+    if (queue.length) pump();
+    else { clearTimeout(dashTimer); dashTimer = setTimeout(loadDashboard, 1500); }
+  }
+
+  var onlineWaiters = [];
+  function waitOnline(fn) { onlineWaiters.push(fn); }
+  function updateOnline() {
+    $("offline").classList.toggle("show", !navigator.onLine);
+    if (navigator.onLine) { var w = onlineWaiters; onlineWaiters = []; w.forEach(function (f) { f(); }); pump(); }
+  }
+  window.addEventListener("online", updateOnline);
+  window.addEventListener("offline", updateOnline);
+
   $("btnRetry").onclick = function () {
-    scans.filter(function (x) { return x.status === "error"; }).reverse().forEach(function (x) { x.status = "wait"; x.detail = ""; queue.push(x); });
+    scans.filter(function (x) { return x.status === "error"; }).reverse().forEach(function (x) { x.status = "wait"; x.detail = "다시 보내는 중 (이미 등록됐다면 '중복'으로 보일 수 있음)"; queue.push(x); });
     renderScans(); pump(); $("serial").focus();
   };
   $("btnClearScans").onclick = function () {
@@ -407,10 +486,10 @@
   document.addEventListener("click", function () { setTimeout(refocus, 0); });
   window.addEventListener("focus", refocus);
   // 작업 중 창을 닫으려 하면 경고
-  window.addEventListener("beforeunload", function (e) { if (queue.length || inflight) { e.preventDefault(); e.returnValue = ""; } });
+  window.addEventListener("beforeunload", function (e) { savePending(); if (queue.length || inflight) { e.preventDefault(); e.returnValue = ""; } });
 
-  // 작업자 / LOT 는 이 PC에 기억
-  ["worker", "lot"].forEach(function (id) {
+  // LOT 는 이 PC에 기억
+  ["lot"].forEach(function (id) {
     $(id).value = store("hynixSerial." + id);
     $(id).addEventListener("change", function () { store("hynixSerial." + id, $(id).value.trim()); });
   });
@@ -421,7 +500,7 @@
   function genParams() {
     return { code: $("gCode").value, date: $("gDate").value, type: $("gType").value, start: $("gStart").value.trim(), count: $("gCount").value };
   }
-  function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), worker: $("worker").value.trim(), note: "연속발번" }; }
+  function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), note: "연속발번" }; }
   function renderPlan(plan) {
     var range = plan.list.length ? " (" + plan.list[0] + " ~ " + plan.list[plan.list.length - 1] + ")" : "";
     var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") + range +
@@ -444,7 +523,7 @@
     var p = genParams();
     if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?\n(" +
       (p.start ? "본호 " + p.start + "번부터" : "그 날짜·구분의 마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
-    busy(genBtns, call("generateSerials", p, genMeta(), true)).then(function (plan) {
+    busy(genBtns, call("generateSerials", p, genMeta(), true, newBatchId())).then(function (plan) {
       if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 본호가 없습니다."); return; }
       $("gStart").value = "";
       renderPlan(plan);
@@ -482,7 +561,7 @@
     var lines = bulkLines();
     if (!lines.length) return;
     if (!confirm(lines.length + "건 중 신규 본호만 등록할까요? (중복·형식오류는 자동 제외)")) return;
-    busy(bulkBtns, call("bulkProcess", lines, meta(), true)).then(function (res) { renderBulk(res); loadDashboard(); })
+    busy(bulkBtns, call("bulkProcess", lines, meta(), true, newBatchId())).then(function (res) { renderBulk(res); loadDashboard(); })
       .catch(showErr($("bulkResult")));
   };
 
@@ -507,8 +586,55 @@
     };
   });
 
-  loadDashboard();
-  $("serial").focus();
+  // ---------- 로그인 ----------
+  var TOKEN_KEY = "hynixSerial.token";
+  function requireLogin(msg) {
+    token = "";
+    try { sessionStorage.removeItem(TOKEN_KEY); } catch (e) {}
+    $("login").classList.add("show");
+    $("loginMsg").textContent = msg || "";
+    $("whoami").textContent = ""; $("btnLogout").classList.add("hidden");
+    setTimeout(function () { $("pin").focus(); }, 0);
+  }
+  function afterLogin(t, name) {
+    token = t;
+    try { sessionStorage.setItem(TOKEN_KEY, t); } catch (e) {}
+    $("login").classList.remove("show");
+    $("pin").value = ""; $("loginMsg").textContent = "";
+    $("whoami").textContent = "작업자: " + name; $("btnLogout").classList.remove("hidden");
+    loadDashboard();
+    pump();
+    $("serial").focus();
+  }
+  function doLogin() {
+    var v = $("pin").value.trim();
+    $("pin").value = "";
+    if (!v) return;
+    // 로그인 창에 바코드를 찍은 경우: PIN 으로 보내지 않고 스캔 대기열에 보관
+    if (v.length > 12) {
+      enqueue(v, "로그인 후 처리");
+      $("loginMsg").textContent = "바코드는 보관했습니다 (" + queue.length + "건). 먼저 PIN 으로 로그인하세요.";
+      return;
+    }
+    $("loginMsg").textContent = "확인 중…";
+    busy([$("btnLogin")], new Promise(function (resolve, reject) {
+      google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).login(v);
+    })).then(function (r) { afterLogin(r.token, r.name); })
+      .catch(function (e) { $("loginMsg").textContent = (e && e.message) || String(e); $("pin").focus(); });
+  }
+  $("btnLogin").onclick = doLogin;
+  $("pin").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); doLogin(); } });
+  $("btnLogout").onclick = function () {
+    if (queue.length || inflight) { show($("regResult"), "warn", "아직 보내는 중인 스캔이 있습니다. 끝난 뒤 로그아웃하세요."); return; }
+    google.script.run.logout(token);
+    requireLogin("로그아웃되었습니다.");
+  };
+
+  updateOnline();
+  restorePending();
+  try { token = sessionStorage.getItem(TOKEN_KEY) || ""; } catch (e) { token = ""; }
+  if (token) { loadDashboard(); pump(); $("serial").focus(); }
+  else requireLogin("");
 })();
 </script>
 </body>
