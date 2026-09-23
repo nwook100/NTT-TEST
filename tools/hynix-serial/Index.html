@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+
+<title>시리얼 중복 관리</title>
+<style>
+  :root {
+    --bg: #f4f6f9; --panel: #ffffff; --text: #1d2330; --muted: #6b7385; --line: #dde2ea;
+    --accent: #c8102e; --accent-weak: #fbe9ec; --ok: #0f7b47; --ok-weak: #e3f5ec;
+    --warn: #a15c00; --warn-weak: #fff3e0; --input: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12151b; --panel: #1b2029; --text: #e7eaf0; --muted: #98a0b0; --line: #2d3440;
+      --accent: #ff5a6e; --accent-weak: #3a1a20; --ok: #4fd08f; --ok-weak: #15301f;
+      --warn: #ffb74d; --warn-weak: #33260f; --input: #12151b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  header { background: var(--panel); border-bottom: 1px solid var(--line); padding: 14px 16px; }
+  header h1 { margin: 0; font-size: 18px; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tabs button { border: 1px solid var(--line); background: var(--panel); color: var(--text);
+    padding: 8px 14px; border-radius: 8px; cursor: pointer; font: inherit; }
+  .tabs button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .panel h2 { margin: 0 0 12px; font-size: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  input, select, textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--input); color: var(--text); font: inherit; }
+  .btn:disabled { opacity: .5; cursor: wait; }
+  input.big { font-size: 22px; font-weight: 700; letter-spacing: 1px; padding: 12px; }
+  textarea { min-height: 160px; font-family: ui-monospace, Consolas, monospace; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+  .btn { border: 0; border-radius: 8px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--accent); color: #fff; }
+  .btn.sub { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn.danger { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .result { margin-top: 12px; padding: 14px; border-radius: 10px; font-weight: 600; display: none; }
+  .result.ok { display: block; background: var(--ok-weak); color: var(--ok); }
+  .result.dup { display: block; background: var(--accent-weak); color: var(--accent); font-size: 18px; }
+  .result.warn { display: block; background: var(--warn-weak); color: var(--warn); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  .stat b { display: block; font-size: 22px; }
+  .stat span { color: var(--muted); font-size: 13px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 600; }
+  td.mono { font-family: ui-monospace, Consolas, monospace; font-weight: 600; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+  .tag.ok { background: var(--ok-weak); color: var(--ok); }
+  .tag.dup { background: var(--accent-weak); color: var(--accent); }
+  .tag.warn { background: var(--warn-weak); color: var(--warn); }
+  .muted { color: var(--muted); font-size: 13px; }
+  .hidden { display: none; }
+  .check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
+  .check input { width: auto; }
+  @media (max-width: 600px) { input.big { font-size: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>하이닉스 시리얼 본호 중복 관리</h1>
+  <p>Magazine · Cassette · Ring · Pin Boat 출하 시리얼 등록 및 중복 차단 · 구글 시트 연동 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
+</header>
+
+<main>
+  <div class="stats">
+    <div class="stat"><b id="statTotal">-</b><span>등록된 시리얼</span></div>
+    <div class="stat"><b id="statToday">-</b><span>오늘 등록</span></div>
+    <div class="stat"><b id="statBlocked">-</b><span>오늘 중복 차단</span></div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="active" data-tab="register">등록 / 검사</button>
+    <button data-tab="generate">연속 발번</button>
+    <button data-tab="bulk">일괄 검사</button>
+    <button data-tab="history">이력 조회</button>
+  </div>
+
+  <!-- 등록 / 검사 -->
+  <section id="tab-register">
+    <div class="panel">
+      <h2>시리얼 등록</h2>
+      <div class="grid">
+        <div><label for="item">품목</label>
+          <select id="item"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
+        <div><label for="lot">LOT / PO</label><input id="lot" placeholder="예: PO-2609-001"></div>
+        <div><label for="worker">작업자</label><input id="worker" placeholder="이름"></div>
+        <div><label for="note">비고</label><input id="note"></div>
+      </div>
+      <div style="margin-top:12px">
+        <label for="serial">시리얼 번호 (바코드 스캐너 사용 가능 · Enter로 등록)</label>
+        <input id="serial" class="big" autocomplete="off" placeholder="시리얼 입력 또는 스캔">
+      </div>
+      <div class="row">
+        <button class="btn" id="btnRegister">등록</button>
+        <button class="btn sub" id="btnCheck">중복만 확인</button>
+      </div>
+      <div id="regResult" class="result"></div>
+    </div>
+    <div class="panel">
+      <h2>최근 등록 10건 <button class="btn sub" id="btnRefresh" style="padding:4px 10px;font-size:13px">새로고침</button></h2>
+      <div class="table-wrap"><table><thead><tr><th>시리얼</th><th>품목</th><th>LOT</th><th>작업자</th><th>등록일시</th></tr></thead>
+        <tbody id="recentBody"><tr><td colspan="5" class="muted">불러오는 중…</td></tr></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- 연속 발번 -->
+  <section id="tab-generate" class="hidden">
+    <div class="panel">
+      <h2>연속 발번 (이미 쓴 번호는 자동으로 건너뜀)</h2>
+      <div class="grid">
+        <div><label for="gPrefix">접두어</label><input id="gPrefix" placeholder="예: HX2609-"></div>
+        <div><label for="gStart">시작 번호</label><input id="gStart" type="number" min="0" value="1"></div>
+        <div><label for="gDigits">자릿수</label><input id="gDigits" type="number" min="1" max="12" value="5"></div>
+        <div><label for="gCount">발번 수량</label><input id="gCount" type="number" min="1" max="5000" value="10"></div>
+        <div><label for="gItem">품목</label>
+          <select id="gItem"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
+        <div><label for="gLot">LOT / PO</label><input id="gLot"></div>
+      </div>
+      <div class="row">
+        <button class="btn sub" id="btnNext">다음 빈 번호 찾기</button>
+        <button class="btn sub" id="btnPreview">미리보기</button>
+        <button class="btn" id="btnGenerate">발번 + 등록</button>
+      </div>
+      <div id="genResult" class="result"></div>
+      <textarea id="genOut" class="hidden" readonly style="margin-top:12px"></textarea>
+    </div>
+  </section>
+
+  <!-- 일괄 검사 -->
+  <section id="tab-bulk" class="hidden">
+    <div class="panel">
+      <h2>일괄 검사 (엑셀에서 복사해 붙여넣기)</h2>
+      <textarea id="bulkIn" placeholder="한 줄에 하나씩 시리얼 번호"></textarea>
+      <div class="row">
+        <button class="btn sub" id="btnBulkCheck">검사</button>
+        <button class="btn" id="btnBulkRegister">신규만 등록</button>
+        <span class="muted">품목/LOT/작업자는 [등록/검사] 탭의 값을 사용합니다.</span>
+      </div>
+      <div id="bulkResult" class="result"></div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>시리얼</th><th>판정</th><th>상세</th></tr></thead>
+        <tbody id="bulkBody"></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- 이력 -->
+  <section id="tab-history" class="hidden">
+    <div class="panel">
+      <h2>이력 조회</h2>
+      <div class="grid">
+        <div><label for="q">검색 (시리얼·LOT·작업자)</label><input id="q"></div>
+        <div><label for="qItem">품목</label>
+          <select id="qItem"><option value="">전체</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
+      </div>
+      <div class="row"><button class="btn" id="btnSearch">조회</button></div>
+      <p class="muted" id="histCount"></p>
+      <div class="table-wrap"><table><thead><tr><th>시리얼</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>시트 행</th></tr></thead>
+        <tbody id="histBody"></tbody></table></div>
+      <p class="muted">잘못 등록한 번호는 구글 시트 [시리얼DB]에서 해당 행을 삭제하면 다시 사용할 수 있습니다.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- 서버 호출 (google.script.run → Promise) ----------
+  function call(fn) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return new Promise(function (resolve, reject) {
+      var r = google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      r[fn].apply(r, args);
+    });
+  }
+  // 버튼을 잠가서 두 번 눌러 중복 등록되는 것을 막음
+  function busy(btns, promise) {
+    btns.forEach(function (b) { b.disabled = true; });
+    return promise.finally(function () { btns.forEach(function (b) { b.disabled = false; }); });
+  }
+
+  // ---------- 유틸 ----------
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function show(el, cls, html) { el.className = "result " + cls; el.innerHTML = html; }
+  function showErr(el) { return function (e) { show(el, "dup", "오류: " + esc(e && e.message || e)); }; }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ""; localStorage.setItem(k, v); } catch (e) { return ""; } }
+
+  var audioCtx = null;
+  function beep(ok) {
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      var o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = ok ? "sine" : "square";
+      o.frequency.value = ok ? 1200 : 300;
+      g.gain.value = 0.15;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(); o.stop(audioCtx.currentTime + (ok ? 0.08 : 0.6));
+    } catch (e) { /* 소리 미지원 환경 */ }
+  }
+
+  function meta() {
+    return { item: $("item").value, lot: $("lot").value.trim(), worker: $("worker").value.trim(), note: $("note").value.trim() };
+  }
+  function dupMessage(serial, r) {
+    return "⛔ 중복! <b>" + esc(serial) + "</b> 는 이미 사용된 번호입니다.<br>" +
+      "<span style='font-size:14px'>기존 등록: " + esc(r.serial) + " · " + esc(r.item) + " · LOT " + esc(r.lot || "-") +
+      " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (시트 " + r.row + "행)</span>";
+  }
+  function recordRow(r, extra) {
+    return '<tr><td class="mono">' + esc(r.serial) + "</td><td>" + esc(r.item) + "</td><td>" + esc(r.lot) + "</td><td>" +
+      esc(r.worker) + "</td>" + (extra ? "<td>" + esc(r.note) + "</td>" : "") + "<td>" + esc(r.createdAt) + "</td>" +
+      (extra ? "<td>" + r.row + "</td>" : "") + "</tr>";
+  }
+
+  // ---------- 대시보드 ----------
+  function loadDashboard() {
+    return call("getDashboard").then(function (d) {
+      $("statTotal").textContent = d.total.toLocaleString();
+      $("statToday").textContent = d.today.toLocaleString();
+      $("statBlocked").textContent = d.blocked.toLocaleString();
+      $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden");
+      $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
+        '<tr><td colspan="5" class="muted">아직 등록된 시리얼이 없습니다.</td></tr>';
+    }).catch(showErr($("regResult")));
+  }
+  $("btnRefresh").onclick = loadDashboard;
+
+  // ---------- 등록 탭 ----------
+  var regBtns = [$("btnRegister"), $("btnCheck")];
+  var pending = false;
+  function registerOne(onlyCheck) {
+    if (pending) return;
+    var input = $("serial"), out = $("regResult");
+    var serial = input.value.trim();
+    if (!serial) { show(out, "warn", "시리얼 번호를 입력하세요."); input.focus(); return; }
+    pending = true;
+    show(out, "warn", "확인 중… " + esc(serial));
+    var p = onlyCheck ? call("checkSerial", serial) : call("registerSerial", serial, meta());
+    busy(regBtns, p).then(function (res) {
+      if (res.status === "dup") { beep(false); show(out, "dup", dupMessage(res.serial, res.existing)); input.select(); if (!onlyCheck) loadDashboard(); return; }
+      beep(true);
+      if (onlyCheck) { show(out, "ok", "✅ 사용 가능한 번호입니다: <b>" + esc(res.serial) + "</b>"); input.select(); return; }
+      show(out, "ok", "✅ 등록 완료: <b>" + esc(res.serial) + "</b>");
+      if (input.value.trim() === serial) input.value = "";
+      loadDashboard();
+    }).catch(function (e) { beep(false); showErr(out)(e); }).finally(function () { pending = false; input.focus(); });
+  }
+  $("btnRegister").onclick = function () { registerOne(false); };
+  $("btnCheck").onclick = function () { registerOne(true); };
+  $("serial").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); registerOne(false); } });
+
+  // 작업자 / LOT 는 이 PC에 기억
+  ["worker", "lot"].forEach(function (id) {
+    $(id).value = store("hynixSerial." + id);
+    $(id).addEventListener("change", function () { store("hynixSerial." + id, $(id).value.trim()); });
+  });
+
+  // ---------- 연속 발번 ----------
+  var genBtns = [$("btnNext"), $("btnPreview"), $("btnGenerate")];
+  function genParams() {
+    return { prefix: $("gPrefix").value.trim(), start: $("gStart").value, digits: $("gDigits").value, count: $("gCount").value };
+  }
+  function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), worker: $("worker").value.trim(), note: "연속발번" }; }
+  function renderPlan(plan) {
+    var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") +
+      (plan.skipped ? " · 이미 사용된 번호 " + plan.skipped + "개 건너뜀" : "") +
+      (plan.short ? " · ⚠ 자릿수 범위 부족으로 요청 수량보다 적음" : "");
+    show($("genResult"), plan.short ? "warn" : "ok", msg);
+    $("genOut").classList.remove("hidden");
+    $("genOut").value = plan.list.join("\n");
+  }
+  $("btnNext").onclick = function () {
+    busy(genBtns, call("nextAvailable", genParams())).then(function (r) {
+      if (!r) { show($("genResult"), "dup", "자릿수 범위 안에 남은 번호가 없습니다."); return; }
+      $("gStart").value = r.n;
+      show($("genResult"), "ok", "다음 사용 가능 번호: <b>" + esc(r.serial) + "</b>");
+    }).catch(showErr($("genResult")));
+  };
+  $("btnPreview").onclick = function () {
+    busy(genBtns, call("generateSerials", genParams(), genMeta(), false)).then(renderPlan).catch(showErr($("genResult")));
+  };
+  $("btnGenerate").onclick = function () {
+    var p = genParams();
+    if (!confirm((p.prefix || "") + " 시작 " + p.start + "번부터 " + p.count + "개를 발번·등록할까요?\n(이미 사용된 번호는 건너뜁니다)")) return;
+    busy(genBtns, call("generateSerials", p, genMeta(), true)).then(function (plan) {
+      if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 번호가 없습니다."); return; }
+      $("gStart").value = plan.next;
+      renderPlan(plan);
+      loadDashboard();
+    }).catch(showErr($("genResult")));
+  };
+
+  // ---------- 일괄 검사 ----------
+  var bulkBtns = [$("btnBulkCheck"), $("btnBulkRegister")];
+  function bulkLines() {
+    return $("bulkIn").value.split(/\r?\n/).map(function (s) { return s.split(/[\t,]/)[0].trim(); }).filter(Boolean);
+  }
+  function renderBulk(res) {
+    var n = { new: 0, dup: 0, self: 0 };
+    $("bulkBody").innerHTML = res.rows.map(function (r) {
+      n[r.status]++;
+      var tag, detail = "";
+      if (r.status === "new") tag = '<span class="tag ok">' + (res.committed ? "등록됨" : "신규") + "</span>";
+      else if (r.status === "dup") { tag = '<span class="tag dup">기존 중복</span>'; detail = "기존 등록 " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · 시트 " + r.existing.row + "행"; }
+      else { tag = '<span class="tag warn">목록 내 중복</span>'; detail = r.firstNo + "번째 줄과 중복"; }
+      return "<tr><td>" + r.no + '</td><td class="mono">' + esc(r.serial) + "</td><td>" + tag + "</td><td>" + esc(detail) + "</td></tr>";
+    }).join("");
+    show($("bulkResult"), n.dup || n.self ? "dup" : "ok",
+      "총 " + res.rows.length + "건 · 신규 " + n.new + (res.committed ? "(등록 완료)" : "") + " · 기존 중복 " + n.dup + " · 목록 내 중복 " + n.self);
+  }
+  $("btnBulkCheck").onclick = function () {
+    var lines = bulkLines();
+    if (!lines.length) return;
+    busy(bulkBtns, call("bulkProcess", lines, meta(), false)).then(renderBulk).catch(showErr($("bulkResult")));
+  };
+  $("btnBulkRegister").onclick = function () {
+    var lines = bulkLines();
+    if (!lines.length) return;
+    if (!confirm(lines.length + "건 중 신규 번호만 등록할까요? (중복은 자동 제외)")) return;
+    busy(bulkBtns, call("bulkProcess", lines, meta(), true)).then(function (res) { renderBulk(res); loadDashboard(); })
+      .catch(showErr($("bulkResult")));
+  };
+
+  // ---------- 이력 ----------
+  function search() {
+    $("histCount").textContent = "조회 중…";
+    busy([$("btnSearch")], call("searchRecords", $("q").value, $("qItem").value)).then(function (res) {
+      $("histCount").textContent = res.total + "건" + (res.total > 500 ? " (최근 500건만 표시)" : "");
+      $("histBody").innerHTML = res.rows.map(function (r) { return recordRow(r, true); }).join("");
+    }).catch(function (e) { $("histCount").textContent = "오류: " + (e && e.message || e); });
+  }
+  $("btnSearch").onclick = search;
+  $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") search(); });
+
+  // ---------- 탭 ----------
+  document.querySelectorAll(".tabs button").forEach(function (b) {
+    b.onclick = function () {
+      document.querySelectorAll(".tabs button").forEach(function (x) { x.classList.toggle("active", x === b); });
+      ["register", "generate", "bulk", "history"].forEach(function (t) { $("tab-" + t).classList.toggle("hidden", t !== b.dataset.tab); });
+      if (b.dataset.tab === "register") $("serial").focus();
+      if (b.dataset.tab === "history" && !$("histBody").innerHTML) search();
+    };
+  });
+
+  loadDashboard();
+  $("serial").focus();
+})();
+</script>
+</body>
+</html>
