@@ -59,6 +59,10 @@
   .tag.ok { background: var(--ok-weak); color: var(--ok); }
   .tag.dup { background: var(--accent-weak); color: var(--accent); }
   .tag.warn { background: var(--warn-weak); color: var(--warn); }
+  .tag.bad { background: var(--text); color: var(--panel); }
+  .parts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-weight: 500; font-size: 14px; }
+  .parts span { border: 1px solid currentColor; border-radius: 6px; padding: 2px 8px; }
+  .parts b { font-family: ui-monospace, Consolas, monospace; }
   .muted { color: var(--muted); font-size: 13px; }
   .hidden { display: none; }
   .check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
@@ -69,14 +73,15 @@
 <body>
 <header>
   <h1>하이닉스 시리얼 본호 중복 관리</h1>
-  <p>Magazine · Cassette · Ring · Pin Boat 출하 시리얼 등록 및 중복 차단 · 구글 시트 연동 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
+  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 본호 기준 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
 </header>
 
 <main>
   <div class="stats">
-    <div class="stat"><b id="statTotal">-</b><span>등록된 시리얼</span></div>
+    <div class="stat"><b id="statTotal">-</b><span>등록된 본호</span></div>
     <div class="stat"><b id="statToday">-</b><span>오늘 등록</span></div>
-    <div class="stat"><b id="statBlocked">-</b><span>오늘 중복 차단</span></div>
+    <div class="stat"><b id="statBlocked">-</b><span>오늘 차단 (중복·형식오류)</span></div>
+    <div class="stat"><b id="statLast">-</b><span id="statLastLabel">마지막 본호</span></div>
   </div>
 
   <div class="tabs" role="tablist">
@@ -89,7 +94,7 @@
   <!-- 등록 / 검사 -->
   <section id="tab-register">
     <div class="panel">
-      <h2>시리얼 등록</h2>
+      <h2>바코드 등록</h2>
       <div class="grid">
         <div><label for="item">품목</label>
           <select id="item"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
@@ -98,8 +103,8 @@
         <div><label for="note">비고</label><input id="note"></div>
       </div>
       <div style="margin-top:12px">
-        <label for="serial">시리얼 번호 (바코드 스캐너 사용 가능 · Enter로 등록)</label>
-        <input id="serial" class="big" autocomplete="off" placeholder="시리얼 입력 또는 스캔">
+        <label for="serial">바코드 (스캐너 사용 가능 · Enter로 등록)</label>
+        <input id="serial" class="big" autocomplete="off" maxlength="30" placeholder="예: BX3812260630B02051">
       </div>
       <div class="row">
         <button class="btn" id="btnRegister">등록</button>
@@ -109,26 +114,28 @@
     </div>
     <div class="panel">
       <h2>최근 등록 10건 <button class="btn sub" id="btnRefresh" style="padding:4px 10px;font-size:13px">새로고침</button></h2>
-      <div class="table-wrap"><table><thead><tr><th>시리얼</th><th>품목</th><th>LOT</th><th>작업자</th><th>등록일시</th></tr></thead>
-        <tbody id="recentBody"><tr><td colspan="5" class="muted">불러오는 중…</td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>등록일시</th></tr></thead>
+        <tbody id="recentBody"><tr><td colspan="8" class="muted">불러오는 중…</td></tr></tbody></table></div>
     </div>
   </section>
 
   <!-- 연속 발번 -->
   <section id="tab-generate" class="hidden">
     <div class="panel">
-      <h2>연속 발번 (이미 쓴 번호는 자동으로 건너뜀)</h2>
+      <h2>연속 발번 (마지막 본호 다음부터, 이미 쓴 본호는 건너뜀)</h2>
       <div class="grid">
-        <div><label for="gPrefix">접두어</label><input id="gPrefix" placeholder="예: HX2609-"></div>
-        <div><label for="gStart">시작 번호</label><input id="gStart" type="number" min="0" value="1"></div>
-        <div><label for="gDigits">자릿수</label><input id="gDigits" type="number" min="1" max="12" value="5"></div>
+        <div><label for="gCode">고정번호</label><select id="gCode"></select></div>
+        <div><label for="gDate">날짜</label><input id="gDate" type="date"></div>
+        <div><label for="gType">구분</label>
+          <select id="gType"><option value="A">A - 노멀</option><option value="B">B - 비드</option></select></div>
+        <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 마지막+1"></div>
         <div><label for="gCount">발번 수량</label><input id="gCount" type="number" min="1" max="5000" value="10"></div>
         <div><label for="gItem">품목</label>
           <select id="gItem"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
         <div><label for="gLot">LOT / PO</label><input id="gLot"></div>
       </div>
       <div class="row">
-        <button class="btn sub" id="btnNext">다음 빈 번호 찾기</button>
+        <button class="btn sub" id="btnNext">다음 빈 본호 찾기</button>
         <button class="btn sub" id="btnPreview">미리보기</button>
         <button class="btn" id="btnGenerate">발번 + 등록</button>
       </div>
@@ -141,14 +148,14 @@
   <section id="tab-bulk" class="hidden">
     <div class="panel">
       <h2>일괄 검사 (엑셀에서 복사해 붙여넣기)</h2>
-      <textarea id="bulkIn" placeholder="한 줄에 하나씩 시리얼 번호"></textarea>
+      <textarea id="bulkIn" placeholder="한 줄에 바코드 하나씩"></textarea>
       <div class="row">
         <button class="btn sub" id="btnBulkCheck">검사</button>
         <button class="btn" id="btnBulkRegister">신규만 등록</button>
         <span class="muted">품목/LOT/작업자는 [등록/검사] 탭의 값을 사용합니다.</span>
       </div>
       <div id="bulkResult" class="result"></div>
-      <div class="table-wrap"><table><thead><tr><th>#</th><th>시리얼</th><th>판정</th><th>상세</th></tr></thead>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>바코드</th><th>본호</th><th>판정</th><th>상세</th></tr></thead>
         <tbody id="bulkBody"></tbody></table></div>
     </div>
   </section>
@@ -158,13 +165,13 @@
     <div class="panel">
       <h2>이력 조회</h2>
       <div class="grid">
-        <div><label for="q">검색 (시리얼·LOT·작업자)</label><input id="q"></div>
+        <div><label for="q">검색 (바코드·본호·LOT·작업자)</label><input id="q"></div>
         <div><label for="qItem">품목</label>
           <select id="qItem"><option value="">전체</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
       </div>
       <div class="row"><button class="btn" id="btnSearch">조회</button></div>
       <p class="muted" id="histCount"></p>
-      <div class="table-wrap"><table><thead><tr><th>시리얼</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>시트 행</th></tr></thead>
+      <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>시트 행</th></tr></thead>
         <tbody id="histBody"></tbody></table></div>
       <p class="muted">잘못 등록한 번호는 구글 시트 [시리얼DB]에서 해당 행을 삭제하면 다시 사용할 수 있습니다.</p>
     </div>
@@ -199,6 +206,7 @@
   function show(el, cls, html) { el.className = "result " + cls; el.innerHTML = html; }
   function showErr(el) { return function (e) { show(el, "dup", "오류: " + esc(e && e.message || e)); }; }
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ""; localStorage.setItem(k, v); } catch (e) { return ""; } }
+  function todayISO() { var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
 
   var audioCtx = null;
   function beep(ok) {
@@ -216,26 +224,40 @@
   function meta() {
     return { item: $("item").value, lot: $("lot").value.trim(), worker: $("worker").value.trim(), note: $("note").value.trim() };
   }
-  function dupMessage(serial, r) {
-    return "⛔ 중복! <b>" + esc(serial) + "</b> 는 이미 사용된 번호입니다.<br>" +
-      "<span style='font-size:14px'>기존 등록: " + esc(r.serial) + " · " + esc(r.item) + " · LOT " + esc(r.lot || "-") +
-      " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (시트 " + r.row + "행)</span>";
+  // 바코드 분해 표시: [고정 BX3812] [날짜 2026-06-30] [B 비드] [본호 02051]
+  function parts(p) {
+    return '<div class="parts"><span>고정 <b>' + esc(p.code) + '</b></span><span>날짜 <b>' + esc(p.dateText) +
+      '</b></span><span>' + esc(p.type) + " " + esc(p.typeName) + '</span><span>본호 <b>' + esc(p.serial) + "</b></span></div>";
   }
-  function recordRow(r, extra) {
-    return '<tr><td class="mono">' + esc(r.serial) + "</td><td>" + esc(r.item) + "</td><td>" + esc(r.lot) + "</td><td>" +
-      esc(r.worker) + "</td>" + (extra ? "<td>" + esc(r.note) + "</td>" : "") + "<td>" + esc(r.createdAt) + "</td>" +
-      (extra ? "<td>" + r.row + "</td>" : "") + "</tr>";
+  function dupMessage(res) {
+    var r = res.existing;
+    return "⛔ 중복! 본호 <b>" + esc(res.parsed.serial) + "</b> 는 이미 사용되었습니다." + parts(res.parsed) +
+      "<div style='font-size:14px;margin-top:8px'>기존 등록: <b>" + esc(r.barcode) + "</b> · " + esc(r.item) +
+      " · LOT " + esc(r.lot || "-") + " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (시트 " + r.row + "행)</div>";
+  }
+  function recordRow(r, full) {
+    return '<tr><td class="mono">' + esc(r.barcode) + '</td><td class="mono">' + esc(r.serial) + "</td><td>" + esc(r.date) +
+      "</td><td>" + esc(r.type) + "</td><td>" + esc(r.item) + "</td><td>" + esc(r.lot) + "</td><td>" + esc(r.worker) + "</td>" +
+      (full ? "<td>" + esc(r.note) + "</td>" : "") + "<td>" + esc(r.createdAt) + "</td>" +
+      (full ? "<td>" + r.row + "</td>" : "") + "</tr>";
   }
 
   // ---------- 대시보드 ----------
+  var codesLoaded = false;
   function loadDashboard() {
     return call("getDashboard").then(function (d) {
       $("statTotal").textContent = d.total.toLocaleString();
       $("statToday").textContent = d.today.toLocaleString();
       $("statBlocked").textContent = d.blocked.toLocaleString();
+      $("statLast").textContent = d.lastSerial;
+      $("statLastLabel").textContent = "마지막 본호 (남은 " + d.remaining.toLocaleString() + "개)";
       $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden");
       $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
-        '<tr><td colspan="5" class="muted">아직 등록된 시리얼이 없습니다.</td></tr>';
+        '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
+      if (!codesLoaded) {
+        codesLoaded = true;
+        $("gCode").innerHTML = (d.codes.length ? d.codes : ["BX3812"]).map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
+      }
     }).catch(showErr($("regResult")));
   }
   $("btnRefresh").onclick = loadDashboard;
@@ -246,17 +268,21 @@
   function registerOne(onlyCheck) {
     if (pending) return;
     var input = $("serial"), out = $("regResult");
-    var serial = input.value.trim();
-    if (!serial) { show(out, "warn", "시리얼 번호를 입력하세요."); input.focus(); return; }
+    var raw = input.value.trim();
+    if (!raw) { show(out, "warn", "바코드를 입력하세요."); input.focus(); return; }
     pending = true;
-    show(out, "warn", "확인 중… " + esc(serial));
-    var p = onlyCheck ? call("checkSerial", serial) : call("registerSerial", serial, meta());
+    show(out, "warn", "확인 중… " + esc(raw));
+    var p = onlyCheck ? call("checkSerial", raw) : call("registerSerial", raw, meta());
     busy(regBtns, p).then(function (res) {
-      if (res.status === "dup") { beep(false); show(out, "dup", dupMessage(res.serial, res.existing)); input.select(); if (!onlyCheck) loadDashboard(); return; }
+      if (res.status === "invalid") {
+        beep(false); show(out, "dup", "⚠ 형식 오류: <b>" + esc(res.input) + "</b><br><span style='font-size:14px'>" + esc(res.reason) + "</span>");
+        input.select(); if (!onlyCheck) loadDashboard(); return;
+      }
+      if (res.status === "dup") { beep(false); show(out, "dup", dupMessage(res)); input.select(); if (!onlyCheck) loadDashboard(); return; }
       beep(true);
-      if (onlyCheck) { show(out, "ok", "✅ 사용 가능한 번호입니다: <b>" + esc(res.serial) + "</b>"); input.select(); return; }
-      show(out, "ok", "✅ 등록 완료: <b>" + esc(res.serial) + "</b>");
-      if (input.value.trim() === serial) input.value = "";
+      if (onlyCheck) { show(out, "ok", "✅ 사용 가능한 본호입니다: <b>" + esc(res.parsed.barcode) + "</b>" + parts(res.parsed)); input.select(); return; }
+      show(out, "ok", "✅ 등록 완료: <b>" + esc(res.parsed.barcode) + "</b>" + parts(res.parsed));
+      if (input.value.trim() === raw) input.value = "";
       loadDashboard();
     }).catch(function (e) { beep(false); showErr(out)(e); }).finally(function () { pending = false; input.focus(); });
   }
@@ -271,24 +297,25 @@
   });
 
   // ---------- 연속 발번 ----------
+  $("gDate").value = todayISO();
   var genBtns = [$("btnNext"), $("btnPreview"), $("btnGenerate")];
   function genParams() {
-    return { prefix: $("gPrefix").value.trim(), start: $("gStart").value, digits: $("gDigits").value, count: $("gCount").value };
+    return { code: $("gCode").value, date: $("gDate").value, type: $("gType").value, start: $("gStart").value.trim(), count: $("gCount").value };
   }
   function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), worker: $("worker").value.trim(), note: "연속발번" }; }
   function renderPlan(plan) {
-    var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") +
-      (plan.skipped ? " · 이미 사용된 번호 " + plan.skipped + "개 건너뜀" : "") +
-      (plan.short ? " · ⚠ 자릿수 범위 부족으로 요청 수량보다 적음" : "");
-    show($("genResult"), plan.short ? "warn" : "ok", msg);
+    var range = plan.list.length ? " (" + plan.list[0] + " ~ " + plan.list[plan.list.length - 1] + ")" : "";
+    var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") + range +
+      (plan.skipped ? " · 이미 사용된 본호 " + plan.skipped + "개 건너뜀" : "") +
+      (plan.short ? " · ⚠ 본호가 99999를 넘어 요청 수량보다 적음" : "");
+    show($("genResult"), plan.short ? "warn" : "ok", esc(msg));
     $("genOut").classList.remove("hidden");
     $("genOut").value = plan.list.join("\n");
   }
   $("btnNext").onclick = function () {
     busy(genBtns, call("nextAvailable", genParams())).then(function (r) {
-      if (!r) { show($("genResult"), "dup", "자릿수 범위 안에 남은 번호가 없습니다."); return; }
-      $("gStart").value = r.n;
-      show($("genResult"), "ok", "다음 사용 가능 번호: <b>" + esc(r.serial) + "</b>");
+      if (!r) { show($("genResult"), "dup", "남은 본호가 없습니다 (99999 초과)."); return; }
+      show($("genResult"), "ok", "마지막 본호 " + String(r.last).padStart(5, "0") + " → 다음 사용 가능: <b>" + esc(r.barcode) + "</b>");
     }).catch(showErr($("genResult")));
   };
   $("btnPreview").onclick = function () {
@@ -296,10 +323,11 @@
   };
   $("btnGenerate").onclick = function () {
     var p = genParams();
-    if (!confirm((p.prefix || "") + " 시작 " + p.start + "번부터 " + p.count + "개를 발번·등록할까요?\n(이미 사용된 번호는 건너뜁니다)")) return;
+    if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?\n(" +
+      (p.start ? "본호 " + p.start + "번부터" : "마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
     busy(genBtns, call("generateSerials", p, genMeta(), true)).then(function (plan) {
-      if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 번호가 없습니다."); return; }
-      $("gStart").value = plan.next;
+      if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 본호가 없습니다."); return; }
+      $("gStart").value = "";
       renderPlan(plan);
       loadDashboard();
     }).catch(showErr($("genResult")));
@@ -311,17 +339,20 @@
     return $("bulkIn").value.split(/\r?\n/).map(function (s) { return s.split(/[\t,]/)[0].trim(); }).filter(Boolean);
   }
   function renderBulk(res) {
-    var n = { new: 0, dup: 0, self: 0 };
+    var n = { new: 0, dup: 0, self: 0, invalid: 0 };
     $("bulkBody").innerHTML = res.rows.map(function (r) {
       n[r.status]++;
-      var tag, detail = "";
+      var tag, detail = r.reason || "";
       if (r.status === "new") tag = '<span class="tag ok">' + (res.committed ? "등록됨" : "신규") + "</span>";
-      else if (r.status === "dup") { tag = '<span class="tag dup">기존 중복</span>'; detail = "기존 등록 " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · 시트 " + r.existing.row + "행"; }
-      else { tag = '<span class="tag warn">목록 내 중복</span>'; detail = r.firstNo + "번째 줄과 중복"; }
-      return "<tr><td>" + r.no + '</td><td class="mono">' + esc(r.serial) + "</td><td>" + tag + "</td><td>" + esc(detail) + "</td></tr>";
+      else if (r.status === "dup") { tag = '<span class="tag dup">기존 중복</span>'; detail = "기존 " + r.existing.barcode + " · " + r.existing.createdAt + " · 시트 " + r.existing.row + "행"; }
+      else if (r.status === "self") tag = '<span class="tag warn">목록 내 중복</span>';
+      else tag = '<span class="tag bad">형식 오류</span>';
+      return "<tr><td>" + r.no + '</td><td class="mono">' + esc(r.input) + '</td><td class="mono">' + esc(r.parsed.serial || "") +
+        "</td><td>" + tag + "</td><td>" + esc(detail) + "</td></tr>";
     }).join("");
-    show($("bulkResult"), n.dup || n.self ? "dup" : "ok",
-      "총 " + res.rows.length + "건 · 신규 " + n.new + (res.committed ? "(등록 완료)" : "") + " · 기존 중복 " + n.dup + " · 목록 내 중복 " + n.self);
+    show($("bulkResult"), n.dup || n.self || n.invalid ? "dup" : "ok",
+      "총 " + res.rows.length + "건 · 신규 " + n.new + (res.committed ? "(등록 완료)" : "") + " · 기존 중복 " + n.dup +
+      " · 목록 내 중복 " + n.self + " · 형식 오류 " + n.invalid);
   }
   $("btnBulkCheck").onclick = function () {
     var lines = bulkLines();
@@ -331,7 +362,7 @@
   $("btnBulkRegister").onclick = function () {
     var lines = bulkLines();
     if (!lines.length) return;
-    if (!confirm(lines.length + "건 중 신규 번호만 등록할까요? (중복은 자동 제외)")) return;
+    if (!confirm(lines.length + "건 중 신규 본호만 등록할까요? (중복·형식오류는 자동 제외)")) return;
     busy(bulkBtns, call("bulkProcess", lines, meta(), true)).then(function (res) { renderBulk(res); loadDashboard(); })
       .catch(showErr($("bulkResult")));
   };
