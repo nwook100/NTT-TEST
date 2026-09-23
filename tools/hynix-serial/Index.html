@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-
 <title>시리얼 중복 관리</title>
 <style>
   :root {
@@ -11,7 +10,7 @@
     --warn: #a15c00; --warn-weak: #fff3e0; --input: #ffffff;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
+    :root {
       --bg: #12151b; --panel: #1b2029; --text: #e7eaf0; --muted: #98a0b0; --line: #2d3440;
       --accent: #ff5a6e; --accent-weak: #3a1a20; --ok: #4fd08f; --ok-weak: #15301f;
       --warn: #ffb74d; --warn-weak: #33260f; --input: #12151b;
@@ -20,9 +19,13 @@
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
     font: 15px/1.5 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
-  header { background: var(--panel); border-bottom: 1px solid var(--line); padding: 14px 16px; }
-  header h1 { margin: 0; font-size: 18px; }
-  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  header { background: var(--panel); border-bottom: 1px solid var(--line); padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+  header h1 { margin: 0; font-size: 18px; flex: 1 1 260px; }
+  .hinfo { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 14px; }
+  .dot { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+  .dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
+  .dot.on { color: var(--ok); } .dot.on::before { background: var(--ok); }
+  .dot.off { color: var(--accent); } .dot.off::before { background: var(--accent); }
   main { max-width: 1100px; margin: 0 auto; padding: 16px; }
   .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
   .tabs button { border: 1px solid var(--line); background: var(--panel); color: var(--text);
@@ -34,21 +37,22 @@
   label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
   input, select, textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px;
     background: var(--input); color: var(--text); font: inherit; }
-  .btn:disabled { opacity: .5; cursor: wait; }
-  input.big { font-size: 22px; font-weight: 700; letter-spacing: 1px; padding: 12px; }
+  input.big { font-size: 28px; font-weight: 700; letter-spacing: 1px; padding: 16px; text-align: center; }
   textarea { min-height: 160px; font-family: ui-monospace, Consolas, monospace; }
   .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
   .btn { border: 0; border-radius: 8px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer;
     background: var(--accent); color: #fff; }
+  .btn:disabled { opacity: .5; cursor: wait; }
   .btn.sub { background: transparent; color: var(--text); border: 1px solid var(--line); }
-  .btn.danger { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btn.small { padding: 4px 10px; font-size: 13px; }
   .result { margin-top: 12px; padding: 14px; border-radius: 10px; font-weight: 600; display: none; }
   .result.ok { display: block; background: var(--ok-weak); color: var(--ok); }
   .result.dup { display: block; background: var(--accent-weak); color: var(--accent); font-size: 18px; }
   .result.warn { display: block; background: var(--warn-weak); color: var(--warn); }
+  #regResult { font-size: 20px; min-height: 64px; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 12px; }
   .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
-  .stat b { display: block; font-size: 22px; }
+  .stat b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
   .stat span { color: var(--muted); font-size: 13px; }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -64,101 +68,118 @@
   .parts span { border: 1px solid currentColor; border-radius: 6px; padding: 2px 8px; }
   .parts b { font-family: ui-monospace, Consolas, monospace; }
   .muted { color: var(--muted); font-size: 13px; }
-  .hidden { display: none; }
-  .check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
-  .check input { width: auto; }
-  .userbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 14px; }
+  .hidden { display: none !important; }
   .banner { display: none; background: var(--accent); color: #fff; font-weight: 700; padding: 10px 16px; text-align: center; }
   .banner.show { display: block; }
-  #login { position: fixed; inset: 0; background: rgba(10,12,16,.72); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
-  #login.show { display: flex; }
-  #login .box { background: var(--panel); color: var(--text); border-radius: 14px; padding: 22px; width: 100%; max-width: 380px; }
-  #login h2 { margin: 0 0 6px; font-size: 18px; }
-  .scanbox { border-radius: 12px; padding: 4px; transition: background .15s; }
-  .scanbox.flash-ok { background: var(--ok-weak); }
+  .scanbox { border-radius: 14px; padding: 6px; transition: background .15s; }
+  .scanbox.flash-ok { background: var(--ok); }
   .scanbox.flash-bad { background: var(--accent); }
   .counts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-  .counts span { padding: 4px 12px; border-radius: 99px; font-weight: 700; font-size: 14px; }
-  .scanlist { max-height: 420px; overflow: auto; }
+  .counts span { padding: 6px 14px; border-radius: 99px; font-weight: 700; font-size: 15px; }
+  .scanlist { max-height: 460px; overflow: auto; }
   tr.row-dup td, tr.row-invalid td, tr.row-self td { background: var(--accent-weak); }
   tr.row-wait td { color: var(--muted); }
   tr.row-dup .tag.dup, tr.row-self .tag.dup { background: var(--accent); color: #fff; }
-  @media (max-width: 600px) { input.big { font-size: 18px; } }
+  .linkbox { display: flex; gap: 8px; align-items: center; margin-top: 6px; }
+  .linkbox input { font-family: ui-monospace, Consolas, monospace; font-size: 13px; }
+  .notice { max-width: 640px; margin: 40px auto; }
+  .notice h2 { font-size: 20px; }
+  @media (max-width: 600px) { input.big { font-size: 20px; } }
 </style>
 </head>
 <body>
+<script>/*BOOT*/</script>
 <header>
   <h1>하이닉스 시리얼 본호 중복 관리</h1>
-  <p>바코드 18자리 = 고정번호(6) + 날짜(6) + 구분 A노멀/B비드(1) + 본호(5) · 같은 날짜·같은 구분(A/B) 안에서 본호 중복 차단 <a id="sheetLink" href="#" target="_blank" class="hidden">[시트 열기]</a></p>
-  <div class="userbar"><span id="whoami" class="muted"></span><button class="btn sub hidden" id="btnLogout" style="padding:4px 10px;font-size:13px">로그아웃</button></div>
+  <div class="hinfo">
+    <span class="dot" id="conn">연결 확인 중</span>
+    <span id="station" class="muted"></span>
+    <a id="sheetLink" href="#" target="_blank" rel="noopener" class="hidden">[시트 열기]</a>
+  </div>
 </header>
 <div class="banner" id="offline">⚠ 인터넷 연결이 끊겼습니다. 스캔은 계속 하셔도 됩니다 — 연결되면 자동으로 보냅니다.</div>
-<div id="login" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-  <div class="box">
-    <h2 id="loginTitle">작업자 로그인</h2>
-    <p class="muted" style="margin:0 0 12px">관리자에게 받은 PIN 을 입력하세요. 로그인 전에 찍은 스캔은 보관했다가 로그인 후 처리합니다.</p>
-    <input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="64" placeholder="PIN">
-    <div class="row"><button class="btn" id="btnLogin">로그인</button><span id="loginMsg" class="muted"></span></div>
-  </div>
-</div>
+<div class="banner" id="trouble">⚠ 서버 연결이 불안정합니다. 스캔은 보관 중이며 자동으로 다시 보냅니다. 계속되면 이 화면에서 F5(새로고침)를 누르세요.</div>
 
-<main>
+<!-- 접근 안내 / 오류 -->
+<main id="view-denied" class="hidden">
+  <div class="panel notice">
+    <h2>작업자용 주소로 접속하세요</h2>
+    <p>이 주소로는 사용할 수 없습니다. 관리자에게 <b>작업자용 주소</b>를 받아 즐겨찾기로 여세요.</p>
+  </div>
+</main>
+<main id="view-error" class="hidden">
+  <div class="panel notice">
+    <h2>시작하지 못했습니다</h2>
+    <p id="errorMsg"></p>
+    <p class="muted">잠시 뒤 F5(새로고침)를 눌러 보세요. 계속되면 관리자에게 이 화면을 보여주세요.</p>
+  </div>
+</main>
+
+<main id="view-main" class="hidden">
+  <!-- 처음 설치 완료 안내 (관리자에게 한 번만) -->
+  <div class="panel hidden" id="setupPanel" style="border:2px solid var(--ok)">
+    <h2>✅ 설치가 끝났습니다</h2>
+    <p>모든 설정이 자동으로 끝났습니다. 아래 두 주소만 챙기세요. (매일 새벽 자동 점검도 예약되었습니다)</p>
+    <label>작업자용 주소 — 작업 PC 브라우저에 즐겨찾기 하세요. 열면 바로 스캔 화면입니다.</label>
+    <div class="linkbox"><input readonly id="setupWorker"><button class="btn small" data-copy="setupWorker">복사</button></div>
+    <label style="margin-top:12px">관리자용 주소 — 본인만 보관하세요. (지금 이 화면)</label>
+    <div class="linkbox"><input readonly id="setupAdmin"><button class="btn small sub" data-copy="setupAdmin">복사</button></div>
+    <p class="muted">주소를 잃어버리면 구글 시트 메뉴 [시리얼 관리 > 작업자용 / 관리자용 주소 보기] 에서 다시 볼 수 있습니다.</p>
+  </div>
+
   <div class="stats">
-    <div class="stat"><b id="statTotal">-</b><span>등록된 바코드</span></div>
     <div class="stat"><b id="statToday">-</b><span>오늘 등록</span></div>
+    <div class="stat"><b id="statTotal">-</b><span>전체 등록</span></div>
     <div class="stat"><b id="statBlocked">-</b><span>오늘 차단 (중복·형식오류)</span></div>
-    <div class="stat"><b id="statLast">-</b><span id="statLastLabel">마지막 등록 본호</span></div>
+    <div class="stat admin-only"><b id="statLast">-</b><span id="statLastLabel">마지막 등록 본호</span></div>
   </div>
 
-  <div class="tabs" role="tablist">
-    <button class="active" data-tab="register">등록 / 검사</button>
+  <div class="tabs admin-only" role="tablist">
+    <button class="active" data-tab="register">스캔</button>
     <button data-tab="generate">연속 발번</button>
     <button data-tab="bulk">일괄 검사</button>
     <button data-tab="history">이력 조회</button>
+    <button data-tab="admin">관리</button>
   </div>
 
-  <!-- 등록 / 검사 -->
+  <!-- 스캔 -->
   <section id="tab-register">
     <div class="panel">
-      <h2>바코드 등록</h2>
-      <div class="grid">
-        <div><label for="item">품목</label>
-          <select id="item"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
-        <div><label for="lot">LOT / PO</label><input id="lot" placeholder="예: PO-2609-001"></div>
-        <div><label for="note">비고</label><input id="note"></div>
+      <div class="grid admin-only" style="margin-bottom:12px">
+        <div><label for="item">품목 (선택)</label>
+          <select id="item"><option value="">-</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
+        <div><label for="lot">LOT / PO (선택)</label><input id="lot" placeholder="예: PO-2609-001"></div>
+        <div><label for="note">비고 (선택)</label><input id="note"></div>
       </div>
-      <div style="margin-top:12px" class="scanbox" id="scanbox">
-        <label for="serial">바코드 — 스캐너로 <b>계속 찍으세요</b>. 찍는 즉시 중복 검사 + 기록됩니다.</label>
-        <input id="serial" class="big" autocomplete="off" maxlength="30" placeholder="여기에 커서를 두고 스캔 (예: BX3812260630B02051)">
+      <div class="scanbox" id="scanbox">
+        <input id="serial" class="big" autocomplete="off" maxlength="64" placeholder="바코드를 찍으세요" aria-label="바코드">
       </div>
-      <div class="row">
-        <button class="btn" id="btnRegister">등록</button>
-        <button class="btn sub" id="btnCheck">중복만 확인 (등록 안 함)</button>
-        <label class="check"><input type="checkbox" id="autoFocus" checked> 스캔 입력칸 항상 선택</label>
-      </div>
-      <div id="regResult" class="result"></div>
+      <div id="regResult" class="result warn" style="display:block">준비 완료 — 바코드를 찍으세요.</div>
       <div class="counts">
         <span class="tag ok">등록 <b id="cOk">0</b></span>
         <span class="tag dup">중복 <b id="cDup">0</b></span>
         <span class="tag bad">형식오류 <b id="cBad">0</b></span>
-        <span class="tag warn">처리 대기 <b id="cWait">0</b></span>
+        <span class="tag warn">보내는 중 <b id="cWait">0</b></span>
+      </div>
+      <div class="row admin-only">
+        <button class="btn sub small" id="btnCheck">입력칸 바코드 중복만 확인 (등록 안 함)</button>
       </div>
     </div>
     <div class="panel">
-      <h2>이번 스캔 기록 <button class="btn sub" id="btnRetry" style="padding:4px 10px;font-size:13px" hidden>실패 항목 다시 보내기</button>
-        <button class="btn sub" id="btnClearScans" style="padding:4px 10px;font-size:13px">목록 비우기</button></h2>
-      <p class="muted">최근 스캔이 맨 위에 옵니다. 빨간 줄은 등록되지 않은 바코드입니다(중복·형식오류). 목록을 비워도 시트 기록은 그대로입니다.</p>
+      <h2>이번 스캔 기록
+        <button class="btn sub small" id="btnRetry" hidden>실패 항목 다시 보내기</button>
+        <button class="btn sub small" id="btnClearScans">목록 비우기</button></h2>
       <div class="table-wrap scanlist"><table><thead><tr><th>#</th><th>시각</th><th>바코드</th><th>본호</th><th>결과</th><th>상세</th></tr></thead>
-        <tbody id="scanBody"><tr><td colspan="6" class="muted">아직 스캔한 바코드가 없습니다.</td></tr></tbody></table></div>
+        <tbody id="scanBody"><tr><td colspan="6" class="muted">아직 찍은 바코드가 없습니다.</td></tr></tbody></table></div>
     </div>
-    <div class="panel">
-      <h2>최근 등록 10건 <button class="btn sub" id="btnRefresh" style="padding:4px 10px;font-size:13px">새로고침</button></h2>
+    <div class="panel admin-only">
+      <h2>최근 등록 10건 (전체 PC)</h2>
       <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>등록일시</th></tr></thead>
-        <tbody id="recentBody"><tr><td colspan="8" class="muted">불러오는 중…</td></tr></tbody></table></div>
+        <tbody id="recentBody"></tbody></table></div>
     </div>
   </section>
 
-  <!-- 연속 발번 -->
+  <!-- 연속 발번 (관리자) -->
   <section id="tab-generate" class="hidden">
     <div class="panel">
       <h2>연속 발번 (그 날짜·구분의 마지막 본호 다음부터 · 새 날짜는 00001부터)</h2>
@@ -170,7 +191,7 @@
         <div><label for="gStart">시작 본호 (비우면 자동)</label><input id="gStart" type="number" min="1" max="99999" placeholder="자동: 마지막+1"></div>
         <div><label for="gCount">발번 수량</label><input id="gCount" type="number" min="1" max="5000" value="10"></div>
         <div><label for="gItem">품목</label>
-          <select id="gItem"><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
+          <select id="gItem"><option value="">-</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
         <div><label for="gLot">LOT / PO</label><input id="gLot"></div>
       </div>
       <div class="row">
@@ -183,7 +204,7 @@
     </div>
   </section>
 
-  <!-- 일괄 검사 -->
+  <!-- 일괄 검사 (관리자) -->
   <section id="tab-bulk" class="hidden">
     <div class="panel">
       <h2>일괄 검사 (엑셀에서 복사해 붙여넣기)</h2>
@@ -191,7 +212,6 @@
       <div class="row">
         <button class="btn sub" id="btnBulkCheck">검사</button>
         <button class="btn" id="btnBulkRegister">신규만 등록</button>
-        <span class="muted">품목/LOT/작업자는 [등록/검사] 탭의 값을 사용합니다.</span>
       </div>
       <div id="bulkResult" class="result"></div>
       <div class="table-wrap"><table><thead><tr><th>#</th><th>바코드</th><th>본호</th><th>판정</th><th>상세</th></tr></thead>
@@ -199,12 +219,12 @@
     </div>
   </section>
 
-  <!-- 이력 -->
+  <!-- 이력 (관리자) -->
   <section id="tab-history" class="hidden">
     <div class="panel">
       <h2>이력 조회</h2>
       <div class="grid">
-        <div><label for="q">검색 (바코드·LOT·작업자) — 바코드 앞 10자리 이상 입력하면 빠름</label><input id="q"></div>
+        <div><label for="q">검색 (바코드·LOT·작업자) — 바코드 앞 10자리 이상이면 빠름</label><input id="q"></div>
         <div><label for="qItem">품목</label>
           <select id="qItem"><option value="">전체</option><option>Magazine</option><option>Cassette</option><option>Ring</option><option>Pin Boat</option><option>기타</option></select></div>
       </div>
@@ -212,7 +232,32 @@
       <p class="muted" id="histCount"></p>
       <div class="table-wrap"><table><thead><tr><th>바코드</th><th>본호</th><th>날짜</th><th>구분</th><th>품목</th><th>LOT</th><th>작업자</th><th>비고</th><th>등록일시</th><th>위치</th></tr></thead>
         <tbody id="histBody"></tbody></table></div>
-      <p class="muted">잘못 등록한 번호는 구글 시트 [시리얼DB]에서 해당 행을 삭제하면 다시 사용할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- 관리 (관리자) -->
+  <section id="tab-admin" class="hidden">
+    <div class="panel">
+      <h2>주소</h2>
+      <label>작업자용 주소 (작업 PC 즐겨찾기)</label>
+      <div class="linkbox"><input readonly id="aWorker"><button class="btn small" data-copy="aWorker">복사</button></div>
+      <label style="margin-top:12px">관리자용 주소 (본인만)</label>
+      <div class="linkbox"><input readonly id="aAdmin"><button class="btn small sub" data-copy="aAdmin">복사</button></div>
+      <div class="row">
+        <button class="btn sub" id="btnRotate">작업자용 주소 바꾸기</button>
+        <span class="muted">주소가 외부로 샌 경우에만. 바꾸면 기존 작업 PC는 새 주소로 다시 즐겨찾기해야 합니다.</span>
+      </div>
+      <div id="adminResult" class="result"></div>
+    </div>
+    <div class="panel">
+      <h2>자동 점검</h2>
+      <p id="checkInfo" class="muted"></p>
+      <div class="row"><button class="btn sub" id="btnCheckNow">지금 점검</button></div>
+      <pre id="checkOut" class="muted" style="white-space:pre-wrap"></pre>
+    </div>
+    <div class="panel">
+      <h2>저장 파일</h2>
+      <ul id="fileList"></ul>
     </div>
   </section>
 </main>
@@ -220,27 +265,10 @@
 <script>
 (function () {
   "use strict";
-
-  // ---------- 서버 호출 (google.script.run → Promise, 로그인 토큰 자동 첨부) ----------
-  var token = "", onLoginCallbacks = [];
-  function call(fn) {
-    var args = [token].concat(Array.prototype.slice.call(arguments, 1));
-    return new Promise(function (resolve, reject) {
-      var r = google.script.run.withSuccessHandler(resolve).withFailureHandler(function (e) {
-        var msg = (e && e.message) || String(e);
-        if (/AUTH:/.test(msg)) { var err = new Error(msg.replace(/^.*AUTH:/, "")); err.auth = true; requireLogin(err.message); reject(err); return; }
-        reject(e instanceof Error ? e : new Error(msg));
-      });
-      r[fn].apply(r, args);
-    });
-  }
-  function newBatchId() { return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12); }
-
-  // 버튼을 잠가서 두 번 눌러 중복 등록되는 것을 막음
-  function busy(btns, promise) {
-    btns.forEach(function (b) { b.disabled = true; });
-    return promise.finally(function () { btns.forEach(function (b) { b.disabled = false; }); });
-  }
+  var BOOT = window.BOOT || { mode: "error", message: "시작 정보가 없습니다." };
+  var KEY = BOOT.key || "";
+  var CFG = BOOT.cfg || {};
+  var ADMIN = BOOT.mode === "admin" || BOOT.mode === "setup";
 
   // ---------- 유틸 ----------
   function $(id) { return document.getElementById(id); }
@@ -249,11 +277,81 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function show(el, cls, html) { el.className = "result " + cls; el.innerHTML = html; }
-  function showErr(el) { return function (e) { show(el, e && e.auth ? "warn" : "dup", (e && e.auth ? "로그인이 필요합니다: " : "오류: ") + esc(e && e.message || e)); }; }
-  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ""; localStorage.setItem(k, v); } catch (e) { return ""; } }
+  function show(el, cls, html) { el.className = "result " + cls; el.style.display = ""; el.innerHTML = html; }
+  function showErr(el) { return function (e) { show(el, "dup", "오류: " + esc(e && e.message || e)); }; }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
   function todayISO() { var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
+  function nowText() { var d = new Date(); return [d.getHours(), d.getMinutes(), d.getSeconds()].map(function (n) { return String(n).padStart(2, "0"); }).join(":"); }
 
+  // ---------- 화면 모드 ----------
+  if (BOOT.mode === "denied") { $("view-denied").classList.remove("hidden"); $("conn").textContent = ""; return; }
+  if (BOOT.mode === "error" || !KEY) { $("view-error").classList.remove("hidden"); $("errorMsg").textContent = BOOT.message || "주소가 올바르지 않습니다."; $("conn").textContent = ""; return; }
+  $("view-main").classList.remove("hidden");
+  if (!ADMIN) document.querySelectorAll(".admin-only").forEach(function (el) { el.classList.add("hidden"); });
+  if (BOOT.mode === "setup") {
+    $("setupPanel").classList.remove("hidden");
+    $("setupWorker").value = BOOT.links.worker; $("setupAdmin").value = BOOT.links.admin;
+  }
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.onclick = function () {
+      var inp = $(b.getAttribute("data-copy"));
+      var done = function () { b.textContent = "복사됨 ✓"; setTimeout(function () { b.textContent = "복사"; }, 1500); };
+      var fallback = function () { inp.select(); try { document.execCommand("copy"); done(); } catch (e) {} };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(inp.value).then(done, fallback); else fallback();
+    };
+  });
+
+  // 이 PC 이름 (자동): 기록의 작업자 칸에 들어감
+  var STATION = lsGet("hynixSerial.station");
+  if (!STATION) { STATION = "PC-" + Math.random().toString(16).slice(2, 6).toUpperCase(); lsSet("hynixSerial.station", STATION); }
+  $("station").textContent = "이 PC: " + STATION;
+
+  // ---------- 서버 호출 (주소 키 자동 첨부, 시간 초과 처리) ----------
+  var failStreak = 0;
+  function call(fn) {
+    var args = [KEY].concat(Array.prototype.slice.call(arguments, 1));
+    var timeoutMs = fn === "runCheck" ? 360000 : fn === "bulkProcess" || fn === "generateSerials" ? 90000 : 30000;
+    return new Promise(function (resolve, reject) {
+      var finished = false;
+      var timer = setTimeout(function () {
+        if (finished) return; finished = true;
+        noteFail(); reject(new Error("서버 응답 시간 초과"));
+      }, timeoutMs);
+      var r = google.script.run.withSuccessHandler(function (v) {
+        if (finished) return; finished = true; clearTimeout(timer);
+        noteOk(); resolve(v);
+      }).withFailureHandler(function (e) {
+        if (finished) return; finished = true; clearTimeout(timer);
+        var msg = (e && e.message) || String(e);
+        if (/AUTH:/.test(msg)) {
+          var err = new Error(msg.replace(/^.*AUTH:/, "")); err.auth = true;
+          authLost(err.message); reject(err); return;
+        }
+        if (!/서버 오류|초과|찾을 수 없습니다|열 수 없습니다/.test(msg)) noteFail(); else noteOk();
+        reject(e instanceof Error ? e : new Error(msg));
+      });
+      r[fn].apply(r, args);
+    });
+  }
+  function newBatchId() { return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12); }
+  function busy(btns, promise) {
+    btns.forEach(function (b) { b.disabled = true; });
+    return promise.finally(function () { btns.forEach(function (b) { b.disabled = false; }); });
+  }
+
+  // 연결 상태 표시
+  function setConn(ok, text) { var c = $("conn"); c.className = "dot " + (ok ? "on" : "off"); c.textContent = text; }
+  function noteOk() { failStreak = 0; setConn(true, "연결됨"); $("trouble").classList.remove("show"); }
+  function noteFail() { failStreak++; setConn(false, "연결 불안정"); if (failStreak >= 3) $("trouble").classList.add("show"); }
+  var authBlocked = false;
+  function authLost(msg) {
+    authBlocked = true;
+    setConn(false, "주소 확인 필요");
+    show($("regResult"), "dup", "⛔ " + esc(msg) + "<br><span style='font-size:14px'>찍은 바코드는 이 PC에 보관되어 있습니다.</span>");
+  }
+
+  // ---------- 소리 · 깜빡임 ----------
   var audioCtx = null;
   function beep(ok) {
     try {
@@ -266,20 +364,24 @@
       o.start(); o.stop(audioCtx.currentTime + (ok ? 0.08 : 0.6));
     } catch (e) { /* 소리 미지원 환경 */ }
   }
-
-  function meta() {
-    return { item: $("item").value, lot: $("lot").value.trim(), note: $("note").value.trim() };
+  function flash(ok) {
+    var box = $("scanbox");
+    box.classList.remove("flash-ok", "flash-bad");
+    void box.offsetWidth;
+    box.classList.add(ok ? "flash-ok" : "flash-bad");
+    setTimeout(function () { box.classList.remove("flash-ok", "flash-bad"); }, ok ? 200 : 900);
   }
-  // 바코드 분해 표시: [고정 BX3812] [날짜 2026-06-30] [B 비드] [본호 02051]
+
+  // ---------- 표시 도우미 ----------
   function parts(p) {
     return '<div class="parts"><span>고정 <b>' + esc(p.code) + '</b></span><span>날짜 <b>' + esc(p.dateText) +
       '</b></span><span>' + esc(p.type) + " " + esc(p.typeName) + '</span><span>본호 <b>' + esc(p.serial) + "</b></span></div>";
   }
   function dupMessage(res) {
     var r = res.existing;
-    return "⛔ 중복! " + esc(res.reason) + " — 이미 사용된 번호입니다." + parts(res.parsed) +
-      "<div style='font-size:14px;margin-top:8px'>기존 등록: <b>" + esc(r.barcode) + "</b> · " + esc(r.item) +
-      " · LOT " + esc(r.lot || "-") + " · " + esc(r.worker || "-") + " · " + esc(r.createdAt) + " (" + esc(r.where) + ")</div>";
+    return "⛔ 중복! " + esc(res.reason) + parts(res.parsed) +
+      "<div style='font-size:14px;margin-top:8px'>이미 등록: <b>" + esc(r.barcode) + "</b> · " + esc(r.createdAt) +
+      " · " + esc(r.worker || "-") + (r.lot ? " · LOT " + esc(r.lot) : "") + " (" + esc(r.where) + ")</div>";
   }
   function recordRow(r, full) {
     return '<tr><td class="mono">' + esc(r.barcode) + '</td><td class="mono">' + esc(r.serial) + "</td><td>" + esc(r.date) +
@@ -288,63 +390,85 @@
       (full ? "<td>" + esc(r.where) + "</td>" : "") + "</tr>";
   }
 
-  // ---------- 대시보드 ----------
+  // ---------- 통계 ----------
+  function applyStats(d) {
+    if (!d) return;
+    $("statTotal").textContent = (+d.total || 0).toLocaleString();
+    $("statToday").textContent = (+d.today || 0).toLocaleString();
+    $("statBlocked").textContent = (+d.blocked || 0).toLocaleString();
+    if (d.serverDate) CFG.today = d.serverDate;
+    if (ADMIN) {
+      $("statLast").textContent = d.lastSerial;
+      $("statLastLabel").textContent = "마지막 등록 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
+      $("recentBody").innerHTML = (d.recent || []).map(function (r) { return recordRow(r, false); }).join("") ||
+        '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
+    }
+  }
   var codesLoaded = false;
   function loadDashboard() {
     return call("getDashboard").then(function (d) {
-      $("whoami").textContent = "작업자: " + d.user; $("btnLogout").classList.remove("hidden");
-      $("statTotal").textContent = d.total.toLocaleString();
-      $("statToday").textContent = d.today.toLocaleString();
-      $("statBlocked").textContent = d.blocked.toLocaleString();
-      $("statLast").textContent = d.lastSerial;
-      $("statLastLabel").textContent = "마지막 등록 본호" + (d.lastGroup ? " (" + d.lastGroup + ")" : "");
+      applyStats(d);
       if (d.url) { $("sheetLink").href = d.url; $("sheetLink").classList.remove("hidden"); }
-      $("recentBody").innerHTML = d.recent.map(function (r) { return recordRow(r, false); }).join("") ||
-        '<tr><td colspan="8" class="muted">아직 등록된 바코드가 없습니다.</td></tr>';
-      if (!codesLoaded) {
+      if (ADMIN && !codesLoaded && d.codes) {
         codesLoaded = true;
-        $("gCode").innerHTML = (d.codes.length ? d.codes : ["BX3812"]).map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
+        $("gCode").innerHTML = d.codes.map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
       }
-    }).catch(showErr($("regResult")));
+    }).catch(function () { /* 연결 표시는 call 에서 처리 */ });
   }
-  $("btnRefresh").onclick = loadDashboard;
 
-  // ---------- 등록 탭 : 연속 스캔 ----------
-  // 스캔 → 바로 대기열에 넣고 입력칸 비움 → 쌓인 것을 한 번에 서버로 보내 중복 검사 + 등록.
-  // 서버 처리 중에 들어온 스캔도 버리지 않고 다음 묶음으로 보냅니다.
+  // ---------- 즉시 검사 (서버를 기다리지 않고 바로 알림, 최종 판정은 서버) ----------
+  function cleanCode(v) { return String(v == null ? "" : v).toUpperCase().replace(/[\s\-]/g, ""); }
+  function dupKey(s) { return CFG.scope === "DATE_SERIAL" && s.length === 18 ? s.slice(0, 12) + s.slice(13) : s; }
+  function localCheck(raw) {
+    var s = cleanCode(raw), types = CFG.typeNames || { A: 1, B: 1 };
+    if (s.length !== 18) return "자릿수 오류: " + s.length + "자리 (18자리여야 함)";
+    var m = /^([A-Z0-9]{6})(\d{2})(\d{2})(\d{2})([A-Z])(\d{5})$/.exec(s);
+    if (!m) return "형식 오류";
+    if (CFG.codes && CFG.codes.length && CFG.codes.indexOf(m[1]) < 0) return "고정번호 오류: " + m[1];
+    var y = 2000 + +m[2], mo = +m[3], d = +m[4], dt = new Date(Date.UTC(y, mo - 1, d));
+    if (dt.getUTCFullYear() !== y || dt.getUTCMonth() !== mo - 1 || dt.getUTCDate() !== d) return "날짜 오류: " + m[2] + m[3] + m[4];
+    if (CFG.today) {
+      var t = CFG.today.split("-"), days = Math.round((dt - Date.UTC(+t[0], +t[1] - 1, +t[2])) / 86400000);
+      if (days < -CFG.pastDays || days > CFG.futureDays) return "날짜 확인 필요: 20" + m[2] + "-" + m[3] + "-" + m[4];
+    }
+    if (!types[m[5]]) return "구분 오류: " + m[5];
+    if (+m[6] === 0) return "본호 오류: 00000";
+    return "";
+  }
+
+  // ---------- 연속 스캔 ----------
   var scans = [], queue = [], inflight = false, seq = 0;
   var counts = { ok: 0, dup: 0, bad: 0 };
-  var dashTimer = null;
-
-  function nowText() { var d = new Date(); return [d.getHours(), d.getMinutes(), d.getSeconds()].map(function (n) { return String(n).padStart(2, "0"); }).join(":"); }
-
-  function flash(ok) {
-    var box = $("scanbox");
-    box.classList.remove("flash-ok", "flash-bad");
-    void box.offsetWidth;
-    box.classList.add(ok ? "flash-ok" : "flash-bad");
-    setTimeout(function () { box.classList.remove("flash-ok", "flash-bad"); }, ok ? 250 : 900);
-  }
-
-  var LABEL = { wait: '<span class="tag warn">처리 중…</span>', ok: '<span class="tag ok">등록</span>',
-    dup: '<span class="tag dup">중복</span>', self: '<span class="tag dup">중복(방금 스캔)</span>',
+  var seenKeys = {}; // 이 화면에서 찍은 바코드 (즉시 중복 알림용)
+  var LABEL = { wait: '<span class="tag warn">보내는 중…</span>', ok: '<span class="tag ok">등록</span>',
+    dup: '<span class="tag dup">중복</span>', self: '<span class="tag dup">중복(방금 찍음)</span>',
     invalid: '<span class="tag bad">형식오류</span>', error: '<span class="tag bad">전송 실패</span>' };
 
-  function renderScans() {
+  var renderTimer = null;
+  function renderScans() { if (!renderTimer) renderTimer = requestAnimationFrame(doRender); }
+  function doRender() {
+    renderTimer = null;
     $("cOk").textContent = counts.ok; $("cDup").textContent = counts.dup; $("cBad").textContent = counts.bad;
     $("cWait").textContent = scans.filter(function (x) { return x.status === "wait"; }).length;
     $("btnRetry").hidden = !scans.some(function (x) { return x.status === "error"; });
     $("scanBody").innerHTML = scans.slice(0, 300).map(function (x) {
       return '<tr class="row-' + x.status + '"><td>' + x.id + "</td><td>" + x.time + '</td><td class="mono">' + esc(x.raw) +
         '</td><td class="mono">' + esc(x.serial || "") + "</td><td>" + LABEL[x.status] + "</td><td>" + esc(x.detail || "") + "</td></tr>";
-    }).join("") || '<tr><td colspan="6" class="muted">아직 스캔한 바코드가 없습니다.</td></tr>';
+    }).join("") || '<tr><td colspan="6" class="muted">아직 찍은 바코드가 없습니다.</td></tr>';
   }
 
-  function enqueue(raw, note) {
+  function enqueue(raw, note, silent) {
     raw = String(raw || "").trim();
     if (!raw) return;
     if (raw.length > 64) raw = raw.slice(0, 64);
     var item = { id: ++seq, time: nowText(), raw: raw, status: "wait", detail: note || "" };
+    // 즉시 알림: 형식 오류 · 방금 찍은 바코드
+    if (!silent) {
+      var bad = localCheck(raw), k = dupKey(cleanCode(raw));
+      if (bad) { item.pre = "bad"; item.detail = bad; beep(false); flash(false); show($("regResult"), "dup", "⛔ 형식 오류: <b>" + esc(raw) + "</b><br><span style='font-size:15px'>" + esc(bad) + "</span>"); }
+      else if (seenKeys[k]) { item.pre = "bad"; item.detail = "방금 찍은 바코드"; beep(false); flash(false); show($("regResult"), "dup", "⛔ 중복! 방금 찍은 바코드입니다: <b>" + esc(raw) + "</b>"); }
+      else { item.pre = "ok"; seenKeys[k] = 1; show($("regResult"), "warn", "확인 중… <b>" + esc(raw) + "</b>"); }
+    }
     scans.unshift(item);
     if (scans.length > 1000) scans.length = 1000;
     queue.push(item);
@@ -356,23 +480,26 @@
   var PENDING_KEY = "hynixSerial.pending";
   function savePending() {
     var pending = scans.filter(function (x) { return x.status === "wait" || x.status === "error"; })
-      .map(function (x) { return { raw: x.raw, time: x.time }; }).reverse();
-    try { if (pending.length) localStorage.setItem(PENDING_KEY, JSON.stringify(pending)); else localStorage.removeItem(PENDING_KEY); } catch (e) {}
+      .map(function (x) { return { raw: x.raw }; }).reverse();
+    lsSet(PENDING_KEY, pending.length ? JSON.stringify(pending) : null);
   }
   function restorePending() {
     var list = [];
-    try { list = JSON.parse(localStorage.getItem(PENDING_KEY) || "[]"); } catch (e) {}
+    try { list = JSON.parse(lsGet(PENDING_KEY) || "[]"); } catch (e) {}
     if (!Array.isArray(list) || !list.length) return;
-    list.forEach(function (x) { if (x && x.raw) enqueue(String(x.raw), "이전에 못 보낸 스캔 — 자동 재전송"); });
+    list.forEach(function (x) { if (x && x.raw) enqueue(String(x.raw), "이전에 못 보낸 스캔 — 자동 재전송", true); });
     show($("regResult"), "warn", "이전에 보내지 못한 스캔 " + list.length + "건을 다시 보냅니다.");
   }
 
-  var RETRY_DELAYS = [2000, 5000, 10000, 20000];
+  var RETRY_DELAYS = [1000, 3000, 7000, 15000, 30000];
   function pump() {
     savePending();
-    if (inflight || !queue.length || !token || !navigator.onLine) return;
-    var batch = queue.splice(0, 100);
-    send(batch, newBatchId(), 0);
+    if (inflight || !queue.length || authBlocked || !navigator.onLine) return;
+    send(queue.splice(0, 100), newBatchId(), 0);
+  }
+
+  function meta() {
+    return ADMIN ? { item: $("item").value, lot: $("lot").value.trim(), note: $("note").value.trim(), station: STATION } : { station: STATION };
   }
 
   function send(batch, batchId, attempt) {
@@ -380,49 +507,60 @@
     renderScans();
     call("bulkProcess", batch.map(function (x) { return x.raw; }), meta(), true, batchId).then(function (res) {
       if (!res || !res.rows || res.rows.length !== batch.length) throw new Error("서버 응답이 올바르지 않습니다.");
-      var bad = null, last = null;
+      var newBad = null, lastOk = null;
       res.rows.forEach(function (r, i) {
         var x = batch[i];
         x.serial = r.parsed && r.parsed.serial;
         if (r.status === "new") { x.status = "ok"; x.detail = r.parsed.dateText + " · " + r.parsed.typeName; counts.ok++; }
-        else if (r.status === "dup") { x.status = "dup"; x.detail = "이미 등록됨: " + r.existing.createdAt + " · LOT " + (r.existing.lot || "-") + " · " + r.existing.where; counts.dup++; }
+        else if (r.status === "dup") { x.status = "dup"; x.detail = "이미 등록: " + r.existing.createdAt + " · " + (r.existing.worker || "-") + " · " + r.existing.where; counts.dup++; }
         else if (r.status === "self") { x.status = "self"; x.detail = "같은 바코드를 연달아 찍음 (한 번만 등록됨)"; counts.dup++; }
         else { x.status = "invalid"; x.detail = r.reason; counts.bad++; }
-        if (x.status !== "ok") bad = { x: x, r: r };
-        last = { x: x, r: r };
+        var isBad = x.status !== "ok";
+        if (isBad && x.pre !== "bad") newBad = { x: x, r: r };      // 즉시 알림 못 한 문제 → 지금 알림
+        if (!isBad) lastOk = { x: x, r: r };
+        if (x.status === "invalid") delete seenKeys[dupKey(cleanCode(x.raw))];
+        else seenKeys[dupKey(cleanCode(x.raw))] = 1; // 등록됐거나 이미 있는 번호 → 다시 찍으면 즉시 경고
       });
+      applyStats(res.stats);
       var out = $("regResult");
-      if (bad) {
+      if (newBad) {
         beep(false); flash(false);
-        if (bad.r.status === "dup") show(out, "dup", dupMessage(bad.r));
-        else show(out, "dup", "⛔ " + (bad.x.status === "invalid" ? "형식 오류" : "중복") + ": <b>" + esc(bad.x.raw) + "</b><br><span style='font-size:14px'>" + esc(bad.x.detail) + "</span>");
-      } else if (last) {
+        if (newBad.r.status === "dup") show(out, "dup", dupMessage(newBad.r));
+        else show(out, "dup", "⛔ " + (newBad.x.status === "invalid" ? "형식 오류" : "중복") + ": <b>" + esc(newBad.x.raw) + "</b><br><span style='font-size:15px'>" + esc(newBad.x.detail) + "</span>");
+      } else if (lastOk) {
         beep(true); flash(true);
-        show(out, "ok", "✅ 등록 완료: <b>" + esc(last.x.raw) + "</b>" + (batch.length > 1 ? " 외 " + (batch.length - 1) + "건" : "") + parts(last.r.parsed));
+        show(out, "ok", "✅ 등록 완료: <b>" + esc(lastOk.x.raw) + "</b>" + (batch.length > 1 ? " 외 " + (batch.length - 1) + "건" : "") + parts(lastOk.r.parsed));
       }
       done();
     }).catch(function (e) {
       if (e && e.auth) {
-        // 로그인 만료: 버리지 않고 대기열 맨 앞으로 되돌린 뒤 로그인 후 같은 묶음 번호로 다시 보냄
-        batch.forEach(function (x) { x.detail = "로그인 후 처리"; });
+        batch.forEach(function (x) { x.detail = "주소 확인 후 처리"; });
         queue.unshift.apply(queue, batch);
         inflight = false; renderScans(); savePending();
         return;
       }
+      var msg = (e && e.message) || String(e);
+      if (/찾을 수 없습니다|열 수 없습니다/.test(msg)) {
+        // DB 시트 문제 = 중복 검사를 할 수 없는 상태 → 즉시 크게 알림 (복구되면 자동으로 이어서 보냄)
+        if (attempt === 0) { beep(false); flash(false); }
+        show($("regResult"), "dup", "⛔ 등록 중지: " + esc(msg) + "<br><span style='font-size:14px'>찍은 바코드는 보관 중이며, 관리자가 복구하면 자동으로 보냅니다. 관리자에게 바로 알려주세요.</span>");
+      } else if (attempt === 0) {
+        show($("regResult"), "warn", "⚠ 전송 지연 — 자동으로 다시 보내는 중입니다. 스캔은 계속 하셔도 됩니다.");
+      }
       if (attempt < RETRY_DELAYS.length) {
         // 같은 묶음 번호로 재전송 → 서버가 이미 처리했으면 그 결과를 그대로 돌려줌 (두 번 등록/가짜 중복 없음)
-        batch.forEach(function (x) { x.detail = "재전송 " + (attempt + 1) + "회차 대기…"; });
-        show($("regResult"), "warn", "⚠ 전송 실패 — " + Math.round(RETRY_DELAYS[attempt] / 1000) + "초 뒤 자동으로 다시 보냅니다. (" + esc((e && e.message) || e) + ")");
+        batch.forEach(function (x) { x.detail = "재전송 대기 (" + (attempt + 1) + "회차)"; });
         renderScans();
         setTimeout(function () {
-          if (!navigator.onLine) { waitOnline(function () { send(batch, batchId, attempt + 1); }); return; }
+          if (!navigator.onLine) { onlineWaiters.push(function () { send(batch, batchId, attempt + 1); }); return; }
           send(batch, batchId, attempt + 1);
         }, RETRY_DELAYS[attempt]);
         return;
       }
-      batch.forEach(function (x) { x.status = "error"; x.detail = (e && e.message) || String(e); });
+      batch.forEach(function (x) { x.status = "error"; x.detail = msg; delete seenKeys[dupKey(cleanCode(x.raw))]; });
       beep(false); flash(false);
-      show($("regResult"), "dup", "⚠ 서버 전송 실패 " + batch.length + "건 — [실패 항목 다시 보내기]를 누르세요. 계속되면 관리자에게 알려주세요.<br><span style='font-size:14px'>" + esc((e && e.message) || e) + "</span>");
+      show($("regResult"), "dup", "⚠ 서버 전송 실패 " + batch.length + "건 — 1분 뒤 자동으로 다시 보냅니다. 찍은 바코드는 보관 중입니다.<br><span style='font-size:14px'>" + esc(msg) + "</span>");
+      setTimeout(retryFailed, 60000); // 1분 뒤 자동 재시도
       done();
     });
   }
@@ -432,22 +570,23 @@
     renderScans();
     savePending();
     if (queue.length) pump();
-    else { clearTimeout(dashTimer); dashTimer = setTimeout(loadDashboard, 1500); }
+  }
+  function retryFailed() {
+    var failed = scans.filter(function (x) { return x.status === "error"; }).reverse();
+    failed.forEach(function (x) { x.status = "wait"; x.detail = "다시 보내는 중 (이미 등록됐다면 '중복'으로 보일 수 있음)"; queue.push(x); });
+    if (failed.length) { renderScans(); pump(); }
   }
 
   var onlineWaiters = [];
-  function waitOnline(fn) { onlineWaiters.push(fn); }
   function updateOnline() {
     $("offline").classList.toggle("show", !navigator.onLine);
+    if (!navigator.onLine) setConn(false, "인터넷 끊김");
     if (navigator.onLine) { var w = onlineWaiters; onlineWaiters = []; w.forEach(function (f) { f(); }); pump(); }
   }
   window.addEventListener("online", updateOnline);
   window.addEventListener("offline", updateOnline);
 
-  $("btnRetry").onclick = function () {
-    scans.filter(function (x) { return x.status === "error"; }).reverse().forEach(function (x) { x.status = "wait"; x.detail = "다시 보내는 중 (이미 등록됐다면 '중복'으로 보일 수 있음)"; queue.push(x); });
-    renderScans(); pump(); $("serial").focus();
-  };
+  $("btnRetry").onclick = function () { retryFailed(); $("serial").focus(); };
   $("btnClearScans").onclick = function () {
     scans = scans.filter(function (x) { return x.status === "wait"; });
     counts = { ok: 0, dup: 0, bad: 0 };
@@ -462,12 +601,11 @@
       enqueue(v);
     }
   });
-  $("btnRegister").onclick = function () { var v = $("serial").value; $("serial").value = ""; enqueue(v); $("serial").focus(); };
 
-  // 중복만 확인 (등록하지 않음)
+  // 중복만 확인 (관리자)
   $("btnCheck").onclick = function () {
     var input = $("serial"), out = $("regResult"), raw = input.value.trim();
-    if (!raw) { show(out, "warn", "확인할 바코드를 입력하세요."); input.focus(); return; }
+    if (!raw) { show(out, "warn", "입력칸에 바코드를 입력한 뒤 누르세요."); input.focus(); return; }
     show(out, "warn", "확인 중… " + esc(raw));
     busy([$("btnCheck")], call("checkSerial", raw)).then(function (res) {
       if (res.status === "invalid") { beep(false); show(out, "dup", "⚠ 형식 오류: <b>" + esc(res.input) + "</b><br><span style='font-size:14px'>" + esc(res.reason) + "</span>"); }
@@ -478,29 +616,37 @@
 
   // 스캔 입력칸 항상 선택: 빈 곳을 클릭하거나 창으로 돌아오면 커서를 입력칸으로
   function refocus() {
-    if (!$("autoFocus").checked || $("tab-register").classList.contains("hidden")) return;
+    if ($("tab-register").classList.contains("hidden")) return;
     var a = document.activeElement;
-    if (a && a !== document.body && /^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(a.tagName) && a.id !== "serial") return;
+    if (a && a !== document.body && /^(INPUT|SELECT|TEXTAREA|BUTTON|A)$/.test(a.tagName) && a.id !== "serial") return;
     $("serial").focus();
   }
   document.addEventListener("click", function () { setTimeout(refocus, 0); });
   window.addEventListener("focus", refocus);
-  // 작업 중 창을 닫으려 하면 경고
+  setInterval(refocus, 3000);
   window.addEventListener("beforeunload", function (e) { savePending(); if (queue.length || inflight) { e.preventDefault(); e.returnValue = ""; } });
 
-  // LOT 는 이 PC에 기억
-  ["lot"].forEach(function (id) {
-    $(id).value = store("hynixSerial." + id);
-    $(id).addEventListener("change", function () { store("hynixSerial." + id, $(id).value.trim()); });
-  });
+  // 화면 꺼짐 방지 (지원되는 브라우저에서만)
+  var wakeLock = null;
+  function keepAwake() {
+    try { if (navigator.wakeLock && !wakeLock) navigator.wakeLock.request("screen").then(function (w) { wakeLock = w; w.addEventListener("release", function () { wakeLock = null; }); }).catch(function () {}); } catch (e) {}
+  }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") { keepAwake(); loadDashboard(); pump(); } });
 
-  // ---------- 연속 발번 ----------
+  // 1분마다 연결 확인 + 통계 갱신 (스캔 중이 아닐 때만)
+  setInterval(function () { if (!inflight && navigator.onLine) loadDashboard(); }, 60000);
+
+  // LOT 는 이 PC에 기억 (관리자)
+  $("lot").value = lsGet("hynixSerial.lot") || "";
+  $("lot").addEventListener("change", function () { lsSet("hynixSerial.lot", $("lot").value.trim()); });
+
+  // ---------- 연속 발번 (관리자) ----------
   $("gDate").value = todayISO();
   var genBtns = [$("btnNext"), $("btnPreview"), $("btnGenerate")];
   function genParams() {
     return { code: $("gCode").value, date: $("gDate").value, type: $("gType").value, start: $("gStart").value.trim(), count: $("gCount").value };
   }
-  function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), note: "연속발번" }; }
+  function genMeta() { return { item: $("gItem").value, lot: $("gLot").value.trim(), note: "연속발번", station: STATION }; }
   function renderPlan(plan) {
     var range = plan.list.length ? " (" + plan.list[0] + " ~ " + plan.list[plan.list.length - 1] + ")" : "";
     var msg = (plan.committed ? "✅ " + plan.list.length + "개 발번·등록 완료" : "미리보기 " + plan.list.length + "개") + range +
@@ -521,8 +667,7 @@
   };
   $("btnGenerate").onclick = function () {
     var p = genParams();
-    if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?\n(" +
-      (p.start ? "본호 " + p.start + "번부터" : "그 날짜·구분의 마지막 본호 다음부터") + ", 이미 사용된 본호는 건너뜁니다)")) return;
+    if (!confirm(p.code + " / " + p.date + " / " + p.type + " 로 " + p.count + "개를 발번·등록할까요?")) return;
     busy(genBtns, call("generateSerials", p, genMeta(), true, newBatchId())).then(function (plan) {
       if (!plan.list.length) { show($("genResult"), "dup", "발번할 수 있는 본호가 없습니다."); return; }
       $("gStart").value = "";
@@ -531,7 +676,7 @@
     }).catch(showErr($("genResult")));
   };
 
-  // ---------- 일괄 검사 ----------
+  // ---------- 일괄 검사 (관리자) ----------
   var bulkBtns = [$("btnBulkCheck"), $("btnBulkRegister")];
   function bulkLines() {
     return $("bulkIn").value.split(/\r?\n/).map(function (s) { return s.split(/[\t,]/)[0].trim(); }).filter(Boolean);
@@ -551,6 +696,7 @@
     show($("bulkResult"), n.dup || n.self || n.invalid ? "dup" : "ok",
       "총 " + res.rows.length + "건 · 신규 " + n.new + (res.committed ? "(등록 완료)" : "") + " · 기존 중복 " + n.dup +
       " · 목록 내 중복 " + n.self + " · 형식 오류 " + n.invalid);
+    applyStats(res.stats);
   }
   $("btnBulkCheck").onclick = function () {
     var lines = bulkLines();
@@ -561,80 +707,61 @@
     var lines = bulkLines();
     if (!lines.length) return;
     if (!confirm(lines.length + "건 중 신규 본호만 등록할까요? (중복·형식오류는 자동 제외)")) return;
-    busy(bulkBtns, call("bulkProcess", lines, meta(), true, newBatchId())).then(function (res) { renderBulk(res); loadDashboard(); })
-      .catch(showErr($("bulkResult")));
+    busy(bulkBtns, call("bulkProcess", lines, meta(), true, newBatchId())).then(renderBulk).catch(showErr($("bulkResult")));
   };
 
-  // ---------- 이력 ----------
+  // ---------- 이력 (관리자) ----------
   function search() {
     $("histCount").textContent = "조회 중…";
     busy([$("btnSearch")], call("searchRecords", $("q").value, $("qItem").value)).then(function (res) {
-      $("histCount").textContent = res.total + "건" + (res.more ? " (최근 " + res.total + "건까지만 표시 — 바코드를 더 길게 입력하면 빨리 찾습니다)" : "");
+      $("histCount").textContent = res.total + "건" + (res.more ? " (최근 " + res.total + "건까지만 표시 — 바코드를 더 길게 입력하면 빨리 찾습니다)" : "") +
+        (res.missing && res.missing.length ? " · ⚠ 사라진 시트: " + res.missing.join(", ") : "");
       $("histBody").innerHTML = res.rows.map(function (r) { return recordRow(r, true); }).join("");
     }).catch(function (e) { $("histCount").textContent = "오류: " + (e && e.message || e); });
   }
   $("btnSearch").onclick = search;
   $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") search(); });
 
-  // ---------- 탭 ----------
+  // ---------- 관리 (관리자) ----------
+  function loadAdmin() {
+    call("getAdminInfo").then(function (a) {
+      $("aWorker").value = a.links.worker; $("aAdmin").value = a.links.admin;
+      $("fileList").innerHTML = a.files.map(function (f) { return '<li><a href="' + esc(f.url) + '" target="_blank" rel="noopener">' + esc(f.name) + "</a></li>"; }).join("");
+      var c = a.lastCheck;
+      $("checkInfo").textContent = "매일 " + a.checkHour + "시에 자동 점검합니다. " +
+        (c ? "마지막 점검: " + c.at + " — " + (c.ok ? "정상 ✅" : "확인 필요 ⚠ (중복 " + c.dups + ", 형식오류 " + c.bad + (c.missing && c.missing.length ? ", 사라진 시트 " + c.missing.join(", ") : "") + ")") : "아직 점검 기록이 없습니다.");
+    }).catch(showErr($("adminResult")));
+  }
+  $("btnRotate").onclick = function () {
+    if (!confirm("작업자용 주소를 새로 만들까요?\n기존 주소로 열린 작업 PC는 바로 막히고, 새 주소로 다시 즐겨찾기해야 합니다.")) return;
+    busy([$("btnRotate")], call("rotateWorkerKey")).then(function (l) {
+      $("aWorker").value = l.worker;
+      show($("adminResult"), "ok", "새 작업자용 주소가 만들어졌습니다. 복사해서 작업 PC에 다시 즐겨찾기하세요.");
+    }).catch(showErr($("adminResult")));
+  };
+  $("btnCheckNow").onclick = function () {
+    $("checkOut").textContent = "점검 중… (데이터가 많으면 몇 분 걸릴 수 있습니다)";
+    busy([$("btnCheckNow")], call("runCheck")).then(function (r) { $("checkOut").textContent = r.summary; loadAdmin(); loadDashboard(); })
+      .catch(function (e) { $("checkOut").textContent = "오류: " + (e && e.message || e); });
+  };
+
+  // ---------- 탭 (관리자) ----------
   document.querySelectorAll(".tabs button").forEach(function (b) {
     b.onclick = function () {
       document.querySelectorAll(".tabs button").forEach(function (x) { x.classList.toggle("active", x === b); });
-      ["register", "generate", "bulk", "history"].forEach(function (t) { $("tab-" + t).classList.toggle("hidden", t !== b.dataset.tab); });
+      ["register", "generate", "bulk", "history", "admin"].forEach(function (t) { $("tab-" + t).classList.toggle("hidden", t !== b.dataset.tab); });
       if (b.dataset.tab === "register") $("serial").focus();
       if (b.dataset.tab === "history" && !$("histBody").innerHTML) search();
+      if (b.dataset.tab === "admin") loadAdmin();
     };
   });
 
-  // ---------- 로그인 ----------
-  var TOKEN_KEY = "hynixSerial.token";
-  function requireLogin(msg) {
-    token = "";
-    try { sessionStorage.removeItem(TOKEN_KEY); } catch (e) {}
-    $("login").classList.add("show");
-    $("loginMsg").textContent = msg || "";
-    $("whoami").textContent = ""; $("btnLogout").classList.add("hidden");
-    setTimeout(function () { $("pin").focus(); }, 0);
-  }
-  function afterLogin(t, name) {
-    token = t;
-    try { sessionStorage.setItem(TOKEN_KEY, t); } catch (e) {}
-    $("login").classList.remove("show");
-    $("pin").value = ""; $("loginMsg").textContent = "";
-    $("whoami").textContent = "작업자: " + name; $("btnLogout").classList.remove("hidden");
-    loadDashboard();
-    pump();
-    $("serial").focus();
-  }
-  function doLogin() {
-    var v = $("pin").value.trim();
-    $("pin").value = "";
-    if (!v) return;
-    // 로그인 창에 바코드를 찍은 경우: PIN 으로 보내지 않고 스캔 대기열에 보관
-    if (v.length > 12) {
-      enqueue(v, "로그인 후 처리");
-      $("loginMsg").textContent = "바코드는 보관했습니다 (" + queue.length + "건). 먼저 PIN 으로 로그인하세요.";
-      return;
-    }
-    $("loginMsg").textContent = "확인 중…";
-    busy([$("btnLogin")], new Promise(function (resolve, reject) {
-      google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).login(v);
-    })).then(function (r) { afterLogin(r.token, r.name); })
-      .catch(function (e) { $("loginMsg").textContent = (e && e.message) || String(e); $("pin").focus(); });
-  }
-  $("btnLogin").onclick = doLogin;
-  $("pin").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); doLogin(); } });
-  $("btnLogout").onclick = function () {
-    if (queue.length || inflight) { show($("regResult"), "warn", "아직 보내는 중인 스캔이 있습니다. 끝난 뒤 로그아웃하세요."); return; }
-    google.script.run.logout(token);
-    requireLogin("로그아웃되었습니다.");
-  };
-
+  // ---------- 시작 ----------
   updateOnline();
+  keepAwake();
   restorePending();
-  try { token = sessionStorage.getItem(TOKEN_KEY) || ""; } catch (e) { token = ""; }
-  if (token) { loadDashboard(); pump(); $("serial").focus(); }
-  else requireLogin("");
+  loadDashboard();
+  $("serial").focus();
 })();
 </script>
 </body>

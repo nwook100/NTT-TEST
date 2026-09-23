@@ -8,23 +8,24 @@
  * 중복 판정은 "같은 고정번호 + 같은 날짜 + 같은 구분(A/B) 안의 본호" 기준입니다.
  *   예) 0630 B02051 등록 후 → 0630 B02051 중복 / 0630 A02051 정상 / 0701 B02051 정상
  *
- * ===== 100만 건 이상 대비 구조 =====
- *  - 바코드 날짜의 "월" 별로 시트를 나눕니다: DB_2606, DB_2607 ...
- *    중복은 같은 날짜 안에서만 생기므로 스캔 때는 그 달 시트의 바코드 열 하나만 읽습니다.
- *  - 구글 시트 한 파일은 1,000만 칸이 한도입니다. 800만 칸에 가까워지면 새 파일을 자동으로 만들어 이어서 기록합니다.
- *  - 총 건수·오늘 등록·최근 10건 같은 통계는 스크립트 속성에 따로 적어 두어 시트를 읽지 않습니다.
+ * ===== 자동화 =====
+ *  - 설치: 코드 붙여넣기 → 웹앱 배포 → 웹앱을 처음 열면 모든 설정이 자동으로 끝나고
+ *    "작업자용 주소" 와 "관리자용 주소" 가 만들어집니다. (시트 메뉴 조작 필요 없음)
+ *  - 작업자: 작업자용 주소를 즐겨찾기로 열고 바코드만 찍습니다. 로그인·입력 없음.
+ *    기록의 작업자 칸에는 PC 이름(예: PC-7F3A)이 자동으로 들어갑니다.
+ *  - 매일 새벽 3시 자동 점검(중복·형식오류·사라진 시트·통계 재계산), 문제가 있으면 소유자에게 메일.
+ *
+ * ===== 100만 건 이상 대비 =====
+ *  - 바코드 날짜의 월별 시트(DB_2606 ...)에 저장. 스캔 때는 그 달 시트의 바코드 열 하나만 읽음.
+ *  - 파일이 800만 칸에 가까워지면 새 파일을 자동으로 만들어 이어서 기록 (구글 한도 1,000만 칸).
+ *  - 통계는 스크립트 속성에 저장 → 화면 통계에 시트를 읽지 않음.
  *
  * ===== 안정성 · 보안 =====
- *  - 작업자 PIN 로그인: PIN 은 시트 메뉴 [시리얼 관리 > 작업자 추가] 에서만 등록 (시트 편집자만 가능).
- *    PIN 은 해시로만 저장, 로그인 10회 연속 실패 시 10분 잠금, 로그인은 6시간 동안 사용이 없으면 만료.
- *    등록 기록의 작업자 이름은 로그인한 PIN 의 이름으로 자동 기록 (임의 입력 불가).
- *  - 관리 기능(중복 검사, 통계 재계산, 작업자 관리)은 시트 메뉴에서만 실행 가능, 웹에서 호출 차단.
- *  - DB·로그 시트는 보호되어 소유자만 직접 수정 가능 (프로그램은 소유자 권한으로 기록).
- *  - 등록되어 있던 DB 시트가 없어지면(삭제/이름변경) 중복을 놓치지 않도록 등록을 중지하고 오류를 알림.
- *  - 입력값 길이 제한, 수식 주입(=, +, -, @ 로 시작하는 글) 차단.
- *  - 같은 묶음을 다시 보내도(네트워크 재시도) 두 번 처리하지 않음 (묶음 번호로 결과 재사용).
- *  - 스크립트 속성은 요청당 1번 읽고 1번 씀 (구글 일일 사용량 한도 대비).
- *  - 모든 등록은 LockService 로 잠근 뒤 처리 → 여러 PC에서 동시에 같은 번호를 등록해도 한 건만 들어감.
+ *  - 모든 요청은 주소에 들어 있는 비밀 키로 확인 (작업자 키 / 관리자 키). 작업자 키는 관리자 화면에서 바로 교체 가능.
+ *  - 작업자 키로는 스캔 등록·통계 보기만 가능. 발번·이력·관리 기능은 관리자 키 전용.
+ *  - 등록되어 있던 DB 시트가 없어지면 중복을 놓치지 않도록 등록을 멈추고 알림 (fail-closed).
+ *  - 같은 묶음을 다시 보내도(네트워크 재시도) 두 번 처리하지 않음. 수식 주입·긴 입력 차단. DB 시트 보호.
+ *  - 모든 등록은 LockService 잠금 안에서 처리 → 여러 PC에서 동시에 같은 번호를 찍어도 한 건만 들어감.
  */
 
 // ===== 설정 =====
@@ -37,14 +38,19 @@ var DUP_SCOPE = 'DATE_TYPE_SERIAL';
 // 바코드 날짜 허용 범위 (오늘 기준). 잘못 읽힌 바코드를 걸러냅니다.
 var DATE_PAST_DAYS = 730;   // 2년 전까지
 var DATE_FUTURE_DAYS = 31;  // 한 달 뒤까지
+// 매일 자동 점검 시각 (0~23시). 문제가 있으면 스크립트 소유자에게 메일을 보냅니다.
+var CHECK_HOUR = 3;
+var CHECK_MAIL = true;
 
 var TYPE_NAMES = { A: '노멀', B: '비드' };
 var SERIAL_MAX = 99999;
 var PART_PREFIX = 'DB_';
 var LOG_PREFIX = '로그_';
+var CHECK_SHEET = '자동점검';
 var HEADERS = ['바코드', '날짜', '구분', '본호', '품목', 'LOT/PO', '작업자', '비고', '등록일시'];
 var COL_CREATED = 8; // HEADERS 안에서 '등록일시' 위치 (0부터)
 var LOG_HEADERS = ['입력값', '사유', '시도일시', '작업자', '기존 바코드', '기존 위치'];
+var CHECK_HEADERS = ['점검일시', '총 건수', '오늘 등록', '중복', '형식 오류', '사라진 시트', '결과'];
 var ITEMS = ['Magazine', 'Cassette', 'Ring', 'Pin Boat', '기타'];
 var TZ = 'Asia/Seoul';
 var LOCK_WAIT_MS = 30000;
@@ -54,69 +60,131 @@ var CELL_LIMIT = 8000000;    // 파일 한 개에 쓸 최대 칸 수 (구글 한
 var GROW_ROWS = 2000;        // 시트가 꽉 차면 한 번에 늘리는 줄 수
 var SEARCH_LIMIT = 200;      // 이력 조회 최대 표시 건수
 var SEARCH_TIME_MS = 20000;  // 이력 조회 최대 소요 시간
-var MAINT_TIME_MS = 5 * 60 * 1000; // 메뉴 작업 최대 소요 시간
-var SESSION_SEC = 6 * 3600;  // 로그인 유지 (마지막 사용 후)
-var LOGIN_FAIL_MAX = 10;     // 연속 실패 허용 횟수
-var LOGIN_LOCK_SEC = 600;    // 초과 시 잠금 시간
-var PIN_MIN = 6, PIN_MAX = 12;
+var MAINT_TIME_MS = 5 * 60 * 1000; // 점검 최대 소요 시간
 
 // ===== 웹앱 진입점 =====
-function doGet() {
-  ensureSetup_();
-  pflush_();
-  // 설치용 한 파일 버전은 화면(HTML)이 INDEX_HTML 상수로 들어 있습니다.
-  var out = typeof INDEX_HTML !== 'undefined'
-    ? HtmlService.createHtmlOutput(INDEX_HTML)
-    : HtmlService.createHtmlOutputFromFile('Index');
-  return out
+/**
+ * 주소의 k 값으로 화면 모드를 정합니다.
+ *  - 아직 설정 전: 처음 연 사람(= 방금 배포한 관리자)에게 설정 완료 화면 + 작업자/관리자 주소
+ *  - k = 관리자 키: 관리자 화면 (스캔 + 발번 + 일괄 + 이력 + 관리)
+ *  - k = 작업자 키: 작업자 화면 (스캔만)
+ *  - 그 외: 접근 안내
+ */
+function doGet(e) {
+  var k = String((e && e.parameter && e.parameter.k) || '').slice(0, 100);
+  var boot;
+  try {
+    ensureSetup_();
+    if (!pget_('adminKey')) boot = claim_();
+    else if (k && k === pget_('adminKey')) boot = { mode: 'admin', key: k };
+    else if (k && k === pget_('workerKey')) boot = { mode: 'worker', key: k };
+    else boot = { mode: 'denied' };
+    pflush_();
+  } catch (err) {
+    console.error((err && err.stack) || err);
+    boot = { mode: 'error', message: String((err && err.message) || err) };
+  }
+  if (boot.key) boot.cfg = clientCfg_();
+  var html = typeof INDEX_HTML !== 'undefined' ? INDEX_HTML : HtmlService.createHtmlOutputFromFile('Index').getContent();
+  var bootJs = 'window.BOOT = ' + JSON.stringify(boot).replace(/</g, '\\u003c') + ';';
+  html = html.replace('/*BOOT*/', function () { return bootJs; }); // 함수로 넘겨 $ 기호가 특수문자로 해석되지 않게
+  return HtmlService.createHtmlOutput(html)
     .setTitle('시리얼 중복 관리')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
 }
 
-// 시트를 열면 상단에 메뉴 추가
+/** 처음 설정: 키 만들기 + 매일 점검 예약. 여러 명이 동시에 열어도 한 번만 실행. */
+function claim_() {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(LOCK_WAIT_MS);
+  try {
+    preload_();
+    if (!pget_('adminKey')) {
+      pset_('adminKey', newKey_());
+      pset_('workerKey', newKey_());
+      installTrigger_();
+    }
+    pflush_();
+    return { mode: 'setup', key: pget_('adminKey'), links: links_() };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function newKey_() { return (Utilities.getUuid() + Utilities.getUuid()).replace(/-/g, ''); }
+
+function appUrl_() {
+  try { return ScriptApp.getService().getUrl() || ''; } catch (e) { return ''; }
+}
+function links_() {
+  var base = appUrl_();
+  return { worker: base + '?k=' + pget_('workerKey'), admin: base + '?k=' + pget_('adminKey') };
+}
+
+/** 화면에서 즉시 형식 검사를 하기 위한 설정값 (서버 판정이 최종) */
+function clientCfg_() {
+  return {
+    codes: ALLOWED_CODES, typeNames: TYPE_NAMES, scope: DUP_SCOPE,
+    pastDays: DATE_PAST_DAYS, futureDays: DATE_FUTURE_DAYS, maxLen: MAX_INPUT_LEN, today: today_()
+  };
+}
+
+/** 매일 자동 점검 예약 (중복 설치 방지) */
+function installTrigger_() {
+  try {
+    ScriptApp.getProjectTriggers().forEach(function (t) {
+      if (t.getHandlerFunction() === 'nightlyCheck') ScriptApp.deleteTrigger(t);
+    });
+    var t = ScriptApp.newTrigger('nightlyCheck').timeBased().everyDays(1).atHour(CHECK_HOUR).inTimezone(TZ).create();
+    pset_('checkTrigger', t.getUniqueId());
+  } catch (e) {
+    console.error('자동 점검 예약 실패: ' + e); // 예약 실패가 설치를 막지는 않음
+  }
+}
+
+// 시트를 열면 상단에 메뉴 추가 (선택 사항 - 몰라도 운영에 지장 없음)
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('시리얼 관리')
-    .addItem('작업자 추가 / PIN 변경', 'addWorker')
-    .addItem('작업자 삭제', 'removeWorker')
-    .addItem('작업자 목록', 'listWorkers')
-    .addSeparator()
-    .addItem('시트 내 중복 검사', 'auditDuplicates')
-    .addItem('통계 다시 계산 (시트를 직접 고친 뒤)', 'recountStats')
-    .addItem('저장 파일 목록', 'showFiles')
+    .addItem('작업자용 / 관리자용 주소 보기', 'showLinks')
+    .addItem('지금 점검하기', 'checkNow')
     .addToUi();
-}
-
-function setup() {
-  requireUi_();
-  ensureSetup_();
-  pflush_();
-  ui_('설정 완료! 메뉴 [시리얼 관리 > 작업자 추가] 로 PIN 을 등록한 뒤 [배포 > 새 배포 > 웹 앱] 으로 배포하세요.');
 }
 
 // ===== 오류 처리 =====
 /** 사용자에게 그대로 보여줄 오류 */
 function userError_(msg) { var e = new Error(msg); e.userFacing = true; return e; }
 
-/** 웹에서 호출되는 모든 함수의 공통 틀: 로그인 확인 → 실행 → 속성 저장 → 오류를 알기 쉬운 문장으로 */
-function api_(token, fn) {
+/** 웹에서 호출되는 모든 함수의 공통 틀: 키 확인 → 실행 → 속성 저장 → 오류를 알기 쉬운 문장으로 */
+function api_(key, fn, adminOnly) {
   try {
-    var user = auth_(token);
+    var user = auth_(key);
+    if (adminOnly && user.role !== 'admin') throw new Error('AUTH:관리자 주소에서만 쓸 수 있는 기능입니다.');
     var result = fn(user);
     pflush_();
     return result;
   } catch (e) {
     if (e && (e.userFacing || /^AUTH:/.test(e.message))) throw e; // 예상된 거절은 기록하지 않음
     console.error((e && e.stack) || e);
-    throw new Error('서버 오류: ' + ((e && e.message) || e) + ' — 잠시 후 다시 시도하고, 계속되면 관리자에게 알려주세요.');
+    throw new Error('서버 오류: ' + ((e && e.message) || e) + ' — 자동으로 다시 시도합니다.');
   }
 }
 
-/** 시트 메뉴에서만 실행 가능한 관리 기능 (웹에서 호출하면 차단) */
+/** 주소의 키 확인 */
+function auth_(key) {
+  ensureSetup_();
+  if (!key || typeof key !== 'string' || key.length > 100) throw new Error('AUTH:주소가 올바르지 않습니다.');
+  if (key === pget_('adminKey')) return { role: 'admin' };
+  if (key === pget_('workerKey')) return { role: 'worker' };
+  throw new Error('AUTH:작업자용 주소가 바뀌었거나 올바르지 않습니다. 관리자에게 새 주소를 받으세요.');
+}
+
+/** 시트 메뉴에서만 실행 가능 (웹에서 호출하면 차단) */
 function requireUi_() {
-  try { SpreadsheetApp.getUi(); } catch (e) { throw userError_('관리 기능은 구글 시트 메뉴에서만 실행할 수 있습니다.'); }
+  try { SpreadsheetApp.getUi(); } catch (e) { throw userError_('이 기능은 구글 시트 메뉴에서만 실행할 수 있습니다.'); }
 }
 function ui_(msg) { try { SpreadsheetApp.getUi().alert(msg); } catch (e) { Logger.log(msg); } }
+function cache_() { return CacheService.getScriptCache(); }
 
 // ===== 스크립트 속성 (요청당 1번 읽고 1번 씀) =====
 var P_ = null, PDIRTY_ = {}, PDEL_ = {};
@@ -148,102 +216,6 @@ function ensureSetup_() {
     pset_('fileCount', 1);
     setJson_('files', [{ id: ss.getId(), url: ss.getUrl(), name: ss.getName() }]);
   }
-  if (!pget_('salt')) pset_('salt', Utilities.getUuid());
-}
-
-// ===== 로그인 (작업자 PIN) =====
-function hash_(s) {
-  var bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, pget_('salt') + '|' + s, Utilities.Charset.UTF_8);
-  return bytes.map(function (b) { return ('0' + (b & 255).toString(16)).slice(-2); }).join('');
-}
-function workers_() { return getJson_('workers', {}); }
-function cache_() { return CacheService.getScriptCache(); }
-
-/** 로그인 확인. 실패하면 'AUTH:' 로 시작하는 오류 → 화면이 로그인 창을 띄움 */
-function auth_(token) {
-  ensureSetup_();
-  if (!token || typeof token !== 'string' || token.length > 100) throw new Error('AUTH:로그인이 필요합니다.');
-  var name = cache_().get('sess:' + token);
-  if (!name) throw new Error('AUTH:로그인이 만료되었습니다. PIN 을 다시 입력하세요.');
-  cache_().put('sess:' + token, name, SESSION_SEC); // 사용할 때마다 연장
-  return { name: name };
-}
-
-function login(pin) {
-  try {
-    ensureSetup_();
-    var c = cache_(), fails = +c.get('loginFail') || 0;
-    if (fails >= LOGIN_FAIL_MAX) throw userError_('PIN 을 너무 많이 틀렸습니다. 10분 뒤에 다시 시도하세요.');
-    if (!Object.keys(workers_()).length) throw userError_('등록된 작업자가 없습니다. 관리자가 구글 시트 메뉴 [시리얼 관리 > 작업자 추가] 에서 PIN 을 먼저 등록해야 합니다.');
-    pin = String(pin || '').trim();
-    var name = pin.length >= PIN_MIN && pin.length <= PIN_MAX ? workers_()[hash_(pin)] : null;
-    if (!name) {
-      c.put('loginFail', String(fails + 1), LOGIN_LOCK_SEC);
-      var left = LOGIN_FAIL_MAX - fails - 1;
-      throw userError_(left > 0 ? 'PIN 이 맞지 않습니다. (' + left + '번 더 틀리면 10분 잠금)' : 'PIN 이 맞지 않습니다. 10분 동안 로그인이 잠깁니다.');
-    }
-    c.remove('loginFail');
-    var token = Utilities.getUuid() + Utilities.getUuid().replace(/-/g, '');
-    c.put('sess:' + token, name, SESSION_SEC);
-    pflush_();
-    return { token: token, name: name };
-  } catch (e) {
-    if (e && e.userFacing) throw e;
-    console.error((e && e.stack) || e);
-    throw new Error('서버 오류: ' + ((e && e.message) || e));
-  }
-}
-
-function logout(token) {
-  if (token && typeof token === 'string' && token.length <= 100) cache_().remove('sess:' + token);
-  return true;
-}
-
-// ----- 작업자 관리 (시트 메뉴 전용) -----
-function addWorker() {
-  requireUi_();
-  ensureSetup_();
-  var ui = SpreadsheetApp.getUi();
-  var r1 = ui.prompt('작업자 추가 / PIN 변경', '작업자 이름을 입력하세요 (예: 김철수)', ui.ButtonSet.OK_CANCEL);
-  if (r1.getSelectedButton() !== ui.Button.OK) return;
-  var name = safeText_(r1.getResponseText(), 20);
-  if (!name) { ui.alert('이름이 비어 있습니다.'); return; }
-  var r2 = ui.prompt('PIN 설정 — ' + name, PIN_MIN + '~' + PIN_MAX + '자리 숫자 또는 영문. 다른 작업자와 겹치면 안 됩니다.', ui.ButtonSet.OK_CANCEL);
-  if (r2.getSelectedButton() !== ui.Button.OK) return;
-  var pin = String(r2.getResponseText() || '').trim();
-  if (!/^[0-9A-Za-z]+$/.test(pin) || pin.length < PIN_MIN || pin.length > PIN_MAX) {
-    ui.alert('PIN 은 ' + PIN_MIN + '~' + PIN_MAX + '자리 숫자/영문이어야 합니다.'); return;
-  }
-  if (/^(\d)\1+$/.test(pin) || '0123456789012'.indexOf(pin) >= 0) { ui.alert('111111, 123456 같은 쉬운 PIN 은 쓸 수 없습니다.'); return; }
-  var w = workers_(), h = hash_(pin);
-  if (w[h] && w[h] !== name) { ui.alert('다른 작업자가 이미 쓰는 PIN 입니다. 다른 PIN 을 정하세요.'); return; }
-  Object.keys(w).forEach(function (k) { if (w[k] === name) delete w[k]; }); // 같은 이름의 예전 PIN 삭제
-  w[h] = name;
-  setJson_('workers', w);
-  pflush_();
-  ui.alert('등록 완료: ' + name + '\n웹앱 화면에서 이 PIN 으로 로그인하면 됩니다.');
-}
-
-function removeWorker() {
-  requireUi_();
-  var ui = SpreadsheetApp.getUi();
-  var names = listNames_();
-  var r = ui.prompt('작업자 삭제', '삭제할 이름을 입력하세요.\n현재: ' + (names.join(', ') || '없음'), ui.ButtonSet.OK_CANCEL);
-  if (r.getSelectedButton() !== ui.Button.OK) return;
-  var name = safeText_(r.getResponseText(), 20), w = workers_(), n = 0;
-  Object.keys(w).forEach(function (k) { if (w[k] === name) { delete w[k]; n++; } });
-  setJson_('workers', w);
-  pflush_();
-  ui.alert(n ? name + ' 삭제 완료 (이미 로그인한 화면도 최대 6시간 뒤 만료)' : '그 이름의 작업자가 없습니다.');
-}
-
-function listWorkers() {
-  requireUi_();
-  ui_('등록된 작업자 ' + listNames_().length + '명\n\n' + (listNames_().join('\n') || '없음'));
-}
-function listNames_() {
-  var w = workers_();
-  return Object.keys(w).map(function (k) { return w[k]; }).sort();
 }
 
 // ===== 입력값 정리 =====
@@ -253,12 +225,14 @@ function safeText_(v, max) {
   return /^[=+\-@]/.test(s) ? "'" + s : s;
 }
 
+/** 작업자 화면은 품목·LOT·비고를 보내지 않음. 작업자 칸 = PC 이름(자동) */
 function cleanMeta_(m, user) {
   m = m && typeof m === 'object' ? m : {};
+  var station = safeText_(m.station, 20) || (user && user.role === 'admin' ? '관리자' : '작업자');
   return {
-    item: ITEMS.indexOf(m.item) >= 0 ? m.item : '기타',
+    item: ITEMS.indexOf(m.item) >= 0 ? m.item : '',
     lot: safeText_(m.lot, 40),
-    worker: user ? user.name : safeText_(m.worker, 20),
+    worker: user && user.role === 'admin' ? '관리자' + (m.station ? '(' + station + ')' : '') : station,
     note: safeText_(m.note, 100)
   };
 }
@@ -529,7 +503,6 @@ function commit_(parsedList, m) {
     addNum_('total', list.length);
     addNum_('day:' + today_(), list.length);
   });
-  SpreadsheetApp.flush();
   setJson_('recent', added.reverse().concat(getJson_('recent', [])).slice(0, 10));
   pruneDays_();
 }
@@ -589,7 +562,7 @@ function strList_(list) {
   return list.map(function (s) { return String(s == null ? '' : s).trim(); }).filter(String);
 }
 
-// ===== 화면에서 호출하는 함수 (모두 로그인 필요) =====
+// ===== 화면에서 호출하는 함수 (모두 주소 키 필요) =====
 
 /** 한 건 중복 확인 (등록하지 않음) */
 function checkSerial(token, raw) {
@@ -642,7 +615,9 @@ function bulkProcess(token, list, meta, commit, batchId) {
       }
       return { rows: rows, committed: !!commit };
     };
-    return commit ? withLock_(function () { return idempotent_(batchId, run); }) : run();
+    var res = commit ? withLock_(function () { return idempotent_(batchId, run); }) : run();
+    res.stats = stats_(); // 통계를 같이 보내서 화면이 따로 묻지 않아도 되게 (요청 수 절약)
+    return res;
   });
 }
 
@@ -676,7 +651,7 @@ function nextAvailable(token, p) {
     while (n <= SERIAL_MAX && map[keyOfCell_(buildBarcode_(g.code, g.date, g.type, n))]) n++;
     if (n > SERIAL_MAX) return null;
     return { n: n, last: last, group: groupLabel_(g.probe), barcode: buildBarcode_(g.code, g.date, g.type, n) };
-  });
+  }, true);
 }
 
 /**
@@ -706,22 +681,53 @@ function generateSerials(token, p, meta, commit, batchId) {
       };
     };
     return commit ? withLock_(function () { return idempotent_(batchId, run); }) : run();
+  }, true);
+}
+
+/** 통계 + 최근 10건 (시트를 읽지 않고 적어 둔 값만 사용 → 항상 빠름) */
+function stats_() {
+  var today = today_(), recent = getJson_('recent', []);
+  return {
+    total: +pget_('total') || 0, today: +pget_('day:' + today) || 0, blocked: +pget_('blk:' + today) || 0,
+    recent: recent, lastSerial: recent.length ? recent[0].serial : '-',
+    lastGroup: recent.length ? recent[0].date + ' ' + recent[0].type : '', serverDate: today
+  };
+}
+
+/** 화면 첫 표시·1분마다 연결 확인용 */
+function getDashboard(token) {
+  return api_(token, function (user) {
+    var s = stats_();
+    s.role = user.role;
+    if (user.role === 'admin') {
+      var files = getJson_('files', []);
+      s.url = files.length ? files[0].url : '';
+      s.codes = ALLOWED_CODES;
+    }
+    return s;
   });
 }
 
-/** 첫 화면용: 통계 + 최근 10건 (시트를 읽지 않고 적어 둔 값만 사용 → 항상 빠름) */
-function getDashboard(token) {
-  return api_(token, function (user) {
-    var today = today_(), recent = getJson_('recent', []), files = getJson_('files', []);
-    return {
-      user: user.name,
-      total: +pget_('total') || 0, today: +pget_('day:' + today) || 0, blocked: +pget_('blk:' + today) || 0, recent: recent,
-      lastSerial: recent.length ? recent[0].serial : '-',
-      lastGroup: recent.length ? recent[0].date + ' ' + recent[0].type : '',
-      codes: ALLOWED_CODES, scope: DUP_SCOPE,
-      url: files.length ? files[0].url : ''
-    };
-  });
+/** 관리자 화면: 주소·저장 파일·최근 자동 점검 결과 */
+function getAdminInfo(token) {
+  return api_(token, function () {
+    return { links: links_(), files: getJson_('files', []), lastCheck: getJson_('lastCheck', null), checkHour: CHECK_HOUR };
+  }, true);
+}
+
+/** 작업자용 주소 바꾸기 (주소가 외부로 샌 경우). 기존 작업자 화면은 즉시 막힘. */
+function rotateWorkerKey(token) {
+  return api_(token, function () {
+    return withLock_(function () {
+      pset_('workerKey', newKey_());
+      return links_();
+    });
+  }, true);
+}
+
+/** 관리자 화면에서 지금 점검 */
+function runCheck(token) {
+  return api_(token, function () { return check_(); }, true);
 }
 
 /**
@@ -769,85 +775,103 @@ function searchRecords(token, q, item) {
       }
     }
     return { total: out.length, more: out.length >= SEARCH_LIMIT || timedOut, missing: missing, rows: out };
-  });
+  }, true);
 }
 
-// ===== 시트 메뉴 (관리용, 웹에서 호출 불가) =====
+// ===== 자동 점검 (매일 새벽 + 관리자 화면 + 시트 메뉴) =====
 
-/** 시트에 직접 입력하다 생긴 중복·형식오류, 사라진 시트를 달별로 찾아 알려줍니다 */
-function auditDuplicates() {
+/** 매일 자동 실행 (예약된 트리거에서만 실행되도록 확인) */
+function nightlyCheck(e) {
+  var uid = e && e.triggerUid ? String(e.triggerUid) : '';
+  if (!uid || uid !== props_().getProperty('checkTrigger')) throw new Error('예약 실행 전용입니다.');
+  check_();
+}
+
+/** 시트 메뉴: 지금 점검 */
+function checkNow() {
+  requireUi_();
+  var r = check_();
+  ui_(r.summary);
+}
+
+/** 시트 메뉴: 주소 보기 */
+function showLinks() {
   requireUi_();
   ensureSetup_();
-  var started = Date.now(), dups = [], bad = [], missing = [], checked = 0, stopped = false;
-  var months = getJson_('months', []);
-  for (var i = 0; i < months.length; i++) {
-    if (Date.now() - started > MAINT_TIME_MS) { stopped = true; break; }
-    var first = {};
-    parts_(months[i]).forEach(function (ref) {
-      var sh = null;
-      try { sh = sheetOf_(ref); } catch (e) { sh = null; }
-      if (!sh) { missing.push(ref.s); return; }
-      if (sh.getLastRow() < 2) return;
-      var col = sh.getRange(2, 1, sh.getLastRow() - 1, 1).getValues();
-      col.forEach(function (r, k) {
-        if (!String(r[0]).trim()) return;
-        checked++;
-        var where = ref.s + ' ' + (k + 2) + '행';
-        var p = parseBarcode_(r[0]);
-        if (!p.ok && !/^날짜 확인 필요/.test(p.reason)) { bad.push(where + ' ' + r[0] + ' : ' + p.reason); return; }
-        var key = keyOfCell_(r[0]);
-        if (first[key]) dups.push(key + ' (' + first[key] + ' / ' + where + ')');
-        else first[key] = where;
-      });
-    });
-  }
   pflush_();
-  var msg = checked.toLocaleString() + '건 검사' + (stopped ? ' (시간 제한으로 중간까지만)' : '') + '\n\n' +
-    (missing.length ? '⚠ 사라진 DB 시트: ' + missing.join(', ') + ' — 복구 전까지 해당 달 등록이 멈춥니다.\n\n' : '') +
-    (dups.length ? '중복 ' + dups.length + '건:\n' + dups.slice(0, 40).join('\n') : '중복 없음 ✅') + '\n\n' +
-    (bad.length ? '형식 오류 ' + bad.length + '건:\n' + bad.slice(0, 20).join('\n') : '형식 오류 없음 ✅');
-  ui_(msg);
-  return { checked: checked, dups: dups, bad: bad, missing: missing, stopped: stopped };
+  if (!pget_('adminKey')) { ui_('아직 웹앱을 한 번도 열지 않았습니다. [배포] 후 웹앱 주소를 한 번 열면 주소가 만들어집니다.'); return; }
+  var l = links_();
+  ui_('작업자용 주소 (작업 PC 즐겨찾기):\n' + l.worker + '\n\n관리자용 주소 (본인만):\n' + l.admin);
 }
 
-/** 시트를 직접 고친 뒤 총 건수·오늘 등록 수를 다시 계산합니다 */
-function recountStats() {
-  requireUi_();
+/**
+ * 점검: 모든 DB 시트의 중복·형식오류·사라진 시트를 찾고 통계를 다시 계산합니다.
+ * 결과는 [자동점검] 시트에 한 줄씩 남기고, 문제가 있으면 소유자에게 메일을 보냅니다.
+ */
+function check_() {
   ensureSetup_();
-  var started = Date.now(), total = 0, todayCount = 0, today = today_(), stopped = false;
-  var months = getJson_('months', []);
+  var started = Date.now(), dups = [], bad = [], missing = [], total = 0, todayCount = 0, stopped = false;
+  var today = today_(), months = getJson_('months', []);
   for (var i = 0; i < months.length && !stopped; i++) {
+    var first = {};
     parts_(months[i]).forEach(function (ref) {
       if (stopped) return;
       var sh = null;
       try { sh = sheetOf_(ref); } catch (e) { sh = null; }
-      if (!sh || sh.getLastRow() < 2) return;
-      var vals = sh.getRange(2, 1, sh.getLastRow() - 1, HEADERS.length).getValues();
-      vals.forEach(function (r) {
-        if (!String(r[0]).trim()) return;
+      if (!sh) { missing.push(ref.s); return; }
+      var n = sh.getLastRow() - 1;
+      if (n < 1) return;
+      var colA = sh.getRange(2, 1, n, 1).getValues();
+      var colI = sh.getRange(2, COL_CREATED + 1, n, 1).getValues();
+      for (var k = 0; k < n; k++) {
+        var v = colA[k][0];
+        if (!String(v).trim()) continue;
         total++;
-        if (fmt_(r[COL_CREATED]).indexOf(today) === 0) todayCount++;
-      });
+        if (fmt_(colI[k][0]).indexOf(today) === 0) todayCount++;
+        var where = ref.s + ' ' + (k + 2) + '행';
+        var p = parseBarcode_(v);
+        if (!p.ok && !/^날짜 확인 필요/.test(p.reason)) { bad.push(where + ' ' + v + ' : ' + p.reason); continue; }
+        var key = keyOfCell_(v);
+        if (first[key]) dups.push(key + ' (' + first[key] + ' / ' + where + ')');
+        else first[key] = where;
+      }
       if (Date.now() - started > MAINT_TIME_MS) stopped = true;
     });
   }
-  if (!stopped) {
-    var lock = LockService.getScriptLock();
-    if (lock.tryLock(LOCK_WAIT_MS)) {
-      try { preload_(); pset_('total', total); pset_('day:' + today, todayCount); pflush_(); } finally { lock.releaseLock(); }
+
+  var ok = !dups.length && !bad.length && !missing.length;
+  var summary = (stopped ? '⚠ 시간 제한으로 중간까지만 점검했습니다.\n' : '') +
+    '총 ' + total.toLocaleString() + '건 · 오늘 ' + todayCount + '건\n' +
+    (missing.length ? '⛔ 사라진 DB 시트: ' + missing.join(', ') + ' — 복구 전까지 해당 달 등록이 멈춥니다.\n' : '') +
+    (dups.length ? '⛔ 중복 ' + dups.length + '건:\n' + dups.slice(0, 30).join('\n') + '\n' : '중복 없음 ✅\n') +
+    (bad.length ? '⚠ 형식 오류 ' + bad.length + '건:\n' + bad.slice(0, 20).join('\n') + '\n' : '형식 오류 없음 ✅\n');
+
+  var lock = LockService.getScriptLock();
+  if (lock.tryLock(LOCK_WAIT_MS)) {
+    try {
+      preload_();
+      if (!stopped) { pset_('total', total); pset_('day:' + today, todayCount); }
+      setJson_('lastCheck', { at: fmt_(new Date()), ok: ok && !stopped, total: total, dups: dups.length, bad: bad.length, missing: missing, stopped: stopped });
+      writeCheckRow_([new Date(), total, todayCount, dups.length, bad.length, missing.join(', '), ok ? '정상' : '확인 필요']);
+      pflush_();
+    } finally {
+      lock.releaseLock();
     }
   }
-  var msg = stopped ? '시간 제한으로 중단되었습니다. 다시 실행해 주세요.' : '총 ' + total.toLocaleString() + '건 / 오늘 ' + todayCount + '건으로 다시 계산했습니다.';
-  ui_(msg);
-  return { total: total, today: todayCount, stopped: stopped };
+  if (!ok && CHECK_MAIL) {
+    try {
+      MailApp.sendEmail(Session.getEffectiveUser().getEmail(), '[시리얼 관리] 자동 점검: 확인 필요', summary + '\n' + (links_().admin || ''));
+    } catch (e) { console.error('메일 발송 실패: ' + e); }
+  }
+  return { ok: ok, stopped: stopped, total: total, today: todayCount, dups: dups, bad: bad, missing: missing, summary: summary };
 }
 
-/** 데이터가 저장된 파일 목록 */
-function showFiles() {
-  requireUi_();
-  ensureSetup_();
-  pflush_();
-  var files = getJson_('files', []);
-  ui_('저장 파일 ' + files.length + '개\n\n' + files.map(function (f, i) { return (i + 1) + '. ' + f.name + '\n   ' + f.url; }).join('\n\n'));
-  return files;
+function writeCheckRow_(row) {
+  try {
+    var ss = file_(pget_('mainFile'));
+    var sh = ss.getSheetByName(CHECK_SHEET) || newSheet_(ss, CHECK_SHEET, CHECK_HEADERS);
+    var start = sh.getLastRow() + 1;
+    ensureRows_(ss, sh, start);
+    sh.getRange(start, 1, 1, CHECK_HEADERS.length).setValues([row]);
+  } catch (e) { console.error('점검 기록 실패: ' + e); }
 }
