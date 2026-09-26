@@ -264,3 +264,5 @@ section { position: relative; }
 .panel-img.studio.contain { background: #fff; }
 .panel-img.studio.contain img { object-fit: contain; padding: 6%; }
 .panel-img.studio .ghost { display: none; }
+.panel-img.duo { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.panel-img.duo img { position: relative; inset: auto; height: 100%; padding: 8% 4%; }
