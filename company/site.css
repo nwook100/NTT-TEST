@@ -110,7 +110,8 @@ section { position: relative; }
 
 .callout {
   position: absolute; left: 24px; top: -10px; pointer-events: none; opacity: 0;
-  display: grid; gap: 2px; padding-left: 14px; border-left: 1px solid var(--accent);
+  display: grid; gap: 2px; padding: 8px 12px 8px 14px; border-left: 1px solid var(--accent);
+  background: rgba(7, 8, 10, .62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: 0 8px 8px 0;
   will-change: transform, opacity;
 }
 .callout i { position: absolute; left: -4px; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }

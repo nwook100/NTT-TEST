@@ -51,9 +51,9 @@ function makeWaferTexture() {
   return tex;
 }
 
-function makeRingGeometry() {
+function makeRingGeometry(steps = 360, curveSegments = 128, bevelSegments = 3) {
   // 12인치 웨이퍼링 모양: 바깥 원 + 양옆 평면(flat) + 위아래 V 노치, 가운데 구멍
-  const R = 1.2, F = 1.12, r = 1.02, steps = 360;
+  const R = 1.2, F = 1.12, r = 1.02;
   const shape = new THREE.Shape();
   for (let i = 0; i <= steps; i++) {
     const a = (i / steps) * Math.PI * 2;
@@ -72,7 +72,7 @@ function makeRingGeometry() {
   shape.holes.push(hole);
   const geo = new THREE.ExtrudeGeometry(shape, {
     depth: 0.03, bevelEnabled: true, bevelThickness: 0.006, bevelSize: 0.006,
-    bevelSegments: 3, curveSegments: 128,
+    bevelSegments, curveSegments,
   });
   geo.translate(0, 0, -0.015);
   return geo;
@@ -96,7 +96,7 @@ function initScene() {
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
   const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-  camera.position.set(0, 0, 5);
+  camera.position.set(0, 0, 6.5);
 
   const rim = new THREE.DirectionalLight(0x4da3ff, 3);
   rim.position.set(-3, 2, -2);
@@ -105,32 +105,88 @@ function initScene() {
   key.position.set(3, 3, 4);
   scene.add(key);
 
-  // 전체를 담는 그룹 (위치 · 기울기) → 안쪽 그룹 (회전)
+  // 전체를 담는 그룹 (위치 · 기울기)
   const rig = new THREE.Group();
-  const spin = new THREE.Group();
-  rig.add(spin);
   scene.add(rig);
 
-  const ring = new THREE.Mesh(
-    makeRingGeometry(),
-    new THREE.MeshPhysicalMaterial({ color: 0xc9ced6, metalness: 1, roughness: 0.26, clearcoat: 0.4 })
-  );
+  const black = new THREE.MeshStandardMaterial({ color: 0x2c313a, metalness: 0.35, roughness: 0.45 });
+  const alu = new THREE.MeshPhysicalMaterial({ color: 0xc4cad3, metalness: 1, roughness: 0.3, clearcoat: 0.3 });
+  const yellow = new THREE.MeshStandardMaterial({ color: 0xd9ad3c, roughness: 0.7 });
+  const box = (w, h, d, mat, x, y, z) => {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+    m.position.set(x, y, z);
+    return m;
+  };
+
+  // ── 카세트 몸체 (드라이브 사진 L0000058 모양 참고) ──
+  const N = 10, GAP = 0.14, Y0 = -0.63;         // 링 10장, 슬롯 간격
+  const TOP = Y0 + N * GAP + 0.08;              // 위 손잡이 높이
+  const H = TOP - (Y0 - GAP);
+  const slotY = (i) => Y0 + i * GAP;
+  const cassette = new THREE.Group();
+  for (const sx of [-1, 1]) {
+    for (const sz of [-1, 1]) {
+      // 빗살(comb) 기둥: 링이 끼워지는 슬롯
+      cassette.add(box(0.14, H, 0.3, black, sx * 1.34, (TOP + Y0 - GAP) / 2, sz * 0.75));
+      for (let i = 0; i <= N; i++) {
+        cassette.add(box(0.1, 0.035, 0.3, black, sx * 1.23, slotY(i) - GAP / 2, sz * 0.75));
+      }
+      cassette.add(box(2.8, 0.05, 0.05, black, 0, Y0 - GAP, sz * 0.75)); // 바닥 봉
+    }
+    cassette.add(box(0.04, H * 0.85, 1.2, black, sx * 1.43, (TOP + Y0 - GAP) / 2, 0)); // 옆판
+  }
+  const sideLabel = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.42), yellow);
+  sideLabel.position.set(1.455, (TOP + Y0 - GAP) / 2, 0);
+  sideLabel.rotation.y = Math.PI / 2;
+  cassette.add(sideLabel);
+  // 위쪽 손잡이 바 + 노란 방향 라벨
+  cassette.add(box(2.86, 0.06, 0.36, alu, 0, TOP, 0));
+  for (const sx of [-1, 1]) cassette.add(box(0.34, 0.06, 0.26, black, sx * 0.95, TOP + 0.06, 0));
+  const topLabel = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.16), yellow);
+  topLabel.rotation.x = -Math.PI / 2;
+  topLabel.position.set(0, TOP + 0.032, 0);
+  cassette.add(topLabel);
+  // 유리 덮개
+  cassette.add(box(2.7, 0.015, 1.9, new THREE.MeshPhysicalMaterial({
+    color: 0xcfe6ff, transparent: true, opacity: 0.16, roughness: 0.05, depthWrite: false,
+  }), 0, TOP - 0.05, 0));
+  rig.add(cassette);
+
+  // ── 웨이퍼링 10장 ──
+  // 링이 10장이라 모양을 조금 단순하게 만들어 휴대폰에서도 가볍게 돌아가게 합니다.
+  const ringGeo = makeRingGeometry(160, 48, 1);
+  const ringMat = new THREE.MeshStandardMaterial({ color: 0xc9ced6, metalness: 1, roughness: 0.24 });
+  const rings = [];
+  for (let i = 0; i < N; i++) {
+    const r = new THREE.Mesh(ringGeo, ringMat);
+    r.rotation.x = -Math.PI / 2; // 눕혀서 슬롯에 끼움
+    r.position.y = slotY(i);
+    rig.add(r);
+    rings.push(r);
+  }
+  const topRing = rings[N - 1];
+
+  // ── 마지막에 맨 위 링에 얹히는 다이싱 테이프 + 웨이퍼 ──
+  const mount = new THREE.Group();
   const tape = new THREE.Mesh(
-    new THREE.CircleGeometry(1.1, 128),
+    new THREE.CircleGeometry(1.1, 64),
     new THREE.MeshPhysicalMaterial({
-      color: 0x7fb8ff, transparent: true, opacity: 0.22, roughness: 0.15,
+      color: 0x7fb8ff, transparent: true, opacity: 0.25, roughness: 0.15,
       side: THREE.DoubleSide, depthWrite: false,
     })
   );
+  tape.rotation.x = -Math.PI / 2;
   const waferTop = new THREE.MeshPhysicalMaterial({
     map: makeWaferTexture(), metalness: 0.6, roughness: 0.3,
     iridescence: 1, iridescenceIOR: 1.8, iridescenceThicknessRange: [200, 800],
     clearcoat: 0.5, clearcoatRoughness: 0.2,
   });
   const waferEdge = new THREE.MeshStandardMaterial({ color: 0x9aa3b2, metalness: 1, roughness: 0.3 });
-  const wafer = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.014, 128), [waferEdge, waferTop, waferEdge]);
-  wafer.rotation.x = Math.PI / 2;
-  spin.add(ring, tape, wafer);
+  const wafer = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.014, 64), [waferEdge, waferTop, waferEdge]);
+  wafer.position.y = 0.012;
+  mount.add(tape, wafer);
+  mount.visible = false;
+  rig.add(mount);
 
   // 떠다니는 먼지 입자
   const count = 700;
@@ -149,10 +205,9 @@ function initScene() {
 
   // 부품 설명 라벨이 붙을 3D 위치
   const anchors = {
-    // 원판의 오른쪽 끝(+x)에 라벨을 붙입니다. (웨이퍼 원기둥은 회전되어 있어 로컬 축이 다름)
-    wafer: { obj: wafer, local: new THREE.Vector3(0.9, 0.007, 0) },
-    tape: { obj: tape, local: new THREE.Vector3(1.1, 0, 0) },
-    ring: { obj: ring, local: new THREE.Vector3(1.12, 0, 0.015) },
+    cassette: { obj: cassette, local: new THREE.Vector3(1.45, 0.75, 0.6) },
+    ring: { obj: rings[4], local: new THREE.Vector3(0, -1.2, 0) },
+    wafer: { obj: mount, local: new THREE.Vector3(0, 0.02, -0.9) },
   };
   const callouts = [...document.querySelectorAll('.callout')];
   const heroEl = document.querySelector('.hero-sticky');
@@ -164,8 +219,8 @@ function initScene() {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     layout = w < 900
-      ? { x: 0, y: 0.5, s: 0.52, ex: 0, ey: 0.05, es: 1.05 }
-      : { x: 1.0, y: 0.05, s: 1, ex: 0.35, ey: -0.1, es: 0.95 };
+      ? { x: 0.25, y: 0.8, s: 0.42, ex: 0.45, ey: 0.1, es: 0.95 }
+      : { x: 1.7, y: -0.1, s: 0.85, ex: 1.45, ey: -0.2, es: 0.95 };
   }
   resize();
   window.addEventListener('resize', resize);
@@ -178,28 +233,36 @@ function initScene() {
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
     const p = hero.p;
-    const e = smooth(0.12, 0.62, p); // 분해 진행률
+    const e = smooth(0.1, 0.7, p); // 전체 진행률
 
-    if (!reduceMotion) spin.rotation.z += dt * 0.12;
-    spin.position.z = 0;
-    wafer.position.z = lerp(0.012, 0.75, e);
-    tape.position.z = lerp(-0.02, 0.28, e);
-    ring.position.z = lerp(0, -0.2, e);
+    // 링이 위에서부터 한 장씩 슬롯 밖(앞쪽)으로 미끄러져 나옴
+    rings.forEach((r, i) => {
+      const k = N - 1 - i; // 맨 위 링이 먼저
+      const t = smooth(0.08 + k * 0.03, 0.42 + k * 0.03, p);
+      r.position.z = t * (0.35 + (i / (N - 1)) * 2.05);
+    });
+    // 맨 위 링이 다 나오면 테이프 + 웨이퍼가 위에서 내려와 얹힘
+    const land = smooth(0.55, 0.8, p);
+    mount.visible = p > 0.5;
+    mount.position.set(0, topRing.position.y + lerp(1.4, 0.03, land), topRing.position.z);
+    tape.material.opacity = 0.25 * smooth(0.5, 0.6, p);
 
     eased.x += (pointer.x - eased.x) * Math.min(1, dt * 4);
     eased.y += (pointer.y - eased.y) * Math.min(1, dt * 4);
     const iv = intro.v;
+    const sway = reduceMotion ? 0 : Math.sin(now / 2600) * 0.06; // 가만히 있어도 살짝 움직임
     rig.position.x = lerp(layout.x, layout.ex, e);
     rig.position.y = lerp(layout.y, layout.ey, e) + (1 - iv) * -0.4;
     rig.scale.setScalar(layout.s * lerp(0.85, 1, iv) * lerp(1, layout.es, e));
-    rig.rotation.x = lerp(-1.05, -1.22, e) + eased.y * 0.12 + (1 - iv) * -0.4;
-    rig.rotation.y = lerp(-0.25, -0.1, e) + eased.x * 0.18;
+    // 카세트의 입구(+z)가 화면 왼쪽을 향하도록 돌려서, 링이 왼쪽으로 부채꼴처럼 펼쳐집니다.
+    rig.rotation.x = lerp(0.38, 0.5, e) + eased.y * 0.1 + (1 - iv) * 0.3;
+    rig.rotation.y = lerp(-1.25, -1.35, e) + eased.x * 0.15 + sway + (1 - iv) * -0.5;
     dust.rotation.y += dt * 0.02;
 
     renderer.render(scene, camera);
 
     // 라벨 위치: 3D 좌표 → 화면 좌표
-    const show = smooth(0.42, 0.6, p) * (1 - smooth(0.9, 1, p));
+    const show = smooth(0.62, 0.78, p) * (1 - smooth(0.94, 1, p));
     const w = heroEl.clientWidth, h = heroEl.clientHeight;
     callouts.forEach((el) => {
       const a = anchors[el.dataset.part];
