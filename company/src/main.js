@@ -315,6 +315,18 @@ function initScroll() {
     });
   });
 
+  // 전체 화면 사진: 카드 모양에서 화면 가득 펼쳐지고, 사진은 살짝 줌아웃
+  if (!reduceMotion) {
+    gsap.fromTo('.showcase-media',
+      { clipPath: 'inset(12% 8% 12% 8% round 28px)' },
+      { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',
+        scrollTrigger: { trigger: '.showcase', start: 'top 90%', end: 'top top', scrub: true } });
+    gsap.fromTo('.showcase-media img', { scale: 1.25 }, {
+      scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.showcase', start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+  }
+
   // 숫자 카운트
   document.querySelectorAll('[data-count]').forEach((el) => {
     const target = parseFloat(el.dataset.count);
