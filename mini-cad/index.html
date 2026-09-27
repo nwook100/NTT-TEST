@@ -75,6 +75,7 @@
     background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--line);
     font-size: 12px; color: var(--muted); pointer-events: none; max-width: calc(100% - 24px);
   }
+  .done { position: absolute; right: 12px; top: 8px; }
   .side { border-left: 1px solid var(--line); background: var(--panel); overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 18px; }
   .side h2 { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 500; }
   .side section { display: flex; flex-direction: column; gap: 8px; }
@@ -112,7 +113,7 @@
 </style>
 
 <header class="top">
-  <div class="brand"><b>안산 미니 CAD</b><span>v0.2 · 단위 mm</span></div>
+  <div class="brand"><b>안산 미니 CAD</b><span>v0.3 · 단위 mm</span></div>
   <button class="btn" id="btnUndo" title="되돌리기 (Ctrl+Z)">되돌리기</button>
   <button class="btn" id="btnRedo" title="다시 실행 (Ctrl+Y)">다시</button>
   <button class="btn" id="btnFit" title="전체 보기 (Z)">전체 보기</button>
@@ -134,6 +135,13 @@
     <button class="btn" data-tool="text" aria-pressed="false">문자 <kbd>T</kbd></button>
   </div>
   <div class="grp">
+    <button class="btn" data-tool="move" aria-pressed="false">이동 <kbd>M</kbd></button>
+    <button class="btn" data-tool="copy" aria-pressed="false">복사 <kbd>CO</kbd></button>
+    <button class="btn" data-tool="rotate" aria-pressed="false">회전 <kbd>RO</kbd></button>
+    <button class="btn" data-tool="mirror" aria-pressed="false">대칭 <kbd>MI</kbd></button>
+    <button class="btn" data-tool="scale" aria-pressed="false">축척 <kbd>SC</kbd></button>
+  </div>
+  <div class="grp">
     <button class="btn" id="btnDel">삭제 <kbd>Del</kbd></button>
     <button class="btn" id="btnClear">새 도면</button>
   </div>
@@ -143,6 +151,7 @@
   <div class="stage" id="stage">
     <canvas id="cv"></canvas>
     <div class="hint" id="hint"></div>
+    <button class="btn primary done" id="btnDone" hidden>선택 완료</button>
   </div>
 
   <aside class="side">
@@ -191,6 +200,7 @@
     <section>
       <h2>명령어</h2>
       <p class="note">아래 명령줄에 입력합니다. <code>100,50</code> 절대 좌표 · <code>@100,0</code> 상대 좌표 · <code>@50&lt;30</code> 길이와 각도 · 숫자만 쓰면 커서 방향 길이(원은 반지름). <code>L R C D T Z U</code>로 도구 전환.</p>
+      <p class="note">편집: <code>M</code> 이동 · <code>CO</code> 복사 · <code>RO</code> 회전 · <code>MI</code> 대칭 · <code>SC</code> 축척. 선택 도구에서 왼쪽→오른쪽으로 끌면 완전히 들어간 객체만, 오른쪽→왼쪽이면 걸친 객체까지 선택됩니다.</p>
     </section>
   </aside>
 </div>
@@ -414,7 +424,17 @@
 
     // 미리보기
     const pv = previewEnt();
-    if (pv) { ctx.lineWidth = 1.2; drawEnt(pv, C.preview, pv.type === 'dim' ? null : [5, 4]); }
+    if (pv) { ctx.lineWidth = 1.2; (Array.isArray(pv) ? pv : [pv]).forEach(e => drawEnt(e, C.preview, e.type === 'dim' ? null : [5, 4])); }
+    const em = editMatrix();
+    if (em && pts[0]) { const [bx, by] = W2S(pts[0].x, pts[0].y), [qx, qy] = W2S(cursor.x, cursor.y); ctx.strokeStyle = C.muted; ctx.lineWidth = 1; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(bx, by); ctx.lineTo(qx, qy); ctx.stroke(); ctx.setLineDash([]); }
+
+    // 범위 선택 상자 (왼→오: 완전히 포함 / 오→왼: 걸치기)
+    if (box) {
+      const win = box.x1 >= box.x0;
+      ctx.lineWidth = 1; ctx.setLineDash(win ? [] : [6, 4]); ctx.strokeStyle = C.preview;
+      ctx.fillStyle = win ? 'rgba(10,110,138,0.08)' : 'rgba(11,122,97,0.08)';
+      ctx.fillRect(box.x0, box.y0, box.x1 - box.x0, box.y1 - box.y0); ctx.strokeRect(box.x0, box.y0, box.x1 - box.x0, box.y1 - box.y0); ctx.setLineDash([]);
+    }
 
     // 스냅 표시
     if (snapHit) {
@@ -439,6 +459,7 @@
   function previewEnt() {
     const p = cursor, a = pts[0];
     if (!a) return null;
+    if (EDIT.has(tool)) { const M = editMatrix(); return M ? [...sel].flatMap(i => xformEnt(ents[i], M)) : null; }
     if (tool === 'line') return { type: 'line', x1: pts[pts.length - 1].x, y1: pts[pts.length - 1].y, x2: p.x, y2: p.y };
     if (tool === 'rect') return { type: 'rect', x1: a.x, y1: a.y, x2: p.x, y2: p.y };
     if (tool === 'circle') return { type: 'circle', cx: a.x, cy: a.y, r: Math.max(dist(a, p), 0.01) };
@@ -495,6 +516,97 @@
   const _makeDim = makeDim;
   makeDim = (a, b, p) => { const d = _makeDim(a, b, p); d.type = 'dim'; d.h = d.h || txtH; return normDim(d); };
 
+  // ---------- 편집: 이동·복사·회전·대칭·축척 ----------
+  const EDIT = new Set(['move', 'copy', 'rotate', 'mirror', 'scale']);
+  const EDIT_NAME = { move: '이동', copy: '복사', rotate: '회전', mirror: '대칭', scale: '축척' };
+  let editPick = false, box = null;
+  const mT = (dx, dy) => [1, 0, 0, 1, dx, dy];
+  const about = (p, A) => MUL(mT(p.x, p.y), MUL(A, mT(-p.x, -p.y)));
+  function matrixFor(t, base, q, num) {
+    if (t === 'move' || t === 'copy') return mT(q.x - base.x, q.y - base.y);
+    if (t === 'rotate') { const a = num != null ? num * DEG : Math.atan2(q.y - base.y, q.x - base.x); return about(base, [Math.cos(a), Math.sin(a), -Math.sin(a), Math.cos(a), 0, 0]); }
+    if (t === 'scale') { const f = num != null ? num : dist(base, q); return f > 1e-9 ? about(base, [f, 0, 0, f, 0, 0]) : null; }
+    if (t === 'mirror') {
+      if (dist(base, q) < 1e-9) return null;
+      const th = 2 * Math.atan2(q.y - base.y, q.x - base.x); // 대칭 행렬: [cos2θ sin2θ; sin2θ -cos2θ]
+      return about(base, [Math.cos(th), Math.sin(th), Math.sin(th), -Math.cos(th), 0, 0]);
+    }
+    return null;
+  }
+  function editMatrix() { return EDIT.has(tool) && !editPick && pts.length === 1 && sel.size ? matrixFor(tool, pts[0], cursor) : null; }
+  // 도형 하나에 변환 행렬 적용 → 도형 배열 (회전된 사각형은 선 4개가 됨)
+  function xformEnt(e, M) {
+    const det = M[0] * M[3] - M[1] * M[2], k = Math.sqrt(Math.abs(det)), ang = Math.atan2(M[1], M[0]) / DEG;
+    const P = (x, y) => XF(M, x, y);
+    switch (e.type) {
+      case 'line': { const a = P(e.x1, e.y1), b = P(e.x2, e.y2); return [{ ...e, x1: a.x, y1: a.y, x2: b.x, y2: b.y }]; }
+      case 'rect': {
+        const c = rectCorners(e).map(q => P(q.x, q.y));
+        if (Math.abs(Math.sin(2 * ang * DEG)) < 1e-9) return [{ ...e, x1: Math.min(...c.map(q => q.x)), y1: Math.min(...c.map(q => q.y)), x2: Math.max(...c.map(q => q.x)), y2: Math.max(...c.map(q => q.y)) }];
+        return c.map((q, i) => ({ type: 'line', x1: q.x, y1: q.y, x2: c[(i + 1) % 4].x, y2: c[(i + 1) % 4].y, layer: e.layer }));
+      }
+      case 'circle': { const c = P(e.cx, e.cy); return [{ ...e, cx: c.x, cy: c.y, r: e.r * k }]; }
+      case 'arc': {
+        const c = P(e.cx, e.cy), [p1, p2] = arcEnds(e).map(q => P(q.x, q.y));
+        let a1 = Math.atan2(p1.y - c.y, p1.x - c.x) / DEG, a2 = Math.atan2(p2.y - c.y, p2.x - c.x) / DEG;
+        if (det < 0) [a1, a2] = [a2, a1];
+        return [{ ...e, cx: c.x, cy: c.y, r: e.r * k, a1, a2 }];
+      }
+      case 'dim': {
+        const a = P(e.x1, e.y1), b = P(e.x2, e.y2), o = { ...e, x1: a.x, y1: a.y, x2: b.x, y2: b.y, off: e.off * k * (det < 0 ? -1 : 1) };
+        if (Math.abs(k - 1) > 1e-9 && o.label && /^-?[\d.]+$/.test(o.label)) delete o.label; // 숫자 치수는 새 길이로 다시 계산
+        return [o];
+      }
+      case 'text': {
+        const q = P(e.x, e.y), o = { ...e, x: q.x, y: q.y, h: e.h * k };
+        if (det >= 0) o.rot = (e.rot || 0) + ang; else o.al = e.al === 'r' ? 'l' : e.al === 'c' ? 'c' : 'r'; // 대칭 시 글자는 뒤집지 않음
+        return [o];
+      }
+      case 'solid': return [{ ...e, pts: e.pts.map(q => P(q.x, q.y)) }];
+    }
+    return [{ ...e }];
+  }
+  function applyEdit(M) {
+    if (!M || !sel.size) return;
+    const keep = tool === 'copy' || tool === 'mirror';
+    commit(() => {
+      if (keep) {
+        const added = [...sel].sort((a, b) => a - b).flatMap(i => xformEnt(ents[i], M));
+        const n0 = ents.length;
+        ents = [...ents, ...added];
+        if (tool === 'mirror') { sel.clear(); for (let j = n0; j < ents.length; j++) sel.add(j); }
+        return;
+      }
+      const out = [], ns = new Set();
+      ents.forEach((e, i) => {
+        if (!sel.has(i)) { out.push(e); return; }
+        xformEnt(e, M).forEach(n => { ns.add(out.length); out.push(n); });
+      });
+      ents = out; sel = ns;
+    });
+    if (tool === 'copy') { pts = [pts[0]]; updateHint(); draw(); return; } // 복사는 Esc까지 계속
+    const done = EDIT_NAME[tool];
+    setTool('select');
+    $('hint').textContent = `${done} 완료. 선택이 유지되어 바로 다른 편집을 할 수 있습니다.`;
+  }
+  function finishPick() {
+    if (!editPick) return false;
+    if (!sel.size) { $('hint').textContent = '선택된 객체가 없습니다. 객체를 클릭하거나 드래그로 범위를 잡으세요.'; return true; }
+    editPick = false; pts = []; updateHint(); draw(); return true;
+  }
+  function boxSelect(b) {
+    const a = S2W(Math.min(b.x0, b.x1), Math.max(b.y0, b.y1)), c = S2W(Math.max(b.x0, b.x1), Math.min(b.y0, b.y1));
+    const win = b.x1 >= b.x0;
+    if (!shiftDown && !editPick) sel.clear();
+    ents.forEach((e, i) => {
+      const q = bounds([e]);
+      const inside = q.x0 >= a.x && q.x1 <= c.x && q.y0 >= a.y && q.y1 <= c.y;
+      const touch = q.x1 >= a.x && q.x0 <= c.x && q.y1 >= a.y && q.y0 <= c.y;
+      if (win ? inside : touch) sel.add(i);
+    });
+    updateHint(); draw();
+  }
+
   // ---------- 입력 처리 ----------
   const HINTS = {
     select: '객체를 클릭해 선택합니다. Shift+클릭으로 추가 선택, Del로 삭제.',
@@ -504,15 +616,24 @@
     circle: ['중심점을 클릭하세요.', '반지름 위치를 클릭하거나 반지름을 입력하세요.'],
     dim: ['치수 첫 점을 클릭하세요 (끝점 스냅 권장).', '치수 둘째 점을 클릭하세요.', '치수선 위치를 클릭하세요.'],
     text: ['문자를 놓을 위치를 클릭하세요. 명령줄에 쓴 내용이 들어갑니다.'],
+    move: ['기준점을 클릭하세요.', '옮길 위치를 클릭하거나 @dx,dy 또는 거리를 입력하세요.'],
+    copy: ['기준점을 클릭하세요.', '복사할 위치를 클릭하세요. 여러 번 찍을 수 있고 Esc로 끝냅니다.'],
+    rotate: ['회전 중심점을 클릭하세요.', '각도를 입력하거나 (예: 90, -45) 방향을 클릭하세요.'],
+    mirror: ['대칭선의 첫 점을 클릭하세요.', '대칭선의 둘째 점을 클릭하세요. 원본은 그대로 남습니다.'],
+    scale: ['기준점을 클릭하세요.', '배율을 입력하세요 (예: 2, 0.5). 클릭하면 기준점과의 거리가 배율이 됩니다.'],
   };
   function updateHint() {
+    $('btnDone').hidden = !editPick;
+    if (editPick) { $('hint').textContent = `${EDIT_NAME[tool]}: 객체를 선택한 뒤 Enter, 우클릭 또는 「선택 완료」. 드래그로 범위 선택.${sel.size ? ` (${sel.size}개 선택됨)` : ''}`; $('prompt').textContent = '명령:'; return; }
+    if (tool === 'select' && sel.size) { $('hint').textContent = `${sel.size}개 선택됨. 편집 버튼(이동·복사·회전·대칭·축척) 또는 Del.`; $('prompt').textContent = '명령:'; return; }
     const h = HINTS[tool];
     const s = Array.isArray(h) ? h[Math.min(pts.length, h.length - 1)] : h;
     $('hint').textContent = s;
     $('prompt').textContent = tool === 'text' ? '문자 내용:' : '명령:';
   }
   function setTool(t) {
-    tool = t; pts = [];
+    tool = t; pts = []; box = null;
+    editPick = EDIT.has(t) && sel.size === 0;
     document.querySelectorAll('[data-tool]').forEach(b => b.setAttribute('aria-pressed', b.dataset.tool === t));
     cv.style.cursor = t === 'pan' ? 'grab' : 'crosshair';
     updateHint(); draw();
@@ -520,7 +641,11 @@
   document.querySelectorAll('[data-tool]').forEach(b => b.addEventListener('click', () => setTool(b.dataset.tool)));
 
   function place(p) {
-    if (tool === 'select') return pick(p);
+    if (tool === 'select' || editPick) { pick(p); updateHint(); return; }
+    if (EDIT.has(tool)) {
+      if (!pts.length) { pts = [p]; updateHint(); draw(); return; }
+      return applyEdit(matrixFor(tool, pts[0], p));
+    }
     pts.push(p);
     if (tool === 'line' && pts.length === 2) { const [a, b] = pts; if (dist(a, b) > 1e-9) commit(() => ents.push({ type: 'line', x1: a.x, y1: a.y, x2: b.x, y2: b.y })); pts = [b]; }
     else if (tool === 'rect' && pts.length === 2) { const [a, b] = pts; if (a.x !== b.x && a.y !== b.y) commit(() => ents.push({ type: 'rect', x1: Math.min(a.x, b.x), y1: Math.min(a.y, b.y), x2: Math.max(a.x, b.x), y2: Math.max(a.y, b.y) })); pts = []; }
@@ -537,7 +662,7 @@
   function pick(p) {
     let best = -1, bd = 8 / view.s;
     ents.forEach((e, i) => { const d = hitDist(e, p); if (d < bd) { bd = d; best = i; } });
-    if (!shiftDown) sel.clear();
+    if (!shiftDown && !editPick) sel.clear();
     if (best >= 0) { if (sel.has(best)) sel.delete(best); else sel.add(best); }
     draw();
   }
@@ -557,7 +682,7 @@
       pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2 }; downAt = null; panning = null; return;
     }
     if (ev.button === 1 || tool === 'pan') { panning = { x, y }; cv.style.cursor = 'grabbing'; ev.preventDefault(); return; }
-    if (ev.button === 2) { pts = []; updateHint(); draw(); return; }
+    if (ev.button === 2) { if (finishPick()) return; if (tool === 'copy') { setTool('select'); return; } pts = []; updateHint(); draw(); return; }
     downAt = { x, y, t: ev.pointerType };
     computeCursor(x, y); draw();
   });
@@ -572,6 +697,7 @@
       pinch = { d, mx, my }; draw(); return;
     }
     if (panning) { view.ox += x - panning.x; view.oy += y - panning.y; panning = { x, y }; draw(); return; }
+    if (downAt && (tool === 'select' || editPick) && (box || Math.hypot(x - downAt.x, y - downAt.y) >= 8)) { box = { x0: downAt.x, y0: downAt.y, x1: x, y1: y }; draw(); return; }
     computeCursor(x, y); draw();
   });
   const up = ev => {
@@ -579,6 +705,7 @@
     pointers.delete(ev.pointerId);
     if (pointers.size < 2) pinch = null;
     if (panning) { panning = null; cv.style.cursor = tool === 'pan' ? 'grab' : 'crosshair'; return; }
+    if (box) { const b = box; box = null; downAt = null; if (ev.type === 'pointerup') boxSelect(b); else draw(); return; }
     if (downAt && ev.type === 'pointerup') {
       const moved = Math.hypot(x - downAt.x, y - downAt.y);
       if (moved < 12) { computeCursor(x, y); place({ ...cursor }); }
@@ -597,7 +724,8 @@
   const typing = () => ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName);
   window.addEventListener('keydown', ev => {
     shiftDown = ev.shiftKey;
-    if (ev.key === 'Escape') { pts = []; sel.clear(); updateHint(); draw(); if (typing()) document.activeElement.blur(); return; }
+    if (ev.key === 'Escape') { if (typing()) document.activeElement.blur(); if (EDIT.has(tool)) { setTool('select'); return; } pts = []; sel.clear(); updateHint(); draw(); return; }
+    if (ev.key === 'Enter' && !typing() && finishPick()) { ev.preventDefault(); return; }
     if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'z') { if (!typing()) { ev.preventDefault(); ev.shiftKey ? redo() : undo(); } return; }
     if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'y') { if (!typing()) { ev.preventDefault(); redo(); } return; }
     if (ev.key === 'F3') { ev.preventDefault(); toggle('osnap'); return; }
@@ -605,7 +733,7 @@
     if (ev.key === 'F9') { ev.preventDefault(); toggle('grid'); return; }
     if (typing()) return;
     if (ev.key === 'Delete' || ev.key === 'Backspace') { delSel(); return; }
-    const map = { s: 'select', h: 'pan', l: 'line', r: 'rect', c: 'circle', d: 'dim', t: 'text' };
+    const map = { s: 'select', h: 'pan', l: 'line', r: 'rect', c: 'circle', d: 'dim', t: 'text', m: 'move' };
     const k = ev.key.toLowerCase();
     if (map[k] && !ev.ctrlKey && !ev.metaKey) { setTool(map[k]); return; }
     if (k === 'z') { fit(); return; }
@@ -625,14 +753,20 @@
     const raw = $('cmd').value.trim();
     if (tool === 'text') { if (raw) $('hint').textContent = `"${raw}" — 놓을 위치를 클릭하세요.`; return; }
     $('cmd').value = '';
-    if (!raw) { pts = []; updateHint(); draw(); return; }
+    if (!raw) { if (finishPick()) return; if (tool === 'copy') { setTool('select'); return; } pts = []; updateHint(); draw(); return; }
     const up = raw.toUpperCase();
-    const cmds = { L: 'line', LINE: 'line', REC: 'rect', R: 'rect', C: 'circle', CIRCLE: 'circle', D: 'dim', DIM: 'dim', T: 'text', S: 'select', H: 'pan' };
+    const cmds = { L: 'line', LINE: 'line', REC: 'rect', R: 'rect', C: 'circle', CIRCLE: 'circle', D: 'dim', DIM: 'dim', T: 'text', S: 'select', H: 'pan',
+      M: 'move', MOVE: 'move', CO: 'copy', CP: 'copy', COPY: 'copy', RO: 'rotate', ROTATE: 'rotate', MI: 'mirror', MIRROR: 'mirror', SC: 'scale', SCALE: 'scale' };
     if (cmds[up]) { setTool(cmds[up]); return; }
     if (up === 'Z' || up === 'ZE') { fit(); return; }
     if (up === 'U') { undo(); return; }
     const last = pts[pts.length - 1];
     let p = null, m;
+    if ((tool === 'rotate' || tool === 'scale') && !editPick && last && (m = raw.match(/^(-?[\d.]+)$/))) {
+      const v = +m[1];
+      if (tool === 'scale' && !(v > 0)) { $('hint').textContent = '배율은 0보다 커야 합니다.'; return; }
+      return applyEdit(matrixFor(tool, last, cursor, v));
+    }
     if ((m = raw.match(/^@\s*(-?[\d.]+)\s*<\s*(-?[\d.]+)$/)) && last) { const L = +m[1], a = +m[2] * Math.PI / 180; p = { x: last.x + L * Math.cos(a), y: last.y + L * Math.sin(a) }; }
     else if ((m = raw.match(/^@\s*(-?[\d.]+)\s*,\s*(-?[\d.]+)$/))) { const b = last || { x: 0, y: 0 }; p = { x: b.x + +m[1], y: b.y + +m[2] }; }
     else if ((m = raw.match(/^(-?[\d.]+)\s*,\s*(-?[\d.]+)$/))) p = { x: +m[1], y: +m[2] };
@@ -643,12 +777,14 @@
     }
     if (!p) { $('hint').textContent = `"${raw}"을(를) 이해하지 못했습니다. 예: 100,50  @100,0  @50<30  또는 숫자`; return; }
     if (tool === 'select' || tool === 'pan') setTool('line');
+    if (editPick) { $('hint').textContent = '먼저 객체를 선택하고 Enter를 누르세요.'; return; }
     place(p);
   });
 
   // 버튼
   $('btnUndo').onclick = undo; $('btnRedo').onclick = redo; $('btnFit').onclick = fit;
   $('btnDel').onclick = delSel;
+  $('btnDone').onclick = () => finishPick();
   let clearArmed = false;
   $('btnClear').onclick = () => {
     if (!ents.length) return;
