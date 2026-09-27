@@ -1,0 +1,822 @@
+<title>안산 미니 CAD</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #eef2f1;
+    --panel: #f8faf9;
+    --ink: #1a272c;
+    --muted: #5d6f75;
+    --line: #cfd9d8;
+    --grid-minor: #dfe6e5;
+    --grid-major: #c3cfce;
+    --axis: #9fb3b2;
+    --draw: #1a272c;
+    --dim: #0b7a61;
+    --accent: #0a6e8a;
+    --accent-ink: #ffffff;
+    --select: #c7811a;
+    --snap: #d2461e;
+    --preview: #0a6e8a;
+    --field: #ffffff;
+    --font: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #11171a; --panel: #182125; --ink: #e3ebea; --muted: #8fa3a6;
+      --line: #2a373c; --grid-minor: #1a2327; --grid-major: #243137; --axis: #3b5058;
+      --draw: #e3ebea; --dim: #5cc9a7; --accent: #4fb3cf; --accent-ink: #0d1417;
+      --select: #f0a93b; --snap: #ff7a52; --preview: #4fb3cf; --field: #0f1518;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #11171a; --panel: #182125; --ink: #e3ebea; --muted: #8fa3a6;
+    --line: #2a373c; --grid-minor: #1a2327; --grid-major: #243137; --axis: #3b5058;
+    --draw: #e3ebea; --dim: #5cc9a7; --accent: #4fb3cf; --accent-ink: #0d1417;
+    --select: #f0a93b; --snap: #ff7a52; --preview: #4fb3cf; --field: #0f1518;
+  }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 14px/1.45 var(--font);
+    display: grid; grid-template-rows: auto auto 1fr auto; overflow: hidden;
+  }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  .top {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: baseline; gap: 8px; margin-right: auto; }
+  .brand b { font-size: 16px; letter-spacing: -0.01em; }
+  .brand span { color: var(--muted); font-size: 12px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  .grp { display: flex; gap: 4px; padding-right: 8px; margin-right: 2px; border-right: 1px solid var(--line); }
+  .grp:last-child { border-right: 0; }
+  .btn {
+    border: 1px solid var(--line); background: var(--field); border-radius: 6px;
+    padding: 5px 10px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; white-space: nowrap;
+  }
+  .btn kbd { font: 11px var(--mono); color: var(--muted); }
+  .btn:hover { border-color: var(--accent); }
+  .btn:focus-visible, textarea:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn[aria-pressed="true"] kbd { color: inherit; opacity: .75; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .main { display: grid; grid-template-columns: 1fr 300px; min-height: 0; }
+  .stage { position: relative; min-height: 0; overflow: hidden; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+  .hint {
+    position: absolute; left: 12px; top: 10px; padding: 4px 8px; border-radius: 4px;
+    background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--line);
+    font-size: 12px; color: var(--muted); pointer-events: none; max-width: calc(100% - 24px);
+  }
+  .side { border-left: 1px solid var(--line); background: var(--panel); overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 18px; }
+  .side h2 { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 500; }
+  .side section { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  label.f { min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--muted); }
+  label.f input, label.f select, textarea {
+    background: var(--field); border: 1px solid var(--line); border-radius: 5px; padding: 5px 7px; color: var(--ink); min-width: 0;
+  }
+  label.f input { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  textarea { resize: vertical; min-height: 72px; line-height: 1.4; }
+  .note { font-size: 12px; color: var(--muted); margin: 0; }
+  .note.err { color: var(--snap); }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 12px; border: 1px dashed var(--line); background: transparent; border-radius: 12px; padding: 2px 8px; cursor: pointer; color: var(--muted); text-align: left; }
+  .chip:hover { color: var(--ink); border-color: var(--accent); }
+  .status {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 6px 16px calc(6px + env(safe-area-inset-bottom, 0px)); background: var(--panel); border-top: 1px solid var(--line);
+    font-family: var(--mono); font-size: 12px;
+  }
+  .coords { min-width: 170px; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .cmd { flex: 1; display: flex; align-items: center; gap: 6px; min-width: 200px; }
+  .cmd span { color: var(--accent); white-space: nowrap; }
+  .cmd input { flex: 1; min-width: 0; background: var(--field); border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px; font-family: var(--mono); }
+  .toggles { display: flex; gap: 4px; }
+  .tg { font: 11px var(--mono); padding: 3px 7px; border-radius: 4px; border: 1px solid var(--line); background: transparent; cursor: pointer; color: var(--muted); }
+  .tg[aria-pressed="true"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+  .dxfbox { font: 11px var(--mono); height: 110px; }
+  @media (max-width: 760px) {
+    .main { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+    .side { border-left: 0; border-top: 1px solid var(--line); max-height: 38vh; }
+    .btn kbd { display: none; }
+    .coords { min-width: 0; }
+  }
+</style>
+
+<header class="top">
+  <div class="brand"><b>안산 미니 CAD</b><span>v0.1 · 단위 mm</span></div>
+  <button class="btn" id="btnUndo" title="되돌리기 (Ctrl+Z)">되돌리기</button>
+  <button class="btn" id="btnRedo" title="다시 실행 (Ctrl+Y)">다시</button>
+  <button class="btn" id="btnFit" title="전체 보기 (Z)">전체 보기</button>
+  <button class="btn primary" id="btnDxf">DXF 저장</button>
+</header>
+
+<nav class="tools" aria-label="그리기 도구">
+  <div class="grp">
+    <button class="btn" data-tool="select" aria-pressed="false">선택 <kbd>S</kbd></button>
+    <button class="btn" data-tool="pan" aria-pressed="false">화면 이동 <kbd>H</kbd></button>
+  </div>
+  <div class="grp">
+    <button class="btn" data-tool="line" aria-pressed="false">선 <kbd>L</kbd></button>
+    <button class="btn" data-tool="rect" aria-pressed="false">사각형 <kbd>R</kbd></button>
+    <button class="btn" data-tool="circle" aria-pressed="false">원 <kbd>C</kbd></button>
+    <button class="btn" data-tool="dim" aria-pressed="false">치수 <kbd>D</kbd></button>
+    <button class="btn" data-tool="text" aria-pressed="false">문자 <kbd>T</kbd></button>
+  </div>
+  <div class="grp">
+    <button class="btn" id="btnDel">삭제 <kbd>Del</kbd></button>
+    <button class="btn" id="btnClear">새 도면</button>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="hint" id="hint"></div>
+  </div>
+
+  <aside class="side">
+    <section id="aiSection" hidden>
+      <h2>AI로 그리기</h2>
+      <textarea id="aiText" placeholder="예: 가로 200 세로 120 판, 모서리에서 15mm 안쪽에 지름 8 구멍 4개, 전체 치수 넣어줘"></textarea>
+      <div class="chips">
+        <button class="chip" data-ex="가로 200 세로 120 판, 모서리에서 15mm 안쪽에 지름 8 구멍 4개, 가로·세로 전체 치수">구멍 4개 판</button>
+        <button class="chip" data-ex="외경 300, 내경 220 링. 링 위에 폭 10 깊이 5 노치 1개. 외경·내경 치수">웨이퍼 링</button>
+        <button class="chip" data-ex="길이 250, 폭 60 핀보트 평면도. 가운데 줄에 지름 3 핀 구멍을 피치 10으로 20개. 전체 길이, 피치 치수">핀보트</button>
+      </div>
+      <button class="btn primary" id="aiGo">AI로 그리기</button>
+      <p class="note" id="aiNote">말로 설명하면 Claude가 도형 좌표를 계산해서 그려 줍니다. 그린 뒤에는 직접 고칠 수 있습니다.</p>
+    </section>
+
+    <section>
+      <h2>카세트 자동 생성 (파라메트릭)</h2>
+      <div class="row">
+        <label class="f">웨이퍼
+          <select id="pWafer"><option value="150">6"</option><option value="200" selected>8"</option><option value="300">12"</option></select>
+        </label>
+        <label class="f">슬롯 수<input id="pSlots" type="number" value="25" min="2" max="50"></label>
+        <label class="f">피치<input id="pPitch" type="number" value="6.35" step="0.01" min="2"></label>
+      </div>
+      <div class="row">
+        <label class="f">측벽 두께<input id="pWall" type="number" value="12" step="0.5" min="2"></label>
+        <label class="f">상하 여유<input id="pMargin" type="number" value="18" step="0.5" min="2"></label>
+        <label class="f">문자 높이<input id="pTxt" type="number" value="5" step="0.5" min="1"></label>
+      </div>
+      <button class="btn" id="btnGen">정면도 생성</button>
+      <p class="note">수치만 바꾸면 슬롯 치형과 치수까지 다시 그립니다. 형상은 설명용 예시이며, 회사 표준 치수로 바꿔 쓰면 됩니다.</p>
+    </section>
+
+    <section>
+      <h2>DXF 내보내기</h2>
+      <p class="note" id="dxfNote">오토캐드·캐디안에서 열 수 있는 DXF(R12) 파일로 저장합니다.</p>
+      <textarea class="dxfbox" id="dxfOut" readonly hidden aria-label="DXF 내용"></textarea>
+      <button class="btn" id="btnCopy" hidden>DXF 내용 복사</button>
+    </section>
+
+    <section>
+      <h2>명령어</h2>
+      <p class="note">아래 명령줄에 입력합니다. <code>100,50</code> 절대 좌표 · <code>@100,0</code> 상대 좌표 · <code>@50&lt;30</code> 길이와 각도 · 숫자만 쓰면 커서 방향 길이(원은 반지름). <code>L R C D T Z U</code>로 도구 전환.</p>
+    </section>
+  </aside>
+</div>
+
+<footer class="status">
+  <div class="coords" id="coords">X 0.00  Y 0.00</div>
+  <div class="toggles">
+    <button class="tg" id="tgGrid" aria-pressed="true" title="모눈 스냅 (F9)">GRID</button>
+    <button class="tg" id="tgOsnap" aria-pressed="true" title="객체 스냅 (F3)">OSNAP</button>
+    <button class="tg" id="tgOrtho" aria-pressed="false" title="직교 (F8)">ORTHO</button>
+  </div>
+  <form class="cmd" id="cmdForm"><span id="prompt">명령:</span><input id="cmd" autocomplete="off" aria-label="명령 입력"></form>
+</footer>
+
+<script>
+(() => {
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const stage = document.getElementById('stage');
+  const $ = id => document.getElementById(id);
+
+  // ---------- 도면 상태 ----------
+  let ents = [];            // {type:'line'|'rect'|'circle'|'arc'|'dim'|'text', ...}
+  let sel = new Set();
+  let undoStack = [], redoStack = [];
+  let tool = 'line';
+  let pts = [];             // 현재 도구에서 찍은 점
+  let cursor = { x: 0, y: 0 };  // 월드 좌표 (스냅 적용)
+  let rawCursor = { x: 0, y: 0 };
+  let snapHit = null;       // {x,y,kind}
+  let view = { s: 2, ox: 80, oy: 400 }; // px/mm, 원점의 화면 위치
+  let opt = { grid: true, osnap: true, ortho: false };
+  let txtH = 5;
+
+  const W2S = (x, y) => [view.ox + x * view.s, view.oy - y * view.s];
+  const S2W = (sx, sy) => ({ x: (sx - view.ox) / view.s, y: (view.oy - sy) / view.s });
+
+  function commit(mut) {
+    undoStack.push(JSON.stringify(ents));
+    if (undoStack.length > 200) undoStack.shift();
+    redoStack = [];
+    mut();
+    save(); draw();
+  }
+  function undo() { if (!undoStack.length) return; redoStack.push(JSON.stringify(ents)); ents = JSON.parse(undoStack.pop()); sel.clear(); save(); draw(); }
+  function redo() { if (!redoStack.length) return; undoStack.push(JSON.stringify(ents)); ents = JSON.parse(redoStack.pop()); sel.clear(); save(); draw(); }
+  function save() { try { localStorage.setItem('minicad.v1', JSON.stringify(ents)); } catch (e) {} }
+
+  // ---------- 화면 크기 ----------
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = Math.max(1, r.width * dpr); cv.height = Math.max(1, r.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw();
+  }
+  new ResizeObserver(resize).observe(stage);
+
+  // ---------- 기하 유틸 ----------
+  const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+  function segDist(p, a, b) {
+    const dx = b.x - a.x, dy = b.y - a.y, L = dx * dx + dy * dy;
+    let t = L ? ((p.x - a.x) * dx + (p.y - a.y) * dy) / L : 0;
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(p.x - (a.x + t * dx), p.y - (a.y + t * dy));
+  }
+  const rectCorners = e => [{ x: e.x1, y: e.y1 }, { x: e.x2, y: e.y1 }, { x: e.x2, y: e.y2 }, { x: e.x1, y: e.y2 }];
+  function angIn(a, a1, a2) { // 도(deg), 반시계 a1→a2
+    const n = v => ((v % 360) + 360) % 360;
+    a = n(a); a1 = n(a1); a2 = n(a2);
+    return a1 <= a2 ? (a >= a1 && a <= a2) : (a >= a1 || a <= a2);
+  }
+  function dimGeom(e) {
+    const dx = e.x2 - e.x1, dy = e.y2 - e.y1, L = Math.hypot(dx, dy) || 1;
+    const n = { x: -dy / L, y: dx / L };
+    return { n, L, d1: { x: e.x1 + n.x * e.off, y: e.y1 + n.y * e.off }, d2: { x: e.x2 + n.x * e.off, y: e.y2 + n.y * e.off } };
+  }
+  function hitDist(e, p) {
+    switch (e.type) {
+      case 'line': return segDist(p, { x: e.x1, y: e.y1 }, { x: e.x2, y: e.y2 });
+      case 'rect': { const c = rectCorners(e); return Math.min(...c.map((q, i) => segDist(p, q, c[(i + 1) % 4]))); }
+      case 'circle': return Math.abs(dist(p, { x: e.cx, y: e.cy }) - e.r);
+      case 'arc': {
+        const a = Math.atan2(p.y - e.cy, p.x - e.cx) * 180 / Math.PI;
+        if (angIn(a, e.a1, e.a2)) return Math.abs(dist(p, { x: e.cx, y: e.cy }) - e.r);
+        const ends = arcEnds(e); return Math.min(dist(p, ends[0]), dist(p, ends[1]));
+      }
+      case 'dim': { const g = dimGeom(e); return segDist(p, g.d1, g.d2); }
+      case 'text': { const w = e.s.length * e.h * 0.8; return (p.x >= e.x && p.x <= e.x + w && p.y >= e.y && p.y <= e.y + e.h) ? 0 : Math.min(dist(p, { x: e.x, y: e.y }), dist(p, { x: e.x + w, y: e.y + e.h })); }
+    }
+    return Infinity;
+  }
+  const arcEnds = e => [e.a1, e.a2].map(a => ({ x: e.cx + e.r * Math.cos(a * Math.PI / 180), y: e.cy + e.r * Math.sin(a * Math.PI / 180) }));
+  function snapPoints(e) {
+    const out = [];
+    const add = (x, y, kind) => out.push({ x, y, kind });
+    if (e.type === 'line') { add(e.x1, e.y1, 'end'); add(e.x2, e.y2, 'end'); add((e.x1 + e.x2) / 2, (e.y1 + e.y2) / 2, 'mid'); }
+    if (e.type === 'rect') { const c = rectCorners(e); c.forEach((q, i) => { add(q.x, q.y, 'end'); const n = c[(i + 1) % 4]; add((q.x + n.x) / 2, (q.y + n.y) / 2, 'mid'); }); add((e.x1 + e.x2) / 2, (e.y1 + e.y2) / 2, 'cen'); }
+    if (e.type === 'circle') { add(e.cx, e.cy, 'cen'); [0, 90, 180, 270].forEach(a => add(e.cx + e.r * Math.cos(a * Math.PI / 180), e.cy + e.r * Math.sin(a * Math.PI / 180), 'qua')); }
+    if (e.type === 'arc') { add(e.cx, e.cy, 'cen'); arcEnds(e).forEach(q => add(q.x, q.y, 'end')); }
+    return out;
+  }
+  function bounds(list) {
+    let b = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+    const inc = (x, y) => { b.x0 = Math.min(b.x0, x); b.y0 = Math.min(b.y0, y); b.x1 = Math.max(b.x1, x); b.y1 = Math.max(b.y1, y); };
+    for (const e of list) {
+      if (e.type === 'line' || e.type === 'rect') { inc(e.x1, e.y1); inc(e.x2, e.y2); }
+      else if (e.type === 'circle' || e.type === 'arc') { inc(e.cx - e.r, e.cy - e.r); inc(e.cx + e.r, e.cy + e.r); }
+      else if (e.type === 'dim') { const g = dimGeom(e); inc(e.x1, e.y1); inc(e.x2, e.y2); inc(g.d1.x + g.n.x * e.h * 2, g.d1.y + g.n.y * e.h * 2); inc(g.d2.x, g.d2.y); }
+      else if (e.type === 'text') { inc(e.x, e.y); inc(e.x + e.s.length * e.h * 0.8, e.y + e.h); }
+    }
+    return b;
+  }
+  function fit() {
+    const r = stage.getBoundingClientRect();
+    if (!ents.length) { view.s = 2; view.ox = 60; view.oy = r.height - 60; draw(); return; }
+    const b = bounds(ents), pad = 50;
+    const w = Math.max(b.x1 - b.x0, 1), h = Math.max(b.y1 - b.y0, 1);
+    view.s = Math.min((r.width - pad * 2) / w, (r.height - pad * 2) / h);
+    view.ox = r.width / 2 - (b.x0 + w / 2) * view.s;
+    view.oy = r.height / 2 + (b.y0 + h / 2) * view.s;
+    draw();
+  }
+
+  function gridStep() {
+    const steps = [0.1, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000];
+    return steps.find(v => v * view.s >= 10) || 1000;
+  }
+
+  // ---------- 스냅 ----------
+  function computeCursor(sx, sy) {
+    const w = S2W(sx, sy); rawCursor = w; snapHit = null;
+    let p = { ...w };
+    if (opt.osnap) {
+      let best = null, bd = 12 / view.s;
+      for (const e of ents) for (const q of snapPoints(e)) { const d = dist(q, w); if (d < bd) { bd = d; best = q; } }
+      if (best) { snapHit = best; p = { x: best.x, y: best.y }; }
+    }
+    if (!snapHit && opt.grid) { const g = gridStep(); p = { x: Math.round(w.x / g) * g, y: Math.round(w.y / g) * g }; }
+    const last = pts[pts.length - 1];
+    if (!snapHit && opt.ortho && last && tool !== 'circle') {
+      if (Math.abs(p.x - last.x) > Math.abs(p.y - last.y)) p.y = last.y; else p.x = last.x;
+    }
+    cursor = p;
+  }
+
+  // ---------- 그리기 ----------
+  let C = {};
+  function readColors() { const cs = getComputedStyle(document.documentElement); ['paper', 'grid-minor', 'grid-major', 'axis', 'draw', 'dim', 'select', 'snap', 'preview', 'muted'].forEach(k => C[k] = cs.getPropertyValue('--' + k).trim()); }
+  function fmt(v) { return (Math.round(v * 100) / 100).toString(); }
+
+  function drawEnt(e, color, dash) {
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.setLineDash(dash || []);
+    ctx.beginPath();
+    if (e.type === 'line') { ctx.moveTo(...W2S(e.x1, e.y1)); ctx.lineTo(...W2S(e.x2, e.y2)); ctx.stroke(); }
+    else if (e.type === 'rect') { const c = rectCorners(e).map(q => W2S(q.x, q.y)); ctx.moveTo(...c[0]); c.slice(1).forEach(q => ctx.lineTo(...q)); ctx.closePath(); ctx.stroke(); }
+    else if (e.type === 'circle') { const [x, y] = W2S(e.cx, e.cy); ctx.arc(x, y, e.r * view.s, 0, Math.PI * 2); ctx.stroke(); }
+    else if (e.type === 'arc') { const [x, y] = W2S(e.cx, e.cy); ctx.arc(x, y, e.r * view.s, -e.a1 * Math.PI / 180, -e.a2 * Math.PI / 180, true); ctx.stroke(); }
+    else if (e.type === 'dim') drawDim(e, color);
+    else if (e.type === 'text') {
+      const [x, y] = W2S(e.x, e.y);
+      ctx.font = `${Math.max(1, e.h * view.s)}px ${getComputedStyle(document.body).getPropertyValue('--font')}`;
+      ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left'; ctx.fillText(e.s, x, y);
+    }
+    ctx.setLineDash([]);
+  }
+  function drawDim(e, color) {
+    const g = dimGeom(e), gap = 2 / view.s, ext = 2 / view.s * 1.5;
+    const sgn = Math.sign(e.off) || 1;
+    const line = (a, b) => { ctx.beginPath(); ctx.moveTo(...W2S(a.x, a.y)); ctx.lineTo(...W2S(b.x, b.y)); ctx.stroke(); };
+    ctx.strokeStyle = color; ctx.fillStyle = color;
+    // 보조선
+    [[e.x1, e.y1, g.d1], [e.x2, e.y2, g.d2]].forEach(([x, y, d]) => {
+      line({ x: x + g.n.x * gap * sgn, y: y + g.n.y * gap * sgn }, { x: d.x + g.n.x * ext * sgn * 1.5, y: d.y + g.n.y * ext * sgn * 1.5 });
+    });
+    line(g.d1, g.d2);
+    // 화살표 (화면 크기 고정)
+    const [ax, ay] = W2S(g.d1.x, g.d1.y), [bx, by] = W2S(g.d2.x, g.d2.y);
+    const ang = Math.atan2(by - ay, bx - ax), A = 8, B = 2.6;
+    const arrow = (x, y, a) => { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - A * Math.cos(a) + B * Math.sin(a), y - A * Math.sin(a) - B * Math.cos(a)); ctx.lineTo(x - A * Math.cos(a) - B * Math.sin(a), y - A * Math.sin(a) + B * Math.cos(a)); ctx.closePath(); ctx.fill(); };
+    arrow(ax, ay, ang + Math.PI); arrow(bx, by, ang);
+    // 치수 문자
+    const mx = (ax + bx) / 2, my = (ay + by) / 2;
+    let ta = ang; if (ta > Math.PI / 2 || ta < -Math.PI / 2) ta += Math.PI;
+    ctx.save(); ctx.translate(mx, my); ctx.rotate(ta);
+    ctx.font = `${Math.max(9, e.h * view.s)}px ${getComputedStyle(document.body).getPropertyValue('--mono')}`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+    ctx.fillText(e.label || fmt(g.L), 0, -3);
+    ctx.restore();
+  }
+
+  function draw() {
+    readColors();
+    const r = stage.getBoundingClientRect(), Wd = r.width, Ht = r.height;
+    ctx.fillStyle = C.paper; ctx.fillRect(0, 0, Wd, Ht);
+    // 모눈
+    const g = gridStep(), maj = g * 5;
+    const w0 = S2W(0, Ht), w1 = S2W(Wd, 0);
+    const lines = (step, color) => {
+      ctx.strokeStyle = color; ctx.lineWidth = 1; ctx.beginPath();
+      for (let x = Math.floor(w0.x / step) * step; x <= w1.x; x += step) { const sx = Math.round(W2S(x, 0)[0]) + .5; ctx.moveTo(sx, 0); ctx.lineTo(sx, Ht); }
+      for (let y = Math.floor(w0.y / step) * step; y <= w1.y; y += step) { const sy = Math.round(W2S(0, y)[1]) + .5; ctx.moveTo(0, sy); ctx.lineTo(Wd, sy); }
+      ctx.stroke();
+    };
+    if (g * view.s >= 8) lines(g, C['grid-minor']);
+    lines(maj, C['grid-major']);
+    const [ox, oy] = W2S(0, 0);
+    ctx.strokeStyle = C.axis; ctx.beginPath(); ctx.moveTo(0, Math.round(oy) + .5); ctx.lineTo(Wd, Math.round(oy) + .5); ctx.moveTo(Math.round(ox) + .5, 0); ctx.lineTo(Math.round(ox) + .5, Ht); ctx.stroke();
+
+    // 객체
+    ctx.lineWidth = 1.4;
+    ents.forEach((e, i) => drawEnt(e, sel.has(i) ? C.select : (e.type === 'dim' ? C.dim : C.draw), sel.has(i) ? [6, 3] : null));
+
+    // 미리보기
+    const pv = previewEnt();
+    if (pv) { ctx.lineWidth = 1.2; drawEnt(pv, C.preview, pv.type === 'dim' ? null : [5, 4]); }
+
+    // 스냅 표시
+    if (snapHit) {
+      const [sx, sy] = W2S(snapHit.x, snapHit.y); ctx.strokeStyle = C.snap; ctx.lineWidth = 2; ctx.beginPath();
+      if (snapHit.kind === 'end') ctx.rect(sx - 6, sy - 6, 12, 12);
+      else if (snapHit.kind === 'mid') { ctx.moveTo(sx, sy - 7); ctx.lineTo(sx + 7, sy + 5); ctx.lineTo(sx - 7, sy + 5); ctx.closePath(); }
+      else if (snapHit.kind === 'cen') ctx.arc(sx, sy, 6, 0, Math.PI * 2);
+      else { ctx.moveTo(sx, sy - 7); ctx.lineTo(sx + 7, sy); ctx.lineTo(sx, sy + 7); ctx.lineTo(sx - 7, sy); ctx.closePath(); }
+      ctx.stroke();
+    }
+    // 십자 커서
+    if (tool !== 'pan') {
+      const [cx, cy] = W2S(cursor.x, cursor.y); ctx.strokeStyle = C.muted; ctx.lineWidth = 1; ctx.beginPath();
+      ctx.moveTo(cx - 14, cy); ctx.lineTo(cx + 14, cy); ctx.moveTo(cx, cy - 14); ctx.lineTo(cx, cy + 14); ctx.stroke();
+    }
+    const last = pts[pts.length - 1];
+    let info = `X ${cursor.x.toFixed(2)}  Y ${cursor.y.toFixed(2)}`;
+    if (last) info += `  L ${dist(last, cursor).toFixed(2)}`;
+    $('coords').textContent = info;
+  }
+
+  function previewEnt() {
+    const p = cursor, a = pts[0];
+    if (!a) return null;
+    if (tool === 'line') return { type: 'line', x1: pts[pts.length - 1].x, y1: pts[pts.length - 1].y, x2: p.x, y2: p.y };
+    if (tool === 'rect') return { type: 'rect', x1: a.x, y1: a.y, x2: p.x, y2: p.y };
+    if (tool === 'circle') return { type: 'circle', cx: a.x, cy: a.y, r: Math.max(dist(a, p), 0.01) };
+    if (tool === 'dim') {
+      if (pts.length === 1) return { type: 'line', x1: a.x, y1: a.y, x2: p.x, y2: p.y };
+      return makeDim(pts[0], pts[1], p);
+    }
+    return null;
+  }
+  function makeDim(a, b, p) {
+    // 가로/세로/정렬 치수 자동 판단 (오토캐드 DIMLINEAR 처럼)
+    const dx = Math.abs(b.x - a.x), dy = Math.abs(b.y - a.y);
+    let A = a, B = b;
+    const outX = p.x < Math.min(a.x, b.x) || p.x > Math.max(a.x, b.x);
+    const outY = p.y < Math.min(a.y, b.y) || p.y > Math.max(a.y, b.y);
+    if (dx > 1e-9 && dy > 1e-9) {
+      if (outY && !outX) { // 가로 치수
+        const x1 = Math.min(a.x, b.x), x2 = Math.max(a.x, b.x), yb = p.y > Math.max(a.y, b.y) ? Math.max(a.y, b.y) : Math.min(a.y, b.y);
+        const ya = a.x < b.x ? a.y : b.y, yc = a.x < b.x ? b.y : a.y;
+        return { type: 'dim', x1, y1: ya, x2, y2: yc, off: 0, h: txtH, _h: p.y, mode: 'h' , ...fixH(x1, ya, x2, yc, p.y) };
+      }
+      if (outX && !outY) {
+        const y1 = Math.min(a.y, b.y), y2 = Math.max(a.y, b.y);
+        const xa = a.y < b.y ? a.x : b.x, xc = a.y < b.y ? b.x : a.x;
+        return fixV(xa, y1, xc, y2, p.x);
+      }
+    }
+    // 정렬 치수
+    if (A.x > B.x || (A.x === B.x && A.y > B.y)) [A, B] = [B, A];
+    const L = Math.hypot(B.x - A.x, B.y - A.y) || 1, n = { x: -(B.y - A.y) / L, y: (B.x - A.x) / L };
+    return { type: 'dim', x1: A.x, y1: A.y, x2: B.x, y2: B.y, off: (p.x - A.x) * n.x + (p.y - A.y) * n.y, h: txtH };
+  }
+  // 가로/세로 치수는 측정점을 치수선 방향으로 투영해 정렬치수 구조로 저장
+  function fixH(x1, ya, x2, yc, py) {
+    // 치수선 y=py, 보조선은 각 점에서 수직으로
+    return { x1, y1: ya, x2, y2: yc, off: 0, label: fmt(x2 - x1), hv: { y: py } };
+  }
+  function fixV(xa, y1, xc, y2, px) {
+    return { type: 'dim', x1: xa, y1, x2: xc, y2, off: 0, h: txtH, label: fmt(y2 - y1), vv: { x: px } };
+  }
+  // hv/vv 치수를 일반 정렬 치수로 정규화 (두 점을 치수선 기준으로 맞춤)
+  function normDim(d) {
+    if (d.hv) { // 가로: 두 점 y를 같은 기준으로 옮기되 보조선 길이는 유지 못하므로 단순화 — 기준점 y를 가까운 쪽으로
+      const y = d.hv.y, base = Math.abs(y - d.y1) < Math.abs(y - d.y2) ? d.y1 : d.y2;
+      return { type: 'dim', x1: d.x1, y1: base, x2: d.x2, y2: base, off: y - base, h: d.h || txtH, label: d.label };
+    }
+    if (d.vv) {
+      const x = d.vv.x, base = Math.abs(x - d.x1) < Math.abs(x - d.x2) ? d.x1 : d.x2;
+      // 아래→위 방향이면 법선은 -x 쪽
+      return { type: 'dim', x1: base, y1: d.y1, x2: base, y2: d.y2, off: -(x - base), h: d.h || txtH, label: d.label };
+    }
+    return d;
+  }
+  const _makeDim = makeDim;
+  makeDim = (a, b, p) => { const d = _makeDim(a, b, p); d.type = 'dim'; d.h = d.h || txtH; return normDim(d); };
+
+  // ---------- 입력 처리 ----------
+  const HINTS = {
+    select: '객체를 클릭해 선택합니다. Shift+클릭으로 추가 선택, Del로 삭제.',
+    pan: '끌어서 화면을 이동합니다. 휠 또는 두 손가락으로 확대/축소.',
+    line: ['첫 점을 클릭하세요.', '다음 점을 클릭하거나 길이를 입력하세요. Esc 또는 우클릭으로 끝냅니다.'],
+    rect: ['첫 모서리를 클릭하세요.', '반대 모서리를 클릭하거나 @가로,세로 를 입력하세요.'],
+    circle: ['중심점을 클릭하세요.', '반지름 위치를 클릭하거나 반지름을 입력하세요.'],
+    dim: ['치수 첫 점을 클릭하세요 (끝점 스냅 권장).', '치수 둘째 점을 클릭하세요.', '치수선 위치를 클릭하세요.'],
+    text: ['문자를 놓을 위치를 클릭하세요. 명령줄에 쓴 내용이 들어갑니다.'],
+  };
+  function updateHint() {
+    const h = HINTS[tool];
+    const s = Array.isArray(h) ? h[Math.min(pts.length, h.length - 1)] : h;
+    $('hint').textContent = s;
+    $('prompt').textContent = tool === 'text' ? '문자 내용:' : '명령:';
+  }
+  function setTool(t) {
+    tool = t; pts = [];
+    document.querySelectorAll('[data-tool]').forEach(b => b.setAttribute('aria-pressed', b.dataset.tool === t));
+    cv.style.cursor = t === 'pan' ? 'grab' : 'crosshair';
+    updateHint(); draw();
+  }
+  document.querySelectorAll('[data-tool]').forEach(b => b.addEventListener('click', () => setTool(b.dataset.tool)));
+
+  function place(p) {
+    if (tool === 'select') return pick(p);
+    pts.push(p);
+    if (tool === 'line' && pts.length === 2) { const [a, b] = pts; if (dist(a, b) > 1e-9) commit(() => ents.push({ type: 'line', x1: a.x, y1: a.y, x2: b.x, y2: b.y })); pts = [b]; }
+    else if (tool === 'rect' && pts.length === 2) { const [a, b] = pts; if (a.x !== b.x && a.y !== b.y) commit(() => ents.push({ type: 'rect', x1: Math.min(a.x, b.x), y1: Math.min(a.y, b.y), x2: Math.max(a.x, b.x), y2: Math.max(a.y, b.y) })); pts = []; }
+    else if (tool === 'circle' && pts.length === 2) { const [a, b] = pts, r = dist(a, b); if (r > 1e-9) commit(() => ents.push({ type: 'circle', cx: a.x, cy: a.y, r })); pts = []; }
+    else if (tool === 'dim' && pts.length === 3) { const d = makeDim(pts[0], pts[1], pts[2]); commit(() => ents.push(d)); pts = []; }
+    else if (tool === 'text') {
+      const s = $('cmd').value.trim();
+      pts = [];
+      if (!s) { $('hint').textContent = '먼저 아래 명령줄에 문자 내용을 쓰고, 도면을 클릭하세요.'; $('cmd').focus(); return; }
+      commit(() => ents.push({ type: 'text', x: p.x, y: p.y, h: txtH, s })); $('cmd').value = '';
+    }
+    updateHint(); draw();
+  }
+  function pick(p) {
+    let best = -1, bd = 8 / view.s;
+    ents.forEach((e, i) => { const d = hitDist(e, p); if (d < bd) { bd = d; best = i; } });
+    if (!shiftDown) sel.clear();
+    if (best >= 0) { if (sel.has(best)) sel.delete(best); else sel.add(best); }
+    draw();
+  }
+  function delSel() { if (!sel.size) return; commit(() => { ents = ents.filter((_, i) => !sel.has(i)); sel.clear(); }); }
+
+  // 포인터 (마우스 + 터치 + 펜)
+  const pointers = new Map();
+  let panning = null, pinch = null, shiftDown = false, downAt = null;
+  const local = ev => { const r = cv.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
+  cv.addEventListener('contextmenu', e => e.preventDefault());
+  cv.addEventListener('pointerdown', ev => {
+    cv.setPointerCapture(ev.pointerId);
+    const [x, y] = local(ev);
+    pointers.set(ev.pointerId, { x, y });
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2 }; downAt = null; panning = null; return;
+    }
+    if (ev.button === 1 || tool === 'pan') { panning = { x, y }; cv.style.cursor = 'grabbing'; ev.preventDefault(); return; }
+    if (ev.button === 2) { pts = []; updateHint(); draw(); return; }
+    downAt = { x, y, t: ev.pointerType };
+    computeCursor(x, y); draw();
+  });
+  cv.addEventListener('pointermove', ev => {
+    const [x, y] = local(ev);
+    if (pointers.has(ev.pointerId)) pointers.set(ev.pointerId, { x, y });
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      zoomAt(pinch.mx, pinch.my, d / pinch.d);
+      view.ox += mx - pinch.mx; view.oy += my - pinch.my;
+      pinch = { d, mx, my }; draw(); return;
+    }
+    if (panning) { view.ox += x - panning.x; view.oy += y - panning.y; panning = { x, y }; draw(); return; }
+    computeCursor(x, y); draw();
+  });
+  const up = ev => {
+    const [x, y] = local(ev);
+    pointers.delete(ev.pointerId);
+    if (pointers.size < 2) pinch = null;
+    if (panning) { panning = null; cv.style.cursor = tool === 'pan' ? 'grab' : 'crosshair'; return; }
+    if (downAt && ev.type === 'pointerup') {
+      const moved = Math.hypot(x - downAt.x, y - downAt.y);
+      if (moved < 12) { computeCursor(x, y); place({ ...cursor }); }
+    }
+    downAt = null;
+  };
+  cv.addEventListener('pointerup', up);
+  cv.addEventListener('pointercancel', up);
+  function zoomAt(sx, sy, f) {
+    const ns = Math.min(400, Math.max(0.02, view.s * f)); f = ns / view.s;
+    view.ox = sx - (sx - view.ox) * f; view.oy = sy - (sy - view.oy) * f; view.s = ns;
+  }
+  cv.addEventListener('wheel', ev => { ev.preventDefault(); const [x, y] = local(ev); zoomAt(x, y, Math.exp(-ev.deltaY * 0.0015)); computeCursor(x, y); draw(); }, { passive: false });
+
+  // 키보드
+  const typing = () => ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName);
+  window.addEventListener('keydown', ev => {
+    shiftDown = ev.shiftKey;
+    if (ev.key === 'Escape') { pts = []; sel.clear(); updateHint(); draw(); if (typing()) document.activeElement.blur(); return; }
+    if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'z') { if (!typing()) { ev.preventDefault(); ev.shiftKey ? redo() : undo(); } return; }
+    if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'y') { if (!typing()) { ev.preventDefault(); redo(); } return; }
+    if (ev.key === 'F3') { ev.preventDefault(); toggle('osnap'); return; }
+    if (ev.key === 'F8') { ev.preventDefault(); toggle('ortho'); return; }
+    if (ev.key === 'F9') { ev.preventDefault(); toggle('grid'); return; }
+    if (typing()) return;
+    if (ev.key === 'Delete' || ev.key === 'Backspace') { delSel(); return; }
+    const map = { s: 'select', h: 'pan', l: 'line', r: 'rect', c: 'circle', d: 'dim', t: 'text' };
+    const k = ev.key.toLowerCase();
+    if (map[k] && !ev.ctrlKey && !ev.metaKey) { setTool(map[k]); return; }
+    if (k === 'z') { fit(); return; }
+    // 숫자 등을 치면 명령줄로 이동 (오토캐드처럼)
+    if (/^[0-9@.,<\-]$/.test(ev.key)) { $('cmd').focus(); }
+  });
+  window.addEventListener('keyup', ev => { shiftDown = ev.shiftKey; });
+
+  function toggle(k) { opt[k] = !opt[k]; $({ grid: 'tgGrid', osnap: 'tgOsnap', ortho: 'tgOrtho' }[k]).setAttribute('aria-pressed', opt[k]); draw(); }
+  $('tgGrid').onclick = () => toggle('grid');
+  $('tgOsnap').onclick = () => toggle('osnap');
+  $('tgOrtho').onclick = () => toggle('ortho');
+
+  // 명령줄
+  $('cmdForm').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const raw = $('cmd').value.trim();
+    if (tool === 'text') { if (raw) $('hint').textContent = `"${raw}" — 놓을 위치를 클릭하세요.`; return; }
+    $('cmd').value = '';
+    if (!raw) { pts = []; updateHint(); draw(); return; }
+    const up = raw.toUpperCase();
+    const cmds = { L: 'line', LINE: 'line', REC: 'rect', R: 'rect', C: 'circle', CIRCLE: 'circle', D: 'dim', DIM: 'dim', T: 'text', S: 'select', H: 'pan' };
+    if (cmds[up]) { setTool(cmds[up]); return; }
+    if (up === 'Z' || up === 'ZE') { fit(); return; }
+    if (up === 'U') { undo(); return; }
+    const last = pts[pts.length - 1];
+    let p = null, m;
+    if ((m = raw.match(/^@\s*(-?[\d.]+)\s*<\s*(-?[\d.]+)$/)) && last) { const L = +m[1], a = +m[2] * Math.PI / 180; p = { x: last.x + L * Math.cos(a), y: last.y + L * Math.sin(a) }; }
+    else if ((m = raw.match(/^@\s*(-?[\d.]+)\s*,\s*(-?[\d.]+)$/))) { const b = last || { x: 0, y: 0 }; p = { x: b.x + +m[1], y: b.y + +m[2] }; }
+    else if ((m = raw.match(/^(-?[\d.]+)\s*,\s*(-?[\d.]+)$/))) p = { x: +m[1], y: +m[2] };
+    else if ((m = raw.match(/^(-?[\d.]+)$/)) && last) {
+      const L = +m[1];
+      if (tool === 'circle') p = { x: last.x + L, y: last.y };
+      else { let dx = cursor.x - last.x, dy = cursor.y - last.y; const d = Math.hypot(dx, dy) || 1; if (!Math.hypot(dx, dy)) { dx = 1; dy = 0; } p = { x: last.x + dx / d * L, y: last.y + dy / d * L }; }
+    }
+    if (!p) { $('hint').textContent = `"${raw}"을(를) 이해하지 못했습니다. 예: 100,50  @100,0  @50<30  또는 숫자`; return; }
+    if (tool === 'select' || tool === 'pan') setTool('line');
+    place(p);
+  });
+
+  // 버튼
+  $('btnUndo').onclick = undo; $('btnRedo').onclick = redo; $('btnFit').onclick = fit;
+  $('btnDel').onclick = delSel;
+  let clearArmed = false;
+  $('btnClear').onclick = () => {
+    if (!ents.length) return;
+    if (!clearArmed) { clearArmed = true; $('btnClear').textContent = '정말 지울까요?'; setTimeout(() => { clearArmed = false; $('btnClear').textContent = '새 도면'; }, 3000); return; }
+    clearArmed = false; $('btnClear').textContent = '새 도면';
+    commit(() => { ents = []; sel.clear(); });
+  };
+
+  // ---------- 파라메트릭: 웨이퍼 카세트 정면도 ----------
+  function cassette(o) {
+    const { D, N, P, t, m, h } = o;
+    const inner = D + 4;               // 웨이퍼 외경 + 좌우 여유 2mm
+    const Wd = inner + 2 * t;
+    const H = (N - 1) * P + 2 * m;
+    const tooth = Math.min(8, t * 0.8); // 슬롯 치형 길이
+    const out = [];
+    out.push({ type: 'rect', x1: 0, y1: 0, x2: Wd, y2: H });
+    out.push({ type: 'line', x1: t, y1: 0, x2: t, y2: H });
+    out.push({ type: 'line', x1: Wd - t, y1: 0, x2: Wd - t, y2: H });
+    for (let i = 0; i < N; i++) {
+      const y = m + i * P;
+      out.push({ type: 'line', x1: t, y1: y, x2: t + tooth, y2: y });
+      out.push({ type: 'line', x1: Wd - t, y1: y, x2: Wd - t - tooth, y2: y });
+    }
+    // 첫 슬롯의 웨이퍼 (중심선 표현)
+    out.push({ type: 'line', x1: t + 2, y1: m, x2: Wd - t - 2, y2: m });
+    const gap = h * 2.2;
+    out.push({ type: 'dim', x1: 0, y1: 0, x2: Wd, y2: 0, off: -gap * 1.2, h });
+    out.push({ type: 'dim', x1: 0, y1: 0, x2: 0, y2: H, off: gap * 1.2, h });
+    out.push({ type: 'dim', x1: t, y1: 0, x2: Wd - t, y2: 0, off: -gap * 0.55, h, label: fmt(inner) });
+    out.push({ type: 'dim', x1: Wd - t - tooth, y1: m, x2: Wd - t - tooth, y2: m + P, off: -(tooth + t + gap * 0.6), h, label: 'P' + fmt(P) });
+    out.push({ type: 'dim', x1: Wd, y1: m, x2: Wd, y2: m + (N - 1) * P, off: -gap * 1.7, h, label: `${N - 1}×${fmt(P)}=${fmt((N - 1) * P)}` });
+    const inch = { 150: '6"', 200: '8"', 300: '12"' }[D] || D + 'mm';
+    out.push({ type: 'text', x: 0, y: H + h * 2, h: h * 1.3, s: `${inch} WAFER CASSETTE  ${N} SLOT  (정면도, 예시)` });
+    return out;
+  }
+  $('btnGen').onclick = () => {
+    const o = { D: +$('pWafer').value, N: Math.round(+$('pSlots').value), P: +$('pPitch').value, t: +$('pWall').value, m: +$('pMargin').value, h: +$('pTxt').value };
+    if (!(o.N >= 2 && o.P > 0 && o.t > 0 && o.m > 0 && o.h > 0)) { $('hint').textContent = '카세트 수치를 확인하세요. 모두 0보다 커야 하고 슬롯은 2개 이상입니다.'; return; }
+    txtH = o.h;
+    commit(() => { ents = cassette(o); sel.clear(); });
+    setTool('select'); fit();
+  };
+
+  // ---------- DXF (R12, 오토캐드·캐디안 호환) ----------
+  function toDXF() {
+    const o = [];
+    const g = (c, v) => o.push(String(c), String(v));
+    const n = v => (Math.round(v * 1e6) / 1e6).toString();
+    // 한글은 \U+XXXX 로 바꿔야 R12 DXF에서 깨지지 않음
+    const uni = s => [...s].map(ch => ch.charCodeAt(0) < 128 ? ch : '\\U+' + ch.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')).join('');
+    g(0, 'SECTION'); g(2, 'HEADER'); g(9, '$ACADVER'); g(1, 'AC1009'); g(9, '$INSUNITS'); g(70, 4); g(0, 'ENDSEC');
+    g(0, 'SECTION'); g(2, 'ENTITIES');
+    const L = (a, b, layer = '0') => { g(0, 'LINE'); g(8, layer); g(10, n(a.x)); g(20, n(a.y)); g(30, 0); g(11, n(b.x)); g(21, n(b.y)); g(31, 0); };
+    const T = (x, y, h, s, rot = 0, layer = '0', center = false) => {
+      g(0, 'TEXT'); g(8, layer); g(10, n(x)); g(20, n(y)); g(30, 0); g(40, n(h)); g(1, uni(s)); if (rot) g(50, n(rot));
+      if (center) { g(72, 1); g(11, n(x)); g(21, n(y)); g(31, 0); }
+    };
+    for (const e of ents) {
+      if (e.type === 'line') L({ x: e.x1, y: e.y1 }, { x: e.x2, y: e.y2 });
+      else if (e.type === 'rect') { const c = rectCorners(e); c.forEach((q, i) => L(q, c[(i + 1) % 4])); }
+      else if (e.type === 'circle') { g(0, 'CIRCLE'); g(8, '0'); g(10, n(e.cx)); g(20, n(e.cy)); g(30, 0); g(40, n(e.r)); }
+      else if (e.type === 'arc') { g(0, 'ARC'); g(8, '0'); g(10, n(e.cx)); g(20, n(e.cy)); g(30, 0); g(40, n(e.r)); g(50, n(e.a1)); g(51, n(e.a2)); }
+      else if (e.type === 'text') T(e.x, e.y, e.h, e.s, 0, 'TEXT');
+      else if (e.type === 'dim') {
+        // 치수는 분해된 형태(선 + 화살표 + 문자)로 저장 → 어느 CAD에서도 모양이 같게 보임
+        const gm = dimGeom(e), sgn = Math.sign(e.off) || 1, h = e.h || txtH;
+        const gap = h * 0.25, ext = h * 0.4;
+        L({ x: e.x1 + gm.n.x * gap * sgn, y: e.y1 + gm.n.y * gap * sgn }, { x: gm.d1.x + gm.n.x * ext * sgn, y: gm.d1.y + gm.n.y * ext * sgn }, 'DIM');
+        L({ x: e.x2 + gm.n.x * gap * sgn, y: e.y2 + gm.n.y * gap * sgn }, { x: gm.d2.x + gm.n.x * ext * sgn, y: gm.d2.y + gm.n.y * ext * sgn }, 'DIM');
+        L(gm.d1, gm.d2, 'DIM');
+        const u = { x: (gm.d2.x - gm.d1.x) / gm.L, y: (gm.d2.y - gm.d1.y) / gm.L }, A = h * 0.7, B = h * 0.18;
+        const arrow = (tip, dir) => {
+          const p1 = { x: tip.x - dir.x * A - dir.y * B, y: tip.y - dir.y * A + dir.x * B }, p2 = { x: tip.x - dir.x * A + dir.y * B, y: tip.y - dir.y * A - dir.x * B };
+          g(0, 'SOLID'); g(8, 'DIM'); g(10, n(tip.x)); g(20, n(tip.y)); g(30, 0); g(11, n(p1.x)); g(21, n(p1.y)); g(31, 0); g(12, n(p2.x)); g(22, n(p2.y)); g(32, 0); g(13, n(p2.x)); g(23, n(p2.y)); g(33, 0);
+        };
+        arrow(gm.d1, { x: -u.x, y: -u.y }); arrow(gm.d2, u);
+        let rot = Math.atan2(u.y, u.x) * 180 / Math.PI; if (rot > 90 || rot <= -90) rot += 180;
+        const up = { x: -Math.sin(rot * Math.PI / 180), y: Math.cos(rot * Math.PI / 180) };
+        const mx = (gm.d1.x + gm.d2.x) / 2 + up.x * h * 0.3, my = (gm.d1.y + gm.d2.y) / 2 + up.y * h * 0.3;
+        T(mx, my, h, e.label || fmt(gm.L), rot, 'DIM', true);
+      }
+    }
+    g(0, 'ENDSEC'); g(0, 'EOF');
+    return o.join('\r\n') + '\r\n';
+  }
+
+  let downloads = null;
+  $('btnDxf').onclick = async () => {
+    if (!ents.length) { $('dxfNote').textContent = '저장할 도형이 없습니다. 먼저 도면을 그려 주세요.'; return; }
+    const text = toDXF();
+    $('dxfOut').value = text; $('dxfOut').hidden = false; $('btnCopy').hidden = false;
+    if (!window.claude) { // 내 PC에서 파일로 열었을 때: 바로 .dxf 다운로드
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'application/dxf' })); a.download = 'drawing.dxf'; a.click();
+      $('dxfNote').textContent = 'drawing.dxf 파일을 저장했습니다.'; return;
+    }
+    if (downloads) {
+      try {
+        await downloads.save({ filename: 'drawing.dxf.txt', data: text });
+        $('dxfNote').textContent = '저장했습니다. 파일 이름 끝의 .txt를 지우면 (drawing.dxf) 캐디안·오토캐드에서 열립니다.';
+      } catch (e) {
+        $('dxfNote').textContent = e && e.code === 'declined' ? '저장을 취소했습니다. 아래 내용을 복사해 메모장에 붙여넣고 drawing.dxf로 저장해도 됩니다.' : '이 화면에서는 파일 저장이 안 됩니다. 아래 내용을 복사해 메모장에 붙여넣고 drawing.dxf로 저장하세요.';
+      }
+    } else {
+      $('dxfNote').textContent = '아래 내용을 복사해 메모장에 붙여넣고, 파일 형식 "모든 파일"로 drawing.dxf 이름으로 저장하세요.';
+    }
+  };
+  $('btnCopy').onclick = async () => {
+    try { await navigator.clipboard.writeText($('dxfOut').value); $('btnCopy').textContent = '복사했습니다'; }
+    catch (e) { $('dxfOut').select(); $('btnCopy').textContent = 'Ctrl+C로 복사하세요'; }
+    setTimeout(() => $('btnCopy').textContent = 'DXF 내용 복사', 2000);
+  };
+
+  // ---------- AI로 그리기 (Claude) ----------
+  let sample = null, aiCtl = null;
+  const AI_RULES = `너는 2D CAD 도면 좌표 생성기다. 사용자가 한국어로 설명한 도면을 mm 단위 도형 목록으로 바꾼다.
+좌표계: X 오른쪽, Y 위쪽. 부품의 왼쪽 아래 모서리를 (0,0)에 둔다.
+JSON 하나만 출력한다. 형식:
+{"entities":[...], "note":"한 문장 요약"}
+도형 종류:
+{"type":"line","x1":0,"y1":0,"x2":100,"y2":0}
+{"type":"rect","x1":0,"y1":0,"x2":200,"y2":120}   (x1<x2, y1<y2)
+{"type":"circle","cx":15,"cy":15,"r":4}   (지름이 주어지면 r=지름/2)
+{"type":"arc","cx":0,"cy":0,"r":50,"a1":0,"a2":90}   (도 단위, 반시계 방향 a1→a2)
+{"type":"dim","x1":0,"y1":0,"x2":200,"y2":0,"off":-12}   (두 측정점, off는 측정선 왼쪽 법선 방향 거리. 가로 치수를 아래에 두려면 x1<x2 이고 off 음수. 세로 치수를 왼쪽에 두려면 y1<y2 이고 off 양수. 원 지름은 label "Ø8" 추가 가능)
+{"type":"text","x":0,"y":130,"h":5,"s":"문자"}
+치수를 요청하면 dim을 넣는다. 치수 문자 높이는 "h" (기본 ${'${txtH}'}).
+반복 형상(구멍 여러 개 등)은 좌표를 정확히 계산해 모두 나열한다. 요청에 없는 형상은 만들지 않는다.`;
+  (async () => {
+    if (!window.claude || !window.claude.use) return;
+    const [s, d] = await Promise.all([window.claude.use('sample').catch(() => null), window.claude.use('downloads').catch(() => null)]);
+    downloads = d;
+    if (s) { sample = s; $('aiSection').hidden = false; }
+  })();
+  document.querySelectorAll('[data-ex]').forEach(b => b.addEventListener('click', () => { $('aiText').value = b.dataset.ex; $('aiText').focus(); }));
+  const num = v => typeof v === 'number' && isFinite(v);
+  function cleanEnt(e) {
+    if (!e || typeof e !== 'object') return null;
+    const need = { line: ['x1', 'y1', 'x2', 'y2'], rect: ['x1', 'y1', 'x2', 'y2'], circle: ['cx', 'cy', 'r'], arc: ['cx', 'cy', 'r', 'a1', 'a2'], dim: ['x1', 'y1', 'x2', 'y2', 'off'], text: ['x', 'y'] }[e.type];
+    if (!need || !need.every(k => num(e[k]))) return null;
+    const o = { type: e.type }; need.forEach(k => o[k] = e[k]);
+    if (e.type === 'rect') { [o.x1, o.x2] = [Math.min(e.x1, e.x2), Math.max(e.x1, e.x2)]; [o.y1, o.y2] = [Math.min(e.y1, e.y2), Math.max(e.y1, e.y2)]; }
+    if (e.type === 'circle' || e.type === 'arc') { if (!(o.r > 0)) return null; }
+    if (e.type === 'dim') { o.h = num(e.h) && e.h > 0 ? e.h : txtH; if (typeof e.label === 'string') o.label = e.label.slice(0, 40); }
+    if (e.type === 'text') { o.h = num(e.h) && e.h > 0 ? e.h : txtH; o.s = String(e.s || '').slice(0, 120); if (!o.s) return null; }
+    return o;
+  }
+  $('aiGo').onclick = async () => {
+    const q = $('aiText').value.trim();
+    if (!sample) return;
+    if (aiCtl) { aiCtl.abort(); return; }
+    if (!q) { $('aiNote').textContent = '무엇을 그릴지 먼저 적어 주세요.'; $('aiNote').className = 'note err'; $('aiText').focus(); return; }
+    aiCtl = new AbortController();
+    $('aiGo').textContent = '멈추기'; $('aiNote').className = 'note'; $('aiNote').textContent = 'Claude가 좌표를 계산하는 중입니다…';
+    try {
+      const res = await sample.json(AI_RULES.replace('${txtH}', txtH) + '\n\n요청:\n' + q, { signal: aiCtl.signal, modelTier: 'default',
+        onText: () => { $('aiNote').textContent = 'Claude가 도형을 작성하는 중입니다…'; } });
+      const list = (res && Array.isArray(res.entities) ? res.entities : []).map(cleanEnt).filter(Boolean);
+      if (!list.length) { $('aiNote').className = 'note err'; $('aiNote').textContent = '그릴 도형을 받지 못했습니다. 치수를 숫자로 더 구체적으로 적어 보세요.'; }
+      else {
+        commit(() => { ents = list; sel.clear(); });
+        setTool('select'); fit();
+        $('aiNote').textContent = `${list.length}개 도형을 그렸습니다. ${res.note ? String(res.note).slice(0, 160) : ''}`;
+      }
+    } catch (e) {
+      $('aiNote').className = 'note err';
+      const code = e && e.code;
+      if (code === 'cancelled') { $('aiNote').className = 'note'; $('aiNote').textContent = '멈췄습니다.'; }
+      else if (['not_granted', 'sampling_disabled', 'not_declared', 'capability_disabled', 'capability_removed'].includes(code)) { $('aiSection').hidden = true; }
+      else if (code === 'rate_limited') $('aiNote').textContent = '요청이 많아 잠시 막혔습니다. 조금 뒤에 다시 눌러 주세요.';
+      else if (code === 'invalid_json') $('aiNote').textContent = '결과 형식이 깨졌습니다. 한 번 더 눌러 보세요.';
+      else if (code === 'session_expired') $('aiNote').textContent = '로그인이 만료되었습니다. 다시 로그인한 뒤 시도하세요.';
+      else if (code === 'refused') $('aiNote').textContent = '이 요청은 처리하지 못했습니다. 설명을 바꿔 보세요.';
+      else $('aiNote').textContent = '연결이 끊겼습니다. 다시 눌러 주세요.';
+    } finally { aiCtl = null; $('aiGo').textContent = 'AI로 그리기'; }
+  };
+
+  // ---------- 시작 ----------
+  try { const s = localStorage.getItem('minicad.v1'); if (s) ents = JSON.parse(s) || []; } catch (e) { ents = []; }
+  if (!ents.length) ents = cassette({ D: 200, N: 25, P: 6.35, t: 12, m: 18, h: 5 }); // 예시 도면
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  setTool('line');
+  requestAnimationFrame(() => { resize(); fit(); });
+})();
+</script>
