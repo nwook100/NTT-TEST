@@ -112,10 +112,12 @@
 </style>
 
 <header class="top">
-  <div class="brand"><b>안산 미니 CAD</b><span>v0.1 · 단위 mm</span></div>
+  <div class="brand"><b>안산 미니 CAD</b><span>v0.2 · 단위 mm</span></div>
   <button class="btn" id="btnUndo" title="되돌리기 (Ctrl+Z)">되돌리기</button>
   <button class="btn" id="btnRedo" title="다시 실행 (Ctrl+Y)">다시</button>
   <button class="btn" id="btnFit" title="전체 보기 (Z)">전체 보기</button>
+  <button class="btn" id="btnOpen">DXF 열기</button>
+  <input type="file" id="fileDxf" accept=".dxf,.DXF,.txt" hidden>
   <button class="btn primary" id="btnDxf">DXF 저장</button>
 </header>
 
@@ -172,6 +174,11 @@
       </div>
       <button class="btn" id="btnGen">정면도 생성</button>
       <p class="note">수치만 바꾸면 슬롯 치형과 치수까지 다시 그립니다. 형상은 설명용 예시이며, 회사 표준 치수로 바꿔 쓰면 됩니다.</p>
+    </section>
+
+    <section>
+      <h2>DXF 불러오기</h2>
+      <p class="note" id="openNote">오토캐드·캐디안에서 DXF로 저장한 도면을 엽니다. 파일을 도면 위로 끌어 놓아도 됩니다. DWG는 먼저 DXF로 바꿔 주세요.</p>
     </section>
 
     <section>
@@ -272,6 +279,7 @@
         const ends = arcEnds(e); return Math.min(dist(p, ends[0]), dist(p, ends[1]));
       }
       case 'dim': { const g = dimGeom(e); return segDist(p, g.d1, g.d2); }
+      case 'solid': return Math.min(...e.pts.map((q, i) => segDist(p, q, e.pts[(i + 1) % e.pts.length])));
       case 'text': { const w = e.s.length * e.h * 0.8; return (p.x >= e.x && p.x <= e.x + w && p.y >= e.y && p.y <= e.y + e.h) ? 0 : Math.min(dist(p, { x: e.x, y: e.y }), dist(p, { x: e.x + w, y: e.y + e.h })); }
     }
     return Infinity;
@@ -294,6 +302,7 @@
       else if (e.type === 'circle' || e.type === 'arc') { inc(e.cx - e.r, e.cy - e.r); inc(e.cx + e.r, e.cy + e.r); }
       else if (e.type === 'dim') { const g = dimGeom(e); inc(e.x1, e.y1); inc(e.x2, e.y2); inc(g.d1.x + g.n.x * e.h * 2, g.d1.y + g.n.y * e.h * 2); inc(g.d2.x, g.d2.y); }
       else if (e.type === 'text') { inc(e.x, e.y); inc(e.x + e.s.length * e.h * 0.8, e.y + e.h); }
+      else if (e.type === 'solid') e.pts.forEach(q => inc(q.x, q.y));
     }
     return b;
   }
@@ -332,7 +341,7 @@
 
   // ---------- 그리기 ----------
   let C = {};
-  function readColors() { const cs = getComputedStyle(document.documentElement); ['paper', 'grid-minor', 'grid-major', 'axis', 'draw', 'dim', 'select', 'snap', 'preview', 'muted'].forEach(k => C[k] = cs.getPropertyValue('--' + k).trim()); }
+  function readColors() { const cs = getComputedStyle(document.documentElement); ['paper', 'grid-minor', 'grid-major', 'axis', 'draw', 'dim', 'select', 'snap', 'preview', 'muted', 'font', 'mono'].forEach(k => C[k] = cs.getPropertyValue('--' + k).trim()); }
   function fmt(v) { return (Math.round(v * 100) / 100).toString(); }
 
   function drawEnt(e, color, dash) {
@@ -344,10 +353,16 @@
     else if (e.type === 'arc') { const [x, y] = W2S(e.cx, e.cy); ctx.arc(x, y, e.r * view.s, -e.a1 * Math.PI / 180, -e.a2 * Math.PI / 180, true); ctx.stroke(); }
     else if (e.type === 'dim') drawDim(e, color);
     else if (e.type === 'text') {
-      const [x, y] = W2S(e.x, e.y);
-      ctx.font = `${Math.max(1, e.h * view.s)}px ${getComputedStyle(document.body).getPropertyValue('--font')}`;
-      ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left'; ctx.fillText(e.s, x, y);
+      const [x, y] = W2S(e.x, e.y), px = e.h * view.s;
+      if (px < 1.5) { ctx.fillRect(x, y - px, Math.max(1, e.s.length * px * 0.7), Math.max(0.5, px * 0.5)); }
+      else {
+        ctx.save(); ctx.translate(x, y); if (e.rot) ctx.rotate(-e.rot * Math.PI / 180);
+        ctx.font = `${px}px ${C.font}`;
+        ctx.textBaseline = 'alphabetic'; ctx.textAlign = { c: 'center', r: 'right' }[e.al] || 'left'; ctx.fillText(e.s, 0, 0);
+        ctx.restore();
+      }
     }
+    else if (e.type === 'solid') { const q = e.pts.map(v => W2S(v.x, v.y)); ctx.moveTo(...q[0]); q.slice(1).forEach(v => ctx.lineTo(...v)); ctx.closePath(); ctx.fill(); }
     ctx.setLineDash([]);
   }
   function drawDim(e, color) {
@@ -369,7 +384,7 @@
     const mx = (ax + bx) / 2, my = (ay + by) / 2;
     let ta = ang; if (ta > Math.PI / 2 || ta < -Math.PI / 2) ta += Math.PI;
     ctx.save(); ctx.translate(mx, my); ctx.rotate(ta);
-    ctx.font = `${Math.max(9, e.h * view.s)}px ${getComputedStyle(document.body).getPropertyValue('--mono')}`;
+    ctx.font = `${Math.max(9, e.h * view.s)}px ${C.mono}`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
     ctx.fillText(e.label || fmt(g.L), 0, -3);
     ctx.restore();
@@ -690,14 +705,15 @@
     const L = (a, b, layer = '0') => { g(0, 'LINE'); g(8, layer); g(10, n(a.x)); g(20, n(a.y)); g(30, 0); g(11, n(b.x)); g(21, n(b.y)); g(31, 0); };
     const T = (x, y, h, s, rot = 0, layer = '0', center = false) => {
       g(0, 'TEXT'); g(8, layer); g(10, n(x)); g(20, n(y)); g(30, 0); g(40, n(h)); g(1, uni(s)); if (rot) g(50, n(rot));
-      if (center) { g(72, 1); g(11, n(x)); g(21, n(y)); g(31, 0); }
+      if (center) { g(72, center === true ? 1 : center); g(11, n(x)); g(21, n(y)); g(31, 0); }
     };
     for (const e of ents) {
       if (e.type === 'line') L({ x: e.x1, y: e.y1 }, { x: e.x2, y: e.y2 });
       else if (e.type === 'rect') { const c = rectCorners(e); c.forEach((q, i) => L(q, c[(i + 1) % 4])); }
       else if (e.type === 'circle') { g(0, 'CIRCLE'); g(8, '0'); g(10, n(e.cx)); g(20, n(e.cy)); g(30, 0); g(40, n(e.r)); }
       else if (e.type === 'arc') { g(0, 'ARC'); g(8, '0'); g(10, n(e.cx)); g(20, n(e.cy)); g(30, 0); g(40, n(e.r)); g(50, n(e.a1)); g(51, n(e.a2)); }
-      else if (e.type === 'text') T(e.x, e.y, e.h, e.s, 0, 'TEXT');
+      else if (e.type === 'text') T(e.x, e.y, e.h, e.s, e.rot || 0, e.layer || 'TEXT', e.al === 'c' ? 1 : e.al === 'r' ? 2 : 0);
+      else if (e.type === 'solid') { const q = e.pts.length === 3 ? [...e.pts, e.pts[2]] : [e.pts[0], e.pts[1], e.pts[3], e.pts[2]]; g(0, 'SOLID'); g(8, e.layer || '0'); [[10, 20, 30], [11, 21, 31], [12, 22, 32], [13, 23, 33]].forEach(([a, b, c], i) => { g(a, n(q[i].x)); g(b, n(q[i].y)); g(c, 0); }); }
       else if (e.type === 'dim') {
         // 치수는 분해된 형태(선 + 화살표 + 문자)로 저장 → 어느 CAD에서도 모양이 같게 보임
         const gm = dimGeom(e), sgn = Math.sign(e.off) || 1, h = e.h || txtH;
@@ -746,6 +762,229 @@
     catch (e) { $('dxfOut').select(); $('btnCopy').textContent = 'Ctrl+C로 복사하세요'; }
     setTimeout(() => $('btnCopy').textContent = 'DXF 내용 복사', 2000);
   };
+
+
+  // ---------- DXF 불러오기 ----------
+  // 지원: LINE, CIRCLE, ARC, LWPOLYLINE, POLYLINE, TEXT, MTEXT, SOLID/TRACE, ELLIPSE, SPLINE(근사),
+  //       INSERT(블록, 배열), DIMENSION(치수 블록), ATTRIB. 나머지는 건너뛰고 개수를 알려 줌.
+  const MUL = (A, B) => [A[0] * B[0] + A[2] * B[1], A[1] * B[0] + A[3] * B[1], A[0] * B[2] + A[2] * B[3], A[1] * B[2] + A[3] * B[3], A[0] * B[4] + A[2] * B[5] + A[4], A[1] * B[4] + A[3] * B[5] + A[5]];
+  const ID = [1, 0, 0, 1, 0, 0];
+  const XF = (M, x, y) => ({ x: M[0] * x + M[2] * y + M[4], y: M[1] * x + M[3] * y + M[5] });
+  const DEG = Math.PI / 180;
+
+  function decodeDXF(buf) {
+    const head = new TextDecoder('latin1').decode(new Uint8Array(buf, 0, Math.min(buf.byteLength, 200000)));
+    if (head.startsWith('AutoCAD Binary DXF')) throw new Error('바이너리 DXF는 아직 못 엽니다. CAD에서 "ASCII DXF"로 다시 저장해 주세요.');
+    const ver = (head.match(/\$ACADVER\s*\r?\n\s*1\s*\r?\n\s*(AC\d+)/) || [])[1] || 'AC1009';
+    const cp = ((head.match(/\$DWGCODEPAGE\s*\r?\n\s*3\s*\r?\n\s*(\S+)/) || [])[1] || '').toUpperCase();
+    let enc = 'utf-8', text;
+    try { text = new TextDecoder('utf-8', { fatal: true }).decode(buf); }
+    catch (e) {
+      // 한국 CAD 파일은 코드페이지가 ANSI_1252로 잘못 적힌 채 한글(CP949)이 들어있는 경우가 많음
+      enc = { ANSI_932: 'shift_jis', ANSI_936: 'gbk', ANSI_950: 'big5' }[cp] || 'euc-kr';
+      text = new TextDecoder(enc).decode(buf);
+    }
+    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+    return { text, ver, enc };
+  }
+  function cleanText(s) {
+    return s.replace(/\\U\+([0-9A-Fa-f]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+      .replace(/%%[cC]/g, 'Ø').replace(/%%[dD]/g, '°').replace(/%%[pP]/g, '±').replace(/%%%/g, '%').replace(/%%[uUoOkK]/g, '');
+  }
+  function cleanMText(s) {
+    return cleanText(s)
+      .replace(/\\[Pp]/g, '\n').replace(/\\~/g, ' ')
+      .replace(/\\S([^;]*)[\^#/]([^;]*);/g, '$1/$2')
+      .replace(/\\[fFHhCcAaWwTtQqp][^;]*;/g, '')
+      .replace(/\\[LlOoKkNX]/g, '').replace(/\\\\/g, '\\').replace(/[{}]/g, '');
+  }
+
+  function parseDXF(text) {
+    const L = text.split(/\r\n|\r|\n/);
+    const P = [];
+    for (let i = 0; i + 1 < L.length; i += 2) { const c = parseInt(L[i], 10); if (isNaN(c)) continue; P.push([c, L[i + 1].trim()]); }
+    let i = 0;
+    const readEnt = () => { const e = { t: P[i][1], g: [] }; i++; while (i < P.length && P[i][0] !== 0) { e.g.push(P[i]); i++; } return e; };
+    const blocks = {}, top = [], layersOff = new Set(), skipped = {};
+    let units = 0;
+    const readList = (endTag, sink) => {
+      while (i < P.length && !(P[i][0] === 0 && (P[i][1] === endTag || P[i][1] === 'ENDSEC'))) {
+        if (P[i][0] !== 0) { i++; continue; }
+        const e = readEnt();
+        if (e.t === 'POLYLINE' || (e.t === 'INSERT' && gv(e, 66, 0) === 1)) {
+          e.sub = [];
+          while (i < P.length && P[i][0] === 0 && P[i][1] !== 'SEQEND') e.sub.push(readEnt());
+          if (i < P.length && P[i][1] === 'SEQEND') readEnt();
+        }
+        sink.push(e);
+      }
+    };
+    while (i < P.length) {
+      if (P[i][0] === 0 && P[i][1] === 'SECTION') {
+        i++; const name = P[i] && P[i][1]; i++;
+        if (name === 'HEADER') {
+          for (; i < P.length && !(P[i][0] === 0 && P[i][1] === 'ENDSEC'); i++) if (P[i][0] === 9 && P[i][1] === '$INSUNITS' && P[i + 1]) units = parseInt(P[i + 1][1], 10);
+        } else if (name === 'TABLES') {
+          while (i < P.length && !(P[i][0] === 0 && P[i][1] === 'ENDSEC')) {
+            if (P[i][0] === 0 && P[i][1] === 'LAYER') { const e = readEnt(); const nm = gs(e, 2); if (nm && ((gv(e, 70, 0) & 1) || gv(e, 62, 7) < 0)) layersOff.add(nm); }
+            else i++;
+          }
+        } else if (name === 'BLOCKS') {
+          while (i < P.length && !(P[i][0] === 0 && P[i][1] === 'ENDSEC')) {
+            if (P[i][0] === 0 && P[i][1] === 'BLOCK') {
+              const b = readEnt(); const nm = gs(b, 2); const list = [];
+              readList('ENDBLK', list);
+              if (i < P.length && P[i][1] === 'ENDBLK') readEnt();
+              blocks[nm] = { bx: gv(b, 10, 0), by: gv(b, 20, 0), list };
+            } else i++;
+          }
+        } else if (name === 'ENTITIES') {
+          readList('ENDSEC', top);
+        }
+        while (i < P.length && !(P[i][0] === 0 && P[i][1] === 'ENDSEC')) i++;
+        i++;
+      } else i++;
+    }
+
+    const out = [];
+    const skip = t => { skipped[t] = (skipped[t] || 0) + 1; };
+    const scaleOf = M => Math.sqrt(Math.abs(M[0] * M[3] - M[1] * M[2]));
+    const angOf = M => Math.atan2(M[1], M[0]) / DEG;
+    const pushLine = (a, b, layer) => { if (Math.hypot(a.x - b.x, a.y - b.y) > 1e-9) out.push({ type: 'line', x1: a.x, y1: a.y, x2: b.x, y2: b.y, layer }); };
+    const pushArc = (M, cx, cy, r, a1, a2, layer) => {
+      const c = XF(M, cx, cy), p1 = XF(M, cx + r * Math.cos(a1 * DEG), cy + r * Math.sin(a1 * DEG)), p2 = XF(M, cx + r * Math.cos(a2 * DEG), cy + r * Math.sin(a2 * DEG));
+      let s = Math.atan2(p1.y - c.y, p1.x - c.x) / DEG, e = Math.atan2(p2.y - c.y, p2.x - c.x) / DEG;
+      if (M[0] * M[3] - M[1] * M[2] < 0) [s, e] = [e, s];
+      out.push({ type: 'arc', cx: c.x, cy: c.y, r: r * scaleOf(M), a1: s, a2: e, layer });
+    };
+    const bulgeSeg = (M, a, b, bulge, layer) => {
+      if (!bulge) return pushLine(XF(M, a.x, a.y), XF(M, b.x, b.y), layer);
+      const th = 4 * Math.atan(bulge), d = Math.hypot(b.x - a.x, b.y - a.y); if (d < 1e-12) return;
+      const r = d / (2 * Math.sin(th / 2)), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const h = r * Math.cos(th / 2), ux = -(b.y - a.y) / d, uy = (b.x - a.x) / d;
+      const cx = mx + ux * h, cy = my + uy * h;
+      let s = Math.atan2(a.y - cy, a.x - cx) / DEG, e = Math.atan2(b.y - cy, b.x - cx) / DEG;
+      if (bulge < 0) [s, e] = [e, s];
+      pushArc(M, cx, cy, Math.abs(r), s, e, layer);
+    };
+    const ocs = e => gv(e, 230, 1) < 0 ? [-1, 0, 0, 1, 0, 0] : ID;
+
+    function conv(e, M, depth) {
+      const layer = gs(e, 8) || '0';
+      if (layersOff.has(layer) || gv(e, 67, 0) === 1 || gv(e, 60, 0) === 1) return;
+      switch (e.t) {
+        case 'LINE': pushLine(XF(M, gv(e, 10), gv(e, 20)), XF(M, gv(e, 11), gv(e, 21)), layer); break;
+        case 'CIRCLE': { const N = MUL(M, ocs(e)), c = XF(N, gv(e, 10), gv(e, 20)); out.push({ type: 'circle', cx: c.x, cy: c.y, r: gv(e, 40) * scaleOf(N), layer }); break; }
+        case 'ARC': pushArc(MUL(M, ocs(e)), gv(e, 10), gv(e, 20), gv(e, 40), gv(e, 50), gv(e, 51), layer); break;
+        case 'LWPOLYLINE': {
+          const N = MUL(M, ocs(e)), v = [];
+          for (const [c, val] of e.g) { if (c === 10) v.push({ x: +val, y: 0, b: 0 }); else if (c === 20 && v.length) v[v.length - 1].y = +val; else if (c === 42 && v.length) v[v.length - 1].b = +val; }
+          const closed = gv(e, 70, 0) & 1;
+          for (let k = 0; k < v.length - 1 + (closed ? 1 : 0); k++) bulgeSeg(N, v[k], v[(k + 1) % v.length], v[k].b, layer);
+          break;
+        }
+        case 'POLYLINE': {
+          const fl = gv(e, 70, 0);
+          if (fl & (16 | 64)) { skip('3D 메시'); break; }
+          const N = MUL(M, ocs(e));
+          const v = (e.sub || []).filter(s => s.t === 'VERTEX').map(s => ({ x: gv(s, 10), y: gv(s, 20), b: gv(s, 42, 0) }));
+          for (let k = 0; k < v.length - 1 + ((fl & 1) ? 1 : 0); k++) bulgeSeg(N, v[k], v[(k + 1) % v.length], v[k].b, layer);
+          break;
+        }
+        case 'TEXT': case 'ATTRIB': {
+          const s = cleanText(gs(e, 1) || ''); if (!s.trim()) break;
+          const h72 = gv(e, 72, 0), v73 = gv(e, e.t === 'ATTRIB' ? 74 : 73, 0);
+          const useAlign = (h72 || v73) && e.g.some(([c]) => c === 11);
+          const p = XF(M, useAlign ? gv(e, 11) : gv(e, 10), useAlign ? gv(e, 21) : gv(e, 20)), h = gv(e, 40, 2.5) * scaleOf(M);
+          const al = h72 === 1 || h72 === 4 ? 'c' : h72 === 2 ? 'r' : 'l';
+          const rot = gv(e, 50, 0) + angOf(M);
+          const dy = v73 === 3 ? -h : v73 === 2 ? -h / 2 : 0;
+          out.push({ type: 'text', x: p.x - Math.sin(rot * DEG) * dy, y: p.y + Math.cos(rot * DEG) * dy, h, s, rot, al, layer });
+          break;
+        }
+        case 'MTEXT': {
+          const raw = e.g.filter(([c]) => c === 3).map(([, v]) => v).join('') + (gs(e, 1) || '');
+          const lines = cleanMText(raw).split('\n').filter((l, k, a) => l.trim() || k < a.length - 1);
+          if (!lines.some(l => l.trim())) break;
+          const h = gv(e, 40, 2.5) * scaleOf(M), att = gv(e, 71, 1);
+          let rot = gv(e, 50, 0); if (e.g.some(([c]) => c === 11)) rot = Math.atan2(gv(e, 21), gv(e, 11)) / DEG;
+          rot += angOf(M);
+          const p = XF(M, gv(e, 10), gv(e, 20)), col = (att - 1) % 3, row = Math.floor((att - 1) / 3), gap = h * 1.6, total = (lines.length - 1) * gap;
+          const firstDown = row === 0 ? h : row === 1 ? h / 2 - total / 2 : -total;
+          lines.forEach((ln, k) => {
+            if (!ln.trim()) return;
+            const d = firstDown + k * gap, sx = Math.sin(rot * DEG) * d, sy = -Math.cos(rot * DEG) * d;
+            out.push({ type: 'text', x: p.x + sx, y: p.y + sy, h, s: ln, rot, al: ['l', 'c', 'r'][col], layer });
+          });
+          break;
+        }
+        case 'SOLID': case 'TRACE': {
+          const q = [[10, 20], [11, 21], [13, 23], [12, 22]].map(([a, b]) => XF(MUL(M, ocs(e)), gv(e, a), gv(e, b)));
+          const pts = Math.hypot(q[2].x - q[3].x, q[2].y - q[3].y) < 1e-9 ? [q[0], q[1], q[3]] : q;
+          out.push({ type: 'solid', pts, layer }); break;
+        }
+        case 'ELLIPSE': {
+          const cx = gv(e, 10), cy = gv(e, 20), mx = gv(e, 11), my = gv(e, 21), ratio = gv(e, 40, 1);
+          let t0 = gv(e, 41, 0), t1 = gv(e, 42, Math.PI * 2); if (t1 <= t0) t1 += Math.PI * 2;
+          const n = Math.max(8, Math.ceil((t1 - t0) / (Math.PI * 2) * 72)), N = MUL(M, ocs(e));
+          const at = t => XF(N, cx + mx * Math.cos(t) - my * ratio * Math.sin(t), cy + my * Math.cos(t) + mx * ratio * Math.sin(t));
+          for (let k = 0; k < n; k++) pushLine(at(t0 + (t1 - t0) * k / n), at(t0 + (t1 - t0) * (k + 1) / n), layer);
+          break;
+        }
+        case 'SPLINE': {
+          const fit = [], ctl = [];
+          for (const [c, val] of e.g) { if (c === 11) fit.push({ x: +val, y: 0 }); else if (c === 21 && fit.length) fit[fit.length - 1].y = +val; else if (c === 10) ctl.push({ x: +val, y: 0 }); else if (c === 20 && ctl.length) ctl[ctl.length - 1].y = +val; }
+          const v = fit.length >= 2 ? fit : ctl;
+          for (let k = 0; k < v.length - 1; k++) pushLine(XF(M, v[k].x, v[k].y), XF(M, v[k + 1].x, v[k + 1].y), layer);
+          skip('SPLINE(근사 표시)'); break;
+        }
+        case 'INSERT': case 'DIMENSION': {
+          const b = blocks[gs(e, 2)];
+          if (!b || depth > 12) { if (e.t === 'DIMENSION' && !b) skip('DIMENSION'); break; }
+          if (e.t === 'DIMENSION') { b.list.forEach(s => conv(s, M, depth + 1)); break; }
+          const sx = gv(e, 41, 1), sy = gv(e, 42, 1), r = gv(e, 50, 0) * DEG;
+          const cols = Math.max(1, gv(e, 70, 1)), rows = Math.max(1, gv(e, 71, 1)), dc = gv(e, 44, 0), dr = gv(e, 45, 0);
+          const base = MUL(ocs(e), [1, 0, 0, 1, gv(e, 10), gv(e, 20)]);
+          for (let ri = 0; ri < rows; ri++) for (let ci = 0; ci < cols; ci++) {
+            const R = [Math.cos(r), Math.sin(r), -Math.sin(r), Math.cos(r), 0, 0];
+            const T = MUL(MUL(MUL(base, R), [1, 0, 0, 1, ci * dc, ri * dr]), MUL([sx, 0, 0, sy, 0, 0], [1, 0, 0, 1, -b.bx, -b.by]));
+            b.list.forEach(s => conv(s, MUL(M, T), depth + 1));
+          }
+          (e.sub || []).forEach(s => s.t === 'ATTRIB' && conv(s, M, depth));
+          break;
+        }
+        case 'POINT': case 'ATTDEF': case 'VIEWPORT': case 'SEQEND': break;
+        default: skip(e.t);
+      }
+    }
+    top.forEach(e => conv(e, ID, 0));
+    return { ents: out, skipped, units };
+  }
+  function gv(e, code, def = 0) { for (const [c, v] of e.g) if (c === code) { const n = parseFloat(v); return isNaN(n) ? def : n; } return def; }
+  function gs(e, code) { for (const [c, v] of e.g) if (c === code) return v; return null; }
+
+  async function openDXF(file) {
+    const note = $('openNote'); note.className = 'note';
+    if (!file) return;
+    if (/\.dwg$/i.test(file.name)) { note.className = 'note err'; note.textContent = 'DWG 파일은 바로 못 엽니다. 캐디안/오토캐드에서 "다른 이름으로 저장 → DXF"로 저장하거나, ODA File Converter로 DXF로 바꿔 주세요.'; return; }
+    note.textContent = `${file.name} 읽는 중…`;
+    try {
+      const { text, ver, enc } = decodeDXF(await file.arrayBuffer());
+      const r = parseDXF(text);
+      if (!r.ents.length) { note.className = 'note err'; note.textContent = '그릴 수 있는 객체가 없습니다. ASCII DXF인지 확인해 주세요.'; return; }
+      commit(() => { ents = r.ents; sel.clear(); });
+      setTool('select'); fit();
+      const sk = Object.entries(r.skipped).map(([k, v]) => `${k} ${v}`).join(', ');
+      const unitName = { 1: '인치', 4: 'mm', 5: 'cm', 6: 'm' }[r.units];
+      note.textContent = `${file.name}: 객체 ${r.ents.length.toLocaleString()}개를 열었습니다 (${ver}, ${enc}${unitName ? ', 단위 ' + unitName : ''}).` + (sk ? ` 표시 못 한 객체: ${sk}.` : '');
+    } catch (err) {
+      note.className = 'note err'; note.textContent = err && err.message && /DXF/.test(err.message) ? err.message : 'DXF 파일을 읽지 못했습니다. 파일이 손상되지 않았는지 확인해 주세요.';
+    }
+  }
+  $('btnOpen').onclick = () => $('fileDxf').click();
+  $('fileDxf').addEventListener('change', ev => { openDXF(ev.target.files[0]); ev.target.value = ''; });
+  stage.addEventListener('dragover', ev => { ev.preventDefault(); });
+  stage.addEventListener('drop', ev => { ev.preventDefault(); openDXF(ev.dataTransfer.files[0]); });
 
   // ---------- AI로 그리기 (Claude) ----------
   let sample = null, aiCtl = null;
