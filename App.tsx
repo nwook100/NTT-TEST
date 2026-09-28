@@ -13,6 +13,7 @@ import FeatureRow from './components/FeatureRow';
 import StatCard from './components/StatCard';
 import ArticleCard from './components/ArticleCard';
 import FAQ from './components/FAQ';
+import MusicVideo from './components/MusicVideo';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -73,6 +74,11 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+        </Section>
+
+        {/* NTT26 Music Video */}
+        <Section id="mv" title="ntt26 뮤직비디오" subtitle="손그림 카툰 애니메이션 뮤직비디오 제작기. 음원을 불러오면 곡에 맞춰 영상이 만들어집니다.">
+          <MusicVideo />
         </Section>
 
         {/* Services/Strengths Section */}
