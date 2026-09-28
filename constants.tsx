@@ -4,7 +4,6 @@ import { NavItem, StatItem, FeatureItem, PlanItem, ArticleItem } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: '처음', href: '#home' },
   { label: 'NTT 클랜 소개', href: '#about' },
-  { label: 'NTT26 MV', href: '#mv' },
   { label: 'Clan Updates', href: '#community' },
   { label: '자주 묻는 질문', href: '#faq' },
 ];
