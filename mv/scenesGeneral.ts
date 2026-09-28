@@ -1,8 +1,7 @@
-// 일반 뮤직비디오 테마 "Empty Hands" — 손에 쥔 것마다 빠져나가는 남자의 조금 이상한 하루
-// 떨어지는 제목 → 도망가는 알람시계 → 모두가 쳐다보는 지하철 → 빈 손 → 해파리 우산
-// → 거대한 손바닥 위의 꿈 → 새가 되는 종이비행기 → 떠내려가는 물건들 → 맞잡은 손의 새싹
+// 일반 뮤직비디오 테마 — 게임 요소 없이, 평범한 하루를 따라가는 카툰 이야기
+// 새벽 알람 → 지하철 → 사무실 → 비 오는 거리 → 하늘을 나는 꿈 → 옥상의 밤 → 강변 노을 → 해돋이
 import { DEMO_DURATION } from './audio';
-import { W, H, INK, TITLE_FONT, ctx, poly, ell, rect, line, star, text, person, Person, hash, lerp, clamp, ease } from './draw';
+import { W, H, INK, TITLE_FONT, ctx, poly, ell, rect, line, star, text, person, hash, lerp, clamp, ease } from './draw';
 import { Scene, SceneArgs, SHIRTS, HAIR } from './scenes';
 
 let songTitle = 'Empty Hands';
@@ -11,10 +10,6 @@ export function setSongInfo(title: string, by: string) {
   songTitle = title.trim();
   artist = by.trim();
 }
-
-// 주인공: 노란 셔츠, 까만 머리, 늘 빈손
-const hero = (p: Person) => person({ shirt: '#f2cc8f', hair: '#2b2118', pants: '#3d405b', ...p });
-const RED = '#e63946';
 
 function sky(top: string, bottom: string) {
   const c = ctx();
@@ -41,156 +36,107 @@ function skyline(base: number, col: string, seedN: number, lit = 0) {
   }
 }
 
-function balloon(x: number, y: number, col = RED, s = 1) {
-  line(x, y + 40 * s, x + Math.sin(y / 40) * 10, y + 130 * s, 2);
-  ell(x, y, 30 * s, 38 * s, col, 4);
-  ell(x - 10 * s, y - 14 * s, 6 * s, 9 * s, 'rgba(255,255,255,0.6)', 0);
-}
-
-function palm(cx: number, cy: number, dir: 1 | -1, s = 1, skin = '#f3d2b0', sleeve = '#f2cc8f') {
-  const c = ctx();
-  c.save();
-  c.translate(cx, cy);
-  c.scale(dir * s, s);
-  poly([[-40, 260], [-60, 90], [-100, 40], [-120, -20], [-95, -30], [-55, 20], [-60, -110], [-35, -120], [-20, -30], [-10, -140], [15, -140], [20, -30], [40, -125], [65, -115], [50, -20], [75, -95], [98, -85], [80, 60], [60, 260]], skin, 6);
-  line(-30, 40, 40, 20, 3);
-  line(-25, 80, 45, 70, 3);
-  poly([[-60, 260], [80, 260], [90, 360], [-70, 360]], sleeve, 6);
-  c.restore();
-}
-
-function walkingClock(x: number, y: number, ph: number, alarm: boolean) {
-  line(x - 14, y + 30, x - 14 + Math.sin(ph) * 16, y + 70, 5);
-  line(x + 14, y + 30, x + 14 - Math.sin(ph) * 16, y + 70, 5);
-  ell(x - 14 + Math.sin(ph) * 16 + 6, y + 72, 10, 5, INK, 0);
-  ell(x + 14 - Math.sin(ph) * 16 + 6, y + 72, 10, 5, INK, 0);
-  ell(x - 26, y - 34, 14, 12, '#f4a261');
-  ell(x + 26, y - 34, 14, 12, '#f4a261');
-  ell(x, y, 42, 42, '#fffdf5');
-  line(x, y, x, y - 26, 4);
-  line(x, y, x + 18, y + 6, 4);
-  if (alarm) text('따르릉', x, y - 80, 30, '#fff', { rot: Math.sin(ph * 3) * 0.2 });
-}
-
-function fish(x: number, y: number, col: string, s = 1) {
-  ell(x, y, 22 * s, 11 * s, col, 3);
-  poly([[x - 20 * s, y], [x - 36 * s, y - 10 * s], [x - 36 * s, y + 10 * s]], col, 3);
-  ell(x + 10 * s, y - 2 * s, 2, 2, INK, 0);
-}
-
-// ---------- 1. 떨어지는 제목 ----------
-function gTitle({ lt, len }: SceneArgs) {
+// ---------- 타이틀 ----------
+function gTitle({ lt }: SceneArgs) {
   const c = ctx();
   c.fillStyle = '#efe6d2';
   c.fillRect(0, 0, W, H);
-  palm(640, 560, 1, 0.9);
-  const chars = [...(songTitle || 'untitled')];
-  const size = Math.min(110, (1000 / Math.max(6, chars.length)) * 1.4);
-  const slip = ease((lt - len * 0.78) / (len * 0.2)); // 끝에 글자들이 손가락 사이로 빠져나간다
-  c.font = `${size}px ${TITLE_FONT}`;
-  const total = c.measureText(songTitle || 'untitled').width;
-  let x = 640 - total / 2;
-  chars.forEach((ch, i) => {
-    const w = c.measureText(ch).width;
-    const t0 = 0.3 + i * 0.12;
-    const k = clamp((lt - t0) / 0.35);
-    const bounce = k < 1 ? (1 - k) * (1 - k) * -500 : Math.sin(Math.min(1, (lt - t0 - 0.35) * 4) * Math.PI) * -12;
-    const fall = slip * (500 + hash(i, 0) * 300);
-    if (lt > t0 && ch !== ' ')
-      text(ch, x + w / 2, 230 + bounce + fall, size, '#e07a5f', { font: TITLE_FONT, stroke: 10, rot: (hash(i * 7, 0) - 0.5) * 0.2 + slip * (hash(i, 3) - 0.5) * 2 });
-    x += w;
-  });
-  if (artist) text(artist, 640, 330, 34, INK, { stroke: 0, alpha: ease((lt - 1.4) / 0.6) * (1 - slip) });
-  balloon(980 + Math.sin(lt) * 20, 520 - lt * 45, RED, 0.9);
+  for (let i = 0; i < 3; i++) {
+    const bx = ((lt * 70 + i * 260) % (W + 200)) - 100;
+    const by = 150 + i * 40 + Math.sin(Math.floor(lt * 6) + i) * 8;
+    line(bx - 18, by, bx, by + 10, 4);
+    line(bx, by + 10, bx + 18, by, 4);
+  }
+  poly([[0, 560], [300, 510], [640, 550], [980, 500], [1280, 540], [1280, 720], [0, 720]], '#a3b18a');
+  const k = ease((lt - 0.4) / 0.8);
+  text(songTitle || 'untitled', 640, 300, 96, '#e07a5f', { font: TITLE_FONT, stroke: 12, alpha: k, rot: -0.03 });
+  text(artist ? `${artist} — animated music video` : 'animated music video', 640, 400, 34, INK, { stroke: 0, alpha: ease((lt - 1.4) / 0.8) });
 }
 
-// ---------- 2. 도망가는 알람시계 ----------
-function gAlarm({ lt, len, pulse }: SceneArgs) {
+// ---------- 새벽 알람 ----------
+function gBedroom({ lt, len, pulse }: SceneArgs) {
   const c = ctx();
   c.fillStyle = '#b8c0d8';
   c.fillRect(0, 0, W, H);
   rect(-10, 580, W + 20, 160, '#8d7b68');
-  rect(700, 90, 280, 210, '#f7c59f');
-  ell(840, 300, 70, 50, '#fff3b0', 4, Math.PI, Math.PI * 2);
-  line(840, 90, 840, 300, 6);
-  rect(1120, 250, 120, 330, '#6f4518'); // 문
-  ell(1140, 420, 8, 8, '#ffd166', 3);
-  rect(120, 430, 520, 90, '#d4a373');
-  rect(110, 360, 40, 220, '#7f5539');
-  const wake = ease((lt - len * 0.25) / (len * 0.15));
-  hero({ x: lerp(470, 380, wake), y: lerp(440, 470, wake), s: 1.2, rot: lerp(-Math.PI / 2, 0, wake), sit: wake > 0.5, eyes: wake > 0.7 ? 'wide' : 'closed', mouth: wake > 0.7 ? 'o' : 'flat', armF: wake > 0.5 ? 1.55 : 0.3, tilt: wake > 0.7 ? 0.1 : 0 });
-  poly([[160, 440], [620, 440], [610, 500], [170, 500]], '#e07a5f');
-  // 시계가 다리를 내밀고 문밖으로 도망간다
-  const run = ease((lt - len * 0.35) / (len * 0.5));
-  const ph = lt * 14;
-  const cx = lerp(560, 1180, run);
-  const cy = run > 0 ? 500 - Math.abs(Math.sin(ph)) * 10 : 470 + (hash(Math.floor(lt * 20), 4) - 0.5) * 8 * (0.5 + pulse);
-  if (run < 1) walkingClock(cx, cy, run > 0 ? ph : 0, true);
-  if (run > 0.2 && run < 1) text('?!', 470, 250, 60, '#fff', { font: TITLE_FONT });
-}
-
-// ---------- 3. 모두가 쳐다보는 지하철 ----------
-const HOLD = ['balloon', 'fish', 'flower', 'cake', 'cat'] as const;
-function held(kind: (typeof HOLD)[number], x: number, y: number, lt: number) {
-  switch (kind) {
-    case 'balloon':
-      balloon(x, y - 130, '#3a86ff', 0.7);
-      break;
-    case 'fish':
-      fish(x, y, '#90be6d', 1.3);
-      break;
-    case 'flower':
-      line(x, y + 20, x, y - 40, 4, '#2a9d8f');
-      star(x, y - 50, 18, 9, 6, '#ffafcc', lt, 3);
-      break;
-    case 'cake':
-      rect(x - 22, y - 20, 44, 30, '#ffe5ec', 4);
-      line(x, y - 20, x, y - 36, 3);
-      ell(x, y - 40, 3, 5, '#ffb703', 0);
-      break;
-    case 'cat':
-      ell(x, y, 24, 18, '#adb5bd', 4);
-      poly([[x - 18, y - 10], [x - 14, y - 30], [x - 4, y - 14]], '#adb5bd', 3);
-      poly([[x + 18, y - 10], [x + 14, y - 30], [x + 4, y - 14]], '#adb5bd', 3);
-      break;
+  rect(760, 90, 300, 220, '#f7c59f');
+  ell(910, 310, 70, 50, '#fff3b0', 4, Math.PI, Math.PI * 2);
+  line(910, 90, 910, 310, 6);
+  // 침대
+  rect(160, 430, 560, 90, '#d4a373');
+  rect(150, 360, 40, 220, '#7f5539');
+  rect(700, 420, 30, 160, '#7f5539');
+  const up = ease((lt - len * 0.55) / (len * 0.2));
+  person({ x: lerp(520, 400, up), y: lerp(440, 470, up), s: 1.2, face: 1, shirt: '#bde0fe', rot: lerp(-Math.PI / 2, 0, up), sit: up > 0.5, eyes: up > 0.7 ? 'dot' : 'closed', mouth: up > 0.7 ? 'flat' : 'o', armF: up > 0.7 ? 2.8 : 0.3, tilt: up > 0.7 ? 0.25 : 0, hair: '#5a3e2b' });
+  poly([[200, 440], [700, 440], [690, 500], [210, 500]], '#e07a5f');
+  // 알람 시계
+  const ring = lt < len * 0.6;
+  const sh = ring ? (hash(Math.floor(lt * 20), 4) - 0.5) * 10 * (0.5 + pulse) : 0;
+  rect(820 + sh, 470, 80, 110, '#6f4518');
+  ell(860 + sh, 440, 34, 34, '#fffdf5');
+  line(860 + sh, 440, 860 + sh, 420, 4);
+  line(860 + sh, 440, 875 + sh, 445, 4);
+  if (ring) {
+    text('따르릉', 860, 370, 40, '#fff', { rot: sh * 0.02 });
   }
 }
+
+// ---------- 지하철 ----------
 function gSubway({ lt, pulse }: SceneArgs) {
   const c = ctx();
   c.fillStyle = '#d8e2dc';
   c.fillRect(0, 0, W, H);
-  // 창밖: 터널 대신 헤엄치는 물고기들
+  // 창밖 (터널 불빛이 지나감)
   for (let i = 0; i < 3; i++) {
     const x = 120 + i * 380;
-    rect(x, 110, 300, 170, '#1d3557');
+    rect(x, 120, 300, 170, '#22223b');
+    const off = (lt * 900) % 300;
     c.save();
     c.beginPath();
-    c.rect(x, 110, 300, 170);
+    c.rect(x, 120, 300, 170);
     c.clip();
-    for (let k = 0; k < 4; k++) fish(x + 340 - ((lt * 220 + k * 95 + i * 40) % 400), 150 + (k % 3) * 40, SHIRTS[k], 0.8);
+    for (let k = -1; k < 3; k++) {
+      c.fillStyle = '#ffd166';
+      c.fillRect(x + k * 150 + 150 - off, 190, 40, 8);
+    }
     c.restore();
   }
-  line(0, 80, W, 80, 8);
+  line(0, 90, W, 90, 8);
   rect(-10, 560, W + 20, 180, '#6c757d');
   rect(80, 450, 1120, 60, '#457b9d');
-  // 박자마다 승객들이 일제히 주인공을 쳐다본다
-  const stare = Math.floor(lt / 0.667) % 2 === 1 || pulse > 0.6;
-  const spots = [160, 340, 520, 940, 1120];
-  spots.forEach((x, k) => {
-    const toward: 1 | -1 = x < 730 ? 1 : -1;
-    const face = (stare ? toward : -toward) as 1 | -1;
-    person({ x, y: 520, s: 1.0, sit: true, face, shirt: SHIRTS[k], hair: HAIR[k] ?? undefined, eyes: stare ? 'wide' : 'dot', mouth: 'flat', armF: 1.4, armB: 1.2 });
-    held(HOLD[k], x + face * 50, 430, lt);
-  });
-  hero({ x: 730, y: 610, s: 1.15, face: 1, armF: 3.0, armB: 0.1, tilt: Math.sin(lt * 2.2) * 0.08, eyes: stare ? 'closed' : 'dot', mouth: stare ? 'sad' : 'flat' });
+  for (let x of [100, 640, 1180]) line(x, 90, x, 560, 8, '#adb5bd');
+  const sway = Math.sin(lt * 2.2) * 0.06 + pulse * 0.05;
+  for (let k = 0; k < 5; k++) {
+    const x = 200 + k * 210;
+    const standing = k % 2 === 1;
+    person({
+      x, y: standing ? 600 : 520, s: 1.05, face: k < 3 ? 1 : -1, shirt: SHIRTS[k], hair: HAIR[k] ?? undefined,
+      sit: !standing, tilt: sway * (k % 3 ? 1 : -1) + (k === 0 ? 0.4 : 0),
+      eyes: k === 0 ? 'closed' : 'dot', mouth: k === 4 ? 'smile' : 'flat',
+      armF: standing ? 3.0 : 1.3, armB: 0.3,
+    });
+    if (!standing && k !== 0) rect(x + 20, 420, 22, 34, '#2b2d42', 3); // 휴대폰
+  }
+  // 손잡이
   for (let i = 0; i < 8; i++) {
     const hx = 150 + i * 140 + Math.sin(lt * 2.2 + i) * 6;
-    line(hx, 80, hx, 140, 3);
-    ell(hx, 155, 14, 14, null, 4);
+    line(hx, 90, hx, 150, 3);
+    ell(hx, 165, 14, 14, null, 4);
   }
 }
 
-// ---------- 4. 빈 손 (클로즈업) ----------
+// ---------- 빈 손 (클로즈업) ----------
+function palm(cx: number, cy: number, dir: 1 | -1) {
+  const c = ctx();
+  c.save();
+  c.translate(cx, cy);
+  c.scale(dir, 1);
+  poly([[-40, 260], [-60, 90], [-100, 40], [-120, -20], [-95, -30], [-55, 20], [-60, -110], [-35, -120], [-20, -30], [-10, -140], [15, -140], [20, -30], [40, -125], [65, -115], [50, -20], [75, -95], [98, -85], [80, 60], [60, 260]], '#f3d2b0', 6);
+  line(-30, 40, 40, 20, 3);
+  line(-25, 80, 45, 70, 3);
+  poly([[-60, 260], [80, 260], [90, 360], [-70, 360]], '#bde0fe', 6);
+  c.restore();
+}
 function gHands({ lt, len, pulse }: SceneArgs) {
   const c = ctx();
   c.fillStyle = '#2b2d42';
@@ -206,133 +152,136 @@ function gHands({ lt, len, pulse }: SceneArgs) {
   const bob = Math.sin(lt * 1.3) * 6;
   palm(520, 470 + bob, 1);
   palm(760, 470 + bob, -1);
-  // 빗방울이 손가락 사이로 새어 나간다
+  // 떨어지는 빗방울 → 작은 빛
   for (let i = 0; i < 5; i++) {
-    const y = ((lt * 160 + i * 150) % 760) - 60;
-    ell(560 + i * 40, y, 5, 9, 'rgba(189,224,254,0.9)', 2);
+    const y = ((lt * 160 + i * 150) % 500) - 60;
+    if (y < 380) ell(560 + i * 40, y, 5, 9, 'rgba(189,224,254,0.9)', 2);
   }
   if (glow > 0) star(640, 400, (26 + pulse * 10) * glow, 11 * glow, 5, '#ffd166', lt * 0.8, 4);
+  if (lt < len * 0.5) text('...', 640, 140, 60, '#fff', { stroke: 0, alpha: 0.6 });
 }
 
-// ---------- 5. 해파리가 된 우산 ----------
-function gUmbrellas({ lt, len }: SceneArgs) {
+// ---------- 비 오는 거리 ----------
+function gRain({ lt }: SceneArgs) {
   const c = ctx();
   c.fillStyle = '#3d4a63';
   c.fillRect(0, 0, W, H);
+  skyline(470, '#2c3548', 7, 0);
   c.fillStyle = '#ffd166';
   skyline(470, '#323d54', 8, 0.3);
   rect(-10, 470, W + 20, 260, '#4f5d75');
-  const cols = ['#ff8fab', '#f4a261', '#2a9d8f', '#e9c46a', '#b8c0ff'];
+  for (let i = 0; i < 4; i++) {
+    const lx = 120 + i * 340;
+    line(lx, 470, lx, 230, 8);
+    ell(lx + 20, 230, 26, 12, '#ffd166', 4);
+    c.save();
+    c.globalAlpha = 0.18;
+    c.fillStyle = '#ffd166';
+    c.beginPath();
+    c.moveTo(lx + 20, 240);
+    c.lineTo(lx - 60, 600);
+    c.lineTo(lx + 100, 600);
+    c.fill();
+    c.restore();
+  }
+  // 우산 쓴 사람들
+  const umbrellas = ['#e63946', '#f4a261', '#2a9d8f', '#e9c46a', '#b56576'];
   for (let k = 0; k < 5; k++) {
     const dir = k % 2 ? -1 : 1;
-    const speed = 50 + k * 12;
+    const speed = 60 + k * 15;
     const x = dir > 0 ? ((lt * speed + k * 300) % (W + 200)) - 100 : W + 100 - ((lt * speed + k * 300) % (W + 200));
-    const y = 620 + (k % 3) * 25;
+    const y = 610 + (k % 3) * 25;
     const ph = lt * 8 + k;
-    const lift = ease((lt - len * (0.2 + k * 0.08)) / (len * 0.25)); // 우산이 손을 떠나 떠오른다
-    const up = lift > 0.1;
-    person({ x, y, s: 0.9, face: dir as 1 | -1, shirt: SHIRTS[k], hair: HAIR[k] ?? undefined, legB: Math.sin(ph) * 0.5, legF: -Math.sin(ph) * 0.5, armF: up ? 3.0 : 2.6, eyes: up ? 'up' : 'dot', mouth: up ? 'o' : 'flat', tilt: up ? -0.3 : 0 });
-    const ux = x + dir * 20 + Math.sin(lt * 2 + k) * 30 * lift;
-    const uy = y - 215 - lift * (380 + k * 40);
-    if (!up) line(ux, uy, ux, uy + 80, 4);
-    ell(ux, uy, 70, 42, cols[k], 5, Math.PI, Math.PI * 2);
-    if (up)
-      for (let t = -2; t <= 2; t++) {
-        const tx = ux + t * 22;
-        const wig = Math.sin(lt * 6 + t + k) * 10;
-        c.beginPath();
-        c.moveTo(tx, uy);
-        c.quadraticCurveTo(tx + wig, uy + 30, tx - wig, uy + 70);
-        c.lineWidth = 4;
-        c.strokeStyle = cols[k];
-        c.stroke();
-      }
+    ell(x + dir * 10, y + 8, 50, 8, 'rgba(255,255,255,0.12)', 0);
+    person({ x, y, s: 0.95, face: dir as 1 | -1, shirt: SHIRTS[k], hair: HAIR[k] ?? undefined, legB: Math.sin(ph) * 0.5, legF: -Math.sin(ph) * 0.5, armF: 2.6, eyes: 'dot', mouth: k === 2 ? 'smile' : 'flat' });
+    line(x + dir * 20, y - 150, x + dir * 20, y - 230, 4);
+    ell(x + dir * 20, y - 225, 75, 45, umbrellas[k], 5, Math.PI, Math.PI * 2);
   }
-  hero({ x: 640, y: 690, s: 1.05, face: 1, tilt: -0.35, eyes: 'up', mouth: 'smile', armF: 2.4, armB: 0.2 });
 }
 
-// ---------- 6. 거대한 손바닥 위의 꿈 ----------
+// ---------- 하늘을 나는 꿈 ----------
 function gDream({ lt }: SceneArgs) {
   sky('#cdb4db', '#ffc8dd');
-  ell(1070, 140, 60, 60, '#ffd166'); // 동전 같은 달
-  ell(1070, 140, 44, 44, null, 3);
-  text('₩', 1070, 142, 44, '#e9c46a', { stroke: 3 });
-  for (let i = 0; i < 5; i++) {
-    const cx = (((i * 300 - lt * 30) % (W + 300)) + W + 300) % (W + 300) - 150;
-    ell(cx, 110 + (i % 3) * 170, 110, 32, '#fff', 3);
+  for (let i = 0; i < 6; i++) {
+    const cx = ((i * 260 - lt * 40) % (W + 300) + W + 300) % (W + 300) - 150;
+    ell(cx, 120 + (i % 3) * 180, 110, 36, '#fff', 3);
   }
-  const bob = Math.sin(lt * 1.2) * 12;
-  palm(620, 470 + bob, 1, 1.6, '#ffe5d9', '#cdb4db');
-  hero({ x: 600, y: 545 + bob, s: 0.8, sit: true, face: 1, tilt: -0.2, eyes: 'closed', mouth: 'smile', armF: 1.2 });
-  for (let k = 0; k < 8; k++) {
-    const a = lt * 0.6 + (k * Math.PI * 2) / 8;
-    fish(620 + Math.cos(a) * 330, 330 + Math.sin(a) * 110 + bob, SHIRTS[k % 5], 1.1);
+  // 고래 구름
+  const wx = 900 - lt * 25;
+  ell(wx, 260, 170, 70, '#a2d2ff');
+  poly([[wx + 150, 250], [wx + 240, 200], [wx + 230, 300]], '#a2d2ff');
+  ell(wx - 110, 250, 6, 6, INK, 0);
+  line(wx - 150, 280, wx - 60, 285, 3);
+  for (let k = 0; k < 3; k++) ell(wx - 40 + k * 12, 180 - ((lt * 60 + k * 20) % 60), 5, 5, '#fff', 2);
+  // 떠 있는 사람
+  const fy = 430 + Math.sin(lt * 1.5) * 25;
+  person({ x: 450, y: fy, s: 1.3, face: 1, shirt: '#bde0fe', hair: '#5a3e2b', rot: -0.25 + Math.sin(lt) * 0.1, armF: 2.2, armB: 1.9, legB: -0.5, legF: 0.4, eyes: 'closed', mouth: 'smile' });
+  // 물고기 떼
+  for (let k = 0; k < 7; k++) {
+    const x = ((k * 190 + lt * 90) % (W + 200)) - 100;
+    const y = 540 + Math.sin(lt * 2 + k) * 30 + (k % 2) * 60;
+    ell(x, y, 22, 11, SHIRTS[k % 5], 3);
+    poly([[x - 20, y], [x - 36, y - 10], [x - 36, y + 10]], SHIRTS[k % 5], 3);
   }
-  balloon(900 + Math.sin(lt * 0.8) * 30, 380 - Math.sin(lt * 0.5) * 20, RED, 0.8);
 }
 
-// ---------- 7. 새가 되는 종이비행기 ----------
+// ---------- 옥상의 밤 ----------
 function gRooftop({ lt, len }: SceneArgs) {
   const c = ctx();
   sky('#14213d', '#3a4a7a');
   for (let i = 0; i < 80; i++) ell(hash(i, 12) * W, hash(i + 90, 12) * 380, 1.8, 1.8, '#fff', 0);
+  const sh = (lt / len) * 1.4;
+  if (sh > 0.4 && sh < 1) {
+    const k = (sh - 0.4) / 0.6;
+    line(900 - k * 400, 60 + k * 150, 900 - k * 400 + 70, 60 + k * 150 - 25, 4, '#fff3b0');
+  }
   c.fillStyle = '#ffd166';
   skyline(560, '#1d2d50', 21, 0.35);
   rect(-10, 540, W + 20, 200, '#6c757d');
   line(-10, 540, W + 10, 540, 6);
   for (let x = 20; x < W; x += 60) line(x, 540, x, 480, 4);
   line(-10, 480, W + 10, 480, 5);
-  const throwP = (lt % (len / 3)) / (len / 3);
-  hero({ x: 420, y: 600, s: 1.2, face: 1, armF: throwP < 0.15 ? lerp(0.5, 2.4, throwP / 0.15) : 1.4, armB: 0.3, eyes: 'up', mouth: 'smile', tilt: -0.15 });
-  // 던진 종이비행기가 날아가다 새로 변한다
-  for (let n = 0; n < 3; n++) {
-    const t = lt - n * (len / 3);
-    if (t < 0) continue;
-    const x = 480 + t * 170;
-    const y = 400 - t * 60 + Math.sin(t * 2) * 20;
-    if (t < 1.4) {
-      poly([[x, y], [x - 50, y - 12], [x - 38, y + 4], [x - 50, y + 18]], '#fff', 3);
-    } else {
-      const flap = Math.sin(t * 12) * 16;
-      line(x - 24, y - flap, x, y + 6, 4, '#fff');
-      line(x, y + 6, x + 24, y - flap, 4, '#fff');
-    }
-  }
+  person({ x: 520, y: 600, s: 1.2, face: 1, sit: true, shirt: SHIRTS[0], hair: HAIR[1] ?? undefined, tilt: -0.3, eyes: 'up', mouth: 'smile', armF: 1.3 });
+  person({ x: 720, y: 600, s: 1.2, face: -1, sit: true, shirt: SHIRTS[3], tilt: -0.3, eyes: 'up', mouth: 'flat', armF: 1.3 });
+  rect(612, 560, 16, 30, '#e63946', 3);
+  rect(640, 562, 16, 30, '#3a86ff', 3);
 }
 
-// ---------- 8. 떠내려가는 물건들 ----------
+// ---------- 강변 노을 ----------
 function gRiver({ lt }: SceneArgs) {
   const c = ctx();
   ['#f28482', '#f5a88e', '#f6bd60', '#f7d08a'].forEach((col, i) => {
     c.fillStyle = col;
     c.fillRect(0, i * 90, W, 90);
   });
-  ell(640, 300, 90, 90, '#fff3b0', 0);
-  skyline(300, '#6d597a', 33, 0);
-  rect(-10, 300, W + 20, 280, '#355070');
-  for (let i = 0; i < 8; i++) line(560 - i * 6, 320 + i * 16, 720 + i * 6, 320 + i * 16, 3, 'rgba(255,243,176,0.5)');
-  // 오늘 놓친 것들이 강물에 둥둥
-  const drift = (k: number) => ((lt * 50 + k * 260) % (W + 200)) - 100;
-  const bob = (k: number) => 430 + (k % 2) * 60 + Math.sin(lt * 2 + k) * 8;
-  walkingClock(drift(0), bob(0) - 20, 0, false);
-  ell(drift(1), bob(1), 60, 30, '#ff8fab', 4, Math.PI, Math.PI * 2);
-  rect(drift(2) - 12, bob(2) - 20, 24, 40, '#2b2d42', 3);
-  balloon(drift(3), bob(3) - 40, '#3a86ff', 0.6);
-  fish(drift(4), bob(4), '#90be6d', 1.3);
-  rect(-10, 580, W + 20, 160, '#6a994e');
-  line(-10, 610, W + 10, 610, 22, '#adb5bd');
-  // 자전거 탄 주인공
-  const x = ((lt * 120) % (W + 300)) - 150;
-  const rot = lt * 8;
-  for (const wx of [x - 45, x + 45]) {
-    ell(wx, 650, 30, 30, null, 5);
-    line(wx + Math.cos(rot) * 28, 650 + Math.sin(rot) * 28, wx - Math.cos(rot) * 28, 650 - Math.sin(rot) * 28, 3);
+  ell(640, 360, 100, 100, '#fff3b0', 0);
+  skyline(360, '#6d597a', 33, 0);
+  rect(-10, 360, W + 20, 200, '#355070');
+  for (let i = 0; i < 10; i++) {
+    const y = 380 + i * 18;
+    const off = (lt * 30 + i * 50) % 200;
+    line(540 - off * 0.3, y, 740 + off * 0.3 - i * 5, y, 3, 'rgba(255,243,176,0.6)');
   }
-  poly([[x - 45, 650], [x - 5, 610], [x + 30, 610], [x + 45, 650], [x, 650]], null, 5, true);
-  hero({ x: x - 5, y: 650, s: 0.95, face: 1, sit: true, armF: 1.7, armB: 1.6, tilt: 0.25, eyes: 'dot', mouth: 'flat' });
+  // 다리
+  line(-10, 300, W + 10, 300, 10);
+  for (let x = 60; x < W; x += 160) {
+    ell(x + 80, 300, 80, 60, null, 6, 0, Math.PI);
+  }
+  rect(-10, 560, W + 20, 180, '#6a994e');
+  line(-10, 590, W + 10, 590, 22, '#adb5bd');
+  // 자전거
+  const x = ((lt * 140) % (W + 300)) - 150;
+  const rot = lt * 9;
+  for (const wx of [x - 45, x + 45]) {
+    ell(wx, 640, 30, 30, null, 5);
+    line(wx + Math.cos(rot) * 28, 640 + Math.sin(rot) * 28, wx - Math.cos(rot) * 28, 640 - Math.sin(rot) * 28, 3);
+  }
+  poly([[x - 45, 640], [x - 5, 600], [x + 30, 600], [x + 45, 640], [x, 640]], null, 5, true);
+  const ph = rot;
+  person({ x: x - 5, y: 640, s: 0.95, face: 1, shirt: SHIRTS[2], hair: HAIR[3] ?? undefined, sit: true, armF: 1.7, armB: 1.6, tilt: -0.1, eyes: 'dot', mouth: 'smile', legF: Math.sin(ph) * 0.5 });
 }
 
-// ---------- 9. 맞잡은 손에서 자라는 새싹 ----------
+// ---------- 해돋이 & 엔딩 ----------
 function gSunrise({ lt, len }: SceneArgs) {
   sky('#ffcdb2', '#ffe8d6');
   const rise = ease(lt / (len * 0.6));
@@ -342,37 +291,29 @@ function gSunrise({ lt, len }: SceneArgs) {
     line(640 + Math.cos(a) * 110, sy + Math.sin(a) * 110, 640 + Math.cos(a) * 150, sy + Math.sin(a) * 150, 5, '#e07a5f');
   }
   ell(640, sy, 90, 90, '#ffb703');
+  ctx().fillStyle = '#ffd6a5';
   skyline(560, '#b5838d', 44, 0);
   poly([[0, 620], [400, 560], [700, 600], [1000, 550], [1280, 590], [1280, 720], [0, 720]], '#84a98c');
-  const walk = ease((lt - len * 0.1) / (len * 0.35));
-  const hold = walk >= 1;
-  hero({ x: 470, y: 600, s: 1.2, face: 1, armF: hold ? 1.25 : 0.2, armB: 0.2, eyes: hold ? 'closed' : 'dot', mouth: 'smile' });
-  person({ x: lerp(1350, 590, walk), y: 600, s: 1.2, face: -1, shirt: SHIRTS[1], hair: HAIR[3] ?? undefined, legB: walk < 1 ? Math.sin(lt * 10) * 0.5 : 0, legF: walk < 1 ? -Math.sin(lt * 10) * 0.5 : 0, armF: hold ? 1.25 : 0.2, eyes: 'dot', mouth: 'smile' });
-  const grow = ease((lt - len * 0.5) / (len * 0.3));
-  if (grow > 0) {
-    const hx = 530;
-    const hy = 470;
-    line(hx, hy, hx, hy - 60 * grow, 4, '#2a9d8f');
-    ell(hx - 16 * grow, hy - 50 * grow, 16 * grow, 8 * grow, '#90be6d', 3);
-    ell(hx + 16 * grow, hy - 62 * grow, 16 * grow, 8 * grow, '#90be6d', 3);
-    if (grow > 0.9) star(hx, hy - 70, 12, 6, 6, '#ffafcc', lt, 3);
-  }
-  balloon(900, lerp(760, 380, ease(lt / len)), RED, 0.9);
-  const k = ease((lt - len * 0.6) / (len * 0.2));
-  if (k > 0 && songTitle) text(songTitle, 640, 120, 72, '#e07a5f', { font: TITLE_FONT, alpha: k, stroke: 10 });
-  if (k > 0 && artist) text(artist, 640, 190, 34, INK, { alpha: k, stroke: 0 });
+  person({ x: 380, y: 590, s: 1.2, face: 1, shirt: '#bde0fe', hair: '#5a3e2b', armF: lerp(0.2, 1.25, ease((lt - len * 0.6) / (len * 0.1))), armB: 0.2, eyes: 'closed', mouth: 'smile', tilt: -0.2 });
+  const k = ease((lt - len * 0.55) / (len * 0.25));
+  if (k > 0 && songTitle) text(songTitle, 640, 130, 72, '#e07a5f', { font: TITLE_FONT, alpha: k, stroke: 10 });
+  if (k > 0 && artist) text(artist, 640, 205, 36, INK, { alpha: k, stroke: 0 });
+  // 다른 사람이 다가와 빈 손을 잡는다
+  const walk = ease((lt - len * 0.25) / (len * 0.35));
+  person({ x: lerp(1350, 520, walk), y: 590, s: 1.2, face: -1, shirt: SHIRTS[1], hair: HAIR[3] ?? undefined, legB: walk < 1 ? Math.sin(lt * 10) * 0.5 : 0, legF: walk < 1 ? -Math.sin(lt * 10) * 0.5 : 0, armF: walk >= 1 ? 1.2 : 0.2, eyes: 'dot', mouth: 'smile' });
+  if (k > 0) star(1000, 420, 18 * k, 8 * k, 4, '#fff', lt, 3);
 }
 
 const f = (x: number) => x * DEMO_DURATION;
 
 export const GENERAL_SCENES: Scene[] = [
-  { from: f(0), to: f(0.08), name: '떨어지는 제목', draw: gTitle },
-  { from: f(0.08), to: f(0.19), name: '도망가는 알람시계', draw: gAlarm },
-  { from: f(0.19), to: f(0.31), name: '쳐다보는 지하철', draw: gSubway },
+  { from: f(0), to: f(0.08), name: '타이틀', draw: gTitle },
+  { from: f(0.08), to: f(0.19), name: '새벽 알람', draw: gBedroom },
+  { from: f(0.19), to: f(0.31), name: '지하철', draw: gSubway },
   { from: f(0.31), to: f(0.41), name: '빈 손', draw: gHands },
-  { from: f(0.41), to: f(0.54), name: '해파리 우산', draw: gUmbrellas, rain: () => 1 },
-  { from: f(0.54), to: f(0.66), name: '손바닥 위의 꿈', draw: gDream },
-  { from: f(0.66), to: f(0.79), name: '새가 되는 종이비행기', draw: gRooftop },
-  { from: f(0.79), to: f(0.9), name: '떠내려가는 것들', draw: gRiver },
-  { from: f(0.9), to: f(1) + 1, name: '맞잡은 손', draw: gSunrise },
+  { from: f(0.41), to: f(0.54), name: '비 오는 거리', draw: gRain, rain: () => 1 },
+  { from: f(0.54), to: f(0.66), name: '하늘을 나는 꿈', draw: gDream },
+  { from: f(0.66), to: f(0.79), name: '옥상의 밤', draw: gRooftop },
+  { from: f(0.79), to: f(0.9), name: '강변 노을', draw: gRiver },
+  { from: f(0.9), to: f(1) + 1, name: '해돋이', draw: gSunrise },
 ];

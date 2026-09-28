@@ -4,7 +4,7 @@ import { MVEngine, Theme, parseLyrics } from '../mv/engine';
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
 const THEMES: { id: Theme; label: string; desc: string }[] = [
-  { id: 'general', label: '일반 뮤직비디오', desc: '도망가는 알람시계, 쳐다보는 지하철, 해파리 우산, 손바닥 위의 꿈, 새가 되는 종이비행기' },
+  { id: 'general', label: '일반 뮤직비디오', desc: '새벽 알람, 지하철, 빈 손, 비 오는 거리, 꿈, 옥상, 강변, 해돋이' },
   { id: 'ntt', label: 'NTT 클랜 (배그)', desc: '퇴근 후 7시, 낙하, 프라이팬, 자기장, 치킨' },
 ];
 
