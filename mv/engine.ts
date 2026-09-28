@@ -190,7 +190,7 @@ export class MVEngine {
     if (record) {
       const stream = new MediaStream([...this.cv.captureStream(30).getVideoTracks(), ...streamDest.stream.getAudioTracks()]);
       const mimeType = MIME_TYPES.find((m) => MediaRecorder.isTypeSupported(m)) ?? '';
-      const rec = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
+      const rec = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 2_500_000 });
       const chunks: Blob[] = [];
       rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
       blob = new Promise((res) => (rec.onstop = () => res(new Blob(chunks, { type: rec.mimeType || 'video/webm' }))));
