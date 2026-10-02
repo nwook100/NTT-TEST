@@ -159,7 +159,9 @@ def resolve_motion(edl, edl_path):
                     spec = importlib.util.spec_from_file_location("motion_tool", os.path.join(ROOT, "assets", "motion_tool.py"))
                     mt = importlib.util.module_from_spec(spec); spec.loader.exec_module(mt)
                 os.makedirs(cache, exist_ok=True)
-                getattr(mt, s["fn"])(out, **s.get("args", {}))
+                tmp = out[:-4] + f".tmp{os.getpid()}.mp4"      # write then rename: parallel renders never see half files
+                getattr(mt, s["fn"])(tmp, **s.get("args", {}))
+                os.replace(tmp, out)
             s["kind"], s["asset"] = "clip", os.path.relpath(out, ROOT)
 
 

@@ -2652,8 +2652,9 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s10_countup_22156_creditors.mp4"
    },
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_09_payout_2026_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_09_payout_2026.png",
+    "fx": "in"
    },
    {
     "kind": "motion",

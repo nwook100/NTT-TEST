@@ -13,6 +13,12 @@ Every effect is a reusable function:
     lower_third(out, title, sub, dur=5)                           name/place label sliding in (pure black bg -> blend "Screen")
     route_map(out, stops, dur=6)                                  animated route between labelled dots (lat/lon projected)
     logo_sting(out, dur=2.6)                                      channel logo sting (< 3 s)
+    line_chart(out, points, title=None, red_from=None, log=False) price line drawn left->right, live value tag, crash in red
+    flow_diagram(out, nodes, edges, title=None)                   boxes + arrows with money dots streaming along them
+    timeline(out, events, title=None)                             dates popping onto a line drawn left->right
+    compare(out, left, right, title=None)                         split screen: promised (white) vs reality (red)
+    bar_chart(out, bars, title=None, prefix='', suffix='')        horizontal bars growing with counting values
+    pyramid(out, levels, title=None, collapse=True)               pyramid tiers stack up, then the base gives way
 
 All full-frame clips get subtle film grain, flicker and a vignette. Lower thirds are rendered on pure black with no
 grain so they can be laid over footage with CapCut's "Screen" blend mode.
@@ -774,6 +780,352 @@ EP02_CHAPTERS = [
     (9, "The villain on the big screen", None), (10, "The money, 18 years later", None),
     (11, "Why it keeps coming back", None), (12, "Outro", "FINAL CHAPTER"),
 ]
+
+# =================================================================================================
+# explainer graphics (pack 2): line chart, flow diagram, timeline, compare, bar chart, pyramid
+# =================================================================================================
+def _title_kick(title):
+    return text_img(title, fit_font(F_MONO_B, [title], 1500, 34, tracking=8), RED, tracking=8, shadow=6) if title else None
+
+def _arrow(d, x0, y0, x1, y1, col, width, head=22):
+    d.line((x0, y0, x1, y1), fill=col, width=width)
+    a = math.atan2(y1 - y0, x1 - x0)
+    d.polygon([(x1, y1), (x1 - head * math.cos(a - 0.42), y1 - head * math.sin(a - 0.42)),
+               (x1 - head * math.cos(a + 0.42), y1 - head * math.sin(a + 0.42))], fill=col)
+
+def line_chart(out, points, title=None, prefix="$", suffix="", decimals=2, log=False, red_from=None, note=None,
+               dur=5.5, footer=None):
+    """Price/line chart drawn left to right. points = [[x_label, value], ...] (2-8 points, values from the script).
+    A glowing head carries a live value tag; segments from index red_from on are drawn red (the crash), and the
+    frame shakes once when the line lands. log=True for crashes over several orders of magnitude. note = small
+    qualifier line under the chart (e.g. 'Approximate prices')."""
+    n = len(points)
+    vals = [float(v) for _, v in points]
+    fy = (lambda v: math.log10(max(v, 1e-6))) if log else (lambda v: v)
+    lo, hi = min(map(fy, vals)), max(map(fy, vals))
+    if hi - lo < 1e-9: hi = lo + 1
+    pad_ = (hi - lo) * 0.08; lo -= pad_; hi += pad_
+    X0, X1, Y0, Y1 = 230, 1690, 240, 820
+    pts = [(X0 + (X1 - X0) * i / max(1, n - 1), Y1 - (Y1 - Y0) * (fy(v) - lo) / (hi - lo)) for i, v in enumerate(vals)]
+    kick = _title_kick(title)
+    nt = text_img(note, font(F_SANS, 26), GREY, shadow=0) if note else None
+    xl = [text_img(str(lbl), fit_font(F_MONO_B, [str(lbl)], (X1 - X0) / max(1, n - 1) - 10 if n > 1 else 400, 28), GREY, shadow=0)
+          for lbl, _ in points]
+    fv = font(F_SANS_B, 44)
+    def fmt(v):
+        d_ = decimals if v >= 0.01 or decimals > 4 else 6
+        return prefix + _fmt(v, d_, True) + suffix
+    base = bg_dark().copy()
+    g = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(g)
+    for k in range(6):
+        y = Y0 + (Y1 - Y0) * k / 5; gd.line((X0, y, X1, y), fill=PAPER + (18,), width=1)
+    gd.line((X0, Y1, X1, Y1), fill=PAPER + (70,), width=2)
+    base.alpha_composite(g)
+    t0, t1 = 0.5, dur - 1.3
+    land = {"t": None}
+    SS = 2
+    def at(p):       # position + value along the polyline for progress p
+        u = p * (n - 1); i = min(n - 2, int(u)) if n > 1 else 0; f_ = u - i
+        if n == 1: return pts[0], vals[0], 0
+        x = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f_; y = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f_
+        if log:
+            v = 10 ** (fy(vals[i]) + (fy(vals[i + 1]) - fy(vals[i])) * f_)
+        else:
+            v = vals[i] + (vals[i + 1] - vals[i]) * f_
+        return (x, y), v, i
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.3, 0.5)
+        p = ease_in_out(prog(t, t0, t1))
+        (hx, hy), v, seg = at(p)
+        lay = Image.new("RGBA", (W * SS, H * SS), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+        u = p * (n - 1)
+        for i in range(n - 1):
+            if u <= i: break
+            a, b = pts[i], pts[i + 1]
+            f_ = min(1.0, u - i)
+            e = (a[0] + (b[0] - a[0]) * f_, a[1] + (b[1] - a[1]) * f_)
+            col = RED if (red_from is not None and i >= red_from) else PAPER
+            # soft area under paper segments
+            d.line((a[0] * SS, a[1] * SS, e[0] * SS, e[1] * SS), fill=col + (255,), width=7 * SS)
+        for i, (x, y) in enumerate(pts):
+            if u + 1e-6 >= i:
+                col = RED if (red_from is not None and i > red_from) else PAPER
+                d.ellipse(((x - 9) * SS, (y - 9) * SS, (x + 9) * SS, (y + 9) * SS), fill=col + (255,))
+        lay = lay.resize((W, H), Image.LANCZOS)
+        if p > 0:
+            hot = red_from is not None and seg >= red_from
+            glow = Image.new("RGBA", (140, 140), (0, 0, 0, 0))
+            ImageDraw.Draw(glow).ellipse((40, 40, 100, 100), fill=(RED if hot else PAPER) + (190,))
+            paste(lay, glow.filter(ImageFilter.GaussianBlur(16)), hx, hy)
+        c.alpha_composite(with_alpha(lay, env))
+        for i, im in enumerate(xl):
+            pi = prog(u, i - 0.4, i + 0.02) if n > 1 else 1
+            if pi > 0: paste(c, im, pts[i][0], Y1 + 40, alpha=pi * env)
+        if p > 0:
+            hot = red_from is not None and seg >= red_from and p > 0
+            tag = text_img(fmt(v if p < 1 else vals[-1]), fv, RED if hot else PAPER, shadow=10)
+            ty = hy - 60 if hy > Y0 + 80 else hy + 60
+            tx = min(max(hx, X0 + tag.width / 2), X1 - tag.width / 2 + 60)
+            paste(c, tag, tx, ty, alpha=env)
+        if kick: paste(c, kick, W / 2, 140, alpha=env * prog(t, 0, 0.3))
+        if nt: paste(c, nt, W / 2, H - 120, alpha=env * prog(t, 0.6, 1.0))
+        footer_tag(c, footer, env)
+    def shake(t):
+        if red_from is None: return 0, 0, 1
+        k = prog(t, t1, t1 + 0.35)
+        if k <= 0 or k >= 1: return 0, 0, 1
+        a = (1 - k) * 12
+        return a * math.sin(t * 90), a * math.cos(t * 70), 1 + 0.01 * (1 - k)
+    render(out, dur, draw, base=base, shake=shake)
+
+
+def flow_diagram(out, nodes, edges, title=None, dur=6.0, footer=None):
+    """Boxes and arrows with money flowing along them.
+    nodes = [{"id","label","sub"(opt),"x","y" (0-1 frame fractions),"red"(opt bool)}] (2-6 nodes, pop in in order);
+    edges = [{"from","to","label"(opt),"red"(opt)}] drawn once both ends are visible, then dots stream along them.
+    Use it for how a scheme moves money (new deposits -> paid out as 'returns' to earlier investors)."""
+    kick = _title_kick(title)
+    N = {}
+    order = {nd["id"]: i for i, nd in enumerate(nodes)}
+    for nd in nodes:
+        fl = fit_font(F_SANS_B, [nd["label"]], 440, 58)
+        li = text_img(nd["label"], fl, PAPER, shadow=0)
+        si = text_img(nd["sub"], fit_font(F_SANS, [nd["sub"]], 440, 36), GREY, shadow=0) if nd.get("sub") else None
+        bw = max(li.width, si.width if si else 0) + 56; bh = li.height + (si.height - 14 if si else 0) + 44
+        cx, cy = 120 + nd["x"] * (W - 240), 150 + nd["y"] * (H - 330)
+        box = Image.new("RGBA", (int(bw) + 8, int(bh) + 8), (0, 0, 0, 0))
+        bd = ImageDraw.Draw(box)
+        bd.rounded_rectangle((4, 4, bw + 3, bh + 3), radius=14, fill=DARK_HI + (245,), outline=(RED if nd.get("red") else PAPER) + (255,), width=4)
+        box.alpha_composite(li, (int((box.width - li.width) / 2), int(10 if si else (box.height - li.height) / 2)))
+        if si: box.alpha_composite(si, (int((box.width - si.width) / 2), int(box.height - si.height - 2)))
+        N[nd["id"]] = {"c": (cx, cy), "img": box, "w": box.width, "h": box.height, "i": order[nd["id"]]}
+    nn = len(nodes)
+    t_node = lambda i: 0.3 + i * min(0.55, (dur * 0.45) / max(1, nn))
+    pairs = {(e["from"], e["to"]) for e in edges}
+    E = []
+    for e in edges:
+        a, b = N[e["from"]], N[e["to"]]
+        (x0, y0), (x1, y1) = a["c"], b["c"]
+        L = math.hypot(x1 - x0, y1 - y0) or 1
+        ux, uy = (x1 - x0) / L, (y1 - y0) / L
+        off = 18 if (e["to"], e["from"]) in pairs else 0          # two-way flows run side by side
+        ox, oy = -uy * off, ux * off
+        def edge_pt(box, sx, sy):                                 # where the ray leaves the box
+            hw, hh = box["w"] / 2 + 10, box["h"] / 2 + 10
+            k = min(hw / abs(sx) if sx else 1e9, hh / abs(sy) if sy else 1e9)
+            return k
+        k0, k1 = edge_pt(a, ux, uy), edge_pt(b, ux, uy)
+        p0 = (x0 + ux * k0 + ox, y0 + uy * k0 + oy); p1 = (x1 - ux * k1 + ox, y1 - uy * k1 + oy)
+        ts = max(t_node(a["i"]), t_node(b["i"])) + 0.25
+        lab = text_img(e["label"], fit_font(F_SANS_B, [e["label"]], 380, 40), RED if e.get("red") else (220, 210, 190), shadow=8) if e.get("label") else None
+        E.append({"p0": p0, "p1": p1, "ts": ts, "red": e.get("red"), "lab": lab, "n": (-uy, ux)})
+    SS = 2
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.3, 0.5)
+        lay = Image.new("RGBA", (W * SS, H * SS), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+        for e in E:
+            p = ease_out_cubic(prog(t, e["ts"], e["ts"] + 0.5))
+            if p <= 0: continue
+            (x0, y0), (x1, y1) = e["p0"], e["p1"]
+            xe, ye = x0 + (x1 - x0) * p, y0 + (y1 - y0) * p
+            col = (RED if e["red"] else PAPER) + (230,)
+            _arrow(d, x0 * SS, y0 * SS, xe * SS, ye * SS, col, 5 * SS, head=22 * SS if p > 0.6 else 0)
+            if p >= 1:                                            # money dots streaming
+                for k in range(5):
+                    u = ((t - e["ts"]) * 0.55 + k / 5) % 1.0
+                    x, y = x0 + (x1 - x0) * u, y0 + (y1 - y0) * u
+                    r = 10
+                    d.ellipse(((x - r) * SS, (y - r) * SS, (x + r) * SS, (y + r) * SS),
+                              fill=((255, 120, 130) if e["red"] else (240, 200, 90)) + (int(255 * math.sin(math.pi * u)),))
+        lay = lay.resize((W, H), Image.LANCZOS)
+        c.alpha_composite(with_alpha(lay, env))
+        for e in E:
+            if e["lab"]:
+                p = prog(t, e["ts"] + 0.3, e["ts"] + 0.7)
+                (x0, y0), (x1, y1) = e["p0"], e["p1"]
+                nx, ny = e["n"]
+                if ny > 0: nx, ny = -nx, -ny
+                paste(c, e["lab"], (x0 + x1) / 2 + nx * 34, (y0 + y1) / 2 + ny * 34, alpha=p * env)
+        for nd in N.values():
+            p = prog(t, t_node(nd["i"]), t_node(nd["i"]) + 0.4)
+            if p <= 0: continue
+            paste(c, nd["img"], nd["c"][0], nd["c"][1], scale=0.85 + 0.15 * ease_out_back(p), alpha=min(1, p * 2) * env)
+        if kick: paste(c, kick, W / 2, 90, alpha=env * prog(t, 0, 0.3))
+        footer_tag(c, footer, env)
+    render(out, dur, draw)
+
+
+def timeline(out, events, title=None, red_last=True, dur=6.0, footer=None):
+    """Horizontal timeline: a line draws left to right and each event pops in on it.
+    events = [[date, text], ...] (2-6, dates and wording from the script); the last one is red when red_last."""
+    n = len(events)
+    kick = _title_kick(title)
+    X0, X1, Y = 180, 1740, 540
+    xs = [X0 + (X1 - X0) * (i + 0.5) / n for i in range(n)]
+    col_w = (X1 - X0) / n - 30
+    fd = fit_font(F_MONO_B, [str(e[0]) for e in events], col_w, 46)
+    ft = font(F_SANS, 34 if n <= 4 else 30)
+    items = []
+    for i, (date, txt) in enumerate(events):
+        hot = red_last and i == n - 1
+        di = text_img(str(date), fd, RED if hot else PAPER, shadow=8)
+        lines = [" ".join(l) for l in wrap(str(txt).split(), ft, col_w)][:3]
+        ti = [text_img(l, ft, PAPER if hot else (215, 207, 194), shadow=6) for l in lines]
+        items.append((di, ti, hot))
+    t0, t1 = 0.35, dur - 1.4
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.3, 0.5)
+        p = ease_in_out(prog(t, t0, t1))
+        xe = X0 + (X1 - X0) * p
+        fill_rect(c, X0, Y - 3, X1, Y + 3, PAPER, 0.12 * env)
+        fill_rect(c, X0, Y - 3, xe, Y + 3, PAPER, 0.85 * env)
+        for i, x in enumerate(xs):
+            q = prog(xe, x - 10, x + 120)
+            if q <= 0: continue
+            di, ti, hot = items[i]
+            e = ease_out_back(min(1, q * 1.4)) if q < 1 else 1
+            r = 13 * e
+            lay = Image.new("RGBA", (80, 80), (0, 0, 0, 0)); dd = ImageDraw.Draw(lay)
+            dd.ellipse((40 - r, 40 - r, 40 + r, 40 + r), fill=(RED if hot else PAPER) + (255,))
+            if hot and q >= 1:
+                rr = 13 + 10 * (0.5 + 0.5 * math.sin(t * 6))
+                dd.ellipse((40 - rr, 40 - rr, 40 + rr, 40 + rr), outline=RED + (120,), width=3)
+            paste(c, lay, x, Y, alpha=env)
+            a = ease_out_cubic(min(1, q * 1.2))
+            fill_rect(c, x - 1, Y - 70 * a, x + 1, Y - 16, GREY, 0.6 * env)
+            paste(c, di, x, Y - 110 - 14 * (1 - a), alpha=a * env)
+            for k, im in enumerate(ti):
+                paste(c, im, x, Y + 70 + k * (ft.size + 10) + 14 * (1 - a), alpha=a * env)
+        if kick: paste(c, kick, W / 2, 170, alpha=env * prog(t, 0, 0.3))
+        footer_tag(c, footer, env)
+    render(out, dur, draw)
+
+
+def compare(out, left, right, title=None, dur=5.0, footer=None):
+    """Split screen: what was promised/claimed vs what happened. left/right = {"head","big","sub"(opt)};
+    left slides in first in paper white, right follows in red, a divider wipes down the middle."""
+    kick = _title_kick(title)
+    def side(s, col):
+        hd = text_img(s["head"].upper(), fit_font(F_MONO_B, [s["head"].upper()], 760, 36, tracking=8), GREY, tracking=8, shadow=0)
+        bg_ = text_img(s["big"], fit_font(F_SANS_B, [s["big"]], 780, 150), col, shadow=14)
+        sb = None
+        if s.get("sub"):
+            fs = font(F_SANS, 34)
+            sb = [text_img(" ".join(l), fs, (215, 207, 194), shadow=6) for l in wrap(s["sub"].split(), fs, 760)][:3]
+        return hd, bg_, sb
+    L, R = side(left, PAPER), side(right, RED)
+    def put(c, s, cx, a, dx):
+        hd, bg_, sb = s
+        paste(c, hd, cx + dx, 360, alpha=a)
+        paste(c, bg_, cx + dx * 1.4, 500, alpha=a)
+        for k, im in enumerate(sb or []):
+            paste(c, im, cx + dx, 640 + k * 46, alpha=a)
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.25, 0.5)
+        pd = ease_out_cubic(prog(t, 0.1, 0.6))
+        fill_rect(c, W / 2 - 2, 260, W / 2 + 2, 260 + 520 * pd, PAPER, 0.35 * env)
+        pl = ease_out_cubic(prog(t, 0.25, 0.8))
+        put(c, L, W / 4 + 20, pl * env, -60 * (1 - pl))
+        pr = ease_out_cubic(prog(t, 1.1, 1.65))
+        if pr > 0:
+            fill_rect(c, W / 2 + 40, 300, W - 60, 760, RED, 0.06 * pr * env)
+        put(c, R, 3 * W / 4 - 20, pr * env, 60 * (1 - pr))
+        if kick: paste(c, kick, W / 2, 170, alpha=env * prog(t, 0, 0.3))
+        footer_tag(c, footer, env)
+    def shake(t):
+        k = prog(t, 1.45, 1.75)
+        if k <= 0 or k >= 1: return 0, 0, 1
+        return 8 * (1 - k) * math.sin(t * 80), 0, 1
+    render(out, dur, draw, shake=shake)
+
+
+def bar_chart(out, bars, title=None, prefix="", suffix="", decimals=0, note=None, dur=5.0, footer=None):
+    """Horizontal bars growing with counting values. bars = [[label, value, red(opt bool)], ...] (2-5, from the script)."""
+    kick = _title_kick(title)
+    n = len(bars)
+    vmax = max(float(b[1]) for b in bars) or 1
+    fl = fit_font(F_SANS_B, [str(b[0]) for b in bars], 470, 40)
+    fv = font(F_SANS_B, 46)
+    X0, X1 = 640, 1540
+    gap = min(150, 560 / max(1, n))
+    ys = [H / 2 + 20 + (i - (n - 1) / 2) * gap for i in range(n)]
+    labs = [text_img(str(b[0]), fl, PAPER, shadow=6) for b in bars]
+    nt = text_img(note, font(F_SANS, 26), GREY, shadow=0) if note else None
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.25, 0.5)
+        for i, b in enumerate(bars):
+            ts = 0.35 + i * 0.35
+            p = ease_out_expo(prog(t, ts, ts + 1.6))
+            a = prog(t, ts - 0.2, ts + 0.2)
+            hot = len(b) > 2 and b[2]
+            paste(c, labs[i], X0 - 30 - labs[i].width / 2 + labs[i].info["pad"], ys[i], alpha=a * env)
+            fill_rect(c, X0, ys[i] - 26, X1, ys[i] + 26, PAPER, 0.05 * env)
+            xe = X0 + (X1 - X0) * (float(b[1]) / vmax) * p
+            fill_rect(c, X0, ys[i] - 26, xe, ys[i] + 26, RED if hot else PAPER, (0.95 if hot else 0.8) * env * a)
+            v = float(b[1]) * p
+            s = prefix + _fmt(round(v) if decimals == 0 else v, decimals, True) + suffix
+            if p > 0.999: s = prefix + _fmt(float(b[1]) if decimals else round(float(b[1])), decimals, True) + suffix
+            vi = text_img(s, fv, RED if hot else PAPER, shadow=8)
+            paste(c, vi, min(xe + 24, W - 40 - vi.width) , ys[i], alpha=a * env, anchor="l")
+        if kick: paste(c, kick, W / 2, 170, alpha=env * prog(t, 0, 0.3))
+        if nt: paste(c, nt, W / 2, H - 120, alpha=env * prog(t, 0.8, 1.2))
+        footer_tag(c, footer, env)
+    render(out, dur, draw)
+
+
+def pyramid(out, levels, title=None, collapse=True, collapse_word=None, dur=6.0, footer=None):
+    """Pyramid scheme diagram: levels = top->bottom labels (3-5). Tiers stack in from the top, each wider than the
+    last (each level needs more new money than the one above); with collapse=True the base cracks, the tiers drop
+    and tumble, the frame shakes and collapse_word (optional, e.g. 'COLLAPSE') stamps in red."""
+    kick = _title_kick(title)
+    n = len(levels)
+    th = min(120, 560 / n)
+    top = H / 2 - n * th / 2 + 40
+    tiers = []
+    for i, lab in enumerate(levels):
+        w0 = 260 + 1100 * i / max(1, n - 1)
+        w1 = 260 + 1100 * (i + 1) / max(1, n - 1) if i < n - 1 else w0 + 1100 / max(1, n - 1)
+        h = int(th - 10)
+        im = Image.new("RGBA", (int(w1) + 4, h + 4), (0, 0, 0, 0))
+        d = ImageDraw.Draw(im)
+        o = (w1 - w0) / 2
+        poly = [(2 + o, 2), (2 + o + w0, 2), (2 + w1, h + 2), (2, h + 2)]
+        hot = i == n - 1
+        d.polygon(poly, fill=(RED + (235,)) if hot else (DARK_HI + (250,)), outline=PAPER + (255,), width=3)
+        f = fit_font(F_SANS_B, [lab], w0 + o - 40, 40)
+        li = text_img(lab, f, PAPER, shadow=4)
+        im.alpha_composite(li, (int(im.width / 2 - li.width / 2), int(im.height / 2 - li.height / 2)))
+        tiers.append((im, top + i * th + th / 2))
+    cw = text_img(collapse_word, font(F_SANS_B, 150), RED, tracking=10, shadow=14) if (collapse and collapse_word) else None
+    tb = 0.3; step = min(0.45, (dur * 0.42) / n)
+    tc = max(tb + n * step + 1.0, dur * 0.55)               # collapse time (hold the built pyramid first)
+    rnd = np.random.default_rng(7)
+    spin = [(rnd.uniform(-1, 1) * 22, rnd.uniform(-1, 1) * 160) for _ in range(n)]
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.25, 0.45)
+        for i, (im, y) in enumerate(tiers):
+            p = ease_out_back(prog(t, tb + i * step, tb + i * step + 0.35), 1.4)
+            if p <= 0: continue
+            x, yy, rot, a = W / 2, y - 50 * (1 - p), 0, min(1, p * 1.5)
+            if collapse and t > tc:
+                k = t - tc - (n - 1 - i) * 0.08            # the base gives way first
+                if k > 0:
+                    yy += 700 * k * k; rot = spin[i][0] * k * 2; x += spin[i][1] * k; a *= clamp(1 - k / 1.2)
+            img = im.rotate(rot, resample=Image.BICUBIC, expand=True) if rot else im
+            paste(c, img, x, yy, alpha=a * env)
+        if cw is not None:
+            q = prog(t, tc + 0.35, tc + 0.6)
+            if q > 0: paste(c, cw, W / 2, H / 2, scale=1.6 - 0.6 * ease_out_cubic(q), alpha=min(1, q * 2) * env)
+        if kick: paste(c, kick, W / 2, 110, alpha=env * prog(t, 0, 0.3))
+        footer_tag(c, footer, env)
+    def shake(t):
+        if not collapse: return 0, 0, 1
+        k = prog(t, tc, tc + 0.5)
+        if k <= 0 or k >= 1: return 0, 0, 1
+        a = (1 - k) * 16
+        return a * math.sin(t * 95), a * math.cos(t * 77), 1 + 0.015 * (1 - k)
+    render(out, dur, draw, shake=shake)
+
 
 def slug(s, n=36):
     s = "_".join(w for w in "".join(ch if ch.isalnum() else " " for ch in s.lower()).split())

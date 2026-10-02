@@ -26,7 +26,11 @@ def page(org, meta, tag, body, src):
 
 def zoom_clip(png, mp4, cx, cy, mw, secs=7, ramp=4.5, fps=30):
     # zoom so the highlighted phrase fills ~60% of the frame width, capped between 1.2x and 1.45x
-    zmax = max(1.2, min(1.45, 1920 * 0.6 / max(mw, 1)))
+    zmax = max(1.15, min(1.3, 1920 * 0.6 / max(mw, 1)))
+    # keep the whole paper card (x ~255..1665, y ~170..910) inside the zoomed frame so no text is ever cut off
+    vw, vh = 1920 / zmax, 1080 / zmax
+    cx = min(max(cx, 255 + vw / 2), 1665 - vw / 2) if vw < 1410 else 960
+    cy = min(max(cy, 170 + vh / 2), 910 - vh / 2) if vh < 740 else 540
     n = int(ramp * fps)
     e = f"(min(on/{n},1)*min(on/{n},1)*(3-2*min(on/{n},1)))"          # smoothstep ease-in-out
     z = f"1+{zmax-1:.4f}*{e}"

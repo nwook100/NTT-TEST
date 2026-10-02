@@ -5,7 +5,8 @@ import json, os, subprocess, sys, inspect, importlib.util
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SFX = {"whoosh", "impact", "riser", "heartbeat", "typewriter", "stamp", "glitch"}
-FNS = {"key_phrase", "word_by_word", "count_up", "stamp", "typewriter"}
+FNS = {"key_phrase", "word_by_word", "count_up", "stamp", "typewriter",
+       "line_chart", "flow_diagram", "timeline", "compare", "bar_chart", "pyramid"}
 MIN_FLEX, MAX_FLEX, MAX_SPILL = 2.2, 7.0, 4.0
 _dur = {}
 
@@ -21,7 +22,7 @@ def dur(path):
 def motion_params():
     spec = importlib.util.spec_from_file_location("mt", os.path.join(ROOT, "assets", "motion_tool.py"))
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
-    return {f: set(inspect.signature(getattr(m, f)).parameters) - {"out"} for f in FNS}
+    return {f: inspect.signature(getattr(m, f)).parameters for f in FNS}
 
 
 def main():
@@ -96,10 +97,11 @@ def main():
                     except Exception: errs.append(f"ERROR {where}: args is not valid JSON"); continue
                 if fn not in FNS:
                     errs.append(f"ERROR {where}: unknown motion fn {fn}"); continue
-                bad = set(args) - params[fn]
+                allowed = set(params[fn]) - {"out"}
+                bad = set(args) - allowed
                 if bad:
-                    errs.append(f"ERROR {where}: {fn} has no parameter(s) {sorted(bad)}; allowed {sorted(params[fn])}")
-                d = float(args.get("dur", 4.0 if fn != "count_up" else 4.5))
+                    errs.append(f"ERROR {where}: {fn} has no parameter(s) {sorted(bad)}; allowed {sorted(allowed)}")
+                d = float(args.get("dur", params[fn]["dur"].default))
                 if not 3.0 <= d <= 6.0:
                     errs.append(f"ERROR {where}: motion dur {d} outside 3–6 s")
                 text = " ".join(args.get("lines", [])) + " " + args.get("text", "") + " " + args.get("word", "")
