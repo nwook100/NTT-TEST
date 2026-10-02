@@ -1,0 +1,61 @@
+{
+  "section": "1",
+  "chunks": [
+    {"id": 4, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_stanford_1.jpg", "fx": "in"},
+      {"kind": "text", "text": "Software engineer\nat Microsoft and Apple", "style": "label"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "out"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "left"}
+    ]},
+    {"id": 5, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "right"}
+    ]},
+    {"id": 6, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_coder_dealmaker",
+       "args": {"lines": ["DO KWON — the coder", "DANIEL SHIN — the dealmaker"], "red": ["coder", "dealmaker"],
+                "kicker": "EARLY 2018 · TERRAFORM LABS", "dur": 5.0, "stagger": 1.0, "size": 104}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "fx": "in"},
+      {"kind": "text", "text": "Ticket Monster, or TMON", "style": "label"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "out"}
+    ]},
+    {"id": 7, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "right"}
+    ]},
+    {"id": 8, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "count_up", "name": "s01_count_followers_1m",
+       "args": {"to": 1000000, "prefix": "~", "kicker": "ON TWITTER · BY 2022",
+                "label": "AROUND A MILLION PEOPLE FOLLOWED HIM", "dur": 6.0, "count_time": 4.4}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "out"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_the_future",
+       "args": {"lines": ["He wasn't just a founder.", "He was the future."], "red": ["future."],
+                "kicker": "TO MANY OF THEM", "dur": 4.0, "stagger": 1.6, "size": 110}}
+    ]},
+    {"id": 9, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "left"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_bitcoin_vs_stablecoin",
+       "args": {"lines": ["Bitcoin = price goes up and down", "Stablecoin = always $1"], "red": ["$1"],
+                "kicker": "TERRA'S BIG IDEA", "dur": 5.5, "stagger": 1.2, "size": 104}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "right"}
+    ]},
+    {"id": 10, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_real_dollar_reserve",
+       "args": {"lines": ["For every coin, they hold a real dollar,", "or something like it, in reserve."],
+                "red": ["dollar", "reserve"], "kicker": "MOST STABLECOINS: THE BORING WAY",
+                "dur": 5.5, "stagger": 0.9, "size": 96}},
+      {"kind": "text", "text": "Terra didn't.", "style": "quote"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 4, "name": "whoosh", "offset": 0.0, "gain_db": -8},
+    {"chunk": 6, "name": "whoosh", "offset": 0.0, "gain_db": -10},
+    {"chunk": 8, "name": "impact", "offset": 8.0, "gain_db": -14},
+    {"chunk": 10, "name": "impact", "offset": 8.8, "gain_db": -6}
+  ],
+  "music_drops": [
+    {"chunk": 10, "dur": 10.0}
+  ]
+}

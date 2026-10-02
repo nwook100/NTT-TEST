@@ -1,0 +1,67 @@
+{
+  "section": "2",
+  "chunks": [
+    {"id": 11, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s02_chapter_coffee_paid_in_crypto.mp4"},
+      {"kind": "text", "text": "You need to see\nhow it was sold.", "style": "quote"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_buying_coffee",
+       "args": {"lines": ["The pitch wasn't about getting rich.", "It was about buying coffee."], "red": ["coffee."],
+                "kicker": "IN THE BEGINNING", "dur": 5.0, "stagger": 1.4, "size": 104}}
+    ]},
+    {"id": 12, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "out"},
+      {"kind": "motion", "fn": "typewriter", "name": "s02_tw_chai",
+       "args": {"text": "CHAI", "sub": "2019 · A MOBILE PAYMENTS APP IN KOREA", "dur": 3.5, "size": 140}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_lower_fees",
+       "args": {"lines": ["Shoppers got discounts.", "Merchants paid lower fees", "than the card companies charged."],
+                "red": ["discounts.", "lower"], "dur": 4.5, "stagger": 0.9, "size": 100}}
+    ]},
+    {"id": 13, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "left"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_terra_blockchain",
+       "args": {"lines": ["Those payments were running", "on the Terra blockchain."], "red": ["blockchain."],
+                "kicker": "TERRA TOLD THE WORLD", "dur": 4.5, "stagger": 0.8, "size": 108}}
+    ]},
+    {"id": 14, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "right"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_krt_diagram",
+       "args": {"lines": ["Customer pays in won", "↓", "KRT (Terra's won-pegged coin)", "↓", "Merchant"],
+                "red": ["KRT"], "dur": 5.5, "stagger": 0.9, "size": 92}}
+    ]},
+    {"id": 15, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_chai_terraform",
+       "args": {"lines": ["Chai partnered with Terraform", "to bring that won coin into its app."],
+                "red": ["chai", "terraform"], "kicker": "2019", "dur": 4.5, "stagger": 0.9, "size": 100}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_tiny_proof",
+       "args": {"lines": ["Every coffee, every online order,", "was supposed to be a tiny proof", "that Terra worked as money."],
+                "red": ["supposed"], "dur": 5.5, "stagger": 0.8, "size": 100}}
+    ]},
+    {"id": 16, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_terra_said_users",
+       "args": {"lines": ["500,000 users", "2.7 million transactions"], "red": ["500,000", "2.7"],
+                "kicker": "TERRA SAID", "footer": "TERRA'S OWN ANNOUNCEMENTS",
+                "dur": 5.0, "stagger": 0.8, "size": 120}},
+      {"kind": "text", "text": "For investors,\nthis was the killer argument.", "style": "quote"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_real_people",
+       "args": {"lines": ["Real people,", "in a real country,", "paying for real things."], "red": ["real"],
+                "kicker": "TERRA COULD POINT TO", "dur": 4.0, "stagger": 0.8, "size": 110}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "left"}
+    ]},
+    {"id": 17, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "out"},
+      {"kind": "text", "text": "In a courtroom.", "style": "quote"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 11, "name": "whoosh", "offset": 0.0, "gain_db": -8},
+    {"chunk": 12, "name": "typewriter", "offset": 3.2, "gain_db": -12},
+    {"chunk": 14, "name": "whoosh", "offset": 2.8, "gain_db": -14},
+    {"chunk": 17, "name": "heartbeat", "offset": 5.35, "gain_db": -8}
+  ],
+  "music_drops": [
+    {"chunk": 17, "dur": 8.0}
+  ]
+}

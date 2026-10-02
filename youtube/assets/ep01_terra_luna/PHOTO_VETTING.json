@@ -237,8 +237,8 @@
   "quality_ok": true,
   "landscape_ok": true,
   "mood": "bright",
-  "verdict": "keep",
-  "reason": "Clearly shows Interpol HQ with the building name; good quality, no people."
+  "verdict": "reject",
+  "reason": "Clearly shows Interpol HQ with the building name; good quality, no people. | Director: agency emblem visible on the facade — do not use."
  },
  {
   "path": "youtube/assets/ep01_terra_luna/s11_interpol_3.jpg",

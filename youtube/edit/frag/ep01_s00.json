@@ -1,0 +1,40 @@
+{
+  "section": "0",
+  "chunks": [
+    {"id": 0, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"},
+      {"kind": "text", "text": "Falls to almost zero.", "style": "label"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_price_less_than_a_cent",
+       "args": {"lines": ["Above 100 dollars", "only a month earlier.", "Now it's worth less than a cent."],
+                "kicker": "ITS PRICE", "red": ["cent."], "dur": 6.0, "stagger": 1.2, "size": 110,
+                "footer": "PAPER TIGER FILES  ·  EP.01  TERRA-LUNA"}}
+    ]},
+    {"id": 1, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "out"},
+      {"kind": "text", "text": "Many of them had been told\nthis was the safe option.", "style": "quote"}
+    ]},
+    {"id": 2, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_2.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg", "fx": "right"}
+    ]},
+    {"id": 3, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg", "fx": "left"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_chapter_the_40_billion_vanishing_act.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 0, "name": "impact", "offset": 2.3, "gain_db": -8},
+    {"chunk": 1, "name": "heartbeat", "offset": 12.0, "gain_db": -10},
+    {"chunk": 2, "name": "heartbeat", "offset": 0.0, "gain_db": -11},
+    {"chunk": 2, "name": "whoosh", "offset": 4.1, "gain_db": -10},
+    {"chunk": 3, "name": "impact", "offset": 7.4, "gain_db": -9}
+  ],
+  "music_drops": [
+    {"chunk": 2, "dur": 4.5}
+  ]
+}

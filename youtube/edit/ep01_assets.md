@@ -17,7 +17,6 @@
 | assets/ep01_terra_luna/s06_bitcoin_2.jpg | Many gold Bitcoin coin illustrations with the large word BITCOIN in the center. | neutral |  |
 | assets/ep01_terra_luna/s06_bitcoin_3.webp | A flat, clip-art style gold Bitcoin coin with a white B symbol on a plain white background. | bright | not 16:9-friendly; prefer short use |
 | assets/ep01_terra_luna/s11_interpol_1.jpg | Glass-and-column office building behind bare trees and a fence at dusk. | dark |  |
-| assets/ep01_terra_luna/s11_interpol_2.jpg | Front facade of Interpol headquarters with INTERPOL lettering, behind a green fence and flower bed. | bright |  |
 | assets/ep01_terra_luna/s11_interpol_3.jpg | Fog-shrouded large office building behind a secured fence with CCTV cameras, the Interpol HQ in Lyon. | dark |  |
 | assets/ep01_terra_luna/s11_podgorica_airport_1.jpg | Podgorica airport terminal facade with large 'AERODROM PODGORICA' lettering under a clear sky, with a few travelers seen from behind near the entrance. | bright |  |
 | assets/ep01_terra_luna/s11_podgorica_airport_2.jpg | Modern glass-and-metal airport terminal building under a clear blue sky, no signage. | bright |  |

@@ -299,9 +299,9 @@ def word_by_word(out, text, attribution=None, red=(), dur=5.5, size=82, reveal=N
     red = {_norm(r) for r in red}
     f = font(F_SERIF_B, size)
     words = text.split()
-    lines = wrap(words, f, 1460)
-    while len(lines) > 4:
-        f = font(F_SERIF_B, f.size - 6); lines = wrap(words, f, 1460)
+    lines = wrap(words, f, 1600)
+    while len(lines) > 4 or (len(lines) > 1 and len(lines[-1]) == 1):   # avoid an orphan last word
+        f = font(F_SERIF_B, f.size - 4); lines = wrap(words, f, 1600)
     asc, desc = f.getmetrics(); lh = int((asc + desc) * 1.12); sp = f.getlength(" ")
     total_h = len(lines) * lh
     y0 = H / 2 - total_h / 2 - 20
@@ -486,6 +486,7 @@ def stamp(out, word, sub=None, dur=4.0, footer=None):
 # =================================================================================================
 def typewriter(out, text, sub=None, dur=4.0, cps=16, size=92, footer=None):
     """Mono text typed character by character with a blinking red block cursor; optional second line typed after."""
+    cps = max(cps, (len(text) + (len(sub) / 1.4 if sub else 0)) / (dur * 0.5))   # always finish typing by mid-clip
     f = fit_font(F_MONO_B, [text], 1700, size)
     fs = fit_font(F_MONO, [sub], 1600, 40) if sub else None
     asc, desc = f.getmetrics()
@@ -728,8 +729,13 @@ def route_map(out, stops, areas=(), title=None, dur=6.0, footer=None):
 def logo_sting(out, dur=2.6):
     """Tiger logo fades/scales in with a red flash line and 'PAPER TIGER FILES' tracking in. Under 3 s."""
     logo = Image.open(os.path.join(BRAND, "profile.png")).convert("RGBA").resize((460, 460), Image.LANCZOS)
-    m = np.clip((0.97 - _radial(460, 460, 230, 230, 230)) / 0.2, 0, 1)        # soft round edge into the bg
-    logo.putalpha(Image.fromarray((m * 255).astype(np.uint8), "L"))
+    # key out the logo's own dark backdrop so it sits on our gradient without a visible box/halo
+    arr = np.asarray(logo, np.float32)[..., :3]
+    dist = np.abs(arr - arr[8, 8]).max(axis=2)
+    key = np.clip((dist - 8) / 18, 0, 1)
+    inner = np.clip((0.66 - _radial(460, 460, 230, 238, 230)) / 0.05, 0, 1)   # keep the dark stripes/nose inside the face
+    a = np.maximum(key, inner)
+    logo.putalpha(Image.fromarray((a * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(0.8)))
     name = text_img("PAPER TIGER FILES", font(F_SANS_B, 64), PAPER, tracking=14, shadow=10)
 
     def draw(t, fi, c):
@@ -805,7 +811,7 @@ def ep01_jobs():
         ("s11_route_seoul_to_montenegro.mp4", lambda o: route_map(o, [("SEOUL", None, 37.57, 126.98), ("SINGAPORE", None, 1.35, 103.82),
             ("SERBIA", None, 44.79, 20.45), ("MONTENEGRO", "Podgorica · March 2023", 42.44, 19.26, (-40, 80))], title="THE CHASE", dur=6.0, footer=F)),
         ("s12_stamp_liable_for_fraud.mp4", lambda o: stamp(o, "LIABLE", sub="JURY · NEW YORK · APRIL 2024 · CIVIL CASE", footer=F)),
-        ("s12_wordbyword_plea_quote.mp4", lambda o: word_by_word(o, "“In 2021, I made false and misleading statements about why [UST] regained its peg.”",
+        ("s12_wordbyword_plea_quote.mp4", lambda o: word_by_word(o, "In 2021, I made false and misleading statements about why [UST] regained its peg.",
             attribution="— DO KWON, IN COURT, AUGUST 2025", red=("false", "misleading"), dur=6.0, size=76)),
         ("s12_stamp_15_years.mp4", lambda o: stamp(o, "15 YEARS", sub="SENTENCED · DECEMBER 2025", footer=F)),
         ("s13_countup_280000_korea.mp4", lambda o: count_up(o, 280000, prefix="~", kicker="ACCORDING TO KOREAN FINANCIAL AUTHORITIES",
@@ -859,7 +865,7 @@ def ep02_jobs():
         ("s01_typewriter_daegu.mp4", lambda o: typewriter(o, "DAEGU", sub="— one of Korea's largest cities", dur=3.5)),
         ("s05_typewriter_dec9_2008_taean.mp4", lambda o: typewriter(o, "DECEMBER 9, 2008 — TAEAN", sub="according to investigators", dur=4.0)),
         ("s07_typewriter_cremation_dates.mp4", lambda o: typewriter(o, "ISSUED: DEC 11 / DATE OF DEATH: DEC 21",
-            sub="as reported by victims' groups, 2015", dur=5.0, size=72)),
+            sub="as reported by victims' groups, 2015", dur=5.0, size=64)),
         ("s04_lowerthird_miryang.mp4", lambda o: lower_third(o, "Miryang", "South Gyeongsang Province · May 2007")),
         ("s04_lowerthird_fss.mp4", lambda o: lower_third(o, "Financial Supervisory Service", "Korea's financial regulator")),
         ("s07_lowerthird_wuxi.mp4", lambda o: lower_third(o, "Wuxi, China", "October 10, 2015")),
