@@ -24,8 +24,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_korea_and_us_wanted_him", "args": {"lines": ["Both South Korea", "and the United States", "wanted him."], "red": ["south", "korea", "united", "states"], "dur": 4.0, "stagger": 0.9, "size": 110}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_city_1.jpg", "fx": "left"},
       {"kind": "text", "text": "Montenegro's courts and ministers\nwent back and forth\nover which country\nshould get him first.", "style": "quote"},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/airport_night_1.mp4"},
-      {"kind": "motion", "fn": "typewriter", "name": "s11_tw_last_day_of_2024", "args": {"text": "THE LAST DAY OF 2024", "sub": "EXTRADITED TO THE UNITED STATES", "dur": 3.5}}
+      {"kind": "motion", "fn": "timeline", "name": "s11_tl_the_chase", "args": {"events": [["SEPT 2022", "Seoul arrest warrant, Interpol red notice"], ["MARCH 2023", "Stopped at Podgorica airport, forged passport"], ["LAST DAY OF 2024", "Extradited to the United States"]], "title": "THE CHASE", "dur": 5.5}}
     ]}
   ],
   "sfx": [

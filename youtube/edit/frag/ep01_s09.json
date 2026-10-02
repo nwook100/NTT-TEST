@@ -12,7 +12,7 @@
       {"kind": "motion", "fn": "stamp", "name": "s09_stamp_liquidated", "args": {"word": "LIQUIDATED", "sub": "THREE ARROWS CAPITAL", "dur": 3.0}}
     ]},
     {"id": 69, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_domino_timeline", "args": {"lines": ["Terra (May)", "→ Three Arrows (June)", "→ Voyager, Celsius (July)", "→ FTX (November)"], "red": ["Voyager,", "Celsius"], "kicker": "THE DOMINOES", "dur": 4.5, "stagger": 0.8, "size": 104}},
+      {"kind": "motion", "fn": "timeline", "name": "s09_tl_dominoes", "args": {"events": [["MAY", "Terra"], ["JUNE", "Three Arrows"], ["JULY", "Voyager, Celsius"], ["NOVEMBER", "FTX"]], "title": "THE DOMINOES · 2022", "dur": 5.0}},
       {"kind": "motion", "fn": "count_up", "name": "s09_count_650m_voyager_loan", "args": {"to": 650, "prefix": "$", "suffix": "M", "kicker": "VOYAGER DIGITAL SAID", "label": "THREE ARROWS HAD DEFAULTED ON A LOAN", "sublabel": "OF ABOUT 650 MILLION DOLLARS", "dur": 4.3, "count_time": 2.0}},
       {"kind": "motion", "fn": "stamp", "name": "s09_stamp_voyager_bankruptcy", "args": {"word": "BANKRUPTCY", "sub": "VOYAGER DIGITAL — JULY 5", "dur": 3.0}}
     ]},
@@ -28,7 +28,7 @@
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_alameda_exec_testified", "args": {"lines": ["A former top executive", "of his trading firm,", "Alameda Research,", "testified"], "red": ["testified"], "kicker": "AT THE CRIMINAL TRIAL OF FTX FOUNDER SAM BANKMAN-FRIED", "dur": 5.5, "stagger": 0.8, "size": 104}},
       {"kind": "motion", "fn": "typewriter", "name": "s09_tw_june_2022_lenders", "args": {"text": "JUNE 2022", "sub": "LENDERS STARTED DEMANDING THEIR MONEY BACK", "dur": 4.0}},
-      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_repaid_ftx_customers", "args": {"lines": ["Alameda repaid them", "using money that came", "from FTX customers."], "red": ["customers."], "kicker": "THE FORMER EXECUTIVE TESTIFIED", "dur": 4.5, "stagger": 0.8, "size": 110}}
+      {"kind": "motion", "fn": "flow_diagram", "name": "s09_flow_alameda_repaid", "args": {"nodes": [{"id": "ftx", "label": "FTX customers", "sub": "their money", "x": 0.17, "y": 0.12, "red": true}, {"id": "ala", "label": "Alameda Research", "x": 0.5, "y": 0.88}, {"id": "len", "label": "Lenders", "sub": "demanding their money back", "x": 0.83, "y": 0.12}], "edges": [{"from": "ftx", "to": "ala", "label": "money", "red": true}, {"from": "ala", "to": "len", "label": "repaid"}], "title": "THE FORMER EXECUTIVE TESTIFIED", "dur": 5.0}}
     ]},
     {"id": 73, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s09_tw_nov_2022_ftx_collapsed", "args": {"text": "NOVEMBER 2022", "sub": "FTX COLLAPSED", "dur": 3.0}},

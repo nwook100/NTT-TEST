@@ -22,9 +22,10 @@
                 "kicker": "PROSECUTORS ALLEGE", "dur": 5.5, "stagger": 0.8, "size": 104}}
     ]},
     {"id": 94, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_shin_denies",
-       "args": {"lines": ["Shin denies wrongdoing."], "red": ["denies"], "dur": 3.0, "size": 120}},
-      {"kind": "text", "text": "His lawyers say he left Terra\ntwo years before the collapse\nand had nothing to do with it.", "style": "quote"},
+      {"kind": "motion", "fn": "compare", "name": "s13_cmp_allege_vs_denies",
+       "args": {"left": {"head": "Korean prosecutors", "big": "Allege", "sub": "Chai made ordinary payments look as if they were running on Terra."},
+                "right": {"head": "Daniel Shin", "big": "Denies wrongdoing", "sub": "His lawyers say he left Terra two years before the collapse."},
+                "title": "INDICTED · APRIL 2023 · TRIAL STILL GOING ON", "dur": 6.0}},
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_courts_twice_turned_down",
        "args": {"lines": ["Korean courts twice turned down", "requests to arrest him."], "red": ["twice"],
                 "dur": 4.0, "stagger": 0.7, "size": 108}},
@@ -32,10 +33,11 @@
     ]},
     {"id": 95, "segments": [
       {"kind": "text", "text": "Do Kwon may not be done\nwith Korean justice.", "style": "quote"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg", "fx": "left"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_transfer_to_korea",
-       "args": {"lines": ["A transfer to Korea", "after he serves half his sentence."], "red": ["korea", "half"],
-                "kicker": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE", "dur": 3.5, "stagger": 0.6, "size": 104}}
+      {"kind": "motion", "fn": "flow_diagram", "name": "s13_flow_transfer_to_korea",
+       "args": {"nodes": [{"id": "us", "label": "U.S. prison", "sub": "15-year sentence", "x": 0.12, "y": 0.55},
+                          {"id": "kr", "label": "Korea", "sub": "transfer", "x": 0.88, "y": 0.55, "red": true}],
+                "edges": [{"from": "us", "to": "kr", "label": "after he serves half his sentence"}],
+                "title": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE", "dur": 5.0}}
     ]},
     {"id": 96, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s13_tw_in_korea_separate_charges",

@@ -6,7 +6,7 @@
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"}
     ]},
     {"id": 26, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_bank_vs_anchor", "args": {"lines": ["Your bank was offering almost nothing.", "Anchor offered nearly 20 percent."], "red": ["nothing.", "20", "percent."], "kicker": "THE BAIT", "dur": 5.0, "stagger": 2.2, "size": 96}},
+      {"kind": "motion", "fn": "compare", "name": "s04_cmp_bank_vs_anchor", "args": {"title": "THE BAIT", "left": {"head": "Your bank", "big": "Almost nothing"}, "right": {"head": "Anchor Protocol", "big": "Nearly 20%", "sub": "on a coin that was supposed to be as stable as a dollar"}, "dur": 5.0}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "in", "crop": "right", "grade": "cold"}
     ]},
     {"id": 27, "segments": [
@@ -28,7 +28,7 @@
     ]},
     {"id": 30, "segments": [
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_reserve_gap", "args": {"lines": ["What depositors were promised", "– what borrowers paid", "= the gap"], "red": ["gap"], "kicker": "ANCHOR KEPT A RESERVE TO COVER", "dur": 4.5, "stagger": 0.9, "size": 100}},
+      {"kind": "motion", "fn": "flow_diagram", "name": "s04_flow_anchor_reserve", "args": {"title": "WHERE WAS THE 20% COMING FROM?", "nodes": [{"id": "b", "label": "Borrowers", "sub": "what borrowers paid", "x": 0.1, "y": 0.15}, {"id": "a", "label": "Anchor", "x": 0.5, "y": 0.15}, {"id": "d", "label": "Depositors", "sub": "promised nearly 20%", "x": 0.9, "y": 0.15}, {"id": "r", "label": "Yield reserve", "sub": "covers the gap", "x": 0.5, "y": 0.9, "red": true}], "edges": [{"from": "b", "to": "a"}, {"from": "a", "to": "d"}, {"from": "r", "to": "a", "red": true}], "dur": 5.5}},
       {"kind": "motion", "fn": "count_up", "name": "s04_count_reserve_drain", "args": {"to": 1000000, "prefix": "$", "suffix": "+", "kicker": "BY EARLY 2022 · ANCHOR YIELD RESERVE", "label": "DRAINING BY MORE THAN A MILLION DOLLARS A DAY", "end_red": true, "dur": 5.0, "count_time": 3.0}}
     ]},
     {"id": 31, "segments": [

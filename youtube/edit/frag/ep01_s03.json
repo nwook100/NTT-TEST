@@ -6,7 +6,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_two_coins", "args": {"lines": ["UST: meant to stay at $1", "LUNA: price could rise and fall"], "red": ["UST:", "LUNA:"], "kicker": "TERRA HAD TWO COINS", "dur": 6.0, "stagger": 1.8, "size": 110}}
     ]},
     {"id": 19, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_swap_1_dollar_worth", "args": {"lines": ["UST ↔ LUNA", "swap $1 worth"], "red": ["$1"], "kicker": "THE SYSTEM PROMISED", "dur": 6.0, "stagger": 3.0, "size": 130}},
+      {"kind": "motion", "fn": "flow_diagram", "name": "s03_flow_ust_luna_swap", "args": {"title": "THE SYSTEM PROMISED: SWAP $1 WORTH, AND BACK", "nodes": [{"id": "u", "label": "UST", "sub": "meant to stay at $1", "x": 0.15, "y": 0.5}, {"id": "l", "label": "LUNA", "sub": "price could rise and fall", "x": 0.85, "y": 0.5, "red": true}], "edges": [{"from": "u", "to": "l"}, {"from": "l", "to": "u"}], "dur": 6.0}},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_buy_cheap_pocket_difference", "args": {"lines": ["Buy it cheap,", "swap it for a dollar of LUNA,", "and pocket the difference."], "red": ["difference."], "kicker": "TRADERS COULD", "dur": 6.0, "stagger": 1.9, "size": 104}}
     ]},
@@ -20,7 +20,7 @@
     ]},
     {"id": 22, "segments": [
       {"kind": "motion", "fn": "stamp", "name": "s03_stamp_ust_burned", "args": {"word": "BURNED", "sub": "THAT UST IS BURNED", "dur": 4.0}},
-      {"kind": "motion", "fn": "count_up", "name": "s03_count_ust_back_to_1", "args": {"frm": 0.97, "to": 1.0, "prefix": "$", "decimals": 2, "kicker": "UST", "label": "UNTIL THE PRICE CLIMBS BACK TO A DOLLAR", "dur": 4.0, "count_time": 2.5}},
+      {"kind": "motion", "fn": "line_chart", "name": "s03_lc_peg_restored", "args": {"title": "WORKED EXAMPLE · UST", "points": [["The peg", 1.0], ["UST slips", 0.97], ["Back to a dollar", 1.0]], "prefix": "$", "decimals": 2, "note": "Illustrative example from the narration: UST slips to 97 cents, then climbs back to a dollar", "dur": 4.5}},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_burn_luna_create_ust", "args": {"lines": ["Burn LUNA.", "Create UST.", "Sell it."], "red": ["Burn"], "kicker": "IT WORKS THE OTHER WAY", "dur": 5.0, "stagger": 1.6, "size": 120}}
     ]},

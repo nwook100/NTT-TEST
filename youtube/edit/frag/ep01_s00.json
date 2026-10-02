@@ -18,7 +18,7 @@
     {"id": 3, "segments": [
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg", "fx": "left", "grade": "cold"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4", "start": 1.5},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/stock_market_red_1.mp4"},
+      {"kind": "motion", "fn": "timeline", "name": "s00_tl_collapse_arrest_plea", "args": {"title": "THE STORY IN THREE DATES", "events": [["May 2022", "Terra-Luna collapses"], ["March 2023", "Arrested at an airport in the Balkans with a forged passport"], ["August 2025", "Pleads guilty in a New York courtroom"]], "dur": 6.0}},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4", "tail": true}
     ]}
   ],

@@ -72,8 +72,27 @@
     "start": 1.5
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/stock_market_red_1.mp4"
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s00_tl_collapse_arrest_plea",
+    "args": {
+     "title": "THE STORY IN THREE DATES",
+     "events": [
+      [
+       "May 2022",
+       "Terra-Luna collapses"
+      ],
+      [
+       "March 2023",
+       "Arrested at an airport in the Balkans with a forged passport"
+      ],
+      [
+       "August 2025",
+       "Pleads guilty in a New York courtroom"
+      ]
+     ],
+     "dur": 6.0
+    }
    },
    {
     "kind": "clip",
@@ -91,8 +110,31 @@
     "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4"
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s01_tl_kwon_path",
+    "args": {
+     "title": "DO KWON",
+     "events": [
+      [
+       "Stanford",
+       "Studied computer science"
+      ],
+      [
+       "Microsoft · Apple",
+       "Software engineer, briefly"
+      ],
+      [
+       "2016",
+       "Starts Anyfi, a small wireless networking company"
+      ],
+      [
+       "Early 2018",
+       "Co-founds Terraform Labs"
+      ]
+     ],
+     "dur": 6.0
+    }
    }
   ],
   "5": [
@@ -199,19 +241,21 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s01_kp_bitcoin_vs_stablecoin",
+    "fn": "compare",
+    "name": "s01_cmp_bitcoin_vs_stablecoin",
     "args": {
-     "lines": [
-      "Bitcoin = price goes up and down",
-      "Stablecoin = always $1"
-     ],
-     "red": [
-      "$1"
-     ],
-     "dur": 6.0,
-     "stagger": 1.4,
-     "size": 104
+     "title": "TERRA'S BIG IDEA",
+     "left": {
+      "head": "Bitcoin",
+      "big": "Up and down",
+      "sub": "Most cryptocurrencies swing wildly in price."
+     },
+     "right": {
+      "head": "Stablecoin",
+      "big": "Always $1",
+      "sub": "Supposed to stay at one dollar."
+     },
+     "dur": 5.5
     }
    },
    {
@@ -345,22 +389,44 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s02_kp_krt_diagram",
+    "fn": "flow_diagram",
+    "name": "s02_flow_krt",
     "args": {
-     "lines": [
-      "Customer pays in won",
-      "↓",
-      "KRT (Terra's won-pegged coin)",
-      "↓",
-      "Merchant"
+     "title": "TERRA'S WON-PEGGED COIN",
+     "nodes": [
+      {
+       "id": "c",
+       "label": "Customer",
+       "sub": "pays in won",
+       "x": 0.1,
+       "y": 0.45
+      },
+      {
+       "id": "k",
+       "label": "KRT",
+       "sub": "Terra's won-pegged coin",
+       "x": 0.5,
+       "y": 0.45,
+       "red": true
+      },
+      {
+       "id": "m",
+       "label": "Merchant",
+       "x": 0.9,
+       "y": 0.45
+      }
      ],
-     "red": [
-      "KRT"
+     "edges": [
+      {
+       "from": "c",
+       "to": "k"
+      },
+      {
+       "from": "k",
+       "to": "m"
+      }
      ],
-     "dur": 4.0,
-     "stagger": 0.65,
-     "size": 92
+     "dur": 5.5
     }
    }
   ],
@@ -501,20 +567,38 @@
   "19": [
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s03_kp_swap_1_dollar_worth",
+    "fn": "flow_diagram",
+    "name": "s03_flow_ust_luna_swap",
     "args": {
-     "lines": [
-      "UST ↔ LUNA",
-      "swap $1 worth"
+     "title": "THE SYSTEM PROMISED: SWAP $1 WORTH, AND BACK",
+     "nodes": [
+      {
+       "id": "u",
+       "label": "UST",
+       "sub": "meant to stay at $1",
+       "x": 0.15,
+       "y": 0.5
+      },
+      {
+       "id": "l",
+       "label": "LUNA",
+       "sub": "price could rise and fall",
+       "x": 0.85,
+       "y": 0.5,
+       "red": true
+      }
      ],
-     "red": [
-      "$1"
+     "edges": [
+      {
+       "from": "u",
+       "to": "l"
+      },
+      {
+       "from": "l",
+       "to": "u"
+      }
      ],
-     "kicker": "THE SYSTEM PROMISED",
-     "dur": 6.0,
-     "stagger": 3.0,
-     "size": 130
+     "dur": 6.0
     }
    },
    {
@@ -615,17 +699,28 @@
    },
    {
     "kind": "motion",
-    "fn": "count_up",
-    "name": "s03_count_ust_back_to_1",
+    "fn": "line_chart",
+    "name": "s03_lc_peg_restored",
     "args": {
-     "frm": 0.97,
-     "to": 1.0,
+     "title": "WORKED EXAMPLE · UST",
+     "points": [
+      [
+       "The peg",
+       1.0
+      ],
+      [
+       "UST slips",
+       0.97
+      ],
+      [
+       "Back to a dollar",
+       1.0
+      ]
+     ],
      "prefix": "$",
      "decimals": 2,
-     "kicker": "UST",
-     "label": "UNTIL THE PRICE CLIMBS BACK TO A DOLLAR",
-     "dur": 4.0,
-     "count_time": 2.5
+     "note": "Illustrative example from the narration: UST slips to 97 cents, then climbs back to a dollar",
+     "dur": 4.5
     }
    },
    {
@@ -726,22 +821,20 @@
   "26": [
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s04_kp_bank_vs_anchor",
+    "fn": "compare",
+    "name": "s04_cmp_bank_vs_anchor",
     "args": {
-     "lines": [
-      "Your bank was offering almost nothing.",
-      "Anchor offered nearly 20 percent."
-     ],
-     "red": [
-      "nothing.",
-      "20",
-      "percent."
-     ],
-     "kicker": "THE BAIT",
-     "dur": 5.0,
-     "stagger": 2.2,
-     "size": 96
+     "title": "THE BAIT",
+     "left": {
+      "head": "Your bank",
+      "big": "Almost nothing"
+     },
+     "right": {
+      "head": "Anchor Protocol",
+      "big": "Nearly 20%",
+      "sub": "on a coin that was supposed to be as stable as a dollar"
+     },
+     "dur": 5.0
     }
    },
    {
@@ -889,21 +982,56 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s04_kp_reserve_gap",
+    "fn": "flow_diagram",
+    "name": "s04_flow_anchor_reserve",
     "args": {
-     "lines": [
-      "What depositors were promised",
-      "– what borrowers paid",
-      "= the gap"
+     "title": "WHERE WAS THE 20% COMING FROM?",
+     "nodes": [
+      {
+       "id": "b",
+       "label": "Borrowers",
+       "sub": "what borrowers paid",
+       "x": 0.1,
+       "y": 0.15
+      },
+      {
+       "id": "a",
+       "label": "Anchor",
+       "x": 0.5,
+       "y": 0.15
+      },
+      {
+       "id": "d",
+       "label": "Depositors",
+       "sub": "promised nearly 20%",
+       "x": 0.9,
+       "y": 0.15
+      },
+      {
+       "id": "r",
+       "label": "Yield reserve",
+       "sub": "covers the gap",
+       "x": 0.5,
+       "y": 0.9,
+       "red": true
+      }
      ],
-     "red": [
-      "gap"
+     "edges": [
+      {
+       "from": "b",
+       "to": "a"
+      },
+      {
+       "from": "a",
+       "to": "d"
+      },
+      {
+       "from": "r",
+       "to": "a",
+       "red": true
+      }
      ],
-     "kicker": "ANCHOR KEPT A RESERVE TO COVER",
-     "dur": 4.5,
-     "stagger": 0.9,
-     "size": 100
+     "dur": 5.5
     }
    },
    {
@@ -1039,21 +1167,21 @@
   "35": [
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s05_kp_trading_firm_quietly",
+    "fn": "compare",
+    "name": "s05_cmp_public_vs_sec",
     "args": {
-     "lines": [
-      "The recovery was driven by",
-      "a large trading firm",
-      "quietly buying UST behind the scenes"
-     ],
-     "red": [
-      "quietly"
-     ],
-     "kicker": "ACCORDING TO THE SEC",
-     "dur": 6.0,
-     "stagger": 1.6,
-     "size": 100
+     "title": "MAY 2021 · THE RECOVERY",
+     "left": {
+      "head": "The public story",
+      "big": "Code worked",
+      "sub": "The algorithm fixed itself."
+     },
+     "right": {
+      "head": "According to the SEC",
+      "big": "A secret deal",
+      "sub": "A large trading firm quietly buying UST behind the scenes"
+     },
+     "dur": 5.5
     }
    },
    {
@@ -1079,21 +1207,48 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s05_kp_luna_at_discount",
+    "fn": "flow_diagram",
+    "name": "s05_flow_sec_account",
     "args": {
-     "lines": [
-      "Terraform would loosen the restrictions",
-      "on the firm's right",
-      "to buy LUNA at a discount."
+     "title": "THE SEC'S ACCOUNT",
+     "nodes": [
+      {
+       "id": "t",
+       "label": "Terraform",
+       "sub": "verbal agreement, May 23, 2021",
+       "x": 0.12,
+       "y": 0.2
+      },
+      {
+       "id": "f",
+       "label": "Trading firm",
+       "sub": "right to buy LUNA at a discount",
+       "x": 0.88,
+       "y": 0.2
+      },
+      {
+       "id": "u",
+       "label": "UST",
+       "sub": "more than $20 million bought",
+       "x": 0.88,
+       "y": 0.9,
+       "red": true
+      }
      ],
-     "red": [
-      "discount."
+     "edges": [
+      {
+       "from": "t",
+       "to": "f",
+       "label": "loosens restrictions"
+      },
+      {
+       "from": "f",
+       "to": "u",
+       "red": true
+      }
      ],
-     "kicker": "THE SEC'S ACCOUNT",
-     "dur": 5.2,
-     "stagger": 1.0,
-     "size": 100
+     "footer": "SEC ORDER · THE FIRM'S AFFILIATE SETTLED WITHOUT ADMITTING OR DENYING",
+     "dur": 5.5
     }
    }
   ],
@@ -1365,8 +1520,31 @@
     }
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/vault_2.mp4"
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s06_tl_war_chest",
+    "args": {
+     "title": "THE WAR CHEST",
+     "events": [
+      [
+       "Jan 2022",
+       "Luna Foundation Guard set up in Singapore"
+      ],
+      [
+       "Feb 2022",
+       "$1 billion LUNA sale"
+      ],
+      [
+       "Spring 2022",
+       "Buying $100M+ of bitcoin at a time"
+      ],
+      [
+       "Early May 2022",
+       "80,394 bitcoin, around $2.4 billion"
+      ]
+     ],
+     "dur": 5.0
+    }
    }
   ],
   "46": [
@@ -1377,20 +1555,26 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s06_kp_reserve_vs_ust",
+    "fn": "bar_chart",
+    "name": "s06_bar_reserve_vs_ust",
     "args": {
-     "lines": [
-      "Reserve: ~$2.4 billion",
-      "UST in circulation: nearly $19 billion"
+     "title": "THE RESERVE WAS A FRACTION",
+     "bars": [
+      [
+       "Bitcoin reserve",
+       2.4
+      ],
+      [
+       "UST in circulation",
+       19,
+       true
+      ]
      ],
-     "red": [
-      "$19"
-     ],
-     "kicker": "THE RESERVE WAS A FRACTION",
-     "dur": 4.5,
-     "stagger": 1.6,
-     "size": 100
+     "prefix": "$",
+     "suffix": "B",
+     "decimals": 1,
+     "note": "Approximate: reserve around $2.4 billion · UST nearly $19 billion (early May 2022)",
+     "dur": 5.0
     }
    },
    {
@@ -1700,19 +1884,29 @@
    },
    {
     "kind": "motion",
-    "fn": "count_up",
-    "name": "s07_count_ust_035",
+    "fn": "line_chart",
+    "name": "s07_lc_ust_depeg",
     "args": {
-     "frm": 1.0,
-     "to": 0.35,
-     "decimals": 2,
+     "title": "UST · THE PEG BREAKS",
+     "points": [
+      [
+       "The promise",
+       1.0
+      ],
+      [
+       "Sat, May 7",
+       0.99
+      ],
+      [
+       "Mon, May 9",
+       0.35
+      ]
+     ],
      "prefix": "$",
-     "kicker": "UST, AT ONE POINT,",
-     "label": "DROPS TO AROUND 35 CENTS",
-     "end_red": true,
-     "glitch": true,
-     "dur": 4.5,
-     "count_time": 2.3
+     "decimals": 2,
+     "red_from": 1,
+     "note": "Approximate prices · UST at one point dropped to around 35 cents",
+     "dur": 4.5
     }
    }
   ],
@@ -1754,27 +1948,59 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s07_kp_spiral_chain",
+    "fn": "flow_diagram",
+    "name": "s07_flow_death_spiral",
     "args": {
-     "lines": [
-      "More LUNA means each LUNA is worth less.",
-      "Which means less trust in UST.",
-      "Which means more selling."
+     "title": "THE MAGIC TRICK IN REVERSE",
+     "nodes": [
+      {
+       "id": "a",
+       "label": "UST falls",
+       "x": 0.5,
+       "y": 0.14,
+       "red": true
+      },
+      {
+       "id": "b",
+       "label": "More LUNA printed",
+       "x": 0.85,
+       "y": 0.57
+      },
+      {
+       "id": "c",
+       "label": "LUNA price falls",
+       "x": 0.5,
+       "y": 0.98,
+       "red": true
+      },
+      {
+       "id": "d",
+       "label": "Less trust",
+       "x": 0.15,
+       "y": 0.57
+      }
      ],
-     "red": [
-      "less.",
-      "selling."
+     "edges": [
+      {
+       "from": "a",
+       "to": "b"
+      },
+      {
+       "from": "b",
+       "to": "c"
+      },
+      {
+       "from": "c",
+       "to": "d"
+      },
+      {
+       "from": "d",
+       "to": "a",
+       "red": true
+      }
      ],
-     "dur": 5.0,
-     "stagger": 1.5,
-     "size": 96
+     "dur": 6.0
     }
-   },
-   {
-    "kind": "text",
-    "text": "UST falls → more LUNA printed → LUNA price falls\n→ less trust → UST falls",
-    "style": "label"
    }
   ],
   "56": [
@@ -2118,23 +2344,29 @@
   "69": [
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s09_kp_domino_timeline",
+    "fn": "timeline",
+    "name": "s09_tl_dominoes",
     "args": {
-     "lines": [
-      "Terra (May)",
-      "→ Three Arrows (June)",
-      "→ Voyager, Celsius (July)",
-      "→ FTX (November)"
+     "events": [
+      [
+       "MAY",
+       "Terra"
+      ],
+      [
+       "JUNE",
+       "Three Arrows"
+      ],
+      [
+       "JULY",
+       "Voyager, Celsius"
+      ],
+      [
+       "NOVEMBER",
+       "FTX"
+      ]
      ],
-     "red": [
-      "Voyager,",
-      "Celsius"
-     ],
-     "kicker": "THE DOMINOES",
-     "dur": 4.5,
-     "stagger": 0.8,
-     "size": 104
+     "title": "THE DOMINOES · 2022",
+     "dur": 5.0
     }
    },
    {
@@ -2251,21 +2483,47 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s09_kp_repaid_ftx_customers",
+    "fn": "flow_diagram",
+    "name": "s09_flow_alameda_repaid",
     "args": {
-     "lines": [
-      "Alameda repaid them",
-      "using money that came",
-      "from FTX customers."
+     "nodes": [
+      {
+       "id": "ftx",
+       "label": "FTX customers",
+       "sub": "their money",
+       "x": 0.17,
+       "y": 0.12,
+       "red": true
+      },
+      {
+       "id": "ala",
+       "label": "Alameda Research",
+       "x": 0.5,
+       "y": 0.88
+      },
+      {
+       "id": "len",
+       "label": "Lenders",
+       "sub": "demanding their money back",
+       "x": 0.83,
+       "y": 0.12
+      }
      ],
-     "red": [
-      "customers."
+     "edges": [
+      {
+       "from": "ftx",
+       "to": "ala",
+       "label": "money",
+       "red": true
+      },
+      {
+       "from": "ala",
+       "to": "len",
+       "label": "repaid"
+      }
      ],
-     "kicker": "THE FORMER EXECUTIVE TESTIFIED",
-     "dur": 4.5,
-     "stagger": 0.8,
-     "size": 110
+     "title": "THE FORMER EXECUTIVE TESTIFIED",
+     "dur": 5.0
     }
    }
   ],
@@ -2349,21 +2607,21 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s10_kp_terra_classic_lunc_ustc",
+    "fn": "compare",
+    "name": "s10_cmp_new_vs_classic",
     "args": {
-     "lines": [
-      "The old chain was renamed Terra Classic,",
-      "and the old coins became",
-      "LUNA Classic and USTC."
-     ],
-     "red": [
-      "Classic",
-      "USTC."
-     ],
-     "dur": 6.0,
-     "stagger": 1.5,
-     "size": 100
+     "left": {
+      "head": "New chain · May 28",
+      "big": "LUNA",
+      "sub": "The new coin was also called LUNA."
+     },
+     "right": {
+      "head": "Old chain, renamed",
+      "big": "Terra Classic",
+      "sub": "Old coins became LUNA Classic and USTC."
+     },
+     "title": "TERRA 2.0",
+     "dur": 6.0
     }
    }
   ],
@@ -2561,17 +2819,26 @@
     "style": "quote"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/airport_night_1.mp4"
-   },
-   {
     "kind": "motion",
-    "fn": "typewriter",
-    "name": "s11_tw_last_day_of_2024",
+    "fn": "timeline",
+    "name": "s11_tl_the_chase",
     "args": {
-     "text": "THE LAST DAY OF 2024",
-     "sub": "EXTRADITED TO THE UNITED STATES",
-     "dur": 3.5
+     "events": [
+      [
+       "SEPT 2022",
+       "Seoul arrest warrant, Interpol red notice"
+      ],
+      [
+       "MARCH 2023",
+       "Stopped at Podgorica airport, forged passport"
+      ],
+      [
+       "LAST DAY OF 2024",
+       "Extradited to the United States"
+      ]
+     ],
+     "title": "THE CHASE",
+     "dur": 5.5
     }
    }
   ],
@@ -2684,6 +2951,27 @@
     "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"
    },
    {
+    "kind": "motion",
+    "fn": "bar_chart",
+    "name": "s12_bar_12_vs_15_years",
+    "args": {
+     "bars": [
+      [
+       "Prosecutors asked for",
+       12
+      ],
+      [
+       "Judge sentenced him to",
+       15,
+       true
+      ]
+     ],
+     "suffix": " years",
+     "title": "DECEMBER 2025 · PRISON SENTENCE",
+     "dur": 3.6
+    }
+   },
+   {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/cards/card_07_doj_sentence_2025-12-11.png",
     "fx": "in"
@@ -2702,7 +2990,7 @@
       "generational"
      ],
      "kicker": "THE JUDGE CALLED IT",
-     "dur": 3.6,
+     "dur": 3.3,
      "stagger": 0.7,
      "size": 116
     }
@@ -2788,23 +3076,22 @@
   "94": [
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s13_kp_shin_denies",
+    "fn": "compare",
+    "name": "s13_cmp_allege_vs_denies",
     "args": {
-     "lines": [
-      "Shin denies wrongdoing."
-     ],
-     "red": [
-      "denies"
-     ],
-     "dur": 3.0,
-     "size": 120
+     "left": {
+      "head": "Korean prosecutors",
+      "big": "Allege",
+      "sub": "Chai made ordinary payments look as if they were running on Terra."
+     },
+     "right": {
+      "head": "Daniel Shin",
+      "big": "Denies wrongdoing",
+      "sub": "His lawyers say he left Terra two years before the collapse."
+     },
+     "title": "INDICTED · APRIL 2023 · TRIAL STILL GOING ON",
+     "dur": 6.0
     }
-   },
-   {
-    "kind": "text",
-    "text": "His lawyers say he left Terra\ntwo years before the collapse\nand had nothing to do with it.",
-    "style": "quote"
    },
    {
     "kind": "motion",
@@ -2836,27 +3123,36 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
-    "fx": "left"
-   },
-   {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s13_kp_transfer_to_korea",
+    "fn": "flow_diagram",
+    "name": "s13_flow_transfer_to_korea",
     "args": {
-     "lines": [
-      "A transfer to Korea",
-      "after he serves half his sentence."
+     "nodes": [
+      {
+       "id": "us",
+       "label": "U.S. prison",
+       "sub": "15-year sentence",
+       "x": 0.12,
+       "y": 0.55
+      },
+      {
+       "id": "kr",
+       "label": "Korea",
+       "sub": "transfer",
+       "x": 0.88,
+       "y": 0.55,
+       "red": true
+      }
      ],
-     "red": [
-      "korea",
-      "half"
+     "edges": [
+      {
+       "from": "us",
+       "to": "kr",
+       "label": "after he serves half his sentence"
+      }
      ],
-     "kicker": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE",
-     "dur": 3.5,
-     "stagger": 0.6,
-     "size": 104
+     "title": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE",
+     "dur": 5.0
     }
    }
   ],
@@ -3009,18 +3305,26 @@
    },
    {
     "kind": "motion",
-    "fn": "count_up",
-    "name": "s14_cu_2_7B_promised_interest",
+    "fn": "bar_chart",
+    "name": "s14_bar_deposits_vs_interest",
     "args": {
-     "to": 2.7,
-     "decimals": 1,
-     "prefix": "≈ $",
+     "bars": [
+      [
+       "Deposits",
+       14
+      ],
+      [
+       "Promised interest, a year",
+       2.7,
+       true
+      ]
+     ],
+     "prefix": "$",
      "suffix": "B",
-     "kicker": "14,000,000,000 UST × ~19.5%",
-     "label": "A YEAR IN PROMISED INTEREST",
-     "sublabel": "ILLUSTRATIVE · SELF-MADE MATH",
-     "dur": 5.8,
-     "count_time": 2.3
+     "decimals": 1,
+     "title": "RUN THE NUMBERS YOURSELF",
+     "note": "Roughly · at nearly 20 percent · illustrative self-made math",
+     "dur": 5.8
     }
    }
   ],
@@ -3032,22 +3336,65 @@
    },
    {
     "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s14_kp_reserves_subsidies_new_money",
+    "fn": "flow_diagram",
+    "name": "s14_flow_where_interest_came_from",
     "args": {
-     "lines": [
-      "Reserves,",
-      "subsidies,",
-      "and new money coming in."
+     "nodes": [
+      {
+       "id": "bor",
+       "label": "Anchor's borrowers",
+       "sub": "never paid anything close",
+       "x": 0.15,
+       "y": 0.16
+      },
+      {
+       "id": "res",
+       "label": "Reserves",
+       "x": 0.15,
+       "y": 0.43
+      },
+      {
+       "id": "subs",
+       "label": "Subsidies",
+       "x": 0.15,
+       "y": 0.69
+      },
+      {
+       "id": "new",
+       "label": "New money coming in",
+       "x": 0.15,
+       "y": 0.95,
+       "red": true
+      },
+      {
+       "id": "int",
+       "label": "Promised interest",
+       "sub": "roughly $2.7B a year",
+       "x": 0.85,
+       "y": 0.55
+      }
      ],
-     "red": [
-      "new",
-      "money"
+     "edges": [
+      {
+       "from": "bor",
+       "to": "int"
+      },
+      {
+       "from": "res",
+       "to": "int"
+      },
+      {
+       "from": "subs",
+       "to": "int"
+      },
+      {
+       "from": "new",
+       "to": "int",
+       "red": true
+      }
      ],
-     "kicker": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
-     "dur": 4.8,
-     "stagger": 1.0,
-     "size": 110
+     "title": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
+     "dur": 5.5
     }
    }
   ],
@@ -3135,9 +3482,22 @@
     "start": 2.0
    },
    {
-    "kind": "text",
-    "text": "Where is the money\nactually coming from?",
-    "style": "quote"
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s15_cmp_promise_vs_question",
+    "args": {
+     "left": {
+      "head": "If something promises",
+      "big": "High returns",
+      "sub": "with no risk"
+     },
+     "right": {
+      "head": "Ask one question",
+      "big": "Where from?",
+      "sub": "Where is the money actually coming from?"
+     },
+     "dur": 5.5
+    }
    }
   ],
   "107": [

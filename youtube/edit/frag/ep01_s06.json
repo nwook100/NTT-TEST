@@ -29,11 +29,11 @@
     ]},
     {"id": 45, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_missing_piece", "args": {"lines": ["the missing piece."], "red": ["piece."], "kicker": "TO MANY INVESTORS, THIS LOOKED LIKE", "dur": 4.0, "size": 124}},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_2.mp4"}
+      {"kind": "motion", "fn": "timeline", "name": "s06_tl_war_chest", "args": {"title": "THE WAR CHEST", "events": [["Jan 2022", "Luna Foundation Guard set up in Singapore"], ["Feb 2022", "$1 billion LUNA sale"], ["Spring 2022", "Buying $100M+ of bitcoin at a time"], ["Early May 2022", "80,394 bitcoin, around $2.4 billion"]], "dur": 5.0}}
     ]},
     {"id": 46, "segments": [
       {"kind": "text", "text": "But there was a catch.", "style": "quote"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_reserve_vs_ust", "args": {"lines": ["Reserve: ~$2.4 billion", "UST in circulation: nearly $19 billion"], "red": ["$19"], "kicker": "THE RESERVE WAS A FRACTION", "dur": 4.5, "stagger": 1.6, "size": 100}},
+      {"kind": "motion", "fn": "bar_chart", "name": "s06_bar_reserve_vs_ust", "args": {"title": "THE RESERVE WAS A FRACTION", "bars": [["Bitcoin reserve", 2.4], ["UST in circulation", 19, true]], "prefix": "$", "suffix": "B", "decimals": 1, "note": "Approximate: reserve around $2.4 billion · UST nearly $19 billion (early May 2022)", "dur": 5.0}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "left", "crop": "detail", "grade": "red"},
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_asset_could_fall", "args": {"lines": ["an asset that could fall", "at exactly the moment", "it was needed."], "red": ["fall"], "kicker": "AND IT WAS HELD IN BITCOIN", "dur": 4.0, "stagger": 0.8, "size": 108}}
     ]},

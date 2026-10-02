@@ -891,13 +891,13 @@ def flow_diagram(out, nodes, edges, title=None, dur=6.0, footer=None):
         fl = fit_font(F_SANS_B, [nd["label"]], 440, 58)
         li = text_img(nd["label"], fl, PAPER, shadow=0)
         si = text_img(nd["sub"], fit_font(F_SANS, [nd["sub"]], 440, 36), GREY, shadow=0) if nd.get("sub") else None
-        bw = max(li.width, si.width if si else 0) + 56; bh = li.height + (si.height - 14 if si else 0) + 44
+        bw = max(li.width, si.width if si else 0) + 56; bh = li.height + (si.height - 2 if si else 0) + 44
         cx, cy = 120 + nd["x"] * (W - 240), 150 + nd["y"] * (H - 330)
         box = Image.new("RGBA", (int(bw) + 8, int(bh) + 8), (0, 0, 0, 0))
         bd = ImageDraw.Draw(box)
         bd.rounded_rectangle((4, 4, bw + 3, bh + 3), radius=14, fill=DARK_HI + (245,), outline=(RED if nd.get("red") else PAPER) + (255,), width=4)
         box.alpha_composite(li, (int((box.width - li.width) / 2), int(10 if si else (box.height - li.height) / 2)))
-        if si: box.alpha_composite(si, (int((box.width - si.width) / 2), int(box.height - si.height - 2)))
+        if si: box.alpha_composite(si, (int((box.width - si.width) / 2), int(box.height - si.height - 12)))
         N[nd["id"]] = {"c": (cx, cy), "img": box, "w": box.width, "h": box.height, "i": order[nd["id"]]}
     nn = len(nodes)
     t_node = lambda i: 0.3 + i * min(0.55, (dur * 0.45) / max(1, nn))

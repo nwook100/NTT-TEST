@@ -7,7 +7,10 @@
     ]},
     {"id": 106, "segments": [
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_2.mp4", "start": 2.0},
-      {"kind": "text", "text": "Where is the money\nactually coming from?", "style": "quote"}
+      {"kind": "motion", "fn": "compare", "name": "s15_cmp_promise_vs_question",
+       "args": {"left": {"head": "If something promises", "big": "High returns", "sub": "with no risk"},
+                "right": {"head": "Ask one question", "big": "Where from?", "sub": "Where is the money actually coming from?"},
+                "dur": 5.5}}
     ]},
     {"id": 107, "segments": [
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "left"},

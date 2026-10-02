@@ -128,18 +128,26 @@
     },
     {
      "kind": "motion",
-     "fn": "count_up",
-     "name": "s14_cu_2_7B_promised_interest",
+     "fn": "bar_chart",
+     "name": "s14_bar_deposits_vs_interest",
      "args": {
-      "to": 2.7,
-      "decimals": 1,
-      "prefix": "≈ $",
+      "bars": [
+       [
+        "Deposits",
+        14
+       ],
+       [
+        "Promised interest, a year",
+        2.7,
+        true
+       ]
+      ],
+      "prefix": "$",
       "suffix": "B",
-      "kicker": "14,000,000,000 UST × ~19.5%",
-      "label": "A YEAR IN PROMISED INTEREST",
-      "sublabel": "ILLUSTRATIVE · SELF-MADE MATH",
-      "dur": 5.8,
-      "count_time": 2.3
+      "decimals": 1,
+      "title": "RUN THE NUMBERS YOURSELF",
+      "note": "Roughly · at nearly 20 percent · illustrative self-made math",
+      "dur": 5.8
      }
     }
    ]
@@ -154,22 +162,65 @@
     },
     {
      "kind": "motion",
-     "fn": "key_phrase",
-     "name": "s14_kp_reserves_subsidies_new_money",
+     "fn": "flow_diagram",
+     "name": "s14_flow_where_interest_came_from",
      "args": {
-      "lines": [
-       "Reserves,",
-       "subsidies,",
-       "and new money coming in."
+      "nodes": [
+       {
+        "id": "bor",
+        "label": "Anchor's borrowers",
+        "sub": "never paid anything close",
+        "x": 0.15,
+        "y": 0.16
+       },
+       {
+        "id": "res",
+        "label": "Reserves",
+        "x": 0.15,
+        "y": 0.43
+       },
+       {
+        "id": "subs",
+        "label": "Subsidies",
+        "x": 0.15,
+        "y": 0.69
+       },
+       {
+        "id": "new",
+        "label": "New money coming in",
+        "x": 0.15,
+        "y": 0.95,
+        "red": true
+       },
+       {
+        "id": "int",
+        "label": "Promised interest",
+        "sub": "roughly $2.7B a year",
+        "x": 0.85,
+        "y": 0.55
+       }
       ],
-      "red": [
-       "new",
-       "money"
+      "edges": [
+       {
+        "from": "bor",
+        "to": "int"
+       },
+       {
+        "from": "res",
+        "to": "int"
+       },
+       {
+        "from": "subs",
+        "to": "int"
+       },
+       {
+        "from": "new",
+        "to": "int",
+        "red": true
+       }
       ],
-      "kicker": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
-      "dur": 4.8,
-      "stagger": 1.0,
-      "size": 110
+      "title": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
+      "dur": 5.5
      }
     }
    ]

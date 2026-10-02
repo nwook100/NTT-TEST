@@ -10,9 +10,10 @@
     ]},
     {"id": 76, "segments": [
       {"kind": "text", "text": "The new coin\nwas also called LUNA.", "style": "quote"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_terra_classic_lunc_ustc",
-       "args": {"lines": ["The old chain was renamed Terra Classic,", "and the old coins became", "LUNA Classic and USTC."],
-                "red": ["Classic", "USTC."], "dur": 6.0, "stagger": 1.5, "size": 100}}
+      {"kind": "motion", "fn": "compare", "name": "s10_cmp_new_vs_classic",
+       "args": {"left": {"head": "New chain · May 28", "big": "LUNA", "sub": "The new coin was also called LUNA."},
+                "right": {"head": "Old chain, renamed", "big": "Terra Classic", "sub": "Old coins became LUNA Classic and USTC."},
+                "title": "TERRA 2.0", "dur": 6.0}}
     ]},
     {"id": 77, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_airdrops_new_luna",
