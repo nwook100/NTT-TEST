@@ -1,0 +1,82 @@
+{
+  "section": "9",
+  "chunks": [
+    {"id": 67, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s09_chapter_the_dominoes.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_remember_three_arrows",
+       "args": {"lines": ["Three Arrows Capital"], "red": ["three", "arrows", "capital"],
+                "kicker": "REMEMBER THAT SECOND NAME.", "dur": 3.5, "size": 120}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_1.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_luna_zero_bet",
+       "args": {"lines": ["When LUNA went to zero,", "so did the bet."], "red": ["zero,"],
+                "kicker": "IT HAD MADE A LARGE BET ON LUNA.", "dur": 4.5, "stagger": 1.2, "size": 116}}
+    ]},
+    {"id": 68, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s09_tw_start_of_july_bvi",
+       "args": {"text": "BY THE START OF JULY", "sub": "A COURT IN THE BRITISH VIRGIN ISLANDS", "dur": 4.5}},
+      {"kind": "motion", "fn": "stamp", "name": "s09_stamp_liquidated",
+       "args": {"word": "LIQUIDATED", "sub": "THREE ARROWS CAPITAL", "dur": 3.29}}
+    ]},
+    {"id": 69, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_domino_timeline",
+       "args": {"lines": ["Terra (May)", "→ Three Arrows (June)", "→ Voyager, Celsius (July)", "→ FTX (November)"],
+                "red": ["Voyager,", "Celsius"], "kicker": "THE DOMINOES",
+                "dur": 5.0, "stagger": 0.9, "size": 104}},
+      {"kind": "motion", "fn": "count_up", "name": "s09_count_650m_voyager_loan",
+       "args": {"to": 650, "prefix": "$", "suffix": "M", "kicker": "VOYAGER DIGITAL SAID",
+                "label": "THREE ARROWS HAD DEFAULTED ON A LOAN",
+                "sublabel": "OF ABOUT 650 MILLION DOLLARS", "dur": 4.5, "count_time": 2.0}},
+      {"kind": "motion", "fn": "stamp", "name": "s09_stamp_voyager_bankruptcy",
+       "args": {"word": "BANKRUPTCY", "sub": "VOYAGER DIGITAL — JULY 5", "dur": 3.7}}
+    ]},
+    {"id": 70, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_celsius_network",
+       "args": {"lines": ["Celsius Network"], "red": ["celsius"],
+                "kicker": "A CRYPTO LENDER THAT HAD PROMISED ITS USERS HIGH YIELDS",
+                "dur": 3.5, "size": 130}},
+      {"kind": "text", "text": "Froze withdrawals\nin June.", "style": "quote"},
+      {"kind": "motion", "fn": "stamp", "name": "s09_stamp_celsius_bankruptcy",
+       "args": {"word": "BANKRUPTCY", "sub": "CELSIUS NETWORK — JULY 13", "dur": 3.5}}
+    ]},
+    {"id": 71, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_then_ftx",
+       "args": {"lines": ["And then there was FTX."], "red": ["FTX."], "dur": 3.0, "size": 124}}
+    ]},
+    {"id": 72, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg", "fx": "left"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_alameda_exec_testified",
+       "args": {"lines": ["A former top executive", "of his trading firm,", "Alameda Research,", "testified"],
+                "red": ["testified"], "kicker": "AT THE CRIMINAL TRIAL OF FTX FOUNDER SAM BANKMAN-FRIED",
+                "dur": 5.5, "stagger": 0.8, "size": 104}},
+      {"kind": "motion", "fn": "typewriter", "name": "s09_tw_june_2022_lenders",
+       "args": {"text": "JUNE 2022", "sub": "LENDERS STARTED DEMANDING THEIR MONEY BACK", "dur": 4.0}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_repaid_ftx_customers",
+       "args": {"lines": ["Alameda repaid them", "using money that came", "from FTX customers."],
+                "red": ["customers."], "kicker": "THE FORMER EXECUTIVE TESTIFIED",
+                "dur": 4.5, "stagger": 0.8, "size": 110}}
+    ]},
+    {"id": 73, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s09_tw_nov_2022_ftx_collapsed",
+       "args": {"text": "NOVEMBER 2022", "sub": "FTX COLLAPSED", "dur": 3.0}},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_09_sbf_convicted_2023-11-02_zoom.mp4"}
+    ]},
+    {"id": 74, "segments": [
+      {"kind": "text", "text": "Terra didn't commit FTX's fraud.\nA jury put that on Bankman-Fried.", "style": "quote"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_panic_customer_money",
+       "args": {"lines": ["the panic that began in May", "was part of what pushed", "customer money into the hole."],
+                "red": ["hole."], "kicker": "BUT ACCORDING TO THAT TESTIMONY,",
+                "dur": 6.0, "stagger": 1.2, "size": 104}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 68, "name": "stamp", "offset": 5.05, "gain_db": -10},
+    {"chunk": 69, "name": "whoosh", "offset": 0.0, "gain_db": -12},
+    {"chunk": 69, "name": "stamp", "offset": 10.05, "gain_db": -12},
+    {"chunk": 70, "name": "stamp", "offset": 7.29, "gain_db": -12},
+    {"chunk": 71, "name": "impact", "offset": 0.3, "gain_db": -8}
+  ],
+  "music_drops": [
+    {"chunk": 71, "dur": 2.5}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "section": "12",
+  "chunks": [
+    {"id": 84, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_chapter_the_verdicts.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_civil_criminal",
+       "args": {"lines": ["Once in civil court.", "Once in criminal court."], "red": ["civil", "criminal"],
+                "kicker": "AMERICA WENT AFTER KWON TWICE", "dur": 3.0, "stagger": 0.6, "size": 116}}
+    ]},
+    {"id": 85, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_01_sec_charges_2023-02-16_zoom.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_sec_alleged_copied",
+       "args": {"lines": ["Transactions were copied onto the chain", "to make it look as if they were."], "red": ["copied"],
+                "kicker": "THE SEC ALLEGED", "dur": 3.5, "stagger": 0.8, "size": 100}}
+    ]},
+    {"id": 86, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_stamp_liable_for_fraud.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_04_jury_verdict_2024-04-05_zoom.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg", "fx": "in"}
+    ]},
+    {"id": 87, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"},
+      {"kind": "text", "text": "Terraform agreed\nto wind down.", "style": "label"}
+    ]},
+    {"id": 88, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s12_tw_aug2025",
+       "args": {"text": "AUGUST 2025", "sub": "THE CRIMINAL CASE", "dur": 3.0}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_pleaded_guilty",
+       "args": {"lines": ["Kwon pleaded guilty", "to two fraud charges."], "red": ["guilty"],
+                "dur": 5.5, "stagger": 0.9, "size": 116}},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_wordbyword_plea_quote.mp4"}
+    ]},
+    {"id": 89, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"}
+    ]},
+    {"id": 90, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_07_doj_sentence_2025-12-11_zoom.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_epic_generational",
+       "args": {"lines": ["A fraud on an", "\"epic, generational scale.\""], "red": ["epic,", "generational"],
+                "kicker": "THE JUDGE CALLED IT", "dur": 4.0, "stagger": 0.7, "size": 116}}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 84, "name": "impact", "offset": 0.0, "gain_db": -12},
+    {"chunk": 85, "name": "whoosh", "offset": 7.7, "gain_db": -10},
+    {"chunk": 86, "name": "impact", "offset": 1.61, "gain_db": -8},
+    {"chunk": 90, "name": "stamp", "offset": 0.99, "gain_db": -8},
+    {"chunk": 90, "name": "impact", "offset": 0.99, "gain_db": -7}
+  ],
+  "music_drops": [
+    {"chunk": 88, "dur": 15.6},
+    {"chunk": 90, "dur": 1.5}
+  ]
+}
