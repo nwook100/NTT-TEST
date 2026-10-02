@@ -9,42 +9,31 @@
     ]},
     {"id": 80, "segments": [
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_3.jpg", "fx": "left"},
-      {"kind": "motion", "fn": "typewriter", "name": "s11_tw_october_passport",
-       "args": {"text": "IN OCTOBER", "sub": "KOREA'S FOREIGN MINISTRY INVALIDATED HIS PASSPORT", "dur": 3.5}},
+      {"kind": "motion", "fn": "typewriter", "name": "s11_tw_october_passport", "args": {"text": "IN OCTOBER", "sub": "KOREA'S FOREIGN MINISTRY INVALIDATED HIS PASSPORT", "dur": 4.5}},
       {"kind": "text", "text": "Online, he kept posting\nas if nothing had changed.", "style": "quote"}
     ]},
     {"id": 81, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg", "fx": "right",
-       "overlay": "assets/ep01_terra_luna/motion/s11_lowerthird_podgorica.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg", "fx": "right", "overlay": "assets/ep01_terra_luna/motion/s11_lowerthird_podgorica.mp4"},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg", "fx": "out"},
-      {"kind": "motion", "fn": "stamp", "name": "s11_stamp_forged_passport",
-       "args": {"word": "FORGED", "sub": "COSTA RICAN PASSPORT", "dur": 3.0}},
-      {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_it_was_do_kwon",
-       "args": {"lines": ["It was Do Kwon."], "red": ["do", "kwon."], "dur": 3.0, "size": 130}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_it_was_do_kwon", "args": {"lines": ["It was", "Do Kwon."], "kicker": "FORGED COSTA RICAN PASSPORT", "red": ["do", "kwon."], "dur": 3.0, "stagger": 1.4, "size": 150}}
     ]},
     {"id": 82, "segments": [
-      {"kind": "motion", "fn": "count_up", "name": "s11_count_four_months",
-       "args": {"to": 4, "suffix": " MONTHS", "kicker": "A MONTENEGRIN COURT SENTENCED HIM TO",
-                "label": "IN PRISON", "sublabel": "FOR THE FORGED DOCUMENTS", "dur": 6.0, "count_time": 2.0}}
+      {"kind": "motion", "fn": "count_up", "name": "s11_count_four_months", "args": {"to": 4, "suffix": " MONTHS", "kicker": "A MONTENEGRIN COURT SENTENCED HIM TO", "label": "IN PRISON", "sublabel": "FOR THE FORGED DOCUMENTS", "dur": 6.0, "count_time": 2.0}}
     ]},
     {"id": 83, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_korea_and_us_wanted_him",
-       "args": {"lines": ["Both South Korea", "and the United States", "wanted him."],
-                "red": ["south", "korea", "united", "states"], "dur": 4.0, "stagger": 0.9, "size": 110}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_korea_and_us_wanted_him", "args": {"lines": ["Both South Korea", "and the United States", "wanted him."], "red": ["south", "korea", "united", "states"], "dur": 4.0, "stagger": 0.9, "size": 110}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_city_1.jpg", "fx": "left"},
       {"kind": "text", "text": "Montenegro's courts and ministers\nwent back and forth\nover which country\nshould get him first.", "style": "quote"},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_2.jpg", "fx": "right"},
-      {"kind": "motion", "fn": "typewriter", "name": "s11_tw_last_day_of_2024",
-       "args": {"text": "THE LAST DAY OF 2024", "sub": "EXTRADITED TO THE UNITED STATES", "dur": 3.5}}
+      {"kind": "motion", "fn": "typewriter", "name": "s11_tw_last_day_of_2024", "args": {"text": "THE LAST DAY OF 2024", "sub": "EXTRADITED TO THE UNITED STATES", "dur": 3.5}}
     ]}
   ],
   "sfx": [
     {"chunk": 79, "name": "whoosh", "offset": 4.0, "gain_db": -12},
     {"chunk": 80, "name": "whoosh", "offset": 0.0, "gain_db": -14},
-    {"chunk": 81, "name": "stamp", "offset": 8.98, "gain_db": -10},
-    {"chunk": 81, "name": "heartbeat", "offset": 11.2, "gain_db": -8}
+    {"chunk": 81, "name": "heartbeat", "offset": 8.9, "gain_db": -8}
   ],
   "music_drops": [
-    {"chunk": 81, "dur": 14.4}
+    {"chunk": 81, "dur": 12.2}
   ]
 }
