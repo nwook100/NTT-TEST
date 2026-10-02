@@ -60,7 +60,7 @@
               "dur": 4.5}},
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "in",
      "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_fss.mp4"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "out"}
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg", "fx": "out"}
    ]
   },
   {
