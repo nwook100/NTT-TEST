@@ -48,7 +48,8 @@
      "name": "s05_kp_systems_wiped",
      "args": {
       "lines": [
-       "The group's central computer systems were wiped",
+       "The group's central computer systems",
+       "were wiped",
        "and the accounts were emptied",
        "before police got there."
       ],
@@ -58,8 +59,8 @@
        "emptied"
       ],
       "dur": 5.0,
-      "stagger": 0.9,
-      "size": 92,
+      "stagger": 0.8,
+      "size": 100,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
      }
     }
@@ -205,15 +206,17 @@
      "name": "s05_kp_split_5T_vs_840B",
      "args": {
       "lines": [
-       "Money that flowed in: ~5 trillion won",
-       "Actual losses (prosecutors' estimate): ~840 billion won"
+       "Money that flowed in:",
+       "~5 trillion won",
+       "Actual losses (prosecutors' estimate):",
+       "~840 billion won"
       ],
       "red": [
        "~840"
       ],
       "dur": 6.0,
-      "stagger": 1.6,
-      "size": 84,
+      "stagger": 0.8,
+      "size": 96,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
      }
     }

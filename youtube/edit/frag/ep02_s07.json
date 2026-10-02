@@ -184,7 +184,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
-     "fx": "out"
+     "fx": "out",
+     "grade": "cold"
     },
     {
      "kind": "text",
@@ -223,7 +224,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-     "fx": "left"
+     "fx": "left",
+     "crop": "right"
     },
     {
      "kind": "photo",
@@ -247,7 +249,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-     "fx": "in"
+     "fx": "in",
+     "crop": "top"
     },
     {
      "kind": "photo",
@@ -266,14 +269,15 @@
      "args": {
       "text": "OCTOBER 10, 2015 — WUXI, CHINA",
       "sub": "Chinese police arrested Kang Tae-yong, the right-hand man",
-      "dur": 5.0,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL",
+      "size": 72
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-     "fx": "left"
+     "kind": "text",
+     "text": "On December 16th,\nhe was flown back to Korea.",
+     "style": "quote"
     },
     {
      "kind": "photo",
@@ -321,7 +325,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
-     "fx": "in"
+     "fx": "in",
+     "grade": "cold"
     },
     {
      "kind": "text",
@@ -346,7 +351,7 @@
       "red": [
        "consistent"
       ],
-      "dur": 4.0,
+      "dur": 3.8,
       "stagger": 0.9,
       "size": 112,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -360,7 +365,7 @@
       "to": 14,
       "kicker": "AND FROM",
       "label": "PEOPLE AT THE FUNERAL",
-      "dur": 3.5,
+      "dur": 3.2,
       "count_time": 1.5,
       "size": 230,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -379,7 +384,7 @@
       "red": [
        "DNA"
       ],
-      "dur": 4.0,
+      "dur": 3.8,
       "stagger": 0.9,
       "size": 118,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -424,14 +429,15 @@
      "asset": "assets/ep02_cho_hee_pal/motion/s07_stamp_case_closed.mp4"
     },
     {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+     "fx": "out",
+     "crop": "top"
+    },
+    {
      "kind": "text",
      "text": "Some victims' groups rejected that conclusion\nand said they would keep searching.",
      "style": "quote"
-    },
-    {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-     "fx": "out"
     }
    ]
   },
@@ -451,7 +457,7 @@
       "red": [
        "alive."
       ],
-      "dur": 5.5,
+      "dur": 4.5,
       "stagger": 2.0,
       "size": 96,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -488,7 +494,7 @@
   {
    "chunk": 64,
    "name": "whoosh",
-   "offset": 4.4,
+   "offset": 4.9,
    "gain_db": -10
   },
   {

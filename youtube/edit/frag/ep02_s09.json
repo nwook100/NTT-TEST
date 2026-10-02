@@ -5,57 +5,39 @@
    "id": 87,
    "segments": [
     {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s09_chapter_the_villain_on_the_big_screen.mp4"},
-    {"kind": "text", "text": "That gap —\na crime with no trial\nfor the man at the top.", "style": "quote"},
-    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_escaped_courtroom_pop_culture",
-     "args": {"lines": ["The story escaped the courtroom", "and moved into pop culture."], "red": ["pop", "culture."],
-              "dur": 3.8, "stagger": 0.6, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    {"kind": "text", "text": "A crime with no trial\nfor the man at the top.", "style": "quote"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_escaped_courtroom_pop_culture", "args": {"lines": ["The story escaped the courtroom", "and moved into pop culture."], "red": ["pop", "culture."], "dur": 3.4, "stagger": 0.6, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
   {
    "id": 88,
    "segments": [
-    {"kind": "motion", "fn": "typewriter", "name": "s09_tw_master_december_2016",
-     "args": {"text": "DECEMBER 2016", "sub": "the Korean crime film \"Master\" opened in theaters",
-              "dur": 4.0, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+    {"kind": "motion", "fn": "typewriter", "name": "s09_tw_master_december_2016", "args": {"text": "DECEMBER 2016", "sub": "the Korean crime film \"Master\" opened in theaters", "dur": 4.0, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "It's about a smooth-talking chairman\nwho runs a giant investment fraud,", "style": "quote"},
     {"kind": "text", "text": "and tries to fake his way\nout of the country.", "style": "quote"},
-    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_villain_modeled_on_cho",
-     "args": {"lines": ["The villain was modeled", "on Cho Hee-pal."], "kicker": "ITS DIRECTOR SAID",
-              "red": ["Cho", "Hee-pal."], "dur": 4.5, "stagger": 0.7, "size": 112,
-              "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_villain_modeled_on_cho", "args": {"lines": ["The villain was modeled", "on Cho Hee-pal."], "kicker": "ITS DIRECTOR SAID", "red": ["Cho", "Hee-pal."], "dur": 4.5, "stagger": 0.7, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
   {
    "id": 89,
    "segments": [
-    {"kind": "motion", "fn": "count_up", "name": "s09_count_7_million_saw_it",
-     "args": {"to": 7000000, "kicker": "MORE THAN", "label": "PEOPLE SAW IT",
-              "sublabel": "in Korean cinemas", "dur": 4.5, "count_time": 1.6, "size": 230,
-              "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    {"kind": "motion", "fn": "count_up", "name": "s09_count_7_million_saw_it", "args": {"to": 7000000, "kicker": "MORE THAN", "label": "PEOPLE SAW IT", "sublabel": "in Korean cinemas", "dur": 4.5, "count_time": 1.6, "size": 230, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
   {
    "id": 90,
    "segments": [
-    {"kind": "motion", "fn": "word_by_word", "name": "s09_wbw_biggest_fraud_since_founding",
-     "args": {"text": "The biggest fraud since the founding of the nation.",
-              "attribution": "— THE PHRASE KOREAN MEDIA HAD USED", "red": ["biggest", "fraud"],
-              "dur": 6.0, "size": 82, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "out"},
-    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_con_man_who_never_paid",
-     "args": {"lines": ["Shorthand for a con man", "who never paid."],
-              "kicker": "FOR A WHOLE GENERATION, CHO'S NAME BECAME", "red": ["never", "paid."],
-              "dur": 5.0, "stagger": 0.7, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    {"kind": "motion", "fn": "word_by_word", "name": "s09_wbw_biggest_fraud_since_founding", "args": {"text": "The biggest fraud since the founding of the nation.", "attribution": "— THE PHRASE KOREAN MEDIA HAD USED", "red": ["biggest", "fraud"], "dur": 5.5, "size": 82, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "out", "crop": "top"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_con_man_who_never_paid", "args": {"lines": ["Shorthand for a con man", "who never paid."], "kicker": "FOR A WHOLE GENERATION, CHO'S NAME BECAME", "red": ["never", "paid."], "dur": 4.0, "stagger": 0.7, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   }
  ],
  "sfx": [
   {"chunk": 88, "name": "typewriter", "offset": 0.3, "gain_db": -14},
-  {"chunk": 88, "name": "impact", "offset": 13.6, "gain_db": -10},
+  {"chunk": 88, "name": "impact", "offset": 14.3, "gain_db": -10},
   {"chunk": 89, "name": "whoosh", "offset": 0.0, "gain_db": -14},
-  {"chunk": 90, "name": "impact", "offset": 9.95, "gain_db": -13}
+  {"chunk": 90, "name": "impact", "offset": 11.3, "gain_db": -13}
  ],
- "music_drops": [
-  {"chunk": 90, "dur": 1.5}
- ]
+ "music_drops": []
 }

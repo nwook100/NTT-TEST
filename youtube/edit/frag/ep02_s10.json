@@ -22,12 +22,12 @@
     {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_payout_timeline",
      "args": {"lines": ["Dec 2017 — first payout", "2018–2025 — court fights", "June 2026 — payouts restart"],
               "kicker": "GETTING EVEN THAT HAS TAKEN YEARS", "red": ["restart"],
-              "dur": 6.0, "stagger": 1.0, "size": 100, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+              "dur": 4.5, "stagger": 0.8, "size": 100, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "motion", "fn": "count_up", "name": "s10_count_71b_deposited",
      "args": {"to": 71, "kicker": "ABOUT", "label": "BILLION WON OF THE CRIMINAL PROCEEDS",
               "sublabel": "deposited with a court in Daegu", "dur": 4.5, "count_time": 1.8, "size": 260,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "left"}
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "left", "crop": "top"}
    ]
   },
   {
@@ -35,13 +35,13 @@
    "segments": [
     {"kind": "motion", "fn": "typewriter", "name": "s10_tw_dec_2017_first_payout",
      "args": {"text": "DECEMBER 2017 — FIRST PAYOUT", "sub": "32 billion won, to more than 17,000 creditors",
-              "dur": 5.0, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+              "dur": 5.5, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "Then some victims challenged\nwho should count as a creditor,\nand how much each should get.", "style": "quote"},
     {"kind": "motion", "fn": "stamp", "name": "s10_stamp_everything_froze",
-     "args": {"word": "EVERYTHING FROZE", "sub": "2018–2025 — COURT FIGHTS", "dur": 3.5,
+     "args": {"word": "EVERYTHING FROZE", "sub": "2018–2025 — COURT FIGHTS", "dur": 3.0,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "motion", "fn": "typewriter", "name": "s10_tw_oct_2025_lawsuits_ended",
-     "args": {"text": "OCTOBER 2025", "sub": "Those lawsuits only ended.", "dur": 3.5,
+     "args": {"text": "OCTOBER 2025", "sub": "Those lawsuits only ended.", "dur": 3.0,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
@@ -84,7 +84,7 @@
  ],
  "sfx": [
   {"chunk": 93, "name": "typewriter", "offset": 0.2, "gain_db": -14},
-  {"chunk": 93, "name": "stamp", "offset": 10.75, "gain_db": -8},
+  {"chunk": 93, "name": "stamp", "offset": 11.73, "gain_db": -8},
   {"chunk": 94, "name": "impact", "offset": 2.55, "gain_db": -13}
  ],
  "music_drops": [

@@ -7,7 +7,7 @@
     {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s11_chapter_why_it_keeps_coming_back.mp4"},
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_idea_never_did",
      "args": {"lines": ["Cho's scheme collapsed in 2008.", "The idea behind it never did."], "red": ["never", "did."],
-              "dur": 3.5, "stagger": 0.5, "size": 108, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+              "dur": 3.0, "stagger": 0.5, "size": 108, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
   {
@@ -18,10 +18,10 @@
      "args": {"frm": 328, "to": 410, "kicker": "UP A QUARTER FROM THE YEAR BEFORE",
               "label": "UNLICENSED DEPOSIT-TAKING REPORTS",
               "sublabel": "to Korea's financial regulator  ·  2023: 328 / 2024: 410",
-              "dur": 3.0, "count_time": 1.6, "size": 230, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+              "dur": 4.0, "count_time": 1.6, "size": 230, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "motion", "fn": "count_up", "name": "s11_count_35_companies_police",
      "args": {"to": 35, "label": "COMPANIES REFERRED TO POLICE", "sublabel": "(2024)",
-              "dur": 3.5, "count_time": 1.3, "size": 230, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+              "dur": 3.0, "count_time": 1.0, "size": 230, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   },
   {
@@ -39,16 +39,16 @@
    "segments": [
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_check_1",
      "args": {"lines": ["1. A fixed, guaranteed return"], "kicker": "THE SHAPE", "red": ["guaranteed"],
-              "dur": 4.5, "size": 96, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+              "dur": 4.5, "size": 84, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_check_2",
      "args": {"lines": ["1. A fixed, guaranteed return", "2. Paid often, so it feels real"], "kicker": "THE SHAPE",
-              "red": ["often,"], "dur": 4.0, "stagger": 0.2, "size": 96,
+              "red": ["often,"], "dur": 4.0, "stagger": 0.2, "size": 84,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "so the scheme feels real\nlong before it can be checked.", "style": "quote"},
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_check_3",
      "args": {"lines": ["1. A fixed, guaranteed return", "2. Paid often, so it feels real",
                         "3. A product story you can't check"], "kicker": "THE SHAPE",
-              "red": ["can't", "check"], "dur": 3.5, "stagger": 0.2, "size": 96,
+              "red": ["can't", "check"], "dur": 3.5, "stagger": 0.2, "size": 84,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "A machine in a sauna\nyou'll never visit.", "style": "quote"}
    ]
@@ -59,13 +59,13 @@
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_check_4",
      "args": {"lines": ["1. A fixed, guaranteed return", "2. Paid often, so it feels real",
                         "3. A product story you can't check", "4. Bonuses for bringing in others"],
-              "kicker": "THE SHAPE", "red": ["bonuses"], "dur": 4.5, "stagger": 0.2, "size": 96,
+              "kicker": "THE SHAPE", "red": ["bonuses"], "dur": 4.5, "stagger": 0.2, "size": 84,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_check_5",
      "args": {"lines": ["1. A fixed, guaranteed return", "2. Paid often, so it feels real",
                         "3. A product story you can't check", "4. Bonuses for bringing in others",
                         "5. Time — and someone who looks away"],
-              "kicker": "THE SHAPE", "red": ["Time", "looks", "away"], "dur": 5.0, "stagger": 0.3, "size": 96,
+              "kicker": "THE SHAPE", "red": ["Time", "looks", "away"], "dur": 5.0, "stagger": 0.3, "size": 84,
               "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "The hole gets deeper,\nand the people inside it\nget more people involved.", "style": "quote"}
    ]
@@ -74,19 +74,22 @@
    "id": 103,
    "segments": [
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg", "fx": "out"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg", "fx": "left"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_across_asia",
+     "args": {"lines": ["Versions of the same shape", "have turned up across Asia", "and around the world."],
+              "red": ["Asia", "world."], "dur": 4.5, "stagger": 1.3, "size": 104,
+              "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "text", "text": "That's not investment advice.\nIt's a pattern.", "style": "quote"},
     {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_patterns_cant_hide",
      "args": {"lines": ["And patterns are the one thing", "a Ponzi scheme can't hide."], "red": ["can't", "hide."],
-              "dur": 5.0, "stagger": 0.7, "size": 108, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+              "dur": 5.0, "stagger": 1.5, "size": 108, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
    ]
   }
  ],
  "sfx": [
-  {"chunk": 99, "name": "impact", "offset": 9.4, "gain_db": -12},
+  {"chunk": 99, "name": "impact", "offset": 8.9, "gain_db": -12},
   {"chunk": 101, "name": "whoosh", "offset": 0.0, "gain_db": -14},
   {"chunk": 102, "name": "stamp", "offset": 5.8, "gain_db": -10},
-  {"chunk": 103, "name": "impact", "offset": 13.3, "gain_db": -12}
+  {"chunk": 103, "name": "impact", "offset": 14.1, "gain_db": -12}
  ],
  "music_drops": [
   {"chunk": 103, "dur": 1.5}
