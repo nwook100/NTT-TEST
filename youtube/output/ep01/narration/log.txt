@@ -9,3 +9,6 @@
 [42/109] 7.9 min audio in 31.6 min (rtf 4.0); worst wer in batch 0.18
 [48/109] 9.3 min audio in 35.1 min (rtf 3.8); worst wer in batch 0.12
 [54/109] 10.5 min audio in 39.5 min (rtf 3.8); worst wer in batch 0.11
+[60/109] 11.7 min audio in 44.2 min (rtf 3.8); worst wer in batch 0.12
+[66/109] 13.1 min audio in 48.7 min (rtf 3.7); worst wer in batch 0.04
+[72/109] 14.0 min audio in 52.0 min (rtf 3.7); worst wer in batch 0.06

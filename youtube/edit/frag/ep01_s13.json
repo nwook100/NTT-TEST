@@ -39,7 +39,7 @@
     ]},
     {"id": 96, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s13_tw_in_korea_separate_charges",
-       "args": {"text": "IN KOREA", "sub": "HE WOULD STILL FACE SEPARATE CHARGES, INCLUDING UNDER THE CAPITAL MARKETS LAW", "dur": 4.0}},
+       "args": {"text": "IN KOREA", "sub": "SEPARATE CHARGES, INCLUDING UNDER THE CAPITAL MARKETS LAW", "dur": 4.0}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_more_than_30_years",
        "args": {"lines": ["A conviction there could mean", "more than 30 years."], "red": ["30"],

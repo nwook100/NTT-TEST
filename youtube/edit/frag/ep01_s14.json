@@ -1,0 +1,285 @@
+{
+ "section": "14",
+ "chunks": [
+  {
+   "id": 97,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s14_chapter_why_the_dream_keeps_coming_back.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_june2021_iron_finance",
+     "args": {
+      "text": "JUNE 2021",
+      "sub": "IRON FINANCE",
+      "dur": 3.0
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/gov/gov_06_fed_note_algorithmic_stablecoins.png",
+     "fx": "out",
+     "align": "top"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s14_cd_sister_token_60_to_0",
+     "args": {
+      "frm": 60,
+      "to": 0,
+      "prefix": "~$",
+      "kicker": "IRON FINANCE'S SISTER TOKEN",
+      "label": "FROM AROUND 60 DOLLARS TO ALMOST ZERO",
+      "sublabel": "IN LESS THAN A DAY",
+      "end_red": true,
+      "glitch": true,
+      "dur": 5.5,
+      "count_time": 2.3
+     }
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_same_spiral",
+     "args": {
+      "lines": [
+       "Same design idea.",
+       "Same spiral.",
+       "Smaller scale."
+      ],
+      "red": [
+       "spiral."
+      ],
+      "dur": 3.7,
+      "stagger": 1.1,
+      "size": 118
+     }
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "So why does the idea\nkeep coming back?",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_steady_as_a_dollar",
+     "args": {
+      "lines": [
+       "Money as steady as a dollar,",
+       "without anyone needing",
+       "to hold the dollars."
+      ],
+      "red": [
+       "steady"
+      ],
+      "kicker": "THE DREAM",
+      "dur": 5.5,
+      "stagger": 1.5,
+      "size": 104
+     }
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s14_keyphrase_confidence_collateral.mp4"
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_anchor_math",
+     "args": {
+      "text": "14,000,000,000 UST × ~19.5%",
+      "sub": "RUN THE NUMBERS YOURSELF",
+      "footer": "ILLUSTRATIVE · SELF-MADE MATH",
+      "dur": 4.0
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s14_cu_2_7B_promised_interest",
+     "args": {
+      "to": 2.7,
+      "decimals": 1,
+      "prefix": "≈ $",
+      "suffix": "B",
+      "kicker": "14,000,000,000 UST × ~19.5%",
+      "label": "A YEAR IN PROMISED INTEREST",
+      "sublabel": "ILLUSTRATIVE · SELF-MADE MATH",
+      "dur": 4.6,
+      "count_time": 2.3
+     }
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Anchor's borrowers never paid\nanything close to that.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_reserves_subsidies_new_money",
+     "args": {
+      "lines": [
+       "Reserves,",
+       "subsidies,",
+       "and new money coming in."
+      ],
+      "red": [
+       "new",
+       "money"
+      ],
+      "kicker": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
+      "dur": 4.8,
+      "stagger": 1.0,
+      "size": 110
+     }
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Lawmakers noticed.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_july2025_genius_act",
+     "args": {
+      "text": "JULY 2025",
+      "sub": "GENIUS ACT (U.S.)",
+      "dur": 3.0
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/cards/zoom/card_08_genius_act_2025-07-18_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "This isn't investment advice.\nIt's a pattern.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_yield_far_above_safe",
+     "args": {
+      "lines": [
+       "When a yield is far above",
+       "what anything safe pays,"
+      ],
+      "red": [
+       "far",
+       "above"
+      ],
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 112
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_coming_from_you",
+     "args": {
+      "lines": [
+       "If you can't see where,",
+       "it might be coming from you."
+      ],
+      "red": [
+       "you."
+      ],
+      "dur": 5.0,
+      "stagger": 1.4,
+      "size": 112
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 97,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 97,
+   "name": "glitch",
+   "offset": 14.33,
+   "gain_db": -16
+  },
+  {
+   "chunk": 100,
+   "name": "impact",
+   "offset": 4.51,
+   "gain_db": -10
+  },
+  {
+   "chunk": 103,
+   "name": "typewriter",
+   "offset": 2.32,
+   "gain_db": -16
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 100,
+   "dur": 4.5
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+  "section": "15",
+  "chunks": [
+    {"id": 105, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s15_chapter_outro.mp4"},
+      {"kind": "text", "text": "It failed because a 20 percent promise\nwas more convincing than every warning.", "style": "quote"}
+    ]},
+    {"id": 106, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "text", "text": "Where is the money\nactually coming from?", "style": "quote"}
+    ]},
+    {"id": 107, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "left"},
+      {"kind": "motion", "fn": "typewriter", "name": "s15_tw_next_time",
+       "args": {"text": "NEXT TIME", "sub": "A KOREAN STORY THE WORLD NEVER HEARD", "dur": 4.0}},
+      {"kind": "text", "text": "A man who took money\nfrom tens of thousands of people,\nfled the country,\nand was then reported dead.", "style": "quote"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "right"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s15_kp_victims_dont_believe",
+       "args": {"lines": ["Many of his victims", "still don't believe it."], "red": ["believe"],
+                "dur": 4.0, "stagger": 0.9, "size": 112}}
+    ]},
+    {"id": 108, "segments": [
+      {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
+      {"kind": "text", "text": "Did you, or someone you know,\never get caught in a crypto collapse?", "style": "quote"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "out"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 107, "name": "whoosh", "offset": 0.0, "gain_db": -13},
+    {"chunk": 107, "name": "typewriter", "offset": 3.74, "gain_db": -15},
+    {"chunk": 107, "name": "heartbeat", "offset": 15.2, "gain_db": -12}
+  ],
+  "music_drops": [
+    {"chunk": 106, "dur": 8.5}
+  ]
+}
