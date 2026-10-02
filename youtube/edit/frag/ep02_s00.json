@@ -1,0 +1,34 @@
+{
+  "section": "0",
+  "chunks": [
+    {"id": 0, "segments": [
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_typewriter_december_2008.mp4"},
+      {"kind": "text", "text": "A fishing boat slips out\nof a small harbor\non Korea's west coast.", "style": "quote"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_most_wanted_man", "args": {"lines": ["One of the passengers", "is the most wanted man", "in the country."], "kicker": "ACCORDING TO INVESTIGATORS", "red": ["wanted"], "dur": 4.5, "stagger": 0.5, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 1, "segments": [
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_retirees_homemakers", "args": {"lines": ["Retirees.", "Homemakers.", "Small shop owners."], "dur": 4.0, "stagger": 1.0, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "right"}
+    ]},
+    {"id": 2, "segments": [
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_wordbyword_died_officially.mp4"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg", "fx": "out"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_nobody_believed_it", "args": {"lines": ["And almost nobody", "believed it."], "red": ["nobody"], "dur": 4.0, "stagger": 0.6, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 3, "segments": [
+      {"kind": "text", "text": "This is the story of Cho Hee-pal.", "style": "quote"},
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4"},
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 0, "name": "typewriter", "offset": 0.2, "gain_db": -10},
+    {"chunk": 1, "name": "heartbeat", "offset": 5.6, "gain_db": -11},
+    {"chunk": 2, "name": "impact", "offset": 8.0, "gain_db": -12},
+    {"chunk": 3, "name": "impact", "offset": 5.0, "gain_db": -8}
+  ],
+  "music_drops": [
+    {"chunk": 2, "dur": 4.5}
+  ]
+}
