@@ -27,3 +27,5 @@ __pycache__/
 youtube/output/**/*.wav
 youtube/output/**/*.mp4
 youtube/output/**/assemble_*/
+youtube/assets/openverse.log
+youtube/assets/*.src
