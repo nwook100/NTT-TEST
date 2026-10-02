@@ -18,3 +18,6 @@
 [96/109] 18.7 min audio in 67.4 min (rtf 3.6); worst wer in batch 0.14
 [102/109] 19.8 min audio in 72.4 min (rtf 3.7); worst wer in batch 0.09
 [108/109] 20.9 min audio in 76.1 min (rtf 3.6); worst wer in batch 0.05
+[109/109] 21.1 min audio in 78.0 min (rtf 3.7); worst wer in batch 0.00
+DONE duration=22.0 min, chunks over WER 0.18: 1
+  chunk 41 s6 wer=0.182: Kwon said the goal was 10 billion dollars' worth of bitcoin. | ASR: Kwan said the goal was $10 billion worth of Bitcoin.

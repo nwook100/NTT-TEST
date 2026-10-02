@@ -45,7 +45,7 @@
                 "dur": 5.0, "stagger": 0.9, "size": 104}}
     ]},
     {"id": 30, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "left"},
       {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_reserve_gap",
        "args": {"lines": ["What depositors were promised", "– what borrowers paid", "= the gap"],
                 "red": ["gap"], "kicker": "ANCHOR KEPT A RESERVE TO COVER", "dur": 4.5, "stagger": 0.9, "size": 100}},

@@ -1,0 +1,89 @@
+{
+  "section": "2",
+  "chunks": [
+    {"id": 17, "segments": [
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s02_chapter_the_ladder.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_ladder_was_the_engine",
+       "args": {"lines": ["The ladder was the engine."], "kicker": "THE DAILY PAYMENT WAS THE HOOK",
+                "red": ["engine."], "dur": 3.0, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 18, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s02_tw_sisa_in_dec_2008",
+       "args": {"text": "Sisa IN — December 2008", "sub": "Korean news magazine", "dur": 3.5,
+                "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_ranks_like_a_company",
+       "args": {"lines": ["Department head", "Bureau chief", "Division head", "Group leader", "Executive director"],
+                "kicker": "RANKS, LIKE A COMPANY", "red": ["executive", "director"],
+                "dur": 4.5, "stagger": 0.8, "size": 92, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 19, "segments": [
+      {"kind": "text", "text": "To become a department head,\nyou had to run two lines of investors below you.", "style": "label"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_two_lines_12_machines",
+       "args": {"lines": ["Line one: 12 machines", "Line two: 12 machines"], "kicker": "ACCORDING TO SISA IN",
+                "red": ["12"], "dur": 5.0, "stagger": 1.5, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "motion", "fn": "count_up", "name": "s02_count_24_machines",
+       "args": {"to": 24, "label": "MACHINES  ≈  ₩100M", "sublabel": "around 100 million won of other people's money",
+                "dur": 5.0, "count_time": 1.2, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 20, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_salary_and_bonuses",
+       "args": {"lines": ["Only then did the company pay you", "a salary and bonuses."], "red": ["salary", "bonuses."],
+                "dur": 5.0, "stagger": 0.9, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 21, "segments": [
+      {"kind": "motion", "fn": "count_up", "name": "s02_count_next_rank_280_machines",
+       "args": {"frm": 24, "to": 280, "kicker": "NEXT RANK", "label": "MACHINES",
+                "sublabel": "the requirement reportedly jumped", "dur": 5.5, "count_time": 4.0,
+                "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "text", "text": "Think about what that does\nto a person.", "style": "quote"}
+    ]},
+    {"id": 22, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_you_are_a_recruiter",
+       "args": {"lines": ["You are no longer just an investor.", "You are a recruiter."], "red": ["recruiter."],
+                "dur": 4.5, "stagger": 1.8, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg", "fx": "out"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg", "fx": "right"}
+    ]},
+    {"id": 23, "segments": [
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"},
+      {"kind": "text", "text": "According to the same report,\nthe operation kept changing its name.", "style": "label"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_bmc_then_new_names",
+       "args": {"lines": ["BMC.", "Then a series of new company names,", "one after another,", "with different brands", "for different regions."],
+                "red": ["bmc."], "dur": 6.0, "stagger": 1.0, "size": 96, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 24, "segments": [
+      {"kind": "motion", "fn": "count_up", "name": "s02_count_20_companies",
+       "args": {"to": 20, "prefix": "~", "kicker": "PROSECUTORS LATER FOUND", "label": "COMPANIES IN TOTAL",
+                "dur": 4.5, "count_time": 2.0,
+                "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_money_moved_to_next",
+       "args": {"lines": ["When one name drew attention,", "the money simply moved", "to the next one."], "red": ["next"],
+                "dur": 6.0, "stagger": 1.3, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 25, "segments": [
+      {"kind": "text", "text": "But there was a basic problem\nunderneath all of it.", "style": "quote"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_rental_income_recycled",
+       "args": {"lines": ["The “rental income” being paid out", "was largely new investors' money,", "recycled to earlier ones."],
+                "kicker": "ACCORDING TO PROSECUTORS", "red": ["recycled"],
+                "dur": 6.0, "stagger": 1.8, "size": 100, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+    ]},
+    {"id": 26, "segments": [
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg", "fx": "right"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "in"},
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s02_keyphrase_product_promise.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 18, "name": "typewriter", "offset": 2.25, "gain_db": -12},
+    {"chunk": 21, "name": "riser", "offset": 1.75, "gain_db": -12},
+    {"chunk": 21, "name": "impact", "offset": 4.25, "gain_db": -8},
+    {"chunk": 23, "name": "glitch", "offset": 8.85, "gain_db": -10},
+    {"chunk": 26, "name": "impact", "offset": 6.5, "gain_db": -6}
+  ],
+  "music_drops": [
+    {"chunk": 25, "dur": 1.5}
+  ]
+}
