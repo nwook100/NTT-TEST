@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+__pycache__/
+*.pyc
+youtube/output/**/*.wav
+youtube/output/**/*.mp4
+youtube/output/**/assemble_*/
