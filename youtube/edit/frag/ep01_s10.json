@@ -4,40 +4,39 @@
     {"id": 75, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s10_chapter_terra_2_0.mp4"},
       {"kind": "motion", "fn": "typewriter", "name": "s10_tw_may25_vote",
-       "args": {"text": "MAY 25", "sub": "Terra's community voted for a new blockchain.", "dur": 3.5}},
+       "args": {"text": "MAY 25", "sub": "Terra's community voted for a new blockchain.", "dur": 4.5}},
       {"kind": "motion", "fn": "typewriter", "name": "s10_tw_may28_live",
-       "args": {"text": "MAY 28", "sub": "It went live.", "dur": 3.5}}
+       "args": {"text": "MAY 28", "sub": "It went live.", "dur": 3.0}}
     ]},
     {"id": 76, "segments": [
       {"kind": "text", "text": "The new coin\nwas also called LUNA.", "style": "quote"},
       {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_terra_classic_lunc_ustc",
        "args": {"lines": ["The old chain was renamed Terra Classic,", "and the old coins became", "LUNA Classic and USTC."],
-                "red": ["Classic", "USTC."], "kicker": "TERRA 2.0", "dur": 6.0, "stagger": 1.2, "size": 100}}
+                "red": ["Classic", "USTC."], "dur": 6.0, "stagger": 1.5, "size": 100}}
     ]},
     {"id": 77, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_airdrops_new_luna",
        "args": {"lines": ["Holders of the old coins", "received airdrops of new LUNA,", "based on what they held and when."],
-                "red": ["airdrops"], "dur": 6.0, "stagger": 1.2, "size": 100}},
+                "red": ["airdrops"], "dur": 5.0, "stagger": 1.2, "size": 100}},
       {"kind": "text", "text": "One thing was missing.", "style": "quote"},
       {"kind": "motion", "fn": "stamp", "name": "s10_stamp_no_new_ust",
-       "args": {"word": "NO NEW UST", "dur": 4.0}},
+       "args": {"word": "NO NEW UST", "dur": 3.3}},
       {"kind": "text", "text": "Terra 2.0 launched without\nan algorithmic stablecoin at all.", "style": "quote"}
     ]},
     {"id": 78, "segments": [
       {"kind": "motion", "fn": "count_up", "name": "s10_count_new_luna_17",
        "args": {"to": 17, "prefix": "$", "kicker": "THE NEW LUNA BRIEFLY TRADED ABOVE",
-                "label": "17 DOLLARS", "dur": 4.0, "count_time": 1.8}},
+                "dur": 3.3, "count_time": 1.6}},
       {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_quickly_fell",
        "args": {"lines": ["Then quickly fell", "as people sold what they'd been given."],
-                "red": ["fell"], "dur": 4.0, "stagger": 0.9, "size": 104}},
-      {"kind": "text", "text": "For many old holders,\nit was nowhere near\nwhat they had lost.", "style": "quote"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "out"}
+                "red": ["fell"], "dur": 3.5, "stagger": 0.9, "size": 104}},
+      {"kind": "text", "text": "For many old holders,\nit was nowhere near\nwhat they had lost.", "style": "quote"}
     ]}
   ],
   "sfx": [
     {"chunk": 75, "name": "typewriter", "offset": 4.3, "gain_db": -16},
-    {"chunk": 77, "name": "stamp", "offset": 8.95, "gain_db": -8},
-    {"chunk": 78, "name": "glitch", "offset": 4.0, "gain_db": -18}
+    {"chunk": 77, "name": "stamp", "offset": 8.6, "gain_db": -8},
+    {"chunk": 78, "name": "glitch", "offset": 3.35, "gain_db": -18}
   ],
   "music_drops": [
     {"chunk": 77, "dur": 10.0}

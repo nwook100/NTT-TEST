@@ -1,0 +1,120 @@
+{
+ "section": "6",
+ "chunks": [
+  {
+   "id": 53,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s06_chapter_the_twist_who_was_on_the_payroll.mp4"},
+    {"kind": "text", "text": "Here's the part that turned a fraud case\ninto a national scandal.", "style": "quote"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_simply_sail_away",
+     "args": {"lines": ["How did one man run a scheme", "this big, for this long,", "and then simply sail away?"],
+              "red": ["away?"], "dur": 6.0, "stagger": 0.9, "size": 104}}
+   ]
+  },
+  {
+   "id": 54,
+   "segments": [
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "in"},
+    {"kind": "motion", "fn": "count_up", "name": "s06_count_200M_won_sergeant",
+     "args": {"to": 200, "prefix": "₩", "suffix": " MILLION", "kicker": "THE COURT FOUND",
+              "label": "FROM KANG, IN TOTAL", "sublabel": "the police sergeant on the case",
+              "dur": 4.5, "count_time": 1.8}},
+    {"kind": "text", "text": "Two payments in 2007.", "style": "label"},
+    {"kind": "motion", "fn": "typewriter", "name": "s06_tw_october_31_2008_daegu_hotel",
+     "args": {"text": "OCTOBER 31ST, 2008 — A HOTEL IN DAEGU", "sub": "while the group's offices were being searched",
+              "dur": 4.0}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"}
+   ]
+  },
+  {
+   "id": 55,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_05_sergeant_district_court_zoom.mp4"}
+   ]
+  },
+  {
+   "id": 56,
+   "segments": [
+    {"kind": "motion", "fn": "typewriter", "name": "s06_tw_october_2008_violent_crime_unit",
+     "args": {"text": "OCTOBER 2008", "sub": "he headed the violent-crime unit at the Daegu regional police agency",
+              "dur": 3.5}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "left"}
+   ]
+  },
+  {
+   "id": 57,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_03_superintendent_900m_won_zoom.mp4"},
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_900M_won.mp4"},
+    {"kind": "text", "text": "That's around\n800 thousand dollars.", "style": "quote"}
+   ]
+  },
+  {
+   "id": 58,
+   "segments": [
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_investigation_information",
+     "args": {"lines": ["He took the money in return for", "investigation information."],
+              "kicker": "THE COURTS FOUND", "red": ["information."], "dur": 5.0, "size": 104}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "right"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_let_him_walk_away",
+     "args": {"lines": ["He sat face to face with a man", "his own agency was hunting,", "and let him walk away."],
+              "kicker": "ACCORDING TO REPORTING ON THE RULING", "red": ["walk", "away."],
+              "dur": 5.5, "stagger": 0.8, "size": 100}}
+   ]
+  },
+  {
+   "id": 59,
+   "segments": [
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_ten_years_reduced_to_nine",
+     "args": {"lines": ["He was sentenced to ten years at first,", "reduced to nine on appeal."],
+              "red": ["nine"], "dur": 5.0, "size": 100}},
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s06_stamp_9_years.mp4"}
+   ]
+  },
+  {
+   "id": 60,
+   "segments": [
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_it_went_further",
+     "args": {"lines": ["It went further."], "red": ["further."], "dur": 3.0, "size": 130}},
+    {"kind": "text", "text": "An official at the Daegu prosecutors' office,\nwho had worked on the Cho case itself.", "style": "quote"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "in"},
+    {"kind": "motion", "fn": "typewriter", "name": "s06_tw_2008_to_2013",
+     "args": {"text": "FROM 2008 TO 2013", "sub": "convicted of taking bribes over five years", "dur": 3.5}}
+   ]
+  },
+  {
+   "id": 61,
+   "segments": [
+    {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_hidden_money",
+     "args": {"lines": ["Most of it came from a businessman", "who was managing", "the group's hidden money."],
+              "kicker": "THE COURT FOUND", "red": ["hidden"], "dur": 6.0, "stagger": 0.7, "size": 100}},
+    {"kind": "text", "text": "In return, the official passed on\nprosecution information\nand helped bury investigations.", "style": "quote"}
+   ]
+  },
+  {
+   "id": 62,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_04_prosecution_official_9_years_zoom.mp4"}
+   ]
+  },
+  {
+   "id": 63,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_8_officials.mp4"},
+    {"kind": "text", "text": "For the victims,\nthis changed everything.", "style": "quote"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "out"},
+    {"kind": "text", "text": "The people who were supposed to catch him,\nsome of them,\nhad been paid by him.", "style": "quote"}
+   ]
+  }
+ ],
+ "sfx": [
+  {"chunk": 57, "name": "impact", "offset": 9.5, "gain_db": -8},
+  {"chunk": 59, "name": "stamp", "offset": 5.55, "gain_db": -6},
+  {"chunk": 63, "name": "impact", "offset": 2.5, "gain_db": -13},
+  {"chunk": 63, "name": "heartbeat", "offset": 13.3, "gain_db": -9}
+ ],
+ "music_drops": [
+  {"chunk": 57, "dur": 2.0},
+  {"chunk": 63, "dur": 17.4}
+ ]
+}

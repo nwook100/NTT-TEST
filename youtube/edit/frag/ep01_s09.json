@@ -3,31 +3,31 @@
   "chunks": [
     {"id": 67, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s09_chapter_the_dominoes.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_remember_three_arrows",
-       "args": {"lines": ["Three Arrows Capital"], "red": ["three", "arrows", "capital"],
-                "kicker": "REMEMBER THAT SECOND NAME.", "dur": 3.5, "size": 120}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_1.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_deal_card",
+       "args": {"lines": ["Led by:", "Jump Crypto,", "Three Arrows Capital"],
+                "kicker": "FEB 2022 — $1B LUNA SALE", "dur": 6.0, "stagger": 2.0, "size": 110}},
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_luna_zero_bet",
        "args": {"lines": ["When LUNA went to zero,", "so did the bet."], "red": ["zero,"],
-                "kicker": "IT HAD MADE A LARGE BET ON LUNA.", "dur": 4.5, "stagger": 1.2, "size": 116}}
+                "kicker": "IT HAD MADE A LARGE BET ON LUNA.", "dur": 3.0, "stagger": 1.5, "size": 116}}
     ]},
     {"id": 68, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s09_tw_start_of_july_bvi",
-       "args": {"text": "BY THE START OF JULY", "sub": "A COURT IN THE BRITISH VIRGIN ISLANDS", "dur": 4.5}},
+       "args": {"text": "BY THE START OF JULY", "sub": "A COURT IN THE BRITISH VIRGIN ISLANDS", "dur": 3.5}},
       {"kind": "motion", "fn": "stamp", "name": "s09_stamp_liquidated",
-       "args": {"word": "LIQUIDATED", "sub": "THREE ARROWS CAPITAL", "dur": 3.29}}
+       "args": {"word": "LIQUIDATED", "sub": "THREE ARROWS CAPITAL", "dur": 3.0}}
     ]},
     {"id": 69, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_domino_timeline",
        "args": {"lines": ["Terra (May)", "→ Three Arrows (June)", "→ Voyager, Celsius (July)", "→ FTX (November)"],
                 "red": ["Voyager,", "Celsius"], "kicker": "THE DOMINOES",
-                "dur": 5.0, "stagger": 0.9, "size": 104}},
+                "dur": 4.5, "stagger": 0.8, "size": 104}},
       {"kind": "motion", "fn": "count_up", "name": "s09_count_650m_voyager_loan",
        "args": {"to": 650, "prefix": "$", "suffix": "M", "kicker": "VOYAGER DIGITAL SAID",
                 "label": "THREE ARROWS HAD DEFAULTED ON A LOAN",
-                "sublabel": "OF ABOUT 650 MILLION DOLLARS", "dur": 4.5, "count_time": 2.0}},
+                "sublabel": "OF ABOUT 650 MILLION DOLLARS", "dur": 4.3, "count_time": 2.0}},
       {"kind": "motion", "fn": "stamp", "name": "s09_stamp_voyager_bankruptcy",
-       "args": {"word": "BANKRUPTCY", "sub": "VOYAGER DIGITAL — JULY 5", "dur": 3.7}}
+       "args": {"word": "BANKRUPTCY", "sub": "VOYAGER DIGITAL — JULY 5", "dur": 3.0}}
     ]},
     {"id": 70, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_celsius_network",
@@ -36,7 +36,7 @@
                 "dur": 3.5, "size": 130}},
       {"kind": "text", "text": "Froze withdrawals\nin June.", "style": "quote"},
       {"kind": "motion", "fn": "stamp", "name": "s09_stamp_celsius_bankruptcy",
-       "args": {"word": "BANKRUPTCY", "sub": "CELSIUS NETWORK — JULY 13", "dur": 3.5}}
+       "args": {"word": "BANKRUPTCY", "sub": "CELSIUS NETWORK — JULY 13", "dur": 3.0}}
     ]},
     {"id": 71, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_then_ftx",
@@ -65,15 +65,14 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_panic_customer_money",
        "args": {"lines": ["the panic that began in May", "was part of what pushed", "customer money into the hole."],
                 "red": ["hole."], "kicker": "BUT ACCORDING TO THAT TESTIMONY,",
-                "dur": 6.0, "stagger": 1.2, "size": 104}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out"}
+                "dur": 6.0, "stagger": 1.2, "size": 104}}
     ]}
   ],
   "sfx": [
-    {"chunk": 68, "name": "stamp", "offset": 5.05, "gain_db": -10},
-    {"chunk": 69, "name": "whoosh", "offset": 0.0, "gain_db": -12},
-    {"chunk": 69, "name": "stamp", "offset": 10.05, "gain_db": -12},
-    {"chunk": 70, "name": "stamp", "offset": 7.29, "gain_db": -12},
+    {"chunk": 68, "name": "stamp", "offset": 4.0, "gain_db": -10},
+    {"chunk": 69, "name": "whoosh", "offset": 0.6, "gain_db": -12},
+    {"chunk": 69, "name": "stamp", "offset": 9.9, "gain_db": -12},
+    {"chunk": 70, "name": "stamp", "offset": 7.0, "gain_db": -12},
     {"chunk": 71, "name": "impact", "offset": 0.3, "gain_db": -8}
   ],
   "music_drops": [

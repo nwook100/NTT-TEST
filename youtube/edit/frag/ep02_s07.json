@@ -1,0 +1,529 @@
+{
+ "section": "7",
+ "chunks": [
+  {
+   "id": 64,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_chapter_the_funeral_nobody_believed.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_route_taean_to_shandong.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s07_tw_may_2012",
+     "args": {
+      "text": "MAY 2012",
+      "sub": "KOREAN POLICE MADE AN ANNOUNCEMENT",
+      "dur": 3.0,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_06_police_death_announcement_zoom.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_emergency_records",
+     "args": {
+      "lines": [
+       "Chinese emergency-care records",
+       "and a death certificate"
+      ],
+      "kicker": "POLICE SAID THEY HAD FOUND",
+      "red": [
+       "certificate"
+      ],
+      "dur": 5.0,
+      "stagger": 0.9,
+      "size": 108,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "They pointed to a video of his funeral,\nreportedly filmed by family members.",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_cremated_within_days",
+     "args": {
+      "lines": [
+       "cremated in China within days,",
+       "his ashes brought back to Korea",
+       "before the end of December."
+      ],
+      "kicker": "ACCORDING TO KOREAN REPORTING AT THE TIME",
+      "red": [
+       "cremated"
+      ],
+      "dur": 5.5,
+      "stagger": 1.0,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+     "fx": "left"
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "And Korean authorities only found out about it\nfive months later.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 68,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_no_body_to_test",
+     "args": {
+      "lines": [
+       "The public didn't buy it.",
+       "Cremation meant there was no body to test."
+      ],
+      "red": [
+       "body"
+      ],
+      "dur": 4.5,
+      "stagger": 1.6,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "text",
+     "text": "Police: the death had not been confirmed\none hundred percent.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_remember_paper",
+     "args": {
+      "lines": [
+       "Remember",
+       "that piece of paper?"
+      ],
+      "red": [
+       "paper?"
+      ],
+      "dur": 3.0,
+      "stagger": 0.5,
+      "size": 120,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "In 2015, victims' groups pointed to\na Chinese cremation document.",
+     "style": "quote"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_typewriter_cremation_dates.mp4"
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "text",
+     "text": "A man who said he was a former aide\nreportedly told Korean media",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_aide_phone_call",
+     "args": {
+      "lines": [
+       "he had spoken with Cho on the phone",
+       "after the date of his supposed death."
+      ],
+      "kicker": "REPORTEDLY",
+      "red": [
+       "phone"
+      ],
+      "dur": 6.0,
+      "stagger": 1.4,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "There were rumors\nof plastic surgery,\nof a new name...",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+     "fx": "right"
+    }
+   ]
+  },
+  {
+   "id": 72,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_keyphrase_never_proven.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "After all, this was a case where officials\nhad already been caught taking money.",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg",
+     "fx": "out"
+    }
+   ]
+  },
+  {
+   "id": 73,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s07_tw_oct10_2015_wuxi",
+     "args": {
+      "text": "OCTOBER 10, 2015 — WUXI, CHINA",
+      "sub": "Chinese police arrested Kang Tae-yong, the right-hand man",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "text",
+     "text": "Arriving at the prosecutors' office in Daegu,\nhe was asked by reporters\nif Cho was alive.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 74,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_seen_cho_dead",
+     "args": {
+      "lines": [
+       "He said he had seen Cho dead",
+       "with his own eyes."
+      ],
+      "kicker": "KANG TAE-YONG",
+      "red": [
+       "dead"
+      ],
+      "dur": 5.0,
+      "stagger": 1.0,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 75,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_07_prosecutors_conclusion_zoom.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "text",
+     "text": "Prosecutors said Cho died at a hospital\nin the early hours of December 19th, 2011.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 76,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_consistent_testimony",
+     "args": {
+      "lines": [
+       "consistent testimony",
+       "from people who were with him,"
+      ],
+      "kicker": "PROSECUTORS SAID THEY HAD",
+      "red": [
+       "consistent"
+      ],
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s07_count_14_funeral",
+     "args": {
+      "to": 14,
+      "kicker": "AND FROM",
+      "label": "PEOPLE AT THE FUNERAL",
+      "dur": 3.5,
+      "count_time": 1.5,
+      "size": 230,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_dna_hair",
+     "args": {
+      "lines": [
+       "a DNA test on hair",
+       "matched Cho,"
+      ],
+      "kicker": "THEY SAID",
+      "red": [
+       "DNA"
+      ],
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "Prosecutors said the funeral video\nshowed no signs of editing.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 77,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_no_evidence_alive",
+     "args": {
+      "lines": [
+       "they had found no evidence",
+       "that he was alive."
+      ],
+      "kicker": "PROSECUTORS SAID",
+      "red": [
+       "evidence"
+      ],
+      "dur": 5.0,
+      "stagger": 1.0,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 78,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_stamp_case_closed.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "Some victims' groups rejected that conclusion\nand said they would keep searching.",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+     "fx": "out"
+    }
+   ]
+  },
+  {
+   "id": 79,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_strand_of_hair",
+     "args": {
+      "lines": [
+       "a strand of hair proves who it came from,",
+       "not whether that person is still alive."
+      ],
+      "kicker": "SOME VICTIMS' GROUPS ARGUED",
+      "red": [
+       "alive."
+      ],
+      "dur": 5.5,
+      "stagger": 2.0,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+     "fx": "left"
+    }
+   ]
+  },
+  {
+   "id": 80,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s07_keyphrase_is_he_dead.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "The official answer from Korean authorities is yes.\nThe doubts have never been proven.",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+     "fx": "right"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 64,
+   "name": "whoosh",
+   "offset": 4.4,
+   "gain_db": -10
+  },
+  {
+   "chunk": 69,
+   "name": "typewriter",
+   "offset": 8.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 71,
+   "name": "glitch",
+   "offset": 2.85,
+   "gain_db": -12
+  },
+  {
+   "chunk": 78,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -6
+  },
+  {
+   "chunk": 78,
+   "name": "impact",
+   "offset": 0.55,
+   "gain_db": -10
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 74,
+   "dur": 2.0
+  },
+  {
+   "chunk": 80,
+   "dur": 3.0
+  }
+ ]
+}
