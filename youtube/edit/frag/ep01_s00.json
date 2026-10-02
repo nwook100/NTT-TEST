@@ -19,8 +19,7 @@
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg", "fx": "left", "grade": "cold"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4", "start": 1.5},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/stock_market_red_1.mp4"},
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4", "tail": true},
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_chapter_the_40_billion_vanishing_act.mp4", "tail": true}
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4", "tail": true}
     ]}
   ],
   "sfx": [

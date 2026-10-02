@@ -7,9 +7,9 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s00_typewriter_december_2008.mp4"
    },
    {
-    "kind": "text",
-    "text": "A fishing boat slips out\nof a small harbor\non Korea's west coast.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_2.mp4",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -34,9 +34,9 @@
   ],
   "1": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -57,6 +57,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "crop": "left",
+    "grade": "cold",
     "fx": "right"
    }
   ],
@@ -66,9 +68,8 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s00_wordbyword_died_officially.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_2.mp4"
    },
    {
     "kind": "motion",
@@ -96,12 +97,18 @@
     "style": "quote"
    },
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
    },
    {
     "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4"
+    "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4",
+    "tail": true
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4",
+    "tail": true
    }
   ],
   "4": [
@@ -128,6 +135,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "crop": "left",
+    "grade": "cold",
     "fx": "left"
    },
    {
@@ -155,18 +164,19 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg",
+    "crop": "left",
     "fx": "right"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4"
    }
   ],
   "7": [
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "crop": "bottom",
     "fx": "out"
    },
    {
@@ -223,11 +233,13 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "crop": "bottom",
     "fx": "left"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "crop": "right",
     "fx": "right"
    }
   ],
@@ -251,9 +263,9 @@
   ],
   "11": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4",
+    "start": 3.0
    },
    {
     "kind": "motion",
@@ -280,9 +292,8 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s01_countup_35000_won_a_day.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_1.mp4"
    },
    {
     "kind": "text",
@@ -321,11 +332,6 @@
     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "left"
-   },
-   {
     "kind": "motion",
     "fn": "key_phrase",
     "name": "s01_kp_35_vs_48_percent",
@@ -360,9 +366,8 @@
   ],
   "15": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
    },
    {
     "kind": "text",
@@ -439,7 +444,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "right"
    },
    {
     "kind": "motion",
@@ -567,26 +573,21 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
+    "crop": "right",
     "fx": "left"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg",
-    "fx": "right"
    }
   ],
   "23": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4",
+    "start": 3.0
    },
    {
     "kind": "text",
@@ -659,7 +660,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "bottom"
    },
    {
     "kind": "motion",
@@ -686,12 +688,14 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-    "fx": "right"
+    "fx": "right",
+    "crop": "detail"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "detail"
    },
    {
     "kind": "clip",
@@ -722,21 +726,23 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+    "start": 1.5
    }
   ],
   "28": [
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "left"
+    "fx": "left",
+    "crop": "left"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-    "fx": "right"
+    "fx": "right",
+    "crop": "detail"
    },
    {
     "kind": "motion",
@@ -790,9 +796,8 @@
   ],
   "30": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
    },
    {
     "kind": "motion",
@@ -831,7 +836,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-    "fx": "left"
+    "fx": "left",
+    "crop": "bottom",
+    "grade": "bw"
    }
   ],
   "31": [
@@ -860,7 +867,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
-    "fx": "right"
+    "fx": "right",
+    "crop": "detail"
    },
    {
     "kind": "motion",
@@ -904,14 +912,14 @@
   ],
   "33": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-    "fx": "left"
+    "fx": "left",
+    "crop": "left"
    },
    {
     "kind": "text",
@@ -923,7 +931,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "right"
+    "fx": "right",
+    "crop": "detail"
    },
    {
     "kind": "motion",
@@ -943,9 +952,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
    },
    {
     "kind": "text",
@@ -1018,27 +1026,29 @@
   ],
   "37": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4"
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
     "fx": "left",
+    "crop": "bottom",
+    "grade": "cold",
     "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_miryang.mp4"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "out"
+    "fx": "out",
+    "crop": "bottom",
+    "grade": "cold"
    }
   ],
   "38": [
    {
-    "kind": "text",
-    "text": "And then something happened\nthat a court would later describe in detail.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4"
    },
    {
     "kind": "motion",
@@ -1092,9 +1102,8 @@
   ],
   "40": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4"
    },
    {
     "kind": "motion",
@@ -1132,12 +1141,20 @@
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
     "fx": "in",
+    "crop": "detail",
+    "grade": "cold",
     "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_fss.mp4"
    },
    {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4"
+   },
+   {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-    "fx": "out"
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+    "fx": "right",
+    "crop": "left",
+    "grade": "cold"
    }
   ],
   "42": [
@@ -1163,9 +1180,10 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s05_chapter_the_collapse_and_the_escape.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4",
+    "grade": "cold",
+    "start": 1.0
    },
    {
     "kind": "motion",
@@ -1191,7 +1209,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "out"
+    "fx": "out",
+    "crop": "bottom",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1242,9 +1262,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
    }
   ],
   "46": [
@@ -1278,9 +1297,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/sea_waves_night_2.mp4"
    }
   ],
   "47": [
@@ -1310,9 +1328,9 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4",
+    "start": 1.0
    }
   ],
   "48": [
@@ -1334,7 +1352,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "left"
+    "fx": "left",
+    "crop": "left"
    },
    {
     "kind": "motion",
@@ -1420,11 +1439,6 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "out"
-   },
-   {
     "kind": "motion",
     "fn": "key_phrase",
     "name": "s05_kp_two_paper_ten_days",
@@ -1446,11 +1460,6 @@
    }
   ],
   "52": [
-   {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "left"
-   },
    {
     "kind": "motion",
     "fn": "key_phrase",
@@ -1502,10 +1511,8 @@
   ],
   "54": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "in",
-    "crop": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_1.mp4"
    },
    {
     "kind": "motion",
@@ -1542,7 +1549,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
-    "fx": "out"
+    "fx": "out",
+    "crop": "left",
+    "grade": "cold"
    }
   ],
   "55": [
@@ -1562,11 +1571,6 @@
      "dur": 3.5,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
     }
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "left"
    }
   ],
   "57": [
@@ -1604,10 +1608,9 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "right",
-    "crop": "top"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/hotel_lobby_2.mp4",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1677,10 +1680,9 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "in",
-    "crop": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "start": 2.5
    },
    {
     "kind": "motion",
@@ -1725,6 +1727,10 @@
    {
     "kind": "clip",
     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_04_prosecution_official_9_years_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4"
    }
   ],
   "63": [
@@ -1738,10 +1744,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "out",
-    "crop": "left",
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_1.mp4",
     "grade": "cold"
    },
    {
@@ -1798,7 +1802,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "right"
    }
   ],
   "66": [
@@ -1808,9 +1813,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_1.mp4"
    },
    {
     "kind": "motion",
@@ -1833,9 +1837,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_1.mp4"
    }
   ],
   "67": [
@@ -1865,9 +1868,9 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4",
+    "grade": "cold"
    },
    {
     "kind": "text",
@@ -1908,13 +1911,14 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "left"
    },
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
     "fx": "out",
-    "grade": "cold"
+    "crop": "right"
    },
    {
     "kind": "text",
@@ -1948,10 +1952,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "left",
-    "crop": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
    },
    {
     "kind": "photo",
@@ -1970,10 +1972,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "in",
-    "crop": "top"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
    },
    {
     "kind": "photo",
@@ -2001,8 +2001,9 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "right"
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "right",
+    "crop": "right"
    },
    {
     "kind": "text",
@@ -2134,15 +2135,13 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s07_stamp_case_closed.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "fx": "out",
-    "crop": "top"
-   },
-   {
     "kind": "text",
     "text": "Some victims' groups rejected that conclusion\nand said they would keep searching.",
     "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
    }
   ],
   "79": [
@@ -2166,9 +2165,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
    }
   ],
   "80": [
@@ -2184,7 +2182,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-    "fx": "right"
+    "fx": "out",
+    "crop": "bottom"
    }
   ],
   "81": [
@@ -2193,9 +2192,9 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s08_chapter_the_trial_of_the_right_hand_man.mp4"
    },
    {
-    "kind": "text",
-    "text": "Kang Tae-yong became\nthe highest-ranking member of the group\never to stand trial.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4",
+    "start": 0
    },
    {
     "kind": "motion",
@@ -2265,10 +2264,9 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "in",
-    "crop": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+    "start": 2.0
    }
   ],
   "84": [
@@ -2278,9 +2276,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
    },
    {
     "kind": "motion",
@@ -2310,7 +2307,7 @@
     "args": {
      "word": "22 YEARS",
      "sub": "+ ₩12.5B FORFEITURE · DAEGU DISTRICT COURT, JAN 13, 2017",
-     "dur": 4.0,
+     "dur": 3.15,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
     }
    }
@@ -2415,14 +2412,12 @@
     }
    },
    {
-    "kind": "text",
-    "text": "It's about a smooth-talking chairman\nwho runs a giant investment fraud,",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/cinema_seats_1.mp4"
    },
    {
-    "kind": "text",
-    "text": "and tries to fake his way\nout of the country.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4"
    },
    {
     "kind": "motion",
@@ -2481,9 +2476,9 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg",
     "fx": "out",
-    "crop": "top"
+    "crop": "right"
    },
    {
     "kind": "motion",
@@ -2527,9 +2522,10 @@
     }
    },
    {
-    "kind": "text",
-    "text": "Against the losses,\nthat's a small fraction.",
-    "style": "quote"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "fx": "right",
+    "crop": "right"
    },
    {
     "kind": "motion",
@@ -2609,6 +2605,12 @@
     "style": "quote"
    },
    {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "start": 1.5,
+    "grade": "cold"
+   },
+   {
     "kind": "motion",
     "fn": "stamp",
     "name": "s10_stamp_everything_froze",
@@ -2683,13 +2685,19 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-    "fx": "in"
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "left",
+    "crop": "left"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s10_seoul_city_3.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_1.mp4",
+    "start": 1.0
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_1.mp4",
+    "start": 2.0
    }
   ],
   "96": [
@@ -2781,7 +2789,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "in"
+    "fx": "in",
+    "grade": "bw"
    },
    {
     "kind": "motion",
@@ -2801,9 +2810,9 @@
     }
    },
    {
-    "kind": "text",
-    "text": "But look at the shape.",
-    "style": "quote"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "left"
    }
   ],
   "101": [
@@ -2844,9 +2853,10 @@
     }
    },
    {
-    "kind": "text",
-    "text": "so the scheme feels real\nlong before it can be checked.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/money_counting_1.mp4",
+    "grade": "bw",
+    "start": 0.8
    },
    {
     "kind": "motion",
@@ -2925,6 +2935,10 @@
     "kind": "text",
     "text": "The hole gets deeper,\nand the people inside it\nget more people involved.",
     "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/highway_night_2.mp4"
    }
   ],
   "103": [
@@ -2984,9 +2998,10 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s12_chapter_outro.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4",
+    "grade": "cold",
+    "start": 3.0
    },
    {
     "kind": "text",
@@ -3019,17 +3034,18 @@
     "fx": "out"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-    "fx": "right",
-    "crop": "left"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4",
+    "grade": "cold",
+    "start": 2.0
    }
   ],
   "106": [
    {
-    "kind": "text",
-    "text": "So here's the question to ask, every time:",
-    "style": "label"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "in",
+    "crop": "detail"
    },
    {
     "kind": "text",
@@ -3100,7 +3116,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-    "fx": "out"
+    "fx": "out",
+    "crop": "right",
+    "grade": "cold"
    }
   ]
  },
@@ -3126,13 +3144,13 @@
   {
    "chunk": 3,
    "name": "impact",
-   "offset": 5.0,
+   "offset": 7.9,
    "gain_db": -8
   },
   {
    "chunk": 4,
    "name": "typewriter",
-   "offset": 4.0,
+   "offset": 9.1,
    "gain_db": -10
   },
   {
@@ -3360,7 +3378,7 @@
   {
    "chunk": 93,
    "name": "stamp",
-   "offset": 11.73,
+   "offset": 14.98,
    "gain_db": -8
   },
   {
