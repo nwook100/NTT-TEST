@@ -1,0 +1,8 @@
+109 chunks, 3153 words
+0 chunks already done, 109 to generate
+[6/109] 1.1 min audio in 5.4 min (rtf 5.2); worst wer in batch 0.06
+[12/109] 2.2 min audio in 9.6 min (rtf 4.3); worst wer in batch 0.09
+[18/109] 3.2 min audio in 13.2 min (rtf 4.1); worst wer in batch 0.09
+[24/109] 4.3 min audio in 17.7 min (rtf 4.1); worst wer in batch 0.08
+[30/109] 5.6 min audio in 21.2 min (rtf 3.8); worst wer in batch 0.08
+[36/109] 6.7 min audio in 24.8 min (rtf 3.7); worst wer in batch 0.09

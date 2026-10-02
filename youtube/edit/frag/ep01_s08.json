@@ -1,0 +1,40 @@
+{
+  "section": "8",
+  "chunks": [
+    {"id": 62, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s08_chapter_the_lunatics.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "in"},
+      {"kind": "text", "text": "For two years, they shared memes,\nprice targets, and a kind of belonging.", "style": "quote"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s08_kp_kwon_captain",
+       "args": {"lines": ["Kwon was their captain."], "dur": 3.0, "size": 112}}
+    ]},
+    {"id": 63, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s08_kp_not_gamblers",
+       "args": {"lines": ["Many of them", "weren't gamblers."], "dur": 3.5, "stagger": 0.6, "size": 116}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "out"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "left"}
+    ]},
+    {"id": 64, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "right"},
+      {"kind": "text", "text": "The memes stopped.", "style": "quote"},
+      {"kind": "motion", "fn": "typewriter", "name": "s08_tw_pinned_support",
+       "args": {"text": "PINNED: Support resources", "sub": "links to support helplines", "dur": 4.0}}
+    ]},
+    {"id": 65, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "out"},
+      {"kind": "text", "text": "Groups of Korean investors filed\ncriminal complaints and lawsuits\nagainst Terra's founders.", "style": "quote"}
+    ]},
+    {"id": 66, "segments": [
+      {"kind": "text", "text": "Their losses are not entertainment.", "style": "quote"},
+      {"kind": "text", "text": "Every number in this story was\nsomebody's rent, somebody's savings,\nsomebody's plan.", "style": "quote"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 64, "name": "glitch", "offset": 4.0, "gain_db": -18},
+    {"chunk": 64, "name": "typewriter", "offset": 8.0, "gain_db": -16}
+  ],
+  "music_drops": [
+    {"chunk": 66, "dur": 2.0}
+  ]
+}

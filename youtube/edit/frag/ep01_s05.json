@@ -1,0 +1,64 @@
+{
+  "section": "5",
+  "chunks": [
+    {"id": 33, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s05_chapter_the_hidden_rescue.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s05_typewriter_may2021.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_lost_peg",
+       "args": {"lines": ["UST had already lost", "its one-dollar peg."], "red": ["lost"],
+                "kicker": "A YEAR BEFORE THE FINAL COLLAPSE", "dur": 3.5, "stagger": 0.6, "size": 120}},
+      {"kind": "text", "text": "And then, mysteriously,\nit recovered.", "style": "quote"}
+    ]},
+    {"id": 34, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_public_story",
+       "args": {"lines": ["The code worked.", "The algorithm fixed itself."], "red": ["itself."],
+                "kicker": "THE PUBLIC STORY", "dur": 4.5, "stagger": 1.6, "size": 112}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "in"}
+    ]},
+    {"id": 35, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_trading_firm_quietly",
+       "args": {"lines": ["The recovery was driven by", "a large trading firm", "quietly buying UST behind the scenes,"],
+                "red": ["quietly"], "kicker": "ACCORDING TO THE SEC", "dur": 6.0, "stagger": 1.6, "size": 100}},
+      {"kind": "text", "text": "Under a secret deal\nwith Terraform.", "style": "quote"}
+    ]},
+    {"id": 36, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s05_tw_may23_2021",
+       "args": {"text": "MAY 23, 2021", "sub": "AS UST SLID", "dur": 3.0, "size": 130}},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_02_sec_order_2024-12-20_zoom.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_luna_at_discount",
+       "args": {"lines": ["Terraform would loosen the restrictions", "on the firm's right", "to buy LUNA at a discount."],
+                "red": ["discount."], "kicker": "THE SEC'S ACCOUNT", "dur": 5.2, "stagger": 1.0, "size": 100}}
+    ]},
+    {"id": 37, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s05_countup_20M_UST_sec.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "out"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_investors_misled",
+       "args": {"lines": ["Investors were misled", "into believing the algorithm", "had saved the peg."],
+                "red": ["misled"], "kicker": "THE SEC SAID", "dur": 6.0, "stagger": 1.2, "size": 104}}
+    ]},
+    {"id": 38, "segments": [
+      {"kind": "text", "text": "The trading firm's affiliate\nlater settled with the SEC", "style": "label"},
+      {"kind": "motion", "fn": "stamp", "name": "s05_stamp_settled",
+       "args": {"word": "SETTLED", "sub": "WITHOUT ADMITTING OR DENYING THE CLAIMS", "dur": 4.0}}
+    ]},
+    {"id": 39, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "right"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s05_kp_rescue_hidden",
+       "args": {"lines": ["It had been rescued.", "And the rescue was hidden."], "red": ["hidden."],
+                "kicker": "IF THAT'S TRUE", "dur": 4.0, "stagger": 1.3, "size": 116}},
+      {"kind": "text", "text": "So who knew?", "style": "quote"},
+      {"kind": "text", "text": "And would anyone\never admit it?", "style": "quote"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 33, "name": "whoosh", "offset": 0.0, "gain_db": -8},
+    {"chunk": 33, "name": "typewriter", "offset": 4.0, "gain_db": -12},
+    {"chunk": 37, "name": "impact", "offset": 2.55, "gain_db": -8},
+    {"chunk": 38, "name": "stamp", "offset": 3.97, "gain_db": -8},
+    {"chunk": 39, "name": "heartbeat", "offset": 7.66, "gain_db": -9}
+  ],
+  "music_drops": [
+    {"chunk": 35, "dur": 1.5},
+    {"chunk": 39, "dur": 15.0}
+  ]
+}
