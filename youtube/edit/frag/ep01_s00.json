@@ -3,7 +3,7 @@
   "chunks": [
     {"id": 0, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"},
-      {"kind": "text", "text": "Falls to almost zero.", "style": "label"},
+      {"kind": "text", "text": "Falls to almost zero.", "style": "quote"},
       {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_price_less_than_a_cent", "args": {"lines": ["Above 100 dollars", "only a month earlier.", "Now it's worth less than a cent."], "kicker": "ITS PRICE", "red": ["cent."], "dur": 6.0, "stagger": 1.8, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.01  TERRA-LUNA"}}
     ]},
     {"id": 1, "segments": [
