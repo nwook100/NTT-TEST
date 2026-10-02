@@ -1,6 +1,6 @@
 # EP.01 The $40 Billion Vanishing Act: How Terra-Luna Collapsed
 
-- Channel: TBD (fraud & financial crime stories, Asia focus)
+- Channel: Paper Tiger Files
 - Target length: ~12 min (~1,750 words of narration at ~145 wpm)
 - Tone: true-crime storytelling, calm, tense, never mocking victims
 - Notation: `[SCREEN]` = editing cue, `[AI-xx]` = AI video shot (prompts at the bottom), `(beat)` = 1-second pause
@@ -214,7 +214,8 @@ It failed because a 20 percent promise was more convincing than every warning.
 
 If something promises you high returns with no risk, ask one question: where is the money actually coming from?
 
-Next time: a fund in Malaysia that was supposed to build the nation, and instead paid for a Hollywood movie, a superyacht, and a Picasso.
+Terra was a Korean story the whole world watched.
+Next time: a Korean story the world never heard. A man who took money from tens of thousands of people, fled the country, and was then reported dead. Many of his victims still don't believe it.
 
 Subscribe so you don't miss it.
 And tell me in the comments: did you, or someone you know, ever get caught in a crypto collapse?
