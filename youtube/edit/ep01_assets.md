@@ -28,6 +28,10 @@
 | assets/ep01_terra_luna/s12_courthouse_ny_1.jpg | Low-angle view of the Thurgood Marshall US Courthouse tower, with its gilded pyramid roof and colonnade, against a blue sky with light clouds. | bright |  |
 | assets/ep01_terra_luna/s12_courthouse_ny_2.jpg | The Thurgood Marshall Courthouse tower from below, with a large area of blue sky and part of a neighboring modern building in the upper-left corner. | bright |  |
 | assets/ep01_terra_luna/s12_courthouse_ny_3.jpg | Low-angle view of the gold-pyramid-topped tower of the Thurgood Marshall US Courthouse against blue sky, framed by trees. | bright |  |
+| assets/ep01_terra_luna/s09_server_room_ov_2.jpg | A symmetrical aisle between rows of white server cabinets with monitors and keyboards in a brightly lit data center. | bright |  |
+| assets/ep01_terra_luna/s09_server_room_ov_3.jpg | Rows of black rack-mounted servers with orange cabling in a white room, with a chair and boxes in the background. | neutral |  |
+| assets/ep01_terra_luna/s12_sec_building_ov_4.jpg | Low-angle view of the curved glass facade of the SEC headquarters with flags. | neutral |  |
+| assets/ep01_terra_luna/s13_yeouido_ov_3.jpg | Yeouido skyscraper skyline across the Han River in daylight. | neutral |  |
 | assets/ep01_terra_luna/gov/gov_01_doj_kwon_sentenced_2025-12-11.png | real screenshot of a US government web page (gov_01_doj_kwon_sentenced_2025-12-11.png) — tall page: add "align":"top" so the headline shows | neutral | citation |
 | assets/ep01_terra_luna/gov/gov_06_fed_note_algorithmic_stablecoins.png | real screenshot of a US government web page (gov_06_fed_note_algorithmic_stablecoins.png) — tall page: add "align":"top" so the headline shows | neutral | citation |
 
