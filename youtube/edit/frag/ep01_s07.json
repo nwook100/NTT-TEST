@@ -10,7 +10,7 @@
     {"id": 51, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_wallets_dump", "args": {"lines": ["Within minutes, other wallets dump", "tens of millions of UST", "into what's left."], "red": ["millions"], "dur": 5.5, "stagger": 1.5, "size": 104}},
       {"kind": "motion", "fn": "count_up", "name": "s07_count_ust_099", "args": {"frm": 1.0, "to": 0.99, "decimals": 2, "prefix": "$", "kicker": "THE POOL TILTS.", "label": "UST SLIPS TO 99 CENTS", "end_red": true, "dur": 4.5, "count_time": 1.6}},
-      {"kind": "text", "text": "It sounds tiny.\nIt isn't.", "style": "quote"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4", "grade": "cold"},
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_crack_in_glass", "args": {"lines": ["For a coin whose whole promise is one dollar,", "a penny is a crack in the glass."], "red": ["crack"], "dur": 5.5, "stagger": 2.5, "size": 96}}
     ]},
     {"id": 52, "segments": [
@@ -24,7 +24,7 @@
     ]},
     {"id": 54, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_mon_may09.mp4"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "right"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4", "grade": "red"},
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_bitcoin_slides_30k", "args": {"lines": ["Bitcoin itself slides", "toward 30,000 dollars."], "red": ["30,000"], "dur": 3.0, "stagger": 0.5, "size": 116}},
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_anchor_14_to_9", "args": {"lines": ["Anchor deposits fall", "from 14 billion", "to under 9 billion."], "red": ["under", "9"], "dur": 4.0, "stagger": 0.7, "size": 112}},
       {"kind": "motion", "fn": "count_up", "name": "s07_count_ust_035", "args": {"frm": 1.0, "to": 0.35, "decimals": 2, "prefix": "$", "kicker": "UST, AT ONE POINT,", "label": "DROPS TO AROUND 35 CENTS", "end_red": true, "glitch": true, "dur": 4.5, "count_time": 2.3}}
@@ -37,7 +37,7 @@
     ]},
     {"id": 56, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_tue_wed_may10_11.mp4"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg", "fx": "in", "grade": "cold"},
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_binance_pauses", "args": {"lines": ["Binance briefly pauses", "LUNA and UST withdrawals."], "kicker": "THE WORLD'S LARGEST EXCHANGE", "red": ["pauses"], "dur": 4.0, "stagger": 0.6, "size": 110}},
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_luna_below_1", "args": {"lines": ["LUNA, worth around 80 dollars", "at the start of the month,", "falls below one dollar."], "red": ["below"], "dur": 5.0, "stagger": 1.0, "size": 104}}
     ]},
@@ -55,12 +55,12 @@
     ]},
     {"id": 60, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_countdown_80394_to_313_BTC.mp4"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out", "crop": "right", "grade": "cold"},
       {"kind": "motion", "fn": "count_up", "name": "s07_count_audit_2_8b", "args": {"to": 2.8, "decimals": 1, "prefix": "$", "suffix": "B", "kicker": "AN AUDIT THE FOUNDATION RELEASED LATER", "label": "TOTAL SPENT DEFENDING THE PEG: ABOUT 2.8 BILLION DOLLARS", "dur": 6.0, "count_time": 2.8}}
     ]},
     {"id": 61, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "out"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"},
       {"kind": "text", "text": "Many had trusted\nthe word “stable.”", "style": "quote"}
     ]}
   ],
