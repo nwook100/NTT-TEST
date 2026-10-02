@@ -81,7 +81,6 @@
    "id": 63,
    "segments": [
     {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_8_officials.mp4"},
-    {"kind": "text", "text": "For the victims,\nthis changed everything.", "style": "quote"},
     {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_1.mp4", "grade": "cold"},
     {"kind": "text", "text": "The people who were supposed to catch him,\nsome of them,\nhad been paid by him.", "style": "quote"}
    ]

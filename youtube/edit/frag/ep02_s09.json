@@ -37,7 +37,7 @@
   {"chunk": 88, "name": "typewriter", "offset": 0.3, "gain_db": -14},
   {"chunk": 88, "name": "impact", "offset": 14.3, "gain_db": -10},
   {"chunk": 89, "name": "whoosh", "offset": 0.0, "gain_db": -14},
-  {"chunk": 90, "name": "impact", "offset": 11.3, "gain_db": -13}
+  {"chunk": 90, "name": "impact", "offset": 11.52, "gain_db": -13}
  ],
  "music_drops": []
 }

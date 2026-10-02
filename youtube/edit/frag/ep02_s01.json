@@ -13,7 +13,7 @@
     ]},
     {"id": 6, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_korean_media_background", "args": {"lines": ["Only an elementary-school education", "Reportedly worked as a laborer"], "kicker": "KOREAN MEDIA, CITING INVESTIGATORS", "dur": 6.0, "stagger": 3.0, "size": 96}},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg", "crop": "left", "fx": "right"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "crop": "top", "fx": "in"},
       {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4"}
     ]},
     {"id": 7, "segments": [
@@ -48,7 +48,7 @@
       {"kind": "text", "text": "Your money back,\nplus 1.4 million won on top.", "style": "label"}
     ]},
     {"id": 14, "segments": [
-      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png", "fx": "in"},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_35_vs_48_percent", "args": {"lines": ["Advertised: 35% a year (court)", "The math: ~48% annualized"], "red": ["~48%"], "dur": 5.5, "stagger": 2.2, "size": 100}},
       {"kind": "motion", "fn": "count_up", "name": "s01_count_bank_deposit_5pct", "args": {"to": 5, "prefix": "~", "suffix": "%", "label": "BANK DEPOSIT", "sublabel": "a normal Korean bank deposit at the time", "dur": 4.5, "count_time": 2.0, "size": 150}}
     ]},

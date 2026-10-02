@@ -104,11 +104,6 @@
     "kind": "clip",
     "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4",
     "tail": true
-   },
-   {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4",
-    "tail": true
    }
   ],
   "4": [
@@ -163,9 +158,9 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg",
-    "crop": "left",
-    "fx": "right"
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "crop": "top",
+    "fx": "in"
    },
    {
     "kind": "video",
@@ -328,8 +323,9 @@
   ],
   "14": [
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+    "fx": "in"
    },
    {
     "kind": "motion",
@@ -758,7 +754,7 @@
       "Seoul,"
      ],
      "kicker": "THE NETWORK SPREAD",
-     "dur": 4.5,
+     "dur": 6.0,
      "stagger": 1.0,
      "size": 100
     }
@@ -1030,12 +1026,14 @@
     "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
-    "fx": "left",
-    "crop": "bottom",
-    "grade": "cold",
-    "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_miryang.mp4"
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_may_2007_miryang",
+    "args": {
+     "text": "MAY 2007 — MIRYANG",
+     "sub": "South Gyeongsang Province",
+     "dur": 3.5
+    }
    },
    {
     "kind": "photo",
@@ -1082,8 +1080,9 @@
   ],
   "39": [
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_05_sergeant_district_court_zoom.mp4"
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1142,8 +1141,7 @@
     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
     "fx": "in",
     "crop": "detail",
-    "grade": "cold",
-    "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_fss.mp4"
+    "grade": "cold"
    },
    {
     "kind": "video",
@@ -1415,8 +1413,22 @@
   ],
   "51": [
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/motion/s05_keyphrase_remember_document.mp4"
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_keep_two_things",
+    "args": {
+     "lines": [
+      "Keep two things in mind."
+     ],
+     "kicker": "BEFORE WE GO ON",
+     "red": [
+      "two"
+     ],
+     "dur": 4.0,
+     "stagger": 0.0,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
    },
    {
     "kind": "motion",
@@ -1461,6 +1473,11 @@
   ],
   "52": [
    {
+    "kind": "text",
+    "text": "The first explains\nhow he got away.",
+    "style": "quote"
+   },
+   {
     "kind": "motion",
     "fn": "key_phrase",
     "name": "s05_kp_still_dont_believe",
@@ -1472,7 +1489,7 @@
      "red": [
       "gone."
      ],
-     "dur": 6.0,
+     "dur": 4.5,
      "stagger": 1.4,
      "size": 100,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -1739,11 +1756,6 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_8_officials.mp4"
    },
    {
-    "kind": "text",
-    "text": "For the victims,\nthis changed everything.",
-    "style": "quote"
-   },
-   {
     "kind": "video",
     "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_1.mp4",
     "grade": "cold"
@@ -1770,7 +1782,7 @@
     "args": {
      "text": "MAY 2012",
      "sub": "KOREAN POLICE MADE AN ANNOUNCEMENT",
-     "dur": 3.0,
+     "dur": 3.75,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
     }
    }
@@ -2223,7 +2235,7 @@
     "args": {
      "text": "DAEGU DISTRICT COURT, JAN 13, 2017",
      "sub": "from June 2006 to October 2008",
-     "dur": 4.0,
+     "dur": 6.0,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
     }
    },
@@ -2232,8 +2244,9 @@
     "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
    },
    {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+    "fx": "out"
    }
   ],
   "83": [
@@ -3204,13 +3217,13 @@
   {
    "chunk": 28,
    "name": "whoosh",
-   "offset": 3.2,
+   "offset": 2.4,
    "gain_db": -12
   },
   {
    "chunk": 28,
    "name": "whoosh",
-   "offset": 6.4,
+   "offset": 4.9,
    "gain_db": -14
   },
   {
@@ -3312,13 +3325,13 @@
   {
    "chunk": 78,
    "name": "stamp",
-   "offset": 0.55,
+   "offset": 1.95,
    "gain_db": -6
   },
   {
    "chunk": 78,
    "name": "impact",
-   "offset": 0.55,
+   "offset": 1.95,
    "gain_db": -10
   },
   {
@@ -3366,7 +3379,7 @@
   {
    "chunk": 90,
    "name": "impact",
-   "offset": 11.3,
+   "offset": 11.52,
    "gain_db": -13
   },
   {

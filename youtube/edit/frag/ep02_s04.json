@@ -13,7 +13,7 @@
    "id": 37,
    "segments": [
     {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg", "fx": "left", "crop": "bottom", "grade": "cold", "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_miryang.mp4"},
+    {"kind": "motion", "fn": "typewriter", "name": "s04_tw_may_2007_miryang", "args": {"text": "MAY 2007 — MIRYANG", "sub": "South Gyeongsang Province", "dur": 3.5}},
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out", "crop": "bottom", "grade": "cold"}
    ]
   },
@@ -29,7 +29,7 @@
   {
    "id": 39,
    "segments": [
-    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_05_sergeant_district_court_zoom.mp4"},
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4", "grade": "cold"},
     {"kind": "motion", "fn": "word_by_word", "name": "s04_wbw_investigative_convenience", "args": {"text": "investigative convenience.", "attribution": "— A DISTRICT COURT", "red": ["convenience."], "dur": 3.5, "size": 110}}
    ]
   },
@@ -44,7 +44,7 @@
    "id": 41,
    "segments": [
     {"kind": "motion", "fn": "typewriter", "name": "s04_tw_april_2008_regulator_alert", "args": {"text": "APRIL 2008 — FINANCIAL REGULATOR ALERTS POLICE", "sub": "in Daegu, Busan, Incheon · according to Sisa IN", "dur": 4.5}},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "in", "crop": "detail", "grade": "cold", "overlay": "assets/ep02_cho_hee_pal/motion/s04_lowerthird_fss.mp4"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "in", "crop": "detail", "grade": "cold"},
     {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4"},
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg", "fx": "right", "crop": "left", "grade": "cold"}
    ]

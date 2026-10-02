@@ -7,7 +7,7 @@
     ]},
     {"id": 26, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_bank_vs_anchor", "args": {"lines": ["Your bank was offering almost nothing.", "Anchor offered nearly 20 percent."], "red": ["nothing.", "20", "percent."], "kicker": "THE BAIT", "dur": 5.0, "stagger": 2.2, "size": 96}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "in", "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4", "crop": "right", "grade": "cold"}
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "in", "crop": "right", "grade": "cold"}
     ]},
     {"id": 27, "segments": [
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"},

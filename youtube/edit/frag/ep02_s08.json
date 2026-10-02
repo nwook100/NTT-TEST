@@ -43,7 +43,7 @@
      "args": {
       "text": "DAEGU DISTRICT COURT, JAN 13, 2017",
       "sub": "from June 2006 to October 2008",
-      "dur": 4.0,
+      "dur": 6.0,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
      }
     },
@@ -52,8 +52,9 @@
      "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
     },
     {
-     "kind": "clip",
-     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+     "fx": "out"
     }
    ]
   },

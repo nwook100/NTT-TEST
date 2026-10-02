@@ -13,7 +13,7 @@
       {"kind": "text", "text": "Online, he kept posting\nas if nothing had changed.", "style": "quote"}
     ]},
     {"id": 81, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg", "fx": "right", "overlay": "assets/ep01_terra_luna/motion/s11_lowerthird_podgorica.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg", "fx": "right"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/airplane_night_1.mp4", "start": 0},
       {"kind": "motion", "fn": "key_phrase", "name": "s11_kp_it_was_do_kwon", "args": {"lines": ["It was", "Do Kwon."], "kicker": "FORGED COSTA RICAN PASSPORT", "red": ["do", "kwon."], "dur": 3.0, "stagger": 1.4, "size": 150}}
     ]},

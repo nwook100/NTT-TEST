@@ -54,7 +54,7 @@
     {"chunk": 33, "name": "whoosh", "offset": 0.0, "gain_db": -8},
     {"chunk": 33, "name": "typewriter", "offset": 4.0, "gain_db": -12},
     {"chunk": 37, "name": "impact", "offset": 2.55, "gain_db": -8},
-    {"chunk": 38, "name": "stamp", "offset": 3.97, "gain_db": -8},
+    {"chunk": 38, "name": "stamp", "offset": 3.47, "gain_db": -8},
     {"chunk": 39, "name": "heartbeat", "offset": 7.66, "gain_db": -9}
   ],
   "music_drops": [

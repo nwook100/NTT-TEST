@@ -6,7 +6,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_civil_criminal", "args": {"lines": ["Once in civil court.", "Once in criminal court."], "red": ["civil", "criminal"], "kicker": "AMERICA WENT AFTER KWON TWICE", "dur": 3.0, "stagger": 0.6, "size": 116}}
     ]},
     {"id": 85, "segments": [
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_01_sec_charges_2023-02-16_zoom.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/cards/card_01_sec_charges_2023-02-16.png", "fx": "in"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"}
     ]},
     {"id": 86, "segments": [
@@ -20,7 +20,7 @@
     ]},
     {"id": 88, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s12_tw_aug2025", "args": {"text": "AUGUST 2025", "sub": "THE CRIMINAL CASE", "dur": 4.5}},
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/cards/card_06_kwon_plea_2025-08.png", "fx": "in"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_wordbyword_plea_quote.mp4"}
     ]},
     {"id": 89, "segments": [
@@ -28,8 +28,8 @@
     ]},
     {"id": 90, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"},
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_07_doj_sentence_2025-12-11_zoom.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_epic_generational", "args": {"lines": ["A fraud on an", "\"epic, generational scale.\""], "red": ["epic,", "generational"], "kicker": "THE JUDGE CALLED IT", "dur": 3.0, "stagger": 0.7, "size": 116}}
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/cards/card_07_doj_sentence_2025-12-11.png", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_epic_generational", "args": {"lines": ["A fraud on an", "\"epic, generational scale.\""], "red": ["epic,", "generational"], "kicker": "THE JUDGE CALLED IT", "dur": 3.6, "stagger": 0.7, "size": 116}}
     ]}
   ],
   "sfx": [

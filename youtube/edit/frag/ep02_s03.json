@@ -62,7 +62,7 @@
        "Seoul,"
       ],
       "kicker": "THE NETWORK SPREAD",
-      "dur": 4.5,
+      "dur": 6.0,
       "stagger": 1.0,
       "size": 100
      }
@@ -316,13 +316,13 @@
   {
    "chunk": 28,
    "name": "whoosh",
-   "offset": 3.2,
+   "offset": 2.4,
    "gain_db": -12
   },
   {
    "chunk": 28,
    "name": "whoosh",
-   "offset": 6.4,
+   "offset": 4.9,
    "gain_db": -14
   },
   {

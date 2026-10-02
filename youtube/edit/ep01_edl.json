@@ -430,8 +430,7 @@
    },
    {
     "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4",
-    "start": 0.8
+    "asset": "assets/ep01_terra_luna/stock/money_counting_1.mp4"
    },
    {
     "kind": "video",
@@ -749,7 +748,6 @@
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
     "fx": "in",
-    "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4",
     "crop": "right",
     "grade": "cold"
    }
@@ -1207,8 +1205,7 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg",
-    "fx": "in",
-    "overlay": "assets/ep01_terra_luna/motion/s06_lowerthird_lfg.mp4"
+    "fx": "in"
    },
    {
     "kind": "video",
@@ -1344,11 +1341,6 @@
     "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4",
-    "start": 1.4
-   },
-   {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
     "fx": "out",
@@ -1479,9 +1471,8 @@
     "asset": "assets/ep01_terra_luna/motion/s06_keyphrase_hook_questions.mp4"
    },
    {
-    "kind": "text",
-    "text": "1. Was the 2021 rescue hidden?\n2. Did Chai really run on Terra?",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
    }
   ],
   "49": [
@@ -1581,14 +1572,9 @@
      "kicker": "THE POOL TILTS.",
      "label": "UST SLIPS TO 99 CENTS",
      "end_red": true,
-     "dur": 4.5,
+     "dur": 6.0,
      "count_time": 1.6
     }
-   },
-   {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
-    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1606,6 +1592,11 @@
      "stagger": 2.5,
      "size": 96
     }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
+    "grade": "cold"
    }
   ],
   "52": [
@@ -1945,9 +1936,8 @@
     "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"
    },
    {
-    "kind": "text",
-    "text": "Many had trusted\nthe word “stable.”",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
    }
   ],
   "62": [
@@ -2044,7 +2034,7 @@
   "66": [
    {
     "kind": "text",
-    "text": "Their losses are not entertainment.",
+    "text": "We are not naming any of them here.\nTheir losses are not entertainment.",
     "style": "quote"
    },
    {
@@ -2302,6 +2292,10 @@
     "style": "quote"
    },
    {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4"
+   },
+   {
     "kind": "motion",
     "fn": "key_phrase",
     "name": "s09_kp_panic_customer_money",
@@ -2407,11 +2401,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
-    "fx": "in",
-    "crop": "detail",
-    "grade": "cold"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
    }
   ],
   "78": [
@@ -2494,8 +2485,7 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg",
-    "fx": "right",
-    "overlay": "assets/ep01_terra_luna/motion/s11_lowerthird_podgorica.mp4"
+    "fx": "right"
    },
    {
     "kind": "video",
@@ -2612,8 +2602,9 @@
   ],
   "85": [
    {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/cards/zoom/card_01_sec_charges_2023-02-16_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_01_sec_charges_2023-02-16.png",
+    "fx": "in"
    },
    {
     "kind": "clip",
@@ -2660,8 +2651,9 @@
     }
    },
    {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_06_kwon_plea_2025-08.png",
+    "fx": "in"
    },
    {
     "kind": "clip",
@@ -2692,8 +2684,9 @@
     "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"
    },
    {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/cards/zoom/card_07_doj_sentence_2025-12-11_zoom.mp4"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_07_doj_sentence_2025-12-11.png",
+    "fx": "in"
    },
    {
     "kind": "motion",
@@ -2709,7 +2702,7 @@
       "generational"
      ],
      "kicker": "THE JUDGE CALLED IT",
-     "dur": 3.0,
+     "dur": 3.6,
      "stagger": 0.7,
      "size": 116
     }
@@ -2769,9 +2762,9 @@
     }
    },
    {
-    "kind": "text",
-    "text": "Korean prosecutors indicted\nDaniel Shin and several others.",
-    "style": "quote"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
+    "fx": "in"
    },
    {
     "kind": "motion",
@@ -3242,7 +3235,7 @@
   {
    "chunk": 4,
    "name": "whoosh",
-   "offset": 5.1,
+   "offset": 3.5,
    "gain_db": -8
   },
   {
@@ -3356,7 +3349,7 @@
   {
    "chunk": 38,
    "name": "stamp",
-   "offset": 3.97,
+   "offset": 3.47,
    "gain_db": -8
   },
   {
@@ -3368,7 +3361,7 @@
   {
    "chunk": 44,
    "name": "impact",
-   "offset": 6.85,
+   "offset": 8.95,
    "gain_db": -8
   },
   {
@@ -3392,7 +3385,7 @@
   {
    "chunk": 51,
    "name": "impact",
-   "offset": 17.9,
+   "offset": 18.15,
    "gain_db": -10
   },
   {

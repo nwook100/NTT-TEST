@@ -4,7 +4,7 @@
     {"id": 40, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_chapter_the_bitcoin_war_chest.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_war_chest", "args": {"lines": ["Kwon's answer", "was a war chest."], "red": ["war", "chest."], "kicker": "BY EARLY 2022", "dur": 4.0, "stagger": 0.6, "size": 120}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg", "fx": "in", "overlay": "assets/ep01_terra_luna/motion/s06_lowerthird_lfg.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg", "fx": "in"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4"}
     ]},
     {"id": 41, "segments": [
@@ -25,7 +25,6 @@
     {"id": 44, "segments": [
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4", "start": 1.4},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "out", "crop": "bottom"}
     ]},
     {"id": 45, "segments": [
@@ -45,7 +44,7 @@
     {"id": 48, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_two_questions_intro", "args": {"lines": ["So before we watch the fall,", "here are two questions", "to carry with you."], "red": ["fall,"], "dur": 4.0, "stagger": 1.0, "size": 104}},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_keyphrase_hook_questions.mp4"},
-      {"kind": "text", "text": "1. Was the 2021 rescue hidden?\n2. Did Chai really run on Terra?", "style": "quote"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"}
     ]},
     {"id": 49, "segments": [
       {"kind": "text", "text": "Both get answered\nbefore the end of this video.", "style": "quote"},
@@ -53,7 +52,7 @@
     ]}
   ],
   "sfx": [
-    {"chunk": 44, "name": "impact", "offset": 6.85, "gain_db": -8},
+    {"chunk": 44, "name": "impact", "offset": 8.95, "gain_db": -8},
     {"chunk": 48, "name": "heartbeat", "offset": 4.0, "gain_db": -8},
     {"chunk": 50, "name": "whoosh", "offset": -0.55, "gain_db": -12}
   ],

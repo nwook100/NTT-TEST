@@ -36,6 +36,7 @@
     ]},
     {"id": 74, "segments": [
       {"kind": "text", "text": "Terra didn't commit FTX's fraud.\nA jury put that on Bankman-Fried.", "style": "quote"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s09_kp_panic_customer_money", "args": {"lines": ["the panic that began in May", "was part of what pushed", "customer money into the hole."], "red": ["hole."], "kicker": "BUT ACCORDING TO THAT TESTIMONY,", "dur": 6.0, "stagger": 1.2, "size": 104}}
     ]}
   ],

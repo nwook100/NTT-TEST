@@ -19,8 +19,7 @@
     {"id": 3, "segments": [
       {"kind": "text", "text": "This is the story of Cho Hee-pal.", "style": "quote"},
       {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"},
-      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4", "tail": true},
-      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4", "tail": true}
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4", "tail": true}
     ]}
   ],
   "sfx": [

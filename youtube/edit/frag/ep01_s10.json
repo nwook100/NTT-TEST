@@ -21,7 +21,7 @@
       {"kind": "text", "text": "One thing was missing.", "style": "quote"},
       {"kind": "motion", "fn": "stamp", "name": "s10_stamp_no_new_ust",
        "args": {"word": "NO NEW UST", "dur": 3.3}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg", "fx": "in", "crop": "detail", "grade": "cold"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"}
     ]},
     {"id": 78, "segments": [
       {"kind": "motion", "fn": "count_up", "name": "s10_count_new_luna_17",

@@ -16,7 +16,7 @@
     {"id": 93, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s13_tw_april_2023",
        "args": {"text": "APRIL 2023", "sub": "IN KOREA", "dur": 3.0}},
-      {"kind": "text", "text": "Korean prosecutors indicted\nDaniel Shin and several others.", "style": "quote"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "in"},
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_prosecutors_allege_chai",
        "args": {"lines": ["Chai made ordinary payments look", "as if they were running on Terra."], "red": ["look"],
                 "kicker": "PROSECUTORS ALLEGE", "dur": 5.5, "stagger": 0.8, "size": 104}}

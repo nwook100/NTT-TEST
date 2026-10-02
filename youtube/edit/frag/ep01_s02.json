@@ -41,7 +41,7 @@
        "args": {"lines": ["500,000 users", "2.7 million transactions"], "red": ["500,000", "2.7"],
                 "kicker": "TERRA SAID", "footer": "TERRA'S OWN ANNOUNCEMENTS",
                 "dur": 5.0, "stagger": 0.8, "size": 120}},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4", "start": 0.8},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/money_counting_1.mp4"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4", "start": 3.0},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_real_people",

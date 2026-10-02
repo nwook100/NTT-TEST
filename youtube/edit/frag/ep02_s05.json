@@ -268,8 +268,22 @@
    "id": 51,
    "segments": [
     {
-     "kind": "clip",
-     "asset": "assets/ep02_cho_hee_pal/motion/s05_keyphrase_remember_document.mp4"
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_keep_two_things",
+     "args": {
+      "lines": [
+       "Keep two things in mind."
+      ],
+      "kicker": "BEFORE WE GO ON",
+      "red": [
+       "two"
+      ],
+      "dur": 4.0,
+      "stagger": 0.0,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
     },
     {
      "kind": "motion",
@@ -317,6 +331,11 @@
    "id": 52,
    "segments": [
     {
+     "kind": "text",
+     "text": "The first explains\nhow he got away.",
+     "style": "quote"
+    },
+    {
      "kind": "motion",
      "fn": "key_phrase",
      "name": "s05_kp_still_dont_believe",
@@ -328,7 +347,7 @@
       "red": [
        "gone."
       ],
-      "dur": 6.0,
+      "dur": 4.5,
       "stagger": 1.4,
       "size": 100,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"

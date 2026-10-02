@@ -9,9 +9,9 @@
     ]},
     {"id": 51, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_wallets_dump", "args": {"lines": ["Within minutes, other wallets dump", "tens of millions of UST", "into what's left."], "red": ["millions"], "dur": 5.5, "stagger": 1.5, "size": 104}},
-      {"kind": "motion", "fn": "count_up", "name": "s07_count_ust_099", "args": {"frm": 1.0, "to": 0.99, "decimals": 2, "prefix": "$", "kicker": "THE POOL TILTS.", "label": "UST SLIPS TO 99 CENTS", "end_red": true, "dur": 4.5, "count_time": 1.6}},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4", "grade": "cold"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_crack_in_glass", "args": {"lines": ["For a coin whose whole promise is one dollar,", "a penny is a crack in the glass."], "red": ["crack"], "dur": 5.5, "stagger": 2.5, "size": 96}}
+      {"kind": "motion", "fn": "count_up", "name": "s07_count_ust_099", "args": {"frm": 1.0, "to": 0.99, "decimals": 2, "prefix": "$", "kicker": "THE POOL TILTS.", "label": "UST SLIPS TO 99 CENTS", "end_red": true, "dur": 6.0, "count_time": 1.6}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_crack_in_glass", "args": {"lines": ["For a coin whose whole promise is one dollar,", "a penny is a crack in the glass."], "red": ["crack"], "dur": 5.5, "stagger": 2.5, "size": 96}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4", "grade": "cold"}
     ]},
     {"id": 52, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_sun_may08.mp4"},
@@ -61,12 +61,12 @@
     {"id": 61, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"},
       {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"},
-      {"kind": "text", "text": "Many had trusted\nthe word “stable.”", "style": "quote"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"}
     ]}
   ],
   "sfx": [
     {"chunk": 50, "name": "typewriter", "offset": 4.0, "gain_db": -12},
-    {"chunk": 51, "name": "impact", "offset": 17.9, "gain_db": -10},
+    {"chunk": 51, "name": "impact", "offset": 18.15, "gain_db": -10},
     {"chunk": 54, "name": "glitch", "offset": 17.9, "gain_db": -10},
     {"chunk": 57, "name": "glitch", "offset": 4.2, "gain_db": -10},
     {"chunk": 60, "name": "impact", "offset": 2.85, "gain_db": -8}
