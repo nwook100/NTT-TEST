@@ -13,7 +13,7 @@
     {"id": 41, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_goal_10b_bitcoin",
        "args": {"lines": ["10 billion dollars' worth", "of bitcoin."], "red": ["10", "billion"],
-                "kicker": "KWON SAID THE GOAL WAS", "dur": 5.3, "stagger": 0.8, "size": 116}}
+                "kicker": "KWON SAID THE GOAL WAS", "dur": 4.7, "stagger": 0.8, "size": 116}}
     ]},
     {"id": 42, "segments": [
       {"kind": "motion", "fn": "count_up", "name": "s06_count_1b_luna_sale",
@@ -41,8 +41,9 @@
                 "dur": 5.0, "stagger": 1.0, "size": 104}}
     ]},
     {"id": 44, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg", "fx": "in"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "right"},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "out"}
     ]},
     {"id": 45, "segments": [
@@ -56,15 +57,15 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_reserve_vs_ust",
        "args": {"lines": ["Reserve: ~$2.4 billion", "UST in circulation: nearly $19 billion"],
                 "red": ["$19"], "kicker": "THE RESERVE WAS A FRACTION",
-                "dur": 5.0, "stagger": 1.6, "size": 100}},
+                "dur": 4.5, "stagger": 1.6, "size": 100}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "left"},
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_asset_could_fall",
        "args": {"lines": ["an asset that could fall", "at exactly the moment", "it was needed."],
                 "red": ["fall"], "kicker": "AND IT WAS HELD IN BITCOIN",
-                "dur": 4.5, "stagger": 0.8, "size": 108}}
+                "dur": 4.0, "stagger": 0.8, "size": 108}}
     ]},
     {"id": 47, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg", "fx": "right"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_2.jpg", "fx": "right"},
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_prosecutors_controlled",
        "args": {"lines": ["Kwon presented the foundation", "as independent from Terraform,",
                           "when, according to prosecutors,", "he controlled it."],
@@ -74,7 +75,7 @@
     {"id": 48, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_two_questions_intro",
        "args": {"lines": ["So before we watch the fall,", "here are two questions", "to carry with you."],
-                "red": ["fall,"], "dur": 5.0, "stagger": 1.0, "size": 104}},
+                "red": ["fall,"], "dur": 4.0, "stagger": 1.0, "size": 104}},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_keyphrase_hook_questions.mp4"},
       {"kind": "text", "text": "1. Was the 2021 rescue hidden?\n2. Did Chai really run on Terra?", "style": "quote"}
     ]},
@@ -86,12 +87,12 @@
     ]}
   ],
   "sfx": [
-    {"chunk": 44, "name": "impact", "offset": 8.1, "gain_db": -8},
-    {"chunk": 48, "name": "heartbeat", "offset": 5.0, "gain_db": -8},
-    {"chunk": 49, "name": "whoosh", "offset": 8.8, "gain_db": -12}
+    {"chunk": 44, "name": "impact", "offset": 6.85, "gain_db": -8},
+    {"chunk": 48, "name": "heartbeat", "offset": 4.0, "gain_db": -8},
+    {"chunk": 50, "name": "whoosh", "offset": -0.55, "gain_db": -12}
   ],
   "music_drops": [
     {"chunk": 46, "dur": 2.0},
-    {"chunk": 48, "dur": 10.5}
+    {"chunk": 48, "dur": 9.5}
   ]
 }
