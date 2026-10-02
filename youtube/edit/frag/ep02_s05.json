@@ -10,7 +10,7 @@
     },
     {
      "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+     "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
      "fx": "in"
     },
     {
@@ -231,17 +231,12 @@
       "prefix": "₩",
       "suffix": " BILLION",
       "kicker": "PROSECUTORS FOUND",
-      "label": "ABOUT 290 BILLION WON · STASHED AWAY BY THE GROUP",
-      "dur": 4.5,
-      "count_time": 2.0,
+      "label": "THE GROUP HAD STASHED AWAY ABOUT 290 BILLION WON",
+      "dur": 6.0,
+      "count_time": 2.6,
       "size": 200,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
      }
-    },
-    {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-     "fx": "right"
     },
     {
      "kind": "motion",
@@ -256,7 +251,7 @@
       "red": [
        "biggest"
       ],
-      "dur": 5.0,
+      "dur": 6.0,
       "stagger": 1.0,
       "size": 112,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
@@ -323,7 +318,7 @@
    "segments": [
     {
      "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
      "fx": "left"
     },
     {
