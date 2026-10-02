@@ -6,7 +6,7 @@
       {"kind": "text", "text": "It failed because a 20 percent promise\nwas more convincing than every warning.", "style": "quote"}
     ]},
     {"id": 106, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_2.mp4", "start": 2.0},
       {"kind": "text", "text": "Where is the money\nactually coming from?", "style": "quote"}
     ]},
     {"id": 107, "segments": [
@@ -14,7 +14,7 @@
       {"kind": "motion", "fn": "typewriter", "name": "s15_tw_next_time",
        "args": {"text": "NEXT TIME", "sub": "A KOREAN STORY THE WORLD NEVER HEARD", "dur": 4.0}},
       {"kind": "text", "text": "A man who took money\nfrom tens of thousands of people,\nfled the country,\nand was then reported dead.", "style": "quote"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "right"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s15_kp_victims_dont_believe",
        "args": {"lines": ["Many of his victims", "still don't believe it."], "red": ["believe"],
                 "dur": 3.0, "stagger": 0.9, "size": 112}}

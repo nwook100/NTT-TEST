@@ -70,9 +70,8 @@
    "id": 99,
    "segments": [
     {
-     "kind": "text",
-     "text": "So why does the idea\nkeep coming back?",
-     "style": "quote"
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/rainy_street_night_2.mp4"
     },
     {
      "kind": "motion",
@@ -99,9 +98,9 @@
    "id": 100,
    "segments": [
     {
-     "kind": "photo",
-     "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
-     "fx": "in"
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+     "start": 1.25
     },
     {
      "kind": "clip",
@@ -179,9 +178,8 @@
    "id": 103,
    "segments": [
     {
-     "kind": "text",
-     "text": "Lawmakers noticed.",
-     "style": "quote"
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
     },
     {
      "kind": "motion",
@@ -226,9 +224,8 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-     "fx": "right"
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4"
     },
     {
      "kind": "motion",

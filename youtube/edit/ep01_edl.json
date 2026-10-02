@@ -7,9 +7,9 @@
     "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"
    },
    {
-    "kind": "text",
-    "text": "Falls to almost zero.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4",
+    "start": 1.0
    },
    {
     "kind": "motion",
@@ -34,14 +34,12 @@
   ],
   "1": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_2.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
    },
    {
     "kind": "text",
@@ -57,32 +55,35 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg",
-    "fx": "in"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_podgorica_airport_2.jpg",
-    "fx": "right"
+    "fx": "in",
+    "grade": "cold"
    }
   ],
   "3": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_2.jpg",
-    "fx": "left"
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg",
+    "fx": "left",
+    "grade": "cold"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4",
+    "start": 1.5
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_red_1.mp4"
    },
    {
     "kind": "clip",
-    "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4"
+    "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4",
+    "tail": true
    },
    {
     "kind": "clip",
-    "asset": "assets/ep01_terra_luna/motion/s00_chapter_the_40_billion_vanishing_act.mp4"
+    "asset": "assets/ep01_terra_luna/motion/s00_chapter_the_40_billion_vanishing_act.mp4",
+    "tail": true
    }
   ],
   "4": [
@@ -91,31 +92,20 @@
     "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_stanford_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"
    },
    {
-    "kind": "text",
-    "text": "Worked briefly as a software engineer\nat Microsoft and Apple",
-    "style": "label"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
-    "fx": "out"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4"
    }
   ],
   "5": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "right"
+    "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
+    "crop": "top",
+    "fx": "in"
    }
   ],
   "6": [
@@ -141,7 +131,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
-    "fx": "in"
+    "crop": "right",
+    "fx": "left"
    },
    {
     "kind": "text",
@@ -149,28 +140,24 @@
     "style": "label"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"
    }
   ],
   "7": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4"
    }
   ],
   "8": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4"
    },
    {
     "kind": "motion",
@@ -211,9 +198,9 @@
     "style": "label"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4",
+    "start": 1.5
    },
    {
     "kind": "motion",
@@ -233,16 +220,15 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4",
+    "start": 2.0
    }
   ],
   "10": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"
    },
    {
     "kind": "motion",
@@ -275,9 +261,9 @@
     "asset": "assets/ep01_terra_luna/motion/s02_chapter_coffee_paid_in_crypto.mp4"
    },
    {
-    "kind": "text",
-    "text": "In the beginning,\nthe pitch wasn't about getting rich.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/coffee_shop_2.mp4",
+    "start": 3.5
    },
    {
     "kind": "motion",
@@ -297,9 +283,8 @@
   ],
   "12": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
    },
    {
     "kind": "motion",
@@ -334,9 +319,9 @@
   ],
   "13": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4",
+    "start": 2.0
    },
    {
     "kind": "motion",
@@ -360,7 +345,7 @@
   "14": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg",
     "fx": "right"
    },
    {
@@ -405,9 +390,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/coffee_shop_1.mp4"
    },
    {
     "kind": "motion",
@@ -450,19 +434,18 @@
     }
    },
    {
-    "kind": "text",
-    "text": "For investors,\nthis was the killer argument.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4",
+    "start": 0.8
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4",
+    "start": 3.0
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"
    },
    {
     "kind": "motion",
@@ -486,9 +469,9 @@
   ],
   "17": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4",
+    "grade": "bw"
    },
    {
     "kind": "text",
@@ -541,9 +524,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "If UST dropped below a dollar,",
-    "style": "label"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4"
    },
    {
     "kind": "motion",
@@ -603,9 +585,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "You hand it to the system,\nwhich destroys it",
-    "style": "label"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
    },
    {
     "kind": "motion",
@@ -654,9 +635,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "And if UST goes above a dollar,",
-    "style": "label"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"
    },
    {
     "kind": "motion",
@@ -680,9 +660,8 @@
   ],
   "23": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"
    },
    {
     "kind": "motion",
@@ -732,14 +711,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "in"
-   },
-   {
-    "kind": "text",
-    "text": "When one of them challenged him online,\nhe replied:",
-    "style": "label"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
    },
    {
     "kind": "clip",
@@ -779,16 +752,17 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
     "fx": "in",
-    "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4"
+    "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4",
+    "crop": "right",
+    "grade": "cold"
    }
   ],
   "27": [
    {
-    "kind": "text",
-    "text": "Money poured in.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"
    },
    {
     "kind": "motion",
@@ -863,9 +837,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"
    },
    {
     "kind": "text",
@@ -892,9 +865,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_2.mp4"
    },
    {
     "kind": "motion",
@@ -919,9 +891,8 @@
   ],
   "30": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"
    },
    {
     "kind": "motion",
@@ -985,9 +956,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "Just to keep\nthe 20 percent going.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"
    }
   ],
   "32": [
@@ -1094,9 +1064,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/empty_city_night_2.mp4"
    }
   ],
   "36": [
@@ -1141,9 +1110,9 @@
     "asset": "assets/ep01_terra_luna/motion/s05_countup_20M_UST_sec.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_sec_building_ov_4.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4",
+    "start": 3.0
    },
    {
     "kind": "motion",
@@ -1167,9 +1136,8 @@
   ],
   "38": [
    {
-    "kind": "text",
-    "text": "The trading firm's affiliate\nlater settled with the SEC",
-    "style": "label"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4"
    },
    {
     "kind": "motion",
@@ -1184,9 +1152,9 @@
   ],
   "39": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
+    "grade": "bw"
    },
    {
     "kind": "motion",
@@ -1248,9 +1216,8 @@
     "overlay": "assets/ep01_terra_luna/motion/s06_lowerthird_lfg.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4"
    }
   ],
   "41": [
@@ -1330,9 +1297,8 @@
   ],
   "43": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"
    },
    {
     "kind": "motion",
@@ -1375,23 +1341,23 @@
   ],
   "44": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
    },
    {
     "kind": "clip",
     "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4",
+    "start": 1.4
    },
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
-    "fx": "out"
+    "fx": "out",
+    "crop": "bottom"
    }
   ],
   "45": [
@@ -1412,9 +1378,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "The vault Terra never had,\nfinally being filled.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_2.mp4"
    }
   ],
   "46": [
@@ -1444,7 +1409,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "left"
+    "fx": "left",
+    "crop": "detail",
+    "grade": "red"
    },
    {
     "kind": "motion",
@@ -1624,9 +1591,9 @@
     }
    },
    {
-    "kind": "text",
-    "text": "It sounds tiny.\nIt isn't.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1705,9 +1672,9 @@
     "asset": "assets/ep01_terra_luna/motion/s07_typewriter_mon_may09.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4",
+    "grade": "red"
    },
    {
     "kind": "motion",
@@ -1831,8 +1798,9 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
-    "fx": "left"
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
+    "fx": "in",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1952,7 +1920,9 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "in"
+    "fx": "out",
+    "crop": "right",
+    "grade": "cold"
    },
    {
     "kind": "motion",
@@ -1976,9 +1946,8 @@
     "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"
    },
    {
     "kind": "text",
@@ -1992,9 +1961,8 @@
     "asset": "assets/ep01_terra_luna/motion/s08_chapter_the_lunatics.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/airport_night_1.mp4"
    },
    {
     "kind": "text",
@@ -2030,21 +1998,19 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_1.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4",
+    "grade": "cold"
    }
   ],
   "64": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rain_window_night_2.mp4"
    },
    {
     "kind": "text",
@@ -2066,12 +2032,13 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
+    "crop": "bottom",
     "fx": "in"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4",
+    "start": 2.0
    },
    {
     "kind": "text",
@@ -2089,6 +2056,11 @@
     "kind": "text",
     "text": "But every number in this story was\nsomebody's rent, somebody's savings,\nsomebody's plan.",
     "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_2.mp4",
+    "start": 2.5
    }
   ],
   "67": [
@@ -2224,9 +2196,10 @@
     }
    },
    {
-    "kind": "text",
-    "text": "Froze withdrawals\nin June.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+    "start": 2.5,
+    "grade": "bw"
    },
    {
     "kind": "motion",
@@ -2258,9 +2231,8 @@
   ],
   "72": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
    },
    {
     "kind": "motion",
@@ -2440,9 +2412,11 @@
     }
    },
    {
-    "kind": "text",
-    "text": "Terra 2.0 launched without\nan algorithmic stablecoin at all.",
-    "style": "quote"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
+    "fx": "in",
+    "crop": "detail",
+    "grade": "cold"
    }
   ],
   "78": [
@@ -2476,9 +2450,8 @@
     }
    },
    {
-    "kind": "text",
-    "text": "For many old holders,\nit was nowhere near\nwhat they had lost.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rain_window_night_1.mp4"
    }
   ],
   "79": [
@@ -2492,13 +2465,12 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_interpol_1.jpg",
+    "asset": "assets/ep01_terra_luna/s11_interpol_3.jpg",
     "fx": "in"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_interpol_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"
    }
   ],
   "80": [
@@ -2531,9 +2503,9 @@
     "overlay": "assets/ep01_terra_luna/motion/s11_lowerthird_podgorica.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/airplane_night_1.mp4",
+    "start": 0
    },
    {
     "kind": "motion",
@@ -2604,9 +2576,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_podgorica_airport_2.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/airport_night_1.mp4"
    },
    {
     "kind": "motion",
@@ -2658,7 +2629,8 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
-    "fx": "in"
+    "fx": "in",
+    "crop": "top"
    },
    {
     "kind": "clip",
@@ -2671,13 +2643,14 @@
   ],
   "87": [
    {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4",
+    "start": 3.0,
+    "grade": "cold"
    },
    {
-    "kind": "text",
-    "text": "Terraform agreed\nto wind down.",
-    "style": "label"
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"
    }
   ],
   "88": [
@@ -2753,9 +2726,8 @@
     "asset": "assets/ep01_terra_luna/motion/s13_chapter_the_korean_side_of_the_story.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"
    },
    {
     "kind": "clip",
@@ -2764,9 +2736,8 @@
   ],
   "92": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
-    "fx": "left"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"
    },
    {
     "kind": "motion",
@@ -2865,9 +2836,9 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "out"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4",
+    "start": 0.0
    }
   ],
   "95": [
@@ -2914,7 +2885,8 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
+    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
+    "crop": "detail",
     "fx": "in"
    },
    {
@@ -2997,9 +2969,8 @@
   ],
   "99": [
    {
-    "kind": "text",
-    "text": "So why does the idea\nkeep coming back?",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_2.mp4"
    },
    {
     "kind": "motion",
@@ -3023,9 +2994,9 @@
   ],
   "100": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+    "start": 1.25
    },
    {
     "kind": "clip",
@@ -3094,9 +3065,8 @@
   ],
   "103": [
    {
-    "kind": "text",
-    "text": "Lawmakers noticed.",
-    "style": "quote"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
    },
    {
     "kind": "motion",
@@ -3138,9 +3108,8 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4"
    },
    {
     "kind": "motion",
@@ -3173,9 +3142,9 @@
   ],
   "106": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
-    "fx": "in"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_2.mp4",
+    "start": 2.0
    },
    {
     "kind": "text",
@@ -3205,9 +3174,8 @@
     "style": "quote"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "right"
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"
    },
    {
     "kind": "motion",
@@ -3273,13 +3241,13 @@
   {
    "chunk": 3,
    "name": "impact",
-   "offset": 6.0,
+   "offset": 11.15,
    "gain_db": -9
   },
   {
    "chunk": 4,
    "name": "whoosh",
-   "offset": 0.0,
+   "offset": 5.1,
    "gain_db": -8
   },
   {

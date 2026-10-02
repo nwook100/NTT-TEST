@@ -54,7 +54,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-     "fx": "in"
+     "fx": "in",
+     "crop": "right"
     }
    ]
   },
@@ -67,9 +68,8 @@
      "style": "quote"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-     "fx": "out"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_1.mp4"
     },
     {
      "kind": "motion",
@@ -92,9 +92,8 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-     "fx": "left"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/incense_1.mp4"
     }
    ]
   },
@@ -130,9 +129,9 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-     "fx": "right"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4",
+     "grade": "cold"
     },
     {
      "kind": "text",
@@ -179,13 +178,14 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-     "fx": "in"
+     "fx": "in",
+     "crop": "left"
     },
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
      "fx": "out",
-     "grade": "cold"
+     "crop": "right"
     },
     {
      "kind": "text",
@@ -222,10 +222,8 @@
      "style": "quote"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-     "fx": "left",
-     "crop": "right"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
     },
     {
      "kind": "photo",
@@ -247,10 +245,8 @@
      "style": "quote"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-     "fx": "in",
-     "crop": "top"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
     },
     {
      "kind": "photo",
@@ -281,8 +277,9 @@
     },
     {
      "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-     "fx": "right"
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+     "fx": "right",
+     "crop": "right"
     },
     {
      "kind": "text",
@@ -429,15 +426,13 @@
      "asset": "assets/ep02_cho_hee_pal/motion/s07_stamp_case_closed.mp4"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-     "fx": "out",
-     "crop": "top"
-    },
-    {
      "kind": "text",
      "text": "Some victims' groups rejected that conclusion\nand said they would keep searching.",
      "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
     }
    ]
   },
@@ -464,9 +459,8 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-     "fx": "left"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
     }
    ]
   },
@@ -485,7 +479,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-     "fx": "right"
+     "fx": "out",
+     "crop": "bottom"
     }
    ]
   }

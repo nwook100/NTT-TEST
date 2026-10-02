@@ -3,40 +3,33 @@
   "chunks": [
     {"id": 84, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_chapter_the_verdicts.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_civil_criminal",
-       "args": {"lines": ["Once in civil court.", "Once in criminal court."], "red": ["civil", "criminal"],
-                "kicker": "AMERICA WENT AFTER KWON TWICE", "dur": 3.0, "stagger": 0.6, "size": 116}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_civil_criminal", "args": {"lines": ["Once in civil court.", "Once in criminal court."], "red": ["civil", "criminal"], "kicker": "AMERICA WENT AFTER KWON TWICE", "dur": 3.0, "stagger": 0.6, "size": 116}}
     ]},
     {"id": 85, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_01_sec_charges_2023-02-16_zoom.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"}
     ]},
     {"id": 86, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg", "fx": "in", "crop": "top"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_stamp_liable_for_fraud.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_04_jury_verdict_2024-04-05_zoom.mp4"}
     ]},
     {"id": 87, "segments": [
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"},
-      {"kind": "text", "text": "Terraform agreed\nto wind down.", "style": "label"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4", "start": 3.0, "grade": "cold"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"}
     ]},
     {"id": 88, "segments": [
-      {"kind": "motion", "fn": "typewriter", "name": "s12_tw_aug2025",
-       "args": {"text": "AUGUST 2025", "sub": "THE CRIMINAL CASE", "dur": 4.5}},
+      {"kind": "motion", "fn": "typewriter", "name": "s12_tw_aug2025", "args": {"text": "AUGUST 2025", "sub": "THE CRIMINAL CASE", "dur": 4.5}},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_wordbyword_plea_quote.mp4"}
     ]},
     {"id": 89, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_question_from_earlier",
-       "args": {"lines": ["Was the 2021 rescue hidden?"], "red": ["hidden?"],
-                "kicker": "THE QUESTION FROM EARLIER", "dur": 5.3, "size": 116}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_question_from_earlier", "args": {"lines": ["Was the 2021 rescue hidden?"], "red": ["hidden?"], "kicker": "THE QUESTION FROM EARLIER", "dur": 5.3, "size": 116}}
     ]},
     {"id": 90, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/cards/zoom/card_07_doj_sentence_2025-12-11_zoom.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_epic_generational",
-       "args": {"lines": ["A fraud on an", "\"epic, generational scale.\""], "red": ["epic,", "generational"],
-                "kicker": "THE JUDGE CALLED IT", "dur": 3.0, "stagger": 0.7, "size": 116}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_epic_generational", "args": {"lines": ["A fraud on an", "\"epic, generational scale.\""], "red": ["epic,", "generational"], "kicker": "THE JUDGE CALLED IT", "dur": 3.0, "stagger": 0.7, "size": 116}}
     ]}
   ],
   "sfx": [

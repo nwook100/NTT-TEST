@@ -9,9 +9,9 @@
      "asset": "assets/ep02_cho_hee_pal/motion/s08_chapter_the_trial_of_the_right_hand_man.mp4"
     },
     {
-     "kind": "text",
-     "text": "Kang Tae-yong became\nthe highest-ranking member of the group\never to stand trial.",
-     "style": "quote"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4",
+     "start": 0
     },
     {
      "kind": "motion",
@@ -87,10 +87,9 @@
      "style": "quote"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg",
-     "fx": "in",
-     "crop": "left"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+     "start": 2.0
     }
    ]
   },
@@ -103,9 +102,8 @@
      "style": "quote"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
-     "fx": "out"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
     },
     {
      "kind": "motion",
@@ -135,7 +133,7 @@
      "args": {
       "word": "22 YEARS",
       "sub": "+ ₩12.5B FORFEITURE · DAEGU DISTRICT COURT, JAN 13, 2017",
-      "dur": 4.0,
+      "dur": 3.15,
       "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
      }
     }

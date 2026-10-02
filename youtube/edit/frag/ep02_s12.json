@@ -5,7 +5,7 @@
    "id": 104,
    "segments": [
     {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s12_chapter_outro.mp4"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg", "fx": "in"},
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4", "grade": "cold", "start": 3.0},
     {"kind": "text", "text": "For many of the people who lost everything,\nit never ended at all.", "style": "quote"}
    ]
   },
@@ -16,13 +16,13 @@
      "args": {"lines": ["The scheme didn't run on machines.", "It ran on trust."], "red": ["trust."],
               "dur": 4.0, "stagger": 2.2, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "right", "crop": "left"}
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4", "grade": "cold", "start": 2.0}
    ]
   },
   {
    "id": 106,
    "segments": [
-    {"kind": "text", "text": "So here's the question to ask, every time:", "style": "label"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg", "fx": "in", "crop": "detail"},
     {"kind": "text", "text": "If a business pays you more\nthan any bank ever could,", "style": "quote"},
     {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_where_is_the_money",
      "args": {"lines": ["Where is that money", "really coming from?"], "red": ["really"],
@@ -45,7 +45,7 @@
    "segments": [
     {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
     {"kind": "text", "text": "Have you ever been offered a deal\nthat paid every single day?", "style": "quote"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out"}
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out", "crop": "right", "grade": "cold"}
    ]
   }
  ],

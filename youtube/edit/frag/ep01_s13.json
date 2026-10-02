@@ -3,11 +3,11 @@
   "chunks": [
     {"id": 91, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s13_chapter_the_korean_side_of_the_story.mp4"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s13_countup_280000_korea.mp4"}
     ]},
     {"id": 92, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "left"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_yeouido_grim_reaper",
        "args": {"lines": ["\"Yeouido Grim Reaper\""], "red": ["grim", "reaper"],
                 "kicker": "SEOUL PROSECUTORS REVIVED A FINANCIAL-CRIMES UNIT NICKNAMED", "dur": 4.5, "size": 120}},
@@ -28,7 +28,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_courts_twice_turned_down",
        "args": {"lines": ["Korean courts twice turned down", "requests to arrest him."], "red": ["twice"],
                 "dur": 4.0, "stagger": 0.7, "size": 108}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "out"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4", "start": 0.0}
     ]},
     {"id": 95, "segments": [
       {"kind": "text", "text": "Do Kwon may not be done\nwith Korean justice.", "style": "quote"},
@@ -40,7 +40,7 @@
     {"id": 96, "segments": [
       {"kind": "motion", "fn": "typewriter", "name": "s13_tw_in_korea_separate_charges",
        "args": {"text": "IN KOREA", "sub": "SEPARATE CHARGES, INCLUDING UNDER THE CAPITAL MARKETS LAW", "dur": 4.0}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg", "crop": "detail", "fx": "in"},
       {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_more_than_30_years",
        "args": {"lines": ["A conviction there could mean", "more than 30 years."], "red": ["30"],
                 "kicker": "SOME KOREAN MEDIA HAVE REPORTED", "dur": 5.0, "stagger": 0.9, "size": 110}}
