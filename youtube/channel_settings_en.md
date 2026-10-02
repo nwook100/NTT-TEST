@@ -56,7 +56,16 @@ New episodes every week.
 | 항목 | 설정값 |
 |---|---|
 | Country of residence | **대한민국 그대로 유지** (거주 국가는 세금과 수익 지급에 쓰이므로 실제 거주지로 둬야 합니다. 시청자 국가와는 관계없습니다) |
-| Keywords | `fraud` `scam` `ponzi scheme` `financial crime` `true crime` `documentary` `crypto collapse` `Terra Luna` `Do Kwon` `Korea` `Japan` `China` `Asia` `white collar crime` `business scandal` |
+| Keywords | 아래 "채널 키워드" 블록 복사 (352자 / 제한 500자) |
+
+### 채널 키워드 (복사용)
+
+```
+"Paper Tiger Files" fraud scam "ponzi scheme" "financial crime" "white collar crime" "true crime" "fraud documentary" "scam documentary" "business scandal" "corporate fraud" "investment fraud" "crypto scam" "crypto collapse" "Terra Luna" "Do Kwon" "Cho Hee-pal" "Korean scandal" "Asian fraud" "how scams work" "financial history" Korea Japan China Asia
+```
+
+- 두 단어 이상은 큰따옴표로 묶어야 한 덩어리로 인식됩니다
+- 새 사건 편을 올릴 때마다 사건명 키워드를 추가하고, 오래된 것은 빼서 500자 안으로 유지
 
 경로: **설정 → 채널 → 고급 설정(Advanced settings)**
 - 시청자층: **아니요, 아동용이 아닙니다(No, not made for kids)**
