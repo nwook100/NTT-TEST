@@ -1,6 +1,6 @@
 # ep01 asset inventory (paths relative to youtube/)
 
-## Photos (kind: photo) — vetted; only these may be used
+## Photos (kind: photo) — vetted; only these may be used. Re-use a photo as a different shot with "crop": left|right|top|bottom|detail and/or "grade": bw|red|cold — check assets/<ep>/crop_sheets/<photo>.jpg to see which crops actually show something
 | path | shows | mood | notes |
 |---|---|---|---|
 | assets/ep01_terra_luna/s01_gangnam_1.jpg | Elevated dusk view of Gangnam's Samseong/Teheran-ro area with Parnas and Trade Tower skyscrapers and busy traffic. | neutral |  |
@@ -34,6 +34,61 @@
 | assets/ep01_terra_luna/s13_yeouido_ov_3.jpg | Yeouido skyscraper skyline across the Han River in daylight. | neutral |  |
 | assets/ep01_terra_luna/gov/gov_01_doj_kwon_sentenced_2025-12-11.png | real screenshot of a US government web page (gov_01_doj_kwon_sentenced_2025-12-11.png) — tall page: add "align":"top" so the headline shows | neutral | citation |
 | assets/ep01_terra_luna/gov/gov_06_fed_note_algorithmic_stablecoins.png | real screenshot of a US government web page (gov_06_fed_note_algorithmic_stablecoins.png) — tall page: add "align":"top" so the headline shows | neutral | citation |
+
+## Stock B-roll video (kind: video) — flexible length like a photo (slowed up to 1.6x / frozen to fit); optional "grade": bw|red|cold, "start": seconds
+| path | shows | mood | s |
+|---|---|---|---|
+| assets/ep01_terra_luna/stock/airplane_night_1.mp4 | Airliner with landing lights descending through a black night sky. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/airport_night_1.mp4 | Aerial view of a city's lights from an aircraft at night. | dark | 6.97 |
+| assets/ep01_terra_luna/stock/city_night_timelapse_1.mp4 | Downtown skyline at night with lit towers, static time-lapse. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4 | Sweeping aerial time-lapse over a dense city lit at night. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/code_dark_1.mp4 | Out-of-focus coloured code scrolling on a dark screen. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/code_dark_2.mp4 | Blurred source code on a dark monitor. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/coffee_shop_1.mp4 | Espresso machine pouring two coffees against a dark wall. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/coffee_shop_2.mp4 | Pour-over coffee being brewed on a café counter. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/courthouse_1.mp4 | Aerial orbit of an illuminated courthouse at dusk. | dark | 6.97 |
+| assets/ep01_terra_luna/stock/courthouse_2.mp4 | Domed courthouse against a pink sunset sky, a car passes. | neutral | 6.97 |
+| assets/ep01_terra_luna/stock/crowd_walking_1.mp4 | Black-and-white crowd seen from behind on a busy shopping street. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/crowd_walking_2.mp4 | Low-angle view of many feet walking along a pavement. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/crypto_coins_1.mp4 | 3D Bitcoin, Ethereum and Litecoin coins spinning on a dark background. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/crypto_coins_2.mp4 | 3D gold Bitcoin coins pouring onto a wet floor. | neutral | 6.93 |
+| assets/ep01_terra_luna/stock/dark_room_lamp_1.mp4 | Old radio and lamp on a cabinet against damask wallpaper. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/dark_room_lamp_2.mp4 | Old books, quill and an oil lamp on a dark desk. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/documents_desk_1.mp4 | Hand writing on papers beside a wallet with banknotes. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/documents_desk_2.mp4 | AI-generated empty dark office with glowing monitors at night. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/dominoes_falling_1.mp4 | Row of dominoes toppling in sequence. | neutral | 6.03 |
+| assets/ep01_terra_luna/stock/empty_city_night_1.mp4 | Empty downtown street between office towers at night. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/empty_city_night_2.mp4 | Quiet street of glass office buildings at dusk. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/gavel_1.mp4 | Gavel on a polished bench in a dim courtroom. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/gavel_2.mp4 | Hand picking up and striking a gavel on a dark desk. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/glass_breaking_1.mp4 | Glass jar shattering into pieces in slow motion. | bright | 6.97 |
+| assets/ep01_terra_luna/stock/legal_documents_1.mp4 | Hands passing and pointing at legal papers with a pen. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/legal_documents_2.mp4 | Lawyer's desk with gavel and scales while papers are signed (no faces). | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/mobile_payment_1.mp4 | Flat animation of money flying between two phones. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/money_counting_1.mp4 | Hands counting banknotes on a dark cloth. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/money_counting_2.mp4 | Hands sorting piles of dollar bills on a wooden table. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/paper_close_up_1.mp4 | Close-up of a fountain pen, book pages and glasses. | neutral | 7.0 |
+| assets/ep01_terra_luna/stock/passport_1.mp4 | Passport and boarding passes on a laptop, top-down. | bright | 7.0 |
+| assets/ep01_terra_luna/stock/passport_2.mp4 | Man in suit stuffing cash into a briefcase next to passports (no face). | dark | 7.0 |
+| assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4 | Hands using a smartphone in darkness. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4 | Hands tapping a smartphone lit only by its screen. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/phone_scrolling_1.mp4 | Finger scrolling a photo feed on a phone at night. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/rain_window_night_1.mp4 | Raindrops on glass with a warm bokeh light behind. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/rain_window_night_2.mp4 | Rain running down a window with blurred night lights. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/rainy_street_night_1.mp4 | Empty wet road at night with traffic lights changing. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/rainy_street_night_2.mp4 | Colourful neon reflections on a rain-soaked street. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4 | Black-and-white view of a Seoul apartment boulevard at night. | dark | 6.97 |
+| assets/ep01_terra_luna/stock/seoul_apartment_night_2.mp4 | Aerial of Korean high-rise apartments and a busy street at night. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/seoul_night_1.mp4 | Seoul intersection time-lapse from above as night falls. | dark | 5.7 |
+| assets/ep01_terra_luna/stock/seoul_night_2.mp4 | Seoul skyline and Han River bridges at night with light trails. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/server_room_1.mp4 | Blue-lit network cables and blinking switch ports. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/server_room_2.mp4 | Server rack lights blinking in the dark. | dark | 6.97 |
+| assets/ep01_terra_luna/stock/stock_market_crash_1.mp4 | Candlestick charts plunging on dark trading screens. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/stock_market_red_1.mp4 | Red falling graph and arrows animation. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/stock_market_red_2.mp4 | Trading monitor with red candles, blurred charts behind. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4 | Two crypto trading monitors glowing in a dark room. | dark | 7.0 |
+| assets/ep01_terra_luna/stock/vault_1.mp4 | Locked steel door with a moving shadow, time-lapse. | dark | 6.17 |
+| assets/ep01_terra_luna/stock/vault_2.mp4 | Rows of gold bars in a vault. | neutral | 7.0 |
 
 ## Motion clips (kind: clip) — full-screen graphics, natural length
 | path | seconds |

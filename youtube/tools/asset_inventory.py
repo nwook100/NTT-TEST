@@ -9,7 +9,7 @@ def dur(p):
                                 capture_output=True, text=True).stdout.strip() or 0)
 L = [f"# {ep} asset inventory (paths relative to youtube/)\n"]
 vet = os.path.join(A, "PHOTO_VETTING.json")
-L.append("## Photos (kind: photo) — vetted; only these may be used\n| path | shows | mood | notes |\n|---|---|---|---|")
+L.append("## Photos (kind: photo) — vetted; only these may be used. Re-use a photo as a different shot with \"crop\": left|right|top|bottom|detail and/or \"grade\": bw|red|cold — check assets/<ep>/crop_sheets/<photo>.jpg to see which crops actually show something\n| path | shows | mood | notes |\n|---|---|---|---|")
 if os.path.exists(vet):
     for v in json.load(open(vet)):
         if v["verdict"] == "keep":
@@ -20,6 +20,12 @@ if os.path.isdir(gov):
     for f in sorted(os.listdir(gov)):
         if f.endswith(".png"):
             L.append(f"| assets/{epdir}/gov/{f} | real screenshot of a US government web page ({f}) — tall page: add \"align\":\"top\" so the headline shows | neutral | citation |")
+sj = os.path.join(A, "stock", "stock.json")
+if os.path.exists(sj):
+    L.append("\n## Stock B-roll video (kind: video) — flexible length like a photo (slowed up to 1.6x / frozen to fit); optional \"grade\": bw|red|cold, \"start\": seconds\n| path | shows | mood | s |\n|---|---|---|---|")
+    for x in json.load(open(sj)):
+        if os.path.exists(os.path.join(A, "stock", x["file"])):
+            L.append(f"| assets/{epdir}/stock/{x['file']} | {x['shows']} | {x['mood']} | {x.get('seconds', '')} |")
 L.append("\n## Motion clips (kind: clip) — full-screen graphics, natural length\n| path | seconds |\n|---|---|")
 md = os.path.join(A, "motion")
 for f in sorted(os.listdir(md)) if os.path.isdir(md) else []:

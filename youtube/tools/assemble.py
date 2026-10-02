@@ -112,6 +112,17 @@ def render_segment(seg, dur, path, W, H, fast, workdir):
         src = os.path.join(ROOT, seg["asset"])
         vf = f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={FPS},tpad=stop_mode=clone:stop_duration=60,format=yuv420p"
         run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-vf", vf, "-frames:v", str(n), *enc, path])
+    elif k == "video":
+        # stock B-roll: flexible length — slowed down up to 1.6x if the slot is longer, then frozen; graded like photos
+        src = os.path.join(ROOT, seg["asset"])
+        nat = probe_dur(src) - float(seg.get("start", 0))
+        slow = min(1.6, max(1.0, dur / max(nat, 0.1)))
+        grade = {"bw": ",hue=s=0,eq=contrast=1.12", "red": ",colorbalance=rs=0.18:gs=-0.05:bs=-0.08:rm=0.12,eq=saturation=0.7",
+                 "cold": ",colorbalance=bs=0.15:rs=-0.06:bm=0.1,eq=saturation=0.75:brightness=-0.03"}.get(seg.get("grade"), "")
+        vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,setpts={slow:.3f}*PTS,fps={FPS},"
+              f"tpad=stop_mode=clone:stop_duration=60,{GRADE}{grade},{FILM},format=yuv420p")
+        run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(seg.get("start", 0)), "-i", src, "-vf", vf,
+             "-frames:v", str(n), *enc, path])
     elif k == "text":
         tf = os.path.join(workdir, os.path.basename(path) + ".txt")
         open(tf, "w").write(seg["text"])

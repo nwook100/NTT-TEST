@@ -75,6 +75,16 @@ def main():
                         warns.append(f"WARN {where}: same photo back-to-back ({os.path.basename(a)})")
                     photo_uses[look] = photo_uses.get(look, 0) + 1
                     prev_photo = a
+            elif k == "video":
+                a = s.get("asset", "")
+                if not a or not os.path.exists(os.path.join(ROOT, a)) or not a.endswith(".mp4"):
+                    errs.append(f"ERROR {where}: video asset not found: {a!r}")
+                elif "/stock/" not in a:
+                    warns.append(f"WARN {where}: kind video is meant for stock B-roll ({a})")
+                if s.get("grade") not in (None, "bw", "red", "cold"):
+                    errs.append(f"ERROR {where}: grade must be bw/red/cold")
+                flex += 1
+                photo_uses[(a, None, s.get("grade"))] = photo_uses.get((a, None, s.get("grade")), 0) + 1
             elif k == "text":
                 flex += 1
                 if not s.get("text", "").strip():
