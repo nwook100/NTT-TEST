@@ -3,30 +3,31 @@
   "chunks": [
     {"id": 0, "segments": [
       {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_typewriter_december_2008.mp4"},
-      {"kind": "text", "text": "A fishing boat slips out\nof a small harbor\non Korea's west coast.", "style": "quote"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_2.mp4", "grade": "cold"},
       {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_most_wanted_man", "args": {"lines": ["One of the passengers", "is the most wanted man", "in the country."], "kicker": "ACCORDING TO INVESTIGATORS", "red": ["wanted"], "dur": 4.5, "stagger": 1.0, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
     ]},
     {"id": 1, "segments": [
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4", "grade": "cold"},
       {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_retirees_homemakers", "args": {"lines": ["Retirees.", "Homemakers.", "Small shop owners."], "dur": 5.5, "stagger": 1.4, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "right"}
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "crop": "left", "grade": "cold", "fx": "right"}
     ]},
     {"id": 2, "segments": [
       {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_wordbyword_died_officially.mp4"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg", "fx": "out"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_2.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_nobody_believed_it", "args": {"lines": ["And almost nobody", "believed it."], "red": ["nobody"], "dur": 3.0, "stagger": 0.9, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
     ]},
     {"id": 3, "segments": [
       {"kind": "text", "text": "This is the story of Cho Hee-pal.", "style": "quote"},
-      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4"},
-      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4"}
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"},
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4", "tail": true},
+      {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s00_chapter_the_funeral_nobody_believed.mp4", "tail": true}
     ]}
   ],
   "sfx": [
     {"chunk": 0, "name": "typewriter", "offset": 0.2, "gain_db": -10},
     {"chunk": 1, "name": "heartbeat", "offset": 5.6, "gain_db": -11},
     {"chunk": 2, "name": "impact", "offset": 8.8, "gain_db": -12},
-    {"chunk": 3, "name": "impact", "offset": 5.0, "gain_db": -8}
+    {"chunk": 3, "name": "impact", "offset": 7.9, "gain_db": -8}
   ],
   "music_drops": [
     {"chunk": 2, "dur": 4.5}

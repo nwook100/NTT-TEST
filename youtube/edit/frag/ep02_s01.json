@@ -8,16 +8,16 @@
       {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg", "fx": "out"}
     ]},
     {"id": 5, "segments": [
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "crop": "left", "grade": "cold", "fx": "left"},
       {"kind": "text", "text": "Cho Hee-pal\nborn in 1957", "style": "label"}
     ]},
     {"id": 6, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_korean_media_background", "args": {"lines": ["Only an elementary-school education", "Reportedly worked as a laborer"], "kicker": "KOREAN MEDIA, CITING INVESTIGATORS", "dur": 6.0, "stagger": 3.0, "size": 96}},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg", "fx": "right"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "in"}
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg", "crop": "left", "fx": "right"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4"}
     ]},
     {"id": 7, "segments": [
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "out"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "crop": "bottom", "fx": "out"},
       {"kind": "motion", "fn": "typewriter", "name": "s01_tw_bmc_daegu_oct2004", "args": {"text": "BMC", "sub": "Daegu — October 2004", "dur": 4.0, "size": 130}},
       {"kind": "text", "text": "A deal that sounded\nalmost too simple.", "style": "quote"}
     ]},
@@ -28,19 +28,19 @@
     {"id": 9, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_health_devices", "args": {"lines": ["A massage machine,", "a pelvic-correction bed,", "even a karaoke machine."], "kicker": "YOU BUY A HEALTH DEVICE", "dur": 6.0, "stagger": 1.6, "size": 100}},
       {"kind": "text", "text": "One unit cost 4.4 million won,\nroughly four thousand dollars at the time.", "style": "label"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg", "fx": "left"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "right"}
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg", "crop": "bottom", "fx": "left"},
+      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "crop": "right", "fx": "right"}
     ]},
     {"id": 10, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_paid_every_day", "args": {"lines": ["And you get paid every day."], "red": ["every", "day."], "dur": 3.3, "size": 118}}
     ]},
     {"id": 11, "segments": [
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4", "start": 3.0},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_step1_pay_4400000", "args": {"lines": ["You pay ₩4,400,000", "= 1 machine"], "red": ["₩4,400,000"], "kicker": "STEP 1", "dur": 5.0, "stagger": 1.6, "size": 110}}
     ]},
     {"id": 12, "segments": [
       {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s01_countup_35000_won_a_day.mp4"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/typing_night_1.mp4"},
       {"kind": "text", "text": "That's around thirty dollars,\nevery day.", "style": "label"}
     ]},
     {"id": 13, "segments": [
@@ -49,12 +49,11 @@
     ]},
     {"id": 14, "segments": [
       {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_02_the_promise_35000_won_zoom.mp4"},
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "left"},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_35_vs_48_percent", "args": {"lines": ["Advertised: 35% a year (court)", "The math: ~48% annualized"], "red": ["~48%"], "dur": 5.5, "stagger": 2.2, "size": 100}},
       {"kind": "motion", "fn": "count_up", "name": "s01_count_bank_deposit_5pct", "args": {"to": 5, "prefix": "~", "suffix": "%", "label": "BANK DEPOSIT", "sublabel": "a normal Korean bank deposit at the time", "dur": 4.5, "count_time": 2.0, "size": 150}}
     ]},
     {"id": 15, "segments": [
-      {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"},
       {"kind": "text", "text": "yusa-susin\n= taking deposits without a license", "style": "quote"},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_yusa_susin_definition", "args": {"lines": ["Promising fixed returns,", "without being a bank,", "and without any license to do it."], "red": ["license"], "kicker": "YUSA-SUSIN · UNLICENSED DEPOSIT-TAKING", "dur": 6.0, "stagger": 1.5, "size": 96}}
     ]},
@@ -64,7 +63,7 @@
     ]}
   ],
   "sfx": [
-    {"chunk": 4, "name": "typewriter", "offset": 4.0, "gain_db": -10},
+    {"chunk": 4, "name": "typewriter", "offset": 9.1, "gain_db": -10},
     {"chunk": 14, "name": "whoosh", "offset": 0.0, "gain_db": -12},
     {"chunk": 16, "name": "stamp", "offset": 0.55, "gain_db": -8},
     {"chunk": 16, "name": "impact", "offset": 3.2, "gain_db": -6}

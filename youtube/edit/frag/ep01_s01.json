@@ -4,27 +4,27 @@
     {"id": 4, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_stanford_1.jpg", "fx": "in"},
-      {"kind": "text", "text": "Worked briefly as a software engineer\nat Microsoft and Apple", "style": "label"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "out"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "left"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/code_dark_2.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4"}
     ]},
     {"id": 5, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "right"}
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "crop": "top", "fx": "in"}
     ]},
     {"id": 6, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_coder_dealmaker",
        "args": {"lines": ["DO KWON — the coder", "DANIEL SHIN — the dealmaker"], "red": ["coder", "dealmaker"],
                 "kicker": "EARLY 2018 · TERRAFORM LABS", "dur": 5.5, "stagger": 2.6, "size": 104}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "fx": "in"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "crop": "right", "fx": "left"},
       {"kind": "text", "text": "Ticket Monster, or TMON", "style": "label"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "out"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"}
     ]},
     {"id": 7, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "left"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4"}
     ]},
     {"id": 8, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "right"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4"},
       {"kind": "motion", "fn": "count_up", "name": "s01_count_followers_1m",
        "args": {"to": 1000000, "prefix": "~", "kicker": "ON TWITTER · BY 2022",
                 "label": "AROUND A MILLION PEOPLE FOLLOWED HIM", "dur": 5.3, "count_time": 3.0}},
@@ -34,14 +34,14 @@
     ]},
     {"id": 9, "segments": [
       {"kind": "text", "text": "Terra's big idea\nwas a stablecoin.", "style": "label"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "out"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4", "start": 1.5},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_bitcoin_vs_stablecoin",
        "args": {"lines": ["Bitcoin = price goes up and down", "Stablecoin = always $1"], "red": ["$1"],
                 "dur": 6.0, "stagger": 1.4, "size": 104}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "left"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4", "start": 2.0}
     ]},
     {"id": 10, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "right"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_real_dollar_reserve",
        "args": {"lines": ["For every coin, they hold a real dollar,", "or something like it, in reserve."],
                 "red": ["dollar", "reserve"], "kicker": "MOST STABLECOINS: THE BORING WAY",

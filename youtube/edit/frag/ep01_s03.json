@@ -3,60 +3,36 @@
   "chunks": [
     {"id": 18, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s03_chapter_the_magic_trick.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_two_coins",
-       "args": {"lines": ["UST: meant to stay at $1", "LUNA: price could rise and fall"], "red": ["UST:", "LUNA:"],
-                "kicker": "TERRA HAD TWO COINS", "dur": 6.0, "stagger": 1.8, "size": 110}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_two_coins", "args": {"lines": ["UST: meant to stay at $1", "LUNA: price could rise and fall"], "red": ["UST:", "LUNA:"], "kicker": "TERRA HAD TWO COINS", "dur": 6.0, "stagger": 1.8, "size": 110}}
     ]},
     {"id": 19, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_swap_1_dollar_worth",
-       "args": {"lines": ["UST ↔ LUNA", "swap $1 worth"], "red": ["$1"],
-                "kicker": "THE SYSTEM PROMISED", "dur": 6.0, "stagger": 3.0, "size": 130}},
-      {"kind": "text", "text": "If UST dropped below a dollar,", "style": "label"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_buy_cheap_pocket_difference",
-       "args": {"lines": ["Buy it cheap,", "swap it for a dollar of LUNA,", "and pocket the difference."],
-                "red": ["difference."], "kicker": "TRADERS COULD", "dur": 6.0, "stagger": 1.9, "size": 104}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_swap_1_dollar_worth", "args": {"lines": ["UST ↔ LUNA", "swap $1 worth"], "red": ["$1"], "kicker": "THE SYSTEM PROMISED", "dur": 6.0, "stagger": 3.0, "size": 130}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_buy_cheap_pocket_difference", "args": {"lines": ["Buy it cheap,", "swap it for a dollar of LUNA,", "and pocket the difference."], "red": ["difference."], "kicker": "TRADERS COULD", "dur": 6.0, "stagger": 1.9, "size": 104}}
     ]},
     {"id": 20, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_forever",
-       "args": {"lines": ["Push UST back to a dollar.", "Forever."], "red": ["Forever."],
-                "kicker": "IN THEORY, THAT BUYING PRESSURE WOULD", "dur": 6.0, "stagger": 4.4, "size": 110}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_forever", "args": {"lines": ["Push UST back to a dollar.", "Forever."], "red": ["Forever."], "kicker": "IN THEORY, THAT BUYING PRESSURE WOULD", "dur": 6.0, "stagger": 4.4, "size": 110}}
     ]},
     {"id": 21, "segments": [
-      {"kind": "motion", "fn": "count_up", "name": "s03_count_ust_slips_097",
-       "args": {"frm": 1.0, "to": 0.97, "prefix": "$", "decimals": 2, "end_red": true,
-                "kicker": "SAY UST SLIPS TO", "label": "BUY 1 UST FOR $0.97",
-                "dur": 6.0, "count_time": 3.0}},
-      {"kind": "text", "text": "You hand it to the system,\nwhich destroys it", "style": "label"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_worked_example_3c",
-       "args": {"lines": ["Buy 1 UST for $0.97", "Swap for $1.00 of new LUNA", "Profit: 3¢"], "red": ["3¢"],
-                "kicker": "WORKED EXAMPLE", "dur": 6.0, "stagger": 2.2, "size": 100}}
+      {"kind": "motion", "fn": "count_up", "name": "s03_count_ust_slips_097", "args": {"frm": 1.0, "to": 0.97, "prefix": "$", "decimals": 2, "end_red": true, "kicker": "SAY UST SLIPS TO", "label": "BUY 1 UST FOR $0.97", "dur": 6.0, "count_time": 3.0}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_worked_example_3c", "args": {"lines": ["Buy 1 UST for $0.97", "Swap for $1.00 of new LUNA", "Profit: 3¢"], "red": ["3¢"], "kicker": "WORKED EXAMPLE", "dur": 6.0, "stagger": 2.2, "size": 100}}
     ]},
     {"id": 22, "segments": [
-      {"kind": "motion", "fn": "stamp", "name": "s03_stamp_ust_burned",
-       "args": {"word": "BURNED", "sub": "THAT UST IS BURNED", "dur": 4.0}},
-      {"kind": "motion", "fn": "count_up", "name": "s03_count_ust_back_to_1",
-       "args": {"frm": 0.97, "to": 1.0, "prefix": "$", "decimals": 2,
-                "kicker": "UST", "label": "UNTIL THE PRICE CLIMBS BACK TO A DOLLAR",
-                "dur": 4.0, "count_time": 2.5}},
-      {"kind": "text", "text": "And if UST goes above a dollar,", "style": "label"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_burn_luna_create_ust",
-       "args": {"lines": ["Burn LUNA.", "Create UST.", "Sell it."], "red": ["Burn"],
-                "kicker": "IT WORKS THE OTHER WAY", "dur": 5.0, "stagger": 1.6, "size": 120}}
+      {"kind": "motion", "fn": "stamp", "name": "s03_stamp_ust_burned", "args": {"word": "BURNED", "sub": "THAT UST IS BURNED", "dur": 4.0}},
+      {"kind": "motion", "fn": "count_up", "name": "s03_count_ust_back_to_1", "args": {"frm": 0.97, "to": 1.0, "prefix": "$", "decimals": 2, "kicker": "UST", "label": "UNTIL THE PRICE CLIMBS BACK TO A DOLLAR", "dur": 4.0, "count_time": 2.5}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_burn_luna_create_ust", "args": {"lines": ["Burn LUNA.", "Create UST.", "Sell it."], "red": ["Burn"], "kicker": "IT WORKS THE OTHER WAY", "dur": 5.0, "stagger": 1.6, "size": 120}}
     ]},
     {"id": 23, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "right"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_code_and_confidence",
-       "args": {"lines": ["Just code,", "and confidence."], "red": ["confidence."],
-                "kicker": "NO VAULT OF DOLLARS BEHIND IT", "dur": 4.0, "stagger": 0.8, "size": 130}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_code_and_confidence", "args": {"lines": ["Just code,", "and confidence."], "red": ["confidence."], "kicker": "NO VAULT OF DOLLARS BEHIND IT", "dur": 4.0, "stagger": 0.8, "size": 130}},
       {"kind": "text", "text": "One assumption:\nthat LUNA would always\nbe worth something.", "style": "quote"}
     ]},
     {"id": 24, "segments": [
       {"kind": "text", "text": "Critics called it\nwhat it looked like:", "style": "label"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_spiral_to_zero",
-       "args": {"lines": ["A design that could spiral to zero", "if confidence ever broke."], "red": ["zero"],
-                "dur": 5.0, "stagger": 2.2, "size": 100}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "in"},
-      {"kind": "text", "text": "When one of them challenged him online,\nhe replied:", "style": "label"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s03_kp_spiral_to_zero", "args": {"lines": ["A design that could spiral to zero", "if confidence ever broke."], "red": ["zero"], "dur": 5.0, "stagger": 2.2, "size": 100}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"},
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"}
     ]}
   ],

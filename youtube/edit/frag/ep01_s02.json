@@ -3,12 +3,12 @@
   "chunks": [
     {"id": 11, "segments": [
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s02_chapter_coffee_paid_in_crypto.mp4"},
-      {"kind": "text", "text": "In the beginning,\nthe pitch wasn't about getting rich.", "style": "quote"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/coffee_shop_2.mp4", "start": 3.5},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_buying_coffee",
        "args": {"lines": ["It was about buying coffee."], "red": ["coffee."], "dur": 3.0, "size": 110}}
     ]},
     {"id": 12, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "fx": "out"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"},
       {"kind": "motion", "fn": "typewriter", "name": "s02_tw_chai",
        "args": {"text": "CHAI", "sub": "2019 · A MOBILE PAYMENTS APP IN KOREA", "dur": 3.5, "size": 140}},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_lower_fees",
@@ -16,13 +16,13 @@
                 "red": ["discounts.", "lower"], "dur": 4.5, "stagger": 0.9, "size": 100}}
     ]},
     {"id": 13, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "left"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4", "start": 2.0},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_terra_blockchain",
        "args": {"lines": ["Terra told the world", "those payments were running", "on the Terra blockchain."], "red": ["told"],
                 "dur": 4.0, "stagger": 1.0, "size": 100}}
     ]},
     {"id": 14, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "right"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "right"},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_krt_diagram",
        "args": {"lines": ["Customer pays in won", "↓", "KRT (Terra's won-pegged coin)", "↓", "Merchant"],
                 "red": ["KRT"], "dur": 4.0, "stagger": 0.65, "size": 92}}
@@ -31,7 +31,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_chai_terraform",
        "args": {"lines": ["Chai partnered with Terraform", "to bring that won coin into its app."],
                 "red": ["chai", "terraform"], "kicker": "2019", "dur": 4.5, "stagger": 1.5, "size": 100}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/coffee_shop_1.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_tiny_proof",
        "args": {"lines": ["Every coffee, every online order,", "was supposed to be a tiny proof", "that Terra worked as money."],
                 "red": ["supposed"], "dur": 5.5, "stagger": 1.3, "size": 100}}
@@ -41,15 +41,15 @@
        "args": {"lines": ["500,000 users", "2.7 million transactions"], "red": ["500,000", "2.7"],
                 "kicker": "TERRA SAID", "footer": "TERRA'S OWN ANNOUNCEMENTS",
                 "dur": 5.0, "stagger": 0.8, "size": 120}},
-      {"kind": "text", "text": "For investors,\nthis was the killer argument.", "style": "quote"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "left"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4", "start": 0.8},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4", "start": 3.0},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"},
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_real_people",
        "args": {"lines": ["Real people,", "in a real country,", "paying for real things."], "red": ["real"],
                 "kicker": "TERRA COULD POINT TO", "dur": 4.0, "stagger": 0.8, "size": 110}}
     ]},
     {"id": 17, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4", "grade": "bw"},
       {"kind": "text", "text": "In a courtroom.", "style": "quote"}
     ]}
   ],

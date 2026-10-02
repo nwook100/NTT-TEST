@@ -27,9 +27,9 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
-     "fx": "in"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+     "start": 1.5
     }
    ]
   },
@@ -39,12 +39,14 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-     "fx": "left"
+     "fx": "left",
+     "crop": "left"
     },
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
-     "fx": "right"
+     "fx": "right",
+     "crop": "detail"
     },
     {
      "kind": "motion",
@@ -104,9 +106,8 @@
    "id": 30,
    "segments": [
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-     "fx": "out"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
     },
     {
      "kind": "motion",
@@ -145,7 +146,9 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
-     "fx": "left"
+     "fx": "left",
+     "crop": "bottom",
+     "grade": "bw"
     }
    ]
   },
@@ -180,7 +183,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
-     "fx": "right"
+     "fx": "right",
+     "crop": "detail"
     },
     {
      "kind": "motion",
@@ -227,14 +231,14 @@
    "id": 33,
    "segments": [
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_4.jpg",
-     "fx": "in"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
     },
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
-     "fx": "left"
+     "fx": "left",
+     "crop": "left"
     },
     {
      "kind": "text",
@@ -249,7 +253,8 @@
     {
      "kind": "photo",
      "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
-     "fx": "right"
+     "fx": "right",
+     "crop": "detail"
     },
     {
      "kind": "motion",
@@ -269,9 +274,8 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-     "fx": "out"
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
     },
     {
      "kind": "text",

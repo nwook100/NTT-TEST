@@ -6,68 +6,38 @@
       {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"}
     ]},
     {"id": 26, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_bank_vs_anchor",
-       "args": {"lines": ["Your bank was offering almost nothing.", "Anchor offered nearly 20 percent."],
-                "red": ["nothing.", "20", "percent."], "kicker": "THE BAIT", "dur": 5.0, "stagger": 2.2, "size": 96}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "in",
-       "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4"}
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_bank_vs_anchor", "args": {"lines": ["Your bank was offering almost nothing.", "Anchor offered nearly 20 percent."], "red": ["nothing.", "20", "percent."], "kicker": "THE BAIT", "dur": 5.0, "stagger": 2.2, "size": 96}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "in", "overlay": "assets/ep01_terra_luna/motion/s04_lowerthird_anchor.mp4", "crop": "right", "grade": "cold"}
     ]},
     {"id": 27, "segments": [
-      {"kind": "text", "text": "Money poured in.", "style": "quote"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_ust_in_anchor",
-       "args": {"lines": ["The vast majority of all UST in existence", "was sitting in Anchor,", "earning that yield."],
-                "red": ["anchor,"], "kicker": "BY EARLY 2022", "dur": 4.5, "stagger": 0.8, "size": 92}},
-      {"kind": "motion", "fn": "count_up", "name": "s04_count_luna_100",
-       "args": {"to": 100, "prefix": "$", "suffix": "+", "kicker": "LUNA'S PRICE",
-                "label": "SOARED ABOVE 100 DOLLARS", "dur": 4.0, "count_time": 2.0}},
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_tens_of_billions",
-       "args": {"lines": ["Terra's total value reached", "tens of billions of dollars."],
-                "red": ["billions"], "dur": 4.0, "stagger": 0.7, "size": 104}}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_ust_in_anchor", "args": {"lines": ["The vast majority of all UST in existence", "was sitting in Anchor,", "earning that yield."], "red": ["anchor,"], "kicker": "BY EARLY 2022", "dur": 4.5, "stagger": 0.8, "size": 92}},
+      {"kind": "motion", "fn": "count_up", "name": "s04_count_luna_100", "args": {"to": 100, "prefix": "$", "suffix": "+", "kicker": "LUNA'S PRICE", "label": "SOARED ABOVE 100 DOLLARS", "dur": 4.0, "count_time": 2.0}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_tens_of_billions", "args": {"lines": ["Terra's total value reached", "tens of billions of dollars."], "red": ["billions"], "dur": 4.0, "stagger": 0.7, "size": 104}}
     ]},
     {"id": 28, "segments": [
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s04_nationals_park_3.jpg", "fx": "left"},
-      {"kind": "motion", "fn": "count_up", "name": "s04_count_nationals_38m",
-       "args": {"to": 38, "prefix": "~$", "suffix": "M", "kicker": "TERRAFORM · WASHINGTON NATIONALS",
-                "label": "REPORTED AT ABOUT 38 MILLION DOLLARS",
-                "sublabel": "five-year sponsorship deal with the Washington Nationals baseball team",
-                "dur": 4.5, "count_time": 2.2}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "right"},
+      {"kind": "motion", "fn": "count_up", "name": "s04_count_nationals_38m", "args": {"to": 38, "prefix": "~$", "suffix": "M", "kicker": "TERRAFORM · WASHINGTON NATIONALS", "label": "REPORTED AT ABOUT 38 MILLION DOLLARS", "sublabel": "five-year sponsorship deal with the Washington Nationals baseball team", "dur": 4.5, "count_time": 2.2}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"},
       {"kind": "text", "text": "His fans called themselves\n\"Lunatics.\"", "style": "quote"}
     ]},
     {"id": 29, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_where_from",
-       "args": {"lines": ["But where was that 20 percent", "actually coming from?"],
-                "red": ["from?"], "dur": 4.0, "stagger": 0.9, "size": 110}},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "out"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_terra_itself",
-       "args": {"lines": ["Largely from Terra itself,", "subsidizing the payments", "to keep people in."],
-                "red": ["terra", "itself,"], "kicker": "FOR A LONG TIME, THE HONEST ANSWER",
-                "dur": 5.0, "stagger": 0.9, "size": 104}}
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_where_from", "args": {"lines": ["But where was that 20 percent", "actually coming from?"], "red": ["from?"], "dur": 4.0, "stagger": 0.9, "size": 110}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/code_dark_2.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_terra_itself", "args": {"lines": ["Largely from Terra itself,", "subsidizing the payments", "to keep people in."], "red": ["terra", "itself,"], "kicker": "FOR A LONG TIME, THE HONEST ANSWER", "dur": 5.0, "stagger": 0.9, "size": 104}}
     ]},
     {"id": 30, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg", "fx": "left"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_reserve_gap",
-       "args": {"lines": ["What depositors were promised", "– what borrowers paid", "= the gap"],
-                "red": ["gap"], "kicker": "ANCHOR KEPT A RESERVE TO COVER", "dur": 4.5, "stagger": 0.9, "size": 100}},
-      {"kind": "motion", "fn": "count_up", "name": "s04_count_reserve_drain",
-       "args": {"to": 1000000, "prefix": "$", "suffix": "+", "kicker": "BY EARLY 2022 · ANCHOR YIELD RESERVE",
-                "label": "DRAINING BY MORE THAN A MILLION DOLLARS A DAY",
-                "end_red": true, "dur": 5.0, "count_time": 3.0}}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_reserve_gap", "args": {"lines": ["What depositors were promised", "– what borrowers paid", "= the gap"], "red": ["gap"], "kicker": "ANCHOR KEPT A RESERVE TO COVER", "dur": 4.5, "stagger": 0.9, "size": 100}},
+      {"kind": "motion", "fn": "count_up", "name": "s04_count_reserve_drain", "args": {"to": 1000000, "prefix": "$", "suffix": "+", "kicker": "BY EARLY 2022 · ANCHOR YIELD RESERVE", "label": "DRAINING BY MORE THAN A MILLION DOLLARS A DAY", "end_red": true, "dur": 5.0, "count_time": 3.0}}
     ]},
     {"id": 31, "segments": [
-      {"kind": "motion", "fn": "typewriter", "name": "s04_tw_feb2022",
-       "args": {"text": "FEBRUARY 2022", "sub": "Luna Foundation Guard", "dur": 5.0}},
-      {"kind": "motion", "fn": "count_up", "name": "s04_count_450m_topup",
-       "args": {"to": 450, "prefix": "+", "suffix": "M UST", "kicker": "ANCHOR YIELD RESERVE",
-                "label": "A TOP-UP OF 450 MILLION DOLLARS' WORTH OF UST",
-                "sublabel": "approved by the Luna Foundation Guard",
-                "dur": 5.0, "count_time": 2.6}},
-      {"kind": "text", "text": "Just to keep\nthe 20 percent going.", "style": "quote"}
+      {"kind": "motion", "fn": "typewriter", "name": "s04_tw_feb2022", "args": {"text": "FEBRUARY 2022", "sub": "Luna Foundation Guard", "dur": 5.0}},
+      {"kind": "motion", "fn": "count_up", "name": "s04_count_450m_topup", "args": {"to": 450, "prefix": "+", "suffix": "M UST", "kicker": "ANCHOR YIELD RESERVE", "label": "A TOP-UP OF 450 MILLION DOLLARS' WORTH OF UST", "sublabel": "approved by the Luna Foundation Guard", "dur": 5.0, "count_time": 2.6}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"}
     ]},
     {"id": 32, "segments": [
-      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_rate_down",
-       "args": {"lines": ["Anchor's community voted", "to let the rate slowly come down."],
-                "red": ["down."], "kicker": "SHORTLY AFTER", "dur": 4.5, "stagger": 0.9, "size": 104}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_rate_down", "args": {"lines": ["Anchor's community voted", "to let the rate slowly come down."], "red": ["down."], "kicker": "SHORTLY AFTER", "dur": 4.5, "stagger": 0.9, "size": 104}},
       {"kind": "text", "text": "But by then,\nthe promise had already done its work.", "style": "quote"}
     ]}
   ],
