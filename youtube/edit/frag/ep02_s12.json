@@ -16,7 +16,7 @@
      "args": {"lines": ["The scheme didn't run on machines.", "It ran on trust."], "red": ["trust."],
               "dur": 4.0, "stagger": 2.2, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
     {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"},
-    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "right"}
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s04_police_korea_2.jpg", "fx": "right", "crop": "left"}
    ]
   },
   {
@@ -44,7 +44,8 @@
    "id": 108,
    "segments": [
     {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
-    {"kind": "text", "text": "Have you ever been offered a deal\nthat paid every single day?", "style": "quote"}
+    {"kind": "text", "text": "Have you ever been offered a deal\nthat paid every single day?", "style": "quote"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out"}
    ]
   }
  ],

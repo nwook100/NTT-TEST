@@ -335,8 +335,8 @@
   "quality_ok": true,
   "landscape_ok": true,
   "mood": "neutral",
-  "verdict": "keep",
-  "reason": "A clear South Korean police car. It is the 2004 livery, which is a little dated but acceptable."
+  "verdict": "reject",
+  "reason": "A clear South Korean police car. It is the 2004 livery, which is a little dated but acceptable. | Reviewer: Korean police emblem on the door; plan bans agency emblems."
  },
  {
   "path": "youtube/assets/ep02_cho_hee_pal/s04_police_korea_3.jpg",
