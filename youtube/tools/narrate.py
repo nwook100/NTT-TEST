@@ -10,7 +10,7 @@ import numpy as np
 import soundfile as sf
 
 VOICE = {
-    "speaker": "Ryan",
+    "speaker": "Aiden",   # chosen 2026-10-02: lower Whisper WER than Ryan in 2 rounds (7.6%/3.1% vs 9.9%/4.4%), correct years, ~147 wpm
     "instruct": ("Calm, low, serious true-crime documentary narrator. Measured pace, clear American English, "
                  "slight tension, no excitement."),
     "language": "English",
