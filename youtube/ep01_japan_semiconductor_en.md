@@ -1,7 +1,7 @@
 # EP.01 How Japan Lost the Chip War
 
 - Channel: Nanometer Wars (working name)
-- Target length: ~11–12 min (~1,700 words of narration at ~150 wpm)
+- Target length: ~9 min (~1,320 words of narration at ~150 wpm)
 - Tone: storytelling, calm but tense
 - Notation: `[SCREEN]` = editing cue, `(beat)` = 1-second pause in narration
 - Korean reference version: `ep01_japan_semiconductor.md` (shorter first draft; this English version adds scenes)
@@ -20,7 +20,7 @@
 
 ---
 
-## 0. Cold open (0:00–0:45)
+## 0. Cold open (0:00–0:35)
 
 [SCREEN] Tokyo at night, late-1980s neon. A number climbs on screen: "~50% of the world's chips"
 
@@ -43,7 +43,7 @@ This is one of the most dramatic collapses in the history of technology.
 
 ---
 
-## 1. How Japan got to the top (0:45–3:30)
+## 1. How Japan got to the top (0:35–2:40)
 
 [SCREEN] 1970s factory footage (stock) + caption "VLSI Project, 1976"
 
@@ -88,7 +88,7 @@ By the mid-1980s, Japan had passed the United States in chips.
 
 ---
 
-## 2. Intel walks away (3:30–4:45)
+## 2. Intel walks away (2:40–3:35)
 
 [SCREEN] Intel logo, 1970s photos (stock style) + caption "Intel 1103, 1970"
 
@@ -116,7 +116,7 @@ Japan was on top of the world.
 
 ---
 
-## 3. America strikes back (4:45–6:45)
+## 3. America strikes back (3:35–5:05)
 
 [SCREEN] US Capitol, American flag. Music shifts to tension
 
@@ -157,7 +157,7 @@ The company that took Japan's crown wasn't American.
 
 ---
 
-## 4. The real winner (6:45–9:00)
+## 4. The real winner (5:05–6:45)
 
 [SCREEN] Map zooming in on South Korea. Caption "February 1983 — Tokyo"
 
@@ -205,7 +205,7 @@ It held that position for more than thirty years, until 2025, when it lost the t
 
 ---
 
-## 5. The giants fall (9:00–10:30)
+## 5. The giants fall (6:45–7:55)
 
 [SCREEN] Nikkei crash chart + caption "The Lost Decade"
 
@@ -233,7 +233,7 @@ Japan's DRAM industry, once number one in the world, was gone.
 
 ---
 
-## 6. Did Japan really lose? (10:30–11:30)
+## 6. Did Japan really lose? (7:55–8:40)
 
 [SCREEN] Map of Japan; equipment and materials icons light up one by one
 
@@ -257,7 +257,7 @@ Or is that even possible?
 
 ---
 
-## 7. Outro (11:30–12:00)
+## 7. Outro (8:40–9:00)
 
 [SCREEN] Next-episode teaser: TSMC logo + "The Silicon Shield"
 
