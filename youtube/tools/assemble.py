@@ -92,8 +92,13 @@ def render_segment(seg, dur, path, W, H, fast, workdir):
         z = {"in": f"1+{Z}*on/{n}", "out": f"{1+Z}-{Z}*on/{n}"}.get(fx, f"{1+Z*0.8}")
         x = {"left": f"(iw-iw/zoom)*(1-on/{n})", "right": f"(iw-iw/zoom)*on/{n}"}.get(fx, "iw/2-(iw/zoom/2)")
         cy = "0" if seg.get("align") == "top" else "(ih-oh)/2"
-        vf = (f"scale={Wi}:{Hi}:force_original_aspect_ratio=increase,crop={Wi}:{Hi}:(iw-ow)/2:{cy},setsar=1,"
-              f"zoompan=z='{z}':x='{x}':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS},{GRADE},{FILM},format=yuv420p")
+        # optional reframing of the source so a re-used photo reads as a different shot
+        pre = {"left": "crop=iw*0.62:ih:0:0,", "right": "crop=iw*0.62:ih:iw*0.38:0,", "top": "crop=iw:ih*0.62:0:0,",
+               "bottom": "crop=iw:ih*0.62:0:ih*0.38,", "detail": "crop=iw*0.5:ih*0.5:iw*0.25:ih*0.25,"}.get(seg.get("crop"), "")
+        grade = {"bw": ",hue=s=0,eq=contrast=1.12", "red": ",colorbalance=rs=0.18:gs=-0.05:bs=-0.08:rm=0.12,eq=saturation=0.7",
+                 "cold": ",colorbalance=bs=0.15:rs=-0.06:bm=0.1,eq=saturation=0.75:brightness=-0.03"}.get(seg.get("grade"), "")
+        vf = (f"{pre}scale={Wi}:{Hi}:force_original_aspect_ratio=increase,crop={Wi}:{Hi}:(iw-ow)/2:{cy},setsar=1,"
+              f"zoompan=z='{z}':x='{x}':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS},{GRADE}{grade},{FILM},format=yuv420p")
         if seg.get("overlay"):
             ov = os.path.join(ROOT, seg["overlay"])
             fc = (f"[0]{vf.replace(',format=yuv420p', '')},format=gbrp[bg];"
@@ -202,8 +207,17 @@ def main():
         segs = edl["chunks"].get(str(c["id"])) or ([dict(last, fx="out" if last.get("fx") == "in" else "in")]
                                                   if last and last["kind"] == "photo" else
                                                   [{"kind": "text", "text": " ", "style": "label"}])
+        # "tail": true clips start only after this chunk's narration has ended, and may spill into the next chunk
+        tails = [s for s in segs if s.get("tail") and s["kind"] == "clip"]
+        body = [s for s in segs if s not in tails] or segs[:1]
+        plan = []
+        if tails:
+            speech = max(1.0, (c["end"] - c["win_start"]) - debt)
+            plan = allocate(body, speech, durs) + [(s, durs[s["asset"]]) for s in tails]
+        else:
+            plan = allocate(segs, eff, durs)
         used = 0.0
-        for s, d in allocate(segs, eff, durs):
+        for s, d in plan:
             p = os.path.join(work, f"seg_{len(seg_files):05d}.mp4")
             real = render_segment(s, d, p, W, H, a.preview, work)
             if (s["kind"] == "clip" and not s.get("captions")) or (s["kind"] == "text" and s["text"].strip()):

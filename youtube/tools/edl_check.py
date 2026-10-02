@@ -66,9 +66,14 @@ def main():
                     ov = s.get("overlay")
                     if ov and not os.path.exists(os.path.join(ROOT, ov)):
                         errs.append(f"ERROR {where}: overlay not found {ov}")
+                    if s.get("crop") not in (None, "left", "right", "top", "bottom", "detail"):
+                        errs.append(f"ERROR {where}: crop must be left/right/top/bottom/detail")
+                    if s.get("grade") not in (None, "bw", "red", "cold"):
+                        errs.append(f"ERROR {where}: grade must be bw/red/cold")
+                    look = (a, s.get("crop"), s.get("grade"))
                     if a == prev_photo:
                         warns.append(f"WARN {where}: same photo back-to-back ({os.path.basename(a)})")
-                    photo_uses[a] = photo_uses.get(a, 0) + 1
+                    photo_uses[look] = photo_uses.get(look, 0) + 1
                     prev_photo = a
             elif k == "text":
                 flex += 1
@@ -94,6 +99,11 @@ def main():
                 clip_sum += d
             else:
                 errs.append(f"ERROR {where}: unknown kind {k!r}")
+        tail = [s for s in segs if s.get("tail") and s.get("kind") == "clip" and s.get("asset")
+                and os.path.exists(os.path.join(ROOT, s["asset"]))]
+        if tail:                                      # tail clips play after the narration and spill over
+            debt = sum(dur(s["asset"]) for s in tail)
+            continue
         eff = window - debt
         if flex:
             share = (eff - clip_sum) / flex
@@ -107,9 +117,9 @@ def main():
             if over > MAX_SPILL:
                 warns.append(f"WARN chunk {cid}: clips run {over:.1f}s past the window (spill max {MAX_SPILL}s); they get trimmed")
             debt = max(0.0, over)
-    for a, n in photo_uses.items():
+    for (a, cr, gr), n in photo_uses.items():
         if n > 3:
-            warns.append(f"WARN photo used {n}x in this scope: {os.path.basename(a)} (max 3)")
+            warns.append(f"WARN photo used {n}x with the same crop/grade: {os.path.basename(a)} crop={cr} grade={gr} (max 3)")
     for e in edl.get("sfx", []):
         if e.get("name") not in SFX:
             errs.append(f"ERROR sfx {e}: unknown name")

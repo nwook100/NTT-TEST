@@ -1268,7 +1268,7 @@
       "billion"
      ],
      "kicker": "KWON SAID THE GOAL WAS",
-     "dur": 5.3,
+     "dur": 4.7,
      "stagger": 0.8,
      "size": 116
     }
@@ -1376,12 +1376,17 @@
   "44": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
     "fx": "in"
    },
    {
     "kind": "clip",
     "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "fx": "right"
    },
    {
     "kind": "photo",
@@ -1431,7 +1436,7 @@
       "$19"
      ],
      "kicker": "THE RESERVE WAS A FRACTION",
-     "dur": 5.0,
+     "dur": 4.5,
      "stagger": 1.6,
      "size": 100
     }
@@ -1455,7 +1460,7 @@
       "fall"
      ],
      "kicker": "AND IT WAS HELD IN BITCOIN",
-     "dur": 4.5,
+     "dur": 4.0,
      "stagger": 0.8,
      "size": 108
     }
@@ -1464,7 +1469,7 @@
   "47": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg",
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_2.jpg",
     "fx": "right"
    },
    {
@@ -1502,7 +1507,7 @@
      "red": [
       "fall,"
      ],
-     "dur": 5.0,
+     "dur": 4.0,
      "stagger": 1.0,
      "size": 104
     }
@@ -1553,35 +1558,33 @@
    },
    {
     "kind": "motion",
-    "fn": "count_up",
-    "name": "s07_count_anchor_14b",
+    "fn": "key_phrase",
+    "name": "s07_kp_terraform_pulls_ust",
     "args": {
-     "to": 14,
-     "prefix": "$",
-     "suffix": "B",
-     "kicker": "ANCHOR IS HOLDING ABOUT",
-     "label": "14 BILLION DOLLARS' WORTH OF UST",
-     "dur": 4.0,
-     "count_time": 2.0
+     "lines": [
+      "Terraform pulls a large amount of UST",
+      "out of a key trading pool"
+     ],
+     "dur": 3.5,
+     "stagger": 1.4,
+     "size": 100
     }
    },
    {
     "kind": "motion",
     "fn": "key_phrase",
-    "name": "s07_kp_curve_pool",
+    "name": "s07_kp_curve_planned_move",
     "args": {
      "lines": [
-      "Terraform pulls a large amount of UST",
-      "out of a key trading pool",
       "on a platform called Curve,",
       "as part of a planned move to a new pool."
      ],
      "red": [
       "curve,"
      ],
-     "dur": 6.0,
-     "stagger": 1.0,
-     "size": 96
+     "dur": 5.5,
+     "stagger": 1.8,
+     "size": 100
     }
    }
   ],
@@ -1599,8 +1602,8 @@
      "red": [
       "millions"
      ],
-     "dur": 5.0,
-     "stagger": 0.8,
+     "dur": 5.5,
+     "stagger": 1.5,
      "size": 104
     }
    },
@@ -1638,7 +1641,7 @@
       "crack"
      ],
      "dur": 5.5,
-     "stagger": 2.0,
+     "stagger": 2.5,
      "size": 96
     }
    }
@@ -1791,7 +1794,7 @@
      "red": [
       "luna."
      ],
-     "dur": 4.0,
+     "dur": 3.5,
      "stagger": 0.6,
      "size": 116
     }
@@ -1810,8 +1813,8 @@
       "less.",
       "selling."
      ],
-     "dur": 5.5,
-     "stagger": 1.6,
+     "dur": 5.0,
+     "stagger": 1.5,
      "size": 96
     }
    },
@@ -1827,9 +1830,9 @@
     "asset": "assets/ep01_terra_luna/motion/s07_typewriter_tue_wed_may10_11.mp4"
    },
    {
-    "kind": "text",
-    "text": "Exchanges choke\non the flood of transactions.",
-    "style": "quote"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
+    "fx": "left"
    },
    {
     "kind": "motion",
@@ -1883,7 +1886,7 @@
       "trillions."
      ],
      "dur": 6.0,
-     "stagger": 1.8,
+     "stagger": 2.0,
      "size": 104
     }
    }
@@ -1906,15 +1909,10 @@
       "halted.",
       "again."
      ],
-     "dur": 4.0,
-     "stagger": 1.6,
+     "dur": 4.5,
+     "stagger": 1.4,
      "size": 100
     }
-   },
-   {
-    "kind": "text",
-    "text": "Major exchanges pull\nLUNA and UST from trading.",
-    "style": "quote"
    },
    {
     "kind": "motion",
@@ -1928,9 +1926,10 @@
      "red": [
       "fraction"
      ],
-     "dur": 3.5,
+     "dur": 5.0,
      "stagger": 0.6,
-     "size": 116
+     "size": 116,
+     "kicker": "MAJOR EXCHANGES PULL LUNA AND UST FROM TRADING."
     }
    }
   ],
@@ -1951,6 +1950,11 @@
     "asset": "assets/ep01_terra_luna/motion/s07_countdown_80394_to_313_BTC.mp4"
    },
    {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "fx": "in"
+   },
+   {
     "kind": "motion",
     "fn": "count_up",
     "name": "s07_count_audit_2_8b",
@@ -1961,14 +1965,9 @@
      "suffix": "B",
      "kicker": "AN AUDIT THE FOUNDATION RELEASED LATER",
      "label": "TOTAL SPENT DEFENDING THE PEG: ABOUT 2.8 BILLION DOLLARS",
-     "dur": 5.0,
-     "count_time": 2.3
+     "dur": 6.0,
+     "count_time": 2.8
     }
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
-    "fx": "left"
    }
   ],
   "61": [
@@ -1994,7 +1993,7 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
     "fx": "in"
    },
    {
@@ -2037,14 +2036,14 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg",
+    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
     "fx": "left"
    }
   ],
   "64": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
     "fx": "right"
    },
    {
@@ -2066,7 +2065,7 @@
   "65": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
     "fx": "in"
    },
    {
@@ -2088,7 +2087,7 @@
    },
    {
     "kind": "text",
-    "text": "Every number in this story was\nsomebody's rent, somebody's savings,\nsomebody's plan.",
+    "text": "But every number in this story was\nsomebody's rent, somebody's savings,\nsomebody's plan.",
     "style": "quote"
    }
   ],
@@ -2098,27 +2097,25 @@
     "asset": "assets/ep01_terra_luna/motion/s09_chapter_the_dominoes.mp4"
    },
    {
-    "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s06_kp_remember_three_arrows",
-    "args": {
-     "lines": [
-      "Three Arrows Capital"
-     ],
-     "red": [
-      "three",
-      "arrows",
-      "capital"
-     ],
-     "kicker": "REMEMBER THAT SECOND NAME.",
-     "dur": 3.5,
-     "size": 120
-    }
-   },
-   {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s11_singapore_1.jpg",
     "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_deal_card",
+    "args": {
+     "lines": [
+      "Led by:",
+      "Jump Crypto,",
+      "Three Arrows Capital"
+     ],
+     "kicker": "FEB 2022 — $1B LUNA SALE",
+     "dur": 6.0,
+     "stagger": 2.0,
+     "size": 110
+    }
    },
    {
     "kind": "motion",
@@ -2133,8 +2130,8 @@
       "zero,"
      ],
      "kicker": "IT HAD MADE A LARGE BET ON LUNA.",
-     "dur": 4.5,
-     "stagger": 1.2,
+     "dur": 3.0,
+     "stagger": 1.5,
      "size": 116
     }
    }
@@ -2147,7 +2144,7 @@
     "args": {
      "text": "BY THE START OF JULY",
      "sub": "A COURT IN THE BRITISH VIRGIN ISLANDS",
-     "dur": 4.5
+     "dur": 3.5
     }
    },
    {
@@ -2157,7 +2154,7 @@
     "args": {
      "word": "LIQUIDATED",
      "sub": "THREE ARROWS CAPITAL",
-     "dur": 3.29
+     "dur": 3.0
     }
    }
   ],
@@ -2178,8 +2175,8 @@
       "Celsius"
      ],
      "kicker": "THE DOMINOES",
-     "dur": 5.0,
-     "stagger": 0.9,
+     "dur": 4.5,
+     "stagger": 0.8,
      "size": 104
     }
    },
@@ -2194,7 +2191,7 @@
      "kicker": "VOYAGER DIGITAL SAID",
      "label": "THREE ARROWS HAD DEFAULTED ON A LOAN",
      "sublabel": "OF ABOUT 650 MILLION DOLLARS",
-     "dur": 4.5,
+     "dur": 4.3,
      "count_time": 2.0
     }
    },
@@ -2205,7 +2202,7 @@
     "args": {
      "word": "BANKRUPTCY",
      "sub": "VOYAGER DIGITAL — JULY 5",
-     "dur": 3.7
+     "dur": 3.0
     }
    }
   ],
@@ -2238,7 +2235,7 @@
     "args": {
      "word": "BANKRUPTCY",
      "sub": "CELSIUS NETWORK — JULY 13",
-     "dur": 3.5
+     "dur": 3.0
     }
    }
   ],
@@ -2355,11 +2352,6 @@
      "stagger": 1.2,
      "size": 104
     }
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
-    "fx": "out"
    }
   ],
   "75": [
@@ -2374,7 +2366,7 @@
     "args": {
      "text": "MAY 25",
      "sub": "Terra's community voted for a new blockchain.",
-     "dur": 3.5
+     "dur": 4.5
     }
    },
    {
@@ -2384,7 +2376,7 @@
     "args": {
      "text": "MAY 28",
      "sub": "It went live.",
-     "dur": 3.5
+     "dur": 3.0
     }
    }
   ],
@@ -2408,9 +2400,8 @@
       "Classic",
       "USTC."
      ],
-     "kicker": "TERRA 2.0",
      "dur": 6.0,
-     "stagger": 1.2,
+     "stagger": 1.5,
      "size": 100
     }
    }
@@ -2429,7 +2420,7 @@
      "red": [
       "airdrops"
      ],
-     "dur": 6.0,
+     "dur": 5.0,
      "stagger": 1.2,
      "size": 100
     }
@@ -2445,7 +2436,7 @@
     "name": "s10_stamp_no_new_ust",
     "args": {
      "word": "NO NEW UST",
-     "dur": 4.0
+     "dur": 3.3
     }
    },
    {
@@ -2463,9 +2454,8 @@
      "to": 17,
      "prefix": "$",
      "kicker": "THE NEW LUNA BRIEFLY TRADED ABOVE",
-     "label": "17 DOLLARS",
-     "dur": 4.0,
-     "count_time": 1.8
+     "dur": 3.3,
+     "count_time": 1.6
     }
    },
    {
@@ -2480,7 +2470,7 @@
      "red": [
       "fell"
      ],
-     "dur": 4.0,
+     "dur": 3.5,
      "stagger": 0.9,
      "size": 104
     }
@@ -2489,11 +2479,6 @@
     "kind": "text",
     "text": "For many old holders,\nit was nowhere near\nwhat they had lost.",
     "style": "quote"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
-    "fx": "out"
    }
   ],
   "79": [
@@ -2529,7 +2514,7 @@
     "args": {
      "text": "IN OCTOBER",
      "sub": "KOREA'S FOREIGN MINISTRY INVALIDATED HIS PASSPORT",
-     "dur": 3.5
+     "dur": 4.5
     }
    },
    {
@@ -2552,28 +2537,21 @@
    },
    {
     "kind": "motion",
-    "fn": "stamp",
-    "name": "s11_stamp_forged_passport",
-    "args": {
-     "word": "FORGED",
-     "sub": "COSTA RICAN PASSPORT",
-     "dur": 3.0
-    }
-   },
-   {
-    "kind": "motion",
     "fn": "key_phrase",
     "name": "s11_kp_it_was_do_kwon",
     "args": {
      "lines": [
-      "It was Do Kwon."
+      "It was",
+      "Do Kwon."
      ],
+     "kicker": "FORGED COSTA RICAN PASSPORT",
      "red": [
       "do",
       "kwon."
      ],
      "dur": 3.0,
-     "size": 130
+     "stagger": 1.4,
+     "size": 150
     }
    }
   ],
@@ -2674,27 +2652,14 @@
    {
     "kind": "clip",
     "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"
-   },
-   {
-    "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s12_kp_sec_alleged_copied",
-    "args": {
-     "lines": [
-      "Transactions were copied onto the chain",
-      "to make it look as if they were."
-     ],
-     "red": [
-      "copied"
-     ],
-     "kicker": "THE SEC ALLEGED",
-     "dur": 3.5,
-     "stagger": 0.8,
-     "size": 100
-    }
    }
   ],
   "86": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
+    "fx": "in"
+   },
    {
     "kind": "clip",
     "asset": "assets/ep01_terra_luna/motion/s12_stamp_liable_for_fraud.mp4"
@@ -2702,11 +2667,6 @@
    {
     "kind": "clip",
     "asset": "assets/ep01_terra_luna/cards/zoom/card_04_jury_verdict_2024-04-05_zoom.mp4"
-   },
-   {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg",
-    "fx": "in"
    }
   ],
   "87": [
@@ -2728,25 +2688,12 @@
     "args": {
      "text": "AUGUST 2025",
      "sub": "THE CRIMINAL CASE",
-     "dur": 3.0
+     "dur": 4.5
     }
    },
    {
-    "kind": "motion",
-    "fn": "key_phrase",
-    "name": "s12_kp_pleaded_guilty",
-    "args": {
-     "lines": [
-      "Kwon pleaded guilty",
-      "to two fraud charges."
-     ],
-     "red": [
-      "guilty"
-     ],
-     "dur": 5.5,
-     "stagger": 0.9,
-     "size": 116
-    }
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"
    },
    {
     "kind": "clip",
@@ -2755,8 +2702,20 @@
   ],
   "89": [
    {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/cards/zoom/card_06_kwon_plea_2025-08_zoom.mp4"
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_question_from_earlier",
+    "args": {
+     "lines": [
+      "Was the 2021 rescue hidden?"
+     ],
+     "red": [
+      "hidden?"
+     ],
+     "kicker": "THE QUESTION FROM EARLIER",
+     "dur": 5.3,
+     "size": 116
+    }
    }
   ],
   "90": [
@@ -2782,7 +2741,7 @@
       "generational"
      ],
      "kicker": "THE JUDGE CALLED IT",
-     "dur": 4.0,
+     "dur": 3.0,
      "stagger": 0.7,
      "size": 116
     }
@@ -2822,14 +2781,14 @@
       "reaper"
      ],
      "kicker": "SEOUL PROSECUTORS REVIVED A FINANCIAL-CRIMES UNIT NICKNAMED",
-     "dur": 5.0,
+     "dur": 4.5,
      "size": 120
     }
    },
    {
-    "kind": "text",
-    "text": "Terra was one of\nits first cases.",
-    "style": "label"
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
+    "fx": "right"
    }
   ],
   "93": [
@@ -2846,7 +2805,7 @@
    {
     "kind": "text",
     "text": "Korean prosecutors indicted\nDaniel Shin and several others.",
-    "style": "label"
+    "style": "quote"
    },
    {
     "kind": "motion",
@@ -2861,7 +2820,7 @@
       "look"
      ],
      "kicker": "PROSECUTORS ALLEGE",
-     "dur": 5.0,
+     "dur": 5.5,
      "stagger": 0.8,
      "size": 104
     }
@@ -2879,7 +2838,7 @@
      "red": [
       "denies"
      ],
-     "dur": 4.0,
+     "dur": 3.0,
      "size": 120
     }
    },
@@ -2920,7 +2879,7 @@
    {
     "kind": "photo",
     "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
-    "fx": "right"
+    "fx": "left"
    },
    {
     "kind": "motion",
@@ -2936,8 +2895,8 @@
       "half"
      ],
      "kicker": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE",
-     "dur": 5.0,
-     "stagger": 0.8,
+     "dur": 3.5,
+     "stagger": 0.6,
      "size": 104
     }
    }
@@ -3012,7 +2971,7 @@
      "end_red": true,
      "glitch": true,
      "dur": 5.5,
-     "count_time": 2.3
+     "count_time": 3.2
     }
    }
   ],
@@ -3030,8 +2989,8 @@
      "red": [
       "spiral."
      ],
-     "dur": 3.7,
-     "stagger": 1.1,
+     "dur": 4.8,
+     "stagger": 1.6,
      "size": 118
     }
    }
@@ -3057,7 +3016,7 @@
      ],
      "kicker": "THE DREAM",
      "dur": 5.5,
-     "stagger": 1.5,
+     "stagger": 1.8,
      "size": 104
     }
    }
@@ -3065,7 +3024,7 @@
   "100": [
    {
     "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
     "fx": "in"
    },
    {
@@ -3101,7 +3060,7 @@
      "kicker": "14,000,000,000 UST × ~19.5%",
      "label": "A YEAR IN PROMISED INTEREST",
      "sublabel": "ILLUSTRATIVE · SELF-MADE MATH",
-     "dur": 4.6,
+     "dur": 5.8,
      "count_time": 2.3
     }
    }
@@ -3262,7 +3221,7 @@
      "red": [
       "believe"
      ],
-     "dur": 4.0,
+     "dur": 3.0,
      "stagger": 0.9,
      "size": 112
     }
@@ -3446,19 +3405,19 @@
   {
    "chunk": 44,
    "name": "impact",
-   "offset": 8.1,
+   "offset": 6.85,
    "gain_db": -8
   },
   {
    "chunk": 48,
    "name": "heartbeat",
-   "offset": 5.0,
+   "offset": 4.0,
    "gain_db": -8
   },
   {
-   "chunk": 49,
+   "chunk": 50,
    "name": "whoosh",
-   "offset": 8.8,
+   "offset": -0.55,
    "gain_db": -12
   },
   {
@@ -3470,25 +3429,25 @@
   {
    "chunk": 51,
    "name": "impact",
-   "offset": 15.0,
+   "offset": 17.9,
    "gain_db": -10
   },
   {
    "chunk": 54,
    "name": "glitch",
-   "offset": 15.2,
+   "offset": 17.9,
    "gain_db": -10
   },
   {
    "chunk": 57,
    "name": "glitch",
-   "offset": 3.6,
+   "offset": 4.2,
    "gain_db": -10
   },
   {
    "chunk": 60,
    "name": "impact",
-   "offset": 2.6,
+   "offset": 2.85,
    "gain_db": -8
   },
   {
@@ -3506,25 +3465,25 @@
   {
    "chunk": 68,
    "name": "stamp",
-   "offset": 5.05,
+   "offset": 4.0,
    "gain_db": -10
   },
   {
    "chunk": 69,
    "name": "whoosh",
-   "offset": 0.0,
+   "offset": 0.6,
    "gain_db": -12
   },
   {
    "chunk": 69,
    "name": "stamp",
-   "offset": 10.05,
+   "offset": 9.9,
    "gain_db": -12
   },
   {
    "chunk": 70,
    "name": "stamp",
-   "offset": 7.29,
+   "offset": 7.0,
    "gain_db": -12
   },
   {
@@ -3542,13 +3501,13 @@
   {
    "chunk": 77,
    "name": "stamp",
-   "offset": 8.95,
+   "offset": 8.6,
    "gain_db": -8
   },
   {
    "chunk": 78,
    "name": "glitch",
-   "offset": 4.0,
+   "offset": 3.35,
    "gain_db": -18
   },
   {
@@ -3565,14 +3524,8 @@
   },
   {
    "chunk": 81,
-   "name": "stamp",
-   "offset": 8.98,
-   "gain_db": -10
-  },
-  {
-   "chunk": 81,
    "name": "heartbeat",
-   "offset": 11.2,
+   "offset": 8.9,
    "gain_db": -8
   },
   {
@@ -3584,43 +3537,43 @@
   {
    "chunk": 85,
    "name": "whoosh",
-   "offset": 7.7,
+   "offset": 6.85,
    "gain_db": -10
   },
   {
    "chunk": 86,
    "name": "impact",
-   "offset": 1.61,
+   "offset": 3.17,
    "gain_db": -8
   },
   {
    "chunk": 90,
    "name": "stamp",
-   "offset": 0.99,
+   "offset": 0.55,
    "gain_db": -8
   },
   {
    "chunk": 90,
    "name": "impact",
-   "offset": 0.99,
+   "offset": 0.55,
    "gain_db": -7
   },
   {
    "chunk": 91,
    "name": "impact",
-   "offset": 11.16,
+   "offset": 11.18,
    "gain_db": -13
   },
   {
    "chunk": 93,
    "name": "typewriter",
-   "offset": 0.0,
+   "offset": 0.3,
    "gain_db": -14
   },
   {
    "chunk": 95,
    "name": "whoosh",
-   "offset": 6.57,
+   "offset": 5.6,
    "gain_db": -10
   },
   {
@@ -3632,19 +3585,19 @@
   {
    "chunk": 97,
    "name": "glitch",
-   "offset": 14.33,
+   "offset": 14.5,
    "gain_db": -16
   },
   {
    "chunk": 100,
    "name": "impact",
-   "offset": 4.51,
-   "gain_db": -10
+   "offset": 5.75,
+   "gain_db": -12
   },
   {
    "chunk": 103,
    "name": "typewriter",
-   "offset": 2.32,
+   "offset": 4.65,
    "gain_db": -16
   },
   {
@@ -3656,7 +3609,7 @@
   {
    "chunk": 107,
    "name": "typewriter",
-   "offset": 3.74,
+   "offset": 4.0,
    "gain_db": -15
   },
   {
@@ -3701,11 +3654,11 @@
   },
   {
    "chunk": 48,
-   "dur": 10.5
+   "dur": 9.5
   },
   {
    "chunk": 59,
-   "dur": 8.0
+   "dur": 9.7
   },
   {
    "chunk": 61,
@@ -3725,11 +3678,11 @@
   },
   {
    "chunk": 81,
-   "dur": 14.4
+   "dur": 12.2
   },
   {
    "chunk": 88,
-   "dur": 15.6
+   "dur": 18.5
   },
   {
    "chunk": 90,
@@ -3741,7 +3694,7 @@
   },
   {
    "chunk": 100,
-   "dur": 4.5
+   "dur": 7.6
   },
   {
    "chunk": 106,

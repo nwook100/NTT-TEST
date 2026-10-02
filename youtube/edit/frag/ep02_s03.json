@@ -144,7 +144,7 @@
     },
     {
      "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
      "fx": "left"
     }
    ]
@@ -212,7 +212,7 @@
       ],
       "kicker": "MANY HAD",
       "dur": 5.0,
-      "stagger": 1.2,
+      "stagger": 1.5,
       "size": 104
      }
     },
@@ -263,7 +263,7 @@
        "+₩35,000"
       ],
       "kicker": "LIKE CLOCKWORK",
-      "dur": 5.0,
+      "dur": 4.0,
       "stagger": 0.9,
       "size": 110
      }

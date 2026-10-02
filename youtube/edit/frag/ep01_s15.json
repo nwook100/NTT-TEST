@@ -17,7 +17,7 @@
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "right"},
       {"kind": "motion", "fn": "key_phrase", "name": "s15_kp_victims_dont_believe",
        "args": {"lines": ["Many of his victims", "still don't believe it."], "red": ["believe"],
-                "dur": 4.0, "stagger": 0.9, "size": 112}}
+                "dur": 3.0, "stagger": 0.9, "size": 112}}
     ]},
     {"id": 108, "segments": [
       {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
@@ -27,7 +27,7 @@
   ],
   "sfx": [
     {"chunk": 107, "name": "whoosh", "offset": 0.0, "gain_db": -13},
-    {"chunk": 107, "name": "typewriter", "offset": 3.74, "gain_db": -15},
+    {"chunk": 107, "name": "typewriter", "offset": 4.0, "gain_db": -15},
     {"chunk": 107, "name": "heartbeat", "offset": 15.2, "gain_db": -12}
   ],
   "music_drops": [

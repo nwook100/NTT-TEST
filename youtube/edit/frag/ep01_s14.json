@@ -38,7 +38,7 @@
       "end_red": true,
       "glitch": true,
       "dur": 5.5,
-      "count_time": 2.3
+      "count_time": 3.2
      }
     }
    ]
@@ -59,8 +59,8 @@
       "red": [
        "spiral."
       ],
-      "dur": 3.7,
-      "stagger": 1.1,
+      "dur": 4.8,
+      "stagger": 1.6,
       "size": 118
      }
     }
@@ -89,7 +89,7 @@
       ],
       "kicker": "THE DREAM",
       "dur": 5.5,
-      "stagger": 1.5,
+      "stagger": 1.8,
       "size": 104
      }
     }
@@ -100,7 +100,7 @@
    "segments": [
     {
      "kind": "photo",
-     "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+     "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
      "fx": "in"
     },
     {
@@ -139,7 +139,7 @@
       "kicker": "14,000,000,000 UST × ~19.5%",
       "label": "A YEAR IN PROMISED INTEREST",
       "sublabel": "ILLUSTRATIVE · SELF-MADE MATH",
-      "dur": 4.6,
+      "dur": 5.8,
       "count_time": 2.3
      }
     }
@@ -260,26 +260,26 @@
   {
    "chunk": 97,
    "name": "glitch",
-   "offset": 14.33,
+   "offset": 14.5,
    "gain_db": -16
   },
   {
    "chunk": 100,
    "name": "impact",
-   "offset": 4.51,
-   "gain_db": -10
+   "offset": 5.75,
+   "gain_db": -12
   },
   {
    "chunk": 103,
    "name": "typewriter",
-   "offset": 2.32,
+   "offset": 4.65,
    "gain_db": -16
   }
  ],
  "music_drops": [
   {
    "chunk": 100,
-   "dur": 4.5
+   "dur": 7.6
   }
  ]
 }
