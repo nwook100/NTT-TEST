@@ -21,7 +21,7 @@
       {"kind": "text", "text": "One thing was missing.", "style": "quote"},
       {"kind": "motion", "fn": "stamp", "name": "s10_stamp_no_new_ust",
        "args": {"word": "NO NEW UST", "dur": 3.3}},
-      {"kind": "text", "text": "Terra 2.0 launched without\nan algorithmic stablecoin at all.", "style": "quote"}
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg", "fx": "in", "crop": "detail", "grade": "cold"}
     ]},
     {"id": 78, "segments": [
       {"kind": "motion", "fn": "count_up", "name": "s10_count_new_luna_17",
@@ -30,7 +30,7 @@
       {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_quickly_fell",
        "args": {"lines": ["Then quickly fell", "as people sold what they'd been given."],
                 "red": ["fell"], "dur": 3.5, "stagger": 0.9, "size": 104}},
-      {"kind": "text", "text": "For many old holders,\nit was nowhere near\nwhat they had lost.", "style": "quote"}
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/rain_window_night_1.mp4"}
     ]}
   ],
   "sfx": [

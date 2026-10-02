@@ -287,7 +287,7 @@ def main():
         vf = f"subtitles={caps}:force_style='{style}'"
         print(f"captions: hid {dropped} lines under full-screen graphics", flush=True)
     run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-i", audio, "-vf", vf,
-         "-c:v", "libx264", "-preset", "ultrafast" if a.preview else "medium", "-crf", "28" if a.preview else "20",
+         "-c:v", "libx264", "-preset", "ultrafast" if a.preview else "faster", "-crf", "28" if a.preview else "20",
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", a.out])
     if not a.keep:
         shutil.rmtree(work, ignore_errors=True)
