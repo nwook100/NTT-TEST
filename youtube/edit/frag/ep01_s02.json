@@ -17,7 +17,7 @@
     ]},
     {"id": 14, "segments": [
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg", "fx": "right"},
-      {"kind": "motion", "fn": "flow_diagram", "name": "s02_flow_krt", "args": {"title": "TERRA'S WON-PEGGED COIN", "nodes": [{"id": "c", "label": "Customer", "sub": "pays in won", "x": 0.1, "y": 0.45}, {"id": "k", "label": "KRT", "sub": "Terra's won-pegged coin", "x": 0.5, "y": 0.45, "red": true}, {"id": "m", "label": "Merchant", "x": 0.9, "y": 0.45}], "edges": [{"from": "c", "to": "k"}, {"from": "k", "to": "m"}], "dur": 5.5}}
+      {"kind": "motion", "fn": "flow_diagram", "name": "s02_flow_krt", "args": {"title": "TERRA'S WON-PEGGED COIN", "nodes": [{"id": "c", "label": "Customer", "sub": "pays in won", "x": 0.07, "y": 0.5}, {"id": "k", "label": "KRT", "sub": "Terra's won-pegged coin", "x": 0.5, "y": 0.5, "red": true}, {"id": "m", "label": "Merchant", "x": 0.93, "y": 0.5}], "edges": [{"from": "c", "to": "k"}, {"from": "k", "to": "m"}], "dur": 5.5}}
     ]},
     {"id": 15, "segments": [
       {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_chai_terraform", "args": {"lines": ["Chai partnered with Terraform", "to bring that won coin into its app."], "red": ["chai", "terraform"], "kicker": "2019", "dur": 4.5, "stagger": 1.5, "size": 100}},
