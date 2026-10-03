@@ -1,39 +1,151 @@
 {
-  "section": "15",
-  "chunks": [
-    {"id": 105, "segments": [
-      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s15_chapter_outro.mp4"},
-      {"kind": "text", "text": "It failed because a 20 percent promise\nwas more convincing than every warning.", "style": "quote"}
-    ]},
-    {"id": 106, "segments": [
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/vault_2.mp4", "start": 2.0},
-      {"kind": "motion", "fn": "compare", "name": "s15_cmp_promise_vs_question",
-       "args": {"left": {"head": "If something promises", "big": "High returns", "sub": "with no risk"},
-                "right": {"head": "Ask one question", "big": "Where from?", "sub": "Where is the money actually coming from?"},
-                "dur": 5.5}}
-    ]},
-    {"id": 107, "segments": [
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg", "fx": "left"},
-      {"kind": "motion", "fn": "typewriter", "name": "s15_tw_next_time",
-       "args": {"text": "NEXT TIME", "sub": "A KOREAN STORY THE WORLD NEVER HEARD", "dur": 4.0}},
-      {"kind": "text", "text": "A man who took money\nfrom tens of thousands of people,\nfled the country,\nand was then reported dead.", "style": "quote"},
-      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s15_kp_victims_dont_believe",
-       "args": {"lines": ["Many of his victims", "still don't believe it."], "red": ["believe"],
-                "dur": 3.0, "stagger": 0.9, "size": 112}}
-    ]},
-    {"id": 108, "segments": [
-      {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
-      {"kind": "text", "text": "Did you, or someone you know,\never get caught in a crypto collapse?", "style": "quote"},
-      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg", "fx": "out"}
-    ]}
-  ],
-  "sfx": [
-    {"chunk": 107, "name": "whoosh", "offset": 0.0, "gain_db": -13},
-    {"chunk": 107, "name": "typewriter", "offset": 4.0, "gain_db": -15},
-    {"chunk": 107, "name": "heartbeat", "offset": 15.2, "gain_db": -12}
-  ],
-  "music_drops": [
-    {"chunk": 106, "dur": 8.5}
-  ]
+ "section": "15",
+ "chunks": [
+  {
+   "id": 105,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s15_chapter_outro.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "It failed because a 20 percent promise\nwas more convincing than every warning.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 106,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/vault_2.mp4",
+     "start": 2.0
+    },
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s15_cmp_promise_vs_question",
+     "args": {
+      "left": {
+       "head": "If something promises",
+       "big": "High returns",
+       "sub": "with no risk"
+      },
+      "right": {
+       "head": "Ask one question",
+       "big": "Where from?",
+       "sub": "Where is the money actually coming from?"
+      },
+      "dur": 5.5
+     }
+    }
+   ]
+  },
+  {
+   "id": 107,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s15_tw_next_time",
+     "args": {
+      "text": "NEXT TIME",
+      "sub": "A KOREAN STORY THE WORLD NEVER HEARD",
+      "dur": 4.0
+     }
+    },
+    {
+     "kind": "text",
+     "text": "A man who took money\nfrom tens of thousands of people,\nfled the country,\nand was then reported dead.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s15_pc_cho_wanted",
+     "args": {
+      "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_2.png",
+      "name": "CHO HEE-PAL",
+      "kicker": "NEXT CASE \u00b7 EP.02",
+      "sub": "Wanted by Korean police after fleeing to China in 2008",
+      "stamp_word": "WANTED",
+      "credit": "Photo: Korean police wanted notice",
+      "grade": "bw",
+      "dur": 5.0,
+      "print_h": 600
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s15_kp_victims_dont_believe",
+     "args": {
+      "lines": [
+       "Many of his victims",
+       "still don't believe it."
+      ],
+      "red": [
+       "believe"
+      ],
+      "dur": 3.0,
+      "stagger": 0.9,
+      "size": 112
+     }
+    }
+   ]
+  },
+  {
+   "id": 108,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Subscribe so you don't miss it.",
+     "style": "label"
+    },
+    {
+     "kind": "text",
+     "text": "Did you, or someone you know,\never get caught in a crypto collapse?",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
+     "fx": "out"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 107,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -13
+  },
+  {
+   "chunk": 107,
+   "name": "typewriter",
+   "offset": 4.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 107,
+   "name": "heartbeat",
+   "offset": 15.2,
+   "gain_db": -12
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 106,
+   "dur": 8.5
+  }
+ ]
 }

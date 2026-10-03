@@ -1130,16 +1130,19 @@ def pyramid(out, levels, title=None, collapse=True, collapse_word=None, dur=6.0,
 
 
 
-def person_card(out, photo, name, sub=None, kicker=None, stamp_word=None, credit=None, grade="color", dur=5.0, footer=None):
+def person_card(out, photo, name, sub=None, kicker=None, stamp_word=None, credit=None, grade="color", dur=5.0, footer=None, print_h=760):
     """Real-person file photo: the photo (licensed, e.g. CC BY) pinned like a dossier print on the left, name/role on
     the right, optional rubber stamp (e.g. 'ARRESTED') slamming across the print, credit line under it.
     photo is a path relative to youtube/ (or absolute). grade: color | bw | red."""
     src = photo if os.path.isabs(photo) else os.path.join(HERE, "..", photo)
     im = Image.open(src).convert("RGB")
-    PH = 760; pw = int(im.width * PH / im.height)
+    PH = print_h; pw = int(im.width * PH / im.height)
     if pw > 640:                                             # crop wide photos to a portrait print
         im = im.crop(((im.width - int(im.height * 640 / PH)) // 2, 0, (im.width + int(im.height * 640 / PH)) // 2, im.height)); pw = 640
+    up = PH / im.height
     im = im.resize((pw, PH), Image.LANCZOS)
+    if up > 1.6:                                             # low-res source (e.g. a scanned poster): restore some edge
+        im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=80, threshold=2))
     if grade == "bw":
         g = im.convert("L"); im = Image.merge("RGB", (g, g, g))
     elif grade == "red":
@@ -1181,7 +1184,7 @@ def person_card(out, photo, name, sub=None, kicker=None, stamp_word=None, credit
             paste(c, im2, TX - im2.info["pad"], H / 2 + 50 + k * 52, alpha=ps * env, anchor="l")
         if st is not None:
             T = 1.3; q = prog(t, T - 0.2, T)
-            if q > 0: paste(c, st, PX + 40, PY + 220, scale=2.2 - 1.2 * ease_in_cubic(q), alpha=(0.35 + 0.65 * q) * env)
+            if q > 0: paste(c, st, PX + 40, PY + PH * 0.2, scale=2.2 - 1.2 * ease_in_cubic(q), alpha=(0.35 + 0.65 * q) * env)
         footer_tag(c, footer, env)
     def shake(t):
         if st is None or t < 1.3: return 0, 0, 1

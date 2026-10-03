@@ -3561,8 +3561,20 @@
     "style": "quote"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s15_pc_cho_wanted",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_2.png",
+     "name": "CHO HEE-PAL",
+     "kicker": "NEXT CASE · EP.02",
+     "sub": "Wanted by Korean police after fleeing to China in 2008",
+     "stamp_word": "WANTED",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "dur": 5.0,
+     "print_h": 600
+    }
    },
    {
     "kind": "motion",
