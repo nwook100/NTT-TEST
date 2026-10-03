@@ -20,19 +20,7 @@
 
 ### Channel description (복사용)
 
-```
-Asia's biggest frauds. The untold files.
-
-Paper Tiger Files tells the true stories behind Asia's most shocking scams, Ponzi schemes and financial crimes: the promises, the people who believed them, and how it all fell apart.
-
-How did a Korean stablecoin wipe out $40 billion in 72 hours? How did one man in Korea take money from tens of thousands of people, then vanish? Why do the same tricks keep working?
-
-Every episode is a deeply researched documentary built on sources English media rarely reads, including Korean, Japanese and Chinese court records and local reporting. Facts from the record. Respect for the victims. No hype.
-
-A paper tiger looks powerful. Until you look closer.
-
-New episodes every week.
-```
+최신 문구와 5개 언어 번역(언어 추가 칸용)은 **`channel_languages.md`** 에 있습니다. 그 파일의 English 문구를 쓰세요.
 
 ### Links (기본 정보 아래 '링크 추가')
 - 지금은 비워 두셔도 됩니다. 나중에 뉴스레터나 X(트위터) 계정을 만들면 추가하세요.
