@@ -27,10 +27,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ep"); ap.add_argument("--drop", required=True); ap.add_argument("--tag", required=True)
     ap.add_argument("--intro", required=True); ap.add_argument("--outro", required=True)
-    ap.add_argument("--outro-len", type=float, default=20.0); ap.add_argument("--intro-after", type=int, default=3)
+    ap.add_argument("--outro-len", type=float, default=20.0); ap.add_argument("--base"); ap.add_argument("--intro-after", type=int, default=3)
     a = ap.parse_args()
     od = os.path.join(ROOT, "output", a.ep)
-    base = os.path.join(od, f"{a.ep}_base_clean.mp4"); B = probe(base)
+    base = os.path.join(ROOT, a.base) if a.base else os.path.join(od, f"{a.ep}_base_clean.mp4"); B = probe(base)
     man = json.load(open(os.path.join(od, "narration", "manifest.json")))["chunks"]
     drop = ids(a.drop)
     # cut points: middle of the pause before each chunk
