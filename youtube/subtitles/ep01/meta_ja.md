@@ -15,22 +15,22 @@
 2022年5月、ステーブルコインUSTは1ドルとの連動を失い、姉妹コインのLUNAは1週間足らずで約80ドルからほぼゼロまで暴落しました。何十万もの人々が、その多くは韓国で、貯蓄を失いました。このドキュメンタリーは、その全容を追います。アンカー・プロトコルの20%の利回り、米規制当局が「ひそかに救済された」とする2021年の連動喪失、数日で消えた24億ドルのビットコイン軍資金、暗号資産業界を襲ったドミノ倒し、そしてモンテネグロの空港で終わった追跡劇。2025年、ド・クォンはニューヨークで詐欺の罪について有罪を認め、禁錮15年を言い渡されました。韓国の関連事件は現在も係争中であり、被告らは不正を否定しています。
 
 チャプター
-00:00 72時間、消えた400億ドル
+00:00 数日で消えた400億ドル
 00:53 天才児
-02:13 暗号資産で払うコーヒー
-03:28 魔法の仕掛け
-05:00 20%の約束
-06:37 隠された救済
-08:00 ビットコインの軍資金
+02:17 暗号資産で払うコーヒー
+03:29 魔法の仕掛け
+04:53 20%の約束
+06:33 隠された救済
+07:58 ビットコインの軍資金
 10:05 5月の7日間
-12:38 ルナティックス
-13:44 倒れるドミノ
-15:09 テラ2.0
-15:56 追跡
-17:06 評決と判決
-18:27 韓国側の物語
-19:42 なぜ夢は繰り返されるのか
-21:10 問うべき一つの質問
+12:47 ルナティックス
+13:57 倒れるドミノ
+15:22 テラ2.0
+16:08 追跡
+17:13 評決と判決
+18:36 韓国側の物語
+19:51 なぜ夢は繰り返されるのか
+21:24 問うべき一つの質問
 
 出典
 米証券取引委員会(SEC)、テラフォーム・ラボとド・クォンを提訴(2023年2月):https://www.sec.gov/newsroom/press-releases/2023-32
@@ -40,6 +40,12 @@ SEC 命令、Tai Mo Shan/2021年5月の連動喪失(2024年12月):https://www.se
 ニューヨーク南部地区連邦検事局(SDNY)、ド・クォンの量刑言い渡し(2025年12月):https://www.justice.gov/usao-sdny/pr/crypto-enabled-fraudster-sentenced-orchestrating-40-billion-fraud
 米連邦準備制度理事会 FEDS Notes、アルゴリズム型ステーブルコインの取り付け(Iron/Titan):https://www.federalreserve.gov/econres/notes/feds-notes/runs-on-algorithmic-stablecoins-evidence-from-iron-titan-and-steel-20220602.html
 米議会調査局(CRS)、GENIUS法:https://www.congress.gov/crs-product/IN12553
+
+Photo credits
+Do Kwon: FAQX, CC BY 3.0, via Wikimedia Commons
+Sam Bankman-Fried: Cointelegraph, CC BY 3.0, via Wikimedia Commons
+Cho Hee-pal: Korean National Police Agency public wanted notice (2012)
+Other images and footage: Openverse (CC), Pexels and Pixabay licences. Full list available on request.
 
 一部の場面はAIで生成したイラストです。実在の人物は描かれていません。
 

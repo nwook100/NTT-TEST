@@ -38,22 +38,22 @@ A 20% promise, a hidden rescue, a fake passport and a 15-year sentence: the full
 In May 2022, the UST stablecoin lost its $1 peg and its sister coin LUNA fell from about $80 to almost zero in less than a week. Hundreds of thousands of people, many of them in South Korea, lost their savings. This documentary follows the whole arc: the 20% Anchor yield, the 2021 de-peg that U.S. regulators say was quietly rescued, the $2.4 billion bitcoin war chest that vanished in days, the crypto dominoes that followed, and the manhunt that ended at an airport in Montenegro. In 2025, Do Kwon pleaded guilty to fraud in New York and was sentenced to 15 years in prison. Related cases in South Korea are still ongoing, and those defendants deny wrongdoing.
 
 Chapters
-00:00 72 hours, $40 billion gone
+00:00 $40 billion gone in days
 00:53 The golden boy
-02:13 Coffee paid in crypto
-03:28 The magic trick
-05:00 The 20% promise
-06:37 The hidden rescue
-08:00 The bitcoin war chest
+02:17 Coffee paid in crypto
+03:29 The magic trick
+04:53 The 20% promise
+06:33 The hidden rescue
+07:58 The bitcoin war chest
 10:05 Seven days in May
-12:38 The Lunatics
-13:44 The dominoes fall
-15:09 Terra 2.0
-15:56 The chase
-17:06 The verdicts
-18:27 The Korean side
-19:42 Why the dream keeps coming back
-21:10 One question to ask
+12:47 The Lunatics
+13:57 The dominoes fall
+15:22 Terra 2.0
+16:08 The chase
+17:13 The verdicts
+18:36 The Korean side
+19:51 Why the dream keeps coming back
+21:24 One question to ask
 
 Sources
 SEC charges Terraform Labs and Do Kwon (Feb 2023): https://www.sec.gov/newsroom/press-releases/2023-32
@@ -63,6 +63,12 @@ SEC order, Tai Mo Shan / May 2021 de-peg (Dec 2024): https://www.sec.gov/newsroo
 U.S. Attorney's Office SDNY, Do Kwon sentencing (Dec 2025): https://www.justice.gov/usao-sdny/pr/crypto-enabled-fraudster-sentenced-orchestrating-40-billion-fraud
 Federal Reserve FEDS Notes, runs on algorithmic stablecoins (Iron/Titan): https://www.federalreserve.gov/econres/notes/feds-notes/runs-on-algorithmic-stablecoins-evidence-from-iron-titan-and-steel-20220602.html
 Congressional Research Service, GENIUS Act: https://www.congress.gov/crs-product/IN12553
+
+Photo credits
+Do Kwon: FAQX, CC BY 3.0, via Wikimedia Commons
+Sam Bankman-Fried: Cointelegraph, CC BY 3.0, via Wikimedia Commons
+Cho Hee-pal: Korean National Police Agency public wanted notice (2012)
+Other images and footage: Openverse (CC), Pexels and Pixabay licences. Full list available on request.
 
 Some scenes are AI-generated illustrations. No real person is depicted in them.
 
