@@ -105,7 +105,7 @@ def main():
     first = {}
     for i, c in enumerate(man):
         if c["id"] in drop: continue
-        first.setdefault(int(c["section"]), cuts[i])
+        first.setdefault(int(c["section"]), c["start"])
     lines = []
     for sec in sorted(first):
         t = 0.0 if sec == 0 else remap(first[sec] + 1e-3) + (D if remap(first[sec] + 1e-3) >= T else 0)
