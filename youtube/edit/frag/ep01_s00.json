@@ -61,10 +61,18 @@
      "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg",
-     "fx": "in",
-     "grade": "cold"
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s00_pc_kwon_man_behind",
+     "args": {
+      "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+      "name": "DO KWON",
+      "credit": "Photo: FAQX / CC BY 3.0",
+      "kicker": "THE MAN BEHIND IT",
+      "sub": "Co-founder, Terraform Labs",
+      "grade": "bw",
+      "dur": 4.0
+     }
     }
    ]
   },

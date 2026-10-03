@@ -19,6 +19,7 @@ Every effect is a reusable function:
     compare(out, left, right, title=None)                         split screen: promised (white) vs reality (red)
     bar_chart(out, bars, title=None, prefix='', suffix='')        horizontal bars growing with counting values
     pyramid(out, levels, title=None, collapse=True)               pyramid tiers stack up, then the base gives way
+    person_card(out, photo, name, sub, kicker, stamp_word, credit) licensed real-person photo as a dossier print + name
 
 All full-frame clips get subtle film grain, flicker and a vignette. Lower thirds are rendered on pure black with no
 grain so they can be laid over footage with CapCut's "Screen" blend mode.
@@ -1127,6 +1128,66 @@ def pyramid(out, levels, title=None, collapse=True, collapse_word=None, dur=6.0,
         return a * math.sin(t * 95), a * math.cos(t * 77), 1 + 0.015 * (1 - k)
     render(out, dur, draw, shake=shake)
 
+
+
+def person_card(out, photo, name, sub=None, kicker=None, stamp_word=None, credit=None, grade="color", dur=5.0, footer=None):
+    """Real-person file photo: the photo (licensed, e.g. CC BY) pinned like a dossier print on the left, name/role on
+    the right, optional rubber stamp (e.g. 'ARRESTED') slamming across the print, credit line under it.
+    photo is a path relative to youtube/ (or absolute). grade: color | bw | red."""
+    src = photo if os.path.isabs(photo) else os.path.join(HERE, "..", photo)
+    im = Image.open(src).convert("RGB")
+    PH = 760; pw = int(im.width * PH / im.height)
+    if pw > 640:                                             # crop wide photos to a portrait print
+        im = im.crop(((im.width - int(im.height * 640 / PH)) // 2, 0, (im.width + int(im.height * 640 / PH)) // 2, im.height)); pw = 640
+    im = im.resize((pw, PH), Image.LANCZOS)
+    if grade == "bw":
+        g = im.convert("L"); im = Image.merge("RGB", (g, g, g))
+    elif grade == "red":
+        from PIL import ImageOps
+        im = ImageOps.colorize(im.convert("L"), (12, 6, 8), (240, 90, 100))
+    else:
+        a = np.asarray(im, np.float32); gray = a.mean(axis=2, keepdims=True)
+        im = Image.fromarray(np.clip(gray + (a - gray) * 0.75, 0, 255).astype(np.uint8))   # slightly muted
+    border = 22
+    prt = Image.new("RGBA", (pw + border * 2, PH + border * 2 + 40), PAPER + (255,))
+    prt.paste(im, (border, border))
+    if credit:
+        ct = text_img(credit, font(F_SANS, 20), (110, 104, 96), shadow=0)
+        prt.alpha_composite(ct, (border - ct.info["pad"] + 2, PH + border + 20 - ct.height // 2))
+    sh = Image.new("RGBA", (prt.width + 120, prt.height + 120), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rectangle((60, 75, 60 + prt.width, 75 + prt.height), fill=(0, 0, 0, 180))
+    sh = sh.filter(ImageFilter.GaussianBlur(26)); sh.alpha_composite(prt, (60, 60))
+    prt = sh.rotate(-2.2, Image.BICUBIC, expand=True)
+    PX, PY = 560, H / 2 + 10
+    kick = text_img(kicker, font(F_MONO_B, 32), RED, tracking=8, shadow=6) if kicker else None
+    nm = text_img(name, fit_font(F_SANS_B, [name], 900, 120), PAPER, tracking=4, shadow=12)
+    sb = None
+    if sub:
+        fs = font(F_SANS, 40)
+        sb = [text_img(" ".join(l), fs, (210, 202, 190), shadow=6) for l in wrap(sub.split(), fs, 860)][:3]
+    st = _stamp_img(stamp_word, 120) if stamp_word else None
+    TX = 1020
+    def draw(t, fi, c):
+        env = fade_env(t, dur, 0.3, 0.45)
+        p = ease_out_cubic(prog(t, 0.0, 0.7))
+        paste(c, prt, PX - 80 * (1 - p), PY, scale=1.0 + 0.025 * t / dur, alpha=p * env)
+        if kick: paste(c, kick, TX, H / 2 - 170, alpha=ease_out_cubic(prog(t, 0.3, 0.7)) * env, anchor="l")
+        pn = ease_out_cubic(prog(t, 0.4, 0.9))
+        paste(c, nm, TX - nm.info["pad"] + 40 * (1 - pn), H / 2 - 80, alpha=pn * env, anchor="l")
+        pl = ease_out_cubic(prog(t, 0.6, 1.0))
+        fill_rect(c, TX, H / 2 - 8, TX + 260 * pl, H / 2 - 2, RED, env)
+        for k, im2 in enumerate(sb or []):
+            ps = ease_out_cubic(prog(t, 0.8 + 0.1 * k, 1.2 + 0.1 * k))
+            paste(c, im2, TX - im2.info["pad"], H / 2 + 50 + k * 52, alpha=ps * env, anchor="l")
+        if st is not None:
+            T = 1.3; q = prog(t, T - 0.2, T)
+            if q > 0: paste(c, st, PX + 40, PY + 220, scale=2.2 - 1.2 * ease_in_cubic(q), alpha=(0.35 + 0.65 * q) * env)
+        footer_tag(c, footer, env)
+    def shake(t):
+        if st is None or t < 1.3: return 0, 0, 1
+        u = prog(t, 1.3, 1.7); a = 16 * (1 - u) ** 2
+        return a * math.sin(t * 95), a * 0.7 * math.cos(t * 120), 1
+    render(out, dur, draw, shake=shake)
 
 def slug(s, n=36):
     s = "_".join(w for w in "".join(ch if ch.isalnum() else " " for ch in s.lower()).split())

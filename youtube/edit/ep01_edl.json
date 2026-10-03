@@ -53,10 +53,18 @@
     "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_podgorica_airport_3.jpg",
-    "fx": "in",
-    "grade": "cold"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s00_pc_kwon_man_behind",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "THE MAN BEHIND IT",
+     "sub": "Co-founder, Terraform Labs",
+     "grade": "bw",
+     "dur": 4.0
+    }
    }
   ],
   "3": [
@@ -101,8 +109,18 @@
     "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s01_pc_kwon_founder",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "THE FOUNDER",
+     "sub": "Grew up in Seoul. Stanford, computer science. Co-founded Terraform Labs in 2018.",
+     "grade": "color",
+     "dur": 5.0
+    }
    },
    {
     "kind": "motion",
@@ -2736,9 +2754,19 @@
   ],
   "81": [
    {
-    "kind": "photo",
-    "asset": "assets/ep01_terra_luna/s11_podgorica_airport_1.jpg",
-    "fx": "right"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s11_pc_kwon_arrested",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "MARCH 2023",
+     "sub": "Stopped at Podgorica airport, Montenegro, with a forged passport",
+     "stamp_word": "ARRESTED",
+     "grade": "bw",
+     "dur": 5.0
+    }
    },
    {
     "kind": "video",
@@ -2904,12 +2932,17 @@
   "88": [
    {
     "kind": "motion",
-    "fn": "typewriter",
-    "name": "s12_tw_aug2025",
+    "fn": "person_card",
+    "name": "s12_pc_kwon_pleaded",
     "args": {
-     "text": "AUGUST 2025",
-     "sub": "THE CRIMINAL CASE",
-     "dur": 4.5
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "AUGUST 2025 · NEW YORK",
+     "sub": "Pleaded guilty to two fraud charges",
+     "stamp_word": "PLEADED GUILTY",
+     "grade": "bw",
+     "dur": 5.0
     }
    },
    {

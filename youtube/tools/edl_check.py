@@ -6,7 +6,7 @@ import json, os, subprocess, sys, inspect, importlib.util
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SFX = {"whoosh", "impact", "riser", "heartbeat", "typewriter", "stamp", "glitch"}
 FNS = {"key_phrase", "word_by_word", "count_up", "stamp", "typewriter",
-       "line_chart", "flow_diagram", "timeline", "compare", "bar_chart", "pyramid"}
+       "line_chart", "flow_diagram", "timeline", "compare", "bar_chart", "pyramid", "person_card"}
 MIN_FLEX, MAX_FLEX, MAX_SPILL = 2.2, 7.0, 4.0
 _dur = {}
 
