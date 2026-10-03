@@ -1,5 +1,5 @@
 {
- "source": "output/ep01/ep01_final_clean.mp4",
+ "source": "output/ep01/ep01_base_clean.mp4",
  "manifest": "output/ep01/narration/manifest.json",
  "captions": "subtitles/ep01/ep01_en.srt",
  "caption_visible": "output/ep01/caption_visible.json",

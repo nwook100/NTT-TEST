@@ -6,3 +6,6 @@
 
 Credit line for the description: "Photo of Do Kwon: FAQX, CC BY 3.0, via Wikimedia Commons."
 Press/agency photos are NOT used (copyright).
+| sbf_commons.png | Sam Bankman-Fried | https://commons.wikimedia.org/wiki/File:Sam_Bankman-Fried_(cropped).png (frame from Cointelegraph's YouTube interview at Bitcoin 2021, https://www.youtube.com/watch?v=EsmhjNtlT_Y) | Cointelegraph | CC BY 3.0 |
+
+Credit line: "Photo of Sam Bankman-Fried: Cointelegraph, CC BY 3.0, via Wikimedia Commons."

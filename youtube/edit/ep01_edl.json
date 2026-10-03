@@ -2461,8 +2461,18 @@
   ],
   "72": [
    {
-    "kind": "video",
-    "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s09_pc_sbf",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/sbf_commons.png",
+     "name": "SAM BANKMAN-FRIED",
+     "kicker": "FTX FOUNDER",
+     "sub": "Convicted of fraud in New York, November 2023",
+     "credit": "Photo: Cointelegraph / CC BY 3.0",
+     "grade": "bw",
+     "dur": 4.0
+    }
    },
    {
     "kind": "motion",
@@ -2491,7 +2501,7 @@
     "args": {
      "text": "JUNE 2022",
      "sub": "LENDERS STARTED DEMANDING THEIR MONEY BACK",
-     "dur": 4.0
+     "dur": 3.0
     }
    },
    {
