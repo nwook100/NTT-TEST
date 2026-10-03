@@ -992,27 +992,27 @@
        "label": "Borrowers",
        "sub": "what borrowers paid",
        "x": 0.1,
-       "y": 0.15
+       "y": 0.3
       },
       {
        "id": "a",
        "label": "Anchor",
        "x": 0.5,
-       "y": 0.15
+       "y": 0.3
       },
       {
        "id": "d",
        "label": "Depositors",
        "sub": "promised nearly 20%",
        "x": 0.9,
-       "y": 0.15
+       "y": 0.3
       },
       {
        "id": "r",
        "label": "Yield reserve",
        "sub": "covers the gap",
        "x": 0.5,
-       "y": 0.9,
+       "y": 0.95,
        "red": true
       }
      ],
@@ -1573,7 +1573,7 @@
      "prefix": "$",
      "suffix": "B",
      "decimals": 1,
-     "note": "Approximate: reserve around $2.4 billion · UST nearly $19 billion (early May 2022)",
+     "note": "Approximate: reserve around $2.4 billion · UST in circulation nearly $19 billion",
      "dur": 5.0
     }
    },

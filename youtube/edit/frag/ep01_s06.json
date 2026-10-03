@@ -33,7 +33,7 @@
     ]},
     {"id": 46, "segments": [
       {"kind": "text", "text": "But there was a catch.", "style": "quote"},
-      {"kind": "motion", "fn": "bar_chart", "name": "s06_bar_reserve_vs_ust", "args": {"title": "THE RESERVE WAS A FRACTION", "bars": [["Bitcoin reserve", 2.4], ["UST in circulation", 19, true]], "prefix": "$", "suffix": "B", "decimals": 1, "note": "Approximate: reserve around $2.4 billion · UST nearly $19 billion (early May 2022)", "dur": 5.0}},
+      {"kind": "motion", "fn": "bar_chart", "name": "s06_bar_reserve_vs_ust", "args": {"title": "THE RESERVE WAS A FRACTION", "bars": [["Bitcoin reserve", 2.4], ["UST in circulation", 19, true]], "prefix": "$", "suffix": "B", "decimals": 1, "note": "Approximate: reserve around $2.4 billion · UST in circulation nearly $19 billion", "dur": 5.0}},
       {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "left", "crop": "detail", "grade": "red"},
       {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_asset_could_fall", "args": {"lines": ["an asset that could fall", "at exactly the moment", "it was needed."], "red": ["fall"], "kicker": "AND IT WAS HELD IN BITCOIN", "dur": 4.0, "stagger": 0.8, "size": 108}}
     ]},

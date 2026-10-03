@@ -1064,7 +1064,8 @@ def bar_chart(out, bars, title=None, prefix="", suffix="", decimals=0, note=None
             fill_rect(c, X0, ys[i] - 26, xe, ys[i] + 26, RED if hot else PAPER, (0.95 if hot else 0.8) * env * a)
             v = float(b[1]) * p
             s = prefix + _fmt(round(v) if decimals == 0 else v, decimals, True) + suffix
-            if p > 0.999: s = prefix + _fmt(float(b[1]) if decimals else round(float(b[1])), decimals, True) + suffix
+            if p > 0.999:                                   # landed: show the value as given (14 -> "14", not "14.0")
+                fv_ = float(b[1]); s = prefix + _fmt(fv_, 0 if fv_ == int(fv_) else decimals, True) + suffix
             vi = text_img(s, fv, RED if hot else PAPER, shadow=8)
             paste(c, vi, min(xe + 24, W - 40 - vi.width) , ys[i], alpha=a * env, anchor="l")
         if kick: paste(c, kick, W / 2, 170, alpha=env * prog(t, 0, 0.3))
