@@ -33,3 +33,4 @@ youtube/assets/*/motion_edl/*.tmp*.mp4
 youtube/shorts/**/*.mp4
 youtube/branding/*.mp4
 youtube/branding/options/*.mp4
+youtube/output/**/upload_parts/*.part*
