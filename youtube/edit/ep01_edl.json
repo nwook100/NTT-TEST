@@ -93,11 +93,6 @@
      ],
      "dur": 6.0
     }
-   },
-   {
-    "kind": "clip",
-    "asset": "assets/ep01_terra_luna/motion/s00_logo_sting.mp4",
-    "tail": true
    }
   ],
   "4": [
@@ -3586,12 +3581,6 @@
    "name": "whoosh",
    "offset": 4.1,
    "gain_db": -10
-  },
-  {
-   "chunk": 3,
-   "name": "impact",
-   "offset": 11.15,
-   "gain_db": -9
   },
   {
    "chunk": 4,
