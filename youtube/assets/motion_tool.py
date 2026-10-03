@@ -1159,14 +1159,14 @@ def person_card(out, photo, name, sub=None, kicker=None, stamp_word=None, credit
     sh = sh.filter(ImageFilter.GaussianBlur(26)); sh.alpha_composite(prt, (60, 60))
     prt = sh.rotate(-2.2, Image.BICUBIC, expand=True)
     PX, PY = 560, H / 2 + 10
+    TX = 1020
     kick = text_img(kicker, font(F_MONO_B, 32), RED, tracking=8, shadow=6) if kicker else None
-    nm = text_img(name, fit_font(F_SANS_B, [name], 900, 120), PAPER, tracking=4, shadow=12)
+    nm = text_img(name, fit_font(F_SANS_B, [name], W - TX - 110, 120, tracking=4), PAPER, tracking=4, shadow=12)
     sb = None
     if sub:
         fs = font(F_SANS, 40)
         sb = [text_img(" ".join(l), fs, (210, 202, 190), shadow=6) for l in wrap(sub.split(), fs, 860)][:3]
     st = _stamp_img(stamp_word, 120) if stamp_word else None
-    TX = 1020
     def draw(t, fi, c):
         env = fade_env(t, dur, 0.3, 0.45)
         p = ease_out_cubic(prog(t, 0.0, 0.7))
