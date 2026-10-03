@@ -104,7 +104,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     out = os.path.join(ROOT, spec["out_dir"], f"short{s['n']}_{s['slug']}.mp4")
     fc = (f"[0:v]split[a][b];[a]scale=-2:{H},crop={W}:{H},boxblur=28:4,eq=brightness=-0.22:saturation=0.7[bg];"
           f"[b]scale={W}:{VH}[fg];[bg][fg]overlay=0:{VY},"
-          f"drawbox=x=0:y={VY}:w={W}:h={VH}:color=0x0d0e11@0.96:t=fill:enable='lt(t,{T1})',"
+          f"drawbox=x=0:y={VY}:w={W}:h={VH}:color=0x0d0e11@1.0:t=fill:enable='lt(t,{T1})',"
           f"ass={ass},setsar=1,fps=30[v0];"
           f"[1:v]scale={W}:{H},setsar=1,fps=30,fade=t=in:d=0.25[v1];"
           f"[0:a]aresample=48000[a0];[2:a]aresample=48000[a1];"
