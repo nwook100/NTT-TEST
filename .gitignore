@@ -34,3 +34,4 @@ youtube/shorts/**/*.mp4
 youtube/branding/*.mp4
 youtube/branding/options/*.mp4
 youtube/output/**/upload_parts/*.part*
+youtube/output/**/upload_parts*/*.part*
