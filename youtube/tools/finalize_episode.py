@@ -31,15 +31,27 @@ def main():
     T = ch[a.after_chunk]["end"] + 0.3                      # just after the cold open's last line
     D = probe(intro); B = probe(base); O = probe(outro)
     out = os.path.join(od, f"{a.ep}_final_upload.mp4")
-    norm = "scale=1920:1080,setsar=1,fps=30,format=yuv420p"
-    fc = (f"[0:v]trim=0:{T:.3f},setpts=PTS-STARTPTS,{norm}[v0];[0:a]atrim=0:{T:.3f},asetpts=PTS-STARTPTS,afade=t=out:st={T - 0.25:.3f}:d=0.25,aresample=48000[a0];"
-          f"[1:v]{norm}[v1];[1:a]aresample=48000[a1];"
-          f"[0:v]trim={T:.3f},setpts=PTS-STARTPTS,{norm}[v2];[0:a]atrim={T:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.4,aresample=48000[a2];"
-          f"[2:v]{norm},fade=t=in:d=0.4[v3];[2:a]aresample=48000[a3];"
-          f"[v0][a0][v1][a1][v2][a2][v3][a3]concat=n=4:v=1:a=1[v][a]")
-    subprocess.run(["nice", "-n", "5", "ffmpeg", "-y", "-v", "error", "-i", base, "-i", intro, "-i", outro, "-filter_complex", fc,
-                    "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "faster", "-crf", "19", "-pix_fmt", "yuv420p",
-                    "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True)
+    # encode the four pieces separately (same codec settings) and join them with the concat demuxer;
+    # a single filter graph would buffer the whole episode in memory
+    import tempfile
+    enc = ["-c:v", "libx264", "-preset", "faster", "-crf", "19", "-pix_fmt", "yuv420p", "-r", "30",
+           "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2"]
+    vf = "scale=1920:1080,setsar=1,fps=30,format=yuv420p"
+    with tempfile.TemporaryDirectory(dir=od) as tmp:
+        parts = [
+            (["-i", base, "-t", f"{T:.3f}"], vf, f"afade=t=out:st={T - 0.25:.3f}:d=0.25"),
+            (["-i", intro], vf, "anull"),
+            (["-ss", f"{T:.3f}", "-i", base], vf, "afade=t=in:d=0.4"),
+            (["-i", outro], vf + ",fade=t=in:d=0.4", "anull"),
+        ]
+        files = []
+        for i, (inp, v, af) in enumerate(parts):
+            f = os.path.join(tmp, f"part{i}.mp4")
+            subprocess.run(["nice", "-n", "5", "ffmpeg", "-y", "-v", "error", *inp, "-vf", v, "-af", af, *enc, f], check=True)
+            files.append(f)
+        lst = os.path.join(tmp, "list.txt"); open(lst, "w").write("".join(f"file '{f}'\n" for f in files))
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy",
+                        "-movflags", "+faststart", out], check=True)
     total = probe(out)
     # subtitles: every cue after the splice point moves by the intro length
     sd = os.path.join(ROOT, "subtitles", a.ep); fd = os.path.join(sd, "final"); os.makedirs(fd, exist_ok=True)
