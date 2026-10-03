@@ -20,9 +20,9 @@
      "name": "s05_kp_timeline_2008",
      "args": {
       "lines": [
-       "Oct 2008 — offices raided",
+       "Oct 2008 \u2014 offices raided",
        "wanted list",
-       "Dec 2008 — gone"
+       "Dec 2008 \u2014 gone"
       ],
       "red": [
        "gone"
@@ -30,7 +30,7 @@
       "dur": 5.0,
       "stagger": 1.1,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -64,7 +64,7 @@
       "dur": 5.0,
       "stagger": 0.8,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -73,9 +73,20 @@
    "id": 45,
    "segments": [
     {
-     "kind": "text",
-     "text": "Cho was put\non the wanted list.",
-     "style": "quote"
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s05_pc_cho_wanted",
+     "args": {
+      "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_1.png",
+      "credit": "Photo: Korean police wanted notice",
+      "grade": "bw",
+      "print_h": 600,
+      "name": "CHO HEE-PAL",
+      "kicker": "OCTOBER 2008",
+      "sub": "Put on the wanted list by Korean police",
+      "stamp_word": "WANTED",
+      "dur": 4.5
+     }
     },
     {
      "kind": "motion",
@@ -93,12 +104,8 @@
       "dur": 4.0,
       "stagger": 0.9,
       "size": 110,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
-    },
-    {
-     "kind": "video",
-     "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
     }
    ]
   },
@@ -126,7 +133,7 @@
       "dur": 5.0,
       "stagger": 0.9,
       "size": 104,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -160,7 +167,7 @@
       "dur": 4.5,
       "stagger": 0.9,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -219,7 +226,7 @@
       "dur": 6.0,
       "stagger": 0.8,
       "size": 96,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -233,14 +240,14 @@
      "name": "s05_count_290B_stashed",
      "args": {
       "to": 290,
-      "prefix": "₩",
+      "prefix": "\u20a9",
       "suffix": " BILLION",
       "kicker": "PROSECUTORS FOUND",
       "label": "THE GROUP HAD STASHED AWAY ABOUT 290 BILLION WON",
       "dur": 6.0,
       "count_time": 2.6,
       "size": 200,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -259,7 +266,7 @@
       "dur": 6.0,
       "stagger": 1.0,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -282,7 +289,7 @@
       "dur": 4.0,
       "stagger": 0.0,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -302,7 +309,7 @@
       "dur": 5.5,
       "stagger": 1.0,
       "size": 96,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -322,7 +329,7 @@
       "dur": 6.0,
       "stagger": 1.2,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -350,7 +357,7 @@
       "dur": 4.5,
       "stagger": 1.4,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]

@@ -99,11 +99,6 @@
    {
     "kind": "video",
     "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
-   },
-   {
-    "kind": "clip",
-    "asset": "assets/ep02_cho_hee_pal/motion/s00_logo_sting.mp4",
-    "tail": true
    }
   ],
   "4": [
@@ -128,16 +123,19 @@
   ],
   "5": [
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
-    "crop": "left",
-    "grade": "cold",
-    "fx": "left"
-   },
-   {
-    "kind": "text",
-    "text": "Cho Hee-pal\nborn in 1957",
-    "style": "label"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s01_pc_cho_intro",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_2.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "THE MAN AT THE CENTER",
+     "sub": "Born 1957. Set up BMC in Daegu in October 2004.",
+     "dur": 5.5
+    }
    }
   ],
   "6": [
@@ -1236,9 +1234,20 @@
   ],
   "45": [
    {
-    "kind": "text",
-    "text": "Cho was put\non the wanted list.",
-    "style": "quote"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s05_pc_cho_wanted",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_1.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "OCTOBER 2008",
+     "sub": "Put on the wanted list by Korean police",
+     "stamp_word": "WANTED",
+     "dur": 4.5
+    }
    },
    {
     "kind": "motion",
@@ -1258,10 +1267,6 @@
      "size": 110,
      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
     }
-   },
-   {
-    "kind": "video",
-    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
    }
   ],
   "46": [
@@ -1812,10 +1817,19 @@
     }
    },
    {
-    "kind": "photo",
-    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-    "fx": "in",
-    "crop": "right"
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s07_pc_cho_reported_dead",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_3.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "MAY 2012 · POLICE ANNOUNCEMENT",
+     "sub": "Police said he had died in China in December 2011",
+     "dur": 4.5
+    }
    }
   ],
   "66": [
@@ -3154,12 +3168,6 @@
    "name": "impact",
    "offset": 8.8,
    "gain_db": -12
-  },
-  {
-   "chunk": 3,
-   "name": "impact",
-   "offset": 7.9,
-   "gain_db": -8
   },
   {
    "chunk": 4,

@@ -20,7 +20,7 @@
       "text": "MAY 2012",
       "sub": "KOREAN POLICE MADE AN ANNOUNCEMENT",
       "dur": 3.75,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -48,14 +48,23 @@
       "dur": 5.0,
       "stagger": 0.9,
       "size": 108,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
-     "fx": "in",
-     "crop": "right"
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s07_pc_cho_reported_dead",
+     "args": {
+      "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_3.png",
+      "credit": "Photo: Korean police wanted notice",
+      "grade": "bw",
+      "print_h": 600,
+      "name": "CHO HEE-PAL",
+      "kicker": "MAY 2012 \u00b7 POLICE ANNOUNCEMENT",
+      "sub": "Police said he had died in China in December 2011",
+      "dur": 4.5
+     }
     }
    ]
   },
@@ -88,7 +97,7 @@
       "dur": 5.5,
       "stagger": 1.0,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -125,7 +134,7 @@
       "dur": 4.5,
       "stagger": 1.6,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -158,7 +167,7 @@
       "dur": 3.0,
       "stagger": 0.5,
       "size": 120,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -208,7 +217,7 @@
       "dur": 6.0,
       "stagger": 1.4,
       "size": 100,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -263,10 +272,10 @@
      "fn": "typewriter",
      "name": "s07_tw_oct10_2015_wuxi",
      "args": {
-      "text": "OCTOBER 10, 2015 — WUXI, CHINA",
+      "text": "OCTOBER 10, 2015 \u2014 WUXI, CHINA",
       "sub": "Chinese police arrested Kang Tae-yong, the right-hand man",
       "dur": 6.0,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL",
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL",
       "size": 72
      }
     },
@@ -307,7 +316,7 @@
       "dur": 5.0,
       "stagger": 1.0,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -351,7 +360,7 @@
       "dur": 3.8,
       "stagger": 0.9,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -365,7 +374,7 @@
       "dur": 3.2,
       "count_time": 1.5,
       "size": 230,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -384,7 +393,7 @@
       "dur": 3.8,
       "stagger": 0.9,
       "size": 118,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
@@ -413,7 +422,7 @@
       "dur": 5.0,
       "stagger": 1.0,
       "size": 112,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     }
    ]
@@ -455,7 +464,7 @@
       "dur": 4.5,
       "stagger": 2.0,
       "size": 96,
-      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
      }
     },
     {
