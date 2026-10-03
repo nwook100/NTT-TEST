@@ -27,7 +27,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ep"); ap.add_argument("--drop", required=True); ap.add_argument("--tag", required=True)
     ap.add_argument("--intro", required=True); ap.add_argument("--outro", required=True)
-    ap.add_argument("--outro-len", type=float, default=20.0); ap.add_argument("--base"); ap.add_argument("--intro-after", type=int, default=3)
+    ap.add_argument("--outro-len", type=float, default=20.0); ap.add_argument("--base"); ap.add_argument("--subs-only", action="store_true"); ap.add_argument("--intro-after", type=int, default=3)
     a = ap.parse_args()
     od = os.path.join(ROOT, "output", a.ep)
     base = os.path.join(ROOT, a.base) if a.base else os.path.join(od, f"{a.ep}_base_clean.mp4"); B = probe(base)
@@ -55,34 +55,37 @@ def main():
     enc = ["-c:v", "libx264", "-preset", "faster", "-crf", "19", "-pix_fmt", "yuv420p", "-r", "30",
            "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2"]
     vf = "scale=1920:1080,setsar=1,fps=30,format=yuv420p"
-    with tempfile.TemporaryDirectory(dir=od) as tmp:
-        pieces, acc = [], 0.0
-        for k0, k1 in keep:                              # split the kept ranges at the intro point
-            if acc <= T < acc + (k1 - k0):
-                m = k0 + (T - acc); pieces += [(k0, m), "INTRO", (m, k1)]
-            else:
-                pieces.append((k0, k1))
-            acc += k1 - k0
-        pieces.append("OUTRO")
-        files = []
-        for i, pc in enumerate(pieces):
-            f = os.path.join(tmp, f"p{i:03d}.mp4")
-            if pc == "INTRO":
-                cmd = ["-i", intro, "-vf", vf]
-            elif pc == "OUTRO":
-                L = a.outro_len
-                cmd = ["-i", outro, "-t", f"{L}", "-vf", vf + f",fade=t=in:d=0.4,fade=t=out:st={L - 0.6}:d=0.6",
-                       "-af", f"afade=t=out:st={L - 1.5}:d=1.5"]
-            else:
-                s0, s1 = pc; d = s1 - s0
-                cmd = ["-ss", f"{s0:.3f}", "-i", base, "-t", f"{d:.3f}", "-vf", vf,
-                       "-af", f"afade=t=in:d=0.12,afade=t=out:st={max(0, d - 0.15):.3f}:d=0.15"]
-            subprocess.run(["nice", "-n", "5", "ffmpeg", "-y", "-v", "error", *cmd, *enc, f], check=True)
-            files.append(f)
-        lst = os.path.join(tmp, "list.txt"); open(lst, "w").write("".join(f"file '{f}'\n" for f in files))
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy",
-                        "-movflags", "+faststart", out], check=True)
-    total = probe(out)
+    if a.subs_only:
+        pieces = None
+    else:
+      with tempfile.TemporaryDirectory(dir=od) as tmp:
+          pieces, acc = [], 0.0
+          for k0, k1 in keep:                              # split the kept ranges at the intro point
+              if acc <= T < acc + (k1 - k0):
+                  m = k0 + (T - acc); pieces += [(k0, m), "INTRO", (m, k1)]
+              else:
+                  pieces.append((k0, k1))
+              acc += k1 - k0
+          pieces.append("OUTRO")
+          files = []
+          for i, pc in enumerate(pieces):
+              f = os.path.join(tmp, f"p{i:03d}.mp4")
+              if pc == "INTRO":
+                  cmd = ["-i", intro, "-vf", vf]
+              elif pc == "OUTRO":
+                  L = a.outro_len
+                  cmd = ["-i", outro, "-t", f"{L}", "-vf", vf + f",fade=t=in:d=0.4,fade=t=out:st={L - 0.6}:d=0.6",
+                         "-af", f"afade=t=out:st={L - 1.5}:d=1.5"]
+              else:
+                  s0, s1 = pc; d = s1 - s0
+                  cmd = ["-ss", f"{s0:.3f}", "-i", base, "-t", f"{d:.3f}", "-vf", vf,
+                         "-af", f"afade=t=in:d=0.12,afade=t=out:st={max(0, d - 0.15):.3f}:d=0.15"]
+              subprocess.run(["nice", "-n", "5", "ffmpeg", "-y", "-v", "error", *cmd, *enc, f], check=True)
+              files.append(f)
+          lst = os.path.join(tmp, "list.txt"); open(lst, "w").write("".join(f"file '{f}'\n" for f in files))
+          subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy",
+                          "-movflags", "+faststart", out], check=True)
+    total = probe(out) if os.path.exists(out) else 0.0
     # subtitles: keep cues whose midpoint survives, remap, then shift by the intro after T
     sd = os.path.join(ROOT, "subtitles", a.ep); fd = os.path.join(sd, a.tag); os.makedirs(fd, exist_ok=True)
     for p in sorted(glob.glob(os.path.join(sd, f"{a.ep}_*.srt"))):
