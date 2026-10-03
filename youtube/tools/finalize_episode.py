@@ -29,7 +29,8 @@ def main():
     intro, outro = os.path.join(ROOT, a.intro), os.path.join(ROOT, a.outro)
     man = json.load(open(os.path.join(od, "narration", "manifest.json")))
     ch = {c["id"]: c for c in man["chunks"]}
-    T = ch[a.after_chunk]["end"] + 0.3                      # just after the cold open's last line
+    # cut where the cold open's last visual has faded out, just before the next chunk (chapter card + narration)
+    T = ch[a.after_chunk + 1]["start"] - 0.08
     D = probe(intro); B = probe(base); O = probe(outro)
     out = os.path.join(od, f"{a.ep}_final_upload.mp4")
     if a.subs_only: return shift_subs_and_chapters(a, od, man, T, D, O, probe(out))
