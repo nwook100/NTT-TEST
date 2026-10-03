@@ -519,7 +519,7 @@ And tell me in the comments: did you, or someone you know, ever get caught in a 
 - [x] SEC charges Feb 16, 2023; jury verdict April 5, 2024; settlement June 13, 2024: Terraform ~$4.47B, Kwon ~$204M; wind-down (sec.gov press release 2024-73)
 - [x] SEC complaint allegation re: Chai payments "replicated" onto the Terra blockchain (sec.gov amended complaint)
 - [x] Guilty plea to 2 counts (Aug 2025), $19M forfeiture; 15-year sentence by Judge Engelmayer, SDNY, Dec 11 2025 (prosecutors sought 12) — justice.gov/usao-sdny press release
-- [ ] Judge's "epic, generational scale" wording — confirm from sentencing coverage
+- [x] Judge's "epic, generational scale" wording — confirmed 2026-10-03: Judge Paul A. Engelmayer, sentencing 2025-12-11 ("This was a fraud on an epic, generational scale."), per sentencing coverage (e.g. Bloomberg Government, Yahoo Finance/AFP)
 - [ ] ~280,000 Korean LUNA holders (Korean financial authorities' estimate, May 2022)
 - [ ] Daniel Shin indicted April 25, 2023 (with others); prosecutors' Chai allegation; Shin denies; two arrest warrants rejected; trial still at first instance (Feb 2026 report) — re-check status right before upload, use "charged / denies" wording
 - [ ] U.S. not opposing transfer to Korea after half the sentence; pending Korean capital-markets charges; "more than 30 years" is a Korean media estimate only

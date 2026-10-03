@@ -159,7 +159,7 @@ Were you, or someone you know, holding LUNA or UST when it happened? Or did you 
 - [ ] 라이선스: Standard YouTube License / Allow embedding 켜기
 - [ ] 저작권 표시: YouTube 오디오 보관함 중 "attribution required" 트랙을 썼다면 설명란 Sources 아래에 크레딧 추가
 - [ ] 최종 화면(End screen): 마지막 20초에 "구독" + EP.02 공개 후 EP.02로 교체 (공개 전에는 '최근 업로드' 요소)
-- [ ] **업로드 직전 재확인**: Daniel Shin 재판 상태(대본 13장, 팩트체크 목록), 판사의 "epic, generational scale" 인용(미확인 항목). 설명란에는 둘 다 넣지 않았습니다
+- [ ] **업로드 직전 재확인**: Daniel Shin 재판 상태(대본 13장, 팩트체크 목록), 판사의 "epic, generational scale" 인용은 2026-10-03 확인 완료(Paul A. Engelmayer 판사, 2025-12-11 선고 공판 발언). Daniel Shin 재판은 2026년 판결 보도를 찾지 못함 → "진행 중" 유지, 업로드 직전 한 번 더 확인. 설명란에는 둘 다 넣지 않았습니다
 
 ---
 
