@@ -1,0 +1,402 @@
+{
+ "section": "5",
+ "chunks": [
+  {
+   "id": 43,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s05_chapter_the_collapse_and_the_escape.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4",
+     "grade": "cold",
+     "start": 1.0
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_timeline_2008",
+     "args": {
+      "lines": [
+       "Oct 2008 \u2014 offices raided",
+       "wanted list",
+       "Dec 2008 \u2014 gone"
+      ],
+      "red": [
+       "gone"
+      ],
+      "dur": 5.0,
+      "stagger": 1.1,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
+     "fx": "out",
+     "crop": "bottom",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_systems_wiped",
+     "args": {
+      "lines": [
+       "The group's central computer systems",
+       "were wiped",
+       "and the accounts were emptied",
+       "before police got there."
+      ],
+      "kicker": "ACCORDING TO KOREAN REPORTING AT THE TIME",
+      "red": [
+       "wiped",
+       "emptied"
+      ],
+      "dur": 5.0,
+      "stagger": 0.8,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s05_pc_cho_wanted",
+     "args": {
+      "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_1.png",
+      "credit": "Photo: Korean police wanted notice",
+      "grade": "bw",
+      "print_h": 600,
+      "name": "CHO HEE-PAL",
+      "kicker": "OCTOBER 2008",
+      "sub": "Put on the wanted list by Korean police",
+      "stamp_word": "WANTED",
+      "dur": 4.5
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_photocopied_posters",
+     "args": {
+      "lines": [
+       "photocopied the wanted posters",
+       "themselves"
+      ],
+      "kicker": "SOME VICTIMS REPORTEDLY",
+      "red": [
+       "themselves"
+      ],
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s05_typewriter_dec9_2008_taean.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_fishing_boat_taean",
+     "args": {
+      "lines": [
+       "He boarded a fishing boat",
+       "from a small port in Taean,",
+       "on the west coast."
+      ],
+      "kicker": "ACCORDING TO INVESTIGATORS",
+      "red": [
+       "Taean,"
+      ],
+      "dur": 5.0,
+      "stagger": 0.9,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "At sea, he reportedly switched\nto another vessel\nand crossed to China.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/sea_waves_night_2.mp4"
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_kang_fled_month_before",
+     "args": {
+      "lines": [
+       "Kang Tae-yong",
+       "had already fled to China",
+       "the month before."
+      ],
+      "kicker": "HIS RIGHT-HAND MAN",
+      "red": [
+       "fled"
+      ],
+      "dur": 4.5,
+      "stagger": 0.9,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "Kang was the group's\nadministrative vice president.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4",
+     "start": 1.0
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_01_scale_70000_victims_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "That 5 trillion figure counts money\nthat went round and round,",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+     "fx": "left",
+     "crop": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_split_5T_vs_840B",
+     "args": {
+      "lines": [
+       "Money that flowed in:",
+       "~5 trillion won",
+       "Actual losses (prosecutors' estimate):",
+       "~840 billion won"
+      ],
+      "red": [
+       "~840"
+      ],
+      "dur": 6.0,
+      "stagger": 0.8,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s05_count_290B_stashed",
+     "args": {
+      "to": 290,
+      "prefix": "\u20a9",
+      "suffix": " BILLION",
+      "kicker": "PROSECUTORS FOUND",
+      "label": "THE GROUP HAD STASHED AWAY ABOUT 290 BILLION WON",
+      "dur": 6.0,
+      "count_time": 2.6,
+      "size": 200,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_biggest_fraud_nation",
+     "args": {
+      "lines": [
+       "The biggest fraud",
+       "since the founding of the nation."
+      ],
+      "kicker": "KOREAN MEDIA STARTED CALLING IT",
+      "red": [
+       "biggest"
+      ],
+      "dur": 6.0,
+      "stagger": 1.0,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_keep_two_things",
+     "args": {
+      "lines": [
+       "Keep two things in mind."
+      ],
+      "kicker": "BEFORE WE GO ON",
+      "red": [
+       "two"
+      ],
+      "dur": 4.0,
+      "stagger": 0.0,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_one_cheque",
+     "args": {
+      "lines": [
+       "a cheque,",
+       "handed over in a hotel coffee shop,",
+       "to a man whose job was to catch Cho."
+      ],
+      "kicker": "ONE",
+      "red": [
+       "cheque,"
+      ],
+      "dur": 5.5,
+      "stagger": 1.0,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_two_paper_ten_days",
+     "args": {
+      "lines": [
+       "dated ten days before",
+       "the death it was supposed to record."
+      ],
+      "kicker": "TWO: A SINGLE PIECE OF PAPER FROM CHINA",
+      "red": [
+       "ten",
+       "days"
+      ],
+      "dur": 6.0,
+      "stagger": 1.2,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "The first explains\nhow he got away.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_still_dont_believe",
+     "args": {
+      "lines": [
+       "The second is why so many people",
+       "still don't believe he's gone."
+      ],
+      "red": [
+       "gone."
+      ],
+      "dur": 4.5,
+      "stagger": 1.4,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  \u00b7  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 44,
+   "name": "glitch",
+   "offset": 5.2,
+   "gain_db": -10
+  },
+  {
+   "chunk": 46,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 48,
+   "name": "impact",
+   "offset": 3.05,
+   "gain_db": -8
+  },
+  {
+   "chunk": 51,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -6
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 48,
+   "dur": 2.8
+  },
+  {
+   "chunk": 51,
+   "dur": 5.0
+  }
+ ]
+}

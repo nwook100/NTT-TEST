@@ -1,0 +1,239 @@
+{
+ "section": "8",
+ "chunks": [
+  {
+   "id": 81,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s08_chapter_the_trial_of_the_right_hand_man.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4",
+     "start": 0
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_life_in_prison",
+     "args": {
+      "lines": [
+       "Prosecutors asked for",
+       "life in prison."
+      ],
+      "red": [
+       "life"
+      ],
+      "dur": 3.2,
+      "stagger": 0.5,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 82,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s08_tw_daegu_district_court_jan13_2017",
+     "args": {
+      "text": "DAEGU DISTRICT COURT, JAN 13, 2017",
+      "sub": "from June 2006 to October 2008",
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+     "fx": "out"
+    }
+   ]
+  },
+  {
+   "id": 83,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_convicted_of",
+     "args": {
+      "lines": [
+       "Fraud,",
+       "embezzlement,",
+       "bribery,",
+       "and hiding criminal proceeds."
+      ],
+      "kicker": "IT CONVICTED HIM OF",
+      "red": [
+       "bribery,"
+      ],
+      "dur": 5.0,
+      "stagger": 0.7,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "The court also found that he had paid\nthe police sergeant on the case\nfor investigation information.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+     "start": 2.0
+    }
+   ]
+  },
+  {
+   "id": 84,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "And it found that, in China,\nhe had worked with organized-crime figures\nto try to collect money he believed he was owed.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_destroyed_families",
+     "args": {
+      "lines": [
+       "a property crime",
+       "almost without precedent,",
+       "one that had destroyed families."
+      ],
+      "kicker": "THE JUDGES CALLED IT",
+      "red": [
+       "destroyed",
+       "families."
+      ],
+      "dur": 5.5,
+      "stagger": 0.9,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s08_stamp_22_years_daegu",
+     "args": {
+      "word": "22 YEARS",
+      "sub": "+ ₩12.5B FORFEITURE · DAEGU DISTRICT COURT, JAN 13, 2017",
+      "dur": 3.15,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "On appeal, his lawyers argued\nthe sentence was too harsh,",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_really_chos_doing",
+     "args": {
+      "lines": [
+       "and that some of the charges",
+       "were really Cho's doing."
+      ],
+      "kicker": "HIS LAWYERS ARGUED",
+      "red": [
+       "Cho's"
+      ],
+      "dur": 4.0,
+      "stagger": 0.6,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_08_kang_tae_yong_22_years_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s08_count_70_charged",
+     "args": {
+      "to": 70,
+      "kicker": "PROSECUTORS CHARGED AROUND",
+      "label": "PEOPLE IN TOTAL",
+      "sublabel": "over the scheme",
+      "dur": 4.5,
+      "count_time": 1.4,
+      "size": 300,
+      "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "But the man whose name\nwas on the whole thing",
+     "style": "quote"
+    },
+    {
+     "kind": "text",
+     "text": "would never face a judge.",
+     "style": "quote"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 82,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 84,
+   "name": "stamp",
+   "offset": 14.95,
+   "gain_db": -6
+  },
+  {
+   "chunk": 84,
+   "name": "impact",
+   "offset": 14.95,
+   "gain_db": -10
+  },
+  {
+   "chunk": 86,
+   "name": "impact",
+   "offset": 8.1,
+   "gain_db": -13
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 86,
+   "dur": 11.7
+  }
+ ]
+}

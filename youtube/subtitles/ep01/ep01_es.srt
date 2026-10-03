@@ -1,0 +1,1347 @@
+1
+00:00:00,000 --> 00:00:00,629
+Mayo de 2022.
+
+2
+00:00:00,629 --> 00:00:06,850
+En solo unos días, una criptomoneda valorada en
+unos 40.000 millones de dólares cae casi a cero.
+
+3
+00:00:06,850 --> 00:00:13,141
+Apenas un mes antes, su precio superaba los
+100 dólares. Ahora vale menos de un centavo.
+
+4
+00:00:13,691 --> 00:00:17,578
+En hogares de Seúl, en
+Singapur, en Estados Unidos,
+
+5
+00:00:17,578 --> 00:00:22,243
+cientos de miles de personas ven cómo
+sus ahorros desaparecen en tiempo real.
+
+6
+00:00:22,243 --> 00:00:25,466
+A muchos les habían dicho
+que era la opción segura.
+
+7
+00:00:26,466 --> 00:00:29,602
+El hombre detrás de todo se había
+burlado en internet de sus críticos.
+
+8
+00:00:29,602 --> 00:00:34,573
+Un año después, sería arrestado en un aeropuerto
+de los Balcanes con un pasaporte falso.
+
+9
+00:00:34,823 --> 00:00:38,548
+Y años más tarde, de pie ante
+un tribunal de Nueva York,
+
+10
+00:00:38,548 --> 00:00:43,762
+admitiría por fin qué pasó realmente la primera
+vez que su moneda estuvo a punto de morir.
+
+11
+00:00:43,762 --> 00:00:45,881
+Esta es la historia de Terra-Luna.
+
+12
+00:00:47,381 --> 00:00:51,796
+Do Kwon creció en Seúl, estudió
+informática en Stanford
+
+13
+00:00:51,796 --> 00:00:56,211
+y trabajó brevemente como ingeniero
+de software en Microsoft y Apple.
+
+14
+00:00:56,211 --> 00:01:02,834
+Luego volvió a casa. En 2016 creó en Corea Anyfi,
+una pequeña empresa de redes inalámbricas.
+
+15
+00:01:03,084 --> 00:01:06,372
+Era una startup modesta. Lo
+que vino después no lo fue.
+
+16
+00:01:06,922 --> 00:01:11,996
+A principios de 2018, Kwon cofundó
+Terraform Labs con Daniel Shin,
+
+17
+00:01:11,996 --> 00:01:15,041
+uno de los fundadores de
+startups más conocidos de Corea.
+
+18
+00:01:15,041 --> 00:01:18,181
+Shin había creado Ticket Monster, o TMON,
+
+19
+00:01:18,181 --> 00:01:24,462
+una gran plataforma de comercio electrónico del
+país, y conocía a comerciantes de toda Corea.
+
+20
+00:01:24,712 --> 00:01:28,575
+La pareja tenía sentido. Kwon tenía
+el código. Shin tenía los clientes.
+
+21
+00:01:29,125 --> 00:01:31,201
+Kwon tenía además otra cosa:
+
+22
+00:01:31,201 --> 00:01:36,597
+una voz. En Twitter era mordaz, gracioso
+y absolutamente seguro de sí mismo.
+
+23
+00:01:36,597 --> 00:01:41,120
+Para 2022, lo seguían cerca de un millón
+de personas. Para muchos de ellos,
+
+24
+00:01:41,120 --> 00:01:44,513
+no era solo un fundador. Era el futuro.
+
+25
+00:01:45,063 --> 00:01:47,983
+La gran idea de Terra era una stablecoin.
+
+26
+00:01:47,983 --> 00:01:52,234
+El precio de casi todas las criptomonedas
+oscila muchísimo. Una stablecoin,
+
+27
+00:01:52,234 --> 00:01:56,485
+o moneda estable, debe
+valer un dólar. Siempre.
+
+28
+00:01:56,485 --> 00:02:01,810
+Esa estabilidad es lo que permite usar
+las criptomonedas como dinero real.
+
+29
+00:02:02,360 --> 00:02:05,781
+La mayoría de las stablecoins lo hace
+por la vía aburrida. Por cada moneda,
+
+30
+00:02:05,781 --> 00:02:09,545
+guardan en reserva un dólar
+real, o algo parecido.
+
+31
+00:02:09,545 --> 00:02:10,364
+Terra no.
+
+32
+00:02:11,564 --> 00:02:15,762
+Pero antes de ver cómo funcionaba
+Terra, hay que ver cómo se vendió.
+
+33
+00:02:15,762 --> 00:02:20,952
+Porque al principio, el discurso no
+era hacerse rico. Era comprar un café.
+
+34
+00:02:21,502 --> 00:02:26,985
+En 2019, otra empresa de Shin lanzó en Corea
+una app de pagos móviles llamada Chai.
+
+35
+00:02:26,985 --> 00:02:32,401
+Los clientes obtenían descuentos. Los comercios
+pagaban menos comisiones que con las tarjetas.
+
+36
+00:02:32,651 --> 00:02:38,747
+Y Terra aseguró al mundo que, en segundo plano,
+esos pagos corrían sobre la blockchain de Terra.
+
+37
+00:02:39,297 --> 00:02:45,634
+Terra no solo tenía una moneda en dólares.
+También tenía una ligada al won coreano: KRT.
+
+38
+00:02:45,884 --> 00:02:52,292
+En 2019, Chai se asoció con Terraform para
+llevar esa moneda en wones a su app. Cada café,
+
+39
+00:02:52,292 --> 00:02:58,300
+cada pedido en línea, debía ser una pequeña
+prueba de que Terra funcionaba como dinero.
+
+40
+00:02:58,850 --> 00:03:05,518
+Terra presumía en sus anuncios de cientos de
+miles de usuarios y millones de transacciones.
+
+41
+00:03:05,518 --> 00:03:08,575
+Para los inversores, este
+era el argumento decisivo.
+
+42
+00:03:08,575 --> 00:03:13,409
+La mayoría de los proyectos cripto eran solo
+promesas. Terra podía señalar a personas reales,
+
+43
+00:03:13,409 --> 00:03:16,632
+en un país real, pagando cosas reales.
+
+44
+00:03:17,632 --> 00:03:22,460
+Recuerda el nombre de Chai. Volverá más
+adelante en esta historia. En un tribunal.
+
+45
+00:03:23,660 --> 00:03:25,113
+Terra tenía dos monedas.
+
+46
+00:03:25,113 --> 00:03:28,600
+UST, la stablecoin que debía
+mantenerse en un dólar.
+
+47
+00:03:28,600 --> 00:03:32,887
+Y LUNA, su moneda hermana, cuyo
+precio podía subir y bajar.
+
+48
+00:03:33,437 --> 00:03:39,522
+El sistema prometía que siempre podrías cambiar
+un UST por un dólar en LUNA, y viceversa.
+
+49
+00:03:39,522 --> 00:03:43,173
+Si UST caía por debajo de un dólar,
+los traders podían comprarlo barato,
+
+50
+00:03:43,173 --> 00:03:46,824
+cambiarlo por un dólar en LUNA
+y quedarse con la diferencia.
+
+51
+00:03:47,074 --> 00:03:51,253
+En teoría, esa presión compradora
+devolvería UST a un dólar. Para siempre.
+
+52
+00:03:51,803 --> 00:03:53,917
+Así es como funciona.
+
+53
+00:03:53,917 --> 00:03:59,798
+Digamos que UST baja a 97 centavos.
+Compras uno. Se lo entregas al sistema,
+
+54
+00:03:59,798 --> 00:04:06,072
+que lo destruye y te da un dólar en LUNA
+recién creada. Has ganado tres centavos.
+
+55
+00:04:06,322 --> 00:04:11,073
+Miles de traders haciendo eso a la
+vez retiran UST de la circulación,
+
+56
+00:04:11,073 --> 00:04:14,528
+hasta que el precio vuelve
+a subir a un dólar.
+
+57
+00:04:14,528 --> 00:04:21,063
+Y si UST supera el dólar, funciona al revés:
+se quema LUNA, se crea UST y se vende.
+
+58
+00:04:22,063 --> 00:04:26,095
+No había una bóveda de dólares
+detrás. Solo código y confianza.
+
+59
+00:04:26,095 --> 00:04:31,450
+Y todo dependía de un supuesto:
+que LUNA siempre valdría algo.
+
+60
+00:04:32,000 --> 00:04:37,874
+Los críticos lo vieron claro: un diseño que podía
+caer en espiral a cero si fallaba la confianza.
+
+61
+00:04:37,874 --> 00:04:41,230
+La respuesta de Kwon a los críticos
+era famosa por su arrogancia.
+
+62
+00:04:41,230 --> 00:04:46,505
+Cuando uno de ellos lo cuestionó en internet,
+respondió: «No debato con pobres en Twitter».
+
+63
+00:04:47,705 --> 00:04:49,085
+Entonces llegó el anzuelo.
+
+64
+00:04:49,085 --> 00:04:51,791
+Una plataforma de préstamos
+construida sobre Terra,
+
+65
+00:04:51,791 --> 00:04:57,653
+llamada Anchor Protocol, ofrecía cerca de un
+20 % de interés anual por los depósitos en UST.
+
+66
+00:04:57,903 --> 00:05:01,620
+Tu banco no ofrecía casi nada.
+Anchor ofrecía casi un 20 %,
+
+67
+00:05:01,620 --> 00:05:06,012
+sobre una moneda que se suponía
+tan estable como un dólar.
+
+68
+00:05:06,562 --> 00:05:07,880
+El dinero llegó a raudales.
+
+69
+00:05:07,880 --> 00:05:11,917
+A principios de 2022, la gran
+mayoría de todos los UST
+
+70
+00:05:11,917 --> 00:05:15,954
+existentes estaba en Anchor,
+generando ese rendimiento.
+
+71
+00:05:15,954 --> 00:05:19,568
+El precio de LUNA superó los 100 dólares.
+
+72
+00:05:19,568 --> 00:05:23,699
+El valor total de Terra alcanzó decenas
+de miles de millones de dólares.
+
+73
+00:05:23,949 --> 00:05:28,726
+Terraform incluso firmó un
+patrocinio de cinco años
+
+74
+00:05:28,726 --> 00:05:34,034
+con los Washington Nationals, de béisbol, por
+unos 38 millones de dólares, según la prensa.
+
+75
+00:05:34,034 --> 00:05:40,376
+En Corea, Kwon era aclamado como un genio
+cripto. Sus fans se hacían llamar «Lunatics».
+
+76
+00:05:41,376 --> 00:05:44,904
+Pero ¿de dónde salía realmente ese 20 %?
+
+77
+00:05:44,904 --> 00:05:48,079
+Durante mucho tiempo, la
+respuesta honesta fue:
+
+78
+00:05:48,079 --> 00:05:52,445
+en gran parte, de la propia Terra, que
+subsidiaba los pagos para retener a la gente.
+
+79
+00:05:52,995 --> 00:05:59,389
+Una reserva cubría la brecha entre lo que pagaban
+los prestatarios y lo prometido a los ahorradores.
+
+80
+00:05:59,389 --> 00:06:04,377
+A principios de 2022, esa reserva perdía
+más de un millón de dólares al día.
+
+81
+00:06:04,627 --> 00:06:11,584
+Así, en febrero de 2022, la Luna Foundation
+Guard, una organización que veremos enseguida,
+
+82
+00:06:11,584 --> 00:06:18,976
+aprobó una inyección de 450 millones de
+dólares en UST, solo para mantener el 20 %.
+
+83
+00:06:19,226 --> 00:06:22,800
+Poco después, la comunidad de Anchor
+votó para que la tasa bajara lentamente.
+
+84
+00:06:22,800 --> 00:06:26,374
+Pero para entonces, la promesa
+ya había hecho su efecto.
+
+85
+00:06:27,574 --> 00:06:32,040
+Este es el giro que casi
+nadie conoció en su momento.
+
+86
+00:06:32,040 --> 00:06:36,116
+En mayo de 2021, un año
+antes del colapso final,
+
+87
+00:06:36,116 --> 00:06:39,286
+UST ya había perdido su
+paridad con el dólar.
+
+88
+00:06:39,286 --> 00:06:42,403
+Y luego, misteriosamente, se recuperó.
+
+89
+00:06:42,953 --> 00:06:46,876
+La versión pública era que el código
+funcionó. Que el algoritmo se corrigió solo.
+
+90
+00:06:46,876 --> 00:06:50,015
+Pero años después, los reguladores
+de EE. UU. contaron otra historia.
+
+91
+00:06:50,265 --> 00:06:55,189
+Según la Comisión de Bolsa y Valores de
+EE. UU. (SEC), la recuperación se debió a
+
+92
+00:06:55,189 --> 00:07:00,523
+una gran empresa de trading que compraba UST
+en secreto, por un trato oculto con Terraform.
+
+93
+00:07:01,073 --> 00:07:04,727
+La SEC lo cuenta así. El 23 de mayo de 2021,
+
+94
+00:07:04,727 --> 00:07:09,600
+mientras UST caía, Terraform llegó
+a un acuerdo verbal con la empresa.
+
+95
+00:07:09,600 --> 00:07:16,130
+Terraform relajaría los límites al derecho
+de la empresa a comprar LUNA con descuento.
+
+96
+00:07:16,380 --> 00:07:20,492
+A cambio, según la SEC,
+la empresa compró más de
+
+97
+00:07:20,492 --> 00:07:24,604
+20 millones de dólares en UST
+para volver a subir el precio.
+
+98
+00:07:24,604 --> 00:07:31,034
+La SEC afirmó que se engañó a los inversores,
+que creyeron que el algoritmo salvó la paridad.
+
+99
+00:07:31,284 --> 00:07:37,301
+Una filial de la empresa cerró luego un acuerdo
+con la SEC sin admitir ni negar las acusaciones.
+
+100
+00:07:38,301 --> 00:07:42,066
+Si eso es cierto, el sistema no
+había superado su prueba de estrés.
+
+101
+00:07:42,066 --> 00:07:46,250
+Lo habían rescatado. Y el rescate se ocultó.
+
+102
+00:07:46,250 --> 00:07:51,601
+Entonces, ¿quién lo sabía? ¿Y lo admitiría
+alguien alguna vez? Guarda esa pregunta.
+
+103
+00:07:52,801 --> 00:07:59,074
+A inicios de 2022, las alertas crecían.
+La respuesta de Kwon fue un fondo de guerra.
+
+104
+00:07:59,074 --> 00:08:05,823
+En enero de 2022 se creó en Singapur una entidad
+sin fines de lucro: la Luna Foundation Guard.
+
+105
+00:08:05,823 --> 00:08:11,778
+Su tarea era crear una reserva que pudiera
+defender la paridad de UST en una emergencia.
+
+106
+00:08:12,028 --> 00:08:16,057
+Kwon dijo que el objetivo era reunir
+10.000 millones de dólares en bitcoin.
+
+107
+00:08:16,607 --> 00:08:23,194
+El primer gran aporte llegó en febrero: una venta
+de LUNA a inversores por mil millones de dólares,
+
+108
+00:08:23,194 --> 00:08:29,781
+encabezada por dos gigantes cripto: Jump Crypto
+y un fondo de cobertura, Three Arrows Capital.
+
+109
+00:08:29,781 --> 00:08:32,951
+Recuerda ese segundo
+nombre. También volverá.
+
+110
+00:08:33,501 --> 00:08:36,657
+Y la fundación compró rápido.
+Algunos días de esa primavera,
+
+111
+00:08:36,657 --> 00:08:41,215
+llegó a comprar más de 100 millones
+de dólares en bitcoin de una vez.
+
+112
+00:08:41,215 --> 00:08:47,596
+Kwon dijo que esperaba lograr los 10.000 millones
+de dólares a finales del tercer trimestre.
+
+113
+00:08:47,846 --> 00:08:54,381
+Cualquiera podía ver en vivo, en la blockchain,
+cómo se llenaban las carteras de la reserva.
+
+114
+00:08:54,381 --> 00:08:59,882
+A principios de mayo, tenía 80.394 bitcoins,
+por un valor de unos 2.400 millones de dólares.
+
+115
+00:08:59,882 --> 00:09:05,383
+Se había convertido en uno de los
+mayores tenedores de bitcoin del mundo.
+
+116
+00:09:05,633 --> 00:09:09,483
+Para muchos inversores,
+parecía la pieza que faltaba.
+
+117
+00:09:09,483 --> 00:09:13,814
+La bóveda que Terra nunca
+tuvo, por fin llenándose.
+
+118
+00:09:14,814 --> 00:09:16,357
+Pero había una trampa.
+
+119
+00:09:16,357 --> 00:09:22,110
+La reserva era una fracción de los casi 19.000
+millones de dólares en UST en circulación.
+
+120
+00:09:22,110 --> 00:09:28,283
+Y estaba en bitcoin, un activo que podía caer
+justo en el momento en que hiciera falta.
+
+121
+00:09:28,533 --> 00:09:32,404
+Los fiscales federales de EE. UU.
+dijeron después que había otro problema:
+
+122
+00:09:32,404 --> 00:09:39,661
+Kwon presentó la fundación como ajena a Terraform
+cuando, según los fiscales, él la controlaba.
+
+123
+00:09:40,211 --> 00:09:45,041
+Así que, antes de ver la caída, aquí
+van dos preguntas para tener en mente.
+
+124
+00:09:45,041 --> 00:09:48,353
+¿El rescate de 2021 se ocultó
+realmente a los inversores?
+
+125
+00:09:48,353 --> 00:09:52,079
+¿Y esos pagos de Chai funcionaban
+realmente sobre Terra?
+
+126
+00:09:52,329 --> 00:09:58,029
+Ambas tienen respuesta antes del final:
+una, de un jurado; la otra, del propio Do Kwon.
+
+127
+00:09:59,229 --> 00:10:00,917
+Sábado 7 de mayo de 2022.
+
+128
+00:10:00,917 --> 00:10:05,289
+Anchor tiene unos 14.000
+millones de dólares en UST.
+
+129
+00:10:05,289 --> 00:10:10,314
+Terraform retira una gran cantidad de
+UST de un pool de negociación clave
+
+130
+00:10:10,314 --> 00:10:15,338
+en la plataforma Curve, como parte de
+un traslado previsto a un nuevo pool.
+
+131
+00:10:15,588 --> 00:10:22,458
+En cuestión de minutos, otras carteras vuelcan
+decenas de millones de UST en lo que queda.
+
+132
+00:10:22,458 --> 00:10:25,894
+El pool se desequilibra.
+UST baja a 99 centavos.
+
+133
+00:10:25,894 --> 00:10:31,819
+Parece poco. No lo es. Para una moneda
+cuya única promesa es valer un dólar,
+
+134
+00:10:31,819 --> 00:10:35,205
+un centavo es una grieta en el cristal.
+
+135
+00:10:35,755 --> 00:10:39,752
+Domingo. Los depositantes de
+Anchor corren hacia la salida.
+
+136
+00:10:39,752 --> 00:10:43,748
+Miles de millones de dólares en
+UST se van en cuestión de días.
+
+137
+00:10:43,748 --> 00:10:48,486
+La Luna Foundation Guard dice que
+prestará 1.500 millones de dólares,
+
+138
+00:10:48,486 --> 00:10:53,224
+mitad en bitcoin y mitad en
+UST, para defender la paridad.
+
+139
+00:10:53,474 --> 00:10:57,421
+Kwon tuitea: «Desplegando
+más capital. Calma, chicos».
+
+140
+00:10:57,971 --> 00:11:00,694
+Lunes. La defensa no funciona.
+
+141
+00:11:00,694 --> 00:11:04,978
+Los bitcoins de la fundación empiezan
+a salir de sus carteras para venderse.
+
+142
+00:11:04,978 --> 00:11:09,263
+El propio bitcoin se desliza
+hacia los 30.000 dólares.
+
+143
+00:11:09,263 --> 00:11:13,899
+Los depósitos en Anchor caen de 14.000 millones
+a menos de 9.000 millones.
+
+144
+00:11:13,899 --> 00:11:17,271
+En un momento, UST llega a caer
+a unos 35 centavos.
+
+145
+00:11:17,821 --> 00:11:20,826
+Y ahora el truco de magia funciona al revés.
+
+146
+00:11:20,826 --> 00:11:25,108
+Para defender la paridad, el
+sistema crea cada vez más LUNA.
+
+147
+00:11:25,108 --> 00:11:28,714
+Más LUNA significa que cada LUNA vale menos.
+
+148
+00:11:28,714 --> 00:11:32,320
+Eso significa menos confianza
+en UST. Y eso, más ventas.
+
+149
+00:11:32,870 --> 00:11:37,441
+Martes y miércoles. Los exchanges se colapsan
+ante la avalancha de transacciones.
+
+150
+00:11:37,441 --> 00:11:42,469
+El mayor exchange del mundo, Binance,
+suspende brevemente los retiros de LUNA y UST.
+
+151
+00:11:42,469 --> 00:11:47,693
+LUNA, que valía unos 80 dólares a principios
+de mes, cae por debajo de un dólar.
+
+152
+00:11:48,243 --> 00:11:53,456
+La oferta de LUNA se dispara de cientos de
+millones de monedas a millones de millones.
+
+153
+00:11:54,006 --> 00:11:59,818
+Jueves. La propia blockchain de Terra se detiene.
+Para el viernes, se ha detenido otra vez.
+
+154
+00:11:59,818 --> 00:12:06,115
+Los grandes exchanges retiran LUNA y UST.
+LUNA vale ya una ínfima fracción de centavo.
+
+155
+00:12:06,365 --> 00:12:12,704
+Ese viernes, Kwon escribe: «Me rompe el corazón
+el dolor que mi invento les ha causado a todos».
+
+156
+00:12:13,254 --> 00:12:16,900
+El lunes siguiente, la
+Luna Foundation Guard dice
+
+157
+00:12:16,900 --> 00:12:20,545
+que le quedan 313 bitcoins. De 80.394.
+
+158
+00:12:20,545 --> 00:12:24,752
+Una auditoría publicada
+después por la fundación
+
+159
+00:12:24,752 --> 00:12:28,958
+cifró lo gastado en defender la paridad
+en unos 2.800 millones de dólares.
+
+160
+00:12:29,958 --> 00:12:34,739
+Unos 40.000 millones de dólares en
+valor, esfumados en cuestión de días.
+
+161
+00:12:34,739 --> 00:12:40,853
+Hubo víctimas que invirtieron todos sus ahorros.
+Muchas confiaron en la palabra «estable».
+
+162
+00:12:42,053 --> 00:12:43,736
+¿Quiénes eran los Lunatics?
+
+163
+00:12:43,736 --> 00:12:47,444
+En Corea, se reunían en
+salas de chat grupales
+
+164
+00:12:47,444 --> 00:12:51,616
+y foros en línea. En el extranjero,
+en Reddit, Discord y Twitter.
+
+165
+00:12:51,616 --> 00:12:54,208
+Durante dos años, compartieron memes,
+
+166
+00:12:54,208 --> 00:12:58,960
+objetivos de precio y una especie de sentido
+de pertenencia. Kwon era su capitán.
+
+167
+00:12:59,510 --> 00:13:01,396
+Muchos de ellos no eran apostadores.
+
+168
+00:13:01,396 --> 00:13:06,740
+Los testimonios eran de oficinistas, jubilados,
+parejas jóvenes que ahorraban para una casa,
+
+169
+00:13:06,740 --> 00:13:12,084
+personas que habían sacado su dinero del
+banco porque Anchor pagaba muchas veces más.
+
+170
+00:13:12,634 --> 00:13:17,649
+Tras el colapso, esas comunidades cambiaron
+de la noche a la mañana. Se acabaron los memes.
+
+171
+00:13:17,649 --> 00:13:24,487
+Los moderadores del mayor foro en inglés fijaron
+arriba de la página enlaces a líneas de ayuda.
+
+172
+00:13:24,737 --> 00:13:29,334
+En Corea, donde LUNA se negociaba
+en los mayores exchanges del país,
+
+173
+00:13:29,334 --> 00:13:31,842
+esos exchanges empezaron a
+retirarla de cotización.
+
+174
+00:13:31,842 --> 00:13:38,111
+Grupos de inversores coreanos denunciaron
+penalmente y demandaron a los fundadores de Terra.
+
+175
+00:13:39,111 --> 00:13:44,373
+No vamos a nombrar a ninguno aquí.
+Sus pérdidas no son entretenimiento.
+
+176
+00:13:44,373 --> 00:13:50,820
+Pero cada cifra aquí era el alquiler de alguien,
+los ahorros de alguien, los planes de alguien.
+
+177
+00:13:52,020 --> 00:13:53,955
+Terra no cayó sola.
+
+178
+00:13:53,955 --> 00:14:00,922
+¿Recuerdas a Three Arrows, el fondo de Singapur
+que codirigió la venta de LUNA de mil millones?
+
+179
+00:14:00,922 --> 00:14:07,888
+Había apostado fuerte por LUNA.
+Cuando LUNA llegó a cero, la apuesta también.
+
+180
+00:14:08,138 --> 00:14:13,524
+A inicios de julio, un tribunal de las Islas
+Vírgenes Británicas había ordenado liquidarlo.
+
+181
+00:14:14,074 --> 00:14:16,891
+Las firmas que le habían prestado
+dinero fueron las siguientes.
+
+182
+00:14:16,891 --> 00:14:21,293
+Voyager Digital, que afirmó que Three
+Arrows había incumplido un préstamo
+
+183
+00:14:21,293 --> 00:14:25,695
+de unos 650 millones de dólares, se
+declaró en quiebra el 5 de julio.
+
+184
+00:14:25,945 --> 00:14:30,593
+Celsius Network, prestamista cripto que había
+prometido altos rendimientos a sus usuarios,
+
+185
+00:14:30,593 --> 00:14:34,854
+congeló los retiros en junio y se
+declaró en quiebra el 13 de julio.
+
+186
+00:14:35,404 --> 00:14:37,351
+Y luego estaba FTX.
+
+187
+00:14:37,601 --> 00:14:44,256
+En el juicio penal a Sam Bankman-Fried,
+fundador de FTX, una ex alta directiva
+
+188
+00:14:44,256 --> 00:14:50,519
+de su firma, Alameda Research, declaró que, tras
+el colapso, los acreedores reclamaron su dinero
+
+189
+00:14:50,519 --> 00:14:55,216
+en junio de 2022, y que Alameda les pagó
+con dinero de clientes de FTX.
+
+190
+00:14:55,466 --> 00:15:01,959
+FTX colapsó en noviembre de 2022. Un año después,
+Bankman-Fried fue declarado culpable de fraude.
+
+191
+00:15:02,959 --> 00:15:07,482
+Terra no cometió el fraude de FTX. Un jurado
+declaró culpable de eso a Bankman-Fried.
+
+192
+00:15:07,482 --> 00:15:11,170
+Pero, según ese testimonio,
+el pánico que empezó en mayo
+
+193
+00:15:11,170 --> 00:15:15,226
+fue en parte lo que arrastró el
+dinero de los clientes al agujero.
+
+194
+00:15:16,426 --> 00:15:20,897
+Mientras caían las fichas de dominó, Kwon
+propuso una solución: empezar de cero.
+
+195
+00:15:20,897 --> 00:15:27,251
+El 25 de mayo, la comunidad de Terra votó por
+una nueva blockchain. Arrancó el 28 de mayo.
+
+196
+00:15:27,501 --> 00:15:32,826
+La nueva moneda también se llamó LUNA. La cadena
+antigua pasó a llamarse Terra Classic,
+
+197
+00:15:32,826 --> 00:15:36,250
+y las monedas antiguas se
+convirtieron en LUNA Classic y USTC.
+
+198
+00:15:36,800 --> 00:15:43,301
+Los antiguos tenedores recibieron nueva LUNA
+en airdrops, según cuánto tenían y cuándo.
+
+199
+00:15:43,301 --> 00:15:47,142
+Faltaba algo. No había un nuevo UST.
+
+200
+00:15:47,142 --> 00:15:50,984
+Terra 2.0 se lanzó sin ninguna
+stablecoin algorítmica.
+
+201
+00:15:51,234 --> 00:15:57,432
+La nueva LUNA superó brevemente los 17 dólares,
+y cayó rápido cuando la gente vendió lo recibido.
+
+202
+00:15:57,432 --> 00:16:01,175
+Para muchos antiguos tenedores, no se
+acercaba ni de lejos a lo que habían perdido.
+
+203
+00:16:02,375 --> 00:16:06,351
+Cuando llegó el colapso,
+Kwon vivía en Singapur.
+
+204
+00:16:06,351 --> 00:16:11,346
+En septiembre de 2022, un tribunal de Seúl
+emitió una orden de arresto contra él,
+
+205
+00:16:11,346 --> 00:16:13,844
+e Interpol emitió una notificación roja.
+
+206
+00:16:13,844 --> 00:16:19,120
+Él dijo que no estaba huyendo. Pero
+nadie parecía saber dónde estaba.
+
+207
+00:16:19,370 --> 00:16:24,649
+Días después de la orden, la policía de
+Singapur dijo que ya no estaba en Singapur.
+
+208
+00:16:24,649 --> 00:16:28,768
+En octubre, el Ministerio de Exteriores
+de Corea anuló su pasaporte.
+
+209
+00:16:28,768 --> 00:16:32,429
+En internet, siguió publicando
+como si nada hubiera cambiado.
+
+210
+00:16:32,979 --> 00:16:35,891
+En marzo de 2023, en el
+aeropuerto de Podgorica,
+
+211
+00:16:35,891 --> 00:16:40,987
+la capital de Montenegro, la policía interceptó
+a un hombre que intentaba tomar un vuelo privado.
+
+212
+00:16:40,987 --> 00:16:43,958
+Llevaba un pasaporte
+costarricense falsificado.
+
+213
+00:16:43,958 --> 00:16:44,927
+Era Do Kwon.
+
+214
+00:16:45,177 --> 00:16:49,834
+Un tribunal montenegrino lo condenó a cuatro
+meses de cárcel por los documentos falsificados.
+
+215
+00:16:50,384 --> 00:16:53,499
+Tanto Corea del Sur como
+Estados Unidos lo reclamaban.
+
+216
+00:16:53,499 --> 00:16:56,229
+Durante más de un año y medio,
+
+217
+00:16:56,229 --> 00:17:01,349
+los tribunales y ministros de Montenegro
+debatieron a qué país debían entregarlo primero.
+
+218
+00:17:01,349 --> 00:17:06,084
+Al final, fue extraditado a Estados
+Unidos el último día de 2024.
+
+219
+00:17:07,284 --> 00:17:13,783
+Estados Unidos persiguió a Kwon dos veces.
+Una, en la vía civil. Otra, en la vía penal.
+
+220
+00:17:14,333 --> 00:17:17,165
+La SEC demandó a Terraform y
+a Kwon en febrero de 2023.
+
+221
+00:17:17,165 --> 00:17:22,483
+¿Recuerdas Chai? La SEC alegó que sus pagos no se
+procesaban realmente en la blockchain de Terra,
+
+222
+00:17:22,483 --> 00:17:27,801
+y que se copiaban transacciones en
+la cadena para que pareciera que sí.
+
+223
+00:17:28,051 --> 00:17:33,034
+En abril de 2024, un jurado neoyorquino declaró
+a Terraform y a Kwon responsables de fraude.
+
+224
+00:17:33,034 --> 00:17:37,030
+Después, la SEC dijo que el juicio había
+expuesto las mentiras de los demandados
+
+225
+00:17:37,030 --> 00:17:41,426
+sobre el uso de la blockchain de
+Terra para liquidar transacciones.
+
+226
+00:17:41,676 --> 00:17:46,527
+En junio de 2024, Terraform
+y Kwon aceptaron un acuerdo
+
+227
+00:17:46,527 --> 00:17:51,863
+de unos 4.470 millones de dólares, y
+Terraform aceptó cesar su actividad.
+
+228
+00:17:52,413 --> 00:17:56,325
+Luego llegó el caso
+penal. En agosto de 2025,
+
+229
+00:17:56,325 --> 00:18:02,683
+Kwon se declaró culpable de dos cargos de
+fraude. Y ante el tribunal, dijo esto:
+
+230
+00:18:02,683 --> 00:18:06,318
+«En 2021, hice declaraciones
+falsas y engañosas
+
+231
+00:18:06,318 --> 00:18:09,953
+sobre por qué UST recuperó su paridad».
+
+232
+00:18:10,953 --> 00:18:15,774
+Ese fue el rescate oculto. La pregunta
+de antes, respondida por el propio Kwon.
+
+233
+00:18:16,324 --> 00:18:20,486
+En diciembre de 2025, el juez lo
+condenó a 15 años de prisión.
+
+234
+00:18:20,486 --> 00:18:25,026
+Fueron más que los 12 años
+que pedía la fiscalía.
+
+235
+00:18:25,026 --> 00:18:29,307
+El juez lo calificó de fraude a
+una escala «épica, generacional».
+
+236
+00:18:30,507 --> 00:18:36,326
+La prensa en inglés suele parar ahí. Pero el mayor
+grupo de víctimas minoristas estaba en Corea.
+
+237
+00:18:36,326 --> 00:18:39,439
+Según cifras de las autoridades
+financieras coreanas,
+
+238
+00:18:39,439 --> 00:18:43,885
+unas 280.000 personas en Corea
+tenían LUNA cuando colapsó.
+
+239
+00:18:44,135 --> 00:18:50,532
+A los pocos días, la fiscalía de Seúl reactivó
+una unidad de delitos financieros llamada «la Parca
+
+240
+00:18:50,532 --> 00:18:57,356
+de Yeouido», por el distrito financiero de Corea.
+Terra fue uno de sus primeros casos.
+
+241
+00:18:57,906 --> 00:19:03,216
+En abril de 2023, la fiscalía coreana acusó
+formalmente a Daniel Shin y a varios más.
+
+242
+00:19:03,216 --> 00:19:09,603
+La fiscalía alega que Chai hizo que pagos
+corrientes parecieran funcionar sobre Terra.
+
+243
+00:19:09,853 --> 00:19:13,348
+Shin niega cualquier irregularidad.
+Sus abogados dicen que dejó Terra
+
+244
+00:19:13,348 --> 00:19:17,192
+dos años antes del colapso y que
+no tuvo nada que ver con él.
+
+245
+00:19:17,192 --> 00:19:22,842
+Los tribunales coreanos rechazaron dos veces
+las solicitudes de arresto; su juicio continúa.
+
+246
+00:19:23,392 --> 00:19:26,470
+Y puede que Do Kwon no haya
+terminado con la justicia coreana.
+
+247
+00:19:26,470 --> 00:19:32,691
+La fiscalía estadounidense dijo que no se opondría
+a su traslado a Corea tras cumplir media condena.
+
+248
+00:19:32,941 --> 00:19:38,317
+En Corea, aún tendría pendientes otros cargos,
+entre ellos bajo la ley del mercado de capitales.
+
+249
+00:19:38,317 --> 00:19:44,077
+Algunos medios coreanos han publicado que una
+condena allí podría implicar más de 30 años.
+
+250
+00:19:45,277 --> 00:19:49,119
+Terra no fue la primera stablecoin
+algorítmica en romperse.
+
+251
+00:19:49,119 --> 00:19:55,183
+En junio de 2021, la stablecoin semialgorítmica
+del proyecto Iron Finance perdió su paridad,
+
+252
+00:19:55,183 --> 00:20:01,625
+mientras su token hermano caía de unos 60
+dólares a casi cero en menos de un día.
+
+253
+00:20:01,875 --> 00:20:06,223
+La misma idea de diseño. La
+misma espiral. A menor escala.
+
+254
+00:20:06,773 --> 00:20:09,452
+Entonces, ¿por qué la idea sigue volviendo?
+
+255
+00:20:09,452 --> 00:20:13,846
+Porque el sueño es poderoso.
+Dinero tan estable como un dólar,
+
+256
+00:20:13,846 --> 00:20:16,642
+sin que nadie tenga que guardar los dólares.
+
+257
+00:20:16,892 --> 00:20:19,152
+Y porque el mecanismo
+funciona a la perfección,
+
+258
+00:20:19,152 --> 00:20:24,426
+justo hasta el momento en que la gente deja
+de creer en él. La confianza es la garantía.
+
+259
+00:20:24,976 --> 00:20:30,364
+Y el rendimiento hace que las cuentas
+parezcan magia. Haz tú mismo los números.
+
+260
+00:20:30,364 --> 00:20:32,781
+Catorce mil millones de
+dólares en depósitos,
+
+261
+00:20:32,781 --> 00:20:39,547
+a casi un 20 %, suponen unos 2.700 millones
+de dólares al año en intereses prometidos.
+
+262
+00:20:39,797 --> 00:20:44,683
+Los prestatarios de Anchor
+nunca pagaron nada parecido.
+
+263
+00:20:44,683 --> 00:20:49,569
+La diferencia tenía que salir de algún lado:
+reservas, subsidios y dinero nuevo que entraba.
+
+264
+00:20:50,119 --> 00:20:56,067
+Los legisladores tomaron nota. En julio de 2025,
+Estados Unidos aprobó la Ley GENIUS,
+
+265
+00:20:56,067 --> 00:21:03,501
+que exige respaldar 1:1 las stablecoins de pago
+con reservas como efectivo y letras del Tesoro.
+
+266
+00:21:04,501 --> 00:21:07,655
+Esto no es una recomendación
+de inversión. Es un patrón.
+
+267
+00:21:07,655 --> 00:21:11,237
+Cuando un rendimiento está muy por encima
+de lo que paga cualquier inversión segura,
+
+268
+00:21:11,237 --> 00:21:17,327
+el dinero viene de algún lado. Si no
+ves de dónde, puede que venga de ti.
+
+269
+00:21:18,527 --> 00:21:21,377
+Terra no fracasó porque nadie
+advirtiera que iba a pasar.
+
+270
+00:21:21,377 --> 00:21:25,914
+Fracasó porque una promesa del 20 % resultó
+más convincente que todas las advertencias.
+
+271
+00:21:26,914 --> 00:21:30,636
+Si algo te promete altos
+rendimientos sin ningún riesgo,
+
+272
+00:21:30,636 --> 00:21:34,771
+hazte una pregunta: ¿de dónde
+sale realmente el dinero?
+
+273
+00:21:35,321 --> 00:21:38,820
+Terra fue una historia coreana
+que el mundo entero siguió.
+
+274
+00:21:38,820 --> 00:21:46,398
+La próxima vez: una historia coreana desconocida
+para el mundo. Un hombre que tomó el dinero de
+
+275
+00:21:46,398 --> 00:21:52,461
+decenas de miles de personas, huyó del país y fue
+dado por muerto. Muchas víctimas aún no lo creen.
+
+276
+00:21:53,011 --> 00:21:54,986
+Suscríbete para no perdértelo.
+
+277
+00:21:54,986 --> 00:22:01,040
+Y cuéntame en los comentarios: ¿alguna vez
+un colapso cripto te atrapó a ti o a un conocido?

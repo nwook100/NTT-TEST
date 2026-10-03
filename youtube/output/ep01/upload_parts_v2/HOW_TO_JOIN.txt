@@ -1,0 +1,11 @@
+EP.01 1080p 최종 원본 v2 (조희팔 사진 포함) 합치는 방법 — 조각 24개 → ep01_final_upload.mp4
+
+1) 조각 24개(ep01_1080p_v2.part00 ~ 마지막)를 한 폴더에 저장 (이전 v1 조각과 섞지 마세요)
+
+[윈도우] 폴더 주소창에 cmd → 엔터 → 아래 한 줄 붙여넣고 엔터:
+copy /b ep01_1080p_v2.part00+ep01_1080p_v2.part01+ep01_1080p_v2.part02+ep01_1080p_v2.part03+ep01_1080p_v2.part04+ep01_1080p_v2.part05+ep01_1080p_v2.part06+ep01_1080p_v2.part07+ep01_1080p_v2.part08+ep01_1080p_v2.part09+ep01_1080p_v2.part10+ep01_1080p_v2.part11+ep01_1080p_v2.part12+ep01_1080p_v2.part13+ep01_1080p_v2.part14+ep01_1080p_v2.part15+ep01_1080p_v2.part16+ep01_1080p_v2.part17+ep01_1080p_v2.part18+ep01_1080p_v2.part19+ep01_1080p_v2.part20+ep01_1080p_v2.part21+ep01_1080p_v2.part22+ep01_1080p_v2.part23 ep01_final_upload.mp4
+
+[맥] 터미널에서 그 폴더로 이동 후:
+cat ep01_1080p_v2.part* > ep01_final_upload.mp4
+
+재생해서 22분 28초 끝까지 나오면 성공. (MD5: de03ed971e9d41fbc47f8ea0c763a4d6)

@@ -1,0 +1,69 @@
+{
+ "section": "4",
+ "chunks": [
+  {
+   "id": 36,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s04_chapter_the_warnings.mp4"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_did_not_hide_in_the_dark", "args": {"lines": ["The scheme did not hide", "in the dark for four years."], "red": ["dark"], "dur": 3.5, "stagger": 0.8, "size": 112}},
+    {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_warnings_timeline", "args": {"lines": ["2006 → May 2007 →", "Aug 2007 → Apr 2008 →", "Sep 2008 → Oct 2008"], "kicker": "THE WARNINGS ARE ON THE RECORD", "dur": 6.0, "stagger": 1.1, "size": 110}}
+   ]
+  },
+  {
+   "id": 37,
+   "segments": [
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4"},
+    {"kind": "motion", "fn": "typewriter", "name": "s04_tw_may_2007_miryang", "args": {"text": "MAY 2007 — MIRYANG", "sub": "South Gyeongsang Province", "dur": 3.5}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out", "crop": "bottom", "grade": "cold"}
+   ]
+  },
+  {
+   "id": 38,
+   "segments": [
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4"},
+    {"kind": "motion", "fn": "typewriter", "name": "s04_tw_august_2007", "args": {"text": "AUGUST 2007", "sub": "Kang Tae-yong, Cho's right-hand man", "dur": 3.5}},
+    {"kind": "motion", "fn": "count_up", "name": "s04_count_50M_won_twice", "args": {"to": 50, "prefix": "₩", "suffix": " MILLION", "label": "TWICE", "sublabel": "to a police sergeant at the Daegu police agency", "dur": 5.0, "count_time": 1.8}},
+    {"kind": "text", "text": "A sergeant who was working\non the Cho case.", "style": "quote"}
+   ]
+  },
+  {
+   "id": 39,
+   "segments": [
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4", "grade": "cold"},
+    {"kind": "motion", "fn": "word_by_word", "name": "s04_wbw_investigative_convenience", "args": {"text": "investigative convenience.", "attribution": "— A DISTRICT COURT", "red": ["convenience."], "dur": 3.5, "size": 110}}
+   ]
+  },
+  {
+   "id": 40,
+   "segments": [
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s04_kp_defunct_company_records", "args": {"lines": ["Records from", "an old, defunct company", "instead of the one", "actually taking the money."], "red": ["defunct"], "kicker": "PROSECUTORS ALSO ALLEGED", "dur": 5.5, "stagger": 0.7, "size": 100}}
+   ]
+  },
+  {
+   "id": 41,
+   "segments": [
+    {"kind": "motion", "fn": "typewriter", "name": "s04_tw_april_2008_regulator_alert", "args": {"text": "APRIL 2008 — FINANCIAL REGULATOR ALERTS POLICE", "sub": "in Daegu, Busan, Incheon · according to Sisa IN", "dur": 4.5}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg", "fx": "in", "crop": "detail", "grade": "cold"},
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg", "fx": "right", "crop": "left", "grade": "cold"}
+   ]
+  },
+  {
+   "id": 42,
+   "segments": [
+    {"kind": "motion", "fn": "typewriter", "name": "s04_tw_september_2008", "args": {"text": "SEPTEMBER 2008", "sub": "victims began filing complaints", "dur": 3.0}},
+    {"kind": "text", "text": "By then,\nit was too late.", "style": "quote"}
+   ]
+  }
+ ],
+ "sfx": [
+  {"chunk": 38, "name": "impact", "offset": 10.3, "gain_db": -10},
+  {"chunk": 39, "name": "whoosh", "offset": 0.0, "gain_db": -14},
+  {"chunk": 41, "name": "typewriter", "offset": 0.2, "gain_db": -12},
+  {"chunk": 42, "name": "heartbeat", "offset": 2.9, "gain_db": -8}
+ ],
+ "music_drops": [
+  {"chunk": 42, "dur": 6.8}
+ ]
+}

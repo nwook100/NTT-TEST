@@ -1,0 +1,334 @@
+{
+ "section": "14",
+ "chunks": [
+  {
+   "id": 97,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s14_chapter_why_the_dream_keeps_coming_back.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_june2021_iron_finance",
+     "args": {
+      "text": "JUNE 2021",
+      "sub": "IRON FINANCE",
+      "dur": 3.0
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/gov/gov_06_fed_note_algorithmic_stablecoins.png",
+     "fx": "out",
+     "align": "top"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s14_cd_sister_token_60_to_0",
+     "args": {
+      "frm": 60,
+      "to": 0,
+      "prefix": "~$",
+      "kicker": "IRON FINANCE'S SISTER TOKEN",
+      "label": "FROM AROUND 60 DOLLARS TO ALMOST ZERO",
+      "sublabel": "IN LESS THAN A DAY",
+      "end_red": true,
+      "glitch": true,
+      "dur": 5.5,
+      "count_time": 3.2
+     }
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_same_spiral",
+     "args": {
+      "lines": [
+       "Same design idea.",
+       "Same spiral.",
+       "Smaller scale."
+      ],
+      "red": [
+       "spiral."
+      ],
+      "dur": 4.8,
+      "stagger": 1.6,
+      "size": 118
+     }
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/rainy_street_night_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_steady_as_a_dollar",
+     "args": {
+      "lines": [
+       "Money as steady as a dollar,",
+       "without anyone needing",
+       "to hold the dollars."
+      ],
+      "red": [
+       "steady"
+      ],
+      "kicker": "THE DREAM",
+      "dur": 5.5,
+      "stagger": 1.8,
+      "size": 104
+     }
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+     "start": 1.25
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s14_keyphrase_confidence_collateral.mp4"
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_anchor_math",
+     "args": {
+      "text": "14,000,000,000 UST × ~19.5%",
+      "sub": "RUN THE NUMBERS YOURSELF",
+      "footer": "ILLUSTRATIVE · SELF-MADE MATH",
+      "dur": 4.0
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "bar_chart",
+     "name": "s14_bar_deposits_vs_interest",
+     "args": {
+      "bars": [
+       [
+        "Deposits",
+        14
+       ],
+       [
+        "Promised interest, a year",
+        2.7,
+        true
+       ]
+      ],
+      "prefix": "$",
+      "suffix": "B",
+      "decimals": 1,
+      "title": "RUN THE NUMBERS YOURSELF",
+      "note": "Roughly · at nearly 20 percent · illustrative self-made math",
+      "dur": 5.8
+     }
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Anchor's borrowers never paid\nanything close to that.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s14_flow_where_interest_came_from",
+     "args": {
+      "nodes": [
+       {
+        "id": "bor",
+        "label": "Anchor's borrowers",
+        "sub": "never paid anything close",
+        "x": 0.15,
+        "y": 0.16
+       },
+       {
+        "id": "res",
+        "label": "Reserves",
+        "x": 0.15,
+        "y": 0.43
+       },
+       {
+        "id": "subs",
+        "label": "Subsidies",
+        "x": 0.15,
+        "y": 0.69
+       },
+       {
+        "id": "new",
+        "label": "New money",
+        "sub": "coming in",
+        "x": 0.15,
+        "y": 0.95,
+        "red": true
+       },
+       {
+        "id": "int",
+        "label": "Promised interest",
+        "sub": "roughly $2.7B a year",
+        "x": 0.85,
+        "y": 0.55
+       }
+      ],
+      "edges": [
+       {
+        "from": "bor",
+        "to": "int"
+       },
+       {
+        "from": "res",
+        "to": "int"
+       },
+       {
+        "from": "subs",
+        "to": "int"
+       },
+       {
+        "from": "new",
+        "to": "int",
+        "red": true
+       }
+      ],
+      "title": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
+      "dur": 5.5
+     }
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s14_tw_july2025_genius_act",
+     "args": {
+      "text": "JULY 2025",
+      "sub": "GENIUS ACT (U.S.)",
+      "dur": 3.0
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/cards/zoom/card_08_genius_act_2025-07-18_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "This isn't investment advice.\nIt's a pattern.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_yield_far_above_safe",
+     "args": {
+      "lines": [
+       "When a yield is far above",
+       "what anything safe pays,"
+      ],
+      "red": [
+       "far",
+       "above"
+      ],
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 112
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s14_kp_coming_from_you",
+     "args": {
+      "lines": [
+       "If you can't see where,",
+       "it might be coming from you."
+      ],
+      "red": [
+       "you."
+      ],
+      "dur": 5.0,
+      "stagger": 1.4,
+      "size": 112
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 97,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 97,
+   "name": "glitch",
+   "offset": 14.5,
+   "gain_db": -16
+  },
+  {
+   "chunk": 100,
+   "name": "impact",
+   "offset": 5.75,
+   "gain_db": -12
+  },
+  {
+   "chunk": 103,
+   "name": "typewriter",
+   "offset": 4.65,
+   "gain_db": -16
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 100,
+   "dur": 7.6
+  }
+ ]
+}

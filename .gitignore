@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+__pycache__/
+*.pyc
+youtube/output/**/*.wav
+youtube/output/**/*.mp4
+youtube/output/**/assemble_*/
+youtube/assets/openverse.log
+youtube/assets/*.src
+youtube/assets/*/motion_edl/*.tmp*.mp4
+youtube/shorts/**/*.mp4
+youtube/branding/*.mp4
+youtube/branding/options/*.mp4
+youtube/output/**/upload_parts/*.part*
+youtube/output/**/upload_parts*/*.part*

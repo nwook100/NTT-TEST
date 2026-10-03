@@ -1,0 +1,4065 @@
+{
+ "episode": "ep01_terra_luna",
+ "chunks": {
+  "0": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4",
+    "start": 1.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_price_less_than_a_cent",
+    "args": {
+     "lines": [
+      "Above 100 dollars",
+      "only a month earlier.",
+      "Now it's worth less than a cent."
+     ],
+     "kicker": "ITS PRICE",
+     "red": [
+      "cent."
+     ],
+     "dur": 6.0,
+     "stagger": 1.8,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.01  TERRA-LUNA"
+    }
+   }
+  ],
+  "1": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_2.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "Many of them had been told\nthis was the safe option.",
+    "style": "quote"
+   }
+  ],
+  "2": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s00_pc_kwon_man_behind",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "THE MAN BEHIND IT",
+     "sub": "Co-founder, Terraform Labs",
+     "grade": "bw",
+     "dur": 4.0
+    }
+   }
+  ],
+  "3": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_1.jpg",
+    "fx": "left",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4",
+    "start": 1.5
+   },
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s00_tl_collapse_arrest_plea",
+    "args": {
+     "title": "THE STORY IN THREE DATES",
+     "events": [
+      [
+       "May 2022",
+       "Terra-Luna collapses"
+      ],
+      [
+       "March 2023",
+       "Arrested at an airport in the Balkans with a forged passport"
+      ],
+      [
+       "August 2025",
+       "Pleads guilty in a New York courtroom"
+      ]
+     ],
+     "dur": 6.0
+    }
+   }
+  ],
+  "4": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s01_pc_kwon_founder",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "THE FOUNDER",
+     "sub": "Grew up in Seoul. Stanford, computer science. Co-founded Terraform Labs in 2018.",
+     "grade": "color",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s01_tl_kwon_path",
+    "args": {
+     "title": "DO KWON",
+     "events": [
+      [
+       "Stanford",
+       "Studied computer science"
+      ],
+      [
+       "Microsoft · Apple",
+       "Software engineer, briefly"
+      ],
+      [
+       "2016",
+       "Starts Anyfi, a small wireless networking company"
+      ],
+      [
+       "Early 2018",
+       "Co-founds Terraform Labs"
+      ]
+     ],
+     "dur": 6.0
+    }
+   }
+  ],
+  "5": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
+    "crop": "top",
+    "fx": "in"
+   }
+  ],
+  "6": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_coder_dealmaker",
+    "args": {
+     "lines": [
+      "DO KWON — the coder",
+      "DANIEL SHIN — the dealmaker"
+     ],
+     "red": [
+      "coder",
+      "dealmaker"
+     ],
+     "kicker": "EARLY 2018 · TERRAFORM LABS",
+     "dur": 5.5,
+     "stagger": 2.6,
+     "size": 104
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
+    "crop": "right",
+    "fx": "left"
+   },
+   {
+    "kind": "text",
+    "text": "Ticket Monster, or TMON",
+    "style": "label"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"
+   }
+  ],
+  "7": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4"
+   }
+  ],
+  "8": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s01_count_followers_1m",
+    "args": {
+     "to": 1000000,
+     "prefix": "~",
+     "kicker": "ON TWITTER · BY 2022",
+     "label": "AROUND A MILLION PEOPLE FOLLOWED HIM",
+     "dur": 5.3,
+     "count_time": 3.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_the_future",
+    "args": {
+     "lines": [
+      "He wasn't just a founder.",
+      "He was the future."
+     ],
+     "red": [
+      "future."
+     ],
+     "kicker": "TO MANY OF THEM",
+     "dur": 4.2,
+     "stagger": 2.5,
+     "size": 110
+    }
+   }
+  ],
+  "9": [
+   {
+    "kind": "text",
+    "text": "Terra's big idea\nwas a stablecoin.",
+    "style": "label"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4",
+    "start": 1.5
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s01_cmp_bitcoin_vs_stablecoin",
+    "args": {
+     "title": "TERRA'S BIG IDEA",
+     "left": {
+      "head": "Bitcoin",
+      "big": "Up and down",
+      "sub": "Most cryptocurrencies swing wildly in price."
+     },
+     "right": {
+      "head": "Stablecoin",
+      "big": "Always $1",
+      "sub": "Supposed to stay at one dollar."
+     },
+     "dur": 5.5
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4",
+    "start": 2.0
+   }
+  ],
+  "10": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_real_dollar_reserve",
+    "args": {
+     "lines": [
+      "For every coin, they hold a real dollar,",
+      "or something like it, in reserve."
+     ],
+     "red": [
+      "dollar",
+      "reserve"
+     ],
+     "kicker": "MOST STABLECOINS: THE BORING WAY",
+     "dur": 4.4,
+     "stagger": 2.2,
+     "size": 96
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Terra didn't.",
+    "style": "quote"
+   }
+  ],
+  "11": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s02_chapter_coffee_paid_in_crypto.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/coffee_shop_2.mp4",
+    "start": 3.5
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_buying_coffee",
+    "args": {
+     "lines": [
+      "It was about buying coffee."
+     ],
+     "red": [
+      "coffee."
+     ],
+     "dur": 3.0,
+     "size": 110
+    }
+   }
+  ],
+  "12": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s02_tw_chai",
+    "args": {
+     "text": "CHAI",
+     "sub": "2019 · A MOBILE PAYMENTS APP IN KOREA",
+     "dur": 3.5,
+     "size": 140
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_lower_fees",
+    "args": {
+     "lines": [
+      "Shoppers got discounts.",
+      "Merchants paid lower fees",
+      "than the card companies charged."
+     ],
+     "red": [
+      "discounts.",
+      "lower"
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 100
+    }
+   }
+  ],
+  "13": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_terra_blockchain",
+    "args": {
+     "lines": [
+      "Terra told the world",
+      "those payments were running",
+      "on the Terra blockchain."
+     ],
+     "red": [
+      "told"
+     ],
+     "dur": 4.0,
+     "stagger": 1.0,
+     "size": 100
+    }
+   }
+  ],
+  "14": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_3.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s02_flow_krt",
+    "args": {
+     "title": "TERRA'S WON-PEGGED COIN",
+     "nodes": [
+      {
+       "id": "c",
+       "label": "Customer",
+       "sub": "pays in won",
+       "x": 0.07,
+       "y": 0.5
+      },
+      {
+       "id": "k",
+       "label": "KRT",
+       "sub": "Terra's won-pegged coin",
+       "x": 0.5,
+       "y": 0.5,
+       "red": true
+      },
+      {
+       "id": "m",
+       "label": "Merchant",
+       "x": 0.93,
+       "y": 0.5
+      }
+     ],
+     "edges": [
+      {
+       "from": "c",
+       "to": "k"
+      },
+      {
+       "from": "k",
+       "to": "m"
+      }
+     ],
+     "dur": 5.5
+    }
+   }
+  ],
+  "15": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_chai_terraform",
+    "args": {
+     "lines": [
+      "Chai partnered with Terraform",
+      "to bring that won coin into its app."
+     ],
+     "red": [
+      "chai",
+      "terraform"
+     ],
+     "kicker": "2019",
+     "dur": 4.5,
+     "stagger": 1.5,
+     "size": 100
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/coffee_shop_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_tiny_proof",
+    "args": {
+     "lines": [
+      "Every coffee, every online order,",
+      "was supposed to be a tiny proof",
+      "that Terra worked as money."
+     ],
+     "red": [
+      "supposed"
+     ],
+     "dur": 5.5,
+     "stagger": 1.3,
+     "size": 100
+    }
+   }
+  ],
+  "16": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_terra_said_users",
+    "args": {
+     "lines": [
+      "500,000 users",
+      "2.7 million transactions"
+     ],
+     "red": [
+      "500,000",
+      "2.7"
+     ],
+     "kicker": "TERRA SAID",
+     "footer": "TERRA'S OWN ANNOUNCEMENTS",
+     "dur": 5.0,
+     "stagger": 0.8,
+     "size": 120
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/money_counting_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4",
+    "start": 3.0
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_real_people",
+    "args": {
+     "lines": [
+      "Real people,",
+      "in a real country,",
+      "paying for real things."
+     ],
+     "red": [
+      "real"
+     ],
+     "kicker": "TERRA COULD POINT TO",
+     "dur": 4.0,
+     "stagger": 0.8,
+     "size": 110
+    }
+   }
+  ],
+  "17": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4",
+    "grade": "bw"
+   },
+   {
+    "kind": "text",
+    "text": "In a courtroom.",
+    "style": "quote"
+   }
+  ],
+  "18": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s03_chapter_the_magic_trick.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_two_coins",
+    "args": {
+     "lines": [
+      "UST: meant to stay at $1",
+      "LUNA: price could rise and fall"
+     ],
+     "red": [
+      "UST:",
+      "LUNA:"
+     ],
+     "kicker": "TERRA HAD TWO COINS",
+     "dur": 6.0,
+     "stagger": 1.8,
+     "size": 110
+    }
+   }
+  ],
+  "19": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s03_flow_ust_luna_swap",
+    "args": {
+     "title": "THE SYSTEM PROMISED: SWAP $1 WORTH, AND BACK",
+     "nodes": [
+      {
+       "id": "u",
+       "label": "UST",
+       "sub": "meant to stay at $1",
+       "x": 0.15,
+       "y": 0.5
+      },
+      {
+       "id": "l",
+       "label": "LUNA",
+       "sub": "price could rise and fall",
+       "x": 0.85,
+       "y": 0.5,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "u",
+       "to": "l"
+      },
+      {
+       "from": "l",
+       "to": "u"
+      }
+     ],
+     "dur": 6.0
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_buy_cheap_pocket_difference",
+    "args": {
+     "lines": [
+      "Buy it cheap,",
+      "swap it for a dollar of LUNA,",
+      "and pocket the difference."
+     ],
+     "red": [
+      "difference."
+     ],
+     "kicker": "TRADERS COULD",
+     "dur": 6.0,
+     "stagger": 1.9,
+     "size": 104
+    }
+   }
+  ],
+  "20": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_forever",
+    "args": {
+     "lines": [
+      "Push UST back to a dollar.",
+      "Forever."
+     ],
+     "red": [
+      "Forever."
+     ],
+     "kicker": "IN THEORY, THAT BUYING PRESSURE WOULD",
+     "dur": 6.0,
+     "stagger": 4.4,
+     "size": 110
+    }
+   }
+  ],
+  "21": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_count_ust_slips_097",
+    "args": {
+     "frm": 1.0,
+     "to": 0.97,
+     "prefix": "$",
+     "decimals": 2,
+     "end_red": true,
+     "kicker": "SAY UST SLIPS TO",
+     "label": "BUY 1 UST FOR $0.97",
+     "dur": 6.0,
+     "count_time": 3.0
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_worked_example_3c",
+    "args": {
+     "lines": [
+      "Buy 1 UST for $0.97",
+      "Swap for $1.00 of new LUNA",
+      "Profit: 3¢"
+     ],
+     "red": [
+      "3¢"
+     ],
+     "kicker": "WORKED EXAMPLE",
+     "dur": 6.0,
+     "stagger": 2.2,
+     "size": 100
+    }
+   }
+  ],
+  "22": [
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s03_stamp_ust_burned",
+    "args": {
+     "word": "BURNED",
+     "sub": "THAT UST IS BURNED",
+     "dur": 4.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "line_chart",
+    "name": "s03_lc_peg_restored",
+    "args": {
+     "title": "WORKED EXAMPLE · UST",
+     "points": [
+      [
+       "The peg",
+       1.0
+      ],
+      [
+       "UST slips",
+       0.97
+      ],
+      [
+       "Back to a dollar",
+       1.0
+      ]
+     ],
+     "prefix": "$",
+     "decimals": 2,
+     "note": "Illustrative example from the narration: UST slips to 97 cents, then climbs back to a dollar",
+     "dur": 4.5
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_burn_luna_create_ust",
+    "args": {
+     "lines": [
+      "Burn LUNA.",
+      "Create UST.",
+      "Sell it."
+     ],
+     "red": [
+      "Burn"
+     ],
+     "kicker": "IT WORKS THE OTHER WAY",
+     "dur": 5.0,
+     "stagger": 1.6,
+     "size": 120
+    }
+   }
+  ],
+  "23": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_code_and_confidence",
+    "args": {
+     "lines": [
+      "Just code,",
+      "and confidence."
+     ],
+     "red": [
+      "confidence."
+     ],
+     "kicker": "NO VAULT OF DOLLARS BEHIND IT",
+     "dur": 4.0,
+     "stagger": 0.8,
+     "size": 130
+    }
+   },
+   {
+    "kind": "text",
+    "text": "One assumption:\nthat LUNA would always\nbe worth something.",
+    "style": "quote"
+   }
+  ],
+  "24": [
+   {
+    "kind": "text",
+    "text": "Critics called it\nwhat it looked like:",
+    "style": "label"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_spiral_to_zero",
+    "args": {
+     "lines": [
+      "A design that could spiral to zero",
+      "if confidence ever broke."
+     ],
+     "red": [
+      "zero"
+     ],
+     "dur": 5.0,
+     "stagger": 2.2,
+     "size": 100
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s00_wordbyword_poor_quote.mp4"
+   }
+  ],
+  "25": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s04_chapter_the_20_promise.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"
+   }
+  ],
+  "26": [
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s04_cmp_bank_vs_anchor",
+    "args": {
+     "title": "THE BAIT",
+     "left": {
+      "head": "Your bank",
+      "big": "Almost nothing"
+     },
+     "right": {
+      "head": "Anchor Protocol",
+      "big": "Nearly 20%",
+      "sub": "on a coin that was supposed to be as stable as a dollar"
+     },
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_3.jpg",
+    "fx": "in",
+    "crop": "right",
+    "grade": "cold"
+   }
+  ],
+  "27": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_ust_in_anchor",
+    "args": {
+     "lines": [
+      "The vast majority of all UST in existence",
+      "was sitting in Anchor,",
+      "earning that yield."
+     ],
+     "red": [
+      "anchor,"
+     ],
+     "kicker": "BY EARLY 2022",
+     "dur": 4.5,
+     "stagger": 0.8,
+     "size": 92
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_count_luna_100",
+    "args": {
+     "to": 100,
+     "prefix": "$",
+     "suffix": "+",
+     "kicker": "LUNA'S PRICE",
+     "label": "SOARED ABOVE 100 DOLLARS",
+     "dur": 4.0,
+     "count_time": 2.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_tens_of_billions",
+    "args": {
+     "lines": [
+      "Terra's total value reached",
+      "tens of billions of dollars."
+     ],
+     "red": [
+      "billions"
+     ],
+     "dur": 4.0,
+     "stagger": 0.7,
+     "size": 104
+    }
+   }
+  ],
+  "28": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s04_nationals_park_3.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_count_nationals_38m",
+    "args": {
+     "to": 38,
+     "prefix": "~$",
+     "suffix": "M",
+     "kicker": "TERRAFORM · WASHINGTON NATIONALS",
+     "label": "REPORTED AT ABOUT 38 MILLION DOLLARS",
+     "sublabel": "five-year sponsorship deal with the Washington Nationals baseball team",
+     "dur": 4.5,
+     "count_time": 2.2
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_2.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "His fans called themselves\n\"Lunatics.\"",
+    "style": "quote"
+   }
+  ],
+  "29": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_where_from",
+    "args": {
+     "lines": [
+      "But where was that 20 percent",
+      "actually coming from?"
+     ],
+     "red": [
+      "from?"
+     ],
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 110
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/code_dark_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_terra_itself",
+    "args": {
+     "lines": [
+      "Largely from Terra itself,",
+      "subsidizing the payments",
+      "to keep people in."
+     ],
+     "red": [
+      "terra",
+      "itself,"
+     ],
+     "kicker": "FOR A LONG TIME, THE HONEST ANSWER",
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 104
+    }
+   }
+  ],
+  "30": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s04_flow_anchor_reserve",
+    "args": {
+     "title": "WHERE WAS THE 20% COMING FROM?",
+     "nodes": [
+      {
+       "id": "b",
+       "label": "Borrowers",
+       "sub": "what borrowers paid",
+       "x": 0.1,
+       "y": 0.3
+      },
+      {
+       "id": "a",
+       "label": "Anchor",
+       "x": 0.5,
+       "y": 0.3
+      },
+      {
+       "id": "d",
+       "label": "Depositors",
+       "sub": "promised nearly 20%",
+       "x": 0.9,
+       "y": 0.3
+      },
+      {
+       "id": "r",
+       "label": "Yield reserve",
+       "sub": "covers the gap",
+       "x": 0.5,
+       "y": 0.95,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "b",
+       "to": "a"
+      },
+      {
+       "from": "a",
+       "to": "d"
+      },
+      {
+       "from": "r",
+       "to": "a",
+       "red": true
+      }
+     ],
+     "dur": 5.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_count_reserve_drain",
+    "args": {
+     "to": 1000000,
+     "prefix": "$",
+     "suffix": "+",
+     "kicker": "BY EARLY 2022 · ANCHOR YIELD RESERVE",
+     "label": "DRAINING BY MORE THAN A MILLION DOLLARS A DAY",
+     "end_red": true,
+     "dur": 5.0,
+     "count_time": 3.0
+    }
+   }
+  ],
+  "31": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_feb2022",
+    "args": {
+     "text": "FEBRUARY 2022",
+     "sub": "Luna Foundation Guard",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_count_450m_topup",
+    "args": {
+     "to": 450,
+     "prefix": "+",
+     "suffix": "M UST",
+     "kicker": "ANCHOR YIELD RESERVE",
+     "label": "A TOP-UP OF 450 MILLION DOLLARS' WORTH OF UST",
+     "sublabel": "approved by the Luna Foundation Guard",
+     "dur": 5.0,
+     "count_time": 2.6
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"
+   }
+  ],
+  "32": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_rate_down",
+    "args": {
+     "lines": [
+      "Anchor's community voted",
+      "to let the rate slowly come down."
+     ],
+     "red": [
+      "down."
+     ],
+     "kicker": "SHORTLY AFTER",
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 104
+    }
+   },
+   {
+    "kind": "text",
+    "text": "But by then,\nthe promise had already done its work.",
+    "style": "quote"
+   }
+  ],
+  "33": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s05_chapter_the_hidden_rescue.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s05_typewriter_may2021.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_lost_peg",
+    "args": {
+     "lines": [
+      "UST had already lost",
+      "its one-dollar peg."
+     ],
+     "red": [
+      "lost"
+     ],
+     "kicker": "A YEAR BEFORE THE FINAL COLLAPSE",
+     "dur": 3.5,
+     "stagger": 0.6,
+     "size": 120
+    }
+   },
+   {
+    "kind": "text",
+    "text": "And then, mysteriously,\nit recovered.",
+    "style": "quote"
+   }
+  ],
+  "34": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_public_story",
+    "args": {
+     "lines": [
+      "The code worked.",
+      "The algorithm fixed itself."
+     ],
+     "red": [
+      "itself."
+     ],
+     "kicker": "THE PUBLIC STORY",
+     "dur": 4.5,
+     "stagger": 1.6,
+     "size": 112
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s12_sec_building_ov_4.jpg",
+    "fx": "in"
+   }
+  ],
+  "35": [
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s05_cmp_public_vs_sec",
+    "args": {
+     "title": "MAY 2021 · THE RECOVERY",
+     "left": {
+      "head": "The public story",
+      "big": "Code worked",
+      "sub": "The algorithm fixed itself."
+     },
+     "right": {
+      "head": "According to the SEC",
+      "big": "A secret deal",
+      "sub": "A large trading firm quietly buying UST behind the scenes"
+     },
+     "dur": 5.5
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/empty_city_night_2.mp4"
+   }
+  ],
+  "36": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s05_tw_may23_2021",
+    "args": {
+     "text": "MAY 23, 2021",
+     "sub": "AS UST SLID",
+     "dur": 3.0,
+     "size": 130
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_02_sec_order_2024-12-20_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s05_flow_sec_account",
+    "args": {
+     "title": "THE SEC'S ACCOUNT",
+     "nodes": [
+      {
+       "id": "t",
+       "label": "Terraform",
+       "sub": "verbal agreement, May 23, 2021",
+       "x": 0.12,
+       "y": 0.2
+      },
+      {
+       "id": "f",
+       "label": "Trading firm",
+       "sub": "right to buy LUNA at a discount",
+       "x": 0.88,
+       "y": 0.2
+      },
+      {
+       "id": "u",
+       "label": "UST",
+       "sub": "more than $20 million bought",
+       "x": 0.88,
+       "y": 0.9,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "t",
+       "to": "f",
+       "label": "loosens restrictions"
+      },
+      {
+       "from": "f",
+       "to": "u",
+       "red": true
+      }
+     ],
+     "footer": "SEC ORDER · THE FIRM'S AFFILIATE SETTLED WITHOUT ADMITTING OR DENYING",
+     "dur": 5.5
+    }
+   }
+  ],
+  "37": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s05_countup_20M_UST_sec.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4",
+    "start": 3.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_investors_misled",
+    "args": {
+     "lines": [
+      "Investors were misled",
+      "into believing the algorithm",
+      "had saved the peg."
+     ],
+     "red": [
+      "misled"
+     ],
+     "kicker": "THE SEC SAID",
+     "dur": 6.0,
+     "stagger": 1.2,
+     "size": 104
+    }
+   }
+  ],
+  "38": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s05_stamp_settled",
+    "args": {
+     "word": "SETTLED",
+     "sub": "WITHOUT ADMITTING OR DENYING THE CLAIMS",
+     "dur": 4.0
+    }
+   }
+  ],
+  "39": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
+    "grade": "bw"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_rescue_hidden",
+    "args": {
+     "lines": [
+      "It had been rescued.",
+      "And the rescue was hidden."
+     ],
+     "red": [
+      "hidden."
+     ],
+     "kicker": "IF THAT'S TRUE",
+     "dur": 4.0,
+     "stagger": 1.3,
+     "size": 116
+    }
+   },
+   {
+    "kind": "text",
+    "text": "So who knew?\nAnd would anyone ever admit it?",
+    "style": "quote"
+   },
+   {
+    "kind": "text",
+    "text": "Hold on to that question.",
+    "style": "quote"
+   }
+  ],
+  "40": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s06_chapter_the_bitcoin_war_chest.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_war_chest",
+    "args": {
+     "lines": [
+      "Kwon's answer",
+      "was a war chest."
+     ],
+     "red": [
+      "war",
+      "chest."
+     ],
+     "kicker": "BY EARLY 2022",
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 120
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4"
+   }
+  ],
+  "41": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_goal_10b_bitcoin",
+    "args": {
+     "lines": [
+      "10 billion dollars' worth",
+      "of bitcoin."
+     ],
+     "red": [
+      "10",
+      "billion"
+     ],
+     "kicker": "KWON SAID THE GOAL WAS",
+     "dur": 4.7,
+     "stagger": 0.8,
+     "size": 116
+    }
+   }
+  ],
+  "42": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s06_count_1b_luna_sale",
+    "args": {
+     "to": 1000000000,
+     "prefix": "$",
+     "kicker": "FEBRUARY 2022",
+     "label": "A ONE-BILLION-DOLLAR SALE OF LUNA TO INVESTORS",
+     "dur": 5.0,
+     "count_time": 2.3
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_deal_card",
+    "args": {
+     "lines": [
+      "Led by:",
+      "Jump Crypto,",
+      "Three Arrows Capital"
+     ],
+     "kicker": "FEB 2022 — $1B LUNA SALE",
+     "dur": 6.0,
+     "stagger": 2.0,
+     "size": 110
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_remember_three_arrows",
+    "args": {
+     "lines": [
+      "Three Arrows Capital"
+     ],
+     "red": [
+      "three",
+      "arrows",
+      "capital"
+     ],
+     "kicker": "REMEMBER THAT SECOND NAME.",
+     "dur": 3.5,
+     "size": 120
+    }
+   },
+   {
+    "kind": "text",
+    "text": "It comes back too.",
+    "style": "quote"
+   }
+  ],
+  "43": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s06_count_100m_btc_buys",
+    "args": {
+     "to": 100,
+     "prefix": "$",
+     "suffix": "M+",
+     "kicker": "ON SOME DAYS THAT SPRING",
+     "label": "MORE THAN 100 MILLION DOLLARS OF BITCOIN AT A TIME",
+     "dur": 4.5,
+     "count_time": 2.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_3.webp",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_target_q3",
+    "args": {
+     "lines": [
+      "the 10-billion-dollar target",
+      "by the end of the third quarter."
+     ],
+     "red": [
+      "third",
+      "quarter."
+     ],
+     "kicker": "KWON SAID HE EXPECTED TO REACH",
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 104
+    }
+   }
+  ],
+  "44": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
+    "fx": "out",
+    "crop": "bottom"
+   }
+  ],
+  "45": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_missing_piece",
+    "args": {
+     "lines": [
+      "the missing piece."
+     ],
+     "red": [
+      "piece."
+     ],
+     "kicker": "TO MANY INVESTORS, THIS LOOKED LIKE",
+     "dur": 4.0,
+     "size": 124
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s06_tl_war_chest",
+    "args": {
+     "title": "THE WAR CHEST",
+     "events": [
+      [
+       "Jan 2022",
+       "Luna Foundation Guard set up in Singapore"
+      ],
+      [
+       "Feb 2022",
+       "$1 billion LUNA sale"
+      ],
+      [
+       "Spring 2022",
+       "Buying $100M+ of bitcoin at a time"
+      ],
+      [
+       "Early May 2022",
+       "80,394 bitcoin, around $2.4 billion"
+      ]
+     ],
+     "dur": 5.0
+    }
+   }
+  ],
+  "46": [
+   {
+    "kind": "text",
+    "text": "But there was a catch.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "bar_chart",
+    "name": "s06_bar_reserve_vs_ust",
+    "args": {
+     "title": "THE RESERVE WAS A FRACTION",
+     "bars": [
+      [
+       "Bitcoin reserve",
+       2.4
+      ],
+      [
+       "UST in circulation",
+       19,
+       true
+      ]
+     ],
+     "prefix": "$",
+     "suffix": "B",
+     "decimals": 1,
+     "note": "Approximate: reserve around $2.4 billion · UST in circulation nearly $19 billion",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "fx": "left",
+    "crop": "detail",
+    "grade": "red"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_asset_could_fall",
+    "args": {
+     "lines": [
+      "an asset that could fall",
+      "at exactly the moment",
+      "it was needed."
+     ],
+     "red": [
+      "fall"
+     ],
+     "kicker": "AND IT WAS HELD IN BITCOIN",
+     "dur": 4.0,
+     "stagger": 0.8,
+     "size": 108
+    }
+   }
+  ],
+  "47": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_2.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_prosecutors_controlled",
+    "args": {
+     "lines": [
+      "Kwon presented the foundation",
+      "as independent from Terraform,",
+      "when, according to prosecutors,",
+      "he controlled it."
+     ],
+     "red": [
+      "controlled"
+     ],
+     "kicker": "U.S. PROSECUTORS LATER SAID",
+     "dur": 6.0,
+     "stagger": 1.0,
+     "size": 88
+    }
+   }
+  ],
+  "48": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_two_questions_intro",
+    "args": {
+     "lines": [
+      "So before we watch the fall,",
+      "here are two questions",
+      "to carry with you."
+     ],
+     "red": [
+      "fall,"
+     ],
+     "dur": 4.0,
+     "stagger": 1.0,
+     "size": 104
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s06_keyphrase_hook_questions.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"
+   }
+  ],
+  "49": [
+   {
+    "kind": "text",
+    "text": "Both get answered\nbefore the end of this video.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_jury_and_kwon",
+    "args": {
+     "lines": [
+      "One by a jury.",
+      "The other by Do Kwon himself."
+     ],
+     "red": [
+      "jury.",
+      "himself."
+     ],
+     "dur": 4.5,
+     "stagger": 1.4,
+     "size": 110
+    }
+   }
+  ],
+  "50": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_chapter_seven_days_in_may.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_typewriter_sat_may07.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_terraform_pulls_ust",
+    "args": {
+     "lines": [
+      "Terraform pulls a large amount of UST",
+      "out of a key trading pool"
+     ],
+     "dur": 3.5,
+     "stagger": 1.4,
+     "size": 100
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_curve_planned_move",
+    "args": {
+     "lines": [
+      "on a platform called Curve,",
+      "as part of a planned move to a new pool."
+     ],
+     "red": [
+      "curve,"
+     ],
+     "dur": 5.5,
+     "stagger": 1.8,
+     "size": 100
+    }
+   }
+  ],
+  "51": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_wallets_dump",
+    "args": {
+     "lines": [
+      "Within minutes, other wallets dump",
+      "tens of millions of UST",
+      "into what's left."
+     ],
+     "red": [
+      "millions"
+     ],
+     "dur": 5.5,
+     "stagger": 1.5,
+     "size": 104
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_ust_099",
+    "args": {
+     "frm": 1.0,
+     "to": 0.99,
+     "decimals": 2,
+     "prefix": "$",
+     "kicker": "THE POOL TILTS.",
+     "label": "UST SLIPS TO 99 CENTS",
+     "end_red": true,
+     "dur": 6.0,
+     "count_time": 1.6
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_crack_in_glass",
+    "args": {
+     "lines": [
+      "For a coin whose whole promise is one dollar,",
+      "a penny is a crack in the glass."
+     ],
+     "red": [
+      "crack"
+     ],
+     "dur": 5.5,
+     "stagger": 2.5,
+     "size": 96
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "52": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_typewriter_sun_may08.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_depositors_exit",
+    "args": {
+     "lines": [
+      "Anchor depositors head for the exit.",
+      "Billions of dollars of UST",
+      "leave in a matter of days."
+     ],
+     "red": [
+      "exit.",
+      "billions"
+     ],
+     "dur": 5.0,
+     "stagger": 1.5,
+     "size": 100
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_lfg_lend_1_5b",
+    "args": {
+     "to": 1.5,
+     "decimals": 1,
+     "prefix": "$",
+     "suffix": "B",
+     "kicker": "THE LUNA FOUNDATION GUARD SAYS IT WILL LEND",
+     "label": "HALF IN BITCOIN AND HALF IN UST",
+     "sublabel": "TO DEFEND THE PEG",
+     "dur": 5.0,
+     "count_time": 2.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg",
+    "fx": "in"
+   }
+  ],
+  "53": [
+   {
+    "kind": "text",
+    "text": "Kwon tweets:\n“Deploying more capital.\nSteady lads.”",
+    "style": "quote"
+   }
+  ],
+  "54": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_typewriter_mon_may09.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4",
+    "grade": "red"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_bitcoin_slides_30k",
+    "args": {
+     "lines": [
+      "Bitcoin itself slides",
+      "toward 30,000 dollars."
+     ],
+     "red": [
+      "30,000"
+     ],
+     "dur": 3.0,
+     "stagger": 0.5,
+     "size": 116
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_anchor_14_to_9",
+    "args": {
+     "lines": [
+      "Anchor deposits fall",
+      "from 14 billion",
+      "to under 9 billion."
+     ],
+     "red": [
+      "under",
+      "9"
+     ],
+     "dur": 4.0,
+     "stagger": 0.7,
+     "size": 112
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "line_chart",
+    "name": "s07_lc_ust_depeg",
+    "args": {
+     "title": "UST · THE PEG BREAKS",
+     "points": [
+      [
+       "The promise",
+       1.0
+      ],
+      [
+       "Sat, May 7",
+       0.99
+      ],
+      [
+       "Mon, May 9",
+       0.35
+      ]
+     ],
+     "prefix": "$",
+     "decimals": 2,
+     "red_from": 1,
+     "note": "Approximate prices · UST at one point dropped to around 35 cents",
+     "dur": 4.5
+    }
+   }
+  ],
+  "55": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_trick_in_reverse",
+    "args": {
+     "lines": [
+      "And now the magic trick",
+      "runs in reverse."
+     ],
+     "red": [
+      "reverse."
+     ],
+     "dur": 3.0,
+     "stagger": 0.5,
+     "size": 120
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_more_and_more_luna",
+    "args": {
+     "lines": [
+      "To defend the peg,",
+      "the system creates",
+      "more and more LUNA."
+     ],
+     "red": [
+      "luna."
+     ],
+     "dur": 3.5,
+     "stagger": 0.6,
+     "size": 116
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s07_flow_death_spiral",
+    "args": {
+     "title": "THE MAGIC TRICK IN REVERSE",
+     "nodes": [
+      {
+       "id": "a",
+       "label": "UST falls",
+       "x": 0.5,
+       "y": 0.14,
+       "red": true
+      },
+      {
+       "id": "b",
+       "label": "More LUNA printed",
+       "x": 0.85,
+       "y": 0.57
+      },
+      {
+       "id": "c",
+       "label": "LUNA price falls",
+       "x": 0.5,
+       "y": 0.98,
+       "red": true
+      },
+      {
+       "id": "d",
+       "label": "Less trust",
+       "x": 0.15,
+       "y": 0.57
+      }
+     ],
+     "edges": [
+      {
+       "from": "a",
+       "to": "b"
+      },
+      {
+       "from": "b",
+       "to": "c"
+      },
+      {
+       "from": "c",
+       "to": "d"
+      },
+      {
+       "from": "d",
+       "to": "a",
+       "red": true
+      }
+     ],
+     "dur": 6.0
+    }
+   }
+  ],
+  "56": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_typewriter_tue_wed_may10_11.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg",
+    "fx": "in",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_binance_pauses",
+    "args": {
+     "lines": [
+      "Binance briefly pauses",
+      "LUNA and UST withdrawals."
+     ],
+     "kicker": "THE WORLD'S LARGEST EXCHANGE",
+     "red": [
+      "pauses"
+     ],
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 110
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_luna_below_1",
+    "args": {
+     "lines": [
+      "LUNA, worth around 80 dollars",
+      "at the start of the month,",
+      "falls below one dollar."
+     ],
+     "red": [
+      "below"
+     ],
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 104
+    }
+   }
+  ],
+  "57": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_supply_trillions",
+    "args": {
+     "lines": [
+      "The supply of LUNA explodes",
+      "from hundreds of millions of coins",
+      "into the trillions."
+     ],
+     "red": [
+      "trillions."
+     ],
+     "dur": 6.0,
+     "stagger": 2.0,
+     "size": 104
+    }
+   }
+  ],
+  "58": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_typewriter_thu_fri_may12_13.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_chain_halted",
+    "args": {
+     "lines": [
+      "The Terra blockchain itself is halted.",
+      "By Friday, it has been halted again."
+     ],
+     "red": [
+      "halted.",
+      "again."
+     ],
+     "dur": 4.5,
+     "stagger": 1.4,
+     "size": 100
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_fraction_of_cent",
+    "args": {
+     "lines": [
+      "LUNA is now worth",
+      "a tiny fraction of a cent."
+     ],
+     "red": [
+      "fraction"
+     ],
+     "dur": 5.0,
+     "stagger": 0.6,
+     "size": 116,
+     "kicker": "MAJOR EXCHANGES PULL LUNA AND UST FROM TRADING."
+    }
+   }
+  ],
+  "59": [
+   {
+    "kind": "text",
+    "text": "That Friday, Kwon writes:",
+    "style": "label"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_wordbyword_heartbroken.mp4"
+   }
+  ],
+  "60": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s07_countdown_80394_to_313_BTC.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg",
+    "fx": "out",
+    "crop": "right",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_audit_2_8b",
+    "args": {
+     "to": 2.8,
+     "decimals": 1,
+     "prefix": "$",
+     "suffix": "B",
+     "kicker": "AN AUDIT THE FOUNDATION RELEASED LATER",
+     "label": "TOTAL SPENT DEFENDING THE PEG: ABOUT 2.8 BILLION DOLLARS",
+     "dur": 6.0,
+     "count_time": 2.8
+    }
+   }
+  ],
+  "61": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
+   }
+  ],
+  "62": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s08_chapter_the_lunatics.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/airport_night_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "For two years, they shared memes,\nprice targets, and a kind of belonging.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_kwon_captain",
+    "args": {
+     "lines": [
+      "Kwon was their captain."
+     ],
+     "dur": 3.0,
+     "size": 112
+    }
+   }
+  ],
+  "63": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_not_gamblers",
+    "args": {
+     "lines": [
+      "Many of them",
+      "weren't gamblers."
+     ],
+     "dur": 3.5,
+     "stagger": 0.6,
+     "size": 116
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/crowd_walking_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "64": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rain_window_night_2.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "The memes stopped.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s08_tw_pinned_support",
+    "args": {
+     "text": "PINNED: Support resources",
+     "sub": "links to support helplines",
+     "dur": 4.0
+    }
+   }
+  ],
+  "65": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
+    "crop": "bottom",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_red_2.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "text",
+    "text": "Groups of Korean investors filed\ncriminal complaints and lawsuits\nagainst Terra's founders.",
+    "style": "quote"
+   }
+  ],
+  "66": [
+   {
+    "kind": "text",
+    "text": "We are not naming any of them here.\nTheir losses are not entertainment.",
+    "style": "quote"
+   },
+   {
+    "kind": "text",
+    "text": "But every number in this story was\nsomebody's rent, somebody's savings,\nsomebody's plan.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_2.mp4",
+    "start": 2.5
+   }
+  ],
+  "67": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s09_chapter_the_dominoes.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s11_singapore_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_deal_card",
+    "args": {
+     "lines": [
+      "Led by:",
+      "Jump Crypto,",
+      "Three Arrows Capital"
+     ],
+     "kicker": "FEB 2022 — $1B LUNA SALE",
+     "dur": 6.0,
+     "stagger": 2.0,
+     "size": 110
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_luna_zero_bet",
+    "args": {
+     "lines": [
+      "When LUNA went to zero,",
+      "so did the bet."
+     ],
+     "red": [
+      "zero,"
+     ],
+     "kicker": "IT HAD MADE A LARGE BET ON LUNA.",
+     "dur": 3.0,
+     "stagger": 1.5,
+     "size": 116
+    }
+   }
+  ],
+  "68": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_start_of_july_bvi",
+    "args": {
+     "text": "BY THE START OF JULY",
+     "sub": "A COURT IN THE BRITISH VIRGIN ISLANDS",
+     "dur": 3.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s09_stamp_liquidated",
+    "args": {
+     "word": "LIQUIDATED",
+     "sub": "THREE ARROWS CAPITAL",
+     "dur": 3.0
+    }
+   }
+  ],
+  "69": [
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s09_tl_dominoes",
+    "args": {
+     "events": [
+      [
+       "MAY",
+       "Terra"
+      ],
+      [
+       "JUNE",
+       "Three Arrows"
+      ],
+      [
+       "JULY",
+       "Voyager, Celsius"
+      ],
+      [
+       "NOVEMBER",
+       "FTX"
+      ]
+     ],
+     "title": "THE DOMINOES · 2022",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s09_count_650m_voyager_loan",
+    "args": {
+     "to": 650,
+     "prefix": "$",
+     "suffix": "M",
+     "kicker": "VOYAGER DIGITAL SAID",
+     "label": "THREE ARROWS HAD DEFAULTED ON A LOAN",
+     "sublabel": "OF ABOUT 650 MILLION DOLLARS",
+     "dur": 4.3,
+     "count_time": 2.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s09_stamp_voyager_bankruptcy",
+    "args": {
+     "word": "BANKRUPTCY",
+     "sub": "VOYAGER DIGITAL — JULY 5",
+     "dur": 3.0
+    }
+   }
+  ],
+  "70": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_celsius_network",
+    "args": {
+     "lines": [
+      "Celsius Network"
+     ],
+     "red": [
+      "celsius"
+     ],
+     "kicker": "A CRYPTO LENDER THAT HAD PROMISED ITS USERS HIGH YIELDS",
+     "dur": 3.5,
+     "size": 130
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+    "start": 2.5,
+    "grade": "bw"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s09_stamp_celsius_bankruptcy",
+    "args": {
+     "word": "BANKRUPTCY",
+     "sub": "CELSIUS NETWORK — JULY 13",
+     "dur": 3.0
+    }
+   }
+  ],
+  "71": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_then_ftx",
+    "args": {
+     "lines": [
+      "And then there was FTX."
+     ],
+     "red": [
+      "FTX."
+     ],
+     "dur": 3.0,
+     "size": 124
+    }
+   }
+  ],
+  "72": [
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s09_pc_sbf",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/sbf_commons.png",
+     "name": "SAM BANKMAN-FRIED",
+     "kicker": "FTX FOUNDER",
+     "sub": "Convicted of fraud in New York, November 2023",
+     "credit": "Photo: Cointelegraph / CC BY 3.0",
+     "grade": "bw",
+     "dur": 4.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_alameda_exec_testified",
+    "args": {
+     "lines": [
+      "A former top executive",
+      "of his trading firm,",
+      "Alameda Research,",
+      "testified"
+     ],
+     "red": [
+      "testified"
+     ],
+     "kicker": "AT THE CRIMINAL TRIAL OF FTX FOUNDER SAM BANKMAN-FRIED",
+     "dur": 5.5,
+     "stagger": 0.8,
+     "size": 104
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_june_2022_lenders",
+    "args": {
+     "text": "JUNE 2022",
+     "sub": "LENDERS STARTED DEMANDING THEIR MONEY BACK",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s09_flow_alameda_repaid",
+    "args": {
+     "nodes": [
+      {
+       "id": "ftx",
+       "label": "FTX customers",
+       "sub": "their money",
+       "x": 0.17,
+       "y": 0.12,
+       "red": true
+      },
+      {
+       "id": "ala",
+       "label": "Alameda Research",
+       "x": 0.5,
+       "y": 0.88
+      },
+      {
+       "id": "len",
+       "label": "Lenders",
+       "sub": "demanding their money back",
+       "x": 0.83,
+       "y": 0.12
+      }
+     ],
+     "edges": [
+      {
+       "from": "ftx",
+       "to": "ala",
+       "label": "money",
+       "red": true
+      },
+      {
+       "from": "ala",
+       "to": "len",
+       "label": "repaid"
+      }
+     ],
+     "title": "THE FORMER EXECUTIVE TESTIFIED",
+     "dur": 5.0
+    }
+   }
+  ],
+  "73": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_nov_2022_ftx_collapsed",
+    "args": {
+     "text": "NOVEMBER 2022",
+     "sub": "FTX COLLAPSED",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_09_sbf_convicted_2023-11-02_zoom.mp4"
+   }
+  ],
+  "74": [
+   {
+    "kind": "text",
+    "text": "Terra didn't commit FTX's fraud.\nA jury put that on Bankman-Fried.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/stock_market_crash_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_panic_customer_money",
+    "args": {
+     "lines": [
+      "the panic that began in May",
+      "was part of what pushed",
+      "customer money into the hole."
+     ],
+     "red": [
+      "hole."
+     ],
+     "kicker": "BUT ACCORDING TO THAT TESTIMONY,",
+     "dur": 6.0,
+     "stagger": 1.2,
+     "size": 104
+    }
+   }
+  ],
+  "75": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s10_chapter_terra_2_0.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s10_tw_may25_vote",
+    "args": {
+     "text": "MAY 25",
+     "sub": "Terra's community voted for a new blockchain.",
+     "dur": 4.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s10_tw_may28_live",
+    "args": {
+     "text": "MAY 28",
+     "sub": "It went live.",
+     "dur": 3.0
+    }
+   }
+  ],
+  "76": [
+   {
+    "kind": "text",
+    "text": "The new coin\nwas also called LUNA.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s10_cmp_new_vs_classic",
+    "args": {
+     "left": {
+      "head": "New chain · May 28",
+      "big": "LUNA",
+      "sub": "The new coin was also called LUNA."
+     },
+     "right": {
+      "head": "Old chain, renamed",
+      "big": "Terra Classic",
+      "sub": "Old coins became LUNA Classic and USTC."
+     },
+     "title": "TERRA 2.0",
+     "dur": 6.0
+    }
+   }
+  ],
+  "77": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_airdrops_new_luna",
+    "args": {
+     "lines": [
+      "Holders of the old coins",
+      "received airdrops of new LUNA,",
+      "based on what they held and when."
+     ],
+     "red": [
+      "airdrops"
+     ],
+     "dur": 5.0,
+     "stagger": 1.2,
+     "size": 100
+    }
+   },
+   {
+    "kind": "text",
+    "text": "One thing was missing.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s10_stamp_no_new_ust",
+    "args": {
+     "word": "NO NEW UST",
+     "dur": 3.3
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"
+   }
+  ],
+  "78": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s10_count_new_luna_17",
+    "args": {
+     "to": 17,
+     "prefix": "$",
+     "kicker": "THE NEW LUNA BRIEFLY TRADED ABOVE",
+     "dur": 3.3,
+     "count_time": 1.6
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_quickly_fell",
+    "args": {
+     "lines": [
+      "Then quickly fell",
+      "as people sold what they'd been given."
+     ],
+     "red": [
+      "fell"
+     ],
+     "dur": 3.5,
+     "stagger": 0.9,
+     "size": 104
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rain_window_night_1.mp4"
+   }
+  ],
+  "79": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s11_chapter_the_chase.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s11_route_seoul_to_montenegro.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s11_interpol_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_1.mp4"
+   }
+  ],
+  "80": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s11_singapore_3.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s11_tw_october_passport",
+    "args": {
+     "text": "IN OCTOBER",
+     "sub": "KOREA'S FOREIGN MINISTRY INVALIDATED HIS PASSPORT",
+     "dur": 4.5
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Online, he kept posting\nas if nothing had changed.",
+    "style": "quote"
+   }
+  ],
+  "81": [
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s11_pc_kwon_arrested",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "MARCH 2023",
+     "sub": "Stopped at Podgorica airport, Montenegro, with a forged passport",
+     "stamp_word": "ARRESTED",
+     "grade": "bw",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/airplane_night_1.mp4",
+    "start": 0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_it_was_do_kwon",
+    "args": {
+     "lines": [
+      "It was",
+      "Do Kwon."
+     ],
+     "kicker": "FORGED COSTA RICAN PASSPORT",
+     "red": [
+      "do",
+      "kwon."
+     ],
+     "dur": 3.0,
+     "stagger": 1.4,
+     "size": 150
+    }
+   }
+  ],
+  "82": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s11_count_four_months",
+    "args": {
+     "to": 4,
+     "suffix": " MONTHS",
+     "kicker": "A MONTENEGRIN COURT SENTENCED HIM TO",
+     "label": "IN PRISON",
+     "sublabel": "FOR THE FORGED DOCUMENTS",
+     "dur": 6.0,
+     "count_time": 2.0
+    }
+   }
+  ],
+  "83": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_korea_and_us_wanted_him",
+    "args": {
+     "lines": [
+      "Both South Korea",
+      "and the United States",
+      "wanted him."
+     ],
+     "red": [
+      "south",
+      "korea",
+      "united",
+      "states"
+     ],
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 110
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s11_podgorica_city_1.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "text",
+    "text": "Montenegro's courts and ministers\nwent back and forth\nover which country\nshould get him first.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s11_tl_the_chase",
+    "args": {
+     "events": [
+      [
+       "SEPT 2022",
+       "Seoul arrest warrant, Interpol red notice"
+      ],
+      [
+       "MARCH 2023",
+       "Stopped at Podgorica airport, forged passport"
+      ],
+      [
+       "LAST DAY OF 2024",
+       "Extradited to the United States"
+      ]
+     ],
+     "title": "THE CHASE",
+     "dur": 5.5
+    }
+   }
+  ],
+  "84": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s12_chapter_the_verdicts.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_civil_criminal",
+    "args": {
+     "lines": [
+      "Once in civil court.",
+      "Once in criminal court."
+     ],
+     "red": [
+      "civil",
+      "criminal"
+     ],
+     "kicker": "AMERICA WENT AFTER KWON TWICE",
+     "dur": 3.0,
+     "stagger": 0.6,
+     "size": 116
+    }
+   }
+  ],
+  "85": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_01_sec_charges_2023-02-16.png",
+    "fx": "in"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"
+   }
+  ],
+  "86": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
+    "fx": "in",
+    "crop": "top"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s12_stamp_liable_for_fraud.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_04_jury_verdict_2024-04-05_zoom.mp4"
+   }
+  ],
+  "87": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4",
+    "start": 3.0,
+    "grade": "cold"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"
+   }
+  ],
+  "88": [
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s12_pc_kwon_pleaded",
+    "args": {
+     "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+     "name": "DO KWON",
+     "credit": "Photo: FAQX / CC BY 3.0",
+     "kicker": "AUGUST 2025 · NEW YORK",
+     "sub": "Pleaded guilty to two fraud charges",
+     "stamp_word": "PLEADED GUILTY",
+     "grade": "bw",
+     "dur": 5.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_06_kwon_plea_2025-08.png",
+    "fx": "in"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s12_wordbyword_plea_quote.mp4"
+   }
+  ],
+  "89": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_question_from_earlier",
+    "args": {
+     "lines": [
+      "Was the 2021 rescue hidden?"
+     ],
+     "red": [
+      "hidden?"
+     ],
+     "kicker": "THE QUESTION FROM EARLIER",
+     "dur": 5.3,
+     "size": 116
+    }
+   }
+  ],
+  "90": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "bar_chart",
+    "name": "s12_bar_12_vs_15_years",
+    "args": {
+     "bars": [
+      [
+       "Prosecutors asked for",
+       12
+      ],
+      [
+       "Judge sentenced him to",
+       15,
+       true
+      ]
+     ],
+     "suffix": " years",
+     "title": "DECEMBER 2025 · PRISON SENTENCE",
+     "dur": 3.6
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/cards/card_07_doj_sentence_2025-12-11.png",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_epic_generational",
+    "args": {
+     "lines": [
+      "A fraud on an",
+      "\"epic, generational scale.\""
+     ],
+     "red": [
+      "epic,",
+      "generational"
+     ],
+     "kicker": "THE JUDGE CALLED IT",
+     "dur": 3.3,
+     "stagger": 0.7,
+     "size": 116
+    }
+   }
+  ],
+  "91": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s13_chapter_the_korean_side_of_the_story.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s13_countup_280000_korea.mp4"
+   }
+  ],
+  "92": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s13_kp_yeouido_grim_reaper",
+    "args": {
+     "lines": [
+      "\"Yeouido Grim Reaper\""
+     ],
+     "red": [
+      "grim",
+      "reaper"
+     ],
+     "kicker": "SEOUL PROSECUTORS REVIVED A FINANCIAL-CRIMES UNIT NICKNAMED",
+     "dur": 4.5,
+     "size": 120
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
+    "fx": "right"
+   }
+  ],
+  "93": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s13_tw_april_2023",
+    "args": {
+     "text": "APRIL 2023",
+     "sub": "IN KOREA",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s13_kp_prosecutors_allege_chai",
+    "args": {
+     "lines": [
+      "Chai made ordinary payments look",
+      "as if they were running on Terra."
+     ],
+     "red": [
+      "look"
+     ],
+     "kicker": "PROSECUTORS ALLEGE",
+     "dur": 5.5,
+     "stagger": 0.8,
+     "size": 104
+    }
+   }
+  ],
+  "94": [
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s13_cmp_allege_vs_denies",
+    "args": {
+     "left": {
+      "head": "Korean prosecutors",
+      "big": "Allege",
+      "sub": "Chai made ordinary payments look as if they were running on Terra."
+     },
+     "right": {
+      "head": "Daniel Shin",
+      "big": "Denies wrongdoing",
+      "sub": "His lawyers say he left Terra two years before the collapse."
+     },
+     "title": "INDICTED · APRIL 2023 · TRIAL STILL GOING ON",
+     "dur": 6.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s13_kp_courts_twice_turned_down",
+    "args": {
+     "lines": [
+      "Korean courts twice turned down",
+      "requests to arrest him."
+     ],
+     "red": [
+      "twice"
+     ],
+     "dur": 4.0,
+     "stagger": 0.7,
+     "size": 108
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4",
+    "start": 0.0
+   }
+  ],
+  "95": [
+   {
+    "kind": "text",
+    "text": "Do Kwon may not be done\nwith Korean justice.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s13_flow_transfer_to_korea",
+    "args": {
+     "nodes": [
+      {
+       "id": "us",
+       "label": "U.S. prison",
+       "sub": "15-year sentence",
+       "x": 0.12,
+       "y": 0.55
+      },
+      {
+       "id": "kr",
+       "label": "Korea",
+       "sub": "transfer",
+       "x": 0.88,
+       "y": 0.55,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "us",
+       "to": "kr",
+       "label": "after he serves half his sentence"
+      }
+     ],
+     "title": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE",
+     "dur": 5.0
+    }
+   }
+  ],
+  "96": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s13_tw_in_korea_separate_charges",
+    "args": {
+     "text": "IN KOREA",
+     "sub": "SEPARATE CHARGES, INCLUDING UNDER THE CAPITAL MARKETS LAW",
+     "dur": 4.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg",
+    "crop": "detail",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s13_kp_more_than_30_years",
+    "args": {
+     "lines": [
+      "A conviction there could mean",
+      "more than 30 years."
+     ],
+     "red": [
+      "30"
+     ],
+     "kicker": "SOME KOREAN MEDIA HAVE REPORTED",
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 110
+    }
+   }
+  ],
+  "97": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s14_chapter_why_the_dream_keeps_coming_back.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s14_tw_june2021_iron_finance",
+    "args": {
+     "text": "JUNE 2021",
+     "sub": "IRON FINANCE",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/gov/gov_06_fed_note_algorithmic_stablecoins.png",
+    "fx": "out",
+    "align": "top"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s14_cd_sister_token_60_to_0",
+    "args": {
+     "frm": 60,
+     "to": 0,
+     "prefix": "~$",
+     "kicker": "IRON FINANCE'S SISTER TOKEN",
+     "label": "FROM AROUND 60 DOLLARS TO ALMOST ZERO",
+     "sublabel": "IN LESS THAN A DAY",
+     "end_red": true,
+     "glitch": true,
+     "dur": 5.5,
+     "count_time": 3.2
+    }
+   }
+  ],
+  "98": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s14_kp_same_spiral",
+    "args": {
+     "lines": [
+      "Same design idea.",
+      "Same spiral.",
+      "Smaller scale."
+     ],
+     "red": [
+      "spiral."
+     ],
+     "dur": 4.8,
+     "stagger": 1.6,
+     "size": 118
+    }
+   }
+  ],
+  "99": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/rainy_street_night_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s14_kp_steady_as_a_dollar",
+    "args": {
+     "lines": [
+      "Money as steady as a dollar,",
+      "without anyone needing",
+      "to hold the dollars."
+     ],
+     "red": [
+      "steady"
+     ],
+     "kicker": "THE DREAM",
+     "dur": 5.5,
+     "stagger": 1.8,
+     "size": 104
+    }
+   }
+  ],
+  "100": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/dominoes_falling_1.mp4",
+    "start": 1.25
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s14_keyphrase_confidence_collateral.mp4"
+   }
+  ],
+  "101": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s04_countup_20pct.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s14_tw_anchor_math",
+    "args": {
+     "text": "14,000,000,000 UST × ~19.5%",
+     "sub": "RUN THE NUMBERS YOURSELF",
+     "footer": "ILLUSTRATIVE · SELF-MADE MATH",
+     "dur": 4.0
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "bar_chart",
+    "name": "s14_bar_deposits_vs_interest",
+    "args": {
+     "bars": [
+      [
+       "Deposits",
+       14
+      ],
+      [
+       "Promised interest, a year",
+       2.7,
+       true
+      ]
+     ],
+     "prefix": "$",
+     "suffix": "B",
+     "decimals": 1,
+     "title": "RUN THE NUMBERS YOURSELF",
+     "note": "Roughly · at nearly 20 percent · illustrative self-made math",
+     "dur": 5.8
+    }
+   }
+  ],
+  "102": [
+   {
+    "kind": "text",
+    "text": "Anchor's borrowers never paid\nanything close to that.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s14_flow_where_interest_came_from",
+    "args": {
+     "nodes": [
+      {
+       "id": "bor",
+       "label": "Anchor's borrowers",
+       "sub": "never paid anything close",
+       "x": 0.15,
+       "y": 0.16
+      },
+      {
+       "id": "res",
+       "label": "Reserves",
+       "x": 0.15,
+       "y": 0.43
+      },
+      {
+       "id": "subs",
+       "label": "Subsidies",
+       "x": 0.15,
+       "y": 0.69
+      },
+      {
+       "id": "new",
+       "label": "New money",
+       "sub": "coming in",
+       "x": 0.15,
+       "y": 0.95,
+       "red": true
+      },
+      {
+       "id": "int",
+       "label": "Promised interest",
+       "sub": "roughly $2.7B a year",
+       "x": 0.85,
+       "y": 0.55
+      }
+     ],
+     "edges": [
+      {
+       "from": "bor",
+       "to": "int"
+      },
+      {
+       "from": "res",
+       "to": "int"
+      },
+      {
+       "from": "subs",
+       "to": "int"
+      },
+      {
+       "from": "new",
+       "to": "int",
+       "red": true
+      }
+     ],
+     "title": "THE DIFFERENCE HAD TO COME FROM SOMEWHERE",
+     "dur": 5.5
+    }
+   }
+  ],
+  "103": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/gavel_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s14_tw_july2025_genius_act",
+    "args": {
+     "text": "JULY 2025",
+     "sub": "GENIUS ACT (U.S.)",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/cards/zoom/card_08_genius_act_2025-07-18_zoom.mp4"
+   }
+  ],
+  "104": [
+   {
+    "kind": "text",
+    "text": "This isn't investment advice.\nIt's a pattern.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s14_kp_yield_far_above_safe",
+    "args": {
+     "lines": [
+      "When a yield is far above",
+      "what anything safe pays,"
+     ],
+     "red": [
+      "far",
+      "above"
+     ],
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 112
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s14_kp_coming_from_you",
+    "args": {
+     "lines": [
+      "If you can't see where,",
+      "it might be coming from you."
+     ],
+     "red": [
+      "you."
+     ],
+     "dur": 5.0,
+     "stagger": 1.4,
+     "size": 112
+    }
+   }
+  ],
+  "105": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep01_terra_luna/motion/s15_chapter_outro.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "It failed because a 20 percent promise\nwas more convincing than every warning.",
+    "style": "quote"
+   }
+  ],
+  "106": [
+   {
+    "kind": "video",
+    "asset": "assets/ep01_terra_luna/stock/vault_2.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s15_cmp_promise_vs_question",
+    "args": {
+     "left": {
+      "head": "If something promises",
+      "big": "High returns",
+      "sub": "with no risk"
+     },
+     "right": {
+      "head": "Ask one question",
+      "big": "Where from?",
+      "sub": "Where is the money actually coming from?"
+     },
+     "dur": 5.5
+    }
+   }
+  ],
+  "107": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_2.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s15_tw_next_time",
+    "args": {
+     "text": "NEXT TIME",
+     "sub": "A KOREAN STORY THE WORLD NEVER HEARD",
+     "dur": 4.0
+    }
+   },
+   {
+    "kind": "text",
+    "text": "A man who took money\nfrom tens of thousands of people,\nfled the country,\nand was then reported dead.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s15_pc_cho_wanted",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_2.png",
+     "name": "CHO HEE-PAL",
+     "kicker": "NEXT CASE · EP.02",
+     "sub": "Wanted by Korean police after fleeing to China in 2008",
+     "stamp_word": "WANTED",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "dur": 5.0,
+     "print_h": 600
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s15_kp_victims_dont_believe",
+    "args": {
+     "lines": [
+      "Many of his victims",
+      "still don't believe it."
+     ],
+     "red": [
+      "believe"
+     ],
+     "dur": 3.0,
+     "stagger": 0.9,
+     "size": 112
+    }
+   }
+  ],
+  "108": [
+   {
+    "kind": "text",
+    "text": "Subscribe so you don't miss it.",
+    "style": "label"
+   },
+   {
+    "kind": "text",
+    "text": "Did you, or someone you know,\never get caught in a crypto collapse?",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep01_terra_luna/s01_seoul_skyline_1.jpg",
+    "fx": "out"
+   }
+  ]
+ },
+ "sfx": [
+  {
+   "chunk": 0,
+   "name": "impact",
+   "offset": 2.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 1,
+   "name": "heartbeat",
+   "offset": 10.1,
+   "gain_db": -10
+  },
+  {
+   "chunk": 2,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -11
+  },
+  {
+   "chunk": 2,
+   "name": "whoosh",
+   "offset": 4.1,
+   "gain_db": -10
+  },
+  {
+   "chunk": 4,
+   "name": "whoosh",
+   "offset": 3.5,
+   "gain_db": -8
+  },
+  {
+   "chunk": 6,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -10
+  },
+  {
+   "chunk": 8,
+   "name": "impact",
+   "offset": 9.75,
+   "gain_db": -14
+  },
+  {
+   "chunk": 10,
+   "name": "impact",
+   "offset": 7.4,
+   "gain_db": -6
+  },
+  {
+   "chunk": 11,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 12,
+   "name": "typewriter",
+   "offset": 3.4,
+   "gain_db": -12
+  },
+  {
+   "chunk": 17,
+   "name": "heartbeat",
+   "offset": 4.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 18,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 22,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 23,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 24,
+   "name": "heartbeat",
+   "offset": 14.6,
+   "gain_db": -11
+  },
+  {
+   "chunk": 25,
+   "name": "riser",
+   "offset": 4.05,
+   "gain_db": -12
+  },
+  {
+   "chunk": 25,
+   "name": "impact",
+   "offset": 6.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 26,
+   "name": "whoosh",
+   "offset": 5.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 30,
+   "name": "heartbeat",
+   "offset": 8.6,
+   "gain_db": -10
+  },
+  {
+   "chunk": 31,
+   "name": "impact",
+   "offset": 7.85,
+   "gain_db": -6
+  },
+  {
+   "chunk": 33,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 33,
+   "name": "typewriter",
+   "offset": 4.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 37,
+   "name": "impact",
+   "offset": 2.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 38,
+   "name": "stamp",
+   "offset": 3.47,
+   "gain_db": -8
+  },
+  {
+   "chunk": 39,
+   "name": "heartbeat",
+   "offset": 7.66,
+   "gain_db": -9
+  },
+  {
+   "chunk": 44,
+   "name": "impact",
+   "offset": 8.95,
+   "gain_db": -8
+  },
+  {
+   "chunk": 48,
+   "name": "heartbeat",
+   "offset": 4.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 50,
+   "name": "whoosh",
+   "offset": -0.55,
+   "gain_db": -12
+  },
+  {
+   "chunk": 50,
+   "name": "typewriter",
+   "offset": 4.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 51,
+   "name": "impact",
+   "offset": 18.15,
+   "gain_db": -10
+  },
+  {
+   "chunk": 54,
+   "name": "glitch",
+   "offset": 17.9,
+   "gain_db": -10
+  },
+  {
+   "chunk": 57,
+   "name": "glitch",
+   "offset": 4.2,
+   "gain_db": -10
+  },
+  {
+   "chunk": 60,
+   "name": "impact",
+   "offset": 2.85,
+   "gain_db": -8
+  },
+  {
+   "chunk": 64,
+   "name": "glitch",
+   "offset": 4.0,
+   "gain_db": -18
+  },
+  {
+   "chunk": 64,
+   "name": "typewriter",
+   "offset": 8.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 68,
+   "name": "stamp",
+   "offset": 4.0,
+   "gain_db": -10
+  },
+  {
+   "chunk": 69,
+   "name": "whoosh",
+   "offset": 0.6,
+   "gain_db": -12
+  },
+  {
+   "chunk": 69,
+   "name": "stamp",
+   "offset": 9.9,
+   "gain_db": -12
+  },
+  {
+   "chunk": 70,
+   "name": "stamp",
+   "offset": 7.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 71,
+   "name": "impact",
+   "offset": 0.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 75,
+   "name": "typewriter",
+   "offset": 4.3,
+   "gain_db": -16
+  },
+  {
+   "chunk": 77,
+   "name": "stamp",
+   "offset": 8.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 78,
+   "name": "glitch",
+   "offset": 3.35,
+   "gain_db": -18
+  },
+  {
+   "chunk": 79,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 80,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 81,
+   "name": "heartbeat",
+   "offset": 8.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 84,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 85,
+   "name": "whoosh",
+   "offset": 6.85,
+   "gain_db": -10
+  },
+  {
+   "chunk": 86,
+   "name": "impact",
+   "offset": 3.17,
+   "gain_db": -8
+  },
+  {
+   "chunk": 90,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 90,
+   "name": "impact",
+   "offset": 0.55,
+   "gain_db": -7
+  },
+  {
+   "chunk": 91,
+   "name": "impact",
+   "offset": 11.18,
+   "gain_db": -13
+  },
+  {
+   "chunk": 93,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 95,
+   "name": "whoosh",
+   "offset": 5.6,
+   "gain_db": -10
+  },
+  {
+   "chunk": 97,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 97,
+   "name": "glitch",
+   "offset": 14.5,
+   "gain_db": -16
+  },
+  {
+   "chunk": 100,
+   "name": "impact",
+   "offset": 5.75,
+   "gain_db": -12
+  },
+  {
+   "chunk": 103,
+   "name": "typewriter",
+   "offset": 4.65,
+   "gain_db": -16
+  },
+  {
+   "chunk": 107,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -13
+  },
+  {
+   "chunk": 107,
+   "name": "typewriter",
+   "offset": 4.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 107,
+   "name": "heartbeat",
+   "offset": 15.2,
+   "gain_db": -12
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 2,
+   "dur": 4.5
+  },
+  {
+   "chunk": 10,
+   "dur": 9.2
+  },
+  {
+   "chunk": 17,
+   "dur": 6.0
+  },
+  {
+   "chunk": 24,
+   "dur": 19.0
+  },
+  {
+   "chunk": 29,
+   "dur": 3.5
+  },
+  {
+   "chunk": 35,
+   "dur": 1.5
+  },
+  {
+   "chunk": 39,
+   "dur": 15.0
+  },
+  {
+   "chunk": 46,
+   "dur": 2.0
+  },
+  {
+   "chunk": 48,
+   "dur": 9.5
+  },
+  {
+   "chunk": 59,
+   "dur": 9.7
+  },
+  {
+   "chunk": 61,
+   "dur": 2.0
+  },
+  {
+   "chunk": 66,
+   "dur": 2.0
+  },
+  {
+   "chunk": 71,
+   "dur": 2.5
+  },
+  {
+   "chunk": 77,
+   "dur": 10.0
+  },
+  {
+   "chunk": 81,
+   "dur": 12.2
+  },
+  {
+   "chunk": 88,
+   "dur": 18.5
+  },
+  {
+   "chunk": 90,
+   "dur": 1.5
+  },
+  {
+   "chunk": 95,
+   "dur": 1.8
+  },
+  {
+   "chunk": 100,
+   "dur": 7.6
+  },
+  {
+   "chunk": 106,
+   "dur": 8.5
+  }
+ ]
+}
