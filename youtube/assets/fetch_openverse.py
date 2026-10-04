@@ -1,8 +1,8 @@
 # Fetches commercially usable photos (CC0 / PDM / CC BY / CC BY-SA) via the Openverse API (Flickr, Wikimedia, ...),
 # downsizes them to <=2560 px wide, and appends credits. Resumable: scenes with a .meta file are skipped.
-# Usage: python3 fetch_openverse.py
-import json, os, subprocess, time, urllib.parse, urllib.request, urllib.error
-UA = "PaperTigerFiles-asset-fetch/1.0 (https://github.com/nwook100/NTT-TEST)"
+# Usage: python3 fetch_openverse.py [episode_dir ...]   (no args = every episode below)
+import json, os, subprocess, sys, time, urllib.parse, urllib.request, urllib.error
+UA = "PaperTigerFiles-asset-fetch/1.0"   # generic UA: no personal data in requests
 OK = {"cc0", "pdm", "by", "by-sa"}
 
 def get(url, tries=4):
@@ -77,6 +77,15 @@ EP = {
   ("s08_courtroom", "empty courtroom"), ("s08_gimhae_airport", "Gimhae airport"), ("s08_daegu_court", "Daegu court building"),
   ("s10_seoul_city", "Seoul city hall"), ("s11_banknotes_won", "Korean won banknotes"),
  ],
+ "ep03_truong_my_lan": [
+  ("s01_hcmc_skyline_ov", "Ho Chi Minh City skyline"), ("s01_district1_ov", "Saigon District 1 street"),
+  ("s01_nguyen_hue_ov", "Nguyen Hue walking street Saigon"), ("s01_ben_thanh_ov", "Ben Thanh market"),
+  ("s01_hcmc_towers_ov", "Ho Chi Minh City office tower"), ("s03_dong_banknotes_ov", "Vietnamese dong banknotes"),
+  ("s03_cash_stack_ov", "stack of banknotes cash"), ("s05_bank_interior_ov", "bank interior counter"),
+  ("s06_saigon_motorbikes_ov", "Saigon motorbikes traffic"), ("s06_saigon_rain_ov", "Saigon rain street"),
+  ("s07_courtroom_ov", "empty courtroom"), ("s08_hanoi_ov", "Hanoi city"),
+  ("s09_gold_ov", "gold bars"), ("s11_saigon_night_ov", "Saigon night skyline"),
+ ],
  "ep01_terra_luna": [
   ("s07_stock_screens_ov", "stock market screen red"), ("s07_trading_monitors_ov", "trading monitors"),
   ("s04_nationals_park_ov", "Nationals Park Washington stadium"), ("s12_sec_building_ov", "Securities and Exchange Commission building"),
@@ -86,4 +95,6 @@ EP = {
  ],
 }
 for ep, qs in EP.items():
+    if len(sys.argv) > 1 and ep not in sys.argv[1:]:
+        continue
     run(ep, qs)

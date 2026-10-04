@@ -1,7 +1,8 @@
 # Downloads commercially usable images (CC0 / public domain / CC BY / CC BY-SA, no NC/ND) from Wikimedia Commons
 # and writes a CREDITS.md with author/license/source for every file.
+# Usage: python3 fetch_commons.py [episode_dir ...]   (no args = every episode below)
 import json, re, sys, os, urllib.request, urllib.error, urllib.parse, html, time
-UA = "PaperTigerFiles-asset-fetch/1.0 (https://github.com/nwook100/NTT-TEST)"
+UA = "PaperTigerFiles-asset-fetch/1.0"   # generic UA: no personal data in requests
 OK = re.compile(r"^(CC0|Public domain|PD|CC BY(-SA)? [0-9.]+)", re.I)
 BAD = re.compile(r"NC|ND", re.I)
 
@@ -61,6 +62,14 @@ def run(ep, queries, per=3):
         f.write("```\n")
 
 EP = {
+ "ep03_truong_my_lan": [
+  ("s07_hcmc_court", "Tòa án nhân dân Thành phố Hồ Chí Minh"), ("s01_times_square_saigon", "Saigon Times Square Nguyen Hue"),
+  ("s01_windsor_plaza", "Windsor Plaza Hotel Saigon"), ("s01_ben_thanh", "Ben Thanh Market"),
+  ("s01_nguyen_hue", "Nguyen Hue Street Ho Chi Minh City"), ("s01_hcmc_skyline", "Ho Chi Minh City skyline"),
+  ("s01_district1", "District 1 Ho Chi Minh City"), ("s04_state_bank", "State Bank of Vietnam building"),
+  ("s08_national_assembly", "National Assembly building Hanoi Ba Dinh"), ("s03_dong_500000", "500000 dong banknote"),
+  ("s08_hanoi_skyline", "Hanoi skyline"), ("s06_saigon_motorbikes", "Ho Chi Minh City motorbikes traffic"),
+ ],
  "ep01_terra_luna": [
   ("s01_seoul_skyline", "Seoul skyline night"), ("s01_gangnam", "Gangnam Teheran-ro"),
   ("s01_stanford", "Stanford University Main Quad"), ("s04_nationals_park", "Nationals Park Washington"),
@@ -82,4 +91,6 @@ EP = {
  ],
 }
 for ep, qs in EP.items():
+    if len(sys.argv) > 1 and ep not in sys.argv[1:]:
+        continue
     run(ep, qs)
