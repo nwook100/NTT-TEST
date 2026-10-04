@@ -14,3 +14,5 @@
 [36/52] 6.7 min audio in 49.1 min (rtf 7.3); worst wer in batch 0.10
 [42/52] 7.8 min audio in 56.8 min (rtf 7.2); worst wer in batch 0.11
 [48/52] 9.0 min audio in 64.0 min (rtf 7.1); worst wer in batch 0.07
+[52/52] 9.7 min audio in 76.2 min (rtf 7.8); worst wer in batch 0.12
+DONE duration=14.9 min, chunks over WER 0.18: 0

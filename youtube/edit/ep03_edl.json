@@ -161,8 +161,7 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
-    "crop": "left",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
     "fx": "right"
    },
    {
@@ -207,7 +206,7 @@
    },
    {
     "kind": "photo",
-    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_1.jpg",
     "fx": "in"
    },
    {
@@ -465,7 +464,7 @@
       {
        "id": "g",
        "label": "Ghost company",
-       "x": 0.0,
+       "x": 0.1,
        "y": 0.5
       },
       {
@@ -477,7 +476,7 @@
       {
        "id": "s",
        "label": "SCB",
-       "x": 1.0,
+       "x": 0.9,
        "y": 0.5,
        "red": true
       }
@@ -569,34 +568,34 @@
       {
        "id": "scb",
        "label": "SCB",
-       "x": 0.0,
-       "y": 0.5,
+       "x": 0.12,
+       "y": 0.54,
        "sub": "loan money",
        "red": true
       },
       {
        "id": "a",
        "label": "Other accounts",
-       "x": 0.8,
-       "y": 0.0
+       "x": 0.78,
+       "y": 0.12
       },
       {
        "id": "o",
        "label": "Old loans",
-       "x": 0.8,
-       "y": 0.33
+       "x": 0.78,
+       "y": 0.4
       },
       {
        "id": "p",
        "label": "Van Thinh Phat projects",
-       "x": 0.8,
-       "y": 0.66
+       "x": 0.78,
+       "y": 0.68
       },
       {
        "id": "c",
        "label": "Cash",
-       "x": 0.8,
-       "y": 1.0
+       "x": 0.78,
+       "y": 0.96
       }
      ],
      "edges": [
@@ -659,25 +658,25 @@
       {
        "id": "l",
        "label": "A loan",
-       "x": 0.0,
+       "x": 0.08,
        "y": 0.5
       },
       {
        "id": "v",
        "label": "A valuation",
-       "x": 0.33,
+       "x": 0.36,
        "y": 0.5
       },
       {
        "id": "t",
        "label": "A transfer",
-       "x": 0.66,
+       "x": 0.64,
        "y": 0.5
       },
       {
        "id": "o",
        "label": "Out",
-       "x": 1.0,
+       "x": 0.92,
        "y": 0.5,
        "red": true
       }
@@ -924,7 +923,7 @@
       "fake"
      ],
      "kicker": "THE COURT FOUND",
-     "dur": 4.0,
+     "dur": 3.5,
      "size": 118,
      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
     }
@@ -946,21 +945,21 @@
       {
        "id": "b",
        "label": "25 bond issues",
-       "x": 0.0,
+       "x": 0.12,
        "y": 0.5,
        "sub": "2018–2020"
       },
       {
        "id": "f",
        "label": "A securities firm",
-       "x": 0.85,
-       "y": 0.1
+       "x": 0.8,
+       "y": 0.2
       },
       {
        "id": "s",
        "label": "SCB's own branches",
-       "x": 0.85,
-       "y": 0.9,
+       "x": 0.8,
+       "y": 0.85,
        "red": true
       }
      ],
@@ -1082,40 +1081,40 @@
       {
        "id": "m",
        "label": "₫30 trillion+",
-       "x": 0.0,
-       "y": 0.5,
-       "sub": "taken from bondholders",
+       "x": 0.12,
+       "y": 0.54,
+       "sub": "court finding",
        "red": true
       },
       {
        "id": "a",
        "label": "Repaying bank loans",
-       "x": 0.8,
-       "y": 0.0
+       "x": 0.75,
+       "y": 0.1
       },
       {
        "id": "b",
        "label": "Paying interest on older bonds",
-       "x": 0.8,
-       "y": 0.25
+       "x": 0.75,
+       "y": 0.32
       },
       {
        "id": "c",
        "label": "Projects",
-       "x": 0.8,
-       "y": 0.5
+       "x": 0.75,
+       "y": 0.54
       },
       {
        "id": "d",
        "label": "Transfers abroad",
-       "x": 0.8,
-       "y": 0.75
+       "x": 0.75,
+       "y": 0.76
       },
       {
        "id": "e",
        "label": "Lan's personal spending",
-       "x": 0.8,
-       "y": 1.0,
+       "x": 0.75,
+       "y": 0.98,
        "red": true
       }
      ],
@@ -1667,7 +1666,7 @@
     "name": "s09_tw_june_2025_payouts",
     "args": {
      "text": "JUNE 2025",
-     "sub": "— the city's civil judgment enforcement office begins paying bondholders",
+     "sub": "— civil judgment enforcement office began paying bondholders",
      "dur": 4.0,
      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
     }
