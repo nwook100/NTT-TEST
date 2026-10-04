@@ -49,7 +49,7 @@
        {
         "id": "g",
         "label": "Ghost company",
-        "x": 0.0,
+        "x": 0.1,
         "y": 0.5
        },
        {
@@ -61,7 +61,7 @@
        {
         "id": "s",
         "label": "SCB",
-        "x": 1.0,
+        "x": 0.9,
         "y": 0.5,
         "red": true
        }
@@ -159,34 +159,34 @@
        {
         "id": "scb",
         "label": "SCB",
-        "x": 0.0,
-        "y": 0.5,
+        "x": 0.12,
+        "y": 0.54,
         "sub": "loan money",
         "red": true
        },
        {
         "id": "a",
         "label": "Other accounts",
-        "x": 0.8,
-        "y": 0.0
+        "x": 0.78,
+        "y": 0.12
        },
        {
         "id": "o",
         "label": "Old loans",
-        "x": 0.8,
-        "y": 0.33
+        "x": 0.78,
+        "y": 0.4
        },
        {
         "id": "p",
         "label": "Van Thinh Phat projects",
-        "x": 0.8,
-        "y": 0.66
+        "x": 0.78,
+        "y": 0.68
        },
        {
         "id": "c",
         "label": "Cash",
-        "x": 0.8,
-        "y": 1.0
+        "x": 0.78,
+        "y": 0.96
        }
       ],
       "edges": [
@@ -252,25 +252,25 @@
        {
         "id": "l",
         "label": "A loan",
-        "x": 0.0,
+        "x": 0.08,
         "y": 0.5
        },
        {
         "id": "v",
         "label": "A valuation",
-        "x": 0.33,
+        "x": 0.36,
         "y": 0.5
        },
        {
         "id": "t",
         "label": "A transfer",
-        "x": 0.66,
+        "x": 0.64,
         "y": 0.5
        },
        {
         "id": "o",
         "label": "Out",
-        "x": 1.0,
+        "x": 0.92,
         "y": 0.5,
         "red": true
        }

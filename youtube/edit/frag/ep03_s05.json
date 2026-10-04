@@ -58,21 +58,21 @@
        {
         "id": "b",
         "label": "25 bond issues",
-        "x": 0.0,
+        "x": 0.12,
         "y": 0.5,
         "sub": "2018–2020"
        },
        {
         "id": "f",
         "label": "A securities firm",
-        "x": 0.85,
-        "y": 0.1
+        "x": 0.8,
+        "y": 0.2
        },
        {
         "id": "s",
         "label": "SCB's own branches",
-        "x": 0.85,
-        "y": 0.9,
+        "x": 0.8,
+        "y": 0.85,
         "red": true
        }
       ],
@@ -206,40 +206,40 @@
        {
         "id": "m",
         "label": "₫30 trillion+",
-        "x": 0.0,
-        "y": 0.5,
-        "sub": "taken from bondholders",
+        "x": 0.12,
+        "y": 0.54,
+        "sub": "court finding",
         "red": true
        },
        {
         "id": "a",
         "label": "Repaying bank loans",
-        "x": 0.8,
-        "y": 0.0
+        "x": 0.75,
+        "y": 0.1
        },
        {
         "id": "b",
         "label": "Paying interest on older bonds",
-        "x": 0.8,
-        "y": 0.25
+        "x": 0.75,
+        "y": 0.32
        },
        {
         "id": "c",
         "label": "Projects",
-        "x": 0.8,
-        "y": 0.5
+        "x": 0.75,
+        "y": 0.54
        },
        {
         "id": "d",
         "label": "Transfers abroad",
-        "x": 0.8,
-        "y": 0.75
+        "x": 0.75,
+        "y": 0.76
        },
        {
         "id": "e",
         "label": "Lan's personal spending",
-        "x": 0.8,
-        "y": 1.0,
+        "x": 0.75,
+        "y": 0.98,
         "red": true
        }
       ],
