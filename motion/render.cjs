@@ -19,10 +19,12 @@ function loadPlaywright() {
   const out = path.resolve(process.argv[2] || path.join(__dirname, 'shinsung-motion.mp4'));
   const FPS = Number(process.argv[3] || 30), W = 1920, H = 1080;
   const exe = process.env.CHROMIUM_PATH; // 필요하면 크로미움 경로를 직접 지정
-  const browser = await chromium.launch(exe ? { executablePath: exe } : {});
+  const launch = { args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] }; // GPU 없는 서버에서도 WebGL 동작
+  if (exe) launch.executablePath = exe;
+  const browser = await chromium.launch(launch);
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
-  // 구글 폰트를 브라우저 대신 Node가 받아서 넘겨 준다. 사내 프록시 환경에서 브라우저가 인증서를 못 믿을 때를 위한 안전장치.
-  await page.route(/https:\/\/fonts\.(googleapis|gstatic)\.com\//, async route => {
+  // 구글 폰트와 three.js(cdnjs)를 브라우저 대신 Node가 받아서 넘겨 준다. 사내 프록시 환경에서 브라우저가 인증서를 못 믿을 때를 위한 안전장치.
+  await page.route(/https:\/\/(fonts\.(googleapis|gstatic)\.com|cdnjs\.cloudflare\.com)\//, async route => {
     try {
       const req = route.request();
       const r = await fetch(req.url(), { headers: { 'user-agent': req.headers()['user-agent'] || '' } });

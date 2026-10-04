@@ -32,6 +32,10 @@ button{font:inherit;color:inherit}
 .frame{position:relative;width:min(100%,calc((100vh - 170px) * 16 / 9));width:min(100%,calc((100dvh - 170px) * 16 / 9));aspect-ratio:16/9;max-width:100%;margin-inline:auto;overflow:hidden;background:#000;border-radius:8px;border:1px solid var(--line)}
 .stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(var(--k,1));background:var(--bg);overflow:hidden}
 #bg{position:absolute;inset:0;width:1920px;height:1080px}
+#gl{position:absolute;inset:0;width:1920px;height:1080px;pointer-events:none;z-index:5}
+.scene{z-index:1}
+.vignette{z-index:6}
+.cards.has3d .card svg{visibility:hidden}
 .vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
 .scene{position:absolute;inset:0;will-change:opacity}
 .scene[hidden]{display:none}
@@ -140,6 +144,7 @@ html.render .controls,html.render .poster{display:none}
   <div class="frame" id="frame">
     <div class="stage" id="stage">
       <canvas id="bg" width="1920" height="1080" aria-hidden="true"></canvas>
+      <canvas id="gl" width="1920" height="1080" aria-hidden="true" hidden></canvas>
 
       <section class="scene" id="s-intro" hidden>
         <div class="intro-text">
@@ -222,6 +227,12 @@ html.render .controls,html.render .poster{display:none}
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="3d/parts/materials.js"></script>
+<script src="3d/parts/ring.js"></script>
+<script src="3d/parts/magazine.js"></script>
+<script src="3d/parts/cassette.js"></script>
+<script src="3d/parts/pinboat.js"></script>
 <script>
 /* =========================================================
    1) 문구 설정 — 회사 실제 정보에 맞게 이 부분만 고치면 됩니다.
@@ -428,6 +439,7 @@ function sizeCanvas() {
   if (k === DPR && grid) return;
   DPR = k;
   cv.width = Math.round(1920 * DPR); cv.height = Math.round(1080 * DPR);
+  if (GL) GL.r.setPixelRatio(DPR);
   grid = document.createElement('canvas'); grid.width = cv.width; grid.height = cv.height;
   const g = grid.getContext('2d'); g.scale(DPR, DPR); g.fillStyle = C.muted; g.globalAlpha = .13;
   for (let y = 24; y < 1080; y += 48) for (let x = 24; x < 1920; x += 48) g.fillRect(x - 1, y - 1, 2, 2);
@@ -529,6 +541,62 @@ function drawRings(lt, a) {
 }
 
 /* =========================================================
+   5-2) 3D 제품 (three.js). 라이브러리나 부품 파일이 없으면 2D 선화 카드로 자동 대체.
+   ========================================================= */
+let GL = null;
+function initGL() {
+  if (!window.THREE || !window.PARTS || !window.MAT) return null;
+  try {
+    const glc = $('#gl');
+    const r = new THREE.WebGLRenderer({ canvas: glc, antialias: true, alpha: true, preserveDrawingBuffer: true });
+    r.setSize(1920, 1080, false); r.setClearColor(0x000000, 0);
+    r.outputEncoding = THREE.sRGBEncoding; r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 1.05;
+    const sc = new THREE.Scene();
+    const D = 30, cam = new THREE.PerspectiveCamera(20, 1920 / 1080, 0.1, 200); cam.position.set(0, 0, D); cam.lookAt(0, 0, 0);
+    sc.add(new THREE.HemisphereLight(0x6fb7d9, 0x0c1118, 0.5));
+    const key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(5, 10, 8); sc.add(key);
+    const rim = new THREE.PointLight(0xe2a35b, 1.2, 80); rim.position.set(-10, 4, 6); sc.add(rim);
+    const fill = new THREE.PointLight(0x6fb7d9, 0.6, 80); fill.position.set(10, -2, 8); sc.add(fill);
+    const k = D * Math.tan(cam.fov / 2 * Math.PI / 180) / 540;           // 화면 px → 월드 단위 (z=0 평면)
+    const toWorld = (sx, sy) => [(sx - 960) * k, (540 - sy) * k];
+    // [부품, 옵션, 목표 크기(월드 단위), 기울기]
+    const DEF = [
+      ['magazine', { finish: 'silver', strips: 3 }, 2.9, g => { g.rotation.x = 0.28; }],
+      ['cassette', { rings: 13, wafer: true },      2.9, g => { g.rotation.x = 0.32; }],
+      ['ring',     { size: 8 },                     2.7, g => { g.rotation.x = -0.95; }],
+      ['pinboat',  { withStrip: true },             3.1, g => { g.rotation.x = 0.5; }],
+    ];
+    const items = DEF.map((d, i) => {
+      const [key, opts, target, post] = d;
+      let part = null; try { part = PARTS[key] ? PARTS[key](THREE, MAT, opts) : null; } catch (e) { console.error(key, e); }
+      if (!part) return null;
+      const box = new THREE.Box3().setFromObject(part), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
+      part.position.sub(c);
+      const inner = new THREE.Group(); inner.add(part); inner.scale.setScalar(target / Math.max(size.x, size.y, size.z));
+      const tilt = new THREE.Group(); tilt.add(inner); if (post) post(tilt);
+      const pivot = new THREE.Group(); pivot.add(tilt);
+      const [wx, wy] = toWorld(312 + i * 432, 455); pivot.position.set(wx, wy, 0);
+      sc.add(pivot); return { pivot, inner, i, baseY: wy };
+    });
+    if (!items.some(Boolean)) return null;
+    $('#cards').classList.add('has3d');
+    return { r, sc, cam, items };
+  } catch (e) { console.error('3D 초기화 실패, 2D로 대체', e); return null; }
+}
+function glRender(lt, a) {
+  const glc = $('#gl'); glc.hidden = false; glc.style.opacity = a;
+  GL.items.forEach(it => {
+    if (!it) return;
+    const p = seg(lt, 1.1 + it.i * 1.3, .9, E.outExpo);
+    it.pivot.visible = p > 0;
+    it.pivot.position.y = it.baseY - (1 - p) * 0.8;
+    it.pivot.scale.setScalar(0.85 + 0.15 * p);
+    it.inner.rotation.y = -0.5 + 0.35 * lt;                       // 천천히 도는 턴테이블
+  });
+  GL.r.render(GL.sc, GL.cam);
+}
+
+/* =========================================================
    6) 장면별 DOM 애니메이션 (장면 안의 시간 lt 기준)
    ========================================================= */
 const DOM = {
@@ -591,6 +659,7 @@ function render(t) {
   ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   ctx.fillStyle = C.bg; ctx.fillRect(0, 0, 1920, 1080);
   ctx.drawImage(grid, 0, 0, 1920, 1080);
+  let glOn = false;
   SCENES.forEach((sc, i) => {
     const el = S[sc.id], lt = t - sc.start, last = i === SCENES.length - 1;
     const on = lt >= 0 && (last ? lt <= sc.dur : lt < sc.dur);
@@ -598,7 +667,9 @@ function render(t) {
     const a = seg(lt, 0, FADE) * (last ? 1 : 1 - seg(lt, sc.dur - FADE, FADE));
     el.hidden = false; el.style.opacity = a;
     BG[sc.id](lt, a); DOM[sc.id](lt);
+    if (sc.id === 'products' && GL) { glOn = true; glRender(lt, a); }
   });
+  if (!glOn) $('#gl').hidden = true;
 }
 
 /* =========================================================
@@ -668,6 +739,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden && pla
 /* =========================================================
    9) 시작 + 렌더 모드 API (render.cjs가 window.__motion.seek(t)로 프레임을 뽑는다)
    ========================================================= */
+GL = initGL();
 window.__motion = { total: TOTAL, scenes: SCENES, seek: x => { t = clamp(x, 0, TOTAL); render(t); } };
 const boot = () => { render(t); updateUI(); window.__motionReady = true; };
 (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(boot);

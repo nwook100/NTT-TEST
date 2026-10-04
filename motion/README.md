@@ -41,6 +41,11 @@ node motion/render.cjs motion/shinsung-motion.mp4 30
 
 1920×1080, 30fps, H.264 MP4가 생성됩니다. ffmpeg가 PATH에 있어야 합니다.
 
+## 3D 제품 모델
+
+`3d/parts/` 의 three.js 모델(매거진·카세트·링·핀 보트)을 제품 장면(13~27초)에서 불러와 턴테이블처럼 돌려 보여 줍니다.
+three.js(cdnjs)를 불러오지 못하는 환경에서는 예전 2D 선화 카드로 자동 대체됩니다. 자세한 내용은 `3d/README.md`.
+
 ## 동작 원리 (학습용 메모)
 
 - 모든 움직임은 "현재 시각 t"를 받아 화면을 그리는 `render(t)` 함수 하나로 계산합니다.
@@ -48,3 +53,4 @@ node motion/render.cjs motion/shinsung-motion.mp4 30
 - `seg(t, 시작, 길이, 곡선)`이 시간을 0~1 진행도로 바꾸고, `rise()`가 그 값을 투명도와 위치로 옮깁니다.
 - 제품 선화는 SVG `pathLength="1"` + `stroke-dashoffset`으로 "그려지는" 효과를 냅니다.
 - 배경(웨이퍼, 공정선, 눈금자, 레이더 링)은 `<canvas>`에 매 프레임 다시 그립니다.
+- 3D 제품은 별도 WebGL 캔버스(three.js)에 그리고, 카드 위치(픽셀)를 3D 좌표로 환산해 카드 안에 맞춥니다.
