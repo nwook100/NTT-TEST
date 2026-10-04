@@ -96,7 +96,7 @@
      "kind": "photo",
      "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_3.jpg",
      "fx": "out",
-     "crop": "top"
+     "crop": "left"
     }
    ]
   },
@@ -107,7 +107,7 @@
      "kind": "photo",
      "asset": "assets/ep03_truong_my_lan/s04_state_bank_1.jpg",
      "fx": "in",
-     "crop": "top"
+     "crop": "detail"
     },
     {
      "kind": "motion",
