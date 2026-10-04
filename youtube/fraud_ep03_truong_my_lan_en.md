@@ -1,7 +1,7 @@
 # EP.03 The Bank She Secretly Owned: Vietnam's $27 Billion Fraud
 
 - Channel: Paper Tiger Files (fraud & financial crime stories, Asia focus)
-- Target length: under 15 min finished. 2,067 words of narration; EP.02's real narration ran 3,136 words in 21:45 (≈144 wpm incl. all gaps), so expect ≈14:20 of narration + 6 s intro A + 12 s outro B ≈ 14:40. Heading timecodes are estimates. Word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`
+- Target length: under 15 min finished. 2,082 words of narration (fact-check pass 2026-10-04); EP.02's real narration ran 3,136 words in 21:45 (≈144 wpm incl. all gaps), so expect ≈14:27 of narration + 6 s intro A + 12 s outro B ≈ 14:45. Do not add words: the 15:00 cap leaves only ~15 s of margin. Heading timecodes are estimates. Word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`
 - Tone: true-crime storytelling, calm, tense, never mocking victims
 - Notation: `[SCREEN]` = editing cue, `[AI-xx]` = AI video shot (prompts at the bottom), `(beat)` = 1-second pause
 - Legal rule (Vietnam): Truong My Lan, her husband, her niece, the former SCB general director and the former central-bank inspection chief are **convicted by final judgments** (first instance April 11, 2024 / October 17, 2024; appeals December 3, 2024 / April 21, 2025). Court findings about them are stated as fact. Everything else (investigators' figures, victims' accounts, media estimates) is attributed: "prosecutors said", "state media reported", "according to Reuters". No bondholders or other private individuals are named. Co-defendants other than Lan are described by role, not by name, in narration.
@@ -39,7 +39,7 @@ The total: 108 trillion dong. More than four billion dollars. In cash.
 
 At the same bank, tens of thousands of ordinary savers were being offered something that sounded as safe as a deposit.
 It wasn't.
-This is the story of Truong My Lan. A real estate tycoon who, a court found, secretly controlled one of Vietnam's largest banks, and used it as her own wallet.
+This is the story of Truong My Lan. A real estate tycoon who, a court found, secretly controlled a major Vietnamese bank, and used it as her own wallet.
 
 [SCREEN] Channel logo sting (under 3 seconds)
 
@@ -77,7 +77,7 @@ And the cheapest money, if you can get it, is a bank's.
 
 [SCREEN] Three small bank icons merging into one: "Dec 2011: three troubled banks → Saigon Commercial Bank (SCB)"
 
-In late 2011, Vietnam's central bank pushed three struggling lenders to merge into one: Saigon Joint Stock Commercial Bank, known as SCB.
+In late 2011, in a merger approved by the central bank, three struggling lenders became one: Saigon Commercial Bank, known as SCB.
 It was supposed to be a rescue.
 According to the court, it became something else.
 
@@ -119,12 +119,12 @@ Step two. Loans.
 Those companies applied to SCB for loans. Fake applications, the court found, approved by managers who knew where the money was going.
 Between 2018 and 2022 alone, the court counted 916 such loan applications, worth around 545 trillion dong.
 
-[SCREEN] Step 3: a small apartment icon with a price tag inflating like a balloon: "Collateral value ×3"
+[SCREEN] Step 3: a small apartment icon with a price tag inflating like a balloon: "Collateral value inflated"
 
 Step three. Collateral.
 Every loan needs security. According to the court, appraisal firms colluded to inflate the value of the assets pledged, so the paperwork looked covered.
 
-[SCREEN] Step 4: arrows from SCB fanning out to "Van Thinh Phat projects", "old loans", "cash", "abroad"
+[SCREEN] Step 4: arrows from SCB fanning out to "Van Thinh Phat projects", "old loans", "cash", "other accounts"
 
 Step four. The money moves on.
 Once disbursed, the loan money was shuffled between accounts, used to pay off older loans, poured into Van Thinh Phat's projects, or taken out in cash.
@@ -178,19 +178,18 @@ The people whose job was to check the bank were, according to the court, part of
 
 [AI-02 variant] A bank branch interior with glossy posters, an older couple seen from behind at a counter, a staff member in uniform smiling, no faces, no logos
 
-But by 2018, the loans weren't enough.
-So, the court found, Lan's group found a second source of cash: ordinary savers.
+From 2018, the court found, Lan's group tapped a second source of cash: ordinary savers.
 
 [SCREEN] Flow diagram: "4 companies → 25 bond issues (2018–2020) → sold through a securities firm & SCB branches → 35,824 buyers"
 
 Four companies linked to Van Thinh Phat issued 25 batches of corporate bonds between 2018 and 2020.
-The court found these bonds were essentially fake: issued without real security, and the money raised was never used for the stated purpose.
+The court found these were fake bonds, and the money raised was never used for the purposes stated.
 They were sold through a securities firm and SCB's own branches.
-To a saver, the difference between a deposit and a bond can look like a few lines of small print. A deposit is a claim on the bank, backed by deposit insurance. A corporate bond is a loan to a company. If the company can't pay, you can lose it.
+To a saver, the difference between a deposit and a bond can look like a few lines of small print. A deposit is a claim on the bank, backed, up to a limit, by deposit insurance. A corporate bond is a loan to a company. If the company can't pay, you can lose it.
 
 [SCREEN] Key phrase: "As safe as a deposit?"
 
-According to bondholders interviewed by state media, bank staff told them the bonds were safe. Many said they had walked in to renew a savings account and walked out with bonds.
+Most of the buyers were SCB depositors. According to state media, bank staff reassured them the bonds were safe, like a savings account.
 State media also reported that the bank's general director held training sessions for thousands of sales staff on how to sell them.
 
 [SCREEN] Count-up: "35,824 victims · ₫30 trillion (≈ $1.2B)"
@@ -213,13 +212,13 @@ Within days, worried depositors crowded SCB branches to pull out their savings.
 For many families, SCB was simply the bank down the street. They had no idea who really controlled it.
 The State Bank placed SCB under special control and sent in managers from the big state-owned banks.
 
-[SCREEN] Compare card: "₫304T embezzled (court)" vs "~$24–26B in central-bank support to SCB (Reuters)"
+[SCREEN] Compare card: "₫304T embezzled (court)" vs "≈ $25.6B lent to SCB by the central bank, Feb 2025 (Reuters)"
 
 To keep the bank alive, the central bank kept lending to it.
-By 2025, Reuters reported, nearly 26 billion dollars had been pumped into SCB.
+By February 2025, Reuters reported, the central bank had lent SCB about 25.6 billion dollars.
 And the bondholders discovered that the companies behind their bonds could not pay.
-According to state media, groups of them gathered again and again outside offices in Ho Chi Minh City and Hanoi, asking for their money back.
-In the end, public money was keeping a private bank alive, because letting it fail could have spread panic through the whole system.
+According to state media, they filed complaints with police and petitioned the authorities, asking for their money back.
+In effect, central-bank money was keeping a private bank alive, because letting it fail risked spreading panic through the whole system.
 
 ---
 
@@ -247,7 +246,7 @@ The sentence: death.
 The court ordered her to pay back around 674 trillion dong, about 27 billion dollars, to SCB.
 It said there was little chance the money could all be recovered.
 
-[SCREEN] Ruling card row: "Husband — 9 yrs · Niece (Van Thinh Phat CEO) — 17 yrs · 4 defendants — life · others — 3 yrs suspended to 20 yrs"
+[SCREEN] Ruling card row: "Husband — 9 yrs · Niece (Van Thinh Phat CEO) — 17 yrs · 4 defendants — life · others — 2 to 20 yrs, some suspended"
 
 Her husband got nine years. Her niece, who ran Van Thinh Phat, got seventeen.
 Four defendants were sentenced to life: two former chairmen of the bank, its former general director, and the central-bank inspection chief.
@@ -261,14 +260,14 @@ Every one of the 86 was found guilty.
 
 In the autumn of 2024, Lan was back in the same court, this time for the bonds.
 On October 17, she was found guilty of fraud, money laundering, and illegally moving money across borders.
-The court found she had laundered more than 445 trillion dong, and moved about 4.5 billion dollars in and out of Vietnam. She was sentenced to life.
+The court found she had laundered more than 445 trillion dong, and illegally moved more than 4.5 billion dollars across Vietnam's borders. She was sentenced to life.
 
 [SCREEN] Key phrase: "Repay ¾ → life instead of death"
 
 In December 2024, an appeals court upheld her death sentence.
 But under Vietnamese law, it noted, she could avoid execution if she paid back at least three-quarters of what she had taken.
 International media called it a race against time: her life seemed to depend on how fast her empire could be sold.
-In April 2025, a second appeals court cut her bond-fraud sentence from life to twenty years, after money began to be recovered for the bondholders.
+In April 2025, ruling on her appeal in the bond case, the court cut her fraud sentence from life to twenty years, after money began to be recovered for the bondholders.
 
 (beat)
 
@@ -276,8 +275,8 @@ In April 2025, a second appeals court cut her bond-fraud sentence from life to t
 
 Then the law itself changed.
 In June 2025, Vietnam's National Assembly abolished the death penalty for eight crimes, including embezzlement.
-Death sentences already handed down for those crimes would no longer be carried out.
-According to international reporting, Truong My Lan's death sentence was commuted to life imprisonment.
+Death sentences already handed down for those crimes would not be carried out. Instead, the head of the Supreme People's Court would convert them to life in prison.
+Her lawyer told AFP that Truong My Lan would be spared.
 
 ---
 
@@ -287,7 +286,7 @@ According to international reporting, Truong My Lan's death sentence was commute
 
 For the victims, the question was never her sentence. It was their money.
 
-[SCREEN] Self-made bar: "Owed to bondholders: ₫30.08T" with a fill bar rising round by round: "Jun 2025 → Jul 2026: 10 payouts ≈ ₫12.3T (~41%)"
+[SCREEN] Self-made bar: "Owed to bondholders: ₫30.08T" with a fill bar rising round by round: "Jun 2025 → Jul 2026: 10 payouts ≈ ₫12.36T (~41%)"
 
 Investigators had frozen more than 1,200 properties linked to her, and hundreds of millions of SCB shares held in her name or her proxies' names.
 Ho Chi Minh City's civil judgment enforcement office began paying bondholders in June 2025.
@@ -295,15 +294,16 @@ By May 2026, according to the Vietnamese government's news portal, nine rounds h
 A tenth payment followed in July 2026. It was worth about one percent of what was owed.
 For a retiree who put their savings into a bond they believed was a deposit, that means waiting, year after year, for a slice at a time.
 
-[SCREEN] Auction cards: "2 handbags ≈ $539,000 · Maybach ≈ $630,000 · yacht — no buyer (yet)"
+[SCREEN] Auction cards: "2 handbags ≈ $539,000 · Maybach ≈ $630,000 · yacht — 5 auctions, no buyer (Aug 2026)"
 
-Her possessions are being sold. Two designer handbags. A Maybach. Other cars. A yacht that, at first, nobody wanted to buy.
-She had asked to keep the handbags for her family. She was refused.
+Her possessions are being sold. Two designer handbags. A Maybach. A yacht that, after five auctions, still had no buyer.
+She had asked the court to let her family keep the handbags. It refused.
 
 [SCREEN] Compare card: "Bondholders: ~41% repaid" vs "SCB: ≈ $27B ordered — a fraction recovered"
 
 But the bondholders are only part of the bill.
-The 27 billion dollars owed to SCB is on another scale entirely. Prosecutors said much of it may never come back.
+The 27 billion dollars owed to SCB is on another scale entirely. The court itself warned that much of it may never come back.
+And SCB? As of August 2026, state media reported, it was still under special control, and closing branches.
 
 ---
 
@@ -351,42 +351,45 @@ And tell me in the comments: would you know if your bank was selling you somethi
 - [x] Van Thinh Phat founded 1992; married to Hong Kong businessman Eric Chu Nap-kee (AP via NBC above)
 - [ ] Van Thinh Phat-linked landmarks: Times Square Saigon, Windsor Plaza Hotel, Union Square, Capital Place Hanoi (Reuters factbox via Investing.com: https://investing.com/news/stock-market-news/factboxtop-assets-linked-to-vietnam-property-firm-accused-of-multibilliondollar-fraud-3374428; Mingtiandi). Keep the on-screen label "linked to Van Thinh Phat"; do not say "owned by Lan"
 - [x] SCB formed from merger of three banks (effective Jan 2012); court: Lan controlled SCB 2012–2022 (AP via NBC; theinvestor.vn: https://theinvestor.vn/van-thinh-phat-group-chairwoman-truong-my-lan-sentenced-to-death-d9501.html)
-- [ ] "Late 2011, central bank pushed three struggling lenders to merge" — merger approved Dec 2011 (SCB + Ficombank + TinNghiaBank). Confirm wording with an SBV/VnExpress source before upload; if unsure, say "In 2011, three struggling banks were merged"
+- [x] 2011 merger: SBV announced the plan Dec 6, 2011; Governor issued licence 283/GP-NHNN on Dec 26, 2011 for a "voluntary merger" of SCB + Ficombank + TinNghiaBank; operating from Jan 1, 2012 (BIDV press release: https://bidv.com.vn/bidv_en/tin-tuc/thong-tin-bao-chi/press+release+no23; vneconomy: https://vneconomy.vn/bidv-se-gioi-thieu-lanh-dao-cho-ngan-hang-hop-nhat.htm). **Changed** "central bank pushed … to merge" → "in a merger approved by the central bank, three struggling lenders became one" (formally voluntary, so "pushed" was not sourced). Also "one of Vietnam's largest banks" (cold open) → "a major Vietnamese bank" (no source ranked SCB's size)
 - [x] Court: real owner/controller of >91.5% of SCB shares; holders of >75% admitted acting for her (vneconomy: https://en.vneconomy.vn/downfall-of-a-vietnams-real-estate-tycoon-truong-my-lan-sentenced-to-death-for-massive-banking-fraud.htm; theinvestor d9501)
-- [ ] Official stake ~5% (Tuoi Tre News/Reuters: https://news.tuoitre.vn/news/society/20250323/appeal-of-vietnam-death-row-tycoon-to-begin-in-separate-case/85438.html); Lan herself claimed ~15% (vneconomy). Narration says "a small stake… state media put it at about five percent" — OK
+- [x] Official stake ~5%: Tuoi Tre News, Mar 23, 2025: "Lan owned just five percent of shares in SCB on paper" (https://news.tuoitre.vn/news/society/20250323/appeal-of-vietnam-death-row-tycoon-to-begin-in-separate-case/85438.html); Lan herself claimed ~15% (vneconomy). Narration "state media put it at about five percent" — OK
 - [x] Court: picked key personnel, set up special lending/disbursement units, ghost companies, collusion with appraisers, false loan documents, bribery (vneconomy above)
-- [ ] "More than a thousand companies" — Vietnam News: "1,000-odd fake companies" (https://vietnamnews.vn/society/1657361/van-thinh-phat-urged-to-compensate-victims-in-billion-dollar-bond-scandal.html); theinvestor: VTP group 1,000+ businesses. Attributed to state media/investigators
+- [x] Section 3 screen cues: "Collateral value ×3" had no source for the multiplier → "Collateral value inflated"; step-4 arrow "abroad" not a phase-1 court finding for loan money (cross-border transfers belong to the 2nd trial) → "other accounts"
+- [x] "More than a thousand companies" — Vietnam News: "1,000-odd fake companies" (https://vietnamnews.vn/society/1657361/van-thinh-phat-urged-to-compensate-victims-in-billion-dollar-bond-scandal.html); theinvestor: VTP group 1,000+ businesses. Attributed to state media/investigators
 - [x] 916 loan applications Feb 2018–Oct 2022, ≈ VND 545 trillion; VND 304 trillion appropriated (theinvestor d9501; theinvestor d13617)
 - [x] 2,500+ loans over 10 years; outstanding ~VND 677T in Oct 2022 (theinvestor d9501; AP)
 - [x] Cash: driver transported VND 108 trillion + USD 14.7 million, Feb 2019–Sept 2022, per the driver's notebook (VTC News: https://vtcnews.vn/ca-tram-nghin-ty-dong-tien-mat-duoc-truong-my-lan-lay-tu-scb-the-nao-ar835454.html; BBC via LBC: https://lbc.co.uk/news/truong-my-lan-sentenced-to-death-vietnam-fraud-billions). **Do not use BBC's "two tonnes" weight**: 108T VND in ₫500,000 notes = 216M notes, which would weigh far more than two tonnes; the figure looks inconsistent. Our on-screen math says "216 million notes" only
-- [ ] "$4.4 billion" for 108T VND — rate-dependent (BBC: "more than $4bn"). Narration says "more than four billion dollars"
+- [x] "$4.4 billion" for 108T VND at 24,500 = $4.41B; BBC "more than $4bn". Narration "more than four billion dollars" — OK. Driver (Lan's private driver, not named in narration) recorded receipts/deliveries in his personal notebook, Feb 26, 2019–Sept 12, 2022, per the Ministry of Public Security investigation conclusion (VTC above; PLO: https://plo.vn/tai-xe-cua-bi-cao-truong-my-lan-ke-ve-qua-trinh-van-chuyen-hon-108-ngan-ti-dong-post811784.html). Lan denied it; narration attributes to prosecutors — OK
 - [x] "~3% of Vietnam's 2022 GDP" — AP/BBC framing; narration attributes it to "international media"
 - [x] Bribe: SCB general director (Vo Tan Hoang Van) bribed Do Thi Nhan, former director of SBV Banking Inspection & Supervision Dept. II, four times, $5.2M total; life sentence, upheld Dec 3, 2024 (theinvestor: https://theinvestor.vn/death-sentence-upheld-for-van-thinh-phat-chairwoman-truong-my-lan-d13617.html; SGGP: https://www.sggp.org.vn/toa-phuc-tham-tuyen-y-an-tu-hinh-truong-my-lan-chung-than-do-thi-nhan-post771172.html)
-- [ ] Styrofoam boxes — AP (via briefly.co.za / channelstv copies of the AP explainer). Attributed "international reporting"
+- [x] Styrofoam boxes — Do Thi Nhan testified at trial that the cash was handed to her in styrofoam boxes by the SCB general director (AFP explainer via briefly.co.za: https://briefly.co.za/business-economy/economy/184456-vietnams-multi-billion-dollar-fraud-case-key-know; The Diplomat: https://thediplomat.com/2023/12/vietnam-in-a-styrofoam-box-a-tale-of-corruption-and-concealment). Attributed "international reporting" — OK
 - [x] Co-defendants (trial 1): 85 besides Lan; incl. 45 former SCB leaders, 15 former SBV officials, 3 Government Inspectorate officers, 1 State Audit officer (en.wikipedia; vietnamnet: https://vietnamnet.vn/en/trial-begins-in-largest-financial-fraud-case-in-viet-nam-2256603.html)
 - [x] Bonds: 4 companies (An Dong, Quang Thuan, Sunny World, Setra), 25 bond codes, 2018–2020, via Tan Viet Securities (TVSI); VND 30,081.5 billion from 35,824 victims; money used to repay loans, pay bond principal/interest, projects, transfers abroad, personal use (vietnamfinance: https://vietnamfinance.vn/truong-my-lan-phat-hanh-25-ma-tpdn-lua-ban-cho-35800-nguoi-thu-hon-30800-ty-d113442.html; SGGP: https://www.sggp.org.vn/toa-tuyen-buoc-truong-my-lan-boi-hoan-hon-30000-ty-dong-cho-35824-bi-hai-post764112.html)
-- [ ] Victims say SCB staff told them bonds were safe; general director held "training sessions" for 2,500+ sales staff (Vietnam News 1657361 above; https://vietnamnews.vn/society/1594909/40-000-victims-seek-justice-in-billion-dollar-van-thinh-phat-bond-fraud-case.html). Attributed to state media. "Walked in to renew a savings account" is a common bondholder account in Vietnamese reporting — **find one explicit English/Vietnamese source quote before upload, or cut that sentence**
+- [x] Vietnam News 1657361: victims "mostly SCB depositors", "misled by SCB staff, who reassured them the bonds were safe"; Vietnam News 1657227: staff said bonds were "as safe as a savings account product"; former SCB CEO Vo Tan Hoang Van held "training sessions" for 2,500+ sales staff (1657361). **"Walked in to renew a savings account" CUT** — no explicit source found. Replaced with "Most of the buyers were SCB depositors. According to state media, bank staff reassured them the bonds were safe, like a savings account." Bonds: court found "phát hành trái phiếu khống" (fake bonds) (SGGP 764112). **Changed** "issued without real security" (not in the sources checked) → "fake bonds … never used for the purposes stated"; "But by 2018, the loans weren't enough" (writer's inference) cut
 - [x] Arrest Oct 2022 (announced Oct 8); run on SCB; SBV special control; managers from Vietcombank, BIDV, VietinBank, Agribank (Tuoi Tre News: https://tuoitrenews.vn/news/business/20221016/vietnam-s-central-bank-places-lender-under-special-scrutiny/69589.html; theinvestor: https://theinvestor.vn/central-bank-put-saigon-commercial-bank-under-special-control-d2163.html)
-- [x] Nearly $26B of central-bank support to SCB (Reuters exclusive, Mar 2025, via NST: https://www.nst.com.my/amp/business/corporate/2025/03/1189889/vietnam-developer-proposes-15-year-rescue-bank-heart-giant-fraud). SCB still the only "weak bank" without an approved restructuring as of Sept 2025 (Viet Nam News: https://vietnamnews.vn/economy/1725058/gov-t-urges-complete-restructuring-plan-for-vulnerable-scb.html). **Check status Oct 2026 before upload**
+- [x] Reuters exclusive, Mar 17, 2025: "The central bank had lent SCB 652.7 trillion dong ($25.6 billion) as of February 18" ("nearly $26 billion pumped into" SCB) (https://www.investing.com/news/economy-news/exclusivevietnam-developer-proposes-15year-rescue-for-bank-at-heart-of-giant-fraud-documents-show-3933099). **Changed** narration to "By February 2025, Reuters reported, the central bank had lent SCB about 25.6 billion dollars" and screen card to "≈ $25.6B" (was a vague "~$24–26B … by 2025")
+- [x] SCB status (checked 2026-10-04): still under special control (since Oct 2022); closed 13 branches in Aug 2026 (CafeF, Aug 23, 2026: https://cafef.vn/mot-ngan-hang-dong-cua-13-chi-nhanh-tu-dau-thang-8-18826082310145826.chn). Government had ordered SBV to finish the restructuring plan by Sept 15, 2025 (Hanoi Moi: https://hanoionline.vn/hoan-thien-phuong-an-co-cau-lai-ngan-hang-scb-truoc-159-358074.htm); **no public approval of a restructuring plan found as of Oct 2026** — narration only says "still under special control, and closing branches" (attributed, Aug 2026). Re-check the week of upload
 - [x] Trial opened March 5, 2024, HCMC People's Court; "blazing furnace" campaign; ~2,700 witnesses, ~200 lawyers, 104 boxes / 6 tonnes (BBC via GNA above)
-- [ ] "Lan denied embezzling; said she had a small stake; blamed subordinates" — consistent with vneconomy (claimed 15%) and BBC/AP coverage; keep generic
+- [x] "Lan denied embezzling; said she had a small stake; blamed subordinates" — vneconomy (claimed 15%), AP (blamed subordinates); keep generic
+- [x] Lowest phase-1 sentences: 2 years (e.g., a former SCB re-appraisal director) and several 3-year suspended terms (SGGP 734920; Tap chi Toa an 10662). **Changed** screen card "others — 3 yrs suspended to 20 yrs" → "others — 2 to 20 yrs, some suspended"
 - [x] April 11, 2024 verdict: death (embezzlement), 20 yrs bribery, 20 yrs banking violations; compensation ≈ VND 673.8T to SCB; husband 9 yrs, niece 17 yrs; 4 life sentences; all guilty; court: "no possibility of the money being recovered" (theinvestor d9501; AP via NBC; BBC via GNA)
 - [x] Oct 17, 2024 (2nd trial): life (fraud), 12 yrs (money laundering, >VND 445T), 8 yrs (illegal cross-border transfer, ~$4.5B) → combined life (SGGP 764112; Tuoi Tre News 85438; lsvn: https://lsvn.vn/xet-xu-vu-an-van-thinh-phat-giai-doan-2-bi-cao-truong-my-lan-nhan-an-tu-chung-than-a148537.html)
 - [x] Dec 3, 2024: death sentence upheld; commutation possible if she repays ¾ (VnExpress: https://e.vnexpress.net/news/business/companies/death-sentence-upheld-for-property-tycoon-truong-my-lan-4823183.html; Al Jazeera: https://www.aljazeera.com/news/2024/12/3/vietnam-court-upholds-tycoons-death-sentence-for-12bn-bank-fraud). **Dollar value of "¾" differs by outlet (AP "$11B", CNN "$9B")** — narration avoids a dollar figure
 - [x] April 21, 2025 (HCMC High People's Court): fraud sentence life → 20 yrs; 12 + 8 yrs upheld; recovered ~VND 8.6T, possible ~15T more cited as new circumstance (lsvn: https://lsvn.vn/xet-xu-phuc-tham-vu-an-van-thinh-phat-giai-doan-2-giam-an-cho-vo-chong-truong-my-lan-a156697.html; Dan Tri: https://dtinews.dantri.com.vn/print/20250421161351008.htm; RFA: https://rfa.org/english/vietnam/2025/04/21/truong-my-lan-life-appeal-fraud/). Note: RFA/Reuters say "reduced to 30 years"; Vietnamese sources say the aggregate stays death (phase 1). Narration only says "cut her bond-fraud sentence from life to twenty years" — safe
 - [x] June 25, 2025: National Assembly abolished death penalty for 8 crimes incl. embezzlement; in force July 1, 2025; unexecuted sentences converted to life by the Chief Justice (CNN: https://edition.cnn.com/2025/06/25/asia/vietnam-death-penalty-intl-hnk; VietNamNet: https://vietnamnet.vn/en/vietnam-abolishes-death-penalty-for-8-crimes-will-truong-my-lan-be-spared-2415838.html)
-- [ ] **Commutation status — UNRESOLVED.** Tuoi Tre/NLD (Nov 1, 2025: https://tuoitre.vn/nld/ba-truong-my-lan-co-co-hoi-thoat-an-tu-theo-quy-dinh-huong-dan-moi-196251031210520555.htm) said no formal conversion had been made yet (after SPC Resolution 03/2025/NQ-HĐTP, Oct 31, 2025). CNN (June 18, 2026: https://edition.cnn.com/2026/06/18/world/vietnamese-billionaire-luxury-auction-intl-hnk) says her death sentence "was then commuted to life imprisonment" and that she has "two life sentences". Narration attributes to "international reporting". **Find the Supreme People's Court decision date (Vietnamese press) before upload**
-- [x] Payouts to bondholders: started June 2025; 9 rounds by May 21, 2026 ≈ VND 12,000B (~40%) to 42,574 bondholders; 43,108 creditors on the list (Government portal baochinhphu.vn: https://baochinhphu.vn/vu-an-truong-my-lan-da-chi-tra-hon-12-nghin-ty-dong-cho-trai-chu-10226052116131327.htm). 10th round July 31, 2026: VND 318.1B, 1.0575%, 42,607 creditors (https://vietbao.vn/tiep-tuc-chi-tra-hon-318-ty-dong-cho-cac-trai-chu-trong-vu-truong-my-lan-601209.html). Feb 5, 2026 round: VND 248B to 42,525 (https://tuoitre.vn/nld/ket-qua-chi-tra-moi-nhat-trong-vu-an-truong-my-lan-196260205102247228.htm). **Why 43,108 creditors vs 35,824 victims in the verdict is not explained in sources** (likely transferees/heirs/other phases) — narration says "more than 42,000 creditors" without reconciling. ~41% after round 10 is our sum; check for an 11th round (Aug–Sept 2026)
-- [x] Auctions: 2 Hermès handbags ≈ $539,000 (May 2026); Maybach ≈ $630,000; BMW, Lexus; yacht unsold at ~$2M; her request to keep the bags refused (CNN June 18, 2026 via CP24: https://www.cp24.com/news/world/2026/06/18/a-jailed-billionaires-birkin-bags-are-going-on-sale-it-wont-be-enough-to-repay-her-victims/). Vietnamese report: Maybach sold for >VND 16.6B (cafef) — check vs $630K (VND 16.6B ≈ $630K ✓)
-- [ ] "Prosecutors said much of it may never come back" — BBC (April 2024) phrasing; court also said recovery unlikely. OK as attributed
-- [ ] FX conversions: 304T ≈ $12.5B; 677T ≈ $27B; 30.08T ≈ $1.2B; 12.3T ≈ $470M (2026 rate) — recheck
+- [ ] **Formal commutation — STILL UNCONFIRMED (checked 2026-10-04).** The amended Criminal Code says unexecuted death sentences for these crimes are not carried out and the Chief Justice of the Supreme People's Court converts them to life (Thanh Nien: https://thanhnien.vn/bo-tu-hinh-voi-toi-tham-o-ba-truong-my-lan-se-thoat-an-tu-185250626162330671.htm). Her lawyer Giang Hong Thanh told AFP it "will be converted to life imprisonment" (Fortune/AFP, June 25, 2025: https://fortune.com/asia/2025/06/25/vietnam-property-tycoon-spared-death-penalty). NLD via Tuoi Tre (Nov 1, 2025): "chưa có cơ sở pháp lý hoặc thực tế nào cho thấy bà Trương Mỹ Lan được chuyển hình phạt" — no formal conversion yet (https://tuoitre.vn/nld/ba-truong-my-lan-co-co-hoi-thoat-an-tu-theo-quy-dinh-huong-dan-moi-196251031210520555.htm). CNN (June 18, 2026, via CP24) says it "was then commuted" but also claims "two life sentences", which is wrong (the bond-case life term was cut to 20 years on Apr 21, 2025), so CNN is not reliable on this point. No Vietnamese report of the Chief Justice's decision found. **Changed** narration from "According to international reporting, … was commuted to life imprisonment" → the law's mechanism ("would not be carried out … the head of the Supreme People's Court would convert them to life in prison") + "Her lawyer told AFP that Truong My Lan would be spared." Do not say "commuted" as a completed act unless a Vietnamese source with the decision date is found
+- [x] Payouts to bondholders: started June 2025; 9 rounds by May 21, 2026 ≈ VND 12,000B (~40%) to 42,574 bondholders; 43,108 creditors on the list (Government portal baochinhphu.vn: https://baochinhphu.vn/vu-an-truong-my-lan-da-chi-tra-hon-12-nghin-ty-dong-cho-trai-chu-10226052116131327.htm). 10th round July 31, 2026: VND 318.1B, 1.0575%, 42,607 creditors (https://vietbao.vn/tiep-tuc-chi-tra-hon-318-ty-dong-cho-cac-trai-chu-trong-vu-truong-my-lan-601209.html). Feb 5, 2026 round: VND 248B to 42,525 (https://tuoitre.vn/nld/ket-qua-chi-tra-moi-nhat-trong-vu-an-truong-my-lan-196260205102247228.htm). **Why 43,108 creditors vs 35,824 victims in the verdict is not explained in sources** (likely transferees/heirs/other phases) — narration says "more than 42,000 creditors" without reconciling. After round 10 the cumulative total is "hơn 12.358 tỷ đồng" (Znews: https://lifestyle.zingnews.vn/vu-van-thinh-phat-sau-10-dot-chi-tra-trai-chu-da-nhan-duoc-bao-nhieu-post1673198.html) = 41.1% of VND 30,081.5B; screen card updated to "≈ ₫12.36T (~41%)". (SGGP's "12,039 tỷ" for the same date matches the 9-round total; use Znews.) **No 11th round found as of 2026-10-04** — re-check before upload; enforcement office says further rounds follow asset sales and SCB transfers of frozen funds
+- [x] Auctions (May 22, 2026, VietnamFinance: https://vietnamfinance.vn/dau-gia-tai-san-ba-truong-my-lan-maybach-16-ty-tui-hermes-11-ty-dong-d145193.html): Maybach VND 16.65B; Hermès bags VND 2.5B + 11.6B = 14.1B ≈ $539K; **BMW and Lexus NOT sold** → "Other cars" cut from narration. Yacht The Reverie Saigon: 5th auction failed Aug 13, 2026, starting price cut from VND 52.4B to 35.2B (VTC, Aug 14, 2026: https://vtcnews.vn/du-thuyen-cua-ba-truong-my-lan-e-chong-cho-ar1034553.html) → narration "after five auctions, still had no buyer". Request to keep the bags rejected by the trial court (PLO: https://plo.vn/ba-truong-my-lan-xin-lai-2-chiec-tui-hermes-bach-tang-toa-phan-quyet-ra-sao-post815428.html) → "She had asked the court to let her family keep the handbags. It refused." Earlier note: 2 Hermès handbags ≈ $539,000 (May 2026); Maybach ≈ $630,000; yacht unsold; her request to keep the bags refused (CNN June 18, 2026 via CP24: https://www.cp24.com/news/world/2026/06/18/a-jailed-billionaires-birkin-bags-are-going-on-sale-it-wont-be-enough-to-repay-her-victims/). Vietnamese report: Maybach sold for >VND 16.6B (cafef) — check vs $630K (VND 16.6B ≈ $630K ✓)
+- [x] Recovery of the SCB sum: the court said the damage could not be remedied (theinvestor d9501). **Changed** "Prosecutors said much of it may never come back" → "The court itself warned that much of it may never come back"
+- [x] FX conversions at 24,500: 108T ≈ $4.4B; 304T ≈ $12.4B (AP's widely quoted $12.5B kept, "about"); 673.8T ≈ $27.5B ("about 27 billion" — matches AP/BBC $27B); 30.08T ≈ $1.23B; 12.36T at 26,000 ≈ $475M; 2nd trial cross-border: court said >$4.5B (≈ VND 106.7T) → narration now "illegally moved more than 4.5 billion dollars across Vietnam's borders" (was "in and out of Vietnam", not the court's wording) (SGGP 764112)
 - [x] Four life sentences (phase 1, Apr 11, 2024): Bui Anh Dung (former SCB chairman), Dinh Van Thanh (former SCB chairman, tried in absentia), Vo Tan Hoang Van (former general director), Do Thi Nhan (SBV inspection) (Tap chi Toa an: https://tapchitoaan.vn/muc-an-cu-the-cua-86-bi-cao-trong-vu-dai-an-van-thinh-phat10662.html; SGGP: https://www.sggp.org.vn/muc-an-cu-the-cua-bi-cao-truong-my-lan-va-85-dong-pham-post734920.html)
 - [x] Court: "orchestrated… a sophisticated criminal enterprise" (AP via NBC above)
-- [ ] "International media called it a race against time" — CNN Dec 6, 2024 headline "in a race to repay $9 billion to avoid execution" (https://www.cnn.com/2024/12/06/asia/vietnam-truong-my-lan-death-row-scandal-intl-hnk)
+- [x] "International media called it a race against time" — CNN Dec 6, 2024 headline "in a race to repay $9 billion to avoid execution" (https://www.cnn.com/2024/12/06/asia/vietnam-truong-my-lan-death-row-scandal-intl-hnk)
 - [x] Frozen: 1,237 properties linked to Lan, 857 million SCB shares held by Lan and people in her name (theinvestor: https://theinvestor.vn/van-thinh-phat-group-chairwoman-related-assets-frozen-d7458.html)
-- [ ] Bondholder gatherings in HCMC and Hanoi asking for money back — state media (Viet Nam News: https://vietnamnews.vn/society/1657227/victims-demand-urgent-resolution-of-billion-dollar-van-thinh-phat-bond-fraud.html). Check the article explicitly mentions Hanoi; else say "in Ho Chi Minh City"
+- [x] Bondholder gatherings: Vietnam News 1657227 does **not** mention gatherings in HCMC or Hanoi; a Ministry of Finance (Hanoi) gathering appears only in a search summary, not confirmed in a fetched article. **Changed** to "According to state media, they filed complaints with police and petitioned the authorities, asking for their money back" (police complaints: https://vietnamnews.vn/society/1594909/40-000-victims-seek-justice-in-billion-dollar-van-thinh-phat-bond-fraud-case.html; demands: 1657227)
 - [x] 10th payment ≈ 1.06% of the enforceable amount ("about one percent") (vietbao, July 31, 2026, above)
-- [ ] Deposit insurance line: Vietnam's deposit insurance covers deposits only (limit VND 125 million per person per bank), not corporate bonds — confirm with DIV (div.gov.vn) before upload
+- [x] Deposit insurance: DIV pays at most VND 125 million per person per insured institution (since Dec 12, 2021), covering deposits under the Deposit Insurance Law (https://div.gov.vn/han-muc-chi-tra-bao-hiem-tien-gui-o-viet-nam-hien-nay). Narration now says "backed, up to a limit, by deposit insurance"; corporate bonds are not deposits
 - [ ] EP.04 teaser: Ezubao ~900,000 investors (Xinhua 2016) — confirm in EP.04 research; teaser does not name the platform
 
 ---
