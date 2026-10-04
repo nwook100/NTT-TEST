@@ -1,7 +1,7 @@
 # Fetches commercially usable photos (CC0 / PDM / CC BY / CC BY-SA) via the Openverse API (Flickr, Wikimedia, ...),
 # downsizes them to <=2560 px wide, and appends credits. Resumable: scenes with a .meta file are skipped.
 # Usage: python3 fetch_openverse.py [episode_dir ...]   (no args = every episode below)
-import json, os, subprocess, sys, time, urllib.parse, urllib.request, urllib.error
+import json, os, re, subprocess, sys, time, urllib.parse, urllib.request, urllib.error
 UA = "PaperTigerFiles-asset-fetch/1.0"   # generic UA: no personal data in requests
 OK = {"cc0", "pdm", "by", "by-sa"}
 
@@ -15,6 +15,11 @@ def get(url, tries=4):
             if e.code in (429, 503) and k < tries - 1:
                 time.sleep(20 * (k + 1)); continue
             raise
+
+def wm_thumb(url, w=1920):
+    # Wikimedia now rate-limits original-file downloads hard (HTTP 429) and asks for standard thumbnail sizes instead
+    m = re.match(r"https://upload\.wikimedia\.org/wikipedia/commons/(\w)/(\w\w)/([^/?]+)$", url)
+    return f"https://upload.wikimedia.org/wikipedia/commons/thumb/{m[1]}/{m[2]}/{m[3]}/{w}px-{m[3]}" if m else url
 
 def search(q, n, min_w=1000):
     p = {"q": q, "license_type": "commercial,modification", "page_size": 20, "mature": "false"}
@@ -42,7 +47,11 @@ def run(ep, queries, per=4):
         for i, it in enumerate(items, 1):
             fn = os.path.join(ep, f"{scene}_{i}.jpg")
             try:
-                raw = get(it["url"])
+                try:
+                    raw = get(wm_thumb(it["url"]))
+                except urllib.error.HTTPError as e:      # e.g. original narrower than the thumb size: take the original
+                    if wm_thumb(it["url"]) == it["url"] or e.code == 429: raise
+                    raw = get(it["url"])
             except Exception as e:
                 print("  skip", it["url"][:70], e); continue
             tmp = fn + ".src"; open(tmp, "wb").write(raw)

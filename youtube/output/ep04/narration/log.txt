@@ -6,3 +6,10 @@
 [24/76] 4.5 min audio in 27.5 min (rtf 6.1); worst wer in batch 0.08
 76 chunks, 2072 words
 24 chunks already done, 52 to generate
+[6/52] 1.2 min audio in 6.3 min (rtf 5.4); worst wer in batch 0.12
+[12/52] 2.1 min audio in 14.3 min (rtf 6.8); worst wer in batch 0.08
+[18/52] 3.2 min audio in 22.4 min (rtf 7.0); worst wer in batch 0.08
+[24/52] 4.5 min audio in 32.9 min (rtf 7.3); worst wer in batch 0.05
+[30/52] 5.6 min audio in 42.1 min (rtf 7.5); worst wer in batch 0.16
+[36/52] 6.7 min audio in 49.1 min (rtf 7.3); worst wer in batch 0.10
+[42/52] 7.8 min audio in 56.8 min (rtf 7.2); worst wer in batch 0.11

@@ -25,7 +25,7 @@ All full-frame clips get subtle film grain, flicker and a vignette. Lower thirds
 grain so they can be laid over footage with CapCut's "Screen" blend mode.
 
 Usage:
-    python3 motion_tool.py ep01|ep02|all [--only SUBSTRING] [--list]
+    python3 motion_tool.py ep01|ep02|ep03|all [--only SUBSTRING] [--list]
 """
 import math, os, subprocess, sys
 import numpy as np
@@ -764,6 +764,8 @@ EP01_DIR = os.path.join(HERE, "ep01_terra_luna", "motion")
 EP02_DIR = os.path.join(HERE, "ep02_cho_hee_pal", "motion")
 F1 = "PAPER TIGER FILES  ·  EP.01  TERRA-LUNA"
 F2 = "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+EP03_DIR = os.path.join(HERE, "ep03_truong_my_lan", "motion")
+F3 = "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
 
 EP01_CHAPTERS = [
     (0, "The $40 Billion Vanishing Act", "FILE No. 001"),
@@ -780,6 +782,13 @@ EP02_CHAPTERS = [
     (7, "The funeral nobody believed", None), (8, "The trial of the right-hand man", None),
     (9, "The villain on the big screen", None), (10, "The money, 18 years later", None),
     (11, "Why it keeps coming back", None), (12, "Outro", "FINAL CHAPTER"),
+]
+EP03_CHAPTERS = [
+    (0, "The Bank She Secretly Owned", "FILE No. 003"),
+    (1, "From a market stall to an empire", None), (2, "Buying a bank, quietly", None), (3, "The piggy bank", None),
+    (4, "Paying the referee", None), (5, "The bonds sold at the counter", None), (6, "The run", None),
+    (7, "The trial", None), (8, "Death row, then a second trial", None), (9, "Where's the money?", None),
+    (10, "The pattern", None), (11, "Outro", "FINAL CHAPTER"),
 ]
 
 # =================================================================================================
@@ -1289,10 +1298,70 @@ def ep02_jobs():
     ]
     return d, J
 
+def ep03_jobs():
+    # Wording from the [SCREEN] cues of fraud_ep03_truong_my_lan_en.md. Court findings are stated as fact (final judgments);
+    # prosecutors' / media figures keep their attribution. Co-defendants other than Lan by role only.
+    d, F = EP03_DIR, F3
+    J = chapter_jobs(EP03_CHAPTERS, d, F)
+    J += [
+        ("s00_logo_sting.mp4", lambda o: logo_sting(o)),
+        # ---- key moments
+        ("s00_countup_108_trillion_dong.mp4", lambda o: count_up(o, 108000000000000, suffix=" ₫", kicker="ACCORDING TO PROSECUTORS",
+            label="≈ $4.4 BILLION — IN CASH", sublabel="the driver's notebook, 2019–2022", end_red=True, dur=5.5, count_time=2.8, size=170, footer=F)),
+        ("s02_compare_5_vs_91_5_percent.mp4", lambda o: compare(o, {"head": "On paper", "big": "~5%", "sub": "Lan owns"},
+            {"head": "Court finding", "big": "91.5%+", "sub": "controls more than 91.5%"}, title="WHO OWNED SCB?", footer=F)),
+        ("s03_keyphrase_how_the_money_left.mp4", lambda o: key_phrase(o, ["HOW THE MONEY", "LEFT THE BANK"], kicker="4 STEPS",
+            red=("bank",), stagger=0.5, dur=4.5, size=120, footer=F)),
+        ("s03_countup_1000_companies.mp4", lambda o: count_up(o, 1000, suffix="+", kicker="STEP 1 · SET UP COMPANIES",
+            label="COMPANIES IN THE VAN THINH PHAT NETWORK", sublabel="according to state media", count_time=1.8, footer=F)),
+        ("s03_stamp_approved.mp4", lambda o: stamp(o, "APPROVED", sub="GHOST COMPANY → LOAN APPLICATION → SCB", footer=F)),
+        ("s03_countup_216_million_notes.mp4", lambda o: count_up(o, 216, suffix=" MILLION", kicker="OUR MATH",
+            label="LARGEST NOTE: ₫500,000 → 108 TRILLION = 216 MILLION NOTES", sublabel="Vietnam's largest banknote", footer=F)),
+        ("s03_countup_304_trillion_dong.mp4", lambda o: count_up(o, 304, prefix="₫", suffix=" TRILLION", kicker="2,500+ LOANS · 10 YEARS",
+            label="EMBEZZLED (≈ $12.5B)", sublabel="court finding · April 2024", end_red=True, footer=F)),
+        ("s04_stamp_results_altered.mp4", lambda o: stamp(o, "RESULTS ALTERED", sub="SBV INSPECTION OF SCB · COURT FINDING", footer=F)),
+        ("s04_countup_5_2M_bribe.mp4", lambda o: count_up(o, 5.2, prefix="$", suffix=" MILLION", decimals=1, kicker="ACCORDING TO THE COURT",
+            label="PAID TO THE HEAD OF A CENTRAL-BANK INSPECTION TEAM", sublabel="in four payments", footer=F)),
+        ("s04_stamp_life_inspection_chief.mp4", lambda o: stamp(o, "LIFE", sub="FORMER CENTRAL-BANK INSPECTION CHIEF · BRIBERY · UPHELD DEC 2024", footer=F)),
+        ("s05_keyphrase_as_safe_as_a_deposit.mp4", lambda o: key_phrase(o, ["As safe as a deposit?"], red=("deposit?",), dur=4.0, size=124, footer=F)),
+        ("s05_countup_35824_victims.mp4", lambda o: count_up(o, 35824, kicker="COURT FINDING", label="VICTIMS · ₫30 TRILLION (≈ $1.2B)",
+            sublabel="25 bond issues · 2018–2020", footer=F)),
+        ("s06_countup_25_6B_central_bank.mp4", lambda o: count_up(o, 25.6, prefix="≈ $", suffix="B", decimals=1, kicker="REUTERS · FEB 2025",
+            label="LENT TO SCB BY THE CENTRAL BANK", sublabel="vs ₫304T embezzled (court)", footer=F)),
+        ("s07_countup_86_defendants.mp4", lambda o: count_up(o, 86, kicker="MARCH 5, 2024", label="DEFENDANTS",
+            sublabel="~2,700 witnesses summoned · ~200 lawyers · 104 boxes of evidence, 6 tonnes", count_time=1.6, size=300, footer=F)),
+        ("s07_stamp_death.mp4", lambda o: stamp(o, "DEATH", sub="TRUONG MY LAN · EMBEZZLEMENT · APRIL 11, 2024", footer=F)),
+        ("s07_countup_674_trillion_to_scb.mp4", lambda o: count_up(o, 674, prefix="≈ ₫", suffix=" TRILLION", kicker="PAY SCB",
+            label="≈ $27 BILLION", sublabel="ordered by the court, April 2024", footer=F)),
+        ("s08_timeline_2024_2025.mp4", lambda o: timeline(o, [["Oct 17, 2024", "2nd trial: LIFE"], ["Dec 3, 2024", "death sentence upheld"],
+            ["Apr 21, 2025", "bond fraud cut to 20 yrs"], ["Jun 2025", "law changed"]], title="DEATH ROW, THEN A SECOND TRIAL", footer=F)),
+        ("s08_stamp_life_bond_case.mp4", lambda o: stamp(o, "LIFE", sub="2ND TRIAL · FRAUD · OCTOBER 17, 2024", footer=F)),
+        ("s08_keyphrase_repay_three_quarters.mp4", lambda o: key_phrase(o, ["Repay ¾ → life instead of death"], red=("death",), dur=4.5, size=110, footer=F)),
+        ("s08_stamp_20_years.mp4", lambda o: stamp(o, "20 YEARS", sub="BOND FRAUD · CUT ON APPEAL · APRIL 21, 2025", footer=F)),
+        ("s09_countup_41_percent_repaid.mp4", lambda o: count_up(o, 41, prefix="~", suffix="%", kicker="JUN 2025 → JUL 2026 · 10 PAYOUTS",
+            label="≈ ₫12.36T OF ₫30.08T OWED TO BONDHOLDERS", sublabel="Source: chinhphu.vn", footer=F)),
+        ("s10_keyphrase_who_is_borrowing.mp4", lambda o: key_phrase(o, ["Who is actually", "borrowing my money?"], red=("borrowing",),
+            stagger=0.9, dur=5.0, size=112, footer=F)),
+        ("s11_countup_900000_investors.mp4", lambda o: count_up(o, 900000, kicker="NEXT TIME: CHINA", label="INVESTORS", footer=F)),
+        # ---- utility: date/location stamps and lower thirds
+        ("s01_typewriter_hcmc.mp4", lambda o: typewriter(o, "HO CHI MINH CITY", sub="— Vietnam's financial capital", dur=3.5)),
+        ("s01_typewriter_1992_van_thinh_phat.mp4", lambda o: typewriter(o, "1992 — VAN THINH PHAT FOUNDED", dur=3.5, size=80)),
+        ("s02_typewriter_dec_2011_scb.mp4", lambda o: typewriter(o, "DEC 2011 — THREE TROUBLED BANKS → SCB", sub="Saigon Commercial Bank", dur=4.0, size=70)),
+        ("s06_typewriter_october_2022.mp4", lambda o: typewriter(o, "OCTOBER 2022", sub="— Lan arrested", dur=3.5)),
+        ("s07_typewriter_march_5_2024.mp4", lambda o: typewriter(o, "MARCH 5, 2024", sub="— Ho Chi Minh City People's Court", dur=3.5)),
+        ("s07_typewriter_april_11_2024.mp4", lambda o: typewriter(o, "APRIL 11, 2024", sub="— the verdict", dur=3.5)),
+        ("s08_typewriter_june_2025_law.mp4", lambda o: typewriter(o, "JUNE 2025", sub="— National Assembly removes the death penalty for embezzlement", dur=4.5)),
+        ("s01_lowerthird_ben_thanh.mp4", lambda o: lower_third(o, "Ben Thanh Market", "Ho Chi Minh City's oldest market")),
+        ("s02_lowerthird_scb.mp4", lambda o: lower_third(o, "Saigon Commercial Bank (SCB)", "Three troubled banks merged · Dec 2011")),
+        ("s04_lowerthird_state_bank.mp4", lambda o: lower_third(o, "State Bank of Vietnam", "The central bank · inspects the banks")),
+        ("s07_lowerthird_hcmc_court.mp4", lambda o: lower_third(o, "Ho Chi Minh City People's Court", "Trial opened March 5, 2024")),
+    ]
+    return d, J
+
 def main(argv):
     which = argv[1] if len(argv) > 1 else "all"
     only = argv[argv.index("--only") + 1] if "--only" in argv else None
-    sets = {"ep01": [ep01_jobs], "ep02": [ep02_jobs], "all": [ep01_jobs, ep02_jobs]}[which]
+    sets = {"ep01": [ep01_jobs], "ep02": [ep02_jobs], "ep03": [ep03_jobs], "all": [ep01_jobs, ep02_jobs, ep03_jobs]}[which]
     for js in sets:
         d, jobs = js()
         for name, fn in jobs:

@@ -1,0 +1,36 @@
+# EP.03 card definitions: (file, org, meta, tag, body_html, source). Court rulings, the law change and official figures only;
+# wording taken from fraud_ep03_truong_my_lan_en.md. Truong My Lan and the co-defendants below are convicted by final
+# judgments; co-defendants other than Lan are identified by role only. The formal commutation of Lan's death sentence is
+# NOT confirmed (fact-check list, 2026-10-04): card 09 states only what the law says, not that it has been done.
+CARDS = [
+ ("card_01_304_trillion_embezzled", "HO CHI MINH CITY PEOPLE'S COURT", "FIRST-INSTANCE VERDICT · APRIL 11, 2024", "COURT FINDING",
+  "Over ten years, SCB made more than 2,500 loans into Lan's network.<br>She had embezzled <mark>304 trillion dong</mark>. About 12.5 billion dollars.",
+  "Sources: The Investor (theinvestor.vn); AP"),
+ ("card_02_inspector_5_2M_life", "HO CHI MINH CITY PEOPLE'S COURT", "VERDICT APRIL 11, 2024 · UPHELD ON APPEAL DECEMBER 3, 2024", "RULING",
+  "The bank's general director paid the head of a central-bank inspection team <mark>5.2 million dollars</mark>, in four payments.<br>Former central-bank inspection chief — bribery — <mark>life imprisonment</mark>.",
+  "Identified by role only. Sources: The Investor (theinvestor.vn); SGGP"),
+ ("card_03_35824_bond_victims", "HO CHI MINH CITY PEOPLE'S COURT", "SECOND TRIAL (BONDS) · OCTOBER 17, 2024", "COURT FINDING",
+  "Four companies linked to Van Thinh Phat issued 25 batches of corporate bonds between 2018 and 2020.<br>The court counted <mark>35,824 victims</mark> and more than 30 trillion dong taken, about 1.2 billion dollars.",
+  "Sources: SGGP; VietnamFinance"),
+ ("card_04_death_sentence_2024", "HO CHI MINH CITY PEOPLE'S COURT", "FIRST-INSTANCE VERDICT · APRIL 11, 2024", "VERDICT",
+  "Truong My Lan: guilty of embezzlement, bribery, and violating banking rules.<br>The sentence: <mark>death</mark>.",
+  "Embezzlement: death · bribery: 20 yrs · banking violations: 20 yrs. Sources: The Investor (theinvestor.vn); AP; BBC"),
+ ("card_05_674_trillion_to_scb", "HO CHI MINH CITY PEOPLE'S COURT", "FIRST-INSTANCE VERDICT · APRIL 11, 2024", "ORDERED TO PAY",
+  "The court ordered her to pay back around <mark>674 trillion dong</mark>, about 27 billion dollars, to SCB.<br>It said there was little chance the money could all be recovered.",
+  "Sources: The Investor (theinvestor.vn); AP; BBC"),
+ ("card_06_life_sentence_bond_fraud", "HO CHI MINH CITY PEOPLE'S COURT", "SECOND TRIAL (BONDS) · OCTOBER 17, 2024", "VERDICT",
+  "Guilty of fraud, money laundering, and illegally moving money across borders.<br>Laundered more than 445 trillion dong; moved more than 4.5 billion dollars across Vietnam's borders.<br>Sentence: <mark>life</mark>.",
+  "Sources: SGGP; Tuoi Tre News; Lawyers of Vietnam (lsvn.vn)"),
+ ("card_07_appeal_death_upheld", "APPEALS COURT, HO CHI MINH CITY", "APPEAL RULING · DECEMBER 3, 2024", "APPEAL",
+  "Death sentence <mark>upheld</mark>.<br>Under Vietnamese law, she could avoid execution if she paid back at least three-quarters of what she had taken.",
+  "Sources: VnExpress International; Al Jazeera"),
+ ("card_08_bond_appeal_20_years", "APPEALS COURT, HO CHI MINH CITY", "BOND-CASE APPEAL · APRIL 21, 2025", "APPEAL",
+  "Fraud sentence cut from life to <mark>twenty years</mark>, after money began to be recovered for the bondholders.",
+  "Sources: Lawyers of Vietnam (lsvn.vn); Dan Tri; RFA"),
+ ("card_09_death_penalty_abolished", "NATIONAL ASSEMBLY OF VIETNAM", "CRIMINAL CODE AMENDMENT · JUNE 2025 · IN FORCE JULY 1, 2025", "LAW CHANGE",
+  "Vietnam's National Assembly abolished the death penalty for eight crimes, including <mark>embezzlement</mark>.<br>Death sentences already handed down for those crimes would not be carried out. Instead, the head of the Supreme People's Court would convert them to life in prison.",
+  "Sources: CNN (June 25, 2025); VietNamNet; Thanh Nien"),
+ ("card_10_repayments_41_percent", "HCMC CIVIL JUDGMENT ENFORCEMENT OFFICE", "BONDHOLDER PAYOUTS · JUNE 2025 – JULY 2026", "WHERE'S THE MONEY?",
+  "Owed to bondholders: ₫30.08 trillion.<br>10 payouts ≈ <mark>₫12.36 trillion (~41%)</mark>.",
+  "Source: Báo Điện tử Chính phủ (chinhphu.vn), May 21, 2026 (9 rounds); round 10, July 31, 2026, via Znews"),
+]

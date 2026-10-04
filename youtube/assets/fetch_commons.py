@@ -18,6 +18,21 @@ def get(url, tries=6):
             wait = int(e.headers.get("Retry-After") or 0) or 10 * (k + 1)
             print("  429, waiting", wait, "s", flush=True); time.sleep(wait)
 
+def wm_thumb(url, w):
+    # Wikimedia blocks original-file downloads (429); ask for a standard thumbnail size instead (https://w.wiki/GHai)
+    m = re.match(r"https://upload\.wikimedia\.org/wikipedia/commons/(\w)/(\w\w)/([^/?]+)$", url)
+    return f"https://upload.wikimedia.org/wikipedia/commons/thumb/{m[1]}/{m[2]}/{m[3]}/{w}px-{m[3]}" if m else url
+
+def get_image(url):
+    if "/thumb/" in url:
+        return get(url)
+    for w in (1280, 960):
+        try:
+            return get(wm_thumb(url, w), tries=1)
+        except urllib.error.HTTPError:
+            continue
+    return get(url)
+
 def search(q, n):
     p = {"action": "query", "format": "json", "generator": "search", "gsrsearch": q + " filetype:bitmap",
          "gsrnamespace": 6, "gsrlimit": 12, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1920}
@@ -30,7 +45,8 @@ def search(q, n):
         if not OK.match(lic) or BAD.search(lic) or ii.get("width", 0) < 1000:
             continue
         artist = re.sub("<[^>]+>", "", html.unescape(m.get("Artist", {}).get("value", "unknown"))).strip()
-        out.append(dict(title=pg["title"], url=ii.get("thumburl") or ii["url"], page=ii["descriptionurl"], lic=lic, artist=artist))
+        url = (ii.get("thumburl") or ii["url"]).split("?")[0].replace("://thumb.wikimedia.org/", "://upload.wikimedia.org/")
+        out.append(dict(title=pg["title"], url=url, page=ii["descriptionurl"], lic=lic, artist=artist))
         if len(out) >= n: break
     return out
 
@@ -43,10 +59,11 @@ def run(ep, queries, per=3):
         items = json.load(open(mf)) if os.path.exists(mf) else search(q, per)
         json.dump(items, open(mf, "w"))
         for i, it in enumerate(items, 1):
-            ext = os.path.splitext(it["url"].split("?")[0])[1].lower() or ".jpg"
+            it["url"] = it["url"].split("?")[0].replace("://thumb.wikimedia.org/", "://upload.wikimedia.org/")
+            ext = os.path.splitext(it["url"])[1].lower() or ".jpg"
             fn = f"{scene}_{i}{ext}"
             if not os.path.exists(os.path.join(ep, fn)):
-                data = get(it["url"])
+                data = get_image(it["url"])
                 open(os.path.join(ep, fn), "wb").write(data)
             rows.append((fn, scene, it))
         print(ep, scene, q, "->", sum(1 for r in rows if r[1] == scene), flush=True)
