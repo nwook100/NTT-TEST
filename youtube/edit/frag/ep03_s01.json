@@ -1,38 +1,181 @@
 {
-  "section": "1",
-  "chunks": [
-    {"id": 4, "segments": [
-      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s01_chapter_from_a_market_stall_to_an_empire.mp4"},
-      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s01_typewriter_hcmc.mp4"},
-      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_day_1.mp4"}
-    ]},
-    {"id": 5, "segments": [
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_district1_ov_4.jpg", "fx": "in"},
-      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/vietnam_market_1.mp4"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_3.jpg", "fx": "left"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_1.jpg", "fx": "out", "overlay": "assets/ep03_truong_my_lan/motion/s01_lowerthird_ben_thanh.mp4"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_4.jpg", "crop": "detail", "fx": "in"}
-    ]},
-    {"id": 6, "segments": [
-      {"kind": "motion", "fn": "timeline", "name": "s01_tl_1956_to_2022", "args": {"events": [["1956", "born"], ["1992", "Van Thinh Phat founded"], ["2012", "SCB formed"], ["2022", "arrest"]], "title": "TRUONG MY LAN", "dur": 6.0, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg", "crop": "left", "fx": "right"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_1.jpg", "crop": "left", "fx": "in"}
-    ]},
-    {"id": 7, "segments": [
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_2.jpg", "fx": "out"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_linked_to_van_thinh_phat", "args": {"lines": ["Times Square Saigon", "Windsor Plaza Hotel"], "kicker": "LINKED TO VAN THINH PHAT", "dur": 4.0, "stagger": 0.8, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_2.jpg", "fx": "left"}
-    ]},
-    {"id": 8, "segments": [
-      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg", "fx": "in"},
-      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_3.jpg", "fx": "out"},
-      {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_cheapest_money_is_a_banks", "args": {"lines": ["And the cheapest money,", "if you can get it,", "is a bank's."], "red": ["bank's."], "dur": 4.5, "stagger": 1.0, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}}
-    ]}
-  ],
-  "sfx": [
-    {"chunk": 6, "name": "whoosh", "offset": 0.0, "gain_db": -12},
-    {"chunk": 8, "name": "impact", "offset": 15.0, "gain_db": -8}
-  ],
-  "music_drops": []
+ "section": "1",
+ "chunks": [
+  {
+   "id": 4,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s01_chapter_from_a_market_stall_to_an_empire.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s01_typewriter_hcmc.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_day_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_district1_ov_4.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/vietnam_market_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_3.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_1.jpg",
+     "fx": "out",
+     "overlay": "assets/ep03_truong_my_lan/motion/s01_lowerthird_ben_thanh.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_4.jpg",
+     "crop": "detail",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "timeline",
+     "name": "s01_tl_1956_to_2022",
+     "args": {
+      "events": [
+       [
+        "1956",
+        "born"
+       ],
+       [
+        "1992",
+        "Van Thinh Phat founded"
+       ],
+       [
+        "2012",
+        "SCB formed"
+       ],
+       [
+        "2022",
+        "arrest"
+       ]
+      ],
+      "title": "TRUONG MY LAN",
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_1.jpg",
+     "crop": "left",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_2.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s01_kp_linked_to_van_thinh_phat",
+     "args": {
+      "lines": [
+       "Times Square Saigon",
+       "Windsor Plaza Hotel"
+      ],
+      "kicker": "LINKED TO VAN THINH PHAT",
+      "dur": 4.0,
+      "stagger": 0.8,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_2.jpg",
+     "fx": "left"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_3.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s01_kp_cheapest_money_is_a_banks",
+     "args": {
+      "lines": [
+       "And the cheapest money,",
+       "if you can get it,",
+       "is a bank's."
+      ],
+      "red": [
+       "bank's."
+      ],
+      "dur": 4.5,
+      "stagger": 1.0,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 6,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 8,
+   "name": "impact",
+   "offset": 15.0,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": []
 }
