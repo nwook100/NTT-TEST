@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>신성테크놀로지 모션그래픽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 레이아웃 개념: 1920x1080 고정 무대(stage)를 화면 크기에 맞춰 축소해 보여 주는 "영상 플레이어" 구조.
+   색은 웨이퍼의 흑연빛 바탕 + 리드프레임의 구리색 강조 + 실리콘 푸른빛 보조색. 단일 다크 테마로 의도함. */
+:root{
+  --bg:#0c1118;          /* 무대 바탕 (흑연빛 남색) */
+  --bg-2:#131b26;        /* 카드/컨트롤 바탕 */
+  --ink:#eef2f6;         /* 본문 글자 */
+  --muted:#93a0b4;       /* 보조 글자 */
+  --line:#2a3646;        /* 선 */
+  --accent:#e2a35b;      /* 구리색 강조 */
+  --accent-2:#6fb7d9;    /* 실리콘 푸른빛 */
+  --f-ko:'IBM Plex Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --f-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-ko);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+
+.app{min-height:100%;display:flex;flex-direction:column;gap:14px;width:100%;max-width:1480px;margin:0 auto;padding-block:16px;padding-inline:16px}
+.frame{position:relative;width:min(100%,calc((100vh - 170px) * 16 / 9));width:min(100%,calc((100dvh - 170px) * 16 / 9));aspect-ratio:16/9;max-width:100%;margin-inline:auto;overflow:hidden;background:#000;border-radius:8px;border:1px solid var(--line)}
+.stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(var(--k,1));background:var(--bg);overflow:hidden}
+#bg{position:absolute;inset:0;width:1920px;height:1080px}
+.vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
+.scene{position:absolute;inset:0;will-change:opacity}
+.scene[hidden]{display:none}
+.scene .a{opacity:0;will-change:transform,opacity}
+
+/* 공통 글자 스타일 */
+.eyebrow{font-family:var(--f-mono);font-size:18px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase}
+.sec-head h2{font-size:64px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:12px 0 0;text-wrap:balance}
+em{font-style:normal;color:var(--accent)}
+
+/* 장면 1: 인트로 */
+.intro-text{position:absolute;left:1020px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px}
+.brand{font-size:116px;font-weight:700;letter-spacing:-.025em;line-height:1.05;margin:0;white-space:nowrap}
+.brand span{display:inline-block}
+.brand-en{font-family:var(--f-mono);font-size:26px;letter-spacing:.34em;color:var(--accent-2)}
+.sub{font-size:30px;font-weight:300;color:var(--muted);margin:0}
+
+/* 장면 2: 소개 */
+.center-text{position:absolute;left:0;right:0;top:250px;display:grid;place-items:center}
+.center-text>div{grid-area:1/1;text-align:center}
+.big{font-size:68px;font-weight:500;letter-spacing:-.02em;line-height:1.3;margin:0;text-wrap:balance}
+
+/* 장면 3: 제품 */
+#s-products .sec-head{position:absolute;left:112px;top:120px}
+.cards{position:absolute;left:112px;top:330px;display:grid;grid-template-columns:repeat(4,400px);gap:32px}
+.card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:28px 30px 36px;display:flex;flex-direction:column;gap:14px}
+.card svg{width:340px;height:208px;display:block;margin:0 auto 10px}
+.card .code{font-family:var(--f-mono);font-size:17px;letter-spacing:.26em;color:var(--accent)}
+.card h3{font-size:38px;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.2}
+.card p{font-size:22px;line-height:1.55;color:var(--muted);margin:0;font-weight:300}
+.acc{stroke:var(--accent)}
+.ink{stroke:var(--ink);stroke-opacity:.55}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.card .fill{opacity:0}
+
+/* 장면 4: 강점 */
+#s-strengths .sec-head{position:absolute;left:112px;top:140px}
+.str-list{position:absolute;left:112px;top:420px;display:grid;grid-template-columns:repeat(3,520px);gap:68px}
+.str-item{border-top:2px solid var(--accent);padding-top:26px;display:flex;flex-direction:column;gap:10px}
+.str-item .str-en{font-family:var(--f-mono);font-size:17px;letter-spacing:.26em;color:var(--accent-2)}
+.str-item .str-k{font-size:48px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.str-item p{font-size:24px;line-height:1.55;color:var(--muted);margin:6px 0 0;font-weight:300}
+
+/* 장면 5: 위치 */
+.loc-text{position:absolute;left:112px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:22px;max-width:900px}
+.loc-text h2{font-size:84px;font-weight:600;letter-spacing:-.025em;line-height:1.15;margin:0}
+.coords{font-family:var(--f-mono);font-size:22px;letter-spacing:.14em;color:var(--accent-2)}
+.contact{font-size:28px;color:var(--muted);font-weight:300;display:flex;gap:24px;align-items:baseline;flex-wrap:wrap}
+.contact b{font-weight:500;color:var(--ink)}
+
+/* 장면 6: 마무리 */
+.outro-text{position:absolute;left:0;right:0;top:600px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
+.outro-text .brand{font-size:92px}
+.outro-text .tag{font-size:36px;font-weight:300;color:var(--muted);margin:0}
+
+/* 포스터(재생 전 화면) */
+.poster{position:absolute;inset:0;border:0;background:rgba(12,17,24,.28);display:grid;place-items:center;cursor:pointer;padding:0}
+.poster .play-btn{display:flex;align-items:center;gap:14px;padding:16px 28px 16px 22px;border-radius:999px;background:rgba(12,17,24,.78);border:1px solid var(--line);backdrop-filter:blur(8px);font-size:clamp(14px,1.6vw,20px);font-weight:500;letter-spacing:.02em;transition:transform .15s cubic-bezier(.23,1,.32,1),background .2s ease}
+.poster:hover .play-btn{background:rgba(19,27,38,.95)}
+.poster:active .play-btn{transform:scale(.97)}
+.poster .play-btn svg{width:1.4em;height:1.4em;fill:var(--accent)}
+.poster:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.poster[hidden]{display:none}
+
+/* 컨트롤 */
+.controls{width:min(100%,calc((100vh - 170px) * 16 / 9));width:min(100%,calc((100dvh - 170px) * 16 / 9));margin-inline:auto;display:flex;flex-direction:column;gap:10px}
+.track{position:relative;height:22px;cursor:pointer;touch-action:none}
+.track::before{content:"";position:absolute;left:0;right:0;top:9px;height:4px;border-radius:2px;background:var(--line)}
+.track .fill{position:absolute;left:0;top:9px;height:4px;border-radius:2px;background:var(--accent);width:0}
+.track .knob{position:absolute;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);transform:translateX(-7px);box-shadow:0 0 0 3px rgba(226,163,91,.2)}
+.track .mark{position:absolute;top:7px;width:2px;height:8px;background:var(--bg);transform:translateX(-1px)}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg-2);cursor:pointer;transition:transform .12s cubic-bezier(.23,1,.32,1),background .15s ease,border-color .15s ease}
+.btn:hover{background:#18222f}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn svg{width:16px;height:16px;fill:var(--ink)}
+.time{font-family:var(--f-mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:11ch}
+.chips{display:flex;gap:6px;overflow-x:auto;flex:1;min-width:0;padding-bottom:2px;scrollbar-width:thin}
+.chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:14px;cursor:pointer;transition:transform .12s cubic-bezier(.23,1,.32,1),color .15s ease,border-color .15s ease,background .15s ease}
+.chip .n{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--accent-2)}
+.chip:hover{color:var(--ink);border-color:#3a4a5e}
+.chip:active{transform:scale(.97)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chip.on{color:var(--ink);background:var(--bg-2);border-color:var(--accent)}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.hint kbd{font-family:var(--f-mono);font-size:12px;padding:1px 6px;border:1px solid var(--line);border-radius:5px;background:var(--bg-2)}
+
+@media (max-width:640px){
+  .time{min-width:0}
+  .hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn,.chip,.poster .play-btn{transition:none}
+}
+
+/* 렌더 모드: Playwright가 프레임을 캡처할 때 1920x1080 그대로 출력 */
+html.render,html.render body{background:#000;overflow:hidden}
+html.render .app{padding:0;max-width:none;gap:0}
+html.render .frame{width:1920px;height:1080px;max-width:none;border:0;border-radius:0;margin:0}
+html.render .controls,html.render .poster{display:none}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="frame" id="frame">
+    <div class="stage" id="stage">
+      <canvas id="bg" width="1920" height="1080" aria-hidden="true"></canvas>
+
+      <section class="scene" id="s-intro" hidden>
+        <div class="intro-text">
+          <div class="eyebrow a" data-k="eyebrow">Semiconductor carrier manufacturer</div>
+          <h1 class="brand" id="brandKo"></h1>
+          <div class="brand-en a" data-k="en"></div>
+          <p class="sub a" data-k="sub"></p>
+        </div>
+      </section>
+
+      <section class="scene" id="s-thesis" hidden>
+        <div class="center-text">
+          <div>
+            <p class="big a" data-k="l1"></p>
+            <p class="big a" data-k="l2"></p>
+          </div>
+          <div>
+            <p class="big a" data-k="l3"></p>
+            <p class="big a" data-k="l4"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" id="s-products" hidden>
+        <header class="sec-head">
+          <div class="eyebrow a" data-k="eyebrow">Products</div>
+          <h2 class="a" data-k="h2"></h2>
+        </header>
+        <div class="cards" id="cards"></div>
+      </section>
+
+      <section class="scene" id="s-strengths" hidden>
+        <header class="sec-head">
+          <div class="eyebrow a" data-k="eyebrow">Why Shinsung</div>
+          <h2 class="a" data-k="h2"></h2>
+        </header>
+        <div class="str-list" id="strList"></div>
+      </section>
+
+      <section class="scene" id="s-location" hidden>
+        <div class="loc-text">
+          <div class="eyebrow a" data-k="eyebrow">Location</div>
+          <h2 class="a" data-k="h2"></h2>
+          <div class="coords a" data-k="coords"></div>
+          <div class="contact a" data-k="contact"></div>
+        </div>
+      </section>
+
+      <section class="scene" id="s-outro" hidden>
+        <div class="outro-text">
+          <h1 class="brand a" data-k="brand"></h1>
+          <p class="tag a" data-k="tag"></p>
+          <div class="brand-en a" data-k="en"></div>
+        </div>
+      </section>
+
+      <div class="vignette"></div>
+    </div>
+    <button class="poster" id="poster" type="button" aria-label="모션그래픽 재생">
+      <span class="play-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>홍보 영상 재생 · 45초</span></span>
+    </button>
+  </div>
+
+  <div class="controls">
+    <div class="track" id="track" role="slider" aria-label="재생 위치" aria-valuemin="0" aria-valuemax="45" aria-valuenow="0" tabindex="0">
+      <div class="fill" id="fill"></div><div id="marks"></div><div class="knob" id="knob"></div>
+    </div>
+    <div class="bar">
+      <button class="btn" id="playBtn" type="button" aria-label="재생">
+        <svg id="icPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="icPause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+      </button>
+      <button class="btn" id="replayBtn" type="button" aria-label="처음부터">
+        <svg viewBox="0 0 24 24"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg>
+      </button>
+      <span class="time" id="time">00:00 / 00:45</span>
+      <div class="chips" id="chips"></div>
+    </div>
+    <p class="hint"><kbd>Space</kbd> 재생/일시정지 · <kbd>←</kbd><kbd>→</kbd> 5초 이동 · <kbd>1</kbd>–<kbd>6</kbd> 장면 이동</p>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   1) 문구 설정 — 회사 실제 정보에 맞게 이 부분만 고치면 됩니다.
+   ========================================================= */
+const COPY = {
+  brandKo: '신성테크놀로지',
+  brandEn: 'SHINSUNG TECHNOLOGY',
+  intro: { sub: '반도체 캐리어 전문 제조 · 경기도 안산' },
+  thesis: {
+    l1: '칩 하나가 완성되기까지,',
+    l2: '웨이퍼는 <em>수백 번</em> 자리를 옮깁니다.',
+    l3: '그 모든 이동을 받치는 캐리어를',
+    l4: '<em>신성테크놀로지</em>가 만듭니다.',
+  },
+  products: {
+    h2: '네 가지 캐리어, 하나의 기준.',
+    items: [
+      { code: 'MAGAZINE', name: '매거진',  desc: '리드프레임과 기판을 층층이 담아 공정 사이를 옮깁니다.', art: 'magazine' },
+      { code: 'CASSETTE', name: '카세트',  desc: '웨이퍼를 한 장씩 세워 보관하고 이송합니다.',           art: 'cassette' },
+      { code: 'RING',     name: '링',      desc: '다이싱·마운트 공정에서 웨이퍼와 필름을 고정합니다.',     art: 'ring' },
+      { code: 'PIN BOAT', name: '핀 보트', desc: '패키지를 핀 위에 정렬해 조립·검사 공정으로 보냅니다.',   art: 'pinboat' },
+    ],
+  },
+  strengths: {
+    h2: '작은 공차가 수율을 좌우합니다.',
+    items: [
+      { en: 'Precision', k: '정밀 가공', d: '반복 사용에도 유지되는 치수 안정성' },
+      { en: 'Material',  k: '소재 대응', d: '내열·정전기 방지(ESD) 소재 선택' },
+      { en: 'Custom',    k: '맞춤 설계', d: '고객 장비 규격에 맞춘 설계와 제작' },
+    ],
+  },
+  location: {
+    h2: '경기도 안산에서<br>고객의 생산 라인까지.',
+    coords: 'ANSAN, GYEONGGI-DO, KOREA · 37.32° N 126.83° E',
+    contactLabel: '영업 문의',
+    phone: '[전화번호]',   // 예: 031-000-0000
+    email: '[이메일]',     // 예: sales@company.co.kr
+  },
+  outro: { tag: '반도체의 기반을 만듭니다.' },
+  // 공정 흐름 노드 (장면 2 하단). 백엔드 패키징 흐름.
+  process: ['WAFER IN', 'DICING', 'DIE ATTACH', 'WIRE BOND', 'MOLD', 'TEST'],
+};
+
+/* =========================================================
+   2) 장면 시간표 (초). start = 시작, dur = 길이
+   ========================================================= */
+const SCENES = [
+  { id: 'intro',     label: '인트로', start: 0,    dur: 6 },
+  { id: 'thesis',    label: '소개',   start: 6,    dur: 7 },
+  { id: 'products',  label: '제품',   start: 13,   dur: 14 },
+  { id: 'strengths', label: '강점',   start: 27,   dur: 7 },
+  { id: 'location',  label: '위치',   start: 34,   dur: 5.5 },
+  { id: 'outro',     label: '마무리', start: 39.5, dur: 5.5 },
+];
+const TOTAL = 45;
+const FADE = 0.5;        // 장면 사이 크로스페이드 길이
+const POSTER_T = 4.6;    // 재생 전 포스터로 보여 줄 시점(인트로가 다 그려진 순간)
+
+/* =========================================================
+   3) 보조 함수 — 시간(t)을 0~1 진행도로 바꾸는 것이 핵심
+   ========================================================= */
+const $ = (s, r = document) => r.querySelector(s);
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const lerp = (a, b, p) => a + (b - a) * p;
+const E = {
+  out:     p => 1 - Math.pow(1 - p, 3),                       // 나타날 때: 빠르게 시작
+  outExpo: p => p >= 1 ? 1 : 1 - Math.pow(2, -10 * p),        // 더 강한 ease-out
+  inOut:   p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2, // 화면 안 이동
+  lin:     p => p,
+};
+// seg(t, 시작, 길이, 곡선) → 0~1
+const seg = (t, s, d, e = E.out) => e(clamp((t - s) / d, 0, 1));
+// 요소를 아래에서 위로 떠오르며 나타나게
+function rise(el, pIn, pOut = 0, dy = 28) {
+  el.style.opacity = pIn * (1 - pOut);
+  el.style.transform = `translate3d(0,${(1 - pIn) * dy - pOut * 14}px,0)`;
+}
+const hash = (x, y) => { const s = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453; return s - Math.floor(s); };
+const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const C = { ink: css('--ink'), muted: css('--muted'), line: css('--line'), acc: css('--accent'), acc2: css('--accent-2'), bg: css('--bg') };
+
+/* =========================================================
+   4) DOM 만들기 (문구 채우기)
+   ========================================================= */
+const RENDER = new URLSearchParams(location.search).has('render');
+if (RENDER) document.documentElement.classList.add('render');
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches && !RENDER;
+
+const S = {}; SCENES.forEach(s => S[s.id] = $('#s-' + s.id));
+const K = (sc, k) => S[sc].querySelector(`[data-k="${k}"]`);
+
+$('#brandKo').innerHTML = [...COPY.brandKo].map(ch => `<span>${ch}</span>`).join('');
+K('intro', 'en').textContent = COPY.brandEn;
+K('intro', 'sub').textContent = COPY.intro.sub;
+['l1', 'l2', 'l3', 'l4'].forEach(k => K('thesis', k).innerHTML = COPY.thesis[k]);
+K('products', 'h2').textContent = COPY.products.h2;
+K('strengths', 'h2').textContent = COPY.strengths.h2;
+K('location', 'h2').innerHTML = COPY.location.h2;
+K('location', 'coords').textContent = COPY.location.coords;
+K('location', 'contact').innerHTML =
+  `<span>${COPY.location.contactLabel}</span><b>${COPY.location.phone}</b><b>${COPY.location.email}</b>`;
+K('outro', 'brand').textContent = COPY.brandKo;
+K('outro', 'tag').textContent = COPY.outro.tag;
+K('outro', 'en').textContent = COPY.brandEn;
+
+// 제품 선화(line art). pathLength="1"을 주면 stroke-dashoffset 0~1로 "그려지는" 효과를 만들 수 있다.
+const ART = {
+  magazine: `
+    <g class="draw acc">
+      <path pathLength="1" d="M70 52 H250 V196 H70 Z"/>
+      <path pathLength="1" d="M70 52 L110 22 H290 L250 52 M290 22 V166 L250 196"/>
+    </g>
+    <g class="draw ink" style="stroke-width:2">
+      <path pathLength="1" d="M78 70 H98 M222 70 H242 M78 88 H98 M222 88 H242 M78 106 H98 M222 106 H242 M78 124 H98 M222 124 H242 M78 142 H98 M222 142 H242 M78 160 H98 M222 160 H242 M78 178 H98 M222 178 H242"/>
+    </g>
+    <g class="fill">
+      <rect x="104" y="120" width="112" height="7" rx="1.5" fill="${C.acc}"/>
+      <rect x="104" y="138" width="112" height="7" rx="1.5" fill="${C.acc}" opacity=".55"/>
+      <rect x="104" y="156" width="112" height="7" rx="1.5" fill="${C.acc}" opacity=".3"/>
+    </g>`,
+  cassette: `
+    <g class="draw acc">
+      <path pathLength="1" d="M58 34 H92 V196 H58 Z"/>
+      <path pathLength="1" d="M268 34 H302 V196 H268 Z"/>
+      <path pathLength="1" d="M92 50 H268 M92 180 H268"/>
+    </g>
+    <g class="draw ink" style="stroke-width:2.2">
+      <path pathLength="1" d="M112 64 V166 M126 64 V166 M140 64 V166 M154 64 V166 M168 64 V166 M182 64 V166 M196 64 V166 M210 64 V166 M224 64 V166 M238 64 V166 M252 64 V166"/>
+    </g>
+    <g class="fill">
+      <rect x="110" y="64" width="4" height="102" rx="1" fill="${C.acc}"/>
+      <rect x="180" y="64" width="4" height="102" rx="1" fill="${C.acc}"/>
+      <rect x="250" y="64" width="4" height="102" rx="1" fill="${C.acc}"/>
+    </g>`,
+  ring: `
+    <defs>
+      <radialGradient id="rg-w" cx="40%" cy="35%" r="70%">
+        <stop offset="0" stop-color="${C.acc2}" stop-opacity=".55"/>
+        <stop offset="1" stop-color="${C.acc2}" stop-opacity=".12"/>
+      </radialGradient>
+      <clipPath id="rg-c"><circle cx="180" cy="110" r="58"/></clipPath>
+    </defs>
+    <g class="draw acc">
+      <circle pathLength="1" cx="180" cy="110" r="94"/>
+      <circle pathLength="1" cx="180" cy="110" r="78"/>
+      <path pathLength="1" d="M180 8 V22 M180 198 V212 M78 110 H92 M268 110 H282"/>
+    </g>
+    <g class="fill">
+      <circle cx="180" cy="110" r="78" fill="${C.acc2}" opacity=".07"/>
+      <circle cx="180" cy="110" r="60" fill="url(#rg-w)"/>
+      <g clip-path="url(#rg-c)" stroke="${C.ink}" stroke-opacity=".35" stroke-width="1">
+        <path d="M132 52 V168 M144 52 V168 M156 52 V168 M168 52 V168 M180 52 V168 M192 52 V168 M204 52 V168 M216 52 V168 M228 52 V168"/>
+        <path d="M122 62 H238 M122 74 H238 M122 86 H238 M122 98 H238 M122 110 H238 M122 122 H238 M122 134 H238 M122 146 H238 M122 158 H238"/>
+      </g>
+      <path d="M176 170 L180 165 L184 170" fill="${C.bg}" stroke="${C.ink}" stroke-opacity=".6" stroke-width="1.5"/>
+    </g>`,
+  pinboat: `
+    <g class="draw acc">
+      <path pathLength="1" d="M40 60 H320 V160 H40 Z"/>
+      <path pathLength="1" d="M56 74 H304 M56 146 H304"/>
+    </g>
+    <g class="draw ink" style="stroke-width:2">
+      <circle pathLength="1" cx="54" cy="110" r="3.5"/><circle pathLength="1" cx="98" cy="110" r="3.5"/>
+      <circle pathLength="1" cx="106" cy="110" r="3.5"/><circle pathLength="1" cx="150" cy="110" r="3.5"/>
+      <circle pathLength="1" cx="158" cy="110" r="3.5"/><circle pathLength="1" cx="202" cy="110" r="3.5"/>
+      <circle pathLength="1" cx="210" cy="110" r="3.5"/><circle pathLength="1" cx="254" cy="110" r="3.5"/>
+      <circle pathLength="1" cx="262" cy="110" r="3.5"/><circle pathLength="1" cx="306" cy="110" r="3.5"/>
+    </g>
+    <g class="fill">
+      <rect x="62" y="96" width="28" height="28" rx="2" fill="${C.ink}" opacity=".85"/><circle cx="67" cy="101" r="1.6" fill="${C.acc}"/>
+      <rect x="114" y="96" width="28" height="28" rx="2" fill="${C.ink}" opacity=".85"/><circle cx="119" cy="101" r="1.6" fill="${C.acc}"/>
+      <rect x="166" y="96" width="28" height="28" rx="2" fill="${C.ink}" opacity=".85"/><circle cx="171" cy="101" r="1.6" fill="${C.acc}"/>
+      <rect x="218" y="96" width="28" height="28" rx="2" fill="${C.ink}" opacity=".85"/><circle cx="223" cy="101" r="1.6" fill="${C.acc}"/>
+      <rect x="270" y="96" width="28" height="28" rx="2" fill="${C.ink}" opacity=".85"/><circle cx="275" cy="101" r="1.6" fill="${C.acc}"/>
+    </g>`,
+};
+$('#cards').innerHTML = COPY.products.items.map(p => `
+  <article class="card a">
+    <svg viewBox="0 0 360 220" aria-hidden="true">${ART[p.art]}</svg>
+    <div class="code">${p.code}</div>
+    <h3>${p.name}</h3>
+    <p>${p.desc}</p>
+  </article>`).join('');
+$('#strList').innerHTML = COPY.strengths.items.map(s => `
+  <div class="str-item a">
+    <div class="str-en">${s.en.toUpperCase()}</div>
+    <div class="str-k">${s.k}</div>
+    <p>${s.d}</p>
+  </div>`).join('');
+
+const cards = [...document.querySelectorAll('.card')].map(c => ({
+  el: c, draws: [...c.querySelectorAll('.draw path, .draw circle')], fills: [...c.querySelectorAll('.fill')],
+}));
+const strItems = [...document.querySelectorAll('.str-item')];
+const brandSpans = [...$('#brandKo').querySelectorAll('span')];
+
+/* =========================================================
+   5) 캔버스 배경 그리기 — 모두 t의 함수라서 아무 시점으로나 점프할 수 있다.
+   ========================================================= */
+const cv = $('#bg'), ctx = cv.getContext('2d');
+let DPR = 1, grid = null;
+function sizeCanvas() {
+  const k = RENDER ? 1 : clamp((window.devicePixelRatio || 1) * (frame.clientWidth / 1920), 1, 2);
+  if (k === DPR && grid) return;
+  DPR = k;
+  cv.width = Math.round(1920 * DPR); cv.height = Math.round(1080 * DPR);
+  grid = document.createElement('canvas'); grid.width = cv.width; grid.height = cv.height;
+  const g = grid.getContext('2d'); g.scale(DPR, DPR); g.fillStyle = C.muted; g.globalAlpha = .13;
+  for (let y = 24; y < 1080; y += 48) for (let x = 24; x < 1920; x += 48) g.fillRect(x - 1, y - 1, 2, 2);
+}
+
+function drawWafer(lt, a, cx, cy, R, t0, scan) {
+  ctx.save(); ctx.globalAlpha = a;
+  const pitch = R / 9;
+  for (let gy = -R; gy < R; gy += pitch) for (let gx = -R; gx < R; gx += pitch) {
+    const x = gx + pitch / 2, y = gy + pitch / 2, d = Math.hypot(x, y);
+    if (d > R - pitch * .7) continue;
+    const p = seg(lt, t0 + .7 + (d / R) * 1.1, .5);
+    if (p <= 0) continue;
+    const hot = hash(gx, gy) < .08;
+    ctx.fillStyle = hot ? C.acc : C.ink; ctx.globalAlpha = a * (hot ? .9 : .2) * p;
+    ctx.fillRect(cx + gx + 2, cy + gy + 2, pitch - 4, pitch - 4);
+  }
+  const cp = seg(lt, t0, 1.3, E.inOut);
+  ctx.globalAlpha = a; ctx.strokeStyle = C.acc2; ctx.lineWidth = 3; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.arc(cx, cy, R, -Math.PI / 2, -Math.PI / 2 + cp * Math.PI * 2); ctx.stroke();
+  if (cp >= 1) { // 웨이퍼 하단 노치
+    ctx.fillStyle = C.bg; ctx.beginPath(); ctx.moveTo(cx - 12, cy + R + 4); ctx.lineTo(cx, cy + R - 12); ctx.lineTo(cx + 12, cy + R + 4); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(cx - 12, cy + R - 1); ctx.lineTo(cx, cy + R - 12); ctx.lineTo(cx + 12, cy + R - 1); ctx.stroke();
+  }
+  if (scan) { // 검사 스캔 라인
+    const sp = seg(lt, t0 + 2.6, 1.6, E.inOut);
+    if (sp > 0 && sp < 1) {
+      const y = cy - R + sp * 2 * R;
+      ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R - 2, 0, Math.PI * 2); ctx.clip();
+      const gr = ctx.createLinearGradient(0, y - 60, 0, y); gr.addColorStop(0, 'rgba(111,183,217,0)'); gr.addColorStop(1, 'rgba(111,183,217,.22)');
+      ctx.fillStyle = gr; ctx.fillRect(cx - R, y - 60, 2 * R, 60);
+      ctx.strokeStyle = C.acc2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx - R, y); ctx.lineTo(cx + R, y); ctx.stroke();
+      ctx.restore();
+    }
+  }
+  ctx.restore();
+}
+
+function drawProcess(lt, a) {
+  const y = 800, x0 = 300, x1 = 1620, N = COPY.process.length;
+  const vis = seg(lt, .3, .6);
+  const p = seg(lt, .9, 5.2, E.inOut);
+  ctx.save(); ctx.globalAlpha = a * vis;
+  ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
+  ctx.strokeStyle = C.acc; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(lerp(x0, x1, p), y); ctx.stroke();
+  ctx.font = '500 18px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for (let i = 0; i < N; i++) {
+    const x = lerp(x0, x1, i / (N - 1)), lit = p >= i / (N - 1) - .005;
+    ctx.fillStyle = C.bg; ctx.beginPath(); ctx.arc(x, y, 11, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = lit ? C.acc : C.line; ctx.lineWidth = 2.5; ctx.stroke();
+    if (lit) { ctx.fillStyle = C.acc; ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill(); }
+    ctx.fillStyle = lit ? C.ink : C.muted; ctx.fillText(COPY.process[i], x, y + 26);
+  }
+  if (p > 0 && p < 1) { // 이동 중인 웨이퍼
+    const x = lerp(x0, x1, p);
+    const gr = ctx.createRadialGradient(x, y, 0, x, y, 36); gr.addColorStop(0, 'rgba(226,163,91,.45)'); gr.addColorStop(1, 'rgba(226,163,91,0)');
+    ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(x, y, 36, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.acc; ctx.beginPath(); ctx.arc(x, y, 13, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = C.bg; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 8, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawRuler(lt, a) {
+  ctx.save(); ctx.globalAlpha = a * seg(lt, .2, .6);
+  ctx.strokeStyle = C.line; ctx.lineWidth = 1.5;
+  for (let x = 112; x <= 1808; x += 24) { const h = (x - 112) % 120 === 0 ? 18 : 8; ctx.beginPath(); ctx.moveTo(x, 70); ctx.lineTo(x, 70 + h); ctx.stroke(); }
+  for (let y = 70; y <= 1010; y += 24) { const w = (y - 70) % 120 === 0 ? 18 : 8; ctx.beginPath(); ctx.moveTo(60, y); ctx.lineTo(60 + w, y); ctx.stroke(); }
+  // 각 강점 아래 치수선: 항목이 나타날 때 함께 그려진다
+  const starts = [1.2, 2.0, 2.8], cols = [112, 700, 1288], w = 520, y = 700;
+  ctx.strokeStyle = C.acc2; ctx.lineWidth = 2;
+  starts.forEach((s, i) => {
+    const p = seg(lt, s + .35, .6, E.inOut); if (p <= 0) return;
+    const x0 = cols[i], x1 = cols[i] + w * p;
+    ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x0, y - 10); ctx.lineTo(x0, y + 10); ctx.stroke();
+    if (p >= 1) { ctx.beginPath(); ctx.moveTo(x1, y - 10); ctx.lineTo(x1, y + 10); ctx.stroke(); }
+  });
+  ctx.restore();
+}
+
+function drawRings(lt, a) {
+  const cx = 1340, cy = 540, R = 300;
+  ctx.save(); ctx.globalAlpha = a * seg(lt, .4, .8);
+  ctx.strokeStyle = C.line; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(cx - R - 40, cy); ctx.lineTo(cx + R + 40, cy); ctx.moveTo(cx, cy - R - 40); ctx.lineTo(cx, cy + R + 40); ctx.stroke();
+  ctx.setLineDash([4, 10]); ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+  for (let k = 0; k < 3; k++) {
+    const f = ((lt * .42) + k / 3) % 1, r = f * R;
+    ctx.globalAlpha = a * seg(lt, .4, .8) * (1 - f) * .7;
+    ctx.strokeStyle = C.acc; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.globalAlpha = a;
+  const gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, 40); gr.addColorStop(0, 'rgba(226,163,91,.5)'); gr.addColorStop(1, 'rgba(226,163,91,0)');
+  ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(cx, cy, 40, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = C.acc; ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = C.bg; ctx.lineWidth = 3; ctx.stroke();
+  ctx.restore();
+}
+
+/* =========================================================
+   6) 장면별 DOM 애니메이션 (장면 안의 시간 lt 기준)
+   ========================================================= */
+const DOM = {
+  intro(lt) {
+    rise(K('intro', 'eyebrow'), seg(lt, 1.0, .6, E.outExpo));
+    brandSpans.forEach((s, i) => rise(s, seg(lt, 1.35 + i * .07, .7, E.outExpo), 0, 44));
+    rise(K('intro', 'en'), seg(lt, 2.2, .6, E.outExpo), 0, 16);
+    rise(K('intro', 'sub'), seg(lt, 2.6, .7, E.outExpo));
+  },
+  thesis(lt) {
+    const out1 = seg(lt, 2.9, .4);
+    rise(K('thesis', 'l1'), seg(lt, .4, .8, E.outExpo), out1);
+    rise(K('thesis', 'l2'), seg(lt, .8, .8, E.outExpo), out1);
+    rise(K('thesis', 'l3'), seg(lt, 3.4, .8, E.outExpo));
+    rise(K('thesis', 'l4'), seg(lt, 3.8, .8, E.outExpo));
+  },
+  products(lt) {
+    rise(K('products', 'eyebrow'), seg(lt, .3, .6, E.outExpo));
+    rise(K('products', 'h2'), seg(lt, .5, .8, E.outExpo));
+    cards.forEach((c, i) => {
+      const s = 1.0 + i * 1.3;
+      rise(c.el, seg(lt, s, .8, E.outExpo), 0, 36);
+      const d = seg(lt, s + .25, 1.1, E.inOut);
+      c.draws.forEach(p => p.style.strokeDashoffset = 1 - d);
+      const f = seg(lt, s + 1.1, .5);
+      c.fills.forEach(g => g.style.opacity = f);
+    });
+  },
+  strengths(lt) {
+    rise(K('strengths', 'eyebrow'), seg(lt, .3, .6, E.outExpo));
+    rise(K('strengths', 'h2'), seg(lt, .5, .8, E.outExpo));
+    strItems.forEach((el, i) => rise(el, seg(lt, 1.2 + i * .8, .8, E.outExpo), 0, 32));
+  },
+  location(lt) {
+    rise(K('location', 'eyebrow'), seg(lt, .3, .6, E.outExpo));
+    rise(K('location', 'h2'), seg(lt, .5, .9, E.outExpo));
+    rise(K('location', 'coords'), seg(lt, 1.3, .7, E.outExpo));
+    rise(K('location', 'contact'), seg(lt, 1.9, .7, E.outExpo));
+  },
+  outro(lt) {
+    rise(K('outro', 'brand'), seg(lt, 1.0, .9, E.outExpo), 0, 36);
+    rise(K('outro', 'tag'), seg(lt, 1.7, .8, E.outExpo));
+    rise(K('outro', 'en'), seg(lt, 2.3, .7, E.outExpo), 0, 14);
+  },
+};
+const BG = {
+  intro(lt, a)     { drawWafer(lt, a, 600, 540, 300, .2, true); },
+  thesis(lt, a)    { drawProcess(lt, a); },
+  products()       {},
+  strengths(lt, a) { drawRuler(lt, a); },
+  location(lt, a)  { drawRings(lt, a); },
+  outro(lt, a)     { drawWafer(lt, a, 960, 380, 150, .2, false); },
+};
+
+/* =========================================================
+   7) 한 프레임 렌더: render(t). 재생도, 탐색도, 영상 캡처도 전부 이 함수 하나로.
+   ========================================================= */
+function render(t) {
+  sizeCanvas();
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, 1920, 1080);
+  ctx.drawImage(grid, 0, 0, 1920, 1080);
+  SCENES.forEach((sc, i) => {
+    const el = S[sc.id], lt = t - sc.start, last = i === SCENES.length - 1;
+    const on = lt >= 0 && (last ? lt <= sc.dur : lt < sc.dur);
+    if (!on) { el.hidden = true; return; }
+    const a = seg(lt, 0, FADE) * (last ? 1 : 1 - seg(lt, sc.dur - FADE, FADE));
+    el.hidden = false; el.style.opacity = a;
+    BG[sc.id](lt, a); DOM[sc.id](lt);
+  });
+}
+
+/* =========================================================
+   8) 재생 제어
+   ========================================================= */
+const frame = $('#frame'), stage = $('#stage'), poster = $('#poster');
+const playBtn = $('#playBtn'), icPlay = $('#icPlay'), icPause = $('#icPause');
+const timeEl = $('#time'), fill = $('#fill'), knob = $('#knob'), track = $('#track');
+let t = RENDER ? 0 : POSTER_T, playing = false, last = 0, raf = 0;
+
+function fit() { stage.style.setProperty('--k', RENDER ? 1 : frame.clientWidth / 1920); }
+if (!RENDER) { new ResizeObserver(() => { fit(); render(t); }).observe(frame); }
+fit();
+
+const fmt = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+const chipEls = SCENES.map((sc, i) => {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+  b.innerHTML = `<span class="n">${String(i + 1).padStart(2, '0')}</span>${sc.label}`;
+  b.addEventListener('click', () => gotoScene(i));
+  $('#chips').appendChild(b); return b;
+});
+SCENES.slice(1).forEach(sc => { const m = document.createElement('div'); m.className = 'mark'; m.style.left = (sc.start / TOTAL * 100) + '%'; $('#marks').appendChild(m); });
+
+function updateUI() {
+  const pct = t / TOTAL * 100;
+  fill.style.width = pct + '%'; knob.style.left = pct + '%';
+  track.setAttribute('aria-valuenow', t.toFixed(1));
+  timeEl.textContent = `${fmt(t)} / ${fmt(TOTAL)}`;
+  icPlay.hidden = playing; icPause.hidden = !playing;
+  playBtn.setAttribute('aria-label', playing ? '일시정지' : '재생');
+  const cur = SCENES.findIndex((sc, i) => t >= sc.start && (i === SCENES.length - 1 || t < SCENES[i + 1].start));
+  chipEls.forEach((c, i) => c.classList.toggle('on', i === cur));
+}
+function tick(now) {
+  if (!playing) return;
+  t += Math.min(.1, (now - last) / 1000); last = now;
+  if (t >= TOTAL) { t = TOTAL; playing = false; render(t); updateUI(); return; }
+  render(t); updateUI(); raf = requestAnimationFrame(tick);
+}
+function play() { if (t >= TOTAL) t = 0; playing = true; last = performance.now(); poster.hidden = true; cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); updateUI(); }
+function pause() { playing = false; cancelAnimationFrame(raf); updateUI(); }
+function seekTo(x) { t = clamp(x, 0, TOTAL); poster.hidden = true; render(t); updateUI(); }
+function gotoScene(i) {
+  const sc = SCENES[i];
+  if (REDUCED) { pause(); seekTo(sc.start + Math.min(sc.dur - FADE, 4.6)); return; } // 움직임 줄이기: 완성된 장면만 보여 줌
+  seekTo(sc.start); if (!playing) play();
+}
+
+poster.addEventListener('click', () => { t = 0; play(); });
+playBtn.addEventListener('click', () => playing ? pause() : play());
+$('#replayBtn').addEventListener('click', () => { t = 0; play(); });
+let scrubbing = false, wasPlaying = false;
+const trackSeek = e => { const r = track.getBoundingClientRect(); seekTo(clamp((e.clientX - r.left) / r.width, 0, 1) * TOTAL); };
+track.addEventListener('pointerdown', e => { scrubbing = true; wasPlaying = playing; pause(); track.setPointerCapture(e.pointerId); trackSeek(e); });
+track.addEventListener('pointermove', e => { if (scrubbing) trackSeek(e); });
+track.addEventListener('pointerup', () => { scrubbing = false; if (wasPlaying) play(); });
+track.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') seekTo(t - 1); if (e.key === 'ArrowRight') seekTo(t + 1); });
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,textarea')) return;
+  if (e.code === 'Space') { e.preventDefault(); playing ? pause() : play(); }
+  else if (e.key === 'ArrowLeft' && e.target !== track) seekTo(t - 5);
+  else if (e.key === 'ArrowRight' && e.target !== track) seekTo(t + 5);
+  else if (/^[1-6]$/.test(e.key)) gotoScene(Number(e.key) - 1);
+});
+document.addEventListener('visibilitychange', () => { if (document.hidden && playing) pause(); });
+
+/* =========================================================
+   9) 시작 + 렌더 모드 API (render.cjs가 window.__motion.seek(t)로 프레임을 뽑는다)
+   ========================================================= */
+window.__motion = { total: TOTAL, scenes: SCENES, seek: x => { t = clamp(x, 0, TOTAL); render(t); } };
+const boot = () => { render(t); updateUI(); window.__motionReady = true; };
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(boot);
+render(t); updateUI();
+</script>
+</body>
+</html>
