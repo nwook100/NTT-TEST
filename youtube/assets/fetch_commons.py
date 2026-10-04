@@ -79,6 +79,16 @@ def run(ep, queries, per=3):
         f.write("```\n")
 
 EP = {
+ "ep05_1mdb": [
+  ("s01_kl_skyline", "Kuala Lumpur skyline"), ("s01_petronas", "Petronas Twin Towers"),
+  ("s01_trx", "Tun Razak Exchange"), ("s01_putrajaya", "Perdana Putra Putrajaya"),
+  ("s00_ziegfeld", "Ziegfeld Theatre New York"), ("s04_equanimity", "Equanimity yacht"),
+  ("s04_beverly_hills", "Beverly Hills mansion"), ("s03_ringgit", "Malaysian ringgit banknotes"),
+  ("s06_singapore_cbd", "Singapore Raffles Place financial district"), ("s06_zurich_paradeplatz", "Paradeplatz Zurich banks"),
+  ("s06_bersih", "Bersih 4 rally Kuala Lumpur"), ("s07_parliament", "Parliament of Malaysia building"),
+  ("s08_kl_courts", "Kuala Lumpur Courts Complex"), ("s08_palace_of_justice", "Palace of Justice Putrajaya"),
+  ("s08_kajang_prison", "Kajang Prison"), ("s08_brooklyn_court", "United States Courthouse Eastern District of New York Brooklyn"),
+ ],
  "ep04_ezubao": [
   ("s00_hefei_skyline", "Skylines of Hefei at Tianehu"), ("s00_hefei", "Hefei city skyline"),
   ("s01_bengbu", "Bengbu Zhanggong Mountain Lake"), ("s01_bengbu_street", "Bengbu Railway Station Fengyangdong Street"),

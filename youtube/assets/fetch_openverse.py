@@ -76,6 +76,14 @@ def run(ep, queries, per=4):
         fh.write("```\n")
 
 EP = {
+ "ep05_1mdb": [
+  ("s01_kl_skyline_ov", "Kuala Lumpur skyline night"), ("s01_kl_city_ov", "Kuala Lumpur city"),
+  ("s01_petronas_ov", "Petronas Towers night"), ("s01_putrajaya_ov", "Putrajaya"),
+  ("s03_ringgit_ov", "Malaysian ringgit"), ("s04_superyacht_ov", "superyacht"),
+  ("s04_beverly_hills_ov", "Beverly Hills"), ("s04_manhattan_ov", "Manhattan skyline night"),
+  ("s06_singapore_ov", "Singapore Marina Bay financial district"), ("s06_geneva_ov", "Geneva bank"),
+  ("s06_zurich_ov", "Zurich Bahnhofstrasse"), ("s07_kl_night_ov", "Kuala Lumpur night street"),
+ ],
  "ep04_ezubao": [
   ("s00_hefei_ov", "Hefei skyline"), ("s01_bengbu_ov", "Bengbu Anhui"), ("s01_beijing_cbd_ov", "Beijing CBD skyline"),
   ("s01_beijing_night_ov", "Beijing night city"), ("s01_smartphone_ov", "smartphone screen hand"),
