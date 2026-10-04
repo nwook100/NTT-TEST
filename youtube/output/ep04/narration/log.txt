@@ -1,0 +1,4 @@
+76 chunks, 2072 words
+0 chunks already done, 76 to generate
+[6/76] 1.0 min audio in 5.2 min (rtf 5.0); worst wer in batch 0.11
+[12/76] 2.3 min audio in 13.0 min (rtf 5.7); worst wer in batch 0.02
