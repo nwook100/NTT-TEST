@@ -1,0 +1,15 @@
+{
+  "source": "output/ep03/ep03_base_clean.mp4",
+  "manifest": "output/ep03/narration/manifest.json",
+  "captions": "subtitles/ep03/ep03_en.srt",
+  "caption_visible": "output/ep03/caption_visible.json",
+  "out_dir": "shorts/ep03",
+  "shorts": [
+    {"n": 1, "slug": "drivers_notebook", "pieces": [[0, 1], [21, 22]], "hook": ["A DRIVER'S NOTEBOOK", "$4 BILLION IN CASH"], "red": ["notebook", "cash"], "card": ["Vietnam's Biggest", "Bank Fraud"]},
+    {"n": 2, "slug": "secret_owner", "pieces": [[10, 14]], "hook": ["SHE SECRETLY OWNED", "91.5% OF A BANK"], "red": ["secretly", "91.5%"], "card": ["Vietnam's Biggest", "Bank Fraud"]},
+    {"n": 3, "slug": "the_inspector", "pieces": [[24, 27]], "intro": 4.2, "hook": ["THE BANK INSPECTOR", "WAS PAID $5.2M"], "red": ["paid", "$5.2m"], "card": ["Vietnam's Biggest", "Bank Fraud"]},
+    {"n": 4, "slug": "safe_bonds", "pieces": [[29, 33]], "intro": 4.2, "hook": ["\"AS SAFE AS", "A DEPOSIT\""], "red": ["safe"], "card": ["Vietnam's Biggest", "Bank Fraud"]},
+    {"n": 5, "slug": "death_sentence", "pieces": [[44, 45], [49, 49]], "hook": ["SENTENCED", "TO DEATH"], "red": ["death"], "card": ["Vietnam's Biggest", "Bank Fraud"]},
+    {"n": 6, "slug": "one_question", "pieces": [[63, 64]], "hook": ["ASK YOUR BANK", "ONE QUESTION"], "red": ["one", "question"], "card": ["Vietnam's Biggest", "Bank Fraud"]}
+  ]
+}

@@ -109,10 +109,6 @@
     "fx": "in"
    },
    {
-    "kind": "video",
-    "asset": "assets/ep03_truong_my_lan/stock/vietnam_market_1.mp4"
-   },
-   {
     "kind": "photo",
     "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_3.jpg",
     "fx": "left"
