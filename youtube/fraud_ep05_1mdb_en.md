@@ -1,7 +1,7 @@
 # EP.05 The Prime Minister's Billions: Inside Malaysia's 1MDB Scandal
 
 - Channel: Paper Tiger Files (fraud & financial crime stories, Asia focus)
-- Target length: ~14 min (2,044 words of narration at ~145 wpm ≈ 14:06, plus ~6 s of beats; word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`). With the 6 s intro and 12 s outro the finished video stays under 15 minutes
+- Target length: ~14 min (2,086 words of narration at ~145 wpm ≈ 14:23, plus ~6 s of beats; word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`). With the 6 s intro and 12 s outro the finished video is ≈ 14:47, under 15 minutes
 - Tone: true-crime storytelling, calm, tense, never mocking victims or Malaysians
 - Notation: `[SCREEN]` = editing cue, `[AI-xx]` = AI video shot (prompts at the bottom), `(beat)` = 1-second pause
 - Legal rule (Malaysia / US): only court rulings, guilty pleas, settlements and official government statements are stated as fact. **Najib Razak** is convicted (SRC International, final since Aug 2022; 1MDB main trial, High Court Dec 26, 2025, **under appeal**), so his convictions are stated as fact, always with "he is appealing / maintains his innocence" for the 2025 verdict. **Jho Low (Low Taek Jho) has never stood trial anywhere**: everything about him is "according to the US Justice Department" / "US prosecutors allege" / "a Malaysian judge found, in Najib's trial" + "he denies wrongdoing". No face of Jho Low, ever. Convicted bankers (Tim Leissner, Roger Ng) and Goldman Sachs (DPA + Malaysian subsidiary guilty plea) are stated as fact. People who were never charged (e.g. Leonardo DiCaprio) are explicitly flagged as "never accused of wrongdoing". No private individuals are named; the PetroSaudi whistleblower and the Swiss-convicted executives are described by role only.
@@ -31,9 +31,9 @@ The movie is The Wolf of Wall Street. A story about a stockbroker who gets rich 
 
 (beat)
 
-[SCREEN] Black screen, white text: "According to the US Justice Department, this film was paid for with stolen money."
+[SCREEN] Black screen, white text: "According to the US Justice Department, this film was paid for with misappropriated money."
 
-According to the United States Justice Department, the money that made this film was itself stolen.
+According to the United States Justice Department, the money that made this film had been misappropriated from Malaysia.
 Not from Wall Street. From a country.
 
 [AI-02] A 90-metre superyacht anchored in a dark tropical bay at night, deck lights glowing, no people visible
@@ -53,11 +53,11 @@ This is the story of 1MDB. How the money left, who followed it, and why Malaysia
 
 In April 2009, Najib Razak became the prime minister of Malaysia.
 He was political royalty. His father had been the country's second prime minister. His uncle, the third.
-Najib also made himself finance minister.
+He also kept his job as finance minister.
 
 [SCREEN] Title card: "1Malaysia Development Berhad (1MDB) — founded 2009"
 
-That same year, his government set up a new state investment fund called 1Malaysia Development Berhad. 1MDB for short.
+That same year, his government took over a fund set up by the state of Terengganu and renamed it 1Malaysia Development Berhad. 1MDB for short.
 The idea sounded modern and ambitious. Borrow money, invest in energy and real estate, and build a financial district in Kuala Lumpur.
 Najib chaired the fund's board of advisers. Big decisions needed his approval.
 
@@ -91,7 +91,7 @@ And Good Star, they say, was controlled by Jho Low.
 
 [SCREEN] Text card: "US civil complaints: 'Good Star phase' — more than $1 billion (2009–2011, alleged)"
 
-The fund's board was told the money was going into an energy investment.
+Prosecutors say the fund's board was misled about where the money was going.
 On paper, 1MDB still owned something valuable. The real cash, according to US prosecutors, was already gone.
 
 [SCREEN] Ruling card: "Swiss Federal Criminal Court, Aug 2024 — two PetroSaudi executives convicted of fraud and money laundering (7 and 6 years). Both appealed."
@@ -109,23 +109,23 @@ And the fund was about to borrow much more.
 
 In 2012 and 2013, 1MDB raised six and a half billion dollars by selling bonds.
 The bank that arranged all three deals was Goldman Sachs.
-For that work, Goldman earned roughly six hundred million dollars in fees. Far more than banks usually make on government bonds.
+For that work, Goldman earned roughly six hundred million dollars in fees. Far more than banks usually make on deals like these.
 
 [SCREEN] Flow diagram 1: "Bond money → 'Aabar Investments PJS Ltd' (British Virgin Islands) ≠ real Aabar (Abu Dhabi)"
 
 Here is how, according to the US Justice Department, the money was moved.
-The 2012 bonds were guaranteed by a real Abu Dhabi state company called Aabar.
+The 2012 bonds were backed by a real Abu Dhabi state fund, IPIC, and its subsidiary, Aabar.
 But over one billion dollars was then wired to a different company, set up in the British Virgin Islands, with almost the same name.
-A lookalike. Prosecutors say it had nothing to do with the real Aabar.
+A lookalike. Prosecutors say it was not part of the real Aabar.
 
 [SCREEN] Flow diagram 2: "$3B bond (2013) → 'Tanore Finance' (Singapore account) → ..."
 
 In 2013, the pattern repeated. Out of a three-billion-dollar bond, about 1.26 billion dollars, prosecutors say, went to an account in Singapore held by a company called Tanore.
 
-[SCREEN] Flow diagram 3: "Tanore → $681 million → accounts of 'Malaysian Official 1' (March–April 2013)"
+[SCREEN] Flow diagram 3: "Tanore → $681 million → account of 'Malaysian Official 1' (March 2013)"
 
 And then came the most dangerous transfer of all.
-In early 2013, 681 million dollars landed in private bank accounts in Kuala Lumpur.
+In March 2013, 681 million dollars landed in a private bank account in Kuala Lumpur.
 The US complaints called the account holder "Malaysian Official 1".
 A Malaysian government minister later said that official was Najib Razak.
 
@@ -151,7 +151,7 @@ In 2018, Red Granite agreed to pay the US government sixty million dollars to se
 
 There was art. A Picasso. A Basquiat collage.
 According to the Justice Department, Jho Low gave both as gifts to the actor Leonardo DiCaprio.
-DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities, along with an Oscar statuette once won by Marlon Brando, given to him by Red Granite.
+DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities, along with an Oscar statuette once won by Marlon Brando, which prosecutors say was also a gift.
 
 [SCREEN] Card: "Equanimity — 300 ft superyacht, helipad, cinema, pool. Bought for ~$250 million (alleged, 1MDB funds)"
 
@@ -205,7 +205,7 @@ Case closed. At least in Malaysia.
 
 But the money had flowed through banks all over the world. And other countries were not closing anything.
 In July 2016, the US Justice Department filed civil lawsuits to seize more than one billion dollars in assets.
-It called the case the largest single action ever brought under its Kleptocracy Asset Recovery Initiative, a unit built to recover money stolen by foreign officials.
+It called the case the largest single action ever brought under its Kleptocracy Asset Recovery Initiative, a programme built to recover money stolen by foreign officials.
 
 [SCREEN] Card: "Singapore, 2016 — BSI Bank and Falcon Bank lose merchant-bank status over 1MDB-linked fund flows"
 
@@ -217,7 +217,7 @@ Switzerland opened criminal investigations of its own.
 At home, Malaysians filled the streets of Kuala Lumpur in yellow T-shirts, in mass rallies organized by the reform movement Bersih, calling for Najib to resign.
 In August 2015, one of those rallies went on for two days and two nights.
 He did not.
-He still controlled parliament, the police and the prosecutors.
+His coalition still controlled parliament.
 There was only one place left where he could lose. The ballot box.
 
 ---
@@ -227,7 +227,7 @@ There was only one place left where he could lose. The ballot box.
 [SCREEN] Election night card: "May 9, 2018 — Barisan Nasional loses power for the first time since independence (1957)"
 
 On May 9, 2018, Malaysia held a general election.
-Najib's coalition had ruled the country without a break since independence in 1957.
+Najib's coalition and its forerunner had ruled the country without a break since independence in 1957.
 It lost.
 The new prime minister was Mahathir Mohamad, aged 92, Najib's former mentor, who had come out of retirement to campaign against him.
 
@@ -241,7 +241,7 @@ On July 3, 2018, Najib was arrested.
 [AI-02] The superyacht leaving a harbor under grey skies, escorted by a small patrol boat, no flags or insignia
 
 And the yacht? In February 2018, at the request of the United States, Indonesian authorities had seized Equanimity off Bali.
-In August, it was handed over to Malaysia. A year later it was sold for 126 million dollars, about half of what prosecutors say it had cost.
+In August, it was handed over to Malaysia. The next year it was sold for 126 million dollars, about half of what prosecutors say it had cost.
 
 ---
 
@@ -265,16 +265,16 @@ In 2024, the Pardons Board cut his sentence in half, to six years.
 
 Then came the big one. The main 1MDB trial, about some 2.3 billion ringgit that flowed into his accounts between 2011 and 2014.
 On December 26, 2025, after a trial that lasted more than six years, the High Court found Najib guilty on all twenty-five charges.
-Fifteen years in prison, and a fine of 11.38 billion ringgit, roughly 2.7 billion dollars.
+Fifteen years in prison, and a fine of 11.38 billion ringgit, roughly 2.8 billion dollars.
 The judge ruled that the Saudi donation letters were forgeries.
 He found that Jho Low had acted as Najib's proxy, and that Najib had not been misled.
 Jho Low was not on trial there, and he denies wrongdoing.
 Najib is appealing, and maintains his innocence.
 
-[SCREEN] Card: "Sept 18, 2026 — Royal conditional pardon (SRC case only): rest of sentence under house arrest until Aug 2028"
+[SCREEN] Card: "Sept 18, 2026 — Royal conditional pardon (SRC case only): rest of sentence under house arrest until Aug 2028, once RM 50 million fine is paid · 1MDB sentence due to start Aug 2028; stay application pending"
 
-In September 2026, the King granted him a conditional pardon in the SRC case, allowing him to serve the rest of that sentence under house arrest.
-If his 1MDB conviction survives appeal, his fifteen-year sentence begins in 2028.
+In September 2026, the King granted him a conditional pardon in the SRC case. Once he pays a fifty-million-ringgit fine, he can serve the rest of that sentence under house arrest.
+His fifteen-year 1MDB sentence is due to start in August 2028. He has asked the court to suspend it pending appeal.
 
 [SCREEN] US ruling cards: "Goldman Sachs — DPA + $2.9B (2020) · Goldman Sachs Malaysia — guilty plea · Roger Ng — 10 years (2023) · Tim Leissner — 2 years (2025)"
 
@@ -293,15 +293,15 @@ The US Justice Department says it has returned about 1.4 billion dollars to Mala
 In 2019, Jho Low and his family agreed to give up assets worth more than 700 million dollars, including properties in Beverly Hills, New York and London.
 He said the deal was not an admission of guilt. The US said it did not end any criminal charges.
 
-[SCREEN] Compare card: "Recovered by Malaysia (to 2025): RM 31.3 billion · Paid into 1MDB debts: RM 42.2 billion (incl. RM 15.4 billion from the Finance Ministry)"
+[SCREEN] Compare card: "Recovered by Malaysia (to 2025): RM 31.3 billion · Paid into 1MDB debts (to July 2025): RM 42.2 billion (incl. RM 15.4 billion from the Finance Ministry)"
 
-Malaysia says it has recovered over 31 billion ringgit, including a 3.9-billion-dollar settlement with Goldman Sachs.
+Malaysia says it has recovered over 31 billion ringgit, including two and a half billion dollars in cash from Goldman Sachs.
 But the debts came first. By 2025, more than 42 billion ringgit had gone into repaying 1MDB's loans, over 15 billion of it from the Finance Ministry.
 And repayments on the last 1MDB bonds run until 2039.
 
 [AI-07] An empty construction site at dusk in a tropical city, cranes standing idle, a single light on, no people
 
-By global standards, that is a remarkable recovery. But it is still money that was taken from schools, hospitals and roads, and paid back with interest.
+Malaysia's anti-corruption chief says the country's recovery rate is among the highest in the world. But every ringgit spent on 1MDB's debts was public money that could have built schools, hospitals and roads.
 Jho Low, meanwhile, has never been caught.
 Malaysia and the United States want him. His whereabouts have never been officially confirmed.
 
@@ -315,7 +315,7 @@ So what does 1MDB teach us?
 One. When the person who approves the spending is also the person in charge of the checks, there are no checks.
 Two. A fund that raises billions with no clear business, and pays its bankers far above market rates, is telling you something.
 Three. Watch the names. A company that sounds like a real partner is not always the real partner.
-Four. When the auditors, the prosecutors and the newspapers are silenced at the same time, that is not a coincidence.
+Four. When an audit is classified secret, an attorney general is replaced and newspapers are suspended, that is not a coincidence.
 And five. Follow the money across borders.
 In the end, this case was not cracked first inside Malaysia. It was cracked by banks, regulators and prosecutors in other countries, and by a few reporters who refused to stop.
 
@@ -327,8 +327,8 @@ In the end, this case was not cracked first inside Malaysia. It was cracked by b
 
 [AI-02] The superyacht seen from a distance at dawn, small and quiet on a calm grey sea
 
-Equanimity still sails today, under a new name, for new owners.
-The film is still streaming. The bonds are still being paid.
+Equanimity was sold to a Malaysian casino operator and given a new name: Tranquility.
+The film is still watched. The bonds are still being paid.
 And for many Malaysians, the question is not only where the money went.
 It is how long everyone allowed it to go.
 And the man US prosecutors place at the center of it all has still never faced a courtroom.
@@ -341,49 +341,53 @@ Next time: another case file.
 
 ## Pre-upload fact-check list
 
-- [x] 1MDB founded 2009 (renamed from Terengganu Investment Authority); Najib PM from April 2009 and finance minister; chaired 1MDB board of advisers (court: "chairman of 1MDB's board of advisers") — NST 2025-12 (https://www.nst.com.my/amp/news/nation/2025/12/1344658/najib-not-country-bumpkin-wasnt-misled-1mdb-top-brass-watch)
-- [ ] Jho Low "not yet thirty" in 2009 (born 1981) and Wharton graduate (2005) — standard biography (Billion Dollar Whale); confirm
-- [ ] Najib's father = 2nd PM (Abdul Razak), uncle = 3rd PM (Hussein Onn) — standard biography; double-check wording "uncle"
-- [x] Jho Low: charged in US (EDNY indictment unsealed Nov 1, 2018: conspiracy to launder billions + FCPA) and in Malaysia; never tried; denies — Edge 2018 (https://www.theedgemarkets.com/article/us-doj-indicts-jho-low-leissner-roger-ng-over-1mdb); Malaymail 2018-11-01
-- [x] PetroSaudi JV Sept 2009, $1B; DOJ "Good Star phase" >$1B diverted to Swiss account of Good Star (2009–2011), alleged — DOJ civil complaints 2016 as summarized by Malaysiakini (https://malaysiakini.com/news/349302) and UNCAC Coalition (https://uncaccoalition.org/grand-corruption-in-malaysia-how-money-is-laundered-and-who-is-facilitating-it/). **Good Star "controlled by Jho Low" = DOJ allegation; keep attribution**
-- [x] Swiss Federal Criminal Court, Bellinzona, Aug 28, 2024: two PetroSaudi executives convicted (fraud, criminal mismanagement, money laundering), 7 and 6 years; both appealing — Fortune (https://fortune.com/europe/2024/08/29/swiss-court-convicts-two-petrosaudi-executives-in-the-scam-of-the-century-over-1-8-billion-embezzlement), Malaymail 2024-08-30. **Names deliberately not used (non-final). Check appeal outcome before upload**
-- [x] Goldman bonds 2012–2013 total $6.5B, ~$600M fees; $1.6B in bribes conspiracy — Central Banking (https://www.centralbanking.com/central-banks/financial-stability/7702511/regulators-fine-goldman-29-billion-over-1mdb); CNBC on Ng sentencing (https://www.cnbc.com/2023/03/10/ex-goldman-banker-ng-sentenced-to-10-years-prison-1mdb-corruption-case.html)
-- [ ] Bond split $1.75B (May 2012) + $1.75B (Oct 2012) + $3B (Mar 2013) — standard; confirm against DOJ complaint (CDCA, July 2016)
-- [x] "Aabar-BVI phase" ~$1.367B to lookalike BVI company; "Tanore phase" $1.26B (2013) — Malaysiakini summary of DOJ complaint (https://malaysiakini.com/news/349302)
-- [x] $681M into Najib's accounts in 2013 ($620M + $61M per WSJ); AG Apandi Jan 26, 2016: Saudi royal family donation, $620M returned, no offence — CNBC (https://www.cnbc.com/2016/01/25/malaysia-attorney-general-saudi-royal-family-gave-najib-681m-personal-donation.html); Al Jazeera (https://www.aljazeera.com/news/2016/1/26/malaysian-pm-cleared-of-wrongdoing-over-681m-donation)
-- [ ] "Malaysian Official 1" = Najib per a Malaysian minister (Abdul Rahman Dahlan, Sept 2016, BBC interview) — **not re-verified in this session; confirm or cut line**
-- [x] DOJ: "more than $4.5 billion" misappropriated 2009–2015 — DOJ press releases (e.g. https://www.justice.gov/archives/opa/pr/justice-department-repatriates-14b-misappropriated-1mdb-funds-malaysia)
-- [ ] Malaysia/MACC "RM42 billion misappropriated" and "RM31.3 billion (74.5%) recovered as of 2025" — Malaymail 2026-05-06 (https://www.malaymail.com/news/malaysia/2026/05/06/malaysias-1mdb-recovery-hits-rm313b-as-of-2025-ranks-among-worlds-highest-says-macc-chief/218902), via search snippet only; open the article to confirm. FX: RM42B ≈ $10B at ~4.2
-- [x] Red Granite $60M settlement (March 2018), covering Wolf of Wall Street, Daddy's Home, Dumb and Dumber To — CNBC (https://www.cnbc.com/2018/03/07/the-wolf-of-wall-street-producers-pay-60-million-to-settle-us-lawsuit-linked-to-1mdb.html)
-- [ ] Wolf of Wall Street New York premiere Dec 17, 2013 (Ziegfeld Theatre) — script says only "December 2013, New York"; confirm
-- [x] DiCaprio turned over Picasso ($3.2M) + Basquiat collage ($9M) and Brando Oscar; gifts per DOJ; never accused — The Art Newspaper (https://www.theartnewspaper.com/2017/06/19/leonardo-dicaprio-offers-to-turn-over-basquiat-and-picasso-works-to-fbi); SBS
-- [x] Equanimity ~$250M (alleged 1MDB funds); seized off Bali Feb 2018 at US request; handed to Malaysia Aug 2018; sold to Genting for $126M (2019) — Inquirer (https://newsinfo.inquirer.net/1102756/malaysia-to-sell-1mdb-linked-yacht-for-126m); Edge Singapore. **Outro line "sails today under a new name" — reported renamed "Tranquility"; confirm before upload or cut**
+_Adversarial re-check 2026-10-04 (all items below re-opened; FX at RM 4.08/USD, Bernama close Sept 30, 2026)._
+
+- [x] 1MDB: Terengganu Investment Authority formed Feb 27, 2009, taken over by Minister of Finance Inc. and renamed 1MDB July 2009 (Najib announcement July 22, 2009) — Malaysiakini (https://m8.malaysiakini.com/en/news/493123). Narration now says "took over a fund set up by the state of Terengganu and renamed it" (was "set up a new state investment fund")
+- [x] Najib PM April 3, 2009; already finance minister since Sept 17, 2008 (portfolio swap with Abdullah Badawi) and kept it — The Nut Graph (https://www.thenutgraph.com/abdullah-najib-swap-portfolios-committed-to-transition-plan/). Narration changed from "made himself finance minister" to "kept his job as finance minister"
+- [x] Najib chaired 1MDB board of advisers (court: "chairman of 1MDB's board of advisers") — NST 2025-12 (https://www.nst.com.my/amp/news/nation/2025/12/1344658/najib-not-country-bumpkin-wasnt-misled-1mdb-top-brass-watch)
+- [x] Jho Low born Nov 4, 1981 (27 in 2009 → "not yet thirty"); BSc Economics, Wharton, 2005 — standard biography (Billion Dollar Whale; Wikipedia summary). Low-risk biographical fact
+- [x] Najib's father Abdul Razak = 2nd PM; Hussein Onn = 3rd PM, Najib's uncle by marriage (the two PMs' wives were sisters) — standard; "uncle" acceptable
+- [x] Jho Low: charged in US (EDNY indictment unsealed Nov 1, 2018) and in Malaysia; never tried; denies — Edge 2018 (https://www.theedgemarkets.com/article/us-doj-indicts-jho-low-leissner-roger-ng-over-1mdb)
+- [x] PetroSaudi JV Sept 2009, $1B; DOJ "Good Star phase" >$1B to Swiss account of Good Star (2009–2011), alleged — Malaysiakini (https://malaysiakini.com/news/349302). "Board was told … energy investment" changed to the attributed "Prosecutors say the fund's board was misled about where the money was going"
+- [x] Swiss Federal Criminal Court, Aug 28, 2024: two PetroSaudi executives convicted (fraud, aggravated criminal mismanagement, money laundering), 7 and 6 years, ordered to repay ~$1.75B; both appealed — Fortune (https://fortune.com/europe/2024/08/29/swiss-court-convicts-two-petrosaudi-executives-in-the-scam-of-the-century-over-1-8-billion-embezzlement), Malaymail 2024-08-30. **No appeal ruling found as of 2026-10-04; re-check on upload day**
+- [x] Bonds: Project Magnolia $1.75B (May 2012), Project Maximus $1.75B (Oct 2012), Project Catalyze $3B (Mar 2013) = $6.5B; Goldman fees ~$600M — Fortune 2016 (https://fortune.com/2016/07/21/goldman-sachs-1mdb-fund-scandal); BenarNews 2018 (https://www.benarnews.org/english/news/malaysian/more-1mbd-12172018152209.html). "Far more than banks usually make on government bonds" → "on deals like these" (1MDB bonds were not sovereign bonds)
+- [x] 2012 bonds guaranteed by IPIC (Abu Dhabi), Aabar = IPIC subsidiary; ~$1.367B to lookalike "Aabar Investments PJS Ltd" (BVI); Tanore >$1.26B (2013) — DOJ complaint via Malaysiakini (https://malaysiakini.com/news/349302). Narration corrected: was "guaranteed by … Aabar" → "backed by … IPIC, and its subsidiary, Aabar"; "nothing to do with the real Aabar" → "not part of the real Aabar"
+- [x] $681M: Tanore → one AmBank account of MO1, $620M on ~Mar 21 + $61M on ~Mar 25, 2013; $620M wired back Aug 26, 2013 — DOJ complaint as quoted by Lim Kit Siang blog / Euromoney (https://www.euromoney.com/?p=6007). Screen card fixed "March–April 2013" → "March 2013"; narration "accounts" → "a private bank account", "early 2013" → "March 2013"
+- [x] "Malaysian Official 1" = Najib: Minister Abdul Rahman Dahlan, BBC interview, Sept 1, 2016 — The Star (https://thestar.com.my/news/nation/2016/09/01/rahman-dahlan-najib-is-mo1); Gulf Times/AFP
+- [x] AG Apandi Jan 26, 2016: Saudi royal family donation, $620M returned, no offence — CNBC (https://www.cnbc.com/2016/01/25/malaysia-attorney-general-saudi-royal-family-gave-najib-681m-personal-donation.html)
+- [x] DOJ: "more than $4.5 billion" misappropriated 2009–2015; ~$1.4B returned to Malaysia (as of June 13, 2024 release, after $156M transfer); >$1.7B seized via 41 civil forfeiture actions — DOJ/IRS-CI (https://www.irs.gov/compliance/criminal-investigation/justice-department-repatriates-1-point-4b-misappropriated-1mdb-funds-to-malaysia)
+- [x] MACC chief Azam Baki (May 2026): RM31.3B (74.5%) of RM42B misappropriated recovered as of 2025; another ~US$2B targeted — Bernama/NST (https://www.nst.com.my/amp/news/nation/2026/05/1433469/macc-pursuing-us2b-more-1mdb-asset-recovery-efforts). Narration "one of the highest recovery rates in the world" now attributed to him. RM42B ≈ $10.3B at 4.08 → "roughly ten billion dollars" OK
+- [x] Red Granite $60M settlement (March 2018) — CNBC (https://www.cnbc.com/2018/03/07/the-wolf-of-wall-street-producers-pay-60-million-to-settle-us-lawsuit-linked-to-1mdb.html)
+- [x] Wolf of Wall Street New York premiere Dec 17, 2013, Ziegfeld Theatre — Bloomberg "Scene Last Night" 2013-12-18 (https://www.bloomberg.com/news/articles/2013-12-18/scene-last-night-dicaprio-jonah-hill-belfort-at-wolf-); Getty caption. Script says "December 2013. New York." — correct
+- [x] DiCaprio: Picasso ($3.2M) and Basquiat collage ($9.2M) bought by Low with diverted funds and given to DiCaprio, per DOJ; Brando Oscar bought by Low and Red Granite executives as a gift (per DOJ); DiCaprio turned them over; never accused — Fortune 2017 (https://fortune.com/2017/06/16/1mdb-leonardo-dicaprio-fund-picasso); artnet. Narration "given to him by Red Granite" → "which prosecutors say was also a gift"
+- [x] Equanimity ~$250M (alleged); seized off Bali Feb 2018 at US request; handed to Malaysia Aug 2018; sold April 2019 to Genting Malaysia for $126M and renamed **Tranquility** — Boat International (https://www.boatinternational.com/yachts/news/seized-superyacht-equanimity-renamed-tranquility-as-sale-is-finalised--33983); FMT 2019-04-30. "A year later" → "The next year" (8 months). Outro no longer claims it "still sails today" (Genting put it back on the market in Oct 2019; current owner/status not verified)
 - [x] Monet among assets in DOJ complaints (2016/2017) — confirm specific painting if shown on screen
 - [x] 1MDB debts ~$11B in 2015 — NPR/KUER 2015-07-07 (https://www.kuer.org/2015-07-07/malaysia-freezes-bank-accounts-amid-report-of-cash-transfers-to-premier)
-- [x] Sarawak Report blocked July 20, 2015; The Edge suspended 3 months from July 27, 2015; AG Gani Patail removed July 27/28 and DPM Muhyiddin dropped July 28, 2015 — RSF (https://rsf.org/en/malaysia-issues-warrant-british-journalist-s-arrest); BenarNews (https://www.benarnews.org/english/news/malaysian/edge-1mdb-07242015183031.html, https://www.benarnews.org/english/news/malaysian/cabinet-07282015165245.html)
+- [x] July 2015: Sarawak Report blocked (July 20), The Edge suspended 3 months (from July 27), AG Gani Patail removed and DPM Muhyiddin dropped (July 28) — RSF; BenarNews (https://www.benarnews.org/english/news/malaysian/cabinet-07282015165245.html)
 - [x] WSJ July 2, 2015 "nearly $700 million" — CNBC (https://www.cnbc.com/2015/07/03/probe-finds-700m-flowed-from-1mdb-to-najib-razaks-accounts-wsj.html)
-- [ ] PetroSaudi email leak by former employee → Sarawak Report / The Edge (2015) — widely reported; employee not named in script (he was later jailed in Thailand for attempted blackmail of PetroSaudi; not used)
-- [x] DOJ July 2016: "largest single action ever brought" under Kleptocracy Asset Recovery Initiative, >$1B in assets — DOJ (https://justice.gov/opa/pr/united-states-seeks-recover-more-1-billion-obtained-corruption-involving-malaysian-sovereign)
+- [x] PetroSaudi email leak by former employee → Sarawak Report / The Edge (2015) — widely reported; employee deliberately unnamed
+- [x] 1MDB audit report classified under the Official Secrets Act (Jan 22, 2016), declassified May 2018 — The Edge (https://theedgemarkets.com/article/1mdb-audit-report-now-declassified-says-auditorgeneral); FMT 2018-05-15. Supports rewritten lesson four ("an audit is classified secret"; old "auditors … silenced" was vague). Do not imply the tampering charge: Najib was acquitted of audit-report tampering (March 2023)
+- [x] DOJ July 20, 2016: "largest single action ever brought" under the Kleptocracy Asset Recovery Initiative — DOJ (https://justice.gov/opa/pr/united-states-seeks-recover-more-1-billion-obtained-corruption-involving-malaysian-sovereign). KARI is an initiative, not a unit → narration "programme"
 - [x] MAS: BSI Singapore status withdrawn (May 24, 2016), Falcon (Oct 11, 2016) — K&L Gates (https://www.klgates.com/Singapore-Gets-Serious-About-Money-Laundering-10-13-2016)
-- [x] May 9, 2018 election: BN loses power for first time since 1957; Mahathir 92 — VOA/Commons; standard
-- [x] Police seizure: up to RM1.1B; 567 handbags, 12,000+ jewellery pieces, RM116.7M cash; Najib disputed valuation — SAYS (https://says.com/my/news/amar-singh-says-rm1-1-billion-in-cash-handbags-gems-seized-form-najib-s-properties, https://says.com/my/news/ex-pm-responds-police-reveal-valuation-items-seized-najib-linked-raids-worth-rm1-1-billion). **"423 watches" from memory of police briefing — confirm or drop from the count-up card**
-- [x] Najib arrested July 3, 2018 (Commons video dated 2018-07-03)
-- [x] SRC: July 28, 2020, 7 charges, 12 years + RM210M; upheld Court of Appeal Dec 2021; Federal Court Aug 23, 2022; Kajang Prison — Bernama (https://www.bernama.com/en/general/news.php?id=2612289); Edge
-- [x] Pardons Board Feb 2, 2024: 12 → 6 years, RM210M → RM50M, release Aug 23, 2028 — Malaymail (https://www.malaymail.com/news/malaysia/2024/02/02/pardons-board-agrees-to-cut-najibs-jail-term-by-half-out-by-august-23-2028-if-rm50m-fine-paid/115996)
-- [x] 1MDB-Tanore verdict Dec 26, 2025, Justice Collin Lawrence Sequerah: all 25 charges (4 abuse of power, 21 money laundering), RM2.28B (2011–2014); 15 years each (concurrent), ML 5 years each concurrent; fines total RM11.38B; RM2.081B sums recoverable; sentence begins after SRC term (Aug 2028) — The Edge (https://theedgemalaysia.com/node/787231, https://theedgemalaysia.com/node/787259); The Star (https://www.thestar.com.my/news/nation/2025/12/27/najib-convicted-on-all-25-charges-in-1mdb-graft-trial)
-- [x] Judge: Saudi donation letters forged; Jho Low acted as Najib's proxy; "duped" defence rejected, "not a country bumpkin" — Malaymail (https://www.malaymail.com/news/malaysia/2025/12/26/high-court-throws-out-najibs-saudi-donation-claim-in-1mdb-trial-finds-defence-untenable/203308); FMT (https://fmtv5.freemalaysiatoday.com/category/nation/2025/12/26/letters-promising-donations-to-najib-were-forged-says-high-court); NST (https://www.nst.com.my/amp/news/nation/2025/12/1344629/jho-low-acted-najibs-proxy-1mdb-dealings)
-- [x] Trial "more than six years" — charged Sept 2018, trial began Aug 2019; verdict Dec 2025 (Malaymail timeline 2025-12-27). Confirm start date (Aug 28, 2019)
-- [x] Najib appeal filed Dec 29, 2025; fresh-evidence application May 2026; stay application hearing Oct 14, 2026; Court of Appeal awaiting written grounds — Malaymail (https://www.malaymail.com/news/malaysia/2026/05/29/najib-files-for-new-evidence-in-bid-to-overturn-1mdb-conviction/221800); FMT (https://www.freemalaysiatoday.com/category/nation/2026/09/25/najib-seeks-stay-of-1mdb-conviction-imprisonment-and-rm11bil-fine); Media Selangor (https://mediaselangor.com/en/2026/09/397490). **Re-check after Oct 14, 2026 hearing**
-- [x] Sept 18, 2026: King Sultan Ibrahim grants conditional pardon in SRC case; house arrest until Aug 23, 2028; condition: RM50M fine; AG: applies only to SRC — Bernama (https://www.bernama.com/en/general/news.php?id=2612289); The Star (https://www.thestar.com.my/news/nation/2026/09/18/conditional-pardon-house-arrest-for-najib-in-src-case-but-massive-legal-battles-remain); Malaysiakini (https://www.malaysiakini.com/news/885302-najibs-conditional-pardon-only-applies-to-src-international-case-ag)
-- [x] Goldman: Oct 22, 2020, >$2.9B global resolution, 3-year DPA (FCPA conspiracy), Goldman Sachs (Malaysia) Sdn Bhd guilty plea — DOJ EDNY (https://www.justice.gov/usao-edny/pr/goldman-sachs-resolves-foreign-bribery-case-and-agrees-pay-over-29-billion); SEC 8-K (https://www.sec.gov/Archives/edgar/data/886982/000119312520274226/d73654d8k.htm)
-- [x] Goldman–Malaysia settlement July 2020: $2.5B cash + $1.4B asset-recovery guarantee = $3.9B — Fortune (https://fortune.com/2020/07/24/malaysia-goldman-sachs-1mdb-settlement). **Later arbitration dispute over the $1.4B guarantee (2023–) — current status not confirmed; not in narration**
-- [x] Roger Ng: convicted by EDNY jury April 2022; 10 years, March 9, 2023 — CNBC; DOJ (https://www.justice.gov/archives/opa/pr/former-goldman-sachs-investment-banker-sentenced-27b-bribery-and-money-laundering-scheme). Transferred to Malaysia (Oct 2023) to face trial, to return to US afterwards — BenarNews (https://www.benarnews.org/english/news/malaysian/roger-ng-1mdb-return-malaysia-10062023142851.html). Not in narration
-- [x] Tim Leissner: pleaded guilty 2018 (FCPA + money-laundering conspiracy); sentenced May 29/30, 2025 to 2 years by Chief Judge Margo Brodie — Al Jazeera (https://www.aljazeera.com/news/2025/5/30/sentence-for-ex-goldman-banker-in-1mdb-case-too-short-malaysian-minister); Malaymail 2025-05-30
-- [x] DOJ total returned ~$1.4B — DOJ (https://www.justice.gov/archives/opa/pr/justice-department-repatriates-14b-misappropriated-1mdb-funds-malaysia)
-- [x] Jho Low settlement Oct 30, 2019: >$700M (Beverly Hills, NY, London real estate, Beverly Hills hotel, business investments); "does not constitute an admission of guilt"; DOJ: no release from criminal charges — Edge (https://theedgemarkets.com/node/485498); Malaymail (https://www.malaymail.com/news/malaysia/2019/10/31/jho-low-insists-not-admitting-guilt-in-near-us1b-settlement-with-doj/1805370)
-- [x] Malaysia: RM42.17B channelled to 1MDB debts to July 31, 2025 (RM15.44B MOF + RM26.73B recovered assets); outstanding sukuk to 2039, RM9.02B — search summary of Finance Ministry figures (Malaymail 2025-08-14 https://www.malaymail.com/news/malaysia/2025/08/14/putrajaya-says-clawed-back-rm297b-from-1mdb-and-src-since-2018/187561; 2025-11-28 https://www.malaymail.com/news/malaysia/2025/11/28/govt-recovers-rm312b-linked-to-1mdb-and-src-as-of-september-says-finance-ministry/199952). **Open articles to confirm exact numbers**
-- [ ] Jho Low whereabouts: claims he lives in Shanghai under an alias (Hope & Wright, July 2025) — unverified; script says only "never officially confirmed" — Malaymail 2025-07-19 (https://www.malaymail.com/news/malaysia/2025/07/19/jho-low-resurfaces-billion-dollar-whale-authors-claim-fugitive-living-in-shanghai-under-alias-fake-passport-video/184459)
-- [ ] FX conversions (RM11.38B ≈ $2.7B; RM42B ≈ $10B at ~4.2 RM/USD, 2026) — recheck on upload day
+- [x] Bersih 4, Aug 29–30, 2015 (34 hours) — standard. "He still controlled parliament, the police and the prosecutors" (unsourced characterisation) → "His coalition still controlled parliament"
+- [x] May 9, 2018 election: BN (and its forerunner, the Alliance) loses power for first time since 1957; Mahathir 92 — standard. Narration now says "coalition and its forerunner" (BN itself formed 1973)
+- [x] Police seizure (Amar Singh, June 2018): 567 handbags, 423 watches, ~12,000 jewellery pieces, RM116.7M cash; up to RM1.1B (~US$273M); Najib disputed — OCCRP (https://www.occrp.org/en/daily/8272-goods-seized-from-former-malaysian-pm-worth-us-273-million); SAYS. **423 watches confirmed**
+- [x] Najib arrested July 3, 2018
+- [x] SRC: July 28, 2020, 7 charges, 12 years + RM210M; Court of Appeal Dec 2021; Federal Court Aug 23, 2022 — Bernama; Edge
+- [x] Pardons Board Feb 2, 2024: 12 → 6 years, RM210M → RM50M, release Aug 23, 2028 — Malaymail 2024-02-02
+- [x] 1MDB verdict Dec 26, 2025, Justice Collin Lawrence Sequerah: all 25 charges (4 abuse of power: 15 yrs each; 21 ML: 5 yrs each; all concurrent); fine RM11,387,888,067.05; ~RM2.08B forfeiture; RM2.3B, abuse-of-power period Feb 24, 2011–Dec 19, 2014; trial began Aug 28, 2019 (charged Sept 20, 2018) → "more than six years" OK; sentence starts after SRC term (Aug 23, 2028) — The Star (https://www.thestar.com.my/news/nation/2025/12/27/najib-convicted-on-all-25-charges-in-1mdb-graft-trial); NST (https://www.nst.com.my/amp/news/nation/2025/12/1345199/najibs-prison-term-could-run-until-2043-if-all-appeals-fail); Bloomberg Law ($2.8B). FX: RM11.38B ÷ 4.08 ≈ $2.79B → narration "2.7" corrected to "2.8 billion dollars"
+- [x] Judge: Saudi donation letters forged; Jho Low acted as Najib's proxy; "duped" defence rejected — Malaymail; FMT; NST (https://www.nst.com.my/amp/news/nation/2025/12/1344629/jho-low-acted-najibs-proxy-1mdb-dealings)
+- [x] Najib appeal filed Dec 29/30, 2025 (conviction and sentence) — Malaymail 2025-12-30. Stay-of-execution application (sentence + fine, pending all appeals) filed Sept 25, 2026; **High Court hearing fixed for Oct 14, 2026** — Malaysiakini (https://www.malaysiakini.com/news/885714-court-to-hear-najibs-bid-to-stay-1mdb-sentence-on-oct-14); The Star 2026-09-25. Narration states only that he "has asked the court to suspend it pending appeal" (old line "if his conviction survives appeal, his sentence begins in 2028" was wrong: the sentence is set to start Aug 2028 unless stayed). **If uploading after Oct 14, update the line and card with the ruling**
+- [x] Sept 18, 2026 conditional pardon (SRC only), house arrest until Aug 23, 2028, **condition: payment of RM50M fine**; AG: applies only to SRC — Malaymail 2026-09-18; The Star 2026-09-19 (https://www.thestar.com.my/news/nation/2026/09/19/prisons-dept-to-issue-sops-for-najibs-house-arrest); Malaysiakini (https://www.malaysiakini.com/news/885302-najibs-conditional-pardon-only-applies-to-src-international-case-ag). Fine condition added to narration and card. **As of late Sept/early Oct 2026 the fine was unpaid and Najib was still in Kajang Prison** (Borneo Post 2026-09-21; Malaymail 2026-09-29) — narration deliberately avoids saying where he is now; re-check on upload day
+- [x] Goldman: Oct 22, 2020, >$2.9B, DPA + Goldman Sachs (Malaysia) guilty plea — DOJ EDNY (https://www.justice.gov/usao-edny/pr/goldman-sachs-resolves-foreign-bribery-case-and-agrees-pay-over-29-billion)
+- [x] Goldman–Malaysia settlement July 2020: $2.5B cash + $1.4B asset-recovery guarantee; Goldman began LCIA arbitration (Oct 2023) arguing the guarantee is discharged; Malaysia disputes; no resolution found — Al Jazeera 2023 (https://www.aljazeera.com/news/2023/10/12/why-is-goldman-sachs-suing-malaysia-over-1mdb-scandal). Narration changed from "a 3.9-billion-dollar settlement" to "two and a half billion dollars in cash from Goldman Sachs"
+- [x] Roger Ng: jury conviction April 2022; 10 years, March 9, 2023 — CNBC; DOJ
+- [x] Tim Leissner: guilty plea 2018; 2 years, May 2025 — Al Jazeera (https://www.aljazeera.com/news/2025/5/30/sentence-for-ex-goldman-banker-in-1mdb-case-too-short-malaysian-minister)
+- [x] Jho Low settlement Oct 30, 2019: >$700M; not an admission of guilt; no release from criminal charges — Edge; Malaymail 2019-10-31
+- [x] Finance Ministry (written parliamentary reply, Aug 2025): RM42.17B channelled to 1MDB debt payments and commitments to July 31, 2025 (RM15.44B MOF/MoF Inc + RM26.73B recovered assets); sukuk IMTN outstanding to 2039 RM9.02B — Bernama (https://bernama.com/lite/news.php?id=2456412); The Sun. Card now says "to July 2025"
+- [ ] Jho Low whereabouts: unverified claims (Shanghai, Macau); script says only "never officially confirmed" — Malaymail 2025-07-19
+- [x] FX (Sept 30, 2026 close RM 4.0785/USD, Bernama https://www.bernama.com/en/market/news.php?id=2613856): RM11.38B ≈ $2.8B; RM42B ≈ $10.3B. Recheck if ringgit moves >3% before upload
 
 ---
 
@@ -461,7 +465,7 @@ Legal ground rules:
 ### Self-made graphics (the core of this episode)
 | Section | Graphic |
 |---|---|
-| 0 | Black card "According to the US Justice Department, this film was paid for with stolen money." |
+| 0 | Black card "According to the US Justice Department, this film was paid for with misappropriated money." |
 | 1 | Malaysia map zoom; title card 1MDB; Najib "three hats" compare card |
 | 2 | Timeline Sept 2009; flow diagram 1MDB → JV → Good Star; Swiss ruling card |
 | 3 | Bond counter ($6.5B); three flow diagrams (Aabar lookalike, Tanore, MO1); $4.5B count-up |
