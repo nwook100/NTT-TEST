@@ -1,0 +1,305 @@
+{
+ "section": "5",
+ "chunks": [
+  {
+   "id": 29,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s05_chapter_the_bonds_sold_at_the_counter.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_03_35824_bond_victims_zoom.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_fake_bonds",
+     "args": {
+      "lines": [
+       "These were fake bonds"
+      ],
+      "red": [
+       "fake"
+      ],
+      "kicker": "THE COURT FOUND",
+      "dur": 3.5,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s05_flow_sold_through",
+     "args": {
+      "title": "SOLD THROUGH",
+      "dur": 4.0,
+      "nodes": [
+       {
+        "id": "b",
+        "label": "25 bond issues",
+        "x": 0.0,
+        "y": 0.5,
+        "sub": "2018–2020"
+       },
+       {
+        "id": "f",
+        "label": "A securities firm",
+        "x": 0.85,
+        "y": 0.1
+       },
+       {
+        "id": "s",
+        "label": "SCB's own branches",
+        "x": 0.85,
+        "y": 0.9,
+        "red": true
+       }
+      ],
+      "edges": [
+       {
+        "from": "b",
+        "to": "f"
+       },
+       {
+        "from": "b",
+        "to": "s",
+        "red": true
+       }
+      ],
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s05_compare_deposit_vs_bond",
+     "args": {
+      "title": "A FEW LINES OF SMALL PRINT",
+      "dur": 6.0,
+      "left": {
+       "head": "A deposit",
+       "big": "A claim on the bank",
+       "sub": "backed, up to a limit, by deposit insurance"
+      },
+      "right": {
+       "head": "A corporate bond",
+       "big": "A loan to a company"
+      },
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_you_can_lose_it",
+     "args": {
+      "lines": [
+       "If the company can't pay,",
+       "you can lose it."
+      ],
+      "red": [
+       "lose"
+      ],
+      "dur": 4.5,
+      "stagger": 1.2,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s05_keyphrase_as_safe_as_a_deposit.mp4"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_training_sessions",
+     "args": {
+      "lines": [
+       "Training sessions",
+       "for thousands of sales staff"
+      ],
+      "red": [
+       "thousands"
+      ],
+      "kicker": "ACCORDING TO STATE MEDIA",
+      "dur": 4.0,
+      "stagger": 0.6,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s05_countup_35824_victims.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_1.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s05_flow_where_did_it_go",
+     "args": {
+      "title": "WHERE DID IT GO?",
+      "dur": 6.0,
+      "nodes": [
+       {
+        "id": "m",
+        "label": "₫30 trillion+",
+        "x": 0.0,
+        "y": 0.5,
+        "sub": "taken from bondholders",
+        "red": true
+       },
+       {
+        "id": "a",
+        "label": "Repaying bank loans",
+        "x": 0.8,
+        "y": 0.0
+       },
+       {
+        "id": "b",
+        "label": "Paying interest on older bonds",
+        "x": 0.8,
+        "y": 0.25
+       },
+       {
+        "id": "c",
+        "label": "Projects",
+        "x": 0.8,
+        "y": 0.5
+       },
+       {
+        "id": "d",
+        "label": "Transfers abroad",
+        "x": 0.8,
+        "y": 0.75
+       },
+       {
+        "id": "e",
+        "label": "Lan's personal spending",
+        "x": 0.8,
+        "y": 1.0,
+        "red": true
+       }
+      ],
+      "edges": [
+       {
+        "from": "m",
+        "to": "a"
+       },
+       {
+        "from": "m",
+        "to": "b"
+       },
+       {
+        "from": "m",
+        "to": "c"
+       },
+       {
+        "from": "m",
+        "to": "d"
+       },
+       {
+        "from": "m",
+        "to": "e",
+        "red": true
+       }
+      ],
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/gold_bars_1.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 31,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 33,
+   "name": "glitch",
+   "offset": 4.8,
+   "gain_db": -12
+  },
+  {
+   "chunk": 35,
+   "name": "impact",
+   "offset": 2.55,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 35,
+   "dur": 1.2
+  }
+ ]
+}

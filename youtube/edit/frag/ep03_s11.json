@@ -1,0 +1,106 @@
+{
+ "section": "11",
+ "chunks": [
+  {
+   "id": 65,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s11_chapter_outro.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/shuttered_shop_night_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s11_kp_bank_became_a_wallet",
+     "args": {
+      "lines": [
+       "And somewhere in between,",
+       "a bank became a wallet."
+      ],
+      "red": [
+       "wallet."
+      ],
+      "dur": 3.5,
+      "stagger": 0.6,
+      "size": 108,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s11_tw_next_time_china",
+     "args": {
+      "text": "NEXT TIME: CHINA",
+      "sub": "— an online platform that promised safety",
+      "dur": 3.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/server_room_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s11_countup_900000_investors.mp4"
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Subscribe so you don't miss it.",
+     "style": "label"
+    },
+    {
+     "kind": "text",
+     "text": "Would you know if your bank\nwas selling you something\nthat wasn't a deposit?",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s11_saigon_night_ov_2.jpg",
+     "fx": "out"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 66,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 66,
+   "name": "impact",
+   "offset": 6.6,
+   "gain_db": -15
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 66,
+   "dur": 1.5
+  }
+ ]
+}

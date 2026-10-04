@@ -1,0 +1,2326 @@
+{
+ "episode": "ep03_truong_my_lan",
+ "chunks": {
+  "0": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s00_tw_2019_2022_hcmc",
+    "args": {
+     "text": "2019–2022 — HO CHI MINH CITY",
+     "sub": "a driver kept a notebook",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/notebook_numbers_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/parking_garage_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "1": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s00_countup_108_trillion_dong.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4",
+    "start": 1.5
+   }
+  ],
+  "2": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_safe_as_a_deposit",
+    "args": {
+     "lines": [
+      "Something that sounded",
+      "as safe as a deposit.",
+      "It wasn't."
+     ],
+     "red": [
+      "wasn't."
+     ],
+     "dur": 4.5,
+     "stagger": 1.4,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "3": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_story_of_truong_my_lan",
+    "args": {
+     "lines": [
+      "Truong My Lan"
+     ],
+     "kicker": "THIS IS THE STORY OF",
+     "dur": 3.0,
+     "size": 130,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s00_chapter_the_bank_she_secretly_owned.mp4"
+   }
+  ],
+  "4": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s01_chapter_from_a_market_stall_to_an_empire.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s01_typewriter_hcmc.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_day_1.mp4"
+   }
+  ],
+  "5": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_district1_ov_4.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/vietnam_market_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_3.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_1.jpg",
+    "fx": "out",
+    "overlay": "assets/ep03_truong_my_lan/motion/s01_lowerthird_ben_thanh.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_ben_thanh_ov_4.jpg",
+    "crop": "detail",
+    "fx": "in"
+   }
+  ],
+  "6": [
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s01_tl_1956_to_2022",
+    "args": {
+     "events": [
+      [
+       "1956",
+       "born"
+      ],
+      [
+       "1992",
+       "Van Thinh Phat founded"
+      ],
+      [
+       "2012",
+       "SCB formed"
+      ],
+      [
+       "2022",
+       "arrest"
+      ]
+     ],
+     "title": "TRUONG MY LAN",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
+    "crop": "left",
+    "fx": "right"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_1.jpg",
+    "crop": "left",
+    "fx": "in"
+   }
+  ],
+  "7": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_2.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_linked_to_van_thinh_phat",
+    "args": {
+     "lines": [
+      "Times Square Saigon",
+      "Windsor Plaza Hotel"
+     ],
+     "kicker": "LINKED TO VAN THINH PHAT",
+     "dur": 4.0,
+     "stagger": 0.8,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_2.jpg",
+    "fx": "left"
+   }
+  ],
+  "8": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_times_square_saigon_3.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_cheapest_money_is_a_banks",
+    "args": {
+     "lines": [
+      "And the cheapest money,",
+      "if you can get it,",
+      "is a bank's."
+     ],
+     "red": [
+      "bank's."
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "9": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s02_chapter_buying_a_bank_quietly.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s02_typewriter_dec_2011_scb.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_1.jpg",
+    "fx": "in",
+    "overlay": "assets/ep03_truong_my_lan/motion/s02_lowerthird_scb.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "10": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_2.jpg",
+    "crop": "detail",
+    "fx": "in"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s02_compare_5_vs_91_5_percent.mp4"
+   }
+  ],
+  "11": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+   }
+  ],
+  "12": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_proxies_relatives_employees",
+    "args": {
+     "lines": [
+      "Relatives.",
+      "Employees.",
+      "Associates."
+     ],
+     "kicker": "PROXIES · ACCORDING TO INVESTIGATORS",
+     "red": [
+      "associates."
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s02_count_75_percent_proxies",
+    "args": {
+     "to": 75,
+     "prefix": "> ",
+     "suffix": "%",
+     "kicker": "THE COURT SAID",
+     "label": "OF THE SHARES",
+     "sublabel": "all admitted they were acting for her",
+     "dur": 5.0,
+     "count_time": 2.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "13": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s02_flow_org_chart",
+    "args": {
+     "nodes": [
+      {
+       "id": "lan",
+       "label": "Truong My Lan",
+       "x": 0.5,
+       "y": 0.0,
+       "red": true
+      },
+      {
+       "id": "p1",
+       "label": "proxy shareholder",
+       "x": 0.12,
+       "y": 0.5
+      },
+      {
+       "id": "p2",
+       "label": "proxy shareholder",
+       "x": 0.5,
+       "y": 0.5
+      },
+      {
+       "id": "p3",
+       "label": "proxy shareholder",
+       "x": 0.88,
+       "y": 0.5
+      },
+      {
+       "id": "board",
+       "label": "SCB board & executives",
+       "x": 0.5,
+       "y": 1.0
+      }
+     ],
+     "edges": [
+      {
+       "from": "lan",
+       "to": "p1"
+      },
+      {
+       "from": "lan",
+       "to": "p2"
+      },
+      {
+       "from": "lan",
+       "to": "p3"
+      },
+      {
+       "from": "p1",
+       "to": "board"
+      },
+      {
+       "from": "p2",
+       "to": "board"
+      },
+      {
+       "from": "p3",
+       "to": "board"
+      }
+     ],
+     "title": "THE COURT FOUND",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/stamping_documents_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4",
+    "start": 2.5,
+    "grade": "cold"
+   }
+  ],
+  "14": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_bank_answered_to_her",
+    "args": {
+     "lines": [
+      "In practice, the court said,",
+      "the bank answered to her."
+     ],
+     "red": [
+      "her."
+     ],
+     "dur": 4.5,
+     "stagger": 1.2,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "15": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s03_chapter_the_piggy_bank.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/saigon_skyline_river_night_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s03_keyphrase_how_the_money_left.mp4"
+   }
+  ],
+  "16": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s03_countup_1000_companies.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+   }
+  ],
+  "17": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s03_flow_step2_loans",
+    "args": {
+     "title": "STEP 2 · LOANS",
+     "dur": 5.0,
+     "nodes": [
+      {
+       "id": "g",
+       "label": "Ghost company",
+       "x": 0.0,
+       "y": 0.5
+      },
+      {
+       "id": "l",
+       "label": "Loan application",
+       "x": 0.5,
+       "y": 0.5
+      },
+      {
+       "id": "s",
+       "label": "SCB",
+       "x": 1.0,
+       "y": 0.5,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "g",
+       "to": "l"
+      },
+      {
+       "from": "l",
+       "to": "s"
+      }
+     ],
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/stamping_documents_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s03_stamp_approved.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_countup_916_loan_applications",
+    "args": {
+     "to": 916,
+     "kicker": "2018–2022 · THE COURT COUNTED",
+     "label": "LOAN APPLICATIONS",
+     "sublabel": "worth around ₫545 trillion",
+     "dur": 5.0,
+     "count_time": 2.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_2.jpg",
+    "fx": "in"
+   }
+  ],
+  "18": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_2.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_collateral_inflated",
+    "args": {
+     "lines": [
+      "Collateral value",
+      "inflated"
+     ],
+     "red": [
+      "inflated"
+     ],
+     "kicker": "STEP 3 · ACCORDING TO THE COURT",
+     "dur": 4.5,
+     "stagger": 0.7,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"
+   }
+  ],
+  "19": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/server_room_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s03_flow_step4_money_moves_on",
+    "args": {
+     "title": "STEP 4 · THE MONEY MOVES ON",
+     "dur": 6.0,
+     "nodes": [
+      {
+       "id": "scb",
+       "label": "SCB",
+       "x": 0.0,
+       "y": 0.5,
+       "sub": "loan money",
+       "red": true
+      },
+      {
+       "id": "a",
+       "label": "Other accounts",
+       "x": 0.8,
+       "y": 0.0
+      },
+      {
+       "id": "o",
+       "label": "Old loans",
+       "x": 0.8,
+       "y": 0.33
+      },
+      {
+       "id": "p",
+       "label": "Van Thinh Phat projects",
+       "x": 0.8,
+       "y": 0.66
+      },
+      {
+       "id": "c",
+       "label": "Cash",
+       "x": 0.8,
+       "y": 1.0
+      }
+     ],
+     "edges": [
+      {
+       "from": "scb",
+       "to": "a"
+      },
+      {
+       "from": "scb",
+       "to": "o"
+      },
+      {
+       "from": "scb",
+       "to": "p"
+      },
+      {
+       "from": "scb",
+       "to": "c",
+       "red": true
+      }
+     ],
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/money_counter_2.mp4"
+   }
+  ],
+  "20": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_loan_valuation_transfer",
+    "args": {
+     "lines": [
+      "A loan.",
+      "A valuation.",
+      "A transfer."
+     ],
+     "kicker": "EACH STEP LOOKED LIKE ORDINARY BANKING",
+     "dur": 3.0,
+     "stagger": 0.7,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s03_flow_one_direction_out",
+    "args": {
+     "title": "A PIPE THAT RAN IN ONE DIRECTION",
+     "dur": 6.0,
+     "nodes": [
+      {
+       "id": "l",
+       "label": "A loan",
+       "x": 0.0,
+       "y": 0.5
+      },
+      {
+       "id": "v",
+       "label": "A valuation",
+       "x": 0.33,
+       "y": 0.5
+      },
+      {
+       "id": "t",
+       "label": "A transfer",
+       "x": 0.66,
+       "y": 0.5
+      },
+      {
+       "id": "o",
+       "label": "Out",
+       "x": 1.0,
+       "y": 0.5,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "l",
+       "to": "v"
+      },
+      {
+       "from": "v",
+       "to": "t"
+      },
+      {
+       "from": "t",
+       "to": "o",
+       "red": true
+      }
+     ],
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "21": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/parking_garage_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s03_typewriter_feb_2019_2022",
+    "args": {
+     "text": "FEBRUARY 2019 – 2022",
+     "sub": "— according to prosecutors",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/saigon_traffic_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/notebook_numbers_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s00_countup_108_trillion_dong.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/money_counter_1.mp4"
+   }
+  ],
+  "22": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_countup_216_million_notes_6s",
+    "args": {
+     "to": 216,
+     "suffix": " MILLION",
+     "kicker": "OUR MATH",
+     "label": "LARGEST NOTE: ₫500,000 → 108 TRILLION = 216 MILLION NOTES",
+     "sublabel": "Vietnam's largest banknote",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "23": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_01_304_trillion_embezzled_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s03_countup_304_trillion_dong.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_day_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_three_percent_of_economy",
+    "args": {
+     "lines": [
+      "Close to three percent",
+      "of Vietnam's entire economy"
+     ],
+     "red": [
+      "percent"
+     ],
+     "kicker": "INTERNATIONAL MEDIA · 2022",
+     "dur": 4.5,
+     "stagger": 0.8,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/motorbikes_saigon_2.mp4",
+    "start": 1.5
+   }
+  ],
+  "24": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s04_chapter_paying_the_referee.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s04_state_bank_2.jpg",
+    "fx": "in",
+    "overlay": "assets/ep03_truong_my_lan/motion/s04_lowerthird_state_bank.mp4"
+   }
+  ],
+  "25": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s04_countup_5_2M_bribe.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/usd_cash_1.mp4"
+   }
+  ],
+  "26": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s04_stamp_results_altered.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
+    "fx": "left",
+    "crop": "left"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/rain_night_street_1.mp4"
+   }
+  ],
+  "27": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_02_inspector_5_2M_life_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_countup_15_officials",
+    "args": {
+     "to": 15,
+     "kicker": "STOOD TRIAL ALONGSIDE LAN",
+     "label": "FORMER CENTRAL-BANK OFFICIALS",
+     "dur": 4.5,
+     "count_time": 1.5,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_inspectorate_audit_office",
+    "args": {
+     "lines": [
+      "Government Inspectorate",
+      "State Audit Office"
+     ],
+     "kicker": "ALONG WITH OFFICIALS FROM THE",
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_3.jpg",
+    "fx": "out",
+    "crop": "top"
+   }
+  ],
+  "28": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s04_state_bank_1.jpg",
+    "fx": "in",
+    "crop": "top"
+   },
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s04_wbw_stayed_unchecked",
+    "args": {
+     "text": "The people whose job was to check the bank were, according to the court, part of how the bank stayed unchecked.",
+     "red": [
+      "unchecked."
+     ],
+     "dur": 6.0,
+     "size": 76,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "29": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s05_chapter_the_bonds_sold_at_the_counter.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4"
+   }
+  ],
+  "30": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_03_35824_bond_victims_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_fake_bonds",
+    "args": {
+     "lines": [
+      "These were fake bonds"
+     ],
+     "red": [
+      "fake"
+     ],
+     "kicker": "THE COURT FOUND",
+     "dur": 4.0,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"
+   }
+  ],
+  "31": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s05_flow_sold_through",
+    "args": {
+     "title": "SOLD THROUGH",
+     "dur": 4.0,
+     "nodes": [
+      {
+       "id": "b",
+       "label": "25 bond issues",
+       "x": 0.0,
+       "y": 0.5,
+       "sub": "2018–2020"
+      },
+      {
+       "id": "f",
+       "label": "A securities firm",
+       "x": 0.85,
+       "y": 0.1
+      },
+      {
+       "id": "s",
+       "label": "SCB's own branches",
+       "x": 0.85,
+       "y": 0.9,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "b",
+       "to": "f"
+      },
+      {
+       "from": "b",
+       "to": "s",
+       "red": true
+      }
+     ],
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "32": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s05_compare_deposit_vs_bond",
+    "args": {
+     "title": "A FEW LINES OF SMALL PRINT",
+     "dur": 6.0,
+     "left": {
+      "head": "A deposit",
+      "big": "A claim on the bank",
+      "sub": "backed, up to a limit, by deposit insurance"
+     },
+     "right": {
+      "head": "A corporate bond",
+      "big": "A loan to a company"
+     },
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_you_can_lose_it",
+    "args": {
+     "lines": [
+      "If the company can't pay,",
+      "you can lose it."
+     ],
+     "red": [
+      "lose"
+     ],
+     "dur": 4.5,
+     "stagger": 1.2,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "33": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s05_keyphrase_as_safe_as_a_deposit.mp4"
+   }
+  ],
+  "34": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_training_sessions",
+    "args": {
+     "lines": [
+      "Training sessions",
+      "for thousands of sales staff"
+     ],
+     "red": [
+      "thousands"
+     ],
+     "kicker": "ACCORDING TO STATE MEDIA",
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "35": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s05_countup_35824_victims.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_1.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s05_flow_where_did_it_go",
+    "args": {
+     "title": "WHERE DID IT GO?",
+     "dur": 6.0,
+     "nodes": [
+      {
+       "id": "m",
+       "label": "₫30 trillion+",
+       "x": 0.0,
+       "y": 0.5,
+       "sub": "taken from bondholders",
+       "red": true
+      },
+      {
+       "id": "a",
+       "label": "Repaying bank loans",
+       "x": 0.8,
+       "y": 0.0
+      },
+      {
+       "id": "b",
+       "label": "Paying interest on older bonds",
+       "x": 0.8,
+       "y": 0.25
+      },
+      {
+       "id": "c",
+       "label": "Projects",
+       "x": 0.8,
+       "y": 0.5
+      },
+      {
+       "id": "d",
+       "label": "Transfers abroad",
+       "x": 0.8,
+       "y": 0.75
+      },
+      {
+       "id": "e",
+       "label": "Lan's personal spending",
+       "x": 0.8,
+       "y": 1.0,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "m",
+       "to": "a"
+      },
+      {
+       "from": "m",
+       "to": "b"
+      },
+      {
+       "from": "m",
+       "to": "c"
+      },
+      {
+       "from": "m",
+       "to": "d"
+      },
+      {
+       "from": "m",
+       "to": "e",
+       "red": true
+      }
+     ],
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/gold_bars_1.mp4"
+   }
+  ],
+  "36": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s06_chapter_the_run.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s06_typewriter_october_2022.mp4"
+   }
+  ],
+  "37": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/queue_people_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s06_saigon_motorbikes_ov_1.jpg",
+    "fx": "in",
+    "crop": "bottom"
+   },
+   {
+    "kind": "text",
+    "text": "They had no idea\nwho really controlled it.",
+    "style": "quote"
+   }
+  ],
+  "38": [
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s06_timeline_oct_2022",
+    "args": {
+     "events": [
+      [
+       "Oct 2022",
+       "Lan arrested"
+      ],
+      [
+       "Within days",
+       "crowds at SCB branches"
+      ],
+      [
+       "Oct 2022",
+       "State Bank places SCB under special control"
+      ]
+     ],
+     "title": "THE RUN",
+     "dur": 4.8,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s04_state_bank_1.jpg",
+    "fx": "out",
+    "crop": "detail"
+   }
+  ],
+  "39": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s06_countup_25_6B_central_bank.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "And the bondholders discovered\nthat the companies behind their bonds\ncould not pay.",
+    "style": "quote"
+   }
+  ],
+  "40": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s06_saigon_rain_ov_3.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s06_flow_central_bank_keeps_scb_alive",
+    "args": {
+     "nodes": [
+      {
+       "id": "cb",
+       "label": "Central bank",
+       "x": 0.12,
+       "y": 0.5
+      },
+      {
+       "id": "scb",
+       "label": "SCB",
+       "sub": "a private bank",
+       "x": 0.88,
+       "y": 0.5,
+       "red": true
+      }
+     ],
+     "edges": [
+      {
+       "from": "cb",
+       "to": "scb",
+       "label": "kept lending"
+      }
+     ],
+     "title": "IN EFFECT",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_panic_whole_system",
+    "args": {
+     "lines": [
+      "letting it fail risked spreading panic",
+      "through the whole system"
+     ],
+     "red": [
+      "panic"
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "41": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s07_chapter_the_trial.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_2.jpg",
+    "fx": "in",
+    "crop": "bottom",
+    "overlay": "assets/ep03_truong_my_lan/motion/s07_lowerthird_hcmc_court.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_blazing_furnace",
+    "args": {
+     "lines": [
+      "the \"blazing furnace\""
+     ],
+     "kicker": "THE COMMUNIST PARTY'S ANTI-CORRUPTION CAMPAIGN",
+     "red": [
+      "furnace"
+     ],
+     "dur": 4.5,
+     "size": 120,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "42": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s07_countup_86_defendants.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_104_boxes",
+    "args": {
+     "to": 104,
+     "kicker": "ACCORDING TO THE BBC",
+     "label": "BOXES OF CASE FILES",
+     "sublabel": "weighing six tonnes",
+     "dur": 4.5,
+     "count_time": 1.6,
+     "size": 260,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "Lan denied embezzling.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "She said she had only a small stake in the bank,\nand blamed her subordinates.",
+    "style": "quote"
+   }
+  ],
+  "43": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/courtroom_gavel_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_criminal_enterprise",
+    "args": {
+     "lines": [
+      "orchestrated a sophisticated",
+      "criminal enterprise"
+     ],
+     "kicker": "THE COURT SAID SHE HAD",
+     "red": [
+      "criminal"
+     ],
+     "dur": 3.5,
+     "stagger": 0.7,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "44": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s07_typewriter_april_11_2024.mp4"
+   }
+  ],
+  "45": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_04_death_sentence_2024_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s07_stamp_death.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s07_countup_674_trillion_to_scb.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_05_674_trillion_to_scb_zoom.mp4"
+   }
+  ],
+  "46": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_husband_niece",
+    "args": {
+     "lines": [
+      "Husband — 9 yrs",
+      "Niece (Van Thinh Phat CEO) — 17 yrs"
+     ],
+     "red": [
+      "17"
+     ],
+     "dur": 4.5,
+     "stagger": 1.2,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_four_life",
+    "args": {
+     "lines": [
+      "two former chairmen of the bank,",
+      "its former general director,",
+      "and the central-bank inspection chief"
+     ],
+     "kicker": "FOUR DEFENDANTS SENTENCED TO LIFE",
+     "red": [
+      "chief"
+     ],
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_3.jpg",
+    "fx": "in",
+    "crop": "bottom"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s07_stamp_all_86_guilty",
+    "args": {
+     "word": "GUILTY",
+     "sub": "EVERY ONE OF THE 86",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "47": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_chapter_death_row_then_a_second_trial.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_timeline_2024_2025.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_06_life_sentence_bond_fraud_zoom.mp4"
+   }
+  ],
+  "48": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s08_count_445t_laundered",
+    "args": {
+     "to": 445,
+     "prefix": "₫",
+     "suffix": " TRILLION",
+     "kicker": "THE COURT FOUND SHE HAD LAUNDERED MORE THAN",
+     "label": "DONG",
+     "sublabel": "2nd trial · October 17, 2024",
+     "dur": 4.0,
+     "count_time": 1.6,
+     "size": 200,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/usd_cash_2.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_stamp_life_bond_case.mp4"
+   }
+  ],
+  "49": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_07_appeal_death_upheld_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_keyphrase_repay_three_quarters.mp4"
+   }
+  ],
+  "50": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_race_against_time",
+    "args": {
+     "lines": [
+      "a race against time"
+     ],
+     "kicker": "INTERNATIONAL MEDIA CALLED IT",
+     "red": [
+      "time"
+     ],
+     "dur": 4.0,
+     "size": 120,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+    "fx": "left"
+   }
+  ],
+  "51": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_08_bond_appeal_20_years_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_stamp_20_years.mp4"
+   }
+  ],
+  "52": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/hanoi_street_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s08_typewriter_june_2025_law.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_eight_crimes",
+    "args": {
+     "lines": [
+      "eight crimes,",
+      "including embezzlement"
+     ],
+     "kicker": "DEATH PENALTY ABOLISHED FOR",
+     "red": [
+      "embezzlement"
+     ],
+     "dur": 3.0,
+     "stagger": 0.5,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "53": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_09_death_penalty_abolished_zoom.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s08_hanoi_skyline_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_would_be_spared",
+    "args": {
+     "lines": [
+      "Truong My Lan would be spared."
+     ],
+     "kicker": "HER LAWYER TOLD AFP",
+     "red": [
+      "spared."
+     ],
+     "dur": 4.0,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "54": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s09_chapter_where_s_the_money.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_their_money",
+    "args": {
+     "lines": [
+      "It was their money."
+     ],
+     "red": [
+      "money."
+     ],
+     "dur": 3.0,
+     "stagger": 0.0,
+     "size": 124,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "55": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s09_count_1200_properties",
+    "args": {
+     "to": 1200,
+     "suffix": "+",
+     "kicker": "FROZEN BY INVESTIGATORS",
+     "label": "PROPERTIES LINKED TO HER",
+     "sublabel": "+ hundreds of millions of SCB shares in her name or her proxies' names",
+     "dur": 4.5,
+     "count_time": 1.6,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_1.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_june_2025_payouts",
+    "args": {
+     "text": "JUNE 2025",
+     "sub": "— the city's civil judgment enforcement office begins paying bondholders",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "56": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "bar_chart",
+    "name": "s09_bar_owed_vs_paid_may_2026",
+    "args": {
+     "bars": [
+      [
+       "Owed to bondholders",
+       30.08
+      ],
+      [
+       "Paid out · nine rounds",
+       12,
+       true
+      ]
+     ],
+     "prefix": "₫",
+     "suffix": "T",
+     "decimals": 2,
+     "title": "BY MAY 2026",
+     "note": "about ₫12 trillion, roughly 40% of what was owed · according to the Vietnamese government's news portal",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s09_count_42000_creditors",
+    "args": {
+     "to": 42000,
+     "suffix": "+",
+     "kicker": "BY MAY 2026 · NINE ROUNDS",
+     "label": "CREDITORS PAID",
+     "sublabel": "according to the Vietnamese government's news portal",
+     "dur": 4.5,
+     "count_time": 1.8,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "57": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_10_repayments_41_percent_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "Waiting, year after year,\nfor a slice at a time.",
+    "style": "quote"
+   }
+  ],
+  "58": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_auction_lots",
+    "args": {
+     "lines": [
+      "2 handbags ≈ $539,000",
+      "Maybach ≈ $630,000",
+      "Yacht — 5 auctions, no buyer (Aug 2026)"
+     ],
+     "red": [
+      "buyer"
+     ],
+     "dur": 5.0,
+     "stagger": 1.2,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "HER POSSESSIONS ARE BEING SOLD"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/yacht_2.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/courtroom_gavel_1.mp4"
+   }
+  ],
+  "59": [
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s09_compare_bondholders_vs_scb",
+    "args": {
+     "left": {
+      "head": "Bondholders",
+      "big": "~41%",
+      "sub": "repaid"
+     },
+     "right": {
+      "head": "SCB",
+      "big": "≈ $27B",
+      "sub": "ordered — a fraction recovered"
+     },
+     "title": "ONLY PART OF THE BILL",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/cards/zoom/card_05_674_trillion_to_scb_zoom.mp4"
+   }
+  ],
+  "60": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_august_2026_scb",
+    "args": {
+     "text": "AUGUST 2026",
+     "sub": "— SCB: still under special control, closing branches (state media)",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
+    "fx": "out",
+    "crop": "left",
+    "grade": "cold"
+   }
+  ],
+  "61": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s10_chapter_the_pattern.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step1_lender_borrower",
+    "args": {
+     "lines": [
+      "The lender and the borrower",
+      "are secretly the same person"
+     ],
+     "red": [
+      "same",
+      "person"
+     ],
+     "dur": 3.8,
+     "stagger": 0.4,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "THE PATTERN · 1 OF 5"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step2_shell_companies",
+    "args": {
+     "lines": [
+      "Loans hidden behind",
+      "shell companies"
+     ],
+     "red": [
+      "shell"
+     ],
+     "dur": 3.8,
+     "stagger": 0.4,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "THE PATTERN · 2 OF 5"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step3_inflated_collateral",
+    "args": {
+     "lines": [
+      "Inflated collateral"
+     ],
+     "red": [
+      "inflated"
+     ],
+     "dur": 3.8,
+     "stagger": 0.0,
+     "size": 124,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "THE PATTERN · 3 OF 5"
+    }
+   }
+  ],
+  "62": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step4_inspectors",
+    "args": {
+     "lines": [
+      "Inspectors who",
+      "look away"
+     ],
+     "red": [
+      "away"
+     ],
+     "dur": 4.0,
+     "stagger": 0.4,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "THE PATTERN · 4 OF 5"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step5_risky_products",
+    "args": {
+     "lines": [
+      "Risky products sold",
+      "as 'safe' to savers"
+     ],
+     "red": [
+      "'safe'"
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+     "kicker": "THE PATTERN · 5 OF 5"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_1.jpg",
+    "fx": "out",
+    "grade": "cold"
+   }
+  ],
+  "63": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_1.jpg",
+    "fx": "in",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_trust_was_the_product",
+    "args": {
+     "lines": [
+      "The trust people had in the bank",
+      "was the product."
+     ],
+     "red": [
+      "product."
+     ],
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+   }
+  ],
+  "64": [
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s10_keyphrase_who_is_borrowing.mp4"
+   }
+  ],
+  "65": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s11_chapter_outro.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/shuttered_shop_night_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_bank_became_a_wallet",
+    "args": {
+     "lines": [
+      "And somewhere in between,",
+      "a bank became a wallet."
+     ],
+     "red": [
+      "wallet."
+     ],
+     "dur": 3.5,
+     "stagger": 0.6,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   }
+  ],
+  "66": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s11_tw_next_time_china",
+    "args": {
+     "text": "NEXT TIME: CHINA",
+     "sub": "— an online platform that promised safety",
+     "dur": 3.0,
+     "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep03_truong_my_lan/stock/server_room_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep03_truong_my_lan/motion/s11_countup_900000_investors.mp4"
+   }
+  ],
+  "67": [
+   {
+    "kind": "text",
+    "text": "Subscribe so you don't miss it.",
+    "style": "label"
+   },
+   {
+    "kind": "text",
+    "text": "Would you know if your bank\nwas selling you something\nthat wasn't a deposit?",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep03_truong_my_lan/s11_saigon_night_ov_2.jpg",
+    "fx": "out"
+   }
+  ]
+ },
+ "sfx": [
+  {
+   "chunk": 0,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -10
+  },
+  {
+   "chunk": 1,
+   "name": "impact",
+   "offset": 3.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 2,
+   "name": "heartbeat",
+   "offset": 6.6,
+   "gain_db": -11
+  },
+  {
+   "chunk": 6,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 8,
+   "name": "impact",
+   "offset": 15.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 9,
+   "name": "typewriter",
+   "offset": 4.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 10,
+   "name": "impact",
+   "offset": 15.5,
+   "gain_db": -9
+  },
+  {
+   "chunk": 13,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 14,
+   "name": "impact",
+   "offset": 2.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 15,
+   "name": "whoosh",
+   "offset": 5.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 17,
+   "name": "stamp",
+   "offset": 9.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 21,
+   "name": "typewriter",
+   "offset": 3.1,
+   "gain_db": -12
+  },
+  {
+   "chunk": 23,
+   "name": "impact",
+   "offset": 9.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 25,
+   "name": "impact",
+   "offset": 7.5,
+   "gain_db": -9
+  },
+  {
+   "chunk": 26,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 28,
+   "name": "heartbeat",
+   "offset": 3.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 31,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 33,
+   "name": "glitch",
+   "offset": 4.8,
+   "gain_db": -12
+  },
+  {
+   "chunk": 35,
+   "name": "impact",
+   "offset": 2.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 36,
+   "name": "typewriter",
+   "offset": 4.1,
+   "gain_db": -14
+  },
+  {
+   "chunk": 39,
+   "name": "impact",
+   "offset": 6.4,
+   "gain_db": -12
+  },
+  {
+   "chunk": 40,
+   "name": "riser",
+   "offset": 13.5,
+   "gain_db": -14
+  },
+  {
+   "chunk": 42,
+   "name": "impact",
+   "offset": 2.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 45,
+   "name": "stamp",
+   "offset": 7.55,
+   "gain_db": -6
+  },
+  {
+   "chunk": 45,
+   "name": "impact",
+   "offset": 7.55,
+   "gain_db": -10
+  },
+  {
+   "chunk": 46,
+   "name": "stamp",
+   "offset": 16.05,
+   "gain_db": -8
+  },
+  {
+   "chunk": 48,
+   "name": "stamp",
+   "offset": 10.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 51,
+   "name": "stamp",
+   "offset": 7.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 52,
+   "name": "typewriter",
+   "offset": 2.9,
+   "gain_db": -14
+  },
+  {
+   "chunk": 55,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 57,
+   "name": "whoosh",
+   "offset": 0.1,
+   "gain_db": -15
+  },
+  {
+   "chunk": 58,
+   "name": "stamp",
+   "offset": 12.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 60,
+   "name": "typewriter",
+   "offset": 3.5,
+   "gain_db": -14
+  },
+  {
+   "chunk": 61,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 62,
+   "name": "impact",
+   "offset": 4.2,
+   "gain_db": -15
+  },
+  {
+   "chunk": 64,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -13
+  },
+  {
+   "chunk": 66,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 66,
+   "name": "impact",
+   "offset": 6.6,
+   "gain_db": -15
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 1,
+   "dur": 8.0
+  },
+  {
+   "chunk": 11,
+   "dur": 5.0
+  },
+  {
+   "chunk": 23,
+   "dur": 1.5
+  },
+  {
+   "chunk": 28,
+   "dur": 2.0
+  },
+  {
+   "chunk": 35,
+   "dur": 1.2
+  },
+  {
+   "chunk": 44,
+   "dur": 3.5
+  },
+  {
+   "chunk": 52,
+   "dur": 1.8
+  },
+  {
+   "chunk": 59,
+   "dur": 2.0
+  },
+  {
+   "chunk": 64,
+   "dur": 1.6
+  },
+  {
+   "chunk": 66,
+   "dur": 1.5
+  }
+ ]
+}

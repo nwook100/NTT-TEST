@@ -1,0 +1,155 @@
+{
+ "section": "4",
+ "chunks": [
+  {
+   "id": 24,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s04_chapter_paying_the_referee.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s04_state_bank_2.jpg",
+     "fx": "in",
+     "overlay": "assets/ep03_truong_my_lan/motion/s04_lowerthird_state_bank.mp4"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s04_countup_5_2M_bribe.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/usd_cash_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s04_stamp_results_altered.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
+     "fx": "left",
+     "crop": "left"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/rain_night_street_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_02_inspector_5_2M_life_zoom.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s04_countup_15_officials",
+     "args": {
+      "to": 15,
+      "kicker": "STOOD TRIAL ALONGSIDE LAN",
+      "label": "FORMER CENTRAL-BANK OFFICIALS",
+      "dur": 4.5,
+      "count_time": 1.5,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s04_kp_inspectorate_audit_office",
+     "args": {
+      "lines": [
+       "Government Inspectorate",
+       "State Audit Office"
+      ],
+      "kicker": "ALONG WITH OFFICIALS FROM THE",
+      "dur": 4.0,
+      "stagger": 0.6,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_3.jpg",
+     "fx": "out",
+     "crop": "top"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s04_state_bank_1.jpg",
+     "fx": "in",
+     "crop": "top"
+    },
+    {
+     "kind": "motion",
+     "fn": "word_by_word",
+     "name": "s04_wbw_stayed_unchecked",
+     "args": {
+      "text": "The people whose job was to check the bank were, according to the court, part of how the bank stayed unchecked.",
+      "red": [
+       "unchecked."
+      ],
+      "dur": 6.0,
+      "size": 76,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 25,
+   "name": "impact",
+   "offset": 7.5,
+   "gain_db": -9
+  },
+  {
+   "chunk": 26,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 28,
+   "name": "heartbeat",
+   "offset": 3.3,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 28,
+   "dur": 2.0
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+  "section": "2",
+  "chunks": [
+    {"id": 9, "segments": [
+      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s02_chapter_buying_a_bank_quietly.mp4"},
+      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s02_typewriter_dec_2011_scb.mp4"},
+      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_1.jpg", "fx": "in", "overlay": "assets/ep03_truong_my_lan/motion/s02_lowerthird_scb.mp4"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4", "grade": "cold"}
+    ]},
+    {"id": 10, "segments": [
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"},
+      {"kind": "photo", "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_2.jpg", "crop": "detail", "fx": "in"},
+      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s02_compare_5_vs_91_5_percent.mp4"}
+    ]},
+    {"id": 11, "segments": [
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"}
+    ]},
+    {"id": 12, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_proxies_relatives_employees", "args": {"lines": ["Relatives.", "Employees.", "Associates."], "kicker": "PROXIES · ACCORDING TO INVESTIGATORS", "red": ["associates."], "dur": 4.5, "stagger": 0.9, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"},
+      {"kind": "motion", "fn": "count_up", "name": "s02_count_75_percent_proxies", "args": {"to": 75, "prefix": "> ", "suffix": "%", "kicker": "THE COURT SAID", "label": "OF THE SHARES", "sublabel": "all admitted they were acting for her", "dur": 5.0, "count_time": 2.0, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}}
+    ]},
+    {"id": 13, "segments": [
+      {"kind": "motion", "fn": "flow_diagram", "name": "s02_flow_org_chart", "args": {"nodes": [
+        {"id": "lan", "label": "Truong My Lan", "x": 0.5, "y": 0.0, "red": true},
+        {"id": "p1", "label": "proxy shareholder", "x": 0.12, "y": 0.5},
+        {"id": "p2", "label": "proxy shareholder", "x": 0.5, "y": 0.5},
+        {"id": "p3", "label": "proxy shareholder", "x": 0.88, "y": 0.5},
+        {"id": "board", "label": "SCB board & executives", "x": 0.5, "y": 1.0}],
+        "edges": [{"from": "lan", "to": "p1"}, {"from": "lan", "to": "p2"}, {"from": "lan", "to": "p3"},
+                  {"from": "p1", "to": "board"}, {"from": "p2", "to": "board"}, {"from": "p3", "to": "board"}],
+        "title": "THE COURT FOUND", "dur": 6.0, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/stamping_documents_1.mp4"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4", "start": 2.5, "grade": "cold"}
+    ]},
+    {"id": 14, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_bank_answered_to_her", "args": {"lines": ["In practice, the court said,", "the bank answered to her."], "red": ["her."], "dur": 4.5, "stagger": 1.2, "size": 108, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 9, "name": "typewriter", "offset": 4.2, "gain_db": -12},
+    {"chunk": 10, "name": "impact", "offset": 15.5, "gain_db": -9},
+    {"chunk": 13, "name": "whoosh", "offset": 0.0, "gain_db": -12},
+    {"chunk": 14, "name": "impact", "offset": 2.6, "gain_db": -8}
+  ],
+  "music_drops": [
+    {"chunk": 11, "dur": 5.0}
+  ]
+}
