@@ -36,3 +36,4 @@ youtube/branding/options/*.mp4
 youtube/output/**/upload_parts/*.part*
 youtube/output/**/upload_parts*/*.part*
 youtube/output/**/*.zip
+youtube/output/**/parts_cc/*.part*
