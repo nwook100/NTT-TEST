@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>part harness</title>
+<style>html,body{margin:0;background:#f4f5f7;overflow:hidden}canvas{display:block}</style>
+<script src="lib/three.min.js"></script>
+<script src="parts/materials.js"></script>
+</head><body>
+<script>
+// 부품 1개를 흰 스튜디오에서 4방향으로 찍는 검수용 하네스. 부품 코드는 parts/<name>.js
+const Q=new URLSearchParams(location.search),W=1200,H=900, part=Q.get('part'), deps=(Q.get('deps')||'').split(',').filter(Boolean);
+let opts={};try{opts=JSON.parse(Q.get('opts')||'{}')}catch(e){opts={}}
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(W,H);renderer.setPixelRatio(1);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+document.body.appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xf4f5f7);
+const camera=new THREE.PerspectiveCamera(32,W/H,0.1,2000);
+scene.add(new THREE.HemisphereLight(0xffffff,0xb9bec8,0.9));
+const key=new THREE.DirectionalLight(0xffffff,1.0);key.position.set(60,120,80);key.castShadow=true;key.shadow.mapSize.set(2048,2048);scene.add(key);
+const fill=new THREE.DirectionalLight(0xdfe8ff,0.45);fill.position.set(-90,40,-40);scene.add(fill);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(4000,4000),new THREE.ShadowMaterial({opacity:0.22}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+let group=null,center=new THREE.Vector3(),radius=10;
+function fitShadow(size){const s=Math.max(size.x,size.y,size.z)*1.2;Object.assign(key.shadow.camera,{left:-s,right:s,top:s,bottom:-s,near:1,far:600});key.shadow.camera.updateProjectionMatrix();}
+window.__view=function(i){
+  const az=[35,90,20,-140][i]*Math.PI/180, el=[24,10,65,22][i]*Math.PI/180, d=radius/Math.sin(camera.fov/2*Math.PI/180)*1.12;
+  camera.position.set(center.x+d*Math.cos(el)*Math.sin(az),center.y+d*Math.sin(el),center.z+d*Math.cos(el)*Math.cos(az));
+  camera.lookAt(center);renderer.render(scene,camera);
+};
+function loadScript(name){return new Promise((res,rej)=>{const s=document.createElement('script');s.src='parts/'+name+'.js?'+Math.random();s.onload=res;s.onerror=()=>rej(new Error('parts/'+name+'.js 를 불러오지 못했습니다'));document.body.appendChild(s);});}
+(async function load(){
+  try{for(const d of deps)await loadScript(d);}catch(e){window.__error=String(e);window.__ready=true;return;}
+  const s=document.createElement('script');s.src='parts/'+part+'.js?'+Math.random();
+  s.onerror=()=>{window.__error='parts/'+part+'.js 를 불러오지 못했습니다';window.__ready=true;};
+  s.onload=()=>{try{
+    const build=window.PARTS&&window.PARTS[part];if(!build)throw new Error('window.PARTS.'+part+' 함수가 없습니다');
+    group=build(THREE,window.MAT,opts);scene.add(group);
+    group.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+    const box=new THREE.Box3().setFromObject(group),size=box.getSize(new THREE.Vector3());box.getCenter(center);
+    radius=size.length()/2;fitShadow(size);
+    window.__bbox={min:box.min.toArray().map(v=>+v.toFixed(2)),max:box.max.toArray().map(v=>+v.toFixed(2)),size:size.toArray().map(v=>+v.toFixed(2))};
+    let n=0;group.traverse(o=>{if(o.isMesh)n++;});window.__meshCount=n;
+    __view(0);window.__ready=true;
+  }catch(e){window.__error=String(e&&e.stack||e);window.__ready=true;}};
+  document.body.appendChild(s);
+})();
+</script></body></html>

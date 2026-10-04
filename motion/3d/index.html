@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>신성테크놀로지 3D 제품 장면</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+html,body{margin:0;background:#0c1118;overflow:hidden;width:1920px;height:1080px}
+canvas{display:block}
+.ov{position:absolute;left:96px;top:72px;color:#eef2f6;font-family:'IBM Plex Sans KR',sans-serif}
+.ov .eb{font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:.28em;color:#e2a35b}
+.ov h1{font-size:64px;font-weight:700;letter-spacing:-.02em;margin:10px 0 6px}
+.ov p{font-size:24px;font-weight:300;color:#93a0b4;margin:0}
+.labels{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.lb{position:absolute;transform:translate(-50%,0);font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.26em;color:#6fb7d9;text-align:center;white-space:nowrap}
+.lb b{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:500;font-size:26px;letter-spacing:-.01em;color:#eef2f6;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="labels" id="labels"></div>
+<div class="ov"><div class="eb">PRODUCTS · 3D</div><h1>신성테크놀로지</h1><p>매거진 · 카세트 · 링 · 핀 보트</p></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="parts/materials.js"></script>
+<script src="parts/ring.js"></script>
+<script src="parts/magazine.js"></script>
+<script src="parts/cassette.js"></script>
+<script src="parts/pinboat.js"></script>
+<script>
+const W=1920,H=1080,FLOOR=-1.5,S=1/85; // 부품은 mm 단위 → 장면 단위로 축소
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(W,H);renderer.setPixelRatio(1);
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+document.body.insertBefore(renderer.domElement,document.body.firstChild);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x0c1118);scene.fog=new THREE.Fog(0x0c1118,13,27);
+const camera=new THREE.PerspectiveCamera(30,W/H,0.1,100);
+
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({color:0x0a0f16,metalness:0.1,roughness:0.95}));
+floor.rotation.x=-Math.PI/2;floor.position.y=FLOOR;floor.receiveShadow=true;scene.add(floor);
+const grid=new THREE.GridHelper(80,80,0x2a3646,0x1a222c);grid.position.y=FLOOR+0.01;scene.add(grid);
+scene.add(new THREE.HemisphereLight(0x6fb7d9,0x0c1118,0.4));
+const key=new THREE.DirectionalLight(0xffffff,1.35);key.position.set(6,12,8);key.castShadow=true;
+key.shadow.mapSize.set(2048,2048);Object.assign(key.shadow.camera,{left:-12,right:12,top:8,bottom:-8,near:1,far:40});scene.add(key);
+const rim=new THREE.PointLight(0xe2a35b,1.4,40);rim.position.set(-8,4,-2);scene.add(rim);
+const fill=new THREE.PointLight(0x6fb7d9,0.7,40);fill.position.set(8,2,6);scene.add(fill);
+
+// 부품 배치: [키, x 위치, 옵션, 추가 회전/기울기]
+const LAYOUT=[
+  ['magazine',-5.7,{finish:'silver',strips:3},g=>{g.rotation.y=0.35}],
+  ['cassette',-1.9,{rings:13,wafer:true},g=>{g.rotation.y=0.25}],
+  ['ring',1.9,{size:8},g=>{g.rotation.x=-1.15;g.position.y+=1.2}],   // 링은 비스듬히 세워서
+  ['pinboat',5.7,{withStrip:true},g=>{g.rotation.y=-0.35}],
+];
+const LABEL={magazine:['MAGAZINE','매거진'],cassette:['CASSETTE','카세트'],ring:['RING','링'],pinboat:['PIN BOAT','핀 보트']};
+const groups={},labelEls={};
+LAYOUT.forEach(([k,x,opts,post])=>{
+  const outer=new THREE.Group();outer.position.set(x,FLOOR,0);
+  let part;
+  try{part=window.PARTS&&window.PARTS[k]?window.PARTS[k](THREE,window.MAT,opts):null;}catch(e){console.error(k,e);part=null;}
+  if(!part){part=new THREE.Mesh(new THREE.BoxGeometry(200,150,220),window.MAT.alu());part.position.y=75;} // 부품 미완성 시 자리표시
+  const inner=new THREE.Group();inner.scale.setScalar(S);inner.add(part);
+  inner.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+  // 바닥에 닿도록 보정
+  const box=new THREE.Box3().setFromObject(inner);inner.position.y=-box.min.y;
+  if(post)post(inner);
+  outer.add(inner);scene.add(outer);groups[k]=outer;
+  const d=document.createElement('div');d.className='lb';d.innerHTML=`${LABEL[k][0]}<b>${LABEL[k][1]}</b>`;document.getElementById('labels').appendChild(d);labelEls[k]=d;
+});
+function placeLabels(){const v=new THREE.Vector3();LAYOUT.forEach(([k,x])=>{v.set(x,FLOOR,1.9).project(camera);labelEls[k].style.left=((v.x+1)/2*W)+'px';labelEls[k].style.top=((1-v.y)/2*H+16)+'px';});}
+
+const DUR=8;
+function seek(t){
+  const p=Math.min(1,Math.max(0,t/DUR)),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+  const th=-0.28+0.56*e,R=18.5-2.0*e;
+  camera.position.set(R*Math.sin(th),4.2-1.0*e,R*Math.cos(th));camera.lookAt(0,-0.3,0);
+  Object.values(groups).forEach((g,i)=>g.rotation.y=0.18*Math.sin(t*0.6+i*1.3));
+  renderer.render(scene,camera);placeLabels();
+}
+window.__motion={total:DUR,seek};
+seek(0);
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{seek(0);window.__motionReady=true;});
+</script>
+</body>
+</html>
