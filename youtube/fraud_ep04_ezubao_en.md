@@ -1,7 +1,7 @@
 # EP.04 Buried Six Meters Deep: China's $7.6 Billion Online Ponzi Scheme
 
 - Channel: Paper Tiger Files (fraud & financial crime stories, Asia focus)
-- Target length: under 15 min (2,033 words of narration at ~145 wpm ≈ 14:01, plus ~6 s of beats, + 6 s intro A + 12 s outro B ≈ 14:25 total; word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`)
+- Target length: under 15 min (2,072 words of narration at ~145 wpm ≈ 14:17, plus ~6 s of beats, + 6 s intro A + 12 s outro B ≈ 14:41 total; word count excludes headings, `[SCREEN]`/`[AI-xx]` cue lines and `(beat)`)
 - Tone: true-crime storytelling, calm, tense, never mocking victims
 - Notation: `[SCREEN]` = editing cue, `[AI-xx]` = AI video shot (prompts at the bottom), `(beat)` = 1-second pause
 - Legal rule (China): the findings of the Beijing No. 1 Intermediate People's Court (Sept 12, 2017), upheld by the Beijing High People's Court (Nov 2017), and the indictment by the Beijing No. 1 Branch of the People's Procuratorate (Dec 2016) are stated as fact. Police findings and suspects' statements from the Xinhua investigation (Jan 31 – Feb 1, 2016) are attributed ("according to Xinhua", "police said", "she told Xinhua"). Everything else is "reportedly" / "according to". Convicted: Ding Ning, Ding Dian, Zhang Min and 23 others (final). No investors, protesters or private individuals are named. The one company owner quoted by Xinhua is not named.
@@ -43,8 +43,8 @@ According to Xinhua, China's state news agency, suspects had buried them to dest
 
 (beat)
 
-The records belonged to a company that, only weeks earlier, had been advertising on China's state television.
-Its name was Ezubao. And it had taken money from around 900,000 people.
+The records belonged to a company that, only months earlier, had been advertising on China's state television.
+Its name was Ezubao. And, a court would later find, it and a sister platform had taken money from more than a million people.
 
 [SCREEN] Channel logo sting (under 3 seconds)
 
@@ -61,19 +61,19 @@ The story starts in Bengbu, a mid-sized city in Anhui Province, a few hours from
 There, a businessman named Ding Ning built a group of companies called Yucheng.
 It started in manufacturing. Then, like many ambitious firms in China in the early 2010s, it turned to finance.
 
-[SCREEN] Timeline graphic: "2013–2015: China's P2P lending boom" with a counter climbing "→ 3,769 platforms (Nov 2015)"
+[SCREEN] Timeline graphic: "2013–2015: China's P2P lending boom" with a counter climbing "→ 3,769 platforms set up (cumulative, Nov 2015, industry data)"
 
 Those were the years of the peer-to-peer lending boom.
 The idea sounded modern. An app or a website connects people with savings to businesses that need loans.
 No bank in the middle. Higher returns for savers. Faster money for borrowers.
 For ordinary savers, the timing was perfect.
 Bank deposits paid little. The stock market had just crashed in the summer of 2015. People wanted somewhere safe that still paid something.
-By late 2015, according to industry counts, China had well over three thousand of these platforms.
+By late 2015, according to industry counts, well over three thousand of these platforms had been set up.
 And regulation had barely started.
 
 [SCREEN] Timeline: "Feb 2014 — Yucheng buys a Beijing web-finance company / July 2014 — 'Ezubao' goes live"
 
-According to Xinhua, in February 2014 Yucheng bought a small internet finance company in Beijing.
+According to Xinhua, in February 2014 Yucheng bought an internet finance company in Beijing.
 In July 2014, it relaunched its platform under a new name: Ezubao.
 In Chinese, the name means something like "e-leasing treasure."
 That word, leasing, was the whole pitch.
@@ -90,10 +90,10 @@ Yucheng's leasing company buys that equipment and leases it to the company.
 To fund the deal, Ezubao sells pieces of that lease to ordinary investors online.
 The company pays rent. The rent flows back. And the investor gets a return.
 
-[SCREEN] Product cards (self-made): "e租年享 / 年安丰裕 … 9%–14.6% a year" vs bank deposit bar "~1.5–3%"
+[SCREEN] Product cards (self-made): "e租年享 / 年安丰裕 … 9%–14.6% a year" vs bank deposit bar "1-yr benchmark 3% → 1.5% (2014–15)"
 
 The court later found that these products, with names like "Annual Enjoyment," promised annual returns of nine to 14.6 percent.
-A one-year bank deposit in China at the time paid far less, reportedly around two to three percent.
+A one-year bank deposit in China paid far less. The official benchmark rate fell from three percent to one and a half.
 And according to Chinese prosecutors, you could start with just one yuan, about fifteen cents, and take your money out whenever you wanted.
 
 (beat)
@@ -104,8 +104,8 @@ Now here's how it actually worked.
 
 [AI-03] A hand sliding a thick folder of company documents across a desk to another hand holding a cash envelope, no faces, no readable text
 
-According to Xinhua's investigation, Ezubao paid middlemen for real companies' information. Their registration papers. Their licenses.
-The head of risk control at Yucheng's leasing arm told Xinhua that they paid one and a half to two percent of the "loan" amount for each company's details.
+According to Xinhua's investigation, Ezubao paid companies and middlemen for real companies' information. Their registration papers. Their licenses.
+The head of risk control at Yucheng's leasing arm told Xinhua that, on Ding Ning's instructions, they paid one and a half to two percent of the "loan" amount for each company's details.
 His department then typed those details into ready-made contracts and posted them online as investment projects.
 To make them look stronger, he said, they even changed the companies' registered capital.
 
@@ -118,14 +118,14 @@ Ding Ning himself told Xinhua that the group spent more than 800 million yuan bu
 
 Police said that of the 207 leasing customers they had checked, only one had done real business with Yucheng.
 Some companies only found out when police told them.
-One business owner told Xinhua that his firm had once taken a bank loan through a Yucheng guarantee company. Years later, his bank account was frozen, and he learned his company had been listed on Ezubao, borrowing money it never received.
+One business owner told Xinhua that his firm had once taken a bank loan through a Yucheng guarantee company. Then, in late 2015, his company's bank account was frozen, and police told him Ezubao had listed his company online to raise money in its name.
 
 [SCREEN] Diagram: "Guarantor? Yucheng-controlled (3 guarantee firms + 1 factoring firm)" — every arrow loops back to "Yucheng"
 
 And who guaranteed these loans?
 According to Xinhua, Yucheng itself. It controlled three guarantee companies and a factoring company that backed Ezubao's own projects.
-The investors' money went into a pool the group controlled.
-Police described the method in three words: fake projects, fake third parties, fake guarantees.
+Police said the investors' money went into a pool the group controlled.
+Xinhua summed up the trick in three phrases: fake projects, fake third parties, fake guarantees.
 
 [SCREEN] Text card: "July 2015 rule: platforms must only match lenders and borrowers — no money pools, no guarantees"
 
@@ -147,9 +147,9 @@ According to the court's judgment, Ezubao advertised on major TV channels across
 It even had a high-speed train named after it: the "Ezubao" bullet train.
 Chinese media reported that its ads ran on China Central Television, the state broadcaster, in prime time before the main evening news.
 
-[SCREEN] Count-up: "¥480,000,000+ on advertising (court audit)" ≈ "$70M+"
+[SCREEN] Count-up: "¥480,000,000+ on advertising (judgment)" ≈ "$70M+"
 
-The court's audit found that it spent more than 480 million yuan on advertising. About seventy million dollars.
+According to the judgment, it spent more than 480 million yuan on advertising. About seventy million dollars.
 
 [AI-05] A brightly lit forum stage, a speaker silhouette at a podium, rows of audience from behind, generic finance graphics, no logos
 
@@ -176,10 +176,10 @@ Victims, the agency reported, were spread across 31 provinces and regions. In pr
 
 ## 4. Where the money went (6:19–7:26)
 
-[SCREEN] Bar chart, bars growing one by one (court audit, billion yuan): "Paid back to earlier investors 38.4 / Buying companies & other 'investments' 3.2 / Yunnan partner projects 3.0 / Sent abroad 2.3 / Staff pay & commissions 2.0 / 'Gifts' to executives 1.2 / Offices 1.2 / Property, planes, cars 0.92 / Advertising 0.48 / Luxury goods 0.49"
+[SCREEN] Bar chart, bars growing one by one (court audit, billion yuan): "Paid back to earlier investors 38.4 / Buying indebted companies & bad debts 3.2 / Yunnan partner projects 3.0 / Sent abroad 2.3 / Staff pay & commissions 2.0 / Fees to middlemen for fake projects 1.23 / 'Gifts' to executives 1.2 / Offices 1.2 / Property, planes, cars 0.92 / Luxury goods 0.49 / Advertising 0.48"
 
 So where did the money go?
-The court ordered a forensic audit. And its answer is the definition of a Ponzi scheme.
+The court's findings, based on a forensic audit, answer that. And the answer is the definition of a Ponzi scheme.
 
 The biggest share, about 38 billion yuan, went straight back out as principal and interest to earlier investors.
 New money, paying old money.
@@ -207,13 +207,13 @@ And a carousel only keeps turning while new riders keep paying to get on.
 
 ---
 
-## 5. Eight days in December (7:26–9:07)
+## 5. Six days in December (7:26–9:07)
 
 [SCREEN] Timeline graphic building left to right: "Dec 3 → Dec 5 → Dec 8, 2015 → Jan 14, 2016 → Jan 31, 2016"
 
 Like every Ponzi scheme, Ezubao needed more money coming in than going out. By late 2015, that was getting harder.
 
-On December 3rd, 2015, according to Chinese media, police questioned dozens of people at a Shenzhen sales company linked to the platform.
+On December 3rd, 2015, according to Chinese media, police took more than forty people from the platform's Shenzhen branch for questioning.
 According to Xinhua, police later found that by December 5th, the group's available cash was running dangerously low.
 They also said Yucheng had started moving money and destroying evidence, and that several executives appeared ready to run.
 
@@ -233,7 +233,7 @@ On January 14th, 2016, Beijing prosecutors approved the formal arrest of twenty-
 
 [SCREEN] Key-phrase card, slow zoom: "'Ezubao was a complete Ponzi scheme.' — Zhang Min, president, to Xinhua"
 
-Two weeks later, Xinhua published its investigation.
+Just over two weeks later, Xinhua published its investigation.
 In a detention center, Zhang Min, the group's president, told the agency, "Ezubao was a complete Ponzi scheme."
 She said senior management all knew it, and that she was deeply sorry.
 
@@ -241,8 +241,8 @@ She said senior management all knew it, and that she was deeply sorry.
 
 And that's when the country learned about the pit.
 Police told Xinhua the case was enormously complex. More than two hundred servers to search.
-And the paper records? Twelve hundred volumes, in eighty sacks, six meters underground, outside Hefei.
-Two excavators. Twenty hours.
+And the paper records? More than twelve hundred volumes, in more than eighty sacks, six meters underground, outside Hefei.
+Two excavators. More than twenty hours.
 
 ---
 
@@ -260,7 +260,7 @@ On September 12th, 2017, the Beijing No. 1 Intermediate People's Court delivered
 
 The court found that from June 2014 to December 2015, through Ezubao and a sister platform called Sesame Finance, the group had used fake leasing and loan projects to take in more than 76 billion yuan.
 Strip out money that investors rolled over and reinvested, and it was about 60 billion yuan, roughly nine billion dollars, from more than 1.15 million people.
-More than 38 billion yuan, around six billion dollars, was never paid back.
+More than 38 billion yuan, nearly six billion dollars, was lost.
 
 [SCREEN] Gavel icon + text: "Ding Ning — life imprisonment + ¥100M fine (fundraising fraud, smuggling precious metals, illegal possession of firearms, illegally crossing the border)"
 
@@ -269,7 +269,7 @@ He was sentenced to life in prison and fined 100 million yuan.
 
 [SCREEN] Second card: "Ding Dian (brother) — life + ¥70M fine / Zhang Min + 23 others — 3 to 15 years"
 
-His brother, Ding Dian, also a senior executive, got life for fundraising fraud.
+His younger brother, Ding Dian, also a senior executive, got life for fundraising fraud.
 Zhang Min and twenty-three others were sentenced to between three and fifteen years.
 
 [SCREEN] Third card: "Yucheng International — ¥1.803B fine / Anhui Yucheng — ¥100M fine" ≈ "$290M in total"
@@ -294,13 +294,13 @@ According to the judgment, as reported by Chinese media, authorities had frozen 
 [SCREEN] Timeline: "July–Aug 2019 — victims register / Jan 16, 2020 — 1st payout (~35%, reported) / Apr 2025 — 2nd payout (cumulative ~40%, reported)"
 
 Then came the waiting.
-In 2019, the Beijing court asked victims nationwide to register their losses.
+In 2019, the Beijing court asked victims nationwide to verify and register their losses.
 In January 2020, more than four years after the platform went dark, the first payments went out.
 The court didn't publish the ratio, but according to Chinese media and victims, it was about 35 percent of the money they had lost.
 
 The second payout only came in April 2025.
 Again, the court gave no percentage. Victims told Chinese reporters it added about five percent, bringing the total to roughly forty.
-This time, former Ezubao employees were included as victims too.
+This time, former Ezubao employees were included in the payout too.
 
 (beat)
 
@@ -318,19 +318,19 @@ For people who were promised fourteen percent a year.
 
 ## 8. The day the P2P industry hit zero (11:58–12:48)
 
-[SCREEN] Line chart falling off a cliff: "P2P platforms in China — peak ~5,000 → 3 (early Nov 2020) → 0 (mid-Nov 2020)" (CBIRC)
+[SCREEN] Line chart falling off a cliff: "P2P platforms in China — peak ~5,000 → 3 (Nov 6, 2020) → 0 (mid-Nov 2020)" (CBIRC)
 
 Ezubao wasn't the only one. It was the warning nobody fully heeded.
 Over the next few years, China's P2P lending boom became a wave of collapses, defaults and runaway founders.
 Regulators tightened the rules, then shut the sector down.
 
 In November 2020, China's banking regulator said the number of P2P platforms had fallen from a peak of about five thousand to zero.
-Its chairman said that, as of that August, investors were still owed more than 800 billion yuan by failed platforms. Around 115 billion dollars.
+Three months earlier, its chairman had said lenders were still owed more than 800 billion yuan by failed platforms. Around 115 billion dollars.
 
 [AI-13] Aerial night shot of a dense Chinese city, thousands of apartment windows, lights going out one by one
 
 An entire industry, gone in about five years.
-At its peak, according to Caixin, it had tens of millions of investors.
+At its peak, according to Caixin, it had around fifty million investors.
 Many of them are still waiting for their money.
 
 ---
@@ -407,7 +407,7 @@ And tell me in the comments: have you ever trusted an investment because you saw
 - [ ] ~35% first payout — reported by 21st Century Business Herald and victims (KrASIA: https://kr-asia.com/investors-in-ponzi-scheme-ezubao-finally-get-35-of-their-money-back). Attributed
 - [x] Second payout: court notice Mar 31, 2025, payments Apr 7–20, 2025 (The Paper: https://m.thepaper.cn/newsDetail_forward_30593593)
 - [ ] Second payout ~5%, cumulative ~40%; employees included (Jiemian, compiled from victims: https://m.jiemian.com/article/12633805.html). Attributed. **Check for any later (2026) payout before upload**
-- [x] P2P peak ~5,000 platforms → 3 (Nov 7, 2020, CBIRC chief legal counsel Liu Fushou, Caixin: https://www.caixinglobal.com/2020-11-07/chinas-3-year-crackdown-leaves-just-3-p2p-lenders-standing-101624086.html) → 0 by mid-Nov 2020 (CBIRC chairman Guo Shuqing, Nov 27, 2020)
+- [x] P2P peak ~5,000 platforms → 3 (Nov 7, 2020, CBIRC chief legal counsel Liu Fushou, Caixin: https://www.caixinglobal.com/2020-11-07/chinas-3-year-crackdown-leaves-just-3-p2p-lenders-standing-101624086.html) → 0 by mid-Nov 2020 (CBIRC chief legal counsel Liu Fushou, Nov 27, 2020 — corrected below)
 - [ ] 800+ billion yuan (~$115B) unpaid as of August 2020 — CBIRC chairman Guo Shuqing (Bloomberg Aug 14, 2020: https://www.bloomberg.com/news/articles/2020-08-14/china-s-peer-to-peer-lending-purge-leaves-115-billion-in-losses ; Caixin). Script says "Its chairman said that, as of that August" — confirm the "as of" wording in a primary source (Guo's speech/CBIRC)
 - [x] July 2015 guideline 《关于促进互联网金融健康发展的指导意见》 (PBoC and other regulators): platforms are information intermediaries only, no self-run fund pool, no credit guarantees — cited in the Xinhua investigation (cs.com.cn above)
 - [ ] "The stock market had just crashed in the summer of 2015" — general knowledge (Shanghai Composite fell ~40% June–Aug 2015); add a source link if shown on screen
@@ -416,6 +416,39 @@ And tell me in the comments: have you ever trusted an investment because you saw
 - [ ] P2P peak "tens of millions of investors" — Caixin (Nov 7, 2020) says ~50 million. Attributed to Caixin
 - [ ] FX conversions (50bn ≈ $7.6B; 59.8bn ≈ $9B; 38bn ≈ $5.8B; 1.9bn ≈ $290M; 480M ≈ $70M; 1 yuan ≈ 15 US cents; 800bn ≈ $115B) — recheck with the rate of each year
 - [ ] Ding Ning's current status (still serving life? any commutation?) — not found. Script does not claim anything beyond the 2017 sentence
+
+**Adversarial re-check (Oct 4, 2026) — changes made**
+- [x] Cold open: "around 900,000 people" (police's preliminary Jan 2016 figure, stated as fact) → "a court would later find, it and a sister platform had taken money from more than a million people" (judgment: 115万余人, Ezubao + Sesame Finance; The Paper https://www.thepaper.cn/newsDetail_forward_4676334). "only weeks earlier" → "only months earlier" (no source dates the last CCTV spot; the dig date is unknown)
+- [x] 3,769 = **cumulative** platforms set up 2012–Nov 2015 (网贷之家, cited in https://www.bimba.pku.edu.cn/attachments/1c67268c3121404d9d373f9463459e25.pdf); operating platforms were fewer → narration "had been set up", screen "set up (cumulative)"
+- [x] "a small internet finance company" → "an internet finance company" ("small" unsupported; Xinhua only says 钰诚集团收购了这家公司). Note: the **judgment** says Ding Ning acquired 金易融 in **June 2014** and the platform went live June 2014; Xinhua says Feb 2014 / July 2014. Script keeps Xinhua's dates, attributed to Xinhua
+- [x] Deposit rate: "reportedly around two to three percent" → PBoC one-year benchmark fell 3.00% (Nov 2014 cut start) → 1.50% (Oct 24, 2015) during Ezubao's life (PBoC benchmark history; cuts Nov 22 2014, Mar 1, May 11, Jun 28, Aug 26, Oct 24 2015). **Re-confirm on pbc.gov.cn before upload**
+- [x] Information buying: Xinhua (cs.com.cn mirror, re-read Oct 4, 2026: https://www.cs.com.cn/xwzx/jr/201602/t20160201_4897558.html) says 雍磊 said "丁宁指使专人，用融资金额的1.5%-2%向企业买来信息"; Ding Ning said "向项目公司和中间人买资料" → "paid companies and middlemen", "on Ding Ning's instructions"
+- [x] Bengbu business owner: Xinhua says his account was frozen "直到2015年底" and he learned from police; "Years later … borrowing money it never received" unsupported → "Then, in late 2015 … police told him Ezubao had listed his company online to raise money in its name" (冒名挂到网上融资)
+- [x] "假项目、假三方、假担保" is **Xinhua's section headline**, not a police quote → "Xinhua summed up the trick in three phrases". Fund-pool sentence now attributed to police (据警方调查)
+- [x] "The court's audit found … 480 million" / "The court ordered a forensic audit" → the judgment says "经司法审计" but does not say the court ordered it → "According to the judgment" / "The court's findings, based on a forensic audit"
+- [x] Bar chart: 31.68亿 is "收购负债公司、不良债权等" (indebted companies & bad debts), not "investments"; added 12.3亿 fees to middlemen for fake projects (judgment via The Paper)
+- [x] Section 5 heading "Eight days in December" → "Six days in December" (Dec 3 → Dec 8 inclusive)
+- [x] Dec 3: "40余人被警方带走调查" at e租宝's **Shenzhen branch** (Sina Dec 4, 2015: https://news.sina.cn/2015-12-04/detail-ifxmhqaa9893631.d.html) → "took more than forty people from the platform's Shenzhen branch for questioning". Same Sina piece confirms ad slot "央视《新闻联播》前黄金广告时段"
+- [x] "Two weeks later" (Jan 14 → Jan 31 = 17 days) → "Just over two weeks later"; recap now says "more than" 1,200 volumes / 80 sacks / 20 hours, matching Xinhua's "余"
+- [x] 38 billion yuan: "around six billion dollars, was never paid back" → "nearly six billion dollars, was lost" (judgment: "造成集资款损失380亿余元"; ≈ $5.8B at 6.53 on Sept 12, 2017)
+- [x] Ding Dian is Ding Ning's **younger brother** (胞弟; Jiemian https://www.jiemian.com/article/627665.html , TMTPost https://www.tmtpost.com/2795607.html) → "His younger brother"
+- [x] "Zhang Min and twenty-three others" verified: judgment sentences "张敏等24人" to 3–15 years (The Paper above); 23 defendants appealed; Beijing High People's Court dismissed appeals end of Nov 2017
+- [x] 2019 step was "信息核实登记" July 2 – Aug 30, 2019 (Yicai https://www.yicai.com/news/100237741.html) → "verify and register"
+- [x] Second payout: employees added to the "清退对象" (Jiemian https://m.jiemian.com/article/12633805.html) → "included in the payout too" (not "as victims"). No third payout found as of Oct 4, 2026 (searched "e租宝 第三次 清退 2026")
+- [x] P2P: ~5,000 peak → 3 announced Nov 6, 2020 (Caixin, published Nov 7); → 0 by mid-Nov said by **CBIRC chief legal counsel Liu Fushou** on Nov 27, 2020 (NBD https://www.nbd.com.cn/articles/2020-11-27/1558453.html), not Guo Shuqing (the list above had it wrong; narration says "China's banking regulator", which is correct)
+- [x] 800 billion: Guo Shuqing said "出借人的资金还有8000多亿没回收" in remarks published Aug 15, 2020 (CCTV via ifeng https://news.ifeng.com/c/7yxR5IDex8K); not "as of August" → "Three months earlier, its chairman had said lenders were still owed more than 800 billion yuan" (≈ $115B at ~6.95)
+- [x] Caixin: "50 million investors" at peak → narration "around fifty million investors"
+- [x] Bengbu/manufacturing origin: Ding Ning's family factory → 钰诚五金 (hardware: can openers, screws), 2005 (PEdaily https://news.pedaily.cn/201709/419828.shtml , Fortune China above) — supports "started in manufacturing"
+- [x] Xinhua mirror re-read: 207 → 1 real; 8亿+; 3 guarantee + 1 factoring; Dec 5 cash; Dec 8 MPS operation; 200+ servers; 8 operating centers (北京、上海、蚌埠等); 31 provinces; 500亿+, ~90万 investors; Zhang Min quote — all match
+- [x] CCTV HQ protest Dec 14, 2015, banners blaming CCTV (RFA above) — attributed "reportedly"
+- [x] 1-yuan minimum and "无条件赎回" disclosed by the Supreme People's Procuratorate, Apr 27, 2016 (Jiemian above)
+
+**Still uncertain**
+- [ ] Xinhua (Feb/July 2014) vs judgment (June 2014) dates for the acquisition and launch — kept Xinhua's, attributed
+- [ ] Zhang Min's "~¥700M" and 杨晨's 4.5-year sentence come from a 金融虎 summary of the judgment republished on The Paper's 澎湃号 (not The Paper's own reporting); 102-page judgment not read directly. 杨晨 is not among the 26 main-case defendants, so he was convicted in a separate case — script says only "later convicted too"
+- [ ] Date Ezubao's last CCTV ad aired — unknown; cold open now says "months earlier"
+- [ ] "The platform went dark" Dec 8 — Chinese secondary reports say the site was unreachable from the evening of Dec 8; not confirmed in a primary source
+- [ ] Ding Ning's present status; 1-year deposit rates actually offered by banks (could float above benchmark)
 
 ---
 
@@ -578,7 +611,7 @@ Legal ground rules (same as EP.01–EP.03):
 | [Pixabay SFX: excavator](https://pixabay.com/sound-effects/search/excavator/) · [rain](https://pixabay.com/sound-effects/search/rain/) · [train](https://pixabay.com/sound-effects/search/train/) · [cash register](https://pixabay.com/sound-effects/search/cash%20register/) · [gavel](https://pixabay.com/sound-effects/search/gavel/) | Cold open, ads, verdict | — |
 
 **Music mood per section**
-- Cold open: low drone, excavator engine, rain; hard cut on "900,000 people"
+- Cold open: low drone, excavator engine, rain; hard cut on "more than a million people"
 - Man from Bengbu, leasing machine (pitch): bright corporate synth (the illusion); drops out when the diagram turns "FAKE"
 - State TV: upbeat ad-jingle feel, slightly detuned
 - Money: low pulse, single piano notes on each luxury item
