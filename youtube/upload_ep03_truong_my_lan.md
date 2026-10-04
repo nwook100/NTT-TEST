@@ -1,4 +1,4 @@
-# EP.03 업로드 패키지 (15분 미만, 예상 약 14:40): 쯔엉 미 란 / 반틴팟 / SCB 사건 (Truong My Lan)
+# EP.03 업로드 패키지 (15분 미만, 최종 약 14:52): 쯔엉 미 란 / 반틴팟 / SCB 사건 (Truong My Lan)
 
 - 대본: `fraud_ep03_truong_my_lan_en.md` (내레이션 2,067단어, 예상 약 14:20 + 인트로 6초 + 아웃트로 12초)
 - 채널 기본값: `channel_settings_en.md` 4장 (업로드 기본 설정)
@@ -42,17 +42,17 @@ Truong My Lan, chairwoman of the property group Van Thinh Phat, was found by a H
 
 Chapters
 00:00 A notebook full of cash
-[0:4x] From a market stall to an empire
-[1:5x] Buying a bank, quietly
-[3:1x] How the money left the bank
-[5:1x] Paying the inspector
-[6:2x] Bonds sold at the counter
-[7:5x] The run on SCB
-[8:5x] The trial
-[10:0x] Death row, then a second trial
-[11:2x] Where's the money?
-[12:4x] The pattern
-[13:5x] Next case
+00:46 From a market stall to an empire
+01:54 Buying a bank, quietly
+03:07 How the money left the bank
+05:22 Paying the inspector
+06:29 Bonds sold at the counter
+07:49 The run on SCB
+08:47 The trial
+10:11 Death row, then a second trial
+11:39 Where's the money?
+13:08 The pattern
+14:04 Next case
 
 Sources
 Ho Chi Minh City People's Court, first-instance verdicts (Apr 11, 2024; Oct 17, 2024) and High People's Court appeal rulings (Dec 3, 2024; Apr 21, 2025), as reported by VnExpress, Tuoi Tre, Sai Gon Giai Phong, Tap chi Toa an nhan dan, Lawyers of Vietnam (lsvn.vn), The Investor and VnEconomy
@@ -61,10 +61,10 @@ Ho Chi Minh City Civil Judgment Enforcement Department, payout announcements (20
 Viet Nam News, VietNamNet, VTC News, Dan Tri, VietnamFinance
 Associated Press, BBC, CNN, Reuters, Radio Free Asia
 
-Photos: Wikimedia Commons (CC BY-SA 3.0 / CC BY 3.0 / CC BY-SA 4.0, authors credited on screen).
+Photos: Wikimedia Commons and Openverse (Creative Commons licences; authors listed in the project credits).
 Other footage: Pexels and Pixabay licences.
 
-Some scenes are AI-generated illustrations. No real person is depicted in them.
+No photo or likeness of Truong My Lan is shown.
 
 Paper Tiger Files tells the true stories behind Asia's biggest frauds.
 Subscribe for a new case every week.
@@ -74,7 +74,7 @@ This video is for educational and documentary purposes. Statements not based on 
 #TruongMyLan #Vietnam #truecrime
 ```
 
-- **챕터 타임스탬프는 자리표시**입니다 (`[0:4x]` 형식). 대본 예상치: 0:42 / 1:56 / 3:14 / 5:17 / 6:25 / 7:54 / 8:56 / 10:09 / 11:29 / 12:49 / 13:53. 내레이션 생성 후 manifest.json의 섹션 시작 시간 + 인트로 6초로 다시 맞추세요 (YouTube 규칙: 첫 줄 00:00, 챕터 3개 이상, 각 10초 이상)
+- 챕터 타임스탬프는 **최종 영상(output/ep03/ep03_final_upload.mp4, 인트로·아웃트로 포함 약 14:52) 기준 실제 시간**입니다 (output/ep03/chapters_final.txt)
 - 첫 두 줄: 1줄 약 150자, 2줄 144자
 - 설명란 총 길이 약 2,470자 / 5,000자 (Python len() 기준)
 - 출처 URL은 대본 팩트체크 목록에 모두 있습니다. 설명란에는 매체명만 (EP.02와 같은 방식). 원하면 baochinhphu.vn 기사 링크 1개만 추가 권장: https://baochinhphu.vn/vu-an-truong-my-lan-da-chi-tra-hon-12-nghin-ty-dong-cho-trai-chu-10226052116131327.htm
