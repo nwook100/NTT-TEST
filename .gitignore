@@ -37,3 +37,5 @@ youtube/output/**/upload_parts/*.part*
 youtube/output/**/upload_parts*/*.part*
 youtube/output/**/*.zip
 youtube/output/**/parts_cc/*.part*
+youtube/output/*/narration/chunks/
+youtube/output/*/narration/log.txt
