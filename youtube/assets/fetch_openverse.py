@@ -76,6 +76,17 @@ def run(ep, queries, per=4):
         fh.write("```\n")
 
 EP = {
+ "ep04_ezubao": [
+  ("s00_hefei_ov", "Hefei skyline"), ("s01_bengbu_ov", "Bengbu Anhui"), ("s01_beijing_cbd_ov", "Beijing CBD skyline"),
+  ("s01_beijing_night_ov", "Beijing night city"), ("s01_smartphone_ov", "smartphone screen hand"),
+  ("s01_online_banking_ov", "mobile banking app phone"), ("s03_bullet_train_ov", "China high speed train CRH"),
+  ("s03_beijing_subway_ov", "Beijing subway station"), ("s03_airport_china_ov", "Beijing airport terminal"),
+  ("s04_yuan_banknotes_ov", "Chinese yuan banknotes"), ("s04_renminbi_ov", "renminbi 100 yuan"),
+  ("s05_shenzhen_ov", "Shenzhen skyline night"), ("s05_police_china_ov", "Chinese police car"),
+  ("s06_chinese_court_ov", "Chinese court building"), ("s07_rural_china_ov", "rural China village houses"),
+  ("s07_gold_ov", "gold bars"), ("s08_china_city_night_ov", "Chinese city night aerial"),
+  ("s08_chongqing_night_ov", "Chongqing night skyline"),
+ ],
  "ep02_cho_hee_pal": [
   ("s01_daegu_skyline", "Daegu skyline"), ("s01_daegu_night", "Daegu night city"), ("s01_daegu_street", "Daegu downtown street"),
   ("s01_massage_device", "massage chair"), ("s02_office_seminar", "seminar room chairs"), ("s03_busan", "Busan skyline"),

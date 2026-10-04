@@ -32,7 +32,7 @@ def hook_ass(lines, red):
     def col(w): return "{\\c" + RED + "}" + w + "{\\c" + PAPER + "}"
     return "\\N".join(" ".join(col(w) if re.sub(r"[^\w%$']", "", w).lower() in red else w for w in l.split()) for l in lines)
 
-def end_card(path, ep_title):
+def end_card(path, ep_title, sub="Full documentary"):
     im = Image.new("RGB", (W, H), (13, 14, 17)); d = ImageDraw.Draw(im)
     def c(text, y, f, fill):
         w = d.textlength(text, font=f); d.text(((W - w) / 2, y), text, font=f, fill=fill)
@@ -42,7 +42,7 @@ def end_card(path, ep_title):
     c("FULL STORY", 820, ImageFont.truetype(FM, 54), (215, 38, 61))
     f = ImageFont.truetype(FB, 76)
     for i, l in enumerate(ep_title): c(l, 910 + i * 92, f, (243, 237, 226))
-    c("22-minute documentary", 910 + len(ep_title) * 92 + 30, ImageFont.truetype(FB, 46), (160, 152, 140))
+    c(sub, 910 + len(ep_title) * 92 + 30, ImageFont.truetype(FB, 46), (160, 152, 140))
     y = 910 + len(ep_title) * 92 + 150
     d.rounded_rectangle((180, y, 900, y + 110), radius=55, fill=(215, 38, 61))
     c("Tap the link above the title", y + 30, ImageFont.truetype(FB, 46), (255, 255, 255))
@@ -100,7 +100,7 @@ Style: Brand,DejaVu Sans Mono,28,&H00687278,&H00687278,&H00000000,&H00000000,1,0
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """ + "\n".join(e for e in ev if e) + "\n")
-    card = os.path.join(tmp, "card.png"); end_card(card, s["card"])
+    card = os.path.join(tmp, "card.png"); end_card(card, s["card"], spec.get("card_sub", "Full documentary"))
     out = os.path.join(ROOT, spec["out_dir"], f"short{s['n']}_{s['slug']}.mp4")
     fc = (f"[0:v]split[a][b];[a]scale=-2:{H},crop={W}:{H},boxblur=28:4,eq=brightness=-0.22:saturation=0.7[bg];"
           f"[b]scale={W}:{VH}[fg];[bg][fg]overlay=0:{VY},"

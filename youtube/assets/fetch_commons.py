@@ -79,6 +79,15 @@ def run(ep, queries, per=3):
         f.write("```\n")
 
 EP = {
+ "ep04_ezubao": [
+  ("s00_hefei_skyline", "Skylines of Hefei at Tianehu"), ("s00_hefei", "Hefei city skyline"),
+  ("s01_bengbu", "Bengbu Zhanggong Mountain Lake"), ("s01_bengbu_street", "Bengbu Railway Station Fengyangdong Street"),
+  ("s01_bengbu_city", "Bengbu city"), ("s01_beijing_cbd", "Beijing CBD night"), ("s01_chaoyang", "Chaoyang District Beijing skyline"),
+  ("s03_cctv_hq", "China Central Television Headquarters"), ("s03_crh_train", "CRH high speed train China"),
+  ("s03_shanghai_lujiazui", "Shanghai Lujiazui night skyline"), ("s04_yuan", "Renminbi banknotes 100 yuan"),
+  ("s05_world_trade_center", "China World Trade Center III Beijing"), ("s05_public_security", "public security bureau building China"),
+  ("s06_beijing_court", "Beijing No. 1 Intermediate People's Court"), ("s06_beijing_high_court", "Beijing Higher People's Court"),
+ ],
  "ep03_truong_my_lan": [
   ("s07_hcmc_court", "Tòa án nhân dân Thành phố Hồ Chí Minh"), ("s01_times_square_saigon", "Saigon Times Square Nguyen Hue"),
   ("s01_windsor_plaza", "Windsor Plaza Hotel Saigon"), ("s01_ben_thanh", "Ben Thanh Market"),
