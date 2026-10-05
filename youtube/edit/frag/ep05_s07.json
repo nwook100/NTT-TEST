@@ -1,0 +1,181 @@
+{
+ "section": "7",
+ "chunks": [
+  {
+   "id": 41,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s07_chapter_the_fall.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s07_tw_may_9_2018",
+     "args": {
+      "text": "MAY 9, 2018",
+      "sub": "Malaysia holds a general election",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_it_lost",
+     "args": {
+      "lines": ["It lost."],
+      "kicker": "IN POWER WITHOUT A BREAK SINCE INDEPENDENCE IN 1957",
+      "red": ["lost."],
+      "dur": 3.5,
+      "size": 130,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_mahathir",
+     "args": {
+      "lines": ["Mahathir Mohamad, aged 92.", "Najib's former mentor."],
+      "kicker": "THE NEW PRIME MINISTER",
+      "red": ["92."],
+      "dur": 5.0,
+      "stagger": 1.1,
+      "size": 88,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/putrajaya_perdana_putra_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/handbags_display_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_raid_haul",
+     "args": {
+      "lines": ["567 handbags · 423 watches", "12,000+ pieces of jewellery", "~RM 116 million in cash"],
+      "kicker": "POLICE SAID THEY SEIZED",
+      "red": ["cash"],
+      "dur": 5.5,
+      "stagger": 1.0,
+      "size": 80,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s07_count_rm_1_1b",
+     "args": {
+      "to": 1.1,
+      "decimals": 1,
+      "prefix": "RM ",
+      "suffix": " BILLION",
+      "kicker": "POLICE VALUED THE HAUL AT UP TO",
+      "end_red": true,
+      "dur": 4.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Najib's side disputed that figure\nand said many items were gifts.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s07_stamp_arrested",
+     "args": {
+      "word": "ARRESTED",
+      "sub": "JULY 3, 2018",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_2.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s07_tw_feb_2018",
+     "args": {
+      "text": "FEBRUARY 2018 — OFF BALI",
+      "sub": "Equanimity seized at the request of the United States",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_3.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s07_count_126m_sale",
+     "args": {
+      "to": 126,
+      "prefix": "$",
+      "suffix": " MILLION",
+      "kicker": "SOLD THE NEXT YEAR FOR",
+      "sublabel": "about half of what prosecutors say it had cost",
+      "end_red": true,
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_1.jpg",
+     "fx": "right"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  { "chunk": 41, "name": "impact", "offset": 7.5, "gain_db": -12 },
+  { "chunk": 43, "name": "whoosh", "offset": 0.0, "gain_db": -14 },
+  { "chunk": 44, "name": "stamp", "offset": 4.6, "gain_db": -8 },
+  { "chunk": 46, "name": "impact", "offset": 3.8, "gain_db": -12 }
+ ],
+ "music_drops": [
+  { "chunk": 41, "dur": 1.5 }
+ ]
+}
