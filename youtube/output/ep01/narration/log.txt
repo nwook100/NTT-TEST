@@ -1,0 +1,23 @@
+109 chunks, 3153 words
+0 chunks already done, 109 to generate
+[6/109] 1.1 min audio in 5.4 min (rtf 5.2); worst wer in batch 0.06
+[12/109] 2.2 min audio in 9.6 min (rtf 4.3); worst wer in batch 0.09
+[18/109] 3.2 min audio in 13.2 min (rtf 4.1); worst wer in batch 0.09
+[24/109] 4.3 min audio in 17.7 min (rtf 4.1); worst wer in batch 0.08
+[30/109] 5.6 min audio in 21.2 min (rtf 3.8); worst wer in batch 0.08
+[36/109] 6.7 min audio in 24.8 min (rtf 3.7); worst wer in batch 0.09
+[42/109] 7.9 min audio in 31.6 min (rtf 4.0); worst wer in batch 0.18
+[48/109] 9.3 min audio in 35.1 min (rtf 3.8); worst wer in batch 0.12
+[54/109] 10.5 min audio in 39.5 min (rtf 3.8); worst wer in batch 0.11
+[60/109] 11.7 min audio in 44.2 min (rtf 3.8); worst wer in batch 0.12
+[66/109] 13.1 min audio in 48.7 min (rtf 3.7); worst wer in batch 0.04
+[72/109] 14.0 min audio in 52.0 min (rtf 3.7); worst wer in batch 0.06
+[78/109] 15.2 min audio in 55.6 min (rtf 3.7); worst wer in batch 0.14
+[84/109] 16.4 min audio in 60.0 min (rtf 3.7); worst wer in batch 0.10
+[90/109] 17.5 min audio in 63.8 min (rtf 3.6); worst wer in batch 0.08
+[96/109] 18.7 min audio in 67.4 min (rtf 3.6); worst wer in batch 0.14
+[102/109] 19.8 min audio in 72.4 min (rtf 3.7); worst wer in batch 0.09
+[108/109] 20.9 min audio in 76.1 min (rtf 3.6); worst wer in batch 0.05
+[109/109] 21.1 min audio in 78.0 min (rtf 3.7); worst wer in batch 0.00
+DONE duration=22.0 min, chunks over WER 0.18: 1
+  chunk 41 s6 wer=0.182: Kwon said the goal was 10 billion dollars' worth of bitcoin. | ASR: Kwan said the goal was $10 billion worth of Bitcoin.

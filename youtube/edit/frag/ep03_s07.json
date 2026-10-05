@@ -1,0 +1,232 @@
+{
+ "section": "7",
+ "chunks": [
+  {
+   "id": 41,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s07_chapter_the_trial.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_2.jpg",
+     "fx": "in",
+     "crop": "bottom",
+     "overlay": "assets/ep03_truong_my_lan/motion/s07_lowerthird_hcmc_court.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_blazing_furnace",
+     "args": {
+      "lines": [
+       "the \"blazing furnace\""
+      ],
+      "kicker": "THE COMMUNIST PARTY'S ANTI-CORRUPTION CAMPAIGN",
+      "red": [
+       "furnace"
+      ],
+      "dur": 4.5,
+      "size": 120,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s07_countup_86_defendants.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s07_count_104_boxes",
+     "args": {
+      "to": 104,
+      "kicker": "ACCORDING TO THE BBC",
+      "label": "BOXES OF CASE FILES",
+      "sublabel": "weighing six tonnes",
+      "dur": 4.5,
+      "count_time": 1.6,
+      "size": 260,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "text",
+     "text": "Lan denied embezzling.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "She said she had only a small stake in the bank,\nand blamed her subordinates.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/courtroom_gavel_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_criminal_enterprise",
+     "args": {
+      "lines": [
+       "orchestrated a sophisticated",
+       "criminal enterprise"
+      ],
+      "kicker": "THE COURT SAID SHE HAD",
+      "red": [
+       "criminal"
+      ],
+      "dur": 3.5,
+      "stagger": 0.7,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s07_typewriter_april_11_2024.mp4"
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_04_death_sentence_2024_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s07_stamp_death.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s07_countup_674_trillion_to_scb.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_05_674_trillion_to_scb_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_husband_niece",
+     "args": {
+      "lines": [
+       "Husband — 9 yrs",
+       "Niece (Van Thinh Phat CEO) — 17 yrs"
+      ],
+      "red": [
+       "17"
+      ],
+      "dur": 4.5,
+      "stagger": 1.2,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s07_kp_four_life",
+     "args": {
+      "lines": [
+       "two former chairmen of the bank,",
+       "its former general director,",
+       "and the central-bank inspection chief"
+      ],
+      "kicker": "FOUR DEFENDANTS SENTENCED TO LIFE",
+      "red": [
+       "chief"
+      ],
+      "dur": 5.0,
+      "stagger": 0.9,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s07_hcmc_court_3.jpg",
+     "fx": "in",
+     "crop": "bottom"
+    },
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s07_stamp_all_86_guilty",
+     "args": {
+      "word": "GUILTY",
+      "sub": "EVERY ONE OF THE 86",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 42,
+   "name": "impact",
+   "offset": 2.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 45,
+   "name": "stamp",
+   "offset": 7.55,
+   "gain_db": -6
+  },
+  {
+   "chunk": 45,
+   "name": "impact",
+   "offset": 7.55,
+   "gain_db": -10
+  },
+  {
+   "chunk": 46,
+   "name": "stamp",
+   "offset": 16.05,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 44,
+   "dur": 3.5
+  }
+ ]
+}

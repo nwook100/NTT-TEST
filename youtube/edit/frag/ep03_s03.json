@@ -1,0 +1,427 @@
+{
+ "section": "3",
+ "chunks": [
+  {
+   "id": 15,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s03_chapter_the_piggy_bank.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/saigon_skyline_river_night_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s03_keyphrase_how_the_money_left.mp4"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s03_countup_1000_companies.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s03_flow_step2_loans",
+     "args": {
+      "title": "STEP 2 · LOANS",
+      "dur": 5.0,
+      "nodes": [
+       {
+        "id": "g",
+        "label": "Ghost company",
+        "x": 0.1,
+        "y": 0.5
+       },
+       {
+        "id": "l",
+        "label": "Loan application",
+        "x": 0.5,
+        "y": 0.5
+       },
+       {
+        "id": "s",
+        "label": "SCB",
+        "x": 0.9,
+        "y": 0.5,
+        "red": true
+       }
+      ],
+      "edges": [
+       {
+        "from": "g",
+        "to": "l"
+       },
+       {
+        "from": "l",
+        "to": "s"
+       }
+      ],
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/stamping_documents_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s03_stamp_approved.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s03_countup_916_loan_applications",
+     "args": {
+      "to": 916,
+      "kicker": "2018–2022 · THE COURT COUNTED",
+      "label": "LOAN APPLICATIONS",
+      "sublabel": "worth around ₫545 trillion",
+      "dur": 5.0,
+      "count_time": 2.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_2.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_2.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_collateral_inflated",
+     "args": {
+      "lines": [
+       "Collateral value",
+       "inflated"
+      ],
+      "red": [
+       "inflated"
+      ],
+      "kicker": "STEP 3 · ACCORDING TO THE COURT",
+      "dur": 4.5,
+      "stagger": 0.7,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/server_room_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s03_flow_step4_money_moves_on",
+     "args": {
+      "title": "STEP 4 · THE MONEY MOVES ON",
+      "dur": 6.0,
+      "nodes": [
+       {
+        "id": "scb",
+        "label": "SCB",
+        "x": 0.12,
+        "y": 0.54,
+        "sub": "loan money",
+        "red": true
+       },
+       {
+        "id": "a",
+        "label": "Other accounts",
+        "x": 0.78,
+        "y": 0.12
+       },
+       {
+        "id": "o",
+        "label": "Old loans",
+        "x": 0.78,
+        "y": 0.4
+       },
+       {
+        "id": "p",
+        "label": "Van Thinh Phat projects",
+        "x": 0.78,
+        "y": 0.68
+       },
+       {
+        "id": "c",
+        "label": "Cash",
+        "x": 0.78,
+        "y": 0.96
+       }
+      ],
+      "edges": [
+       {
+        "from": "scb",
+        "to": "a"
+       },
+       {
+        "from": "scb",
+        "to": "o"
+       },
+       {
+        "from": "scb",
+        "to": "p"
+       },
+       {
+        "from": "scb",
+        "to": "c",
+        "red": true
+       }
+      ],
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/money_counter_2.mp4"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_loan_valuation_transfer",
+     "args": {
+      "lines": [
+       "A loan.",
+       "A valuation.",
+       "A transfer."
+      ],
+      "kicker": "EACH STEP LOOKED LIKE ORDINARY BANKING",
+      "dur": 3.0,
+      "stagger": 0.7,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s03_flow_one_direction_out",
+     "args": {
+      "title": "A PIPE THAT RAN IN ONE DIRECTION",
+      "dur": 6.0,
+      "nodes": [
+       {
+        "id": "l",
+        "label": "A loan",
+        "x": 0.08,
+        "y": 0.5
+       },
+       {
+        "id": "v",
+        "label": "A valuation",
+        "x": 0.36,
+        "y": 0.5
+       },
+       {
+        "id": "t",
+        "label": "A transfer",
+        "x": 0.64,
+        "y": 0.5
+       },
+       {
+        "id": "o",
+        "label": "Out",
+        "x": 0.92,
+        "y": 0.5,
+        "red": true
+       }
+      ],
+      "edges": [
+       {
+        "from": "l",
+        "to": "v"
+       },
+       {
+        "from": "v",
+        "to": "t"
+       },
+       {
+        "from": "t",
+        "to": "o",
+        "red": true
+       }
+      ],
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/parking_garage_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s03_typewriter_feb_2019_2022",
+     "args": {
+      "text": "FEBRUARY 2019 – 2022",
+      "sub": "— according to prosecutors",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/saigon_traffic_night_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/notebook_numbers_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s00_countup_108_trillion_dong.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/money_counter_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s03_countup_216_million_notes_6s",
+     "args": {
+      "to": 216,
+      "suffix": " MILLION",
+      "kicker": "OUR MATH",
+      "label": "LARGEST NOTE: ₫500,000 → 108 TRILLION = 216 MILLION NOTES",
+      "sublabel": "Vietnam's largest banknote",
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_01_304_trillion_embezzled_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s03_countup_304_trillion_dong.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_day_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_three_percent_of_economy",
+     "args": {
+      "lines": [
+       "Close to three percent",
+       "of Vietnam's entire economy"
+      ],
+      "red": [
+       "percent"
+      ],
+      "kicker": "INTERNATIONAL MEDIA · 2022",
+      "dur": 4.5,
+      "stagger": 0.8,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/motorbikes_saigon_2.mp4",
+     "start": 1.5
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 15,
+   "name": "whoosh",
+   "offset": 5.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 17,
+   "name": "stamp",
+   "offset": 9.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 21,
+   "name": "typewriter",
+   "offset": 3.1,
+   "gain_db": -12
+  },
+  {
+   "chunk": 23,
+   "name": "impact",
+   "offset": 9.55,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 23,
+   "dur": 1.5
+  }
+ ]
+}

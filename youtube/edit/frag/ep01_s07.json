@@ -1,0 +1,77 @@
+{
+  "section": "7",
+  "chunks": [
+    {"id": 50, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_chapter_seven_days_in_may.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_sat_may07.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_terraform_pulls_ust", "args": {"lines": ["Terraform pulls a large amount of UST", "out of a key trading pool"], "dur": 3.5, "stagger": 1.4, "size": 100}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_curve_planned_move", "args": {"lines": ["on a platform called Curve,", "as part of a planned move to a new pool."], "red": ["curve,"], "dur": 5.5, "stagger": 1.8, "size": 100}}
+    ]},
+    {"id": 51, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_wallets_dump", "args": {"lines": ["Within minutes, other wallets dump", "tens of millions of UST", "into what's left."], "red": ["millions"], "dur": 5.5, "stagger": 1.5, "size": 104}},
+      {"kind": "motion", "fn": "count_up", "name": "s07_count_ust_099", "args": {"frm": 1.0, "to": 0.99, "decimals": 2, "prefix": "$", "kicker": "THE POOL TILTS.", "label": "UST SLIPS TO 99 CENTS", "end_red": true, "dur": 6.0, "count_time": 1.6}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_crack_in_glass", "args": {"lines": ["For a coin whose whole promise is one dollar,", "a penny is a crack in the glass."], "red": ["crack"], "dur": 5.5, "stagger": 2.5, "size": 96}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/glass_breaking_1.mp4", "grade": "cold"}
+    ]},
+    {"id": 52, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_sun_may08.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_depositors_exit", "args": {"lines": ["Anchor depositors head for the exit.", "Billions of dollars of UST", "leave in a matter of days."], "red": ["exit.", "billions"], "dur": 5.0, "stagger": 1.5, "size": 100}},
+      {"kind": "motion", "fn": "count_up", "name": "s07_count_lfg_lend_1_5b", "args": {"to": 1.5, "decimals": 1, "prefix": "$", "suffix": "B", "kicker": "THE LUNA FOUNDATION GUARD SAYS IT WILL LEND", "label": "HALF IN BITCOIN AND HALF IN UST", "sublabel": "TO DEFEND THE PEG", "dur": 5.0, "count_time": 2.0}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "in"}
+    ]},
+    {"id": 53, "segments": [
+      {"kind": "text", "text": "Kwon tweets:\n“Deploying more capital.\nSteady lads.”", "style": "quote"}
+    ]},
+    {"id": 54, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_mon_may09.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/city_night_timelapse_2.mp4", "grade": "red"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_bitcoin_slides_30k", "args": {"lines": ["Bitcoin itself slides", "toward 30,000 dollars."], "red": ["30,000"], "dur": 3.0, "stagger": 0.5, "size": 116}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_anchor_14_to_9", "args": {"lines": ["Anchor deposits fall", "from 14 billion", "to under 9 billion."], "red": ["under", "9"], "dur": 4.0, "stagger": 0.7, "size": 112}},
+      {"kind": "motion", "fn": "line_chart", "name": "s07_lc_ust_depeg", "args": {"title": "UST · THE PEG BREAKS", "points": [["The promise", 1.0], ["Sat, May 7", 0.99], ["Mon, May 9", 0.35]], "prefix": "$", "decimals": 2, "red_from": 1, "note": "Approximate prices · UST at one point dropped to around 35 cents", "dur": 4.5}}
+    ]},
+    {"id": 55, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_trick_in_reverse", "args": {"lines": ["And now the magic trick", "runs in reverse."], "red": ["reverse."], "dur": 3.0, "stagger": 0.5, "size": 120}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_more_and_more_luna", "args": {"lines": ["To defend the peg,", "the system creates", "more and more LUNA."], "red": ["luna."], "dur": 3.5, "stagger": 0.6, "size": 116}},
+      {"kind": "motion", "fn": "flow_diagram", "name": "s07_flow_death_spiral", "args": {"title": "THE MAGIC TRICK IN REVERSE", "nodes": [{"id": "a", "label": "UST falls", "x": 0.5, "y": 0.14, "red": true}, {"id": "b", "label": "More LUNA printed", "x": 0.85, "y": 0.57}, {"id": "c", "label": "LUNA price falls", "x": 0.5, "y": 0.98, "red": true}, {"id": "d", "label": "Less trust", "x": 0.15, "y": 0.57}], "edges": [{"from": "a", "to": "b"}, {"from": "b", "to": "c"}, {"from": "c", "to": "d"}, {"from": "d", "to": "a", "red": true}], "dur": 6.0}}
+    ]},
+    {"id": 56, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_tue_wed_may10_11.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s09_server_room_ov_2.jpg", "fx": "in", "grade": "cold"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_binance_pauses", "args": {"lines": ["Binance briefly pauses", "LUNA and UST withdrawals."], "kicker": "THE WORLD'S LARGEST EXCHANGE", "red": ["pauses"], "dur": 4.0, "stagger": 0.6, "size": 110}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_luna_below_1", "args": {"lines": ["LUNA, worth around 80 dollars", "at the start of the month,", "falls below one dollar."], "red": ["below"], "dur": 5.0, "stagger": 1.0, "size": 104}}
+    ]},
+    {"id": 57, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_supply_trillions", "args": {"lines": ["The supply of LUNA explodes", "from hundreds of millions of coins", "into the trillions."], "red": ["trillions."], "dur": 6.0, "stagger": 2.0, "size": 104}}
+    ]},
+    {"id": 58, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_typewriter_thu_fri_may12_13.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_chain_halted", "args": {"lines": ["The Terra blockchain itself is halted.", "By Friday, it has been halted again."], "red": ["halted.", "again."], "dur": 4.5, "stagger": 1.4, "size": 100}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s07_kp_fraction_of_cent", "args": {"lines": ["LUNA is now worth", "a tiny fraction of a cent."], "red": ["fraction"], "dur": 5.0, "stagger": 0.6, "size": 116, "kicker": "MAJOR EXCHANGES PULL LUNA AND UST FROM TRADING."}}
+    ]},
+    {"id": 59, "segments": [
+      {"kind": "text", "text": "That Friday, Kwon writes:", "style": "label"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_wordbyword_heartbroken.mp4"}
+    ]},
+    {"id": 60, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s07_countdown_80394_to_313_BTC.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "out", "crop": "right", "grade": "cold"},
+      {"kind": "motion", "fn": "count_up", "name": "s07_count_audit_2_8b", "args": {"to": 2.8, "decimals": 1, "prefix": "$", "suffix": "B", "kicker": "AN AUDIT THE FOUNDATION RELEASED LATER", "label": "TOTAL SPENT DEFENDING THE PEG: ABOUT 2.8 BILLION DOLLARS", "dur": 6.0, "count_time": 2.8}}
+    ]},
+    {"id": 61, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s00_countup_40B.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 50, "name": "typewriter", "offset": 4.0, "gain_db": -12},
+    {"chunk": 51, "name": "impact", "offset": 18.15, "gain_db": -10},
+    {"chunk": 54, "name": "glitch", "offset": 17.9, "gain_db": -10},
+    {"chunk": 57, "name": "glitch", "offset": 4.2, "gain_db": -10},
+    {"chunk": 60, "name": "impact", "offset": 2.85, "gain_db": -8}
+  ],
+  "music_drops": [
+    {"chunk": 59, "dur": 9.7},
+    {"chunk": 61, "dur": 2.0}
+  ]
+}

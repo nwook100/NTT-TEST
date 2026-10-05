@@ -1,0 +1,341 @@
+{
+ "section": "3",
+ "chunks": [
+  {
+   "id": 27,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep02_cho_hee_pal/motion/s03_chapter_from_daegu_to_everywhere.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_told_friends_family",
+     "args": {
+      "lines": [
+       "They told friends.",
+       "They told family."
+      ],
+      "red": [
+       "family."
+      ],
+      "kicker": "EARLY INVESTORS WERE PAID ON TIME",
+      "dur": 4.0,
+      "stagger": 1.4,
+      "size": 118
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+     "start": 1.5
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+     "fx": "left",
+     "crop": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+     "fx": "right",
+     "crop": "detail"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_network_spread_route",
+     "args": {
+      "lines": [
+       "Daegu → Busan and the southern coast",
+       "→ the Chungcheong provinces",
+       "→ Seoul, Gyeonggi and Incheon"
+      ],
+      "red": [
+       "Seoul,"
+      ],
+      "kicker": "THE NETWORK SPREAD",
+      "dur": 6.0,
+      "stagger": 1.0,
+      "size": 100
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s03_count_50_sales_centers",
+     "args": {
+      "to": 50,
+      "prefix": "~",
+      "kicker": "BY LATE 2008, KOREAN MEDIA WERE COUNTING",
+      "label": "SALES CENTERS ACROSS THE COUNTRY",
+      "dur": 5.0,
+      "count_time": 2.3
+     }
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_who_signed_up",
+     "args": {
+      "lines": [
+       "So who signed up?",
+       "Not bankers.",
+       "Not professional investors."
+      ],
+      "dur": 4.2,
+      "stagger": 1.2,
+      "size": 104
+     }
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s03_count_7_in_10_homemakers",
+     "args": {
+      "to": 7,
+      "suffix": " IN 10",
+      "kicker": "ABOUT",
+      "label": "INVESTORS WERE HOMEMAKERS IN THEIR FORTIES AND FIFTIES",
+      "sublabel": "In the Seoul area, the same 2008 report said",
+      "dur": 5.0,
+      "count_time": 1.5
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_later_reporting_described",
+     "args": {
+      "lines": [
+       "Retirees.",
+       "People who had lost jobs.",
+       "Families still recovering from",
+       "the Asian financial crisis of the late 1990s."
+      ],
+      "red": [
+       "crisis"
+      ],
+      "kicker": "LATER REPORTING DESCRIBED",
+      "dur": 5.5,
+      "stagger": 1.2,
+      "size": 96
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+     "fx": "left",
+     "crop": "bottom",
+     "grade": "bw"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "word_by_word",
+     "name": "s03_wbw_retirement_borrowed",
+     "args": {
+      "text": "Some reportedly put in their retirement money. Some borrowed to invest more.",
+      "red": [
+       "retirement",
+       "borrowed"
+      ],
+      "dur": 6.0,
+      "size": 82,
+      "reveal": 4.6
+     }
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Why them?",
+     "style": "quote"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
+     "fx": "right",
+     "crop": "detail"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_rates_low_pensions_thin",
+     "args": {
+      "lines": [
+       "Interest rates were low.",
+       "Pensions were thin."
+      ],
+      "red": [
+       "low.",
+       "thin."
+      ],
+      "dur": 4.0,
+      "stagger": 1.8,
+      "size": 112
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_many_had_lump_sum",
+     "args": {
+      "lines": [
+       "a lump sum,",
+       "a severance payment",
+       "or a matured insurance policy,"
+      ],
+      "kicker": "MANY HAD",
+      "dur": 5.0,
+      "stagger": 1.5,
+      "size": 104
+     }
+    },
+    {
+     "kind": "text",
+     "text": "And nowhere obvious\nto put it.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+     "fx": "left",
+     "crop": "left"
+    },
+    {
+     "kind": "text",
+     "text": "Someone you had trusted\nfor twenty years.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+     "fx": "right",
+     "crop": "detail"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_daily_payment_clockwork",
+     "args": {
+      "lines": [
+       "+₩35,000",
+       "+₩35,000",
+       "+₩35,000",
+       "+₩35,000"
+      ],
+      "kicker": "LIKE CLOCKWORK",
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 110
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "After a few months, you're the one\ntelling your sister she's missing out.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "That daily payment\nwasn't just a return.",
+     "style": "quote"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_proof_or_looked_like",
+     "args": {
+      "lines": [
+       "It was proof.",
+       "Or it looked like proof."
+      ],
+      "red": [
+       "looked"
+      ],
+      "dur": 4.5,
+      "stagger": 1.5,
+      "size": 118
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 28,
+   "name": "whoosh",
+   "offset": 2.4,
+   "gain_db": -12
+  },
+  {
+   "chunk": 28,
+   "name": "whoosh",
+   "offset": 4.9,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 13.5,
+   "gain_db": -10
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 35,
+   "dur": 7.6
+  }
+ ]
+}

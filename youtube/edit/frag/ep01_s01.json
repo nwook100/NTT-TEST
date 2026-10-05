@@ -1,0 +1,262 @@
+{
+ "section": "1",
+ "chunks": [
+  {
+   "id": 4,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s01_chapter_the_golden_boy.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s01_pc_kwon_founder",
+     "args": {
+      "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+      "name": "DO KWON",
+      "credit": "Photo: FAQX / CC BY 3.0",
+      "kicker": "THE FOUNDER",
+      "sub": "Grew up in Seoul. Stanford, computer science. Co-founded Terraform Labs in 2018.",
+      "grade": "color",
+      "dur": 5.0
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "timeline",
+     "name": "s01_tl_kwon_path",
+     "args": {
+      "title": "DO KWON",
+      "events": [
+       [
+        "Stanford",
+        "Studied computer science"
+       ],
+       [
+        "Microsoft \u00b7 Apple",
+        "Software engineer, briefly"
+       ],
+       [
+        "2016",
+        "Starts Anyfi, a small wireless networking company"
+       ],
+       [
+        "Early 2018",
+        "Co-founds Terraform Labs"
+       ]
+      ],
+      "dur": 6.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s01_gangnam_1.jpg",
+     "crop": "top",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s01_kp_coder_dealmaker",
+     "args": {
+      "lines": [
+       "DO KWON \u2014 the coder",
+       "DANIEL SHIN \u2014 the dealmaker"
+      ],
+      "red": [
+       "coder",
+       "dealmaker"
+      ],
+      "kicker": "EARLY 2018 \u00b7 TERRAFORM LABS",
+      "dur": 5.5,
+      "stagger": 2.6,
+      "size": 104
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s01_gangnam_2.jpg",
+     "crop": "right",
+     "fx": "left"
+    },
+    {
+     "kind": "text",
+     "text": "Ticket Monster, or TMON",
+     "style": "label"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/code_dark_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_2.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/phone_scrolling_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s01_count_followers_1m",
+     "args": {
+      "to": 1000000,
+      "prefix": "~",
+      "kicker": "ON TWITTER \u00b7 BY 2022",
+      "label": "AROUND A MILLION PEOPLE FOLLOWED HIM",
+      "dur": 5.3,
+      "count_time": 3.0
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s01_kp_the_future",
+     "args": {
+      "lines": [
+       "He wasn't just a founder.",
+       "He was the future."
+      ],
+      "red": [
+       "future."
+      ],
+      "kicker": "TO MANY OF THEM",
+      "dur": 4.2,
+      "stagger": 2.5,
+      "size": 110
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Terra's big idea\nwas a stablecoin.",
+     "style": "label"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/crypto_coins_1.mp4",
+     "start": 1.5
+    },
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s01_cmp_bitcoin_vs_stablecoin",
+     "args": {
+      "title": "TERRA'S BIG IDEA",
+      "left": {
+       "head": "Bitcoin",
+       "big": "Up and down",
+       "sub": "Most cryptocurrencies swing wildly in price."
+      },
+      "right": {
+       "head": "Stablecoin",
+       "big": "Always $1",
+       "sub": "Supposed to stay at one dollar."
+      },
+      "dur": 5.5
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/mobile_payment_1.mp4",
+     "start": 2.0
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/money_counting_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s01_kp_real_dollar_reserve",
+     "args": {
+      "lines": [
+       "For every coin, they hold a real dollar,",
+       "or something like it, in reserve."
+      ],
+      "red": [
+       "dollar",
+       "reserve"
+      ],
+      "kicker": "MOST STABLECOINS: THE BORING WAY",
+      "dur": 4.4,
+      "stagger": 2.2,
+      "size": 96
+     }
+    },
+    {
+     "kind": "text",
+     "text": "Terra didn't.",
+     "style": "quote"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 4,
+   "name": "whoosh",
+   "offset": 3.5,
+   "gain_db": -8
+  },
+  {
+   "chunk": 6,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -10
+  },
+  {
+   "chunk": 8,
+   "name": "impact",
+   "offset": 9.75,
+   "gain_db": -14
+  },
+  {
+   "chunk": 10,
+   "name": "impact",
+   "offset": 7.4,
+   "gain_db": -6
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 10,
+   "dur": 9.2
+  }
+ ]
+}

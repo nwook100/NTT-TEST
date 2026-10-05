@@ -1,0 +1,194 @@
+{
+ "section": "8",
+ "chunks": [
+  {
+   "id": 47,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_chapter_death_row_then_a_second_trial.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_timeline_2024_2025.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_06_life_sentence_bond_fraud_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s08_count_445t_laundered",
+     "args": {
+      "to": 445,
+      "prefix": "₫",
+      "suffix": " TRILLION",
+      "kicker": "THE COURT FOUND SHE HAD LAUNDERED MORE THAN",
+      "label": "DONG",
+      "sublabel": "2nd trial · October 17, 2024",
+      "dur": 4.0,
+      "count_time": 1.6,
+      "size": 200,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/usd_cash_2.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_stamp_life_bond_case.mp4"
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_07_appeal_death_upheld_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_keyphrase_repay_three_quarters.mp4"
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_race_against_time",
+     "args": {
+      "lines": [
+       "a race against time"
+      ],
+      "kicker": "INTERNATIONAL MEDIA CALLED IT",
+      "red": [
+       "time"
+      ],
+      "dur": 4.0,
+      "size": 120,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_4.jpg",
+     "fx": "left"
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_08_bond_appeal_20_years_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_stamp_20_years.mp4"
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/hanoi_street_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s08_typewriter_june_2025_law.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_eight_crimes",
+     "args": {
+      "lines": [
+       "eight crimes,",
+       "including embezzlement"
+      ],
+      "kicker": "DEATH PENALTY ABOLISHED FOR",
+      "red": [
+       "embezzlement"
+      ],
+      "dur": 3.0,
+      "stagger": 0.5,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_09_death_penalty_abolished_zoom.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s08_hanoi_skyline_3.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_would_be_spared",
+     "args": {
+      "lines": [
+       "Truong My Lan would be spared."
+      ],
+      "kicker": "HER LAWYER TOLD AFP",
+      "red": [
+       "spared."
+      ],
+      "dur": 4.0,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 48,
+   "name": "stamp",
+   "offset": 10.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 51,
+   "name": "stamp",
+   "offset": 7.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 52,
+   "name": "typewriter",
+   "offset": 2.9,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 52,
+   "dur": 1.8
+  }
+ ]
+}

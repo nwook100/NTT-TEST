@@ -1,0 +1,34 @@
+{
+ "section": "0",
+ "chunks": [
+  {"id": 0, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s00_typewriter_dec_2013.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/red_carpet_cg_1.mp4"},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s00_ziegfeld_1.jpg", "fx": "in", "crop": "right"}
+  ]},
+  {"id": 1, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s00_wordbyword_film_paid.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"}
+  ]},
+  {"id": 2, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/yacht_night_1.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/manhattan_skyline_night_1.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/private_jet_windows_1.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/merdeka_square_flag_1.mp4"}
+  ]},
+  {"id": 3, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_story_of_1mdb", "args": {"lines": ["1MDB"], "kicker": "THIS IS THE STORY OF", "dur": 3.5, "size": 130, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"},
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s00_chapter_the_prime_minister_s_billions.mp4"}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 0, "name": "typewriter", "offset": 0.2, "gain_db": -12},
+  {"chunk": 1, "name": "impact", "offset": 0.3, "gain_db": -8},
+  {"chunk": 3, "name": "riser", "offset": 10.5, "gain_db": -10}
+ ],
+ "music_drops": [
+  {"chunk": 3, "dur": 1.5}
+ ]
+}

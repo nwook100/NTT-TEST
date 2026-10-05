@@ -1,0 +1,168 @@
+{
+ "section": "3",
+ "chunks": [
+  {
+   "id": 15,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_chapter_follow_the_money.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_countup_6_5B_bonds.mp4"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/manhattan_skyline_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_flow_aabar_lookalike.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_lookalike",
+     "args": {
+      "lines": [
+       "A lookalike.",
+       "Prosecutors say it was not",
+       "part of the real Aabar."
+      ],
+      "kicker": "BRITISH VIRGIN ISLANDS · ALMOST THE SAME NAME",
+      "red": ["lookalike."],
+      "dur": 5.0,
+      "stagger": 0.8,
+      "size": 92,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_flow_tanore_mo1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/singapore_cbd_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_countup_681M.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/petronas_aerial_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s01_person_najib_2017.mp4"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s03_countup_4_5B_doj.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_01_doj_4_5_billion_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s03_ringgit_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s03_ringgit_2.png",
+     "fx": "out"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 15,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 20,
+   "name": "riser",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 22,
+   "name": "impact",
+   "offset": 2.8,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 22,
+   "dur": 1.5
+  }
+ ]
+}

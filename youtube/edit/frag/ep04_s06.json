@@ -1,0 +1,143 @@
+{
+ "section": "6",
+ "chunks": [
+  {
+   "id": 50,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_chapter_the_verdict.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_typewriter_sept_12_2017.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s06_beijing_court_1.jpg",
+     "fx": "left",
+     "crop": "bottom",
+     "overlay": "assets/ep04_ezubao/motion/s06_lowerthird_beijing_court.mp4"
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_countup_76_2_billion.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_01_76_billion_1_15m_people_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_countup_1_15m_people.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "text",
+     "text": "More than 38 billion yuan,\nnearly six billion dollars, was lost.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_02_ding_ning_life_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_stamp_life_ding_ning.mp4"
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_03_ding_dian_zhang_min_zoom.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/gavel_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_04_yucheng_fines_final_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s06_beijing_high_court_1.jpg",
+     "fx": "in",
+     "crop": "top"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s06_stamp_final.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 52,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 54,
+   "name": "stamp",
+   "offset": 7.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 57,
+   "name": "stamp",
+   "offset": 4.6,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 52,
+   "dur": 1.5
+  }
+ ]
+}

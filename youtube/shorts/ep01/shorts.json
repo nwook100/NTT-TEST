@@ -1,0 +1,160 @@
+{
+ "source": "output/ep01/ep01_base_clean.mp4",
+ "manifest": "output/ep01/narration/manifest.json",
+ "captions": "subtitles/ep01/ep01_en.srt",
+ "caption_visible": "output/ep01/caption_visible.json",
+ "out_dir": "shorts/ep01",
+ "shorts": [
+  {
+   "n": 1,
+   "slug": "40_billion_gone",
+   "pieces": [
+    [
+     0,
+     3
+    ]
+   ],
+   "hook": [
+    "$40 BILLION.",
+    "GONE IN DAYS."
+   ],
+   "red": [
+    "$40",
+    "gone"
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  },
+  {
+   "n": 2,
+   "slug": "20_percent_promise",
+   "pieces": [
+    [
+     25,
+     26
+    ],
+    [
+     29,
+     30
+    ]
+   ],
+   "intro": 4.2,
+   "hook": [
+    "20% INTEREST",
+    "ON A \"STABLE\" COIN?"
+   ],
+   "red": [
+    "20%"
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  },
+  {
+   "n": 3,
+   "slug": "hidden_rescue",
+   "pieces": [
+    [
+     33,
+     35
+    ],
+    [
+     37,
+     38
+    ]
+   ],
+   "intro": 4.2,
+   "hook": [
+    "THE RESCUE",
+    "NOBODY WAS TOLD ABOUT"
+   ],
+   "red": [
+    "rescue"
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  },
+  {
+   "n": 4,
+   "slug": "steady_lads",
+   "pieces": [
+    [
+     53,
+     53
+    ],
+    [
+     56,
+     58
+    ],
+    [
+     60,
+     60
+    ]
+   ],
+   "hook": [
+    "\"STEADY LADS.\"",
+    "THEN IT ALL COLLAPSED."
+   ],
+   "red": [
+    "collapsed."
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  },
+  {
+   "n": 5,
+   "slug": "forged_passport",
+   "pieces": [
+    [
+     79,
+     82
+    ]
+   ],
+   "intro": 4.2,
+   "hook": [
+    "CAUGHT WITH A",
+    "FORGED PASSPORT"
+   ],
+   "red": [
+    "forged"
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  },
+  {
+   "n": 6,
+   "slug": "15_years",
+   "pieces": [
+    [
+     86,
+     86
+    ],
+    [
+     88,
+     90
+    ]
+   ],
+   "hook": [
+    "15 YEARS",
+    "IN PRISON."
+   ],
+   "red": [
+    "15",
+    "years"
+   ],
+   "card": [
+    "Terra Luna:",
+    "The $40 Billion Fraud"
+   ]
+  }
+ ]
+}

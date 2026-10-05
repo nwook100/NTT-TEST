@@ -1,0 +1,109 @@
+{
+ "section": "11",
+ "chunks": [
+  {
+   "id": 68,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s11_chapter_outro.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_3.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s11_tw_tranquility",
+     "args": {
+      "text": "A NEW NAME: TRANQUILITY",
+      "sub": "— sold to a Malaysian casino operator",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/grey_sea_calm_1.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "The question is not only\nwhere the money went.\nIt is how long everyone\nallowed it to go.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s11_kp_never_faced_courtroom",
+     "args": {
+      "kicker": "US PROSECUTORS PLACE HIM AT THE CENTER",
+      "lines": [
+       "Still never faced",
+       "a courtroom."
+      ],
+      "red": [
+       "never"
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 108,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s11_tw_next_time",
+     "args": {
+      "text": "NEXT TIME: ANOTHER CASE FILE.",
+      "sub": "Subscribe so you don't miss it.",
+      "dur": 3.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 68,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 69,
+   "name": "impact",
+   "offset": 4.5,
+   "gain_db": -15
+  },
+  {
+   "chunk": 70,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 70,
+   "dur": 1.2
+  }
+ ]
+}

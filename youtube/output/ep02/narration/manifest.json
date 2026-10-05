@@ -1,0 +1,2288 @@
+{
+ "voice": {
+  "speaker": "Aiden",
+  "instruct": "Calm, low, serious true-crime documentary narrator. Measured pace, clear American English, slight tension, no excitement.",
+  "language": "English",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+ },
+ "duration": 1306.55,
+ "loudness_lufs": -16.0,
+ "chunks": [
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "December 2008.",
+    "A fishing boat slips out of a small harbor on Korea's west coast.",
+    "According to investigators, one of the passengers is the most wanted man in the country."
+   ],
+   "cues": [
+    "[AI-01] A small fishing boat leaving a dark harbor at night, no lights, cold winter sea"
+   ],
+   "gap_after": 0.55,
+   "id": 0,
+   "text": "December 2008. A fishing boat slips out of a small harbor on Korea's west coast. According to investigators, one of the passengers is the most wanted man in the country.",
+   "wer": 0.0,
+   "asr": "December 2008 a fishing boat slips out of a small harbor on Korea's west coast  According to investigators one of the passengers is the most wanted man in the country",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.92,
+   "start": 0.0,
+   "end": 11.864
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "Behind him, tens of thousands of people are discovering that their savings are gone.",
+    "Retirees. Homemakers. Small shop owners. Families who had been promised that a simple health machine would pay them every single day."
+   ],
+   "cues": [
+    "[AI-02] Dim apartment in a Korean city at night, a hand holding a bank passbook under a single lamp"
+   ],
+   "gap_after": 1.0,
+   "id": 1,
+   "text": "Behind him, tens of thousands of people are discovering that their savings are gone. Retirees. Homemakers. Small shop owners. Families who had been promised that a simple health machine would pay them every single day.",
+   "wer": 0.0,
+   "asr": "Behind him, tens of thousands of people are discovering that their savings are gone.  Retirees, homemakers, small shop owners. Families who had been promised that a simple  health machine would pay them every single day.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.88,
+   "start": 12.414,
+   "end": 29.235
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "Three years later, the news arrived from China. He was dead. Heart attack.",
+    "There was a death certificate. There was a funeral video.",
+    "And almost nobody believed it."
+   ],
+   "cues": [
+    "[SCREEN] Black screen, white text: \"Died: December 2011. Officially.\""
+   ],
+   "gap_after": 0.25,
+   "id": 2,
+   "text": "Three years later, the news arrived from China. He was dead. Heart attack. There was a death certificate. There was a funeral video. And almost nobody believed it.",
+   "wer": 0.0,
+   "asr": "Three years later, the news arrived from China.  He was dead.  Heart attack.  There was a death certificate.  There was a funeral video.  And almost nobody believed it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.2,
+   "start": 30.235,
+   "end": 41.384
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "This is the story of Cho Hee-pal. How the scheme worked, who let it run, and why a country still argues about one funeral."
+   ],
+   "cues": [],
+   "gap_after": 1.5,
+   "trailing_cues": [
+    "[SCREEN] Channel logo sting (under 3 seconds)"
+   ],
+   "id": 3,
+   "text": "This is the story of Cho Hee-pal. How the scheme worked, who let it run, and why a country still argues about one funeral.",
+   "wer": 0.0,
+   "asr": "This is the story of Cho Hee Pal.  How the scheme worked, who let it run, and why a country still argues about one funeral",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.92,
+   "start": 41.634,
+   "end": 49.49
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "The story begins in Daegu, a big industrial city in South Korea's southeast.",
+    "Daegu is known as a conservative, tight-knit place. Neighbors know neighbors. Word of mouth matters.",
+    "That would turn out to be important."
+   ],
+   "cues": [
+    "[SCREEN] Map of South Korea, zoom into Daegu in the southeast. Caption: \"Daegu — one of Korea's largest cities\""
+   ],
+   "gap_after": 0.55,
+   "id": 4,
+   "text": "The story begins in Daegu, a big industrial city in South Korea's southeast. Daegu is known as a conservative, tight-knit place. Neighbors know neighbors. Word of mouth matters. That would turn out to be important.",
+   "wer": 0.0,
+   "asr": "The story begins in Daegu, a big industrial city in South Korea's southeast.  Daegu is known as a conservative, tight-knit place.  Neighbors know neighbors.  Word of mouth matters.  That would turn out to be important.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.68,
+   "start": 50.99,
+   "end": 66.618
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "The man at the center of this story was Cho Hee-pal, born in 1957."
+   ],
+   "cues": [
+    "[AI-10] Silhouette of a middle-aged man in a suit seen from behind, standing at a window overlooking a city at dusk, face never visible"
+   ],
+   "gap_after": 0.25,
+   "id": 5,
+   "text": "The man at the center of this story was Cho Hee-pal, born in 1957.",
+   "wer": 0.143,
+   "asr": "The man at the center of this story was Chohi Pao, born in 1957.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.0,
+   "start": 67.168,
+   "end": 73.11
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Korean media, citing investigators, described him as someone with only an elementary-school education, who reportedly worked as a laborer and drifted through small businesses, and who learned the multi-level marketing trade in his forties."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 6,
+   "text": "Korean media, citing investigators, described him as someone with only an elementary-school education, who reportedly worked as a laborer and drifted through small businesses, and who learned the multi-level marketing trade in his forties.",
+   "wer": 0.056,
+   "asr": "Korean media, citing investigators, described him as someone with only an elementary school  education who reportedly worked as a laborer and drifted through small businesses and who  learned the multi-level marketing trade in his 40s.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.4,
+   "start": 73.36,
+   "end": 87.705
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "In October 2004, he set up a company in Daegu called BMC.",
+    "And it started selling a deal that sounded almost too simple."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 7,
+   "text": "In October 2004, he set up a company in Daegu called BMC. And it started selling a deal that sounded almost too simple.",
+   "wer": 0.0,
+   "asr": "In October 2004, he set up a company in Daegu called BMC,  and it started selling a deal that sounded almost too simple.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.2,
+   "start": 87.955,
+   "end": 97.094
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Korea is famous for its public bathhouses and saunas, called jjimjilbang.",
+    "The pitch went like this."
+   ],
+   "cues": [
+    "[AI-03] Rows of empty massage chairs and health devices in a dim bathhouse lounge, steam in the air, no people"
+   ],
+   "gap_after": 0.25,
+   "id": 8,
+   "text": "Korea is famous for its public bathhouses and saunas, called jjimjilbang. The pitch went like this.",
+   "wer": 0.125,
+   "asr": "Korea is famous for its public bathhouses and saunas called Jim Jilbong.  The pitch went like this.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.2,
+   "start": 97.644,
+   "end": 104.79
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "You buy a health device. A massage machine, a pelvic-correction bed, even a karaoke machine. One unit cost 4.4 million won, roughly four thousand dollars at the time.",
+    "You never take it home. The company rents your machine out to bathhouses and clinics."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 9,
+   "text": "You buy a health device. A massage machine, a pelvic-correction bed, even a karaoke machine. One unit cost 4.4 million won, roughly four thousand dollars at the time. You never take it home. The company rents your machine out to bathhouses and clinics.",
+   "wer": 0.043,
+   "asr": "You buy a health device, a massage machine, a pelvic correction bed, even a karaoke machine.  One unit cost $4.4 million, roughly $4,000 at the time. You never take it home.  The company rents your machine out to bathhouses and clinics.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.36,
+   "start": 105.04,
+   "end": 122.337
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "And you get paid every day."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 10,
+   "text": "And you get paid every day.",
+   "wer": 0.0,
+   "asr": "and you get paid every day.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 1.84,
+   "start": 122.587,
+   "end": 124.368
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Let's walk through it the way an investor would have seen it.",
+    "Step one. You pay 4.4 million won. That's one machine."
+   ],
+   "cues": [
+    "[SCREEN] Self-made infographic walkthrough, step 1: \"You pay ₩4,400,000 = 1 machine\""
+   ],
+   "gap_after": 0.55,
+   "id": 11,
+   "text": "Let's walk through it the way an investor would have seen it. Step one. You pay 4.4 million won. That's one machine.",
+   "wer": 0.0,
+   "asr": "Let's walk through it the way an investor would have seen it.  Step 1.  You pay 4.4 million won.  That's one machine.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.56,
+   "start": 124.918,
+   "end": 133.388
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Step two. According to Korean reporting from the time, about 35,000 won lands in your account almost every business day. That's around thirty dollars, every day."
+   ],
+   "cues": [
+    "[SCREEN] Step 2: a bank-app counter adding \"+₩35,000\" every business day"
+   ],
+   "gap_after": 0.55,
+   "id": 12,
+   "text": "Step two. According to Korean reporting from the time, about 35,000 won lands in your account almost every business day. That's around thirty dollars, every day.",
+   "wer": 0.107,
+   "asr": "Step 2 According to Korean reporting from the time,  about 35,001 lands in your account almost every business day. That's around $30 every day.",
+   "tries": 2,
+   "sr": 24000,
+   "dur": 12.32,
+   "start": 133.938,
+   "end": 146.206
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Step three. After about 166 payments, roughly eight months, you've received about 5.8 million won.",
+    "Your money back, plus 1.4 million won on top."
+   ],
+   "cues": [
+    "[SCREEN] Step 3: \"166 payments ≈ 8 months → ₩5,810,000 back\""
+   ],
+   "gap_after": 0.55,
+   "id": 13,
+   "text": "Step three. After about 166 payments, roughly eight months, you've received about 5.8 million won. Your money back, plus 1.4 million won on top.",
+   "wer": 0.062,
+   "asr": "Step 3. After about 166 payments, roughly 8 months, you've received about 5.8 million 1.  Your money back plus 1.4 million 1 on top.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.52,
+   "start": 146.756,
+   "end": 158.225
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "The court that later tried the group's number two described the promise as a fixed 35 percent a year.",
+    "Run the numbers on eight months, and it works out closer to 48 percent annualized.",
+    "A normal Korean bank deposit at the time paid around five percent."
+   ],
+   "cues": [
+    "[SCREEN] Bar chart: \"Advertised: 35% a year (court) / The math: ~48% annualized / Bank deposit: ~5%\""
+   ],
+   "gap_after": 1.0,
+   "id": 14,
+   "text": "The court that later tried the group's number two described the promise as a fixed 35 percent a year. Run the numbers on eight months, and it works out closer to 48 percent annualized. A normal Korean bank deposit at the time paid around five percent.",
+   "wer": 0.0,
+   "asr": "The court that later tried the group's number two described the promise as a fixed 35 percent a year.  Run the numbers on eight months and it works out closer to 48 percent annualized.  A normal Korean bank deposit at the time paid around five percent.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.72,
+   "start": 158.775,
+   "end": 173.428
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "Korea actually has a word, and a whole law, for this kind of business.",
+    "It's called yusa-susin. Roughly: unlicensed deposit-taking.",
+    "It means collecting money from the public and promising fixed returns, without being a bank, and without any license to do it."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"유사수신 (yusa-susin) = taking deposits without a license\""
+   ],
+   "gap_after": 0.25,
+   "id": 15,
+   "text": "Korea actually has a word, and a whole law, for this kind of business. It's called yusa-susin. Roughly: unlicensed deposit-taking. It means collecting money from the public and promising fixed returns, without being a bank, and without any license to do it.",
+   "wer": 0.045,
+   "asr": "Korea actually has a word, and a whole law for this kind of business.  It's called Youssouzen, roughly unlicensed deposit taking.  It means collecting money from the public and promising fixed returns without being a  bank and without any license to do it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.2,
+   "start": 174.428,
+   "end": 191.572
+  },
+  {
+   "section": "1",
+   "section_title": "The machine that paid every day",
+   "section_index": 1,
+   "lines": [
+    "It's illegal in Korea for one simple reason. It is the classic shape of a Ponzi scheme."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 16,
+   "text": "It's illegal in Korea for one simple reason. It is the classic shape of a Ponzi scheme.",
+   "wer": 0.0,
+   "asr": "It's illegal in Korea for one simple reason.  It is the classic shape of a Ponzi scheme.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.92,
+   "start": 191.822,
+   "end": 197.677
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "The daily payment was the hook. The ladder was the engine."
+   ],
+   "cues": [
+    "[SCREEN] Self-made pyramid infographic: ranks stacking upward, \"부장 → 국장 → 본부장 → 단장 → 사업전무\""
+   ],
+   "gap_after": 0.25,
+   "id": 17,
+   "text": "The daily payment was the hook. The ladder was the engine.",
+   "wer": 0.091,
+   "asr": "The daily payment was the hook, the latter was the engine.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 2.96,
+   "start": 198.877,
+   "end": 201.775
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "According to a December 2008 report by the Korean news magazine Sisa IN, investors were organized into ranks, like a company. Department head. Bureau chief. Division head. Group leader. Executive director."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 18,
+   "text": "According to a December 2008 report by the Korean news magazine Sisa IN, investors were organized into ranks, like a company. Department head. Bureau chief. Division head. Group leader. Executive director.",
+   "wer": 0.0,
+   "asr": "According to a December 2008 report by the Korean news magazine SISA-IN, investors were  organized into ranks, like a company, department head, bureau chief, division head, group leader,  executive director.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.32,
+   "start": 202.025,
+   "end": 216.286
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "To become a department head, the report said, you had to run two lines of investors below you, and each line had to bring in twelve machines.",
+    "Twenty-four machines. Around 100 million won of other people's money."
+   ],
+   "cues": [
+    "[SCREEN] Two branching lines, each filling with 12 machine icons: \"24 machines ≈ ₩100M → salary + bonuses\""
+   ],
+   "gap_after": 0.25,
+   "id": 19,
+   "text": "To become a department head, the report said, you had to run two lines of investors below you, and each line had to bring in twelve machines. Twenty-four machines. Around 100 million won of other people's money.",
+   "wer": 0.0,
+   "asr": "To become a department head, the report said,  you had to run two lines of investors below you,  and each line had to bring in 12 machines, 24 machines,  around 100 million won of other people's money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 216.836,
+   "end": 230.687
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "Only then did the company pay you a salary and bonuses."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 20,
+   "text": "Only then did the company pay you a salary and bonuses.",
+   "wer": 0.0,
+   "asr": "Only then did the company pay you a salary and bonuses.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.28,
+   "start": 230.937,
+   "end": 234.148
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "To climb to the next rank, the requirement reportedly jumped to 280 machines.",
+    "Think about what that does to a person."
+   ],
+   "cues": [
+    "[SCREEN] The two lines explode to 140 icons each: \"Next rank: 280 machines\""
+   ],
+   "gap_after": 0.25,
+   "id": 21,
+   "text": "To climb to the next rank, the requirement reportedly jumped to 280 machines. Think about what that does to a person.",
+   "wer": 0.0,
+   "asr": "To climb to the next rank, the requirement reportedly jumped to 280 machines.  Think about what that does to a person.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.76,
+   "start": 234.698,
+   "end": 242.4
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "You are no longer just an investor. You are a recruiter. Your income depends on your sister, your old classmates, the women from your church, the man who runs the shop downstairs."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 22,
+   "text": "You are no longer just an investor. You are a recruiter. Your income depends on your sister, your old classmates, the women from your church, the man who runs the shop downstairs.",
+   "wer": 0.0,
+   "asr": "You are no longer just an investor, you are a recruiter.  Your income depends on your sister, your old classmates, the women from your church, the  man who runs the shop downstairs.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.68,
+   "start": 242.65,
+   "end": 254.27
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "And the system had a second trick.",
+    "According to the same report, the operation kept changing its name. BMC. Then a series of new company names, one after another, with different brands for different regions."
+   ],
+   "cues": [
+    "[AI-05] Crowd of faceless people seen from behind filling a seminar hall, a bright stage ahead"
+   ],
+   "gap_after": 0.25,
+   "id": 23,
+   "text": "And the system had a second trick. According to the same report, the operation kept changing its name. BMC. Then a series of new company names, one after another, with different brands for different regions.",
+   "wer": 0.0,
+   "asr": "and the system had a second trick.  According to the same report, the operation kept changing its name.  BMC, then a series of new company names, one after another,  with different brands for different regions.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.76,
+   "start": 254.82,
+   "end": 268.52
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "Prosecutors later found that the group ran around twenty companies in total.",
+    "When one name drew attention, the money simply moved to the next one."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 24,
+   "text": "Prosecutors later found that the group ran around twenty companies in total. When one name drew attention, the money simply moved to the next one.",
+   "wer": 0.0,
+   "asr": "Prosecutors later found that the group ran around 20 companies in total.  When one name drew attention, the money simply moved to the next one.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.08,
+   "start": 268.77,
+   "end": 276.781
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "But there was a basic problem underneath all of it.",
+    "Machines rented to saunas could never earn that kind of money.",
+    "According to prosecutors, the \"rental income\" being paid out was largely new investors' money, recycled to earlier ones."
+   ],
+   "cues": [
+    "[SCREEN] Simple diagram: \"New investors' money → paid out as 'rental income' to old investors\""
+   ],
+   "gap_after": 0.25,
+   "id": 25,
+   "text": "But there was a basic problem underneath all of it. Machines rented to saunas could never earn that kind of money. According to prosecutors, the \"rental income\" being paid out was largely new investors' money, recycled to earlier ones.",
+   "wer": 0.0,
+   "asr": "But there was a basic problem underneath all of it.  Machines rented to saunas could never earn that kind of money.  According to prosecutors, the rental income being paid out was largely new investors' money, recycled to earlier ones.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.12,
+   "start": 277.331,
+   "end": 292.385
+  },
+  {
+   "section": "2",
+   "section_title": "The ladder",
+   "section_index": 2,
+   "lines": [
+    "When the medical device story wore thin, the pitch reportedly shifted to real estate and redevelopment projects.",
+    "The product changed. The promise didn't."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 26,
+   "text": "When the medical device story wore thin, the pitch reportedly shifted to real estate and redevelopment projects. The product changed. The promise didn't.",
+   "wer": 0.0,
+   "asr": "When the medical device story wore thin, the pitch reportedly shifted to real estate and redevelopment projects.  The product changed. The promise didn't.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.92,
+   "start": 292.635,
+   "end": 302.493
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "The money did arrive. At first.",
+    "Early investors were paid on time. They told friends. They told family. And they earned commissions for bringing them in."
+   ],
+   "cues": [
+    "[AI-04] Glowing dots spreading across a dark map of Korea like a network, city by city"
+   ],
+   "gap_after": 0.55,
+   "id": 27,
+   "text": "The money did arrive. At first. Early investors were paid on time. They told friends. They told family. And they earned commissions for bringing them in.",
+   "wer": 0.0,
+   "asr": "The money did arrive, at first.  Early investors were paid on time.  They told friends, they told family, and they earned commissions for bringing them in.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.28,
+   "start": 303.693,
+   "end": 312.918
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "From Daegu, the network spread down to Busan and the southern coast, up through the Chungcheong provinces, and into Seoul, Gyeonggi and Incheon.",
+    "By late 2008, Korean media were counting around fifty sales centers across the country."
+   ],
+   "cues": [
+    "[SCREEN] Animated map: Daegu → Gyeongbuk → Busan/Gyeongnam → Chungcheong → Seoul/Gyeonggi/Incheon, with \"50+ centers\" counter"
+   ],
+   "gap_after": 0.55,
+   "id": 28,
+   "text": "From Daegu, the network spread down to Busan and the southern coast, up through the Chungcheong provinces, and into Seoul, Gyeonggi and Incheon. By late 2008, Korean media were counting around fifty sales centers across the country.",
+   "wer": 0.0,
+   "asr": "From Daegu, the network spread down to Busan and the southern coast,  up through the Chungcheong provinces and into Seoul, Gyeonggi and Incheon.  By late 2008, Korean media were counting around 50 sales centers across the country.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.0,
+   "start": 313.468,
+   "end": 329.413
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "So who signed up?",
+    "Not bankers. Not professional investors."
+   ],
+   "cues": [
+    "[AI-11] Women's hands, seen from above, around a café table covered with brochures and a calculator, no faces"
+   ],
+   "gap_after": 0.25,
+   "id": 29,
+   "text": "So who signed up? Not bankers. Not professional investors.",
+   "wer": 0.0,
+   "asr": "So, who signed up? Not bankers, not professional investors.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.4,
+   "start": 329.963,
+   "end": 334.311
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "In the Seoul area, the same 2008 report said, about seven in ten investors were homemakers in their forties and fifties. Later reporting described large numbers of retirees, people who had lost jobs, and families still recovering from the Asian financial crisis of the late 1990s."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 30,
+   "text": "In the Seoul area, the same 2008 report said, about seven in ten investors were homemakers in their forties and fifties. Later reporting described large numbers of retirees, people who had lost jobs, and families still recovering from the Asian financial crisis of the late 1990s.",
+   "wer": 0.073,
+   "asr": "In the Seoul area, the same 2008 report said about 7 in 10 investors were homemakers in their 40s and 50s.  Later reporting described large numbers of retirees, people who had lost jobs, and families still recovering from the Asian financial crisis of the late 1990s.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.96,
+   "start": 334.561,
+   "end": 353.456
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "Some reportedly put in their retirement money. Some borrowed to invest more."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 31,
+   "text": "Some reportedly put in their retirement money. Some borrowed to invest more.",
+   "wer": 0.0,
+   "asr": "Some reportedly put in their retirement money.  Some borrowed to invest more.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.2,
+   "start": 353.706,
+   "end": 358.854
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "Why them?",
+    "Think about where a middle-aged homemaker or a new retiree stood in Korea in the mid-2000s.",
+    "Interest rates were low. Pensions were thin. Many had a lump sum, a severance payment or a matured insurance policy, and nowhere obvious to put it."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 32,
+   "text": "Why them? Think about where a middle-aged homemaker or a new retiree stood in Korea in the mid-2000s. Interest rates were low. Pensions were thin. Many had a lump sum, a severance payment or a matured insurance policy, and nowhere obvious to put it.",
+   "wer": 0.0,
+   "asr": "Why them? Think about where a middle-aged homemaker or a new retiree stood in Korea  in the mid-2000s. Interest rates were low. Pensions were thin. Many had a lump sum,  a severance payment or a matured insurance policy, and nowhere obvious to put it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.52,
+   "start": 359.854,
+   "end": 377.311
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "And the person making the pitch was rarely a stranger. It was a friend from the neighborhood, or a relative, someone you had trusted for twenty years."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 33,
+   "text": "And the person making the pitch was rarely a stranger. It was a friend from the neighborhood, or a relative, someone you had trusted for twenty years.",
+   "wer": 0.0,
+   "asr": "And the person making the pitch was rarely a stranger.  It was a friend from the neighborhood.  Or a relative.  Someone you had trusted for 20 years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.88,
+   "start": 377.561,
+   "end": 388.371
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "You put in your money. And then, every single day, a payment lands in your account. Like clockwork.",
+    "After a few weeks, the doubts fade. After a few months, you're the one telling your sister she's missing out."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 34,
+   "text": "You put in your money. And then, every single day, a payment lands in your account. Like clockwork. After a few weeks, the doubts fade. After a few months, you're the one telling your sister she's missing out.",
+   "wer": 0.0,
+   "asr": "You put in your money, and then every single day a payment lands in your account.  Like clockwork.  After a few weeks, the doubts fade.  After a few months, you're the one telling your sister she's missing out.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.52,
+   "start": 388.921,
+   "end": 402.377
+  },
+  {
+   "section": "3",
+   "section_title": "From Daegu to everywhere",
+   "section_index": 3,
+   "lines": [
+    "That daily payment wasn't just a return. It was proof. Or it looked like proof."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 35,
+   "text": "That daily payment wasn't just a return. It was proof. Or it looked like proof.",
+   "wer": 0.0,
+   "asr": "That daily payment wasn't just a return, it was proof.  Or it looked like proof.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.36,
+   "start": 402.627,
+   "end": 407.929
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "Here's what makes this story hard to watch.",
+    "The scheme did not hide in the dark for four years. The warnings are on the record."
+   ],
+   "cues": [
+    "[SCREEN] Timeline graphic building left to right: \"2006 → May 2007 → Aug 2007 → Apr 2008 → Sep 2008 → Oct 2008\""
+   ],
+   "gap_after": 0.55,
+   "id": 36,
+   "text": "Here's what makes this story hard to watch. The scheme did not hide in the dark for four years. The warnings are on the record.",
+   "wer": 0.0,
+   "asr": "Here's what makes this story hard to watch.  The scheme did not hide in the dark for four years.  The warnings are on the record.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.2,
+   "start": 409.129,
+   "end": 416.276
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "According to police and prosecutors, police began looking into the group as early as 2006.",
+    "In May 2007, a police station in Miryang, in South Gyeongsang Province, opened a formal investigation into companies linked to Cho."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 37,
+   "text": "According to police and prosecutors, police began looking into the group as early as 2006. In May 2007, a police station in Miryang, in South Gyeongsang Province, opened a formal investigation into companies linked to Cho.",
+   "wer": 0.024,
+   "asr": "According to police and prosecutors, police began looking into the group as early as 2006.  In May 2007, a police station in Myriang, in South Gyeongsang Province,  opened a formal investigation into companies linked to Cho.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.56,
+   "start": 416.826,
+   "end": 433.322
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "And then something happened that a court would later describe in detail.",
+    "In August 2007, Kang Tae-yong, Cho's right-hand man, handed fifty million won, twice, to a police sergeant at the Daegu police agency. A sergeant who was working on the Cho case."
+   ],
+   "cues": [
+    "[AI-12] A thick paper file lying on a dark desk under a desk lamp, a hand slowly closing it, no face"
+   ],
+   "gap_after": 0.25,
+   "id": 38,
+   "text": "And then something happened that a court would later describe in detail. In August 2007, Kang Tae-yong, Cho's right-hand man, handed fifty million won, twice, to a police sergeant at the Daegu police agency. A sergeant who was working on the Cho case.",
+   "wer": 0.062,
+   "asr": "And then something happened that a court would later describe in detail.  In August 2007, Kang Tai-Yong chose right-hand man handed 50 million won twice  to a police sergeant at the Daegu Police Agency,  a sergeant who was working on the choke case.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.0,
+   "start": 433.872,
+   "end": 451.809
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "A district court later found that the sergeant, in return, dragged out the investigation and gave the group \"investigative convenience.\""
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 39,
+   "text": "A district court later found that the sergeant, in return, dragged out the investigation and gave the group \"investigative convenience.\"",
+   "wer": 0.0,
+   "asr": "A district court later found that the sergeant in return dragged out the investigation and gave the group investigative convenience.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.24,
+   "start": 452.059,
+   "end": 460.24
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "Prosecutors also alleged that, when police asked for transaction records, the group handed over records from an old, defunct company instead of the one actually taking the money."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 40,
+   "text": "Prosecutors also alleged that, when police asked for transaction records, the group handed over records from an old, defunct company instead of the one actually taking the money.",
+   "wer": 0.036,
+   "asr": "Prosecutors also allege that when police asked for transaction records, the group handed  over records from an old defunct company instead of the one actually taking the money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.24,
+   "start": 460.49,
+   "end": 470.677
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "In April 2008, according to Sisa IN, Korea's financial regulator, the Financial Supervisory Service, flagged two of the group's companies for illegal deposit-taking, and notified police in Daegu, Busan and Incheon."
+   ],
+   "cues": [
+    "[SCREEN] Self-made document card (no real logos): \"April 2008 — financial regulator alerts police in Daegu, Busan, Incheon\""
+   ],
+   "gap_after": 0.25,
+   "id": 41,
+   "text": "In April 2008, according to Sisa IN, Korea's financial regulator, the Financial Supervisory Service, flagged two of the group's companies for illegal deposit-taking, and notified police in Daegu, Busan and Incheon.",
+   "wer": 0.086,
+   "asr": "In April 2008, according to Sisa Indira's Korea's financial regulator, the financial  supervisory service flagged two of the group's companies for illegal deposit taking and notified  police in Daegu, Busan, and in Chyeon.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.16,
+   "start": 471.227,
+   "end": 487.319
+  },
+  {
+   "section": "4",
+   "section_title": "The warnings",
+   "section_index": 4,
+   "lines": [
+    "In September 2008, victims began filing complaints.",
+    "By then, it was too late."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 42,
+   "text": "In September 2008, victims began filing complaints. By then, it was too late.",
+   "wer": 0.0,
+   "asr": "In September 2008, victims began filing complaints.  By then, it was too late.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.72,
+   "start": 487.569,
+   "end": 494.236
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "In the autumn of 2008, the global financial crisis was shaking markets everywhere.",
+    "In Korea, investigators were finally closing in.",
+    "In October 2008 the payments stopped, and the companies collapsed."
+   ],
+   "cues": [
+    "[SCREEN] Timeline graphic: \"Oct 2008 — offices raided / wanted list / Dec 2008 — gone\""
+   ],
+   "gap_after": 0.25,
+   "id": 43,
+   "text": "In the autumn of 2008, the global financial crisis was shaking markets everywhere. In Korea, investigators were finally closing in. In October 2008 the payments stopped, and the companies collapsed.",
+   "wer": 0.0,
+   "asr": "In the autumn of 2008, the global financial crisis was shaking markets everywhere.  In Korea, investigators were finally closing in.  In October 2008, the payments stopped and the companies collapsed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.6,
+   "start": 495.436,
+   "end": 508.984
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "According to Korean reporting at the time, the group's central computer systems were wiped and the accounts were emptied before police got there."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 44,
+   "text": "According to Korean reporting at the time, the group's central computer systems were wiped and the accounts were emptied before police got there.",
+   "wer": 0.0,
+   "asr": "According to Korean reporting at the time, the group's central computer systems were wiped  and the accounts were emptied before police got there.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.84,
+   "start": 509.234,
+   "end": 517.01
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "Cho was put on the wanted list.",
+    "Some victims reportedly photocopied the wanted posters themselves and carried them to ports around the country."
+   ],
+   "cues": [
+    "[AI-01 variant] The same harbor at night, a coastguard light sweeping across empty water"
+   ],
+   "gap_after": 0.25,
+   "id": 45,
+   "text": "Cho was put on the wanted list. Some victims reportedly photocopied the wanted posters themselves and carried them to ports around the country.",
+   "wer": 0.087,
+   "asr": "Cho was put on the wanted list. Some victims reportedly photo copied the wanted posters themselves  and carried them to ports around the country.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.2,
+   "start": 517.56,
+   "end": 526.708
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "But according to investigators, on December 9th, 2008, he boarded a fishing boat from a small port in Taean, on the west coast.",
+    "At sea, he reportedly switched to another vessel and crossed to China."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 46,
+   "text": "But according to investigators, on December 9th, 2008, he boarded a fishing boat from a small port in Taean, on the west coast. At sea, he reportedly switched to another vessel and crossed to China.",
+   "wer": 0.026,
+   "asr": "But according to investigators, on December 9th, 2008, he boarded a fishing boat from  a small port in Taian on the west coast.  At sea, he reportedly switched to another vessel and crossed to China.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 526.958,
+   "end": 540.822
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "His right-hand man, Kang Tae-yong, had already fled to China the month before.",
+    "Kang was the group's administrative vice president. He ran the money and the computer systems."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 47,
+   "text": "His right-hand man, Kang Tae-yong, had already fled to China the month before. Kang was the group's administrative vice president. He ran the money and the computer systems.",
+   "wer": 0.0,
+   "asr": "His right hand man Kang Tae-yong had already fled to China the month before.  Kang was the group's administrative vice president.  He ran the money and the computer systems.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.92,
+   "start": 541.372,
+   "end": 553.239
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "Years later, prosecutors and the courts put a number on what the group had collected.",
+    "About 5 trillion won. Roughly 4 billion dollars.",
+    "From around 70,000 people."
+   ],
+   "cues": [
+    "[SCREEN] Big number, counting up: \"₩5,071,500,000,000\""
+   ],
+   "gap_after": 0.55,
+   "id": 48,
+   "text": "Years later, prosecutors and the courts put a number on what the group had collected. About 5 trillion won. Roughly 4 billion dollars. From around 70,000 people.",
+   "wer": 0.0,
+   "asr": "Years later, prosecutors and the courts put a number on what the group had collected.  About 5 trillion won, roughly 4 billion dollars, from around 70,000 people.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.2,
+   "start": 553.789,
+   "end": 564.93
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "That 5 trillion figure counts money that went round and round, as people reinvested their \"profits.\"",
+    "Prosecutors estimated the real, unrecovered losses at about 840 billion won. Around 700 million dollars."
+   ],
+   "cues": [
+    "[SCREEN] Split card: \"Money that flowed in: ~5 trillion won\" vs \"Actual losses (prosecutors' estimate): ~840 billion won\""
+   ],
+   "gap_after": 0.25,
+   "id": 49,
+   "text": "That 5 trillion figure counts money that went round and round, as people reinvested their \"profits.\" Prosecutors estimated the real, unrecovered losses at about 840 billion won. Around 700 million dollars.",
+   "wer": 0.0,
+   "asr": "That 5 trillion figure counts money that went round and round as people reinvested their profits.  Prosecutors estimated the real, unrecovered losses at about  840 billion won, around 700 million dollars.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.68,
+   "start": 565.48,
+   "end": 581.102
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "And they found that the group had stashed away about 290 billion won.",
+    "Korean media started calling it the biggest fraud since the founding of the nation."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 50,
+   "text": "And they found that the group had stashed away about 290 billion won. Korean media started calling it the biggest fraud since the founding of the nation.",
+   "wer": 0.0,
+   "asr": "and they found that the group had stashed away about 290 billion won.  Korean media started calling it the biggest fraud since the founding of the nation.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.68,
+   "start": 581.352,
+   "end": 590.98
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "Before we go on, keep two things in mind.",
+    "One: a cheque, handed over in a hotel coffee shop, to a man whose job was to catch Cho.",
+    "Two: a single piece of paper from China, dated ten days before the death it was supposed to record."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"Remember one document. We'll come back to it.\" (retention hook, ~9:40; pays off at 10:08 and 13:30)"
+   ],
+   "gap_after": 0.25,
+   "id": 51,
+   "text": "Before we go on, keep two things in mind. One: a cheque, handed over in a hotel coffee shop, to a man whose job was to catch Cho. Two: a single piece of paper from China, dated ten days before the death it was supposed to record.",
+   "wer": 0.043,
+   "asr": "Before we go on, keep two things in mind.  One, a check handed over in a hotel coffee shop to a man whose job was to catch chow.  Two, a single piece of paper from China dated 10 days before the death it was supposed to record.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.64,
+   "start": 591.98,
+   "end": 608.567
+  },
+  {
+   "section": "5",
+   "section_title": "The collapse and the escape",
+   "section_index": 5,
+   "lines": [
+    "The first explains how he got away. The second is why so many people still don't believe he's gone."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 52,
+   "text": "The first explains how he got away. The second is why so many people still don't believe he's gone.",
+   "wer": 0.0,
+   "asr": "The first explains how he got away.  The second is why so many people still don't believe he's gone.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.48,
+   "start": 608.817,
+   "end": 615.239
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "Here's the part that turned a fraud case into a national scandal.",
+    "How did one man run a scheme this big, for this long, and then simply sail away?"
+   ],
+   "cues": [
+    "[AI-06] A gloved hand sliding a thick envelope across a dark desk under a green banker's lamp"
+   ],
+   "gap_after": 1.0,
+   "id": 53,
+   "text": "Here's the part that turned a fraud case into a national scandal. How did one man run a scheme this big, for this long, and then simply sail away?",
+   "wer": 0.0,
+   "asr": "Here's the part that turned a fraud case into a national scandal.  How did one man run a scheme this big for this long and then simply sail away?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.68,
+   "start": 616.439,
+   "end": 626.068
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "We've already met the first one. The police sergeant on the case.",
+    "The court found he took 200 million won from Kang in total. Two payments in 2007. And a third, on October 31st, 2008, at a hotel in Daegu, while the group's offices were being searched."
+   ],
+   "cues": [
+    "[SCREEN] Self-made \"court ruling\" card (no real logos): \"Former police sergeant (case investigator) — 8 years (Daegu District Court, Sept 2016)\""
+   ],
+   "gap_after": 0.25,
+   "id": 54,
+   "text": "We've already met the first one. The police sergeant on the case. The court found he took 200 million won from Kang in total. Two payments in 2007. And a third, on October 31st, 2008, at a hotel in Daegu, while the group's offices were being searched.",
+   "wer": 0.018,
+   "asr": "We've already met the first one, the police sergeant on the case.  The court found he took 200 million won from Kang in total, two payments in 2007, and a  third on October 31, 2008 at a hotel in Daegu while the group's offices were being searched.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.8,
+   "start": 627.068,
+   "end": 643.805
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "A district court sentenced him to eight years in prison."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 55,
+   "text": "A district court sentenced him to eight years in prison.",
+   "wer": 0.0,
+   "asr": "A district court sentenced him to eight years in prison.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.12,
+   "start": 644.055,
+   "end": 647.108
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "The second was more senior.",
+    "In October 2008, he headed the violent-crime unit at the Daegu regional police agency."
+   ],
+   "cues": [
+    "[AI-13] A hotel coffee-shop table at night, two cups, a folded cheque slid under a saucer, only hands visible",
+    "[SCREEN] Second ruling card: \"Former senior police officer — 9 years in prison (Supreme Court, final, Dec 2016)\""
+   ],
+   "gap_after": 0.25,
+   "id": 56,
+   "text": "The second was more senior. In October 2008, he headed the violent-crime unit at the Daegu regional police agency.",
+   "wer": 0.087,
+   "asr": "The second was Moore Sr. In October 2008, he headed the violent crime unit at the Daegu  Regional Police Agency.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.44,
+   "start": 647.658,
+   "end": 655.046
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "According to the courts, on October 30th, 2008, he met Cho in person, in the coffee shop of a hotel in Daegu, and received 900 million won as a bank cheque. That's around 800 thousand dollars."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 57,
+   "text": "According to the courts, on October 30th, 2008, he met Cho in person, in the coffee shop of a hotel in Daegu, and received 900 million won as a bank cheque. That's around 800 thousand dollars.",
+   "wer": 0.048,
+   "asr": "According to the courts, on October 30th, 2008, he met Cho in person, in the coffee  shop of a hotel in Daegu, and received $900 million won as a bank check. That's around $800,000.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.08,
+   "start": 655.296,
+   "end": 669.308
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "The courts found that he took the money in return for investigation information. According to reporting on the ruling, he sat face to face with a man his own agency was hunting, and let him walk away."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 58,
+   "text": "The courts found that he took the money in return for investigation information. According to reporting on the ruling, he sat face to face with a man his own agency was hunting, and let him walk away.",
+   "wer": 0.0,
+   "asr": "The courts found that he took the money in return for investigation information.  According to reporting on the ruling, he sat face to face with a man his own agency was  hunting and let him walk away.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.76,
+   "start": 669.558,
+   "end": 681.26
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "He was sentenced to ten years at first, reduced to nine on appeal. The Supreme Court confirmed it in December 2016."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 59,
+   "text": "He was sentenced to ten years at first, reduced to nine on appeal. The Supreme Court confirmed it in December 2016.",
+   "wer": 0.0,
+   "asr": "He was sentenced to 10 years at first, reduced to 9 on appeal.  The Supreme Court confirmed it in December 2016.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.52,
+   "start": 681.51,
+   "end": 688.964
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "It went further.",
+    "An official at the Daegu prosecutors' office, who had worked on the Cho case itself, was convicted of taking bribes over five years, from 2008 to 2013."
+   ],
+   "cues": [
+    "[SCREEN] Third ruling card: \"Former prosecution official — 9 years + ₩1.4B fine (Supreme Court, final, Oct 2016)\""
+   ],
+   "gap_after": 0.25,
+   "id": 60,
+   "text": "It went further. An official at the Daegu prosecutors' office, who had worked on the Cho case itself, was convicted of taking bribes over five years, from 2008 to 2013.",
+   "wer": 0.083,
+   "asr": "It went further, an official at the Daegu prosecutor's office who had worked on the  showcase itself was convicted of taking bribes over 5 years from 2008 to 2013.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.24,
+   "start": 689.514,
+   "end": 701.692
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "Most of it, the court found, came from a businessman who was managing the group's hidden money.",
+    "In return, the official passed on prosecution information and helped bury investigations."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 61,
+   "text": "Most of it, the court found, came from a businessman who was managing the group's hidden money. In return, the official passed on prosecution information and helped bury investigations.",
+   "wer": 0.0,
+   "asr": "Most of it, the court found, came from a businessman who was managing the group's hidden money.  In return, the official passed on prosecution information and helped bury investigations.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.12,
+   "start": 701.942,
+   "end": 713.002
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "His sentence: nine years in prison and a 1.4 billion won fine, confirmed by the Supreme Court in October 2016."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 62,
+   "text": "His sentence: nine years in prison and a 1.4 billion won fine, confirmed by the Supreme Court in October 2016.",
+   "wer": 0.0,
+   "asr": "His sentence, nine years in prison and a 1.4 billion won fine, confirmed by the Supreme  Court in October 2016.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.12,
+   "start": 713.252,
+   "end": 722.319
+  },
+  {
+   "section": "6",
+   "section_title": "The twist: who was on the payroll?",
+   "section_index": 6,
+   "lines": [
+    "By the time the investigation was done, prosecutors said eight police and prosecution officials had faced punishment.",
+    "For the victims, this changed everything.",
+    "The people who were supposed to catch him, some of them, had been paid by him."
+   ],
+   "cues": [
+    "[AI-07] Long empty corridor of a government building at night, one office door slightly open, light spilling out"
+   ],
+   "gap_after": 1.2,
+   "id": 63,
+   "text": "By the time the investigation was done, prosecutors said eight police and prosecution officials had faced punishment. For the victims, this changed everything. The people who were supposed to catch him, some of them, had been paid by him.",
+   "wer": 0.0,
+   "asr": "By the time the investigation was done, prosecutors said eight police and prosecution officials  had faced punishment.  For the victims, this changed everything.  The people who were supposed to catch him, some of them had been paid by him.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.64,
+   "start": 722.869,
+   "end": 739.436
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "So where was Cho?",
+    "According to investigators, he moved around China, reportedly living under another name.",
+    "Then, in May 2012, Korean police made an announcement."
+   ],
+   "cues": [
+    "[SCREEN] Map animation: Taean → across the Yellow Sea → Shandong Province, China"
+   ],
+   "gap_after": 0.55,
+   "id": 64,
+   "text": "So where was Cho? According to investigators, he moved around China, reportedly living under another name. Then, in May 2012, Korean police made an announcement.",
+   "wer": 0.071,
+   "asr": "So, where was Cho? According to investigators, he moved around China, reportedly living under  another name. Then, in May 2012, Korean police made an announcement that the",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.56,
+   "start": 740.636,
+   "end": 753.144
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "Cho Hee-pal, they said, had died in China in December 2011, of an acute heart attack.",
+    "Police said they had found Chinese emergency-care records and a death certificate while searching the homes of his family and associates."
+   ],
+   "cues": [
+    "[SCREEN] Self-made police-announcement card: \"May 21, 2012 — Police: Cho died of a heart attack in China, Dec 2011\""
+   ],
+   "gap_after": 0.55,
+   "id": 65,
+   "text": "Cho Hee-pal, they said, had died in China in December 2011, of an acute heart attack. Police said they had found Chinese emergency-care records and a death certificate while searching the homes of his family and associates.",
+   "wer": 0.048,
+   "asr": "Chokki, Pal, they said, had died in China in December 2011 of an acute heart attack.  Police said they had found Chinese emergency care records  and a death certificate while searching the homes of his family and associates.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.8,
+   "start": 753.694,
+   "end": 770.443
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "They pointed to a video of his funeral, reportedly filmed by family members.",
+    "According to Korean reporting at the time, he had been cremated in China within days, and his ashes brought back to Korea before the end of December."
+   ],
+   "cues": [
+    "[AI-08] A funeral altar in a dim room, white chrysanthemums, an empty picture frame, mourners seen only from behind"
+   ],
+   "gap_after": 0.25,
+   "id": 66,
+   "text": "They pointed to a video of his funeral, reportedly filmed by family members. According to Korean reporting at the time, he had been cremated in China within days, and his ashes brought back to Korea before the end of December.",
+   "wer": 0.0,
+   "asr": "They pointed to a video of his funeral, reportedly filmed by family members.  According to Korean reporting at the time, he had been cremated in China within days,  and his ashes brought back to Korea before the end of December.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.32,
+   "start": 770.993,
+   "end": 785.253
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "And Korean authorities only found out about it five months later."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 67,
+   "text": "And Korean authorities only found out about it five months later.",
+   "wer": 0.0,
+   "asr": "And Korean authorities only found out about it five months later.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.52,
+   "start": 785.503,
+   "end": 788.958
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "The public didn't buy it.",
+    "Cremation meant there was no body to test.",
+    "Even the police kept him on the wanted list, saying the death had not been confirmed one hundred percent."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 68,
+   "text": "The public didn't buy it. Cremation meant there was no body to test. Even the police kept him on the wanted list, saying the death had not been confirmed one hundred percent.",
+   "wer": 0.031,
+   "asr": "The public didn't buy it.  Cremation meant there was no body to test.  Even the police kept him on the wanted list, saying the death had not been confirmed 100%",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.4,
+   "start": 789.958,
+   "end": 800.307
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "Remember that piece of paper?",
+    "In 2015, victims' groups pointed to a Chinese cremation document that, according to Korean reporting, was issued ten days before the date of death it recorded."
+   ],
+   "cues": [
+    "[SCREEN] Self-made document card: \"Cremation certificate — issued: Dec 11 / date of death: Dec 21\" (as reported by victims' groups, 2015)"
+   ],
+   "gap_after": 0.25,
+   "id": 69,
+   "text": "Remember that piece of paper? In 2015, victims' groups pointed to a Chinese cremation document that, according to Korean reporting, was issued ten days before the date of death it recorded.",
+   "wer": 0.0,
+   "asr": "Remember that piece of paper. In 2015, victims groups pointed to a Chinese cremation document that,  according to Korean reporting, was issued 10 days before the date of death it recorded.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.2,
+   "start": 800.857,
+   "end": 813.999
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "They also noted that early reports and later official accounts named different Chinese cities as the place where he died.",
+    "A man who said he was a former aide reportedly told Korean media he had spoken with Cho on the phone after the date of his supposed death."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 70,
+   "text": "They also noted that early reports and later official accounts named different Chinese cities as the place where he died. A man who said he was a former aide reportedly told Korean media he had spoken with Cho on the phone after the date of his supposed death.",
+   "wer": 0.0,
+   "asr": "They also noted that early reports and later official accounts named different Chinese  cities as the place where he died.  A man who said he was a former aide reportedly told Korean media he had spoken with Cho on  the phone after the date of his supposed death.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.64,
+   "start": 814.249,
+   "end": 830.827
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "There were rumors of plastic surgery, of a new name, of sightings in China and even back in Korea."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 71,
+   "text": "There were rumors of plastic surgery, of a new name, of sightings in China and even back in Korea.",
+   "wer": 0.0,
+   "asr": "There were rumors of plastic surgery, of a new name, of sightings in China and even  back in Korea.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.48,
+   "start": 831.077,
+   "end": 837.503
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "None of those rumors were ever proven. But the questions were understandable.",
+    "After all, this was a case where officials had already been caught taking money.",
+    "In 2015, Korean TV investigative programs took the story up again, and public pressure grew."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"These are the public's doubts. They were never proven.\""
+   ],
+   "gap_after": 0.55,
+   "id": 72,
+   "text": "None of those rumors were ever proven. But the questions were understandable. After all, this was a case where officials had already been caught taking money. In 2015, Korean TV investigative programs took the story up again, and public pressure grew.",
+   "wer": 0.0,
+   "asr": "None of those rumors were ever proven, but the questions were understandable.  After all, this was a case where officials had already been caught taking money.  In 2015, Korean TV investigative programs took the story up again, and public pressure  grew.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.12,
+   "start": 838.053,
+   "end": 855.112
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "Then, on October 10th, 2015, Chinese police arrested Kang Tae-yong, the right-hand man, in the city of Wuxi.",
+    "On December 16th, he was flown back to Korea.",
+    "Arriving at the prosecutors' office in Daegu, he was asked by reporters if Cho was alive."
+   ],
+   "cues": [
+    "[AI-14] Night street in a Chinese city, rain on the pavement, two plain-clothes figures seen from behind walking toward an apartment entrance"
+   ],
+   "gap_after": 0.25,
+   "id": 73,
+   "text": "Then, on October 10th, 2015, Chinese police arrested Kang Tae-yong, the right-hand man, in the city of Wuxi. On December 16th, he was flown back to Korea. Arriving at the prosecutors' office in Daegu, he was asked by reporters if Cho was alive.",
+   "wer": 0.08,
+   "asr": "Then, on October 10, 2015, Chinese police arrested Kang Tai-yong, the right-hand man  in the city of Wuxi. On December 16, he was flown back to Korea. Arriving at the  prosecutor's office in Daegu, he was asked by reporters if Cho was alive.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.16,
+   "start": 855.662,
+   "end": 873.77
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "He said he had seen Cho dead with his own eyes."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 74,
+   "text": "He said he had seen Cho dead with his own eyes.",
+   "wer": 0.0,
+   "asr": "He said he had seen Cho dead with his own eyes.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 2.64,
+   "start": 874.02,
+   "end": 876.609
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "In June 2016, after a two-year reinvestigation, prosecutors announced their conclusion.",
+    "They said Cho collapsed after a night of drinking at a hotel in Weihai, in China's Shandong Province, and died at a hospital in the early hours of December 19th, 2011."
+   ],
+   "cues": [
+    "[SCREEN] Self-made prosecution-announcement card: \"June 28, 2016 — Prosecutors: Cho died in December 2011\""
+   ],
+   "gap_after": 0.25,
+   "id": 75,
+   "text": "In June 2016, after a two-year reinvestigation, prosecutors announced their conclusion. They said Cho collapsed after a night of drinking at a hotel in Weihai, in China's Shandong Province, and died at a hospital in the early hours of December 19th, 2011.",
+   "wer": 0.02,
+   "asr": "In June 2016, after a two-year reinvestigation, prosecutors announced their conclusion.  They said Cho collapsed after a night of drinking at a hotel in Weihai in China's Shandong  Province and died at a hospital in the early hours of December 19, 2011.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 19.52,
+   "start": 877.159,
+   "end": 896.626
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "They said they had consistent testimony from people who were with him, and from fourteen people at the funeral.",
+    "They said a DNA test on hair matched Cho, and that the funeral video showed no signs of editing."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 76,
+   "text": "They said they had consistent testimony from people who were with him, and from fourteen people at the funeral. They said a DNA test on hair matched Cho, and that the funeral video showed no signs of editing.",
+   "wer": 0.026,
+   "asr": "They said they had consistent testimony from people who were with him, and from 14 people  at the funeral.  They set a DNA test on hair-matched Cho, and that the funeral video showed no signs of  editing.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.88,
+   "start": 896.876,
+   "end": 909.703
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "They said they had found no evidence that he was alive."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 77,
+   "text": "They said they had found no evidence that he was alive.",
+   "wer": 0.0,
+   "asr": "They said they had found no evidence that he was alive.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.04,
+   "start": 909.953,
+   "end": 912.94
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "Because he was dead, they said, he could not be charged. The case against him was closed.",
+    "Some victims' groups rejected that conclusion and said they would keep searching."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 78,
+   "text": "Because he was dead, they said, he could not be charged. The case against him was closed. Some victims' groups rejected that conclusion and said they would keep searching.",
+   "wer": 0.0,
+   "asr": "Because he was dead, they said, he could not be charged.  The case against him was closed.  Some victims groups rejected that conclusion and said they would keep searching.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.48,
+   "start": 913.49,
+   "end": 923.911
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "They argued that a strand of hair proves who it came from, not whether that person is still alive."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 79,
+   "text": "They argued that a strand of hair proves who it came from, not whether that person is still alive.",
+   "wer": 0.0,
+   "asr": "They argued that a strand of hair proves who it came from, not whether that person is still alive.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.92,
+   "start": 924.161,
+   "end": 930.028
+  },
+  {
+   "section": "7",
+   "section_title": "The funeral nobody believed",
+   "section_index": 7,
+   "lines": [
+    "So, is Cho Hee-pal dead?",
+    "The official answer from Korean authorities is yes.",
+    "The doubts have never been proven. But for many victims, they have never gone away either."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 80,
+   "text": "So, is Cho Hee-pal dead? The official answer from Korean authorities is yes. The doubts have never been proven. But for many victims, they have never gone away either.",
+   "wer": 0.067,
+   "asr": "So, is Joji Pal dead?  The official answer from Korean authorities is yes.  The doubts have never been proven, but for many victims, they have never gone away either.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.04,
+   "start": 931.028,
+   "end": 942.017
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "With Cho officially dead, Kang Tae-yong became the highest-ranking member of the group ever to stand trial.",
+    "Prosecutors asked for life in prison."
+   ],
+   "cues": [
+    "[AI-15] Empty courtroom at dusk, rows of wooden benches, a single shaft of light across the defendant's chair, no people, no emblems"
+   ],
+   "gap_after": 0.55,
+   "id": 81,
+   "text": "With Cho officially dead, Kang Tae-yong became the highest-ranking member of the group ever to stand trial. Prosecutors asked for life in prison.",
+   "wer": 0.04,
+   "asr": "With Cho officially dead, King Tae Yong became the highest ranking member of the group ever to stand trial.  Prosecutors asked for life in prison.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.88,
+   "start": 943.217,
+   "end": 952.032
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "In January 2017, a Daegu court found that, from June 2006 to October 2008, together with Cho, he had collected around 5 trillion won from roughly 70,000 people through unlicensed deposit-taking, promising a fixed 35 percent a year."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"Daegu District Court, Jan 13, 2017 — 22 years + ₩12.5B forfeiture\""
+   ],
+   "gap_after": 0.25,
+   "id": 82,
+   "text": "In January 2017, a Daegu court found that, from June 2006 to October 2008, together with Cho, he had collected around 5 trillion won from roughly 70,000 people through unlicensed deposit-taking, promising a fixed 35 percent a year.",
+   "wer": 0.02,
+   "asr": "In January 2017, a Daegu court found that from June 2006 to October 2008, together with Cho,  he had collected around 5 trillion won from roughly 70,000 people  through unlicensed deposit taking, promising a fixed 35% a year.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.48,
+   "start": 952.582,
+   "end": 971.0
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "It convicted him of fraud, embezzlement, bribery, and hiding criminal proceeds.",
+    "The court also found that he had paid the police sergeant on the case for investigation information."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 83,
+   "text": "It convicted him of fraud, embezzlement, bribery, and hiding criminal proceeds. The court also found that he had paid the police sergeant on the case for investigation information.",
+   "wer": 0.0,
+   "asr": "It convicted him of fraud, embezzlement, bribery, and hiding criminal proceeds.  The court also found that he had paid the police sergeant on the case for investigation  information.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.96,
+   "start": 971.25,
+   "end": 982.145
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "And it found that, in China, he had worked with organized-crime figures to try to collect money he believed he was owed.",
+    "The judges called it a property crime almost without precedent, one that had destroyed families.",
+    "He was sentenced to 22 years."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 84,
+   "text": "And it found that, in China, he had worked with organized-crime figures to try to collect money he believed he was owed. The judges called it a property crime almost without precedent, one that had destroyed families. He was sentenced to 22 years.",
+   "wer": 0.0,
+   "asr": "And it found that in China, he had worked with organized crime figures to try to collect  money he believed he was owed.  The judges called it a property crime almost without precedent, one that had destroyed families.  He was sentenced to 22 years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.04,
+   "start": 982.395,
+   "end": 999.372
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "On appeal, his lawyers argued the sentence was too harsh, and that some of the charges were really Cho's doing.",
+    "The appeal court kept the 22 years. In November 2017, the Supreme Court confirmed it."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 85,
+   "text": "On appeal, his lawyers argued the sentence was too harsh, and that some of the charges were really Cho's doing. The appeal court kept the 22 years. In November 2017, the Supreme Court confirmed it.",
+   "wer": 0.026,
+   "asr": "On appeal, his lawyers argued the sentence was too harsh and that some of the charges  were really chose doing.  The appeal court kept the 22 years.  In November 2017, the Supreme Court confirmed it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.68,
+   "start": 999.922,
+   "end": 1013.536
+  },
+  {
+   "section": "8",
+   "section_title": "The trial of the right-hand man",
+   "section_index": 8,
+   "lines": [
+    "Prosecutors charged around seventy people in total over the scheme.",
+    "But the man whose name was on the whole thing would never face a judge."
+   ],
+   "cues": [
+    "[SCREEN] Gavel icon + text: \"Kang Tae-yong — 22 years in prison, 12.5 billion won forfeiture (Supreme Court, Nov 2017)\""
+   ],
+   "gap_after": 1.2,
+   "id": 86,
+   "text": "Prosecutors charged around seventy people in total over the scheme. But the man whose name was on the whole thing would never face a judge.",
+   "wer": 0.0,
+   "asr": "Prosecutors charged around 70 people in total over the scheme, but the man whose name was  on the whole thing would never face a judge.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.92,
+   "start": 1014.086,
+   "end": 1021.953
+  },
+  {
+   "section": "9",
+   "section_title": "The villain on the big screen",
+   "section_index": 9,
+   "lines": [
+    "That gap, a crime with no trial for the man at the top, is part of why the story escaped the courtroom and moved into pop culture."
+   ],
+   "cues": [
+    "[AI-16] A dark cinema auditorium seen from the back row, silhouettes of an audience lit by the glow of the screen, no image visible on screen"
+   ],
+   "gap_after": 0.25,
+   "id": 87,
+   "text": "That gap, a crime with no trial for the man at the top, is part of why the story escaped the courtroom and moved into pop culture.",
+   "wer": 0.0,
+   "asr": "That gap, a crime with no trial for the man at the top, is part of why the story  escaped the courtroom and moved into pop culture.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.44,
+   "start": 1023.153,
+   "end": 1032.532
+  },
+  {
+   "section": "9",
+   "section_title": "The villain on the big screen",
+   "section_index": 9,
+   "lines": [
+    "In December 2016, the Korean crime film \"Master\" opened in theaters. It's about a smooth-talking chairman who runs a giant investment fraud, and tries to fake his way out of the country.",
+    "Its director said the villain was modeled on Cho Hee-pal."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 88,
+   "text": "In December 2016, the Korean crime film \"Master\" opened in theaters. It's about a smooth-talking chairman who runs a giant investment fraud, and tries to fake his way out of the country. Its director said the villain was modeled on Cho Hee-pal.",
+   "wer": 0.0,
+   "asr": "In December 2016, the Korean crime film Master opened in theaters.  It's about a smooth-talking chairman who runs a giant investment fraud and  tries to fake his way out of the country.  Its director said the villain was modeled on Cho Hee Pal.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.68,
+   "start": 1032.782,
+   "end": 1048.396
+  },
+  {
+   "section": "9",
+   "section_title": "The villain on the big screen",
+   "section_index": 9,
+   "lines": [
+    "More than seven million people saw it in Korean cinemas."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 89,
+   "text": "More than seven million people saw it in Korean cinemas.",
+   "wer": 0.0,
+   "asr": "More than 7 million people saw it in Korean cinemas.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.44,
+   "start": 1048.646,
+   "end": 1052.025
+  },
+  {
+   "section": "9",
+   "section_title": "The villain on the big screen",
+   "section_index": 9,
+   "lines": [
+    "And the phrase Korean media had used, \"the biggest fraud since the founding of the nation,\" stuck.",
+    "For a whole generation, Cho's name became shorthand for a con man who never paid."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"단군 이래 최대 사기 — 'the biggest fraud since the founding of the nation'\""
+   ],
+   "gap_after": 1.2,
+   "id": 90,
+   "text": "And the phrase Korean media had used, \"the biggest fraud since the founding of the nation,\" stuck. For a whole generation, Cho's name became shorthand for a con man who never paid.",
+   "wer": 0.0,
+   "asr": "And the phrase Korean media had used, the biggest fraud since the founding of the nation, stuck.  For a whole generation, Cho's name became shorthand for a con man who never paid.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.4,
+   "start": 1052.575,
+   "end": 1066.906
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "But what about the victims?",
+    "Prosecutors said about 95 billion won had been tracked down and recovered.",
+    "Against the losses, that's a small fraction.",
+    "Spread across 70,000 people, it's roughly 1.4 million won each. About a thousand dollars."
+   ],
+   "cues": [
+    "[AI-02 variant] The same dim apartment, now morning light, an envelope from a court lying unopened on the table"
+   ],
+   "gap_after": 0.55,
+   "id": 91,
+   "text": "But what about the victims? Prosecutors said about 95 billion won had been tracked down and recovered. Against the losses, that's a small fraction. Spread across 70,000 people, it's roughly 1.4 million won each. About a thousand dollars.",
+   "wer": 0.048,
+   "asr": "But what about the victims? Prosecutors said about 95 billion one had been tracked down and recovered.  Against the losses, that's a small fraction. Spread across 70,000 people,  it's roughly 1.4 million one each. About a thousand dollars.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.24,
+   "start": 1068.106,
+   "end": 1086.294
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "And getting even that has taken years.",
+    "About 71 billion won of the criminal proceeds was deposited with a court in Daegu, split into four separate cases, to be divided among creditors."
+   ],
+   "cues": [
+    "[SCREEN] Self-made timeline: \"Dec 2017 — first payout / 2018–2025 — court fights / June 2026 — payouts restart\""
+   ],
+   "gap_after": 0.25,
+   "id": 92,
+   "text": "And getting even that has taken years. About 71 billion won of the criminal proceeds was deposited with a court in Daegu, split into four separate cases, to be divided among creditors.",
+   "wer": 0.0,
+   "asr": "And getting even that has taken years.  About 71 billion won of the criminal proceeds was deposited with a court in Daegu,  split into four separate cases, to be divided among creditors.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 1086.844,
+   "end": 1100.702
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "The first payout came in December 2017: 32 billion won, to more than 17,000 creditors.",
+    "Then some victims challenged who should count as a creditor, and how much each should get. Everything froze.",
+    "Those lawsuits only ended in October 2025."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 93,
+   "text": "The first payout came in December 2017: 32 billion won, to more than 17,000 creditors. Then some victims challenged who should count as a creditor, and how much each should get. Everything froze. Those lawsuits only ended in October 2025.",
+   "wer": 0.061,
+   "asr": "The first payout came in December 2017, 32,000,001 to more than 17,000 creditors.  Then some victims challenged who should count as a creditor and  how much each should get, everything froze.  Those lawsuits only ended in October 2025.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 19.92,
+   "start": 1100.952,
+   "end": 1120.82
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "On June 24th, 2026, the court in Daegu restarted the payouts: another 32 billion won, to more than 22,000 creditors, with money due to go out from July.",
+    "Two smaller pots, of 5 billion and 2 billion won, are still waiting for dates."
+   ],
+   "cues": [
+    "[SCREEN] Big number card: \"June 24, 2026 — ₩32B to 22,156 creditors\""
+   ],
+   "gap_after": 0.25,
+   "id": 94,
+   "text": "On June 24th, 2026, the court in Daegu restarted the payouts: another 32 billion won, to more than 22,000 creditors, with money due to go out from July. Two smaller pots, of 5 billion and 2 billion won, are still waiting for dates.",
+   "wer": 0.019,
+   "asr": "On June 24, 2026, the court in Daegu restarted the payouts, another 32 billion won to more  than 22,000 creditors, with money due to go out from July.  Two smaller pots of 5 billion and 2 billion won are still waiting for dates.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.72,
+   "start": 1121.37,
+   "end": 1140.027
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "Korean media reported that more than 20,000 victims were represented by only around a hundred appointed representatives, and that many had moved, changed numbers, or simply lost contact. The court said it had to track people down through local administrative offices."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 95,
+   "text": "Korean media reported that more than 20,000 victims were represented by only around a hundred appointed representatives, and that many had moved, changed numbers, or simply lost contact. The court said it had to track people down through local administrative offices.",
+   "wer": 0.024,
+   "asr": "Korean media reported that more than 20,000 victims were represented by only around 100  appointed representatives and that many had moved changed numbers or simply lost contact.  The court said it had to track people down through local administrative offices.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.32,
+   "start": 1140.277,
+   "end": 1156.539
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "Some, after eighteen years, will never see the money at all."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 96,
+   "text": "Some, after eighteen years, will never see the money at all.",
+   "wer": 0.0,
+   "asr": "Some, after 18 years, will never see the money at all.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.68,
+   "start": 1156.789,
+   "end": 1160.418
+  },
+  {
+   "section": "10",
+   "section_title": "The money, 18 years later",
+   "section_index": 10,
+   "lines": [
+    "For many families, the damage was never just financial.",
+    "Korean media reported that some victims lost homes, marriages, and their health.",
+    "Many have spent nearly two decades waiting."
+   ],
+   "cues": [
+    "[AI-09] An old woman's hands, seen from above, folding a faded investment certificate into a drawer (no face)"
+   ],
+   "gap_after": 1.2,
+   "id": 97,
+   "text": "For many families, the damage was never just financial. Korean media reported that some victims lost homes, marriages, and their health. Many have spent nearly two decades waiting.",
+   "wer": 0.0,
+   "asr": "For many families, the damage was never just financial.  Korean media reported that some victims lost homes, marriages, and their health.  Many have spent nearly two decades waiting.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.72,
+   "start": 1161.418,
+   "end": 1172.087
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "Here's the uncomfortable part.",
+    "Cho's scheme collapsed in 2008. The idea behind it never did."
+   ],
+   "cues": [
+    "[AI-17] A smartphone glowing on a dark table, a chat bubble with a rising green chart, a hand hovering over it, no face, no real app logos"
+   ],
+   "gap_after": 0.55,
+   "id": 98,
+   "text": "Here's the uncomfortable part. Cho's scheme collapsed in 2008. The idea behind it never did.",
+   "wer": 0.056,
+   "asr": "Here's the uncomfortable part.  Jo's scheme collapsed in 2008.  The idea behind it never did.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.16,
+   "start": 1173.287,
+   "end": 1179.395
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "In February 2025, Korea's financial regulator said it had received 410 reports about unlicensed deposit-taking in 2024, up a quarter from the year before. It referred 35 companies to police."
+   ],
+   "cues": [
+    "[SCREEN] Self-made chart: \"Unlicensed deposit-taking reports to Korea's financial regulator — 2023: 328 / 2024: 410\" + \"35 companies referred to police (2024)\""
+   ],
+   "gap_after": 0.25,
+   "id": 99,
+   "text": "In February 2025, Korea's financial regulator said it had received 410 reports about unlicensed deposit-taking in 2024, up a quarter from the year before. It referred 35 companies to police.",
+   "wer": 0.0,
+   "asr": "In February 2025, Korea's financial regulator said it had received 410 reports about unlicensed  deposit taking in 2024, up a quarter from the year before. It referred 35 companies to police.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.12,
+   "start": 1179.945,
+   "end": 1195.001
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "The packaging has changed. Instead of massage chairs, it's new technology, crypto assets, real estate.",
+    "But look at the shape."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 100,
+   "text": "The packaging has changed. Instead of massage chairs, it's new technology, crypto assets, real estate. But look at the shape.",
+   "wer": 0.05,
+   "asr": "Packaging has changed. Instead of massage chairs, it's new technology.  Crypto assets, real estate. But look at the shape.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.56,
+   "start": 1195.251,
+   "end": 1203.758
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "One. A fixed, guaranteed return, far above what any bank pays.",
+    "Two. Payments that come often, daily or weekly, so the scheme feels real long before it can be checked.",
+    "Three. A product story you can't easily verify. A machine in a sauna you'll never visit."
+   ],
+   "cues": [
+    "[SCREEN] Five-step checklist card, each line ticking on: \"1. A fixed, guaranteed return / 2. Paid often, so it feels real / 3. A product story you can't check / 4. Bonuses for bringing in others / 5. Time — and someone who looks away\""
+   ],
+   "gap_after": 0.25,
+   "id": 101,
+   "text": "One. A fixed, guaranteed return, far above what any bank pays. Two. Payments that come often, daily or weekly, so the scheme feels real long before it can be checked. Three. A product story you can't easily verify. A machine in a sauna you'll never visit.",
+   "wer": 0.0,
+   "asr": "1. A fixed guaranteed return, far above what any bank pays.  2. Payments that come often, daily or weekly, so the scheme feels real long before it can be checked.  3. A product story you can't easily verify. A machine in a sauna you'll never visit.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 21.36,
+   "start": 1204.308,
+   "end": 1225.604
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "Four. Bonuses for bringing in others, so victims become recruiters.",
+    "And five. Time. Every month that nobody stops it, the hole gets deeper, and the people inside it get more people involved."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 102,
+   "text": "Four. Bonuses for bringing in others, so victims become recruiters. And five. Time. Every month that nobody stops it, the hole gets deeper, and the people inside it get more people involved.",
+   "wer": 0.0,
+   "asr": "4. Bonuses for bringing in others so victims become recruiters and 5. Time. Every month  that nobody stops it, the hole gets deeper, and the people inside it get more people involved.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.92,
+   "start": 1225.854,
+   "end": 1241.723
+  },
+  {
+   "section": "11",
+   "section_title": "Why it keeps coming back",
+   "section_index": 11,
+   "lines": [
+    "None of this is unique to Korea. Versions of the same shape have turned up across Asia and around the world.",
+    "That's not investment advice. It's a pattern. And patterns are the one thing a Ponzi scheme can't hide."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 103,
+   "text": "None of this is unique to Korea. Versions of the same shape have turned up across Asia and around the world. That's not investment advice. It's a pattern. And patterns are the one thing a Ponzi scheme can't hide.",
+   "wer": 0.0,
+   "asr": "None of this is unique to Korea. Versions of the same shape have turned up across Asia and around  the world. That's not investment advice. It's a pattern. And patterns are the one thing a Ponzi  scheme can't hide.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 1242.723,
+   "end": 1256.581
+  },
+  {
+   "section": "12",
+   "section_title": "Outro",
+   "section_index": 12,
+   "lines": [
+    "Officially, the story ended in a hotel room in China in 2011.",
+    "For many of the people who lost everything, it never ended at all."
+   ],
+   "cues": [
+    "[AI-01 variant] The harbor at dawn, empty, the water calm"
+   ],
+   "gap_after": 1.0,
+   "id": 104,
+   "text": "Officially, the story ended in a hotel room in China in 2011. For many of the people who lost everything, it never ended at all.",
+   "wer": 0.0,
+   "asr": "Officially, the story ended in a hotel room in China in 2011.  For many of the people who lost everything, it never ended at all.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.4,
+   "start": 1257.781,
+   "end": 1266.122
+  },
+  {
+   "section": "12",
+   "section_title": "Outro",
+   "section_index": 12,
+   "lines": [
+    "The scheme didn't run on machines. It ran on trust.",
+    "Trust in a daily payment. Trust in the friend who brought you in.",
+    "And trust that if something was wrong, the authorities would stop it."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 105,
+   "text": "The scheme didn't run on machines. It ran on trust. Trust in a daily payment. Trust in the friend who brought you in. And trust that if something was wrong, the authorities would stop it.",
+   "wer": 0.0,
+   "asr": "The scheme didn't run on machines, it ran on trust.  Trust in a daily payment, trust in the friend who brought you in, and trust that if something  was wrong, the authorities would stop it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.72,
+   "start": 1267.122,
+   "end": 1279.782
+  },
+  {
+   "section": "12",
+   "section_title": "Outro",
+   "section_index": 12,
+   "lines": [
+    "So here's the question to ask, every time: if a business pays you more than any bank ever could, where is that money really coming from?"
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 106,
+   "text": "So here's the question to ask, every time: if a business pays you more than any bank ever could, where is that money really coming from?",
+   "wer": 0.077,
+   "asr": "So, here's the question to ask every time.  If a business pays you more than any bank ever could, where's that money really coming  from?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.12,
+   "start": 1280.332,
+   "end": 1289.4
+  },
+  {
+   "section": "12",
+   "section_title": "Outro",
+   "section_index": 12,
+   "lines": [
+    "Next time: another country, another promise that sounded safe. And another fortune that simply disappeared."
+   ],
+   "cues": [
+    "[SCREEN] Teaser card: a dark map of Asia, one red dot pulsing"
+   ],
+   "gap_after": 0.55,
+   "id": 107,
+   "text": "Next time: another country, another promise that sounded safe. And another fortune that simply disappeared.",
+   "wer": 0.0,
+   "asr": "Next time, another country, another promise that sounded safe,  and another fortune that simply disappeared.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.92,
+   "start": 1289.95,
+   "end": 1297.818
+  },
+  {
+   "section": "12",
+   "section_title": "Outro",
+   "section_index": 12,
+   "lines": [
+    "Subscribe so you don't miss it.",
+    "And tell me in the comments: have you ever been offered a deal that paid every single day?"
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 108,
+   "text": "Subscribe so you don't miss it. And tell me in the comments: have you ever been offered a deal that paid every single day?",
+   "wer": 0.0,
+   "asr": "Subscribe so you don't miss it and tell me in the comments.  Have you ever been offered a deal that paid every single day?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.04,
+   "start": 1298.368,
+   "end": 1305.351
+  }
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "section": "10",
+ "chunks": [
+  {
+   "id": 61,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s10_chapter_the_pattern.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step1_lender_borrower",
+     "args": {
+      "lines": [
+       "The lender and the borrower",
+       "are secretly the same person"
+      ],
+      "red": [
+       "same",
+       "person"
+      ],
+      "dur": 3.8,
+      "stagger": 0.4,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "THE PATTERN · 1 OF 5"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step2_shell_companies",
+     "args": {
+      "lines": [
+       "Loans hidden behind",
+       "shell companies"
+      ],
+      "red": [
+       "shell"
+      ],
+      "dur": 3.8,
+      "stagger": 0.4,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "THE PATTERN · 2 OF 5"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step3_inflated_collateral",
+     "args": {
+      "lines": [
+       "Inflated collateral"
+      ],
+      "red": [
+       "inflated"
+      ],
+      "dur": 3.8,
+      "stagger": 0.0,
+      "size": 124,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "THE PATTERN · 3 OF 5"
+     }
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step4_inspectors",
+     "args": {
+      "lines": [
+       "Inspectors who",
+       "look away"
+      ],
+      "red": [
+       "away"
+      ],
+      "dur": 4.0,
+      "stagger": 0.4,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "THE PATTERN · 4 OF 5"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step5_risky_products",
+     "args": {
+      "lines": [
+       "Risky products sold",
+       "as 'safe' to savers"
+      ],
+      "red": [
+       "'safe'"
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "THE PATTERN · 5 OF 5"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_1.jpg",
+     "fx": "out",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_ov_1.jpg",
+     "fx": "in",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4",
+     "start": 2.0
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_trust_was_the_product",
+     "args": {
+      "lines": [
+       "The trust people had in the bank",
+       "was the product."
+      ],
+      "red": [
+       "product."
+      ],
+      "dur": 4.0,
+      "stagger": 0.6,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/office_tower_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/boardroom_empty_2.mp4"
+    }
+   ]
+  },
+  {
+   "id": 64,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/signing_document_2.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s10_keyphrase_who_is_borrowing.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 61,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 62,
+   "name": "impact",
+   "offset": 4.2,
+   "gain_db": -15
+  },
+  {
+   "chunk": 64,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -13
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 64,
+   "dur": 1.6
+  }
+ ]
+}

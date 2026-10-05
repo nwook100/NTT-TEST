@@ -1,0 +1,36 @@
+# EP.04 card definitions: (file, org, meta, tag, body_html, source). Court rulings and official figures only; wording
+# taken verbatim from fraud_ep04_ezubao_en.md (which states the findings of the Beijing No. 1 Intermediate People's
+# Court verdict of Sept 12, 2017, upheld by the Beijing High People's Court in Nov 2017, as fact; Xinhua-investigation
+# statements are attributed; payout percentages were not published by the court and stay marked "reported").
+CARDS = [
+ ("card_01_76_billion_1_15m_people", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "VERDICT · SEPTEMBER 12, 2017", "COURT FINDING",
+  "From June 2014 to December 2015, through Ezubao and a sister platform called Sesame Finance, the group used fake leasing and loan projects to take in <mark>more than 76 billion yuan</mark>.<br>Excluding reinvested money: about 60 billion yuan, roughly nine billion dollars, from <mark>more than 1.15 million people</mark>.",
+  "¥76.2B raised (gross) · ¥59.8B excl. reinvestment · ¥38B+ lost. Source: court judgment, as reported by Xinhua / Chinese media"),
+ ("card_02_ding_ning_life", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "VERDICT · SEPTEMBER 12, 2017", "VERDICT",
+  "Ding Ning: convicted of fundraising fraud, smuggling precious metals, illegally possessing guns, and illegally crossing the border.<br>Sentence: <mark>life in prison</mark> and a <mark>100 million yuan</mark> fine.",
+  "Upheld on appeal, Beijing High People's Court, November 2017. Source: court judgment, via Xinhua"),
+ ("card_03_ding_dian_zhang_min", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "VERDICT · SEPTEMBER 12, 2017", "CO-DEFENDANTS",
+  "Ding Dian, his younger brother, also a senior executive: <mark>life</mark> for fundraising fraud, plus a ¥70M fine.<br>Zhang Min and twenty-three others: <mark>three to fifteen years</mark>.",
+  "26 people convicted in all. Source: court judgment, via Xinhua / Chinese media"),
+ ("card_04_yucheng_fines_final", "BEIJING HIGH PEOPLE'S COURT", "APPEALS REJECTED · NOVEMBER 2017", "FINES · FINAL",
+  "The two Yucheng companies were fined a combined <mark>1.9 billion yuan</mark>, about 290 million dollars.<br>The Beijing High People's Court rejected the appeals. The sentences were <mark>final</mark>.",
+  "Yucheng International ¥1.803B · Anhui Yucheng ¥100M. Source: court rulings, via Xinhua / Chinese media"),
+ ("card_05_95_percent_fake", "XINHUA INVESTIGATION", "PUBLISHED JANUARY 31 – FEBRUARY 1, 2016", "STATEMENT TO XINHUA",
+  "&ldquo;As far as I know, <mark>95 percent of the projects on Ezubao were fake</mark>.&rdquo;<br>&mdash; head of risk control at Yucheng's leasing arm",
+  "Suspect's statement from the Xinhua investigation, not a court figure. Police: of 207 leasing customers checked, only one had done real business with Yucheng"),
+ ("card_06_returns_9_to_14_6", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "COURT FINDING · PROSECUTION FILINGS", "THE PITCH",
+  "The court found that these products, with names like &ldquo;Annual Enjoyment,&rdquo; promised annual returns of <mark>nine to 14.6 percent</mark>.<br>According to Chinese prosecutors, you could start with just <mark>one yuan</mark> and take your money out whenever you wanted.",
+  "A one-year bank deposit paid far less: the official benchmark fell from 3% to 1.5% (2014–15). Sources: court judgment; Beijing prosecutors"),
+ ("card_07_advertising_480m", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "COURT JUDGMENT · SEPTEMBER 2017", "COURT FINDING",
+  "Ezubao advertised on major TV channels across China, in subway stations, airports and railway stations.<br>It spent <mark>more than 480 million yuan</mark> on advertising. About seventy million dollars.",
+  "Chinese media: ads ran on CCTV in prime time; an 'Ezubao' bullet train. Source: court judgment, via Chinese media"),
+ ("card_08_zhang_min_700m_gifts", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "COURT FINDING · SEPTEMBER 2017", "WHERE IT WENT",
+  "The court found that Ding Ning gave the group's president, Zhang Min, assets worth around <mark>700 million yuan</mark>.<br>According to Xinhua, those gifts included a villa in Singapore and a pink diamond ring.",
+  "Court audit: ~¥1.2B in 'gifts' to executives · ¥490M on luxury goods · ¥920M on property, aircraft and vehicles. Sources: court judgment; Xinhua"),
+ ("card_09_seized_assets", "BEIJING NO. 1 INTERMEDIATE PEOPLE'S COURT", "JUDGMENT, AS REPORTED BY CHINESE MEDIA", "SEIZED ASSETS",
+  "Frozen: almost <mark>11 billion yuan</mark> in bank accounts.<br>Seized: cash, property, vehicles, nearly <mark>137 kilos of gold</mark>, and more than a thousand pieces of jade, art and jewelry.",
+  "Frozen funds ¥10.9B + $80M · cash ¥918M · 136.9 kg gold · 1,076 jade, art & jewelry items. Source: court, as reported"),
+ ("card_10_forty_cents", "BEIJING COURT VICTIM PAYOUTS", "1ST PAYOUT JAN 16, 2020 · 2ND PAYOUT APRIL 2025", "WHERE'S THE MONEY?",
+  "The court didn't publish the ratio. According to Chinese media and victims, the first payout returned about 35 percent; the second brought the total to roughly forty.<br><mark>~40 cents back for every yuan lost</mark> — after almost ten years.",
+  "Percentages reported by Chinese media and victims, not published by the court. Victims registered losses nationwide, July–Aug 2019"),
+]

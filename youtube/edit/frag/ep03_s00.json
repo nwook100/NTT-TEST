@@ -1,0 +1,32 @@
+{
+  "section": "0",
+  "chunks": [
+    {"id": 0, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s00_tw_2019_2022_hcmc", "args": {"text": "2019–2022 — HO CHI MINH CITY", "sub": "a driver kept a notebook", "dur": 3.5, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/notebook_numbers_1.mp4", "grade": "cold"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/parking_garage_1.mp4", "grade": "cold"}
+    ]},
+    {"id": 1, "segments": [
+      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s00_countup_108_trillion_dong.mp4"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4", "start": 1.5}
+    ]},
+    {"id": 2, "segments": [
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_safe_as_a_deposit", "args": {"lines": ["Something that sounded", "as safe as a deposit.", "It wasn't."], "red": ["wasn't."], "dur": 4.5, "stagger": 1.4, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}}
+    ]},
+    {"id": 3, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_story_of_truong_my_lan", "args": {"lines": ["Truong My Lan"], "kicker": "THIS IS THE STORY OF", "dur": 3.0, "size": 130, "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"}},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/hcmc_aerial_night_1.mp4"},
+      {"kind": "video", "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4"},
+      {"kind": "clip", "asset": "assets/ep03_truong_my_lan/motion/s00_chapter_the_bank_she_secretly_owned.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 0, "name": "typewriter", "offset": 0.2, "gain_db": -10},
+    {"chunk": 1, "name": "impact", "offset": 3.9, "gain_db": -8},
+    {"chunk": 2, "name": "heartbeat", "offset": 6.6, "gain_db": -11}
+  ],
+  "music_drops": [
+    {"chunk": 1, "dur": 8.0}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "section": "13",
+  "chunks": [
+    {"id": 91, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s13_chapter_the_korean_side_of_the_story.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_apartment_night_1.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s13_countup_280000_korea.mp4"}
+    ]},
+    {"id": 92, "segments": [
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/seoul_night_1.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_yeouido_grim_reaper",
+       "args": {"lines": ["\"Yeouido Grim Reaper\""], "red": ["grim", "reaper"],
+                "kicker": "SEOUL PROSECUTORS REVIVED A FINANCIAL-CRIMES UNIT NICKNAMED", "dur": 4.5, "size": 120}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg", "fx": "right"}
+    ]},
+    {"id": 93, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s13_tw_april_2023",
+       "args": {"text": "APRIL 2023", "sub": "IN KOREA", "dur": 3.0}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s01_seoul_skyline_3.jpg", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_prosecutors_allege_chai",
+       "args": {"lines": ["Chai made ordinary payments look", "as if they were running on Terra."], "red": ["look"],
+                "kicker": "PROSECUTORS ALLEGE", "dur": 5.5, "stagger": 0.8, "size": 104}}
+    ]},
+    {"id": 94, "segments": [
+      {"kind": "motion", "fn": "compare", "name": "s13_cmp_allege_vs_denies",
+       "args": {"left": {"head": "Korean prosecutors", "big": "Allege", "sub": "Chai made ordinary payments look as if they were running on Terra."},
+                "right": {"head": "Daniel Shin", "big": "Denies wrongdoing", "sub": "His lawyers say he left Terra two years before the collapse."},
+                "title": "INDICTED · APRIL 2023 · TRIAL STILL GOING ON", "dur": 6.0}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_courts_twice_turned_down",
+       "args": {"lines": ["Korean courts twice turned down", "requests to arrest him."], "red": ["twice"],
+                "dur": 4.0, "stagger": 0.7, "size": 108}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/gavel_2.mp4", "start": 0.0}
+    ]},
+    {"id": 95, "segments": [
+      {"kind": "text", "text": "Do Kwon may not be done\nwith Korean justice.", "style": "quote"},
+      {"kind": "motion", "fn": "flow_diagram", "name": "s13_flow_transfer_to_korea",
+       "args": {"nodes": [{"id": "us", "label": "U.S. prison", "sub": "15-year sentence", "x": 0.12, "y": 0.55},
+                          {"id": "kr", "label": "Korea", "sub": "transfer", "x": 0.88, "y": 0.55, "red": true}],
+                "edges": [{"from": "us", "to": "kr", "label": "after he serves half his sentence"}],
+                "title": "U.S. PROSECUTORS SAID THEY WOULD NOT OPPOSE", "dur": 5.0}}
+    ]},
+    {"id": 96, "segments": [
+      {"kind": "motion", "fn": "typewriter", "name": "s13_tw_in_korea_separate_charges",
+       "args": {"text": "IN KOREA", "sub": "SEPARATE CHARGES, INCLUDING UNDER THE CAPITAL MARKETS LAW", "dur": 4.0}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s13_yeouido_ov_3.jpg", "crop": "detail", "fx": "in"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s13_kp_more_than_30_years",
+       "args": {"lines": ["A conviction there could mean", "more than 30 years."], "red": ["30"],
+                "kicker": "SOME KOREAN MEDIA HAVE REPORTED", "dur": 5.0, "stagger": 0.9, "size": 110}}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 91, "name": "impact", "offset": 11.18, "gain_db": -13},
+    {"chunk": 93, "name": "typewriter", "offset": 0.3, "gain_db": -14},
+    {"chunk": 95, "name": "whoosh", "offset": 5.6, "gain_db": -10}
+  ],
+  "music_drops": [
+    {"chunk": 95, "dur": 1.8}
+  ]
+}

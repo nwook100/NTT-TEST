@@ -1,0 +1,186 @@
+{
+ "section": "4",
+ "chunks": [
+  {
+   "id": 24,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s04_chapter_the_spending_spree.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "word_by_word",
+     "name": "s04_wbw_asset_wall",
+     "args": {
+      "text": "Film financing · Superyacht · Beverly Hills · New York · London · Private jet · Monet · Picasso · Basquiat",
+      "attribution": "according to US prosecutors",
+      "red": ["Superyacht", "Picasso"],
+      "dur": 6.0,
+      "size": 64,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/red_carpet_cg_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s04_countup_60m_red_granite",
+     "args": {
+      "to": 60,
+      "prefix": "$",
+      "suffix": " MILLION",
+      "kicker": "2018 · RED GRANITE PICTURES",
+      "label": "PAID TO THE US GOVERNMENT",
+      "sublabel": "to settle the case",
+      "dur": 4.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/gallery_hall_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s04_kp_picasso_basquiat",
+     "args": {
+      "lines": [
+       "A Picasso.",
+       "A Basquiat collage."
+      ],
+      "kicker": "ACCORDING TO THE JUSTICE DEPARTMENT · GIFTS FROM JHO LOW",
+      "dur": 4.0,
+      "stagger": 0.9,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "word_by_word",
+     "name": "s04_wbw_dicaprio",
+     "args": {
+      "text": "DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities.",
+      "red": ["never accused"],
+      "dur": 5.5,
+      "size": 72,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/empty_frames_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/gallery_hall_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s04_countup_250m_yacht",
+     "args": {
+      "to": 250,
+      "prefix": "~$",
+      "suffix": " MILLION",
+      "kicker": "EQUANIMITY · ALLEGED, 1MDB FUNDS",
+      "label": "300 FT · HELIPAD · CINEMA · POOL",
+      "sublabel": "according to the US Justice Department",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_equanimity_2.jpg",
+     "fx": "right"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s04_countup_11b_debt",
+     "args": {
+      "to": 11,
+      "prefix": "$",
+      "suffix": " BILLION",
+      "kicker": "BY 2015",
+      "label": "1MDB'S DEBT",
+      "sublabel": "struggling to pay its bondholders · the bill fell to Malaysian taxpayers",
+      "end_red": true,
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s01_kl_skyline_ov_2.jpg",
+     "fx": "in"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 24,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 7.4,
+   "gain_db": -8
+  },
+  {
+   "chunk": 29,
+   "name": "impact",
+   "offset": 7.8,
+   "gain_db": -10
+  }
+ ],
+ "music_drops": []
+}

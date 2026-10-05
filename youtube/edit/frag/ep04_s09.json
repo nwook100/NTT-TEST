@@ -1,0 +1,190 @@
+{
+ "section": "9",
+ "chunks": [
+  {
+   "id": 70,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s09_chapter_the_pattern.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_step1_high_returns",
+     "args": {
+      "lines": [
+       "High returns, called 'safe'"
+      ],
+      "red": [
+       "'safe'"
+      ],
+      "dur": 4.0,
+      "stagger": 0.0,
+      "size": 112,
+      "kicker": "THE PATTERN · 1 OF 5",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_step2_business_cant_check",
+     "args": {
+      "lines": [
+       "A real-sounding business",
+       "you can't check"
+      ],
+      "red": [
+       "can't"
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 108,
+      "kicker": "THE PATTERN · 2 OF 5",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_step3_money_back_any_time",
+     "args": {
+      "lines": [
+       "Your money back 'any time'"
+      ],
+      "red": [
+       "'any time'"
+      ],
+      "dur": 4.0,
+      "stagger": 0.0,
+      "size": 110,
+      "kicker": "THE PATTERN · 3 OF 5",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_step4_credibility_borrowed",
+     "args": {
+      "lines": [
+       "Credibility borrowed from",
+       "TV, trains, experts"
+      ],
+      "red": [
+       "borrowed"
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 108,
+      "kicker": "THE PATTERN · 4 OF 5",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_step5_same_company",
+     "args": {
+      "lines": [
+       "A guarantor that is really",
+       "the same company"
+      ],
+      "red": [
+       "same",
+       "company"
+      ],
+      "dur": 5.0,
+      "stagger": 0.5,
+      "size": 106,
+      "kicker": "THE PATTERN · 5 OF 5",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  },
+  {
+   "id": 72,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/china_city_aerial_night_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_korea_vietnam_world",
+     "args": {
+      "lines": [
+       "In Korea, in Vietnam,",
+       "across Asia and around the world."
+      ],
+      "red": [
+       "world."
+      ],
+      "dur": 4.0,
+      "stagger": 0.5,
+      "size": 96,
+      "kicker": "THE SAME SHAPE",
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_harder_to_bury",
+     "args": {
+      "lines": [
+       "A pattern is harder",
+       "to bury than paper."
+      ],
+      "red": [
+       "bury"
+      ],
+      "dur": 4.5,
+      "stagger": 0.6,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 70,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 71,
+   "name": "impact",
+   "offset": 4.5,
+   "gain_db": -15
+  },
+  {
+   "chunk": 72,
+   "name": "stamp",
+   "offset": 13.0,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 72,
+   "dur": 1.5
+  }
+ ]
+}

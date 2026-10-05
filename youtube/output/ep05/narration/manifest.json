@@ -1,0 +1,1509 @@
+{
+ "voice": {
+  "speaker": "Aiden",
+  "instruct": "Calm, low, serious true-crime documentary narrator. Measured pace, clear American English, slight tension, no excitement.",
+  "language": "English",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+ },
+ "duration": 902.65,
+ "loudness_lufs": -16.0,
+ "chunks": [
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "December 2013. New York.",
+    "A red carpet, flashbulbs, and one of the year's biggest film premieres.",
+    "The movie is The Wolf of Wall Street. A story about a stockbroker who gets rich by lying to investors."
+   ],
+   "cues": [
+    "[AI-01] A red carpet outside a grand old New York cinema at night, flashbulbs, crowd seen only from behind, no faces, no readable posters"
+   ],
+   "gap_after": 1.0,
+   "id": 0,
+   "text": "December 2013. New York. A red carpet, flashbulbs, and one of the year's biggest film premieres. The movie is The Wolf of Wall Street. A story about a stockbroker who gets rich by lying to investors.",
+   "wer": 0.051,
+   "asr": "December 2013, New York. A red carpet, flash bulbs, and one of the year's biggest film  premieres. The movie is The Wolf of Wall Street. A story about a stockbroker who gets rich  by lying to investors.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.0,
+   "start": 0.0,
+   "end": 13.944
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "According to the United States Justice Department, the money that made this film had been misappropriated from Malaysia.",
+    "Not from Wall Street. From a country."
+   ],
+   "cues": [
+    "[SCREEN] Black screen, white text: \"According to the US Justice Department, this film was paid for with misappropriated money.\""
+   ],
+   "gap_after": 0.55,
+   "id": 1,
+   "text": "According to the United States Justice Department, the money that made this film had been misappropriated from Malaysia. Not from Wall Street. From a country.",
+   "wer": 0.0,
+   "asr": "According to the United States Justice Department, the money that made this film  had been misappropriated from Malaysia, not from Wall Street, from a country.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.28,
+   "start": 14.944,
+   "end": 24.168
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "The same money, prosecutors say, bought a superyacht, mansions in Beverly Hills and New York, a private jet, and paintings by Monet and Picasso.",
+    "It came from a fund that was supposed to belong to every citizen of Malaysia."
+   ],
+   "cues": [
+    "[AI-02] A 90-metre superyacht anchored in a dark tropical bay at night, deck lights glowing, no people visible"
+   ],
+   "gap_after": 0.25,
+   "id": 2,
+   "text": "The same money, prosecutors say, bought a superyacht, mansions in Beverly Hills and New York, a private jet, and paintings by Monet and Picasso. It came from a fund that was supposed to belong to every citizen of Malaysia.",
+   "wer": 0.051,
+   "asr": "The same money prosecutors say bought a super yacht, mansions in Beverly Hills and New York,  a private jet, and paintings by Monet and Picasso.  It came from a fund that was supposed to belong to every citizen of Malaysia.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 24.718,
+   "end": 38.107
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "And twelve years later, the man who ran the country at the time has been convicted.",
+    "This is the story of 1MDB. How the money left, who followed it, and why Malaysians are still paying for it."
+   ],
+   "cues": [],
+   "gap_after": 1.5,
+   "trailing_cues": [
+    "[SCREEN] Channel logo sting (under 3 seconds)"
+   ],
+   "id": 3,
+   "text": "And twelve years later, the man who ran the country at the time has been convicted. This is the story of 1MDB. How the money left, who followed it, and why Malaysians are still paying for it.",
+   "wer": 0.026,
+   "asr": "And 12 years later, the man who ran the country at the time has been convicted.  This is the story of 1NDB, how the money left, who followed it, and why Malaysians are still  paying for it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.08,
+   "start": 38.357,
+   "end": 50.377
+  },
+  {
+   "section": "1",
+   "section_title": "A fund for a nation",
+   "section_index": 1,
+   "lines": [
+    "In April 2009, Najib Razak became the prime minister of Malaysia.",
+    "He was political royalty. His father had been the country's second prime minister. His uncle, the third.",
+    "He also kept his job as finance minister."
+   ],
+   "cues": [
+    "[SCREEN] Map of Southeast Asia, zoom into Malaysia and Kuala Lumpur. Caption: \"Malaysia — population ~33 million\""
+   ],
+   "gap_after": 0.55,
+   "id": 4,
+   "text": "In April 2009, Najib Razak became the prime minister of Malaysia. He was political royalty. His father had been the country's second prime minister. His uncle, the third. He also kept his job as finance minister.",
+   "wer": 0.0,
+   "asr": "In April 2009, Najib Razak became the prime minister of Malaysia.  He was political royalty.  His father had been the country's second prime minister.  His uncle the third.  He also kept his job as finance minister.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.84,
+   "start": 51.877,
+   "end": 65.656
+  },
+  {
+   "section": "1",
+   "section_title": "A fund for a nation",
+   "section_index": 1,
+   "lines": [
+    "That same year, his government took over a fund set up by the state of Terengganu and renamed it 1Malaysia Development Berhad. 1MDB for short."
+   ],
+   "cues": [
+    "[SCREEN] Title card: \"1Malaysia Development Berhad (1MDB) — founded 2009\""
+   ],
+   "gap_after": 0.25,
+   "id": 5,
+   "text": "That same year, his government took over a fund set up by the state of Terengganu and renamed it 1Malaysia Development Berhad. 1MDB for short.",
+   "wer": 0.037,
+   "asr": "That same year, his government took over a fund set up by the state of Terengganu and renamed it  One Malaysia Development Borhad. One MDB for short.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.52,
+   "start": 66.206,
+   "end": 75.669
+  },
+  {
+   "section": "1",
+   "section_title": "A fund for a nation",
+   "section_index": 1,
+   "lines": [
+    "The idea sounded modern and ambitious. Borrow money, invest in energy and real estate, and build a financial district in Kuala Lumpur.",
+    "Najib chaired the fund's board of advisers. Big decisions needed his approval."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 6,
+   "text": "The idea sounded modern and ambitious. Borrow money, invest in energy and real estate, and build a financial district in Kuala Lumpur. Najib chaired the fund's board of advisers. Big decisions needed his approval.",
+   "wer": 0.029,
+   "asr": "The idea sounded modern and ambitious.  Borrow money, invest in energy and real estate,  and build a financial district in Kuala Lumpur.  Najib chaired the fund's board of advisors.  Big decisions needed his approval.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.44,
+   "start": 75.919,
+   "end": 91.3
+  },
+  {
+   "section": "1",
+   "section_title": "A fund for a nation",
+   "section_index": 1,
+   "lines": [
+    "There was another figure close to the fund. A young Malaysian financier named Low Taek Jho, known as Jho Low.",
+    "He was not yet thirty, a graduate of the Wharton business school in Pennsylvania, and famous in Kuala Lumpur for knowing everyone who mattered."
+   ],
+   "cues": [
+    "[SCREEN] Compare card: \"Najib Razak — Prime Minister + Finance Minister + Chair, 1MDB board of advisers\"",
+    "[AI-03] Silhouette of a young man in a dark suit on a hotel balcony above a glittering city at night, seen strictly from behind, face never visible"
+   ],
+   "gap_after": 0.25,
+   "id": 7,
+   "text": "There was another figure close to the fund. A young Malaysian financier named Low Taek Jho, known as Jho Low. He was not yet thirty, a graduate of the Wharton business school in Pennsylvania, and famous in Kuala Lumpur for knowing everyone who mattered.",
+   "wer": 0.114,
+   "asr": "There was another figure close to the fund, a young Malaysian financier named Lo Taik  Jo, known as Jo Lo.  He was not yet 30, a graduate of the Wharton Business School in Pennsylvania and famous  in Kuala Lumpur for knowing everyone who mattered.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.64,
+   "start": 91.85,
+   "end": 108.437
+  },
+  {
+   "section": "1",
+   "section_title": "A fund for a nation",
+   "section_index": 1,
+   "lines": [
+    "He held no official job at 1MDB.",
+    "But according to the US Justice Department, he helped set it up and steered its money from behind the scenes.",
+    "Jho Low has been charged in the United States and in Malaysia. He has never stood trial, and he denies any wrongdoing."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 8,
+   "text": "He held no official job at 1MDB. But according to the US Justice Department, he helped set it up and steered its money from behind the scenes. Jho Low has been charged in the United States and in Malaysia. He has never stood trial, and he denies any wrongdoing.",
+   "wer": 0.06,
+   "asr": "He held no official job at one NDB.  But according to the US Justice Department,  he helped set it up and steered its money  from behind the scenes.  Joe Lowe has been charged in the United States  and in Malaysia.  He has never stood trial and he denies any wrongdoing.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.12,
+   "start": 108.687,
+   "end": 125.755
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "The first big deal came in September 2009, just months after the fund was born.",
+    "1MDB announced a joint venture with PetroSaudi, a small private oil company.",
+    "1MDB put in one billion dollars."
+   ],
+   "cues": [
+    "[SCREEN] Timeline: \"Sept 2009 — 1MDB + PetroSaudi joint venture: $1 billion invested\""
+   ],
+   "gap_after": 0.55,
+   "id": 9,
+   "text": "The first big deal came in September 2009, just months after the fund was born. 1MDB announced a joint venture with PetroSaudi, a small private oil company. 1MDB put in one billion dollars.",
+   "wer": 0.132,
+   "asr": "The first big deal came in September 2009.  Just months after the fund was born,  1NDB announced a joint venture with Petro Saudi,  a small private oil company.  1NDB put in $1 billion.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.08,
+   "start": 126.955,
+   "end": 142.98
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "According to the US Justice Department, a large part of that money never reached the venture.",
+    "Instead, prosecutors say, more than one billion dollars over the next two years was sent to a Swiss bank account belonging to a company called Good Star."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram (animated arrows): \"1MDB → joint venture → 'Good Star Ltd' (Swiss bank account)\""
+   ],
+   "gap_after": 0.25,
+   "id": 10,
+   "text": "According to the US Justice Department, a large part of that money never reached the venture. Instead, prosecutors say, more than one billion dollars over the next two years was sent to a Swiss bank account belonging to a company called Good Star.",
+   "wer": 0.07,
+   "asr": "According to the US Justice Department, a large part of that money never reached the venture.  Instead, prosecutors say more than $1 billion over the next two years was sent to a Swiss bank  account belonging to a company called Goodstar.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.48,
+   "start": 143.53,
+   "end": 159.946
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "And Good Star, they say, was controlled by Jho Low."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 11,
+   "text": "And Good Star, they say, was controlled by Jho Low.",
+   "wer": 0.2,
+   "asr": "And Good Star, they say, was controlled by Joe Lowe.",
+   "tries": 2,
+   "sr": 24000,
+   "dur": 3.36,
+   "start": 160.196,
+   "end": 163.495
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "Prosecutors say the fund's board was misled about where the money was going.",
+    "On paper, 1MDB still owned something valuable. The real cash, according to US prosecutors, was already gone."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"US civil complaints: 'Good Star phase' — more than $1 billion (2009–2011, alleged)\""
+   ],
+   "gap_after": 0.55,
+   "id": 12,
+   "text": "Prosecutors say the fund's board was misled about where the money was going. On paper, 1MDB still owned something valuable. The real cash, according to US prosecutors, was already gone.",
+   "wer": 0.032,
+   "asr": "Prosecutors say the funds board was misled about where the money was going.  On paper, one MDB still owned something valuable.  The real cash, according to US prosecutors, was already gone.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.72,
+   "start": 164.495,
+   "end": 177.149
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "Years later, in August 2024, a Swiss federal court convicted two PetroSaudi executives of fraud and money laundering over this deal, and sentenced them to seven and six years.",
+    "Both men appealed. PetroSaudi has denied wrongdoing."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"Swiss Federal Criminal Court, Aug 2024 — two PetroSaudi executives convicted of fraud and money laundering (7 and 6 years). Both appealed.\""
+   ],
+   "gap_after": 0.25,
+   "id": 13,
+   "text": "Years later, in August 2024, a Swiss federal court convicted two PetroSaudi executives of fraud and money laundering over this deal, and sentenced them to seven and six years. Both men appealed. PetroSaudi has denied wrongdoing.",
+   "wer": 0.125,
+   "asr": "Years later, in August 2024, a Swiss federal court convicted two Petro-Saudi executives of fraud and  money laundering over this deal, and sentenced them to seven in six years. Both men appealed.  Petro-Saudi has denied wrongdoing.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.4,
+   "start": 177.699,
+   "end": 194.046
+  },
+  {
+   "section": "2",
+   "section_title": "The first billion",
+   "section_index": 2,
+   "lines": [
+    "But in 2009, nobody outside a small circle knew any of this.",
+    "And the fund was about to borrow much more."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 14,
+   "text": "But in 2009, nobody outside a small circle knew any of this. And the fund was about to borrow much more.",
+   "wer": 0.0,
+   "asr": "But in 2009, nobody outside a small circle knew any of this, and the fund was about to borrow much more.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.56,
+   "start": 194.296,
+   "end": 202.781
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "In 2012 and 2013, 1MDB raised six and a half billion dollars by selling bonds.",
+    "The bank that arranged all three deals was Goldman Sachs."
+   ],
+   "cues": [
+    "[SCREEN] Bond counter: \"$1.75B (May 2012) + $1.75B (Oct 2012) + $3B (Mar 2013) = $6.5 billion\""
+   ],
+   "gap_after": 0.25,
+   "id": 15,
+   "text": "In 2012 and 2013, 1MDB raised six and a half billion dollars by selling bonds. The bank that arranged all three deals was Goldman Sachs.",
+   "wer": 0.094,
+   "asr": "In 2012 and 2013, 1MDB raised 6.5 billion dollars by selling bonds.  The bank that arranged all three deals was Goldman Sachs.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.36,
+   "start": 203.981,
+   "end": 215.277
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "For that work, Goldman earned roughly six hundred million dollars in fees. Far more than banks usually make on deals like these."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 16,
+   "text": "For that work, Goldman earned roughly six hundred million dollars in fees. Far more than banks usually make on deals like these.",
+   "wer": 0.045,
+   "asr": "For that work, Goldman earned roughly $600 million in fees.  Far more than banks usually make on deals like these.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.32,
+   "start": 215.527,
+   "end": 223.793
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "Here is how, according to the US Justice Department, the money was moved.",
+    "The 2012 bonds were backed by a real Abu Dhabi state fund, IPIC, and its subsidiary, Aabar."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram 1: \"Bond money → 'Aabar Investments PJS Ltd' (British Virgin Islands) ≠ real Aabar (Abu Dhabi)\""
+   ],
+   "gap_after": 0.25,
+   "id": 17,
+   "text": "Here is how, according to the US Justice Department, the money was moved. The 2012 bonds were backed by a real Abu Dhabi state fund, IPIC, and its subsidiary, Aabar.",
+   "wer": 0.03,
+   "asr": "Here is how.  According to the US Justice Department, the money was moved.  The 2012 bonds were backed by a real Abu Dhabi state fund, IPIC, and its subsidiary, ABBA.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.56,
+   "start": 224.343,
+   "end": 236.852
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "But over one billion dollars was then wired to a different company, set up in the British Virgin Islands, with almost the same name.",
+    "A lookalike. Prosecutors say it was not part of the real Aabar."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 18,
+   "text": "But over one billion dollars was then wired to a different company, set up in the British Virgin Islands, with almost the same name. A lookalike. Prosecutors say it was not part of the real Aabar.",
+   "wer": 0.083,
+   "asr": "But over one billion dollars was then wired to a different company, set up in the British  Virgin Islands with almost the same name.  Aldriff LeCrod, prosecutors say it was not part of the real Abar.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.32,
+   "start": 237.102,
+   "end": 249.369
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "In 2013, the pattern repeated. Out of a three-billion-dollar bond, about 1.26 billion dollars, prosecutors say, went to an account in Singapore held by a company called Tanore."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram 2: \"$3B bond (2013) → 'Tanore Finance' (Singapore account) → ...\""
+   ],
+   "gap_after": 0.55,
+   "id": 19,
+   "text": "In 2013, the pattern repeated. Out of a three-billion-dollar bond, about 1.26 billion dollars, prosecutors say, went to an account in Singapore held by a company called Tanore.",
+   "wer": 0.083,
+   "asr": "In 2013, the pattern repeated, out of a $3 billion bond, about $1.26 billion, prosecutors  say went to an account in Singapore held by a company called Tenore.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.2,
+   "start": 249.919,
+   "end": 263.053
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "And then came the most dangerous transfer of all.",
+    "In March 2013, 681 million dollars landed in a private bank account in Kuala Lumpur.",
+    "The US complaints called the account holder \"Malaysian Official 1\"."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram 3: \"Tanore → $681 million → account of 'Malaysian Official 1' (March 2013)\""
+   ],
+   "gap_after": 0.25,
+   "id": 20,
+   "text": "And then came the most dangerous transfer of all. In March 2013, 681 million dollars landed in a private bank account in Kuala Lumpur. The US complaints called the account holder \"Malaysian Official 1\".",
+   "wer": 0.024,
+   "asr": "And then came the most dangerous transfer of all.  In March 2013, $681 million landed in a private bank account in Kuala Lumpur.  The US complaints called the account holder, Malaysian Official 1.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.96,
+   "start": 263.603,
+   "end": 278.495
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "A Malaysian government minister later said that official was Najib Razak."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 21,
+   "text": "A Malaysian government minister later said that official was Najib Razak.",
+   "wer": 0.0,
+   "asr": "A Malaysian government minister later said that official was Najib Razak.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.84,
+   "start": 278.745,
+   "end": 282.525
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "Add it all up, and the US Justice Department says more than 4.5 billion dollars was taken from 1MDB between 2009 and 2015."
+   ],
+   "cues": [
+    "[SCREEN] Count-up: \"$0 → $4,500,000,000\" Caption: \"Misappropriated from 1MDB, 2009–2015 (US Justice Department)\""
+   ],
+   "gap_after": 0.25,
+   "id": 22,
+   "text": "Add it all up, and the US Justice Department says more than 4.5 billion dollars was taken from 1MDB between 2009 and 2015.",
+   "wer": 0.062,
+   "asr": "Add it all up, and the US Justice Department says more than $4.5 billion was taken from  1NDB between 2009 and 2015.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.96,
+   "start": 283.525,
+   "end": 294.42
+  },
+  {
+   "section": "3",
+   "section_title": "Follow the money",
+   "section_index": 3,
+   "lines": [
+    "Malaysia's anti-corruption agency puts the total misappropriated at around 42 billion ringgit, roughly ten billion dollars at today's rates."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 23,
+   "text": "Malaysia's anti-corruption agency puts the total misappropriated at around 42 billion ringgit, roughly ten billion dollars at today's rates.",
+   "wer": 0.048,
+   "asr": "Malaysia's anti-corruption agency puts the total misappropriated at around 42 billion  ringgit, roughly $10 billion at today's rates.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.4,
+   "start": 294.67,
+   "end": 303.009
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "So where did it go?",
+    "According to US prosecutors, the money paid for a lifestyle that looked like a movie.",
+    "Some of it went into a Hollywood production company, Red Granite Pictures, which made The Wolf of Wall Street."
+   ],
+   "cues": [
+    "[SCREEN] Asset wall, items appearing one by one: \"Film financing · Superyacht · Beverly Hills · New York · London · Private jet · Monet · Picasso · Basquiat\""
+   ],
+   "gap_after": 0.25,
+   "id": 24,
+   "text": "So where did it go? According to US prosecutors, the money paid for a lifestyle that looked like a movie. Some of it went into a Hollywood production company, Red Granite Pictures, which made The Wolf of Wall Street.",
+   "wer": 0.0,
+   "asr": "So, where did it go?  According to US prosecutors, the money paid for a lifestyle that looked like a movie.  Some of it went into a Hollywood production company, Red Granite Pictures, which made  the Wolf of Wall Street.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.56,
+   "start": 304.209,
+   "end": 318.718
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "In 2018, Red Granite agreed to pay the US government sixty million dollars to settle the case."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 25,
+   "text": "In 2018, Red Granite agreed to pay the US government sixty million dollars to settle the case.",
+   "wer": 0.05,
+   "asr": "In 2018, Red Granite agreed to pay the US government $60 million to settle the case.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.64,
+   "start": 318.968,
+   "end": 325.536
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "There was art. A Picasso. A Basquiat collage.",
+    "According to the Justice Department, Jho Low gave both as gifts to the actor Leonardo DiCaprio."
+   ],
+   "cues": [
+    "[AI-04] Gallery wall in a dark luxury apartment, empty picture frames lit by spotlights, no artworks visible, no people"
+   ],
+   "gap_after": 0.25,
+   "id": 26,
+   "text": "There was art. A Picasso. A Basquiat collage. According to the Justice Department, Jho Low gave both as gifts to the actor Leonardo DiCaprio.",
+   "wer": 0.125,
+   "asr": "There was art, a Picasso, a Besschia collage.  According to the Justice Department,  Joe Lowe gave both as gifts to the actor Leonardo DiCaprio.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.6,
+   "start": 326.086,
+   "end": 337.627
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities, along with an Oscar statuette once won by Marlon Brando, which prosecutors say was also a gift."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 27,
+   "text": "DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities, along with an Oscar statuette once won by Marlon Brando, which prosecutors say was also a gift.",
+   "wer": 0.0,
+   "asr": "DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities,  along with an Oscar statuette once won by Marlon Brando, which prosecutors say was also a gift.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.72,
+   "start": 337.877,
+   "end": 350.538
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "And there was the yacht.",
+    "Equanimity. Three hundred feet long, with a helipad, a pool and a cinema.",
+    "According to the Justice Department, it was bought for around 250 million dollars of 1MDB money."
+   ],
+   "cues": [
+    "[SCREEN] Card: \"Equanimity — 300 ft superyacht, helipad, cinema, pool. Bought for ~$250 million (alleged, 1MDB funds)\""
+   ],
+   "gap_after": 1.0,
+   "id": 28,
+   "text": "And there was the yacht. Equanimity. Three hundred feet long, with a helipad, a pool and a cinema. According to the Justice Department, it was bought for around 250 million dollars of 1MDB money.",
+   "wer": 0.026,
+   "asr": "And there was the yacht, Equanimity. 300 feet long, with a helipad, a pool, and a cinema.  According to the Justice Department, it was bought for around $250 million of 1MDB money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.76,
+   "start": 351.088,
+   "end": 366.787
+  },
+  {
+   "section": "4",
+   "section_title": "The spending spree",
+   "section_index": 4,
+   "lines": [
+    "Meanwhile, back in Kuala Lumpur, the fund was drowning in debt.",
+    "By 2015, 1MDB owed around eleven billion dollars and was struggling to pay its bondholders.",
+    "The people who would eventually pay that bill were Malaysian taxpayers."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 29,
+   "text": "Meanwhile, back in Kuala Lumpur, the fund was drowning in debt. By 2015, 1MDB owed around eleven billion dollars and was struggling to pay its bondholders. The people who would eventually pay that bill were Malaysian taxpayers.",
+   "wer": 0.073,
+   "asr": "Meanwhile, back in Kuala Lumpur, the fund was drowning in debt.  By 2015, one Ndably Burr owed around $11 billion and was struggling to pay its bondholders.  The people who would eventually pay that bill were Malaysian taxpayers.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.88,
+   "start": 367.787,
+   "end": 384.605
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "The story broke because a few people refused to look away.",
+    "In London, a British journalist named Clare Rewcastle Brown ran a website called Sarawak Report.",
+    "In Kuala Lumpur, the business newspaper The Edge was asking the same questions."
+   ],
+   "cues": [
+    "[AI-05] Laptop screen glowing in a dark London flat, a hand scrolling through blurred email threads, no readable text, no face"
+   ],
+   "gap_after": 0.25,
+   "id": 30,
+   "text": "The story broke because a few people refused to look away. In London, a British journalist named Clare Rewcastle Brown ran a website called Sarawak Report. In Kuala Lumpur, the business newspaper The Edge was asking the same questions.",
+   "wer": 0.077,
+   "asr": "The story broke because a few people refused to look away.  In London, a British journalist named Claire Ru Castle Brown ran a website called Sarawak  Report.  In Kuala Lumpur, the business newspaper The Edge was asking the same questions.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.96,
+   "start": 385.805,
+   "end": 400.714
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "In 2015, both obtained a huge cache of internal emails from PetroSaudi, taken by a former employee.",
+    "The emails, they reported, showed how the joint-venture money had moved."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 31,
+   "text": "In 2015, both obtained a huge cache of internal emails from PetroSaudi, taken by a former employee. The emails, they reported, showed how the joint-venture money had moved.",
+   "wer": 0.062,
+   "asr": "In 2015, both obtained a huge cash of internal emails from PetroSati, taken by a former employee.  The emails, they reported, showed how the joint venture money had moved.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.28,
+   "start": 400.964,
+   "end": 414.192
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "Then, on July 2, 2015, The Wall Street Journal reported that Malaysian investigators had traced nearly 700 million dollars into Najib's personal bank accounts.",
+    "Najib denied taking any money for personal gain and blamed political enemies."
+   ],
+   "cues": [
+    "[SCREEN] Newspaper-style card (no real masthead): \"July 2, 2015 — Wall Street Journal: nearly $700 million traced into the prime minister's personal accounts\""
+   ],
+   "gap_after": 0.55,
+   "id": 32,
+   "text": "Then, on July 2, 2015, The Wall Street Journal reported that Malaysian investigators had traced nearly 700 million dollars into Najib's personal bank accounts. Najib denied taking any money for personal gain and blamed political enemies.",
+   "wer": 0.05,
+   "asr": "Then, on July 20, 2015, the Wall Street Journal reported that Malaysian investigators had  traced nearly $700 million into Najib's personal bank accounts. Najib denied taking any money  for personal gain and blamed political enemies.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.56,
+   "start": 414.742,
+   "end": 431.241
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "What happened next shocked Malaysians.",
+    "Within weeks, the attorney general who was leading the investigation was removed.",
+    "The deputy prime minister, who had raised questions about 1MDB, was fired."
+   ],
+   "cues": [
+    "[SCREEN] Timeline, items stamping in: \"July 2015 — Attorney General removed · Deputy PM fired · Sarawak Report blocked · The Edge suspended 3 months\""
+   ],
+   "gap_after": 0.25,
+   "id": 33,
+   "text": "What happened next shocked Malaysians. Within weeks, the attorney general who was leading the investigation was removed. The deputy prime minister, who had raised questions about 1MDB, was fired.",
+   "wer": 0.0,
+   "asr": "What happened next shocked Malaysians.  Within weeks, the Attorney General who was leading the investigation was removed.  The Deputy Prime Minister, who had raised questions about one MDB, was fired.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.76,
+   "start": 431.791,
+   "end": 445.488
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "Sarawak Report was blocked inside Malaysia. The Edge's newspapers were suspended for three months."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 34,
+   "text": "Sarawak Report was blocked inside Malaysia. The Edge's newspapers were suspended for three months.",
+   "wer": 0.071,
+   "asr": "Sarawak report was blocked inside Malaysia.  The edges newspapers were suspended for three months.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.68,
+   "start": 445.738,
+   "end": 451.366
+  },
+  {
+   "section": "5",
+   "section_title": "The leak",
+   "section_index": 5,
+   "lines": [
+    "In January 2016, the new attorney general announced his conclusion.",
+    "The 681 million dollars, he said, was a personal donation from the Saudi royal family. Most of it had been returned. No crime had been committed.",
+    "Case closed. At least in Malaysia."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"January 2016 — new Attorney General: '$681 million was a personal donation from the Saudi royal family.' No charges.\""
+   ],
+   "gap_after": 1.2,
+   "id": 35,
+   "text": "In January 2016, the new attorney general announced his conclusion. The 681 million dollars, he said, was a personal donation from the Saudi royal family. Most of it had been returned. No crime had been committed. Case closed. At least in Malaysia.",
+   "wer": 0.02,
+   "asr": "In January 2016, the new Attorney General announced his conclusion.  The $681 million, he said, was a personal donation from the Saudi royal family.  Most of it had been returned. No crime had been committed.  Case closed. At least in Malaysia.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.0,
+   "start": 452.366,
+   "end": 470.308
+  },
+  {
+   "section": "6",
+   "section_title": "The world starts digging",
+   "section_index": 6,
+   "lines": [
+    "But the money had flowed through banks all over the world. And other countries were not closing anything.",
+    "In July 2016, the US Justice Department filed civil lawsuits to seize more than one billion dollars in assets."
+   ],
+   "cues": [
+    "[SCREEN] World map, red pins appearing: \"USA · Switzerland · Singapore · Luxembourg · Hong Kong · UAE\""
+   ],
+   "gap_after": 0.25,
+   "id": 36,
+   "text": "But the money had flowed through banks all over the world. And other countries were not closing anything. In July 2016, the US Justice Department filed civil lawsuits to seize more than one billion dollars in assets.",
+   "wer": 0.025,
+   "asr": "But the money had flowed through banks all over the world,  and other countries were not closing anything.  In July 2016, the US Justice Department  filed civil lawsuits to seize more than $1 billion in assets.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.08,
+   "start": 471.508,
+   "end": 485.528
+  },
+  {
+   "section": "6",
+   "section_title": "The world starts digging",
+   "section_index": 6,
+   "lines": [
+    "It called the case the largest single action ever brought under its Kleptocracy Asset Recovery Initiative, a programme built to recover money stolen by foreign officials."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 37,
+   "text": "It called the case the largest single action ever brought under its Kleptocracy Asset Recovery Initiative, a programme built to recover money stolen by foreign officials.",
+   "wer": 0.038,
+   "asr": "It called the case, the largest single action ever brought under its kleptocracy asset recovery initiative,  a program built to recover money stolen by foreign officials.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.72,
+   "start": 485.778,
+   "end": 496.435
+  },
+  {
+   "section": "6",
+   "section_title": "The world starts digging",
+   "section_index": 6,
+   "lines": [
+    "Singapore's regulator shut down the local operations of two Swiss private banks, BSI and Falcon, over failures linked to 1MDB money.",
+    "Switzerland opened criminal investigations of its own."
+   ],
+   "cues": [
+    "[SCREEN] Card: \"Singapore, 2016 — BSI Bank and Falcon Bank lose merchant-bank status over 1MDB-linked fund flows\""
+   ],
+   "gap_after": 0.55,
+   "id": 38,
+   "text": "Singapore's regulator shut down the local operations of two Swiss private banks, BSI and Falcon, over failures linked to 1MDB money. Switzerland opened criminal investigations of its own.",
+   "wer": 0.0,
+   "asr": "Singapore's regulator shut down the local operations of two Swiss private banks,  BSI and Falcon, over failures linked to one MDB money.  Switzerland opened criminal investigations of its own.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 496.985,
+   "end": 510.854
+  },
+  {
+   "section": "6",
+   "section_title": "The world starts digging",
+   "section_index": 6,
+   "lines": [
+    "At home, Malaysians filled the streets of Kuala Lumpur in yellow T-shirts, in mass rallies organized by the reform movement Bersih, calling for Najib to resign.",
+    "In August 2015, one of those rallies went on for two days and two nights.",
+    "He did not."
+   ],
+   "cues": [
+    "[AI-06] Huge crowd in yellow T-shirts filling a city boulevard at dusk, seen from above, no faces identifiable"
+   ],
+   "gap_after": 0.25,
+   "id": 39,
+   "text": "At home, Malaysians filled the streets of Kuala Lumpur in yellow T-shirts, in mass rallies organized by the reform movement Bersih, calling for Najib to resign. In August 2015, one of those rallies went on for two days and two nights. He did not.",
+   "wer": 0.062,
+   "asr": "At home, Malaysians filled the streets of Kowalumpur in yellow t-shirts in mass rallies  organized by the reform movement, Bursee, calling for Najib to resign.  In August 2015, one of those rallies went on for two days and two nights. He did not.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.8,
+   "start": 511.404,
+   "end": 530.144
+  },
+  {
+   "section": "6",
+   "section_title": "The world starts digging",
+   "section_index": 6,
+   "lines": [
+    "His coalition still controlled parliament.",
+    "There was only one place left where he could lose. The ballot box."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 40,
+   "text": "His coalition still controlled parliament. There was only one place left where he could lose. The ballot box.",
+   "wer": 0.0,
+   "asr": "His coalition still controlled parliament.  There was only one place left where he could lose...  The ballot box.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.04,
+   "start": 530.394,
+   "end": 537.38
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "On May 9, 2018, Malaysia held a general election.",
+    "Najib's coalition and its forerunner had ruled the country without a break since independence in 1957.",
+    "It lost."
+   ],
+   "cues": [
+    "[SCREEN] Election night card: \"May 9, 2018 — Barisan Nasional loses power for the first time since independence (1957)\""
+   ],
+   "gap_after": 0.25,
+   "id": 41,
+   "text": "On May 9, 2018, Malaysia held a general election. Najib's coalition and its forerunner had ruled the country without a break since independence in 1957. It lost.",
+   "wer": 0.028,
+   "asr": "On May 9th, 2018, Malaysia held a general election.  Najib's coalition and its forerunner had ruled the country without a break since independence  in 1957.  It lost.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.24,
+   "start": 538.58,
+   "end": 550.759
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "The new prime minister was Mahathir Mohamad, aged 92, Najib's former mentor, who had come out of retirement to campaign against him."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 42,
+   "text": "The new prime minister was Mahathir Mohamad, aged 92, Najib's former mentor, who had come out of retirement to campaign against him.",
+   "wer": 0.0,
+   "asr": "The new Prime Minister was Mahathir Mohamad, aged 92, Najib's former mentor, who had come  out of retirement to campaign against him.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.52,
+   "start": 551.009,
+   "end": 560.457
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "Days later, police raided properties linked to Najib.",
+    "They said they seized hundreds of designer handbags, thousands of pieces of jewellery and more than 100 million ringgit in cash. Police valued the haul at up to 1.1 billion ringgit."
+   ],
+   "cues": [
+    "[SCREEN] Count-up: \"567 handbags · 423 watches · 12,000+ pieces of jewellery · ~RM 116 million in cash\" Caption: \"Police estimate: up to RM 1.1 billion\""
+   ],
+   "gap_after": 0.25,
+   "id": 43,
+   "text": "Days later, police raided properties linked to Najib. They said they seized hundreds of designer handbags, thousands of pieces of jewellery and more than 100 million ringgit in cash. Police valued the haul at up to 1.1 billion ringgit.",
+   "wer": 0.071,
+   "asr": "Days later, police raided properties linked to Najib.  They said they seized hundreds of designer handbags,  thousands of pieces of jewelry, and more than 100 million ringout in cash.  Police valued the haul at up to 1.1 billion ringouts.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.48,
+   "start": 561.007,
+   "end": 577.429
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "Najib's side disputed that figure and said many items were gifts.",
+    "On July 3, 2018, Najib was arrested."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 44,
+   "text": "Najib's side disputed that figure and said many items were gifts. On July 3, 2018, Najib was arrested.",
+   "wer": 0.048,
+   "asr": "Najib's side disputed that figure and said many items were gifts.  On July 3rd, 2018, Najib was arrested.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.28,
+   "start": 577.679,
+   "end": 586.895
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "And the yacht? In February 2018, at the request of the United States, Indonesian authorities had seized Equanimity off Bali."
+   ],
+   "cues": [
+    "[AI-02] The superyacht leaving a harbor under grey skies, escorted by a small patrol boat, no flags or insignia"
+   ],
+   "gap_after": 0.25,
+   "id": 45,
+   "text": "And the yacht? In February 2018, at the request of the United States, Indonesian authorities had seized Equanimity off Bali.",
+   "wer": 0.0,
+   "asr": "and the yacht. In February 2018, at the request of the United States,  Indonesian authorities had seized equanimity off Bali.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.56,
+   "start": 587.445,
+   "end": 595.937
+  },
+  {
+   "section": "7",
+   "section_title": "The fall",
+   "section_index": 7,
+   "lines": [
+    "In August, it was handed over to Malaysia. The next year it was sold for 126 million dollars, about half of what prosecutors say it had cost."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 46,
+   "text": "In August, it was handed over to Malaysia. The next year it was sold for 126 million dollars, about half of what prosecutors say it had cost.",
+   "wer": 0.0,
+   "asr": "In August, it was handed over to Malaysia. The next year, it was sold for 126 million dollars.  About half of what prosecutors say it had cost...",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.04,
+   "start": 596.187,
+   "end": 607.161
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "The first trial was about a smaller piece of the story. SRC International, a former 1MDB subsidiary, and 42 million ringgit that ended up in Najib's accounts."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"SRC International case — July 28, 2020: GUILTY on 7 charges. 12 years + RM 210 million fine\""
+   ],
+   "gap_after": 0.25,
+   "id": 47,
+   "text": "The first trial was about a smaller piece of the story. SRC International, a former 1MDB subsidiary, and 42 million ringgit that ended up in Najib's accounts.",
+   "wer": 0.034,
+   "asr": "The first trial was about a smaller piece of the story, SRC International, a former 1NDB subsidiary,  and 42 million ringgit that ended up in Najib's accounts.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 608.361,
+   "end": 621.741
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "In July 2020, the High Court found him guilty on all seven charges: abuse of power, criminal breach of trust and money laundering.",
+    "Twelve years in prison."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 48,
+   "text": "In July 2020, the High Court found him guilty on all seven charges: abuse of power, criminal breach of trust and money laundering. Twelve years in prison.",
+   "wer": 0.0,
+   "asr": "In July 2020, the High Court found him guilty on all seven charges,  abuse of power, criminal breach of trust, and money laundering.  12 years in prison.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.04,
+   "start": 621.991,
+   "end": 632.965
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "The appeal court upheld it. In August 2022, so did the Federal Court, Malaysia's highest. Najib went to prison the same day.",
+    "He became the first former Malaysian prime minister to be jailed."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 49,
+   "text": "The appeal court upheld it. In August 2022, so did the Federal Court, Malaysia's highest. Najib went to prison the same day. He became the first former Malaysian prime minister to be jailed.",
+   "wer": 0.054,
+   "asr": "The appeal court upheld it. In August 2020 took, so did the federal court Malaysia's highest.  Najee went to prison the same day. He became the first former Malaysian Prime Minister to be jailed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.24,
+   "start": 633.215,
+   "end": 645.393
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "In 2024, the Pardons Board cut his sentence in half, to six years."
+   ],
+   "cues": [
+    "[SCREEN] Card: \"Feb 2024 — Pardons Board: 12 → 6 years; fine RM 210M → RM 50M\""
+   ],
+   "gap_after": 1.0,
+   "id": 50,
+   "text": "In 2024, the Pardons Board cut his sentence in half, to six years.",
+   "wer": 0.0,
+   "asr": "In 2024, the Pardons board cut his sentence in half to six years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.2,
+   "start": 645.943,
+   "end": 651.074
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "Then came the big one. The main 1MDB trial, about some 2.3 billion ringgit that flowed into his accounts between 2011 and 2014.",
+    "On December 26, 2025, after a trial that lasted more than six years, the High Court found Najib guilty on all twenty-five charges."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"1MDB main trial — Dec 26, 2025: GUILTY on all 25 charges (4 abuse of power, 21 money laundering). 15 years + RM 11.38 billion fine. Under appeal.\""
+   ],
+   "gap_after": 0.25,
+   "id": 51,
+   "text": "Then came the big one. The main 1MDB trial, about some 2.3 billion ringgit that flowed into his accounts between 2011 and 2014. On December 26, 2025, after a trial that lasted more than six years, the High Court found Najib guilty on all twenty-five charges.",
+   "wer": 0.016,
+   "asr": "Then came the big one, the main 1MDB trial, about some 2.3 billion ringgit that flowed  into his accounts between 2011 and 2014. On December 26th, 2025, after a trial that lasted  more than 6 years, the high court found Najib guilty on all 25 charges.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 22.88,
+   "start": 652.074,
+   "end": 674.891
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "Fifteen years in prison, and a fine of 11.38 billion ringgit, roughly 2.8 billion dollars.",
+    "The judge ruled that the Saudi donation letters were forgeries.",
+    "He found that Jho Low had acted as Najib's proxy, and that Najib had not been misled."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 52,
+   "text": "Fifteen years in prison, and a fine of 11.38 billion ringgit, roughly 2.8 billion dollars. The judge ruled that the Saudi donation letters were forgeries. He found that Jho Low had acted as Najib's proxy, and that Najib had not been misled.",
+   "wer": 0.064,
+   "asr": "15 years in prison and a fine of 11.38 billion ringgit, roughly $2.8 billion.  The judge ruled that the Saudi donation letters were forgeries.  He found that Jolo had acted as Najib's proxy and that Najib had not been misled.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.64,
+   "start": 675.141,
+   "end": 693.728
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "Jho Low was not on trial there, and he denies wrongdoing.",
+    "Najib is appealing, and maintains his innocence."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 53,
+   "text": "Jho Low was not on trial there, and he denies wrongdoing. Najib is appealing, and maintains his innocence.",
+   "wer": 0.111,
+   "asr": "Jolo was not on trial there, and he denies wrongdoing.  Najib is appealing and maintains his innocence.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.28,
+   "start": 693.978,
+   "end": 701.207
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "In September 2026, the King granted him a conditional pardon in the SRC case. Once he pays a fifty-million-ringgit fine, he can serve the rest of that sentence under house arrest."
+   ],
+   "cues": [
+    "[SCREEN] Card: \"Sept 18, 2026 — Royal conditional pardon (SRC case only): rest of sentence under house arrest until Aug 2028, once RM 50 million fine is paid · 1MDB sentence due to start Aug 2028; stay application pending\""
+   ],
+   "gap_after": 0.25,
+   "id": 54,
+   "text": "In September 2026, the King granted him a conditional pardon in the SRC case. Once he pays a fifty-million-ringgit fine, he can serve the rest of that sentence under house arrest.",
+   "wer": 0.054,
+   "asr": "In September 2026, the King granted him a conditional pardon in the SRC case.  Once he pays a 50 million ring at fine, he can serve the rest of that sentence under house arrest.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.44,
+   "start": 701.757,
+   "end": 713.142
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "His fifteen-year 1MDB sentence is due to start in August 2028. He has asked the court to suspend it pending appeal."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 55,
+   "text": "His fifteen-year 1MDB sentence is due to start in August 2028. He has asked the court to suspend it pending appeal.",
+   "wer": 0.0,
+   "asr": "His 15-year 1MDB sentence is due to start in August, 2028.  He has asked the court to suspend it pending appeal.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.36,
+   "start": 713.392,
+   "end": 722.698
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "In America, Goldman Sachs admitted its role. In 2020 it agreed to pay more than 2.9 billion dollars, and its Malaysian unit pleaded guilty to bribery conspiracy.",
+    "Former Goldman banker Roger Ng was convicted by a jury and sentenced to ten years."
+   ],
+   "cues": [
+    "[SCREEN] US ruling cards: \"Goldman Sachs — DPA + $2.9B (2020) · Goldman Sachs Malaysia — guilty plea · Roger Ng — 10 years (2023) · Tim Leissner — 2 years (2025)\""
+   ],
+   "gap_after": 0.25,
+   "id": 56,
+   "text": "In America, Goldman Sachs admitted its role. In 2020 it agreed to pay more than 2.9 billion dollars, and its Malaysian unit pleaded guilty to bribery conspiracy. Former Goldman banker Roger Ng was convicted by a jury and sentenced to ten years.",
+   "wer": 0.043,
+   "asr": "In America, Goldman Sachs admitted its role.  In 2020, it agreed to pay more than $2.9 billion,  and its Malaysian unit pleaded guilty to bribery conspiracy.  Former Goldman banker Roger Eng was convicted by a jury and sentenced to 10 years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.76,
+   "start": 723.248,
+   "end": 740.946
+  },
+  {
+   "section": "8",
+   "section_title": "The verdicts",
+   "section_index": 8,
+   "lines": [
+    "His former boss, Tim Leissner, pleaded guilty, cooperated, and got two years."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 57,
+   "text": "His former boss, Tim Leissner, pleaded guilty, cooperated, and got two years.",
+   "wer": 0.083,
+   "asr": "His former boss, Tim Leisner, pleaded guilty, cooperated, and got two years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.36,
+   "start": 741.196,
+   "end": 746.504
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "What about the money?",
+    "The US Justice Department says it has returned about 1.4 billion dollars to Malaysia.",
+    "In 2019, Jho Low and his family agreed to give up assets worth more than 700 million dollars, including properties in Beverly Hills, New York and London."
+   ],
+   "cues": [
+    "[SCREEN] Recovery bar: \"US Justice Department — ~$1.4 billion returned to Malaysia\""
+   ],
+   "gap_after": 0.25,
+   "id": 58,
+   "text": "What about the money? The US Justice Department says it has returned about 1.4 billion dollars to Malaysia. In 2019, Jho Low and his family agreed to give up assets worth more than 700 million dollars, including properties in Beverly Hills, New York and London.",
+   "wer": 0.078,
+   "asr": "What about the money? The US Justice Department says it has returned about $1.4 billion to Malaysia.  In 2019, Joe Lowe and his family agreed to give up assets worth more than $700 million,  including properties in Beverly Hills, New York, and London.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.0,
+   "start": 747.704,
+   "end": 765.643
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "He said the deal was not an admission of guilt. The US said it did not end any criminal charges."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 59,
+   "text": "He said the deal was not an admission of guilt. The US said it did not end any criminal charges.",
+   "wer": 0.0,
+   "asr": "He said the deal was not an admission of guilt.  The US said it did not end any criminal charges.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.64,
+   "start": 765.893,
+   "end": 772.48
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "Malaysia says it has recovered over 31 billion ringgit, including two and a half billion dollars in cash from Goldman Sachs."
+   ],
+   "cues": [
+    "[SCREEN] Compare card: \"Recovered by Malaysia (to 2025): RM 31.3 billion · Paid into 1MDB debts (to July 2025): RM 42.2 billion (incl. RM 15.4 billion from the Finance Ministry)\""
+   ],
+   "gap_after": 0.25,
+   "id": 60,
+   "text": "Malaysia says it has recovered over 31 billion ringgit, including two and a half billion dollars in cash from Goldman Sachs.",
+   "wer": 0.0,
+   "asr": "Malaysia says it has recovered over 31 billion ringgit including two and a half billion dollars in cash from Goldman Sachs",
+   "tries": 2,
+   "sr": 24000,
+   "dur": 8.0,
+   "start": 773.03,
+   "end": 780.971
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "But the debts came first. By 2025, more than 42 billion ringgit had gone into repaying 1MDB's loans, over 15 billion of it from the Finance Ministry.",
+    "And repayments on the last 1MDB bonds run until 2039."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 61,
+   "text": "But the debts came first. By 2025, more than 42 billion ringgit had gone into repaying 1MDB's loans, over 15 billion of it from the Finance Ministry. And repayments on the last 1MDB bonds run until 2039.",
+   "wer": 0.0,
+   "asr": "But the debts came first.  By 2025, more than $42 billion Ringgit had gone into repaying 1MDB's loans, over $15  billion of it from the finance ministry.  And repayments on the last 1MDB bonds run until 2039.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.08,
+   "start": 781.221,
+   "end": 799.237
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "Malaysia's anti-corruption chief says the country's recovery rate is among the highest in the world. But every ringgit spent on 1MDB's debts was public money that could have built schools, hospitals and roads.",
+    "Jho Low, meanwhile, has never been caught."
+   ],
+   "cues": [
+    "[AI-07] An empty construction site at dusk in a tropical city, cranes standing idle, a single light on, no people"
+   ],
+   "gap_after": 0.25,
+   "id": 62,
+   "text": "Malaysia's anti-corruption chief says the country's recovery rate is among the highest in the world. But every ringgit spent on 1MDB's debts was public money that could have built schools, hospitals and roads. Jho Low, meanwhile, has never been caught.",
+   "wer": 0.095,
+   "asr": "Malaysia's anti-corruption chief says the country's recovery rate is among the highest  in the world.  But every ring get spent on one MDB's debts was public money that could have built schools,  hospitals, and roads.  Jolloh meanwhile has never been caught.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.04,
+   "start": 799.787,
+   "end": 816.76
+  },
+  {
+   "section": "9",
+   "section_title": "Getting the money back",
+   "section_index": 9,
+   "lines": [
+    "Malaysia and the United States want him. His whereabouts have never been officially confirmed."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 63,
+   "text": "Malaysia and the United States want him. His whereabouts have never been officially confirmed.",
+   "wer": 0.0,
+   "asr": "Malaysia and the United States want him. His whereabouts have never been officially confirmed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.36,
+   "start": 817.01,
+   "end": 822.303
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "So what does 1MDB teach us?",
+    "One. When the person who approves the spending is also the person in charge of the checks, there are no checks."
+   ],
+   "cues": [
+    "[SCREEN] Self-made checklist, ticking one line at a time"
+   ],
+   "gap_after": 0.25,
+   "id": 64,
+   "text": "So what does 1MDB teach us? One. When the person who approves the spending is also the person in charge of the checks, there are no checks.",
+   "wer": 0.0,
+   "asr": "So, what does one MDB teach us?  One.  When the person who approves the spending is also the person in charge of the checks,  there are no checks.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.48,
+   "start": 823.503,
+   "end": 833.932
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "Two. A fund that raises billions with no clear business, and pays its bankers far above market rates, is telling you something.",
+    "Three. Watch the names. A company that sounds like a real partner is not always the real partner."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 65,
+   "text": "Two. A fund that raises billions with no clear business, and pays its bankers far above market rates, is telling you something. Three. Watch the names. A company that sounds like a real partner is not always the real partner.",
+   "wer": 0.0,
+   "asr": "2. A fund that raises billions with no clear business and pays its bankers far above market  rates is telling you something. 3. Watch the names. A company that sounds  like a real partner is not always the real partner.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.48,
+   "start": 834.182,
+   "end": 850.605
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "Four. When an audit is classified secret, an attorney general is replaced and newspapers are suspended, that is not a coincidence.",
+    "And five. Follow the money across borders."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 66,
+   "text": "Four. When an audit is classified secret, an attorney general is replaced and newspapers are suspended, that is not a coincidence. And five. Follow the money across borders.",
+   "wer": 0.0,
+   "asr": "4. When an audit is classified secret, an attorney general is replaced and newspapers  are suspended. That is not a coincidence. And 5. Follow the money across borders.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.76,
+   "start": 850.855,
+   "end": 862.563
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "In the end, this case was not cracked first inside Malaysia. It was cracked by banks, regulators and prosecutors in other countries, and by a few reporters who refused to stop."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "trailing_cues": [
+    "[SCREEN] Text card: \"A state fund is only as honest as the people allowed to question it.\""
+   ],
+   "id": 67,
+   "text": "In the end, this case was not cracked first inside Malaysia. It was cracked by banks, regulators and prosecutors in other countries, and by a few reporters who refused to stop.",
+   "wer": 0.0,
+   "asr": "In the end, this case was not cracked first inside Malaysia.  It was cracked by banks, regulators, and prosecutors in other countries,  and by a few reporters who refused to stop.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.0,
+   "start": 862.813,
+   "end": 874.749
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "Equanimity was sold to a Malaysian casino operator and given a new name: Tranquility.",
+    "The film is still watched. The bonds are still being paid.",
+    "And for many Malaysians, the question is not only where the money went.",
+    "It is how long everyone allowed it to go."
+   ],
+   "cues": [
+    "[AI-02] The superyacht seen from a distance at dawn, small and quiet on a calm grey sea"
+   ],
+   "gap_after": 0.25,
+   "id": 68,
+   "text": "Equanimity was sold to a Malaysian casino operator and given a new name: Tranquility. The film is still watched. The bonds are still being paid. And for many Malaysians, the question is not only where the money went. It is how long everyone allowed it to go.",
+   "wer": 0.0,
+   "asr": "Equanimity was sold to a Malaysian casino operator, and given a new name, Tranquility,  the film is still watched.  The bonds are still being paid, and for many Malaysians, the question is not only where  the money went, it is how long everyone allowed it to go.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.2,
+   "start": 875.949,
+   "end": 893.089
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "And the man US prosecutors place at the center of it all has still never faced a courtroom."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 69,
+   "text": "And the man US prosecutors place at the center of it all has still never faced a courtroom.",
+   "wer": 0.0,
+   "asr": "And the man US prosecutors place at the center of it all has still never faced a courtroom.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.76,
+   "start": 893.339,
+   "end": 899.038
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "Next time: another case file."
+   ],
+   "cues": [
+    "[SCREEN] Asia map with a red dot pulsing. Text: \"Next time: another case file.\""
+   ],
+   "gap_after": 1.2,
+   "id": 70,
+   "text": "Next time: another case file.",
+   "wer": 0.0,
+   "asr": "Next time, another case file.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 1.92,
+   "start": 899.588,
+   "end": 901.45
+  }
+ ]
+}

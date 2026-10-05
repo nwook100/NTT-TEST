@@ -1,0 +1,60 @@
+{
+ "section": "12",
+ "chunks": [
+  {
+   "id": 104,
+   "segments": [
+    {"kind": "clip", "asset": "assets/ep02_cho_hee_pal/motion/s12_chapter_outro.mp4"},
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4", "grade": "cold", "start": 3.0},
+    {"kind": "text", "text": "For many of the people who lost everything,\nit never ended at all.", "style": "quote"}
+   ]
+  },
+  {
+   "id": 105,
+   "segments": [
+    {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_ran_on_trust",
+     "args": {"lines": ["The scheme didn't run on machines.", "It ran on trust."], "red": ["trust."],
+              "dur": 4.0, "stagger": 2.2, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg", "fx": "out"},
+    {"kind": "video", "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4", "grade": "cold", "start": 2.0}
+   ]
+  },
+  {
+   "id": 106,
+   "segments": [
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg", "fx": "in", "crop": "detail"},
+    {"kind": "text", "text": "If a business pays you more\nthan any bank ever could,", "style": "quote"},
+    {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_where_is_the_money",
+     "args": {"lines": ["Where is that money", "really coming from?"], "red": ["really"],
+              "dur": 4.0, "stagger": 0.6, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+   ]
+  },
+  {
+   "id": 107,
+   "segments": [
+    {"kind": "motion", "fn": "typewriter", "name": "s12_tw_next_time",
+     "args": {"text": "NEXT TIME", "sub": "ANOTHER COUNTRY, ANOTHER PROMISE THAT SOUNDED SAFE.", "dur": 3.5,
+              "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}},
+    {"kind": "motion", "fn": "key_phrase", "name": "s12_kp_simply_disappeared",
+     "args": {"lines": ["And another fortune", "that simply disappeared."], "red": ["disappeared."],
+              "dur": 3.5, "stagger": 0.8, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"}}
+   ]
+  },
+  {
+   "id": 108,
+   "segments": [
+    {"kind": "text", "text": "Subscribe so you don't miss it.", "style": "label"},
+    {"kind": "text", "text": "Have you ever been offered a deal\nthat paid every single day?", "style": "quote"},
+    {"kind": "photo", "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg", "fx": "out", "crop": "right", "grade": "cold"}
+   ]
+  }
+ ],
+ "sfx": [
+  {"chunk": 105, "name": "impact", "offset": 2.5, "gain_db": -15},
+  {"chunk": 107, "name": "typewriter", "offset": 0.3, "gain_db": -14},
+  {"chunk": 107, "name": "whoosh", "offset": 3.5, "gain_db": -15}
+ ],
+ "music_drops": [
+  {"chunk": 106, "dur": 11.0}
+ ]
+}

@@ -1,0 +1,3521 @@
+{
+ "episode": "ep02_cho_hee_pal",
+ "chunks": {
+  "0": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s00_typewriter_december_2008.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_2.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_most_wanted_man",
+    "args": {
+     "lines": [
+      "One of the passengers",
+      "is the most wanted man",
+      "in the country."
+     ],
+     "kicker": "ACCORDING TO INVESTIGATORS",
+     "red": [
+      "wanted"
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "1": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_retirees_homemakers",
+    "args": {
+     "lines": [
+      "Retirees.",
+      "Homemakers.",
+      "Small shop owners."
+     ],
+     "dur": 5.5,
+     "stagger": 1.4,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "crop": "left",
+    "grade": "cold",
+    "fx": "right"
+   }
+  ],
+  "2": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s00_wordbyword_died_officially.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_nobody_believed_it",
+    "args": {
+     "lines": [
+      "And almost nobody",
+      "believed it."
+     ],
+     "red": [
+      "nobody"
+     ],
+     "dur": 3.0,
+     "stagger": 0.9,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "3": [
+   {
+    "kind": "text",
+    "text": "This is the story of Cho Hee-pal.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
+   }
+  ],
+  "4": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s01_chapter_the_machine_that_paid_every_day.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s01_typewriter_daegu.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_street_3.jpg",
+    "fx": "out"
+   }
+  ],
+  "5": [
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s01_pc_cho_intro",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_2.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "THE MAN AT THE CENTER",
+     "sub": "Born 1957. Set up BMC in Daegu in October 2004.",
+     "dur": 5.5
+    }
+   }
+  ],
+  "6": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_korean_media_background",
+    "args": {
+     "lines": [
+      "Only an elementary-school education",
+      "Reportedly worked as a laborer"
+     ],
+     "kicker": "KOREAN MEDIA, CITING INVESTIGATORS",
+     "dur": 6.0,
+     "stagger": 3.0,
+     "size": 96
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "crop": "top",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4"
+   }
+  ],
+  "7": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "crop": "bottom",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s01_tw_bmc_daegu_oct2004",
+    "args": {
+     "text": "BMC",
+     "sub": "Daegu — October 2004",
+     "dur": 4.0,
+     "size": 130
+    }
+   },
+   {
+    "kind": "text",
+    "text": "A deal that sounded\nalmost too simple.",
+    "style": "quote"
+   }
+  ],
+  "8": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "text",
+    "text": "Public bathhouses and saunas,\ncalled jjimjilbang",
+    "style": "label"
+   }
+  ],
+  "9": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_health_devices",
+    "args": {
+     "lines": [
+      "A massage machine,",
+      "a pelvic-correction bed,",
+      "even a karaoke machine."
+     ],
+     "kicker": "YOU BUY A HEALTH DEVICE",
+     "dur": 6.0,
+     "stagger": 1.6,
+     "size": 100
+    }
+   },
+   {
+    "kind": "text",
+    "text": "One unit cost 4.4 million won,\nroughly four thousand dollars at the time.",
+    "style": "label"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "crop": "bottom",
+    "fx": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "crop": "right",
+    "fx": "right"
+   }
+  ],
+  "10": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_paid_every_day",
+    "args": {
+     "lines": [
+      "And you get paid every day."
+     ],
+     "red": [
+      "every",
+      "day."
+     ],
+     "dur": 3.3,
+     "size": 118
+    }
+   }
+  ],
+  "11": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/apartment_complex_korea_1.mp4",
+    "start": 3.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_step1_pay_4400000",
+    "args": {
+     "lines": [
+      "You pay ₩4,400,000",
+      "= 1 machine"
+     ],
+     "red": [
+      "₩4,400,000"
+     ],
+     "kicker": "STEP 1",
+     "dur": 5.0,
+     "stagger": 1.6,
+     "size": 110
+    }
+   }
+  ],
+  "12": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s01_countup_35000_won_a_day.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "That's around thirty dollars,\nevery day.",
+    "style": "label"
+   }
+  ],
+  "13": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_step3_166_payments",
+    "args": {
+     "lines": [
+      "166 payments ≈ 8 months",
+      "→ ₩5,810,000 back"
+     ],
+     "red": [
+      "₩5,810,000"
+     ],
+     "kicker": "STEP 3",
+     "dur": 6.0,
+     "stagger": 2.2,
+     "size": 104
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Your money back,\nplus 1.4 million won on top.",
+    "style": "label"
+   }
+  ],
+  "14": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_35_vs_48_percent",
+    "args": {
+     "lines": [
+      "Advertised: 35% a year (court)",
+      "The math: ~48% annualized"
+     ],
+     "red": [
+      "~48%"
+     ],
+     "dur": 5.5,
+     "stagger": 2.2,
+     "size": 100
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s01_count_bank_deposit_5pct",
+    "args": {
+     "to": 5,
+     "prefix": "~",
+     "suffix": "%",
+     "label": "BANK DEPOSIT",
+     "sublabel": "a normal Korean bank deposit at the time",
+     "dur": 4.5,
+     "count_time": 2.0,
+     "size": 150
+    }
+   }
+  ],
+  "15": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "yusa-susin\n= taking deposits without a license",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_yusa_susin_definition",
+    "args": {
+     "lines": [
+      "Promising fixed returns,",
+      "without being a bank,",
+      "and without any license to do it."
+     ],
+     "red": [
+      "license"
+     ],
+     "kicker": "YUSA-SUSIN · UNLICENSED DEPOSIT-TAKING",
+     "dur": 6.0,
+     "stagger": 1.5,
+     "size": 96
+    }
+   }
+  ],
+  "16": [
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s01_stamp_illegal_in_korea",
+    "args": {
+     "word": "ILLEGAL",
+     "sub": "IN KOREA",
+     "dur": 3.2
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_classic_ponzi_shape",
+    "args": {
+     "lines": [
+      "It is the classic shape",
+      "of a Ponzi scheme."
+     ],
+     "red": [
+      "ponzi"
+     ],
+     "dur": 5.2,
+     "stagger": 0.8,
+     "size": 112
+    }
+   }
+  ],
+  "17": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s02_chapter_the_ladder.mp4"
+   }
+  ],
+  "18": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s02_tw_sisa_in_dec_2008",
+    "args": {
+     "text": "Sisa IN — December 2008",
+     "sub": "Korean news magazine",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
+    "fx": "in",
+    "crop": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_ranks_like_a_company",
+    "args": {
+     "lines": [
+      "Department head",
+      "Bureau chief",
+      "Division head",
+      "Group leader",
+      "Executive director"
+     ],
+     "kicker": "RANKS, LIKE A COMPANY",
+     "red": [
+      "executive",
+      "director"
+     ],
+     "dur": 5.5,
+     "stagger": 1.0,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "19": [
+   {
+    "kind": "text",
+    "text": "To become a department head,\nthe report said, you had to run\ntwo lines of investors below you.",
+    "style": "label"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_two_lines_12_machines",
+    "args": {
+     "lines": [
+      "Line one: 12 machines",
+      "Line two: 12 machines"
+     ],
+     "kicker": "ACCORDING TO SISA IN",
+     "red": [
+      "12"
+     ],
+     "dur": 5.0,
+     "stagger": 1.5,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s02_count_24_machines",
+    "args": {
+     "to": 24,
+     "label": "MACHINES  ≈  ₩100M",
+     "sublabel": "around 100 million won of other people's money",
+     "dur": 5.0,
+     "count_time": 1.2,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "20": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_salary_and_bonuses",
+    "args": {
+     "lines": [
+      "Only then did the company pay you",
+      "a salary and bonuses."
+     ],
+     "red": [
+      "salary",
+      "bonuses."
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "21": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s02_count_next_rank_280_machines",
+    "args": {
+     "frm": 24,
+     "to": 280,
+     "kicker": "NEXT RANK",
+     "label": "MACHINES",
+     "sublabel": "the requirement reportedly jumped",
+     "dur": 5.0,
+     "count_time": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Think about what that does\nto a person.",
+    "style": "quote"
+   }
+  ],
+  "22": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_you_are_a_recruiter",
+    "args": {
+     "lines": [
+      "You are no longer just an investor.",
+      "You are a recruiter."
+     ],
+     "red": [
+      "recruiter."
+     ],
+     "dur": 4.5,
+     "stagger": 1.8,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
+    "crop": "right",
+    "fx": "left"
+   }
+  ],
+  "23": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/seminar_audience_1.mp4",
+    "start": 3.0
+   },
+   {
+    "kind": "text",
+    "text": "According to the same report,\nthe operation kept changing its name.",
+    "style": "label"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_bmc_then_new_names",
+    "args": {
+     "lines": [
+      "BMC.",
+      "Then a series of new company names,",
+      "one after another,",
+      "with different brands",
+      "for different regions."
+     ],
+     "red": [
+      "bmc."
+     ],
+     "dur": 6.0,
+     "stagger": 1.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "24": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s02_count_20_companies",
+    "args": {
+     "to": 20,
+     "prefix": "~",
+     "kicker": "PROSECUTORS LATER FOUND",
+     "label": "COMPANIES IN TOTAL",
+     "dur": 4.5,
+     "count_time": 2.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_money_moved_to_next",
+    "args": {
+     "lines": [
+      "When one name drew attention,",
+      "the money simply moved",
+      "to the next one."
+     ],
+     "red": [
+      "next"
+     ],
+     "dur": 5.0,
+     "stagger": 1.3,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "25": [
+   {
+    "kind": "text",
+    "text": "But there was a basic problem\nunderneath all of it.",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "in",
+    "crop": "bottom"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_rental_income_recycled",
+    "args": {
+     "lines": [
+      "The “rental income” being paid out",
+      "was largely new investors' money,",
+      "recycled to earlier ones."
+     ],
+     "kicker": "ACCORDING TO PROSECUTORS",
+     "red": [
+      "recycled"
+     ],
+     "dur": 6.0,
+     "stagger": 1.8,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "26": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "fx": "right",
+    "crop": "detail"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "in",
+    "crop": "detail"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s02_keyphrase_product_promise.mp4"
+   }
+  ],
+  "27": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s03_chapter_from_daegu_to_everywhere.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_told_friends_family",
+    "args": {
+     "lines": [
+      "They told friends.",
+      "They told family."
+     ],
+     "red": [
+      "family."
+     ],
+     "kicker": "EARLY INVESTORS WERE PAID ON TIME",
+     "dur": 4.0,
+     "stagger": 1.4,
+     "size": 118
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+    "start": 1.5
+   }
+  ],
+  "28": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "fx": "left",
+    "crop": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+    "fx": "right",
+    "crop": "detail"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_network_spread_route",
+    "args": {
+     "lines": [
+      "Daegu → Busan and the southern coast",
+      "→ the Chungcheong provinces",
+      "→ Seoul, Gyeonggi and Incheon"
+     ],
+     "red": [
+      "Seoul,"
+     ],
+     "kicker": "THE NETWORK SPREAD",
+     "dur": 6.0,
+     "stagger": 1.0,
+     "size": 100
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_count_50_sales_centers",
+    "args": {
+     "to": 50,
+     "prefix": "~",
+     "kicker": "BY LATE 2008, KOREAN MEDIA WERE COUNTING",
+     "label": "SALES CENTERS ACROSS THE COUNTRY",
+     "dur": 5.0,
+     "count_time": 2.3
+    }
+   }
+  ],
+  "29": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_who_signed_up",
+    "args": {
+     "lines": [
+      "So who signed up?",
+      "Not bankers.",
+      "Not professional investors."
+     ],
+     "dur": 4.2,
+     "stagger": 1.2,
+     "size": 104
+    }
+   }
+  ],
+  "30": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_count_7_in_10_homemakers",
+    "args": {
+     "to": 7,
+     "suffix": " IN 10",
+     "kicker": "ABOUT",
+     "label": "INVESTORS WERE HOMEMAKERS IN THEIR FORTIES AND FIFTIES",
+     "sublabel": "In the Seoul area, the same 2008 report said",
+     "dur": 5.0,
+     "count_time": 1.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_later_reporting_described",
+    "args": {
+     "lines": [
+      "Retirees.",
+      "People who had lost jobs.",
+      "Families still recovering from",
+      "the Asian financial crisis of the late 1990s."
+     ],
+     "red": [
+      "crisis"
+     ],
+     "kicker": "LATER REPORTING DESCRIBED",
+     "dur": 5.5,
+     "stagger": 1.2,
+     "size": 96
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "left",
+    "crop": "bottom",
+    "grade": "bw"
+   }
+  ],
+  "31": [
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s03_wbw_retirement_borrowed",
+    "args": {
+     "text": "Some reportedly put in their retirement money. Some borrowed to invest more.",
+     "red": [
+      "retirement",
+      "borrowed"
+     ],
+     "dur": 6.0,
+     "size": 82,
+     "reveal": 4.6
+    }
+   }
+  ],
+  "32": [
+   {
+    "kind": "text",
+    "text": "Why them?",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_2.jpg",
+    "fx": "right",
+    "crop": "detail"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_rates_low_pensions_thin",
+    "args": {
+     "lines": [
+      "Interest rates were low.",
+      "Pensions were thin."
+     ],
+     "red": [
+      "low.",
+      "thin."
+     ],
+     "dur": 4.0,
+     "stagger": 1.8,
+     "size": 112
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_many_had_lump_sum",
+    "args": {
+     "lines": [
+      "a lump sum,",
+      "a severance payment",
+      "or a matured insurance policy,"
+     ],
+     "kicker": "MANY HAD",
+     "dur": 5.0,
+     "stagger": 1.5,
+     "size": 104
+    }
+   },
+   {
+    "kind": "text",
+    "text": "And nowhere obvious\nto put it.",
+    "style": "quote"
+   }
+  ],
+  "33": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/korean_city_street_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "fx": "left",
+    "crop": "left"
+   },
+   {
+    "kind": "text",
+    "text": "Someone you had trusted\nfor twenty years.",
+    "style": "quote"
+   }
+  ],
+  "34": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "right",
+    "crop": "detail"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_daily_payment_clockwork",
+    "args": {
+     "lines": [
+      "+₩35,000",
+      "+₩35,000",
+      "+₩35,000",
+      "+₩35,000"
+     ],
+     "kicker": "LIKE CLOCKWORK",
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 110
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "After a few months, you're the one\ntelling your sister she's missing out.",
+    "style": "quote"
+   }
+  ],
+  "35": [
+   {
+    "kind": "text",
+    "text": "That daily payment\nwasn't just a return.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_proof_or_looked_like",
+    "args": {
+     "lines": [
+      "It was proof.",
+      "Or it looked like proof."
+     ],
+     "red": [
+      "looked"
+     ],
+     "dur": 4.5,
+     "stagger": 1.5,
+     "size": 118
+    }
+   }
+  ],
+  "36": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s04_chapter_the_warnings.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_did_not_hide_in_the_dark",
+    "args": {
+     "lines": [
+      "The scheme did not hide",
+      "in the dark for four years."
+     ],
+     "red": [
+      "dark"
+     ],
+     "dur": 3.5,
+     "stagger": 0.8,
+     "size": 112
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_warnings_timeline",
+    "args": {
+     "lines": [
+      "2006 → May 2007 →",
+      "Aug 2007 → Apr 2008 →",
+      "Sep 2008 → Oct 2008"
+     ],
+     "kicker": "THE WARNINGS ARE ON THE RECORD",
+     "dur": 6.0,
+     "stagger": 1.1,
+     "size": 110
+    }
+   }
+  ],
+  "37": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_may_2007_miryang",
+    "args": {
+     "text": "MAY 2007 — MIRYANG",
+     "sub": "South Gyeongsang Province",
+     "dur": 3.5
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "out",
+    "crop": "bottom",
+    "grade": "cold"
+   }
+  ],
+  "38": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_august_2007",
+    "args": {
+     "text": "AUGUST 2007",
+     "sub": "Kang Tae-yong, Cho's right-hand man",
+     "dur": 3.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_count_50M_won_twice",
+    "args": {
+     "to": 50,
+     "prefix": "₩",
+     "suffix": " MILLION",
+     "label": "TWICE",
+     "sublabel": "to a police sergeant at the Daegu police agency",
+     "dur": 5.0,
+     "count_time": 1.8
+    }
+   },
+   {
+    "kind": "text",
+    "text": "A sergeant who was working\non the Cho case.",
+    "style": "quote"
+   }
+  ],
+  "39": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s04_wbw_investigative_convenience",
+    "args": {
+     "text": "investigative convenience.",
+     "attribution": "— A DISTRICT COURT",
+     "red": [
+      "convenience."
+     ],
+     "dur": 3.5,
+     "size": 110
+    }
+   }
+  ],
+  "40": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_defunct_company_records",
+    "args": {
+     "lines": [
+      "Records from",
+      "an old, defunct company",
+      "instead of the one",
+      "actually taking the money."
+     ],
+     "red": [
+      "defunct"
+     ],
+     "kicker": "PROSECUTORS ALSO ALLEGED",
+     "dur": 5.5,
+     "stagger": 0.7,
+     "size": 100
+    }
+   }
+  ],
+  "41": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_april_2008_regulator_alert",
+    "args": {
+     "text": "APRIL 2008 — FINANCIAL REGULATOR ALERTS POLICE",
+     "sub": "in Daegu, Busan, Incheon · according to Sisa IN",
+     "dur": 4.5
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "fx": "in",
+    "crop": "detail",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+    "fx": "right",
+    "crop": "left",
+    "grade": "cold"
+   }
+  ],
+  "42": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s04_tw_september_2008",
+    "args": {
+     "text": "SEPTEMBER 2008",
+     "sub": "victims began filing complaints",
+     "dur": 3.0
+    }
+   },
+   {
+    "kind": "text",
+    "text": "By then,\nit was too late.",
+    "style": "quote"
+   }
+  ],
+  "43": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s05_chapter_the_collapse_and_the_escape.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/police_lights_night_2.mp4",
+    "grade": "cold",
+    "start": 1.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_timeline_2008",
+    "args": {
+     "lines": [
+      "Oct 2008 — offices raided",
+      "wanted list",
+      "Dec 2008 — gone"
+     ],
+     "red": [
+      "gone"
+     ],
+     "dur": 5.0,
+     "stagger": 1.1,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "44": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
+    "fx": "out",
+    "crop": "bottom",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_systems_wiped",
+    "args": {
+     "lines": [
+      "The group's central computer systems",
+      "were wiped",
+      "and the accounts were emptied",
+      "before police got there."
+     ],
+     "kicker": "ACCORDING TO KOREAN REPORTING AT THE TIME",
+     "red": [
+      "wiped",
+      "emptied"
+     ],
+     "dur": 5.0,
+     "stagger": 0.8,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "45": [
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s05_pc_cho_wanted",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_1.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "OCTOBER 2008",
+     "sub": "Put on the wanted list by Korean police",
+     "stamp_word": "WANTED",
+     "dur": 4.5
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_photocopied_posters",
+    "args": {
+     "lines": [
+      "photocopied the wanted posters",
+      "themselves"
+     ],
+     "kicker": "SOME VICTIMS REPORTEDLY",
+     "red": [
+      "themselves"
+     ],
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "46": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s05_typewriter_dec9_2008_taean.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_fishing_boat_taean",
+    "args": {
+     "lines": [
+      "He boarded a fishing boat",
+      "from a small port in Taean,",
+      "on the west coast."
+     ],
+     "kicker": "ACCORDING TO INVESTIGATORS",
+     "red": [
+      "Taean,"
+     ],
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "At sea, he reportedly switched\nto another vessel\nand crossed to China.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/sea_waves_night_2.mp4"
+   }
+  ],
+  "47": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_kang_fled_month_before",
+    "args": {
+     "lines": [
+      "Kang Tae-yong",
+      "had already fled to China",
+      "the month before."
+     ],
+     "kicker": "HIS RIGHT-HAND MAN",
+     "red": [
+      "fled"
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Kang was the group's\nadministrative vice president.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_2.mp4",
+    "start": 1.0
+   }
+  ],
+  "48": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_01_scale_70000_victims_zoom.mp4"
+   }
+  ],
+  "49": [
+   {
+    "kind": "text",
+    "text": "That 5 trillion figure counts money\nthat went round and round,",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "left",
+    "crop": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_split_5T_vs_840B",
+    "args": {
+     "lines": [
+      "Money that flowed in:",
+      "~5 trillion won",
+      "Actual losses (prosecutors' estimate):",
+      "~840 billion won"
+     ],
+     "red": [
+      "~840"
+     ],
+     "dur": 6.0,
+     "stagger": 0.8,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "50": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s05_count_290B_stashed",
+    "args": {
+     "to": 290,
+     "prefix": "₩",
+     "suffix": " BILLION",
+     "kicker": "PROSECUTORS FOUND",
+     "label": "THE GROUP HAD STASHED AWAY ABOUT 290 BILLION WON",
+     "dur": 6.0,
+     "count_time": 2.6,
+     "size": 200,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_biggest_fraud_nation",
+    "args": {
+     "lines": [
+      "The biggest fraud",
+      "since the founding of the nation."
+     ],
+     "kicker": "KOREAN MEDIA STARTED CALLING IT",
+     "red": [
+      "biggest"
+     ],
+     "dur": 6.0,
+     "stagger": 1.0,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "51": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_keep_two_things",
+    "args": {
+     "lines": [
+      "Keep two things in mind."
+     ],
+     "kicker": "BEFORE WE GO ON",
+     "red": [
+      "two"
+     ],
+     "dur": 4.0,
+     "stagger": 0.0,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_one_cheque",
+    "args": {
+     "lines": [
+      "a cheque,",
+      "handed over in a hotel coffee shop,",
+      "to a man whose job was to catch Cho."
+     ],
+     "kicker": "ONE",
+     "red": [
+      "cheque,"
+     ],
+     "dur": 5.5,
+     "stagger": 1.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_two_paper_ten_days",
+    "args": {
+     "lines": [
+      "dated ten days before",
+      "the death it was supposed to record."
+     ],
+     "kicker": "TWO: A SINGLE PIECE OF PAPER FROM CHINA",
+     "red": [
+      "ten",
+      "days"
+     ],
+     "dur": 6.0,
+     "stagger": 1.2,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "52": [
+   {
+    "kind": "text",
+    "text": "The first explains\nhow he got away.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_still_dont_believe",
+    "args": {
+     "lines": [
+      "The second is why so many people",
+      "still don't believe he's gone."
+     ],
+     "red": [
+      "gone."
+     ],
+     "dur": 4.5,
+     "stagger": 1.4,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "53": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s06_chapter_the_twist_who_was_on_the_payroll.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "Here's the part that turned a fraud case\ninto a national scandal.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_simply_sail_away",
+    "args": {
+     "lines": [
+      "How did one man run a scheme",
+      "this big, for this long,",
+      "and then simply sail away?"
+     ],
+     "red": [
+      "away?"
+     ],
+     "dur": 6.0,
+     "stagger": 0.9,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "54": [
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s06_count_200M_won_sergeant",
+    "args": {
+     "to": 200,
+     "prefix": "₩",
+     "suffix": " MILLION",
+     "kicker": "THE COURT FOUND",
+     "label": "FROM KANG, IN TOTAL",
+     "sublabel": "the police sergeant on the case",
+     "dur": 4.5,
+     "count_time": 1.8,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Two payments in 2007.",
+    "style": "label"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s06_tw_october_31_2008_daegu_hotel",
+    "args": {
+     "text": "OCTOBER 31ST, 2008 — A HOTEL IN DAEGU",
+     "sub": "while the group's offices were being searched",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
+    "fx": "out",
+    "crop": "left",
+    "grade": "cold"
+   }
+  ],
+  "55": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_05_sergeant_district_court_zoom.mp4"
+   }
+  ],
+  "56": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s06_tw_october_2008_violent_crime_unit",
+    "args": {
+     "text": "OCTOBER 2008",
+     "sub": "he headed the violent-crime unit at the Daegu regional police agency",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "57": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_03_superintendent_900m_won_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_900M_won.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "That's around\n800 thousand dollars.",
+    "style": "quote"
+   }
+  ],
+  "58": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_investigation_information",
+    "args": {
+     "lines": [
+      "He took the money in return for",
+      "investigation information."
+     ],
+     "kicker": "THE COURTS FOUND",
+     "red": [
+      "information."
+     ],
+     "dur": 5.0,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/hotel_lobby_2.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_let_him_walk_away",
+    "args": {
+     "lines": [
+      "He sat face to face with a man",
+      "his own agency was hunting,",
+      "and let him walk away."
+     ],
+     "kicker": "ACCORDING TO REPORTING ON THE RULING",
+     "red": [
+      "walk",
+      "away."
+     ],
+     "dur": 5.5,
+     "stagger": 0.8,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "59": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_ten_years_reduced_to_nine",
+    "args": {
+     "lines": [
+      "He was sentenced to ten years at first,",
+      "reduced to nine on appeal."
+     ],
+     "red": [
+      "nine"
+     ],
+     "dur": 5.0,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s06_stamp_9_years.mp4"
+   }
+  ],
+  "60": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_it_went_further",
+    "args": {
+     "lines": [
+      "It went further."
+     ],
+     "red": [
+      "further."
+     ],
+     "dur": 3.0,
+     "size": 130,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "An official at the Daegu prosecutors' office,\nwho had worked on the Cho case itself.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "start": 2.5
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s06_tw_2008_to_2013",
+    "args": {
+     "text": "FROM 2008 TO 2013",
+     "sub": "convicted of taking bribes over five years",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "61": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_hidden_money",
+    "args": {
+     "lines": [
+      "Most of it came from a businessman",
+      "who was managing",
+      "the group's hidden money."
+     ],
+     "kicker": "THE COURT FOUND",
+     "red": [
+      "hidden"
+     ],
+     "dur": 6.0,
+     "stagger": 0.7,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "In return, the official passed on\nprosecution information\nand helped bury investigations.",
+    "style": "quote"
+   }
+  ],
+  "62": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_04_prosecution_official_9_years_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4"
+   }
+  ],
+  "63": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s06_countup_8_officials.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "The people who were supposed to catch him,\nsome of them,\nhad been paid by him.",
+    "style": "quote"
+   }
+  ],
+  "64": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_chapter_the_funeral_nobody_believed.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_route_taean_to_shandong.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s07_tw_may_2012",
+    "args": {
+     "text": "MAY 2012",
+     "sub": "KOREAN POLICE MADE AN ANNOUNCEMENT",
+     "dur": 3.75,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "65": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_06_police_death_announcement_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_emergency_records",
+    "args": {
+     "lines": [
+      "Chinese emergency-care records",
+      "and a death certificate"
+     ],
+     "kicker": "POLICE SAID THEY HAD FOUND",
+     "red": [
+      "certificate"
+     ],
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s07_pc_cho_reported_dead",
+    "args": {
+     "photo": "assets/ep02_cho_hee_pal/people/cho_wanted_3.png",
+     "credit": "Photo: Korean police wanted notice",
+     "grade": "bw",
+     "print_h": 600,
+     "name": "CHO HEE-PAL",
+     "kicker": "MAY 2012 · POLICE ANNOUNCEMENT",
+     "sub": "Police said he had died in China in December 2011",
+     "dur": 4.5
+    }
+   }
+  ],
+  "66": [
+   {
+    "kind": "text",
+    "text": "They pointed to a video of his funeral,\nreportedly filmed by family members.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/white_chrysanthemum_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_cremated_within_days",
+    "args": {
+     "lines": [
+      "cremated in China within days,",
+      "his ashes brought back to Korea",
+      "before the end of December."
+     ],
+     "kicker": "ACCORDING TO KOREAN REPORTING AT THE TIME",
+     "red": [
+      "cremated"
+     ],
+     "dur": 5.5,
+     "stagger": 1.0,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_1.mp4"
+   }
+  ],
+  "67": [
+   {
+    "kind": "text",
+    "text": "And Korean authorities only found out about it\nfive months later.",
+    "style": "quote"
+   }
+  ],
+  "68": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_no_body_to_test",
+    "args": {
+     "lines": [
+      "The public didn't buy it.",
+      "Cremation meant there was no body to test."
+     ],
+     "red": [
+      "body"
+     ],
+     "dur": 4.5,
+     "stagger": 1.6,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_2.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "Police: the death had not been confirmed\none hundred percent.",
+    "style": "quote"
+   }
+  ],
+  "69": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_remember_paper",
+    "args": {
+     "lines": [
+      "Remember",
+      "that piece of paper?"
+     ],
+     "red": [
+      "paper?"
+     ],
+     "dur": 3.0,
+     "stagger": 0.5,
+     "size": 120,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "In 2015, victims' groups pointed to\na Chinese cremation document.",
+    "style": "quote"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_typewriter_cremation_dates.mp4"
+   }
+  ],
+  "70": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s07_qingdao_1.jpg",
+    "fx": "in",
+    "crop": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
+    "fx": "out",
+    "crop": "right"
+   },
+   {
+    "kind": "text",
+    "text": "A man who said he was a former aide\nreportedly told Korean media",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_aide_phone_call",
+    "args": {
+     "lines": [
+      "he had spoken with Cho on the phone",
+      "after the date of his supposed death."
+     ],
+     "kicker": "REPORTEDLY",
+     "red": [
+      "phone"
+     ],
+     "dur": 6.0,
+     "stagger": 1.4,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "71": [
+   {
+    "kind": "text",
+    "text": "There were rumors\nof plastic surgery,\nof a new name...",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "right"
+   }
+  ],
+  "72": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_keyphrase_never_proven.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "After all, this was a case where officials\nhad already been caught taking money.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/city_night_timelapse_2.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg",
+    "fx": "out"
+   }
+  ],
+  "73": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s07_tw_oct10_2015_wuxi",
+    "args": {
+     "text": "OCTOBER 10, 2015 — WUXI, CHINA",
+     "sub": "Chinese police arrested Kang Tae-yong, the right-hand man",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL",
+     "size": 72
+    }
+   },
+   {
+    "kind": "text",
+    "text": "On December 16th,\nhe was flown back to Korea.",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "right",
+    "crop": "right"
+   },
+   {
+    "kind": "text",
+    "text": "Arriving at the prosecutors' office in Daegu,\nhe was asked by reporters\nif Cho was alive.",
+    "style": "quote"
+   }
+  ],
+  "74": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_seen_cho_dead",
+    "args": {
+     "lines": [
+      "He said he had seen Cho dead",
+      "with his own eyes."
+     ],
+     "kicker": "KANG TAE-YONG",
+     "red": [
+      "dead"
+     ],
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "75": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_07_prosecutors_conclusion_zoom.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s07_weihai_3.jpg",
+    "fx": "in",
+    "grade": "cold"
+   },
+   {
+    "kind": "text",
+    "text": "Prosecutors said Cho died at a hospital\nin the early hours of December 19th, 2011.",
+    "style": "quote"
+   }
+  ],
+  "76": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_consistent_testimony",
+    "args": {
+     "lines": [
+      "consistent testimony",
+      "from people who were with him,"
+     ],
+     "kicker": "PROSECUTORS SAID THEY HAD",
+     "red": [
+      "consistent"
+     ],
+     "dur": 3.8,
+     "stagger": 0.9,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_14_funeral",
+    "args": {
+     "to": 14,
+     "kicker": "AND FROM",
+     "label": "PEOPLE AT THE FUNERAL",
+     "dur": 3.2,
+     "count_time": 1.5,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_dna_hair",
+    "args": {
+     "lines": [
+      "a DNA test on hair",
+      "matched Cho,"
+     ],
+     "kicker": "THEY SAID",
+     "red": [
+      "DNA"
+     ],
+     "dur": 3.8,
+     "stagger": 0.9,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Prosecutors said the funeral video\nshowed no signs of editing.",
+    "style": "quote"
+   }
+  ],
+  "77": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_no_evidence_alive",
+    "args": {
+     "lines": [
+      "they had found no evidence",
+      "that he was alive."
+     ],
+     "kicker": "PROSECUTORS SAID",
+     "red": [
+      "evidence"
+     ],
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "78": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_stamp_case_closed.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "Some victims' groups rejected that conclusion\nand said they would keep searching.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/fishing_boat_night_1.mp4"
+   }
+  ],
+  "79": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_strand_of_hair",
+    "args": {
+     "lines": [
+      "a strand of hair proves who it came from,",
+      "not whether that person is still alive."
+     ],
+     "kicker": "SOME VICTIMS' GROUPS ARGUED",
+     "red": [
+      "alive."
+     ],
+     "dur": 4.5,
+     "stagger": 2.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/incense_2.mp4"
+   }
+  ],
+  "80": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s07_keyphrase_is_he_dead.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "The official answer from Korean authorities is yes.\nThe doubts have never been proven.",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+    "fx": "out",
+    "crop": "bottom"
+   }
+  ],
+  "81": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s08_chapter_the_trial_of_the_right_hand_man.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_2.mp4",
+    "start": 0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_life_in_prison",
+    "args": {
+     "lines": [
+      "Prosecutors asked for",
+      "life in prison."
+     ],
+     "red": [
+      "life"
+     ],
+     "dur": 3.2,
+     "stagger": 0.5,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "82": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s08_tw_daegu_district_court_jan13_2017",
+    "args": {
+     "text": "DAEGU DISTRICT COURT, JAN 13, 2017",
+     "sub": "from June 2006 to October 2008",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s05_countup_5_trillion_won.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_02_the_promise_35000_won.png",
+    "fx": "out"
+   }
+  ],
+  "83": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_convicted_of",
+    "args": {
+     "lines": [
+      "Fraud,",
+      "embezzlement,",
+      "bribery,",
+      "and hiding criminal proceeds."
+     ],
+     "kicker": "IT CONVICTED HIM OF",
+     "red": [
+      "bribery,"
+     ],
+     "dur": 5.0,
+     "stagger": 0.7,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "The court also found that he had paid\nthe police sergeant on the case\nfor investigation information.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/envelope_money_2.mp4",
+    "start": 2.0
+   }
+  ],
+  "84": [
+   {
+    "kind": "text",
+    "text": "And it found that, in China,\nhe had worked with organized-crime figures\nto try to collect money he believed he was owed.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/china_city_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_destroyed_families",
+    "args": {
+     "lines": [
+      "a property crime",
+      "almost without precedent,",
+      "one that had destroyed families."
+     ],
+     "kicker": "THE JUDGES CALLED IT",
+     "red": [
+      "destroyed",
+      "families."
+     ],
+     "dur": 5.5,
+     "stagger": 0.9,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s08_stamp_22_years_daegu",
+    "args": {
+     "word": "22 YEARS",
+     "sub": "+ ₩12.5B FORFEITURE · DAEGU DISTRICT COURT, JAN 13, 2017",
+     "dur": 3.15,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "85": [
+   {
+    "kind": "text",
+    "text": "On appeal, his lawyers argued\nthe sentence was too harsh,",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_really_chos_doing",
+    "args": {
+     "lines": [
+      "and that some of the charges",
+      "were really Cho's doing."
+     ],
+     "kicker": "HIS LAWYERS ARGUED",
+     "red": [
+      "Cho's"
+     ],
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_08_kang_tae_yong_22_years_zoom.mp4"
+   }
+  ],
+  "86": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s08_count_70_charged",
+    "args": {
+     "to": 70,
+     "kicker": "PROSECUTORS CHARGED AROUND",
+     "label": "PEOPLE IN TOTAL",
+     "sublabel": "over the scheme",
+     "dur": 4.5,
+     "count_time": 1.4,
+     "size": 300,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "But the man whose name\nwas on the whole thing",
+    "style": "quote"
+   },
+   {
+    "kind": "text",
+    "text": "would never face a judge.",
+    "style": "quote"
+   }
+  ],
+  "87": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s09_chapter_the_villain_on_the_big_screen.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "A crime with no trial\nfor the man at the top.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_escaped_courtroom_pop_culture",
+    "args": {
+     "lines": [
+      "The story escaped the courtroom",
+      "and moved into pop culture."
+     ],
+     "red": [
+      "pop",
+      "culture."
+     ],
+     "dur": 3.4,
+     "stagger": 0.6,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "88": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_master_december_2016",
+    "args": {
+     "text": "DECEMBER 2016",
+     "sub": "the Korean crime film \"Master\" opened in theaters",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/cinema_seats_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_villain_modeled_on_cho",
+    "args": {
+     "lines": [
+      "The villain was modeled",
+      "on Cho Hee-pal."
+     ],
+     "kicker": "ITS DIRECTOR SAID",
+     "red": [
+      "Cho",
+      "Hee-pal."
+     ],
+     "dur": 4.5,
+     "stagger": 0.7,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "89": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s09_count_7_million_saw_it",
+    "args": {
+     "to": 7000000,
+     "kicker": "MORE THAN",
+     "label": "PEOPLE SAW IT",
+     "sublabel": "in Korean cinemas",
+     "dur": 4.5,
+     "count_time": 1.6,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "90": [
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s09_wbw_biggest_fraud_since_founding",
+    "args": {
+     "text": "The biggest fraud since the founding of the nation.",
+     "attribution": "— THE PHRASE KOREAN MEDIA HAD USED",
+     "red": [
+      "biggest",
+      "fraud"
+     ],
+     "dur": 5.5,
+     "size": 82,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_market_korea_1.jpg",
+    "fx": "out",
+    "crop": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_con_man_who_never_paid",
+    "args": {
+     "lines": [
+      "Shorthand for a con man",
+      "who never paid."
+     ],
+     "kicker": "FOR A WHOLE GENERATION, CHO'S NAME BECAME",
+     "red": [
+      "never",
+      "paid."
+     ],
+     "dur": 4.0,
+     "stagger": 0.7,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "91": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s10_chapter_the_money_18_years_later.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s10_count_95b_recovered",
+    "args": {
+     "to": 95,
+     "kicker": "PROSECUTORS SAID ABOUT",
+     "label": "BILLION WON",
+     "sublabel": "tracked down and recovered",
+     "dur": 4.5,
+     "count_time": 1.8,
+     "size": 260,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "fx": "right",
+    "crop": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s10_count_1_4m_each",
+    "args": {
+     "to": 1.4,
+     "decimals": 1,
+     "kicker": "SPREAD ACROSS 70,000 PEOPLE, ROUGHLY",
+     "label": "MILLION WON EACH",
+     "sublabel": "About a thousand dollars.",
+     "dur": 4.5,
+     "count_time": 1.6,
+     "size": 260,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "92": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_payout_timeline",
+    "args": {
+     "lines": [
+      "Dec 2017 — first payout",
+      "2018–2025 — court fights",
+      "June 2026 — payouts restart"
+     ],
+     "kicker": "GETTING EVEN THAT HAS TAKEN YEARS",
+     "red": [
+      "restart"
+     ],
+     "dur": 4.5,
+     "stagger": 0.8,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s10_count_71b_deposited",
+    "args": {
+     "to": 71,
+     "kicker": "ABOUT",
+     "label": "BILLION WON OF THE CRIMINAL PROCEEDS",
+     "sublabel": "deposited with a court in Daegu",
+     "dur": 4.5,
+     "count_time": 1.8,
+     "size": 260,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "left",
+    "crop": "top"
+   }
+  ],
+  "93": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s10_tw_dec_2017_first_payout",
+    "args": {
+     "text": "DECEMBER 2017 — FIRST PAYOUT",
+     "sub": "32 billion won, to more than 17,000 creditors",
+     "dur": 5.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Then some victims challenged\nwho should count as a creditor,\nand how much each should get.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/courtroom_gavel_1.mp4",
+    "start": 1.5,
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s10_stamp_everything_froze",
+    "args": {
+     "word": "EVERYTHING FROZE",
+     "sub": "2018–2025 — COURT FIGHTS",
+     "dur": 3.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s10_tw_oct_2025_lawsuits_ended",
+    "args": {
+     "text": "OCTOBER 2025",
+     "sub": "Those lawsuits only ended.",
+     "dur": 3.0,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "94": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s10_countup_22156_creditors.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/cards/card_09_payout_2026.png",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_two_smaller_pots",
+    "args": {
+     "lines": [
+      "Two smaller pots,",
+      "of 5 billion and 2 billion won,",
+      "are still waiting for dates."
+     ],
+     "red": [
+      "waiting"
+     ],
+     "dur": 6.0,
+     "stagger": 0.8,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "95": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_hundred_representatives",
+    "args": {
+     "lines": [
+      "more than 20,000 victims",
+      "were represented by only",
+      "around a hundred appointed representatives"
+     ],
+     "kicker": "KOREAN MEDIA REPORTED",
+     "red": [
+      "hundred"
+     ],
+     "dur": 5.5,
+     "stagger": 0.6,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "left",
+    "crop": "left"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/typing_night_1.mp4",
+    "start": 1.0
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/photocopier_1.mp4",
+    "start": 2.0
+   }
+  ],
+  "96": [
+   {
+    "kind": "text",
+    "text": "Some, after eighteen years,\nwill never see the money at all.",
+    "style": "quote"
+   }
+  ],
+  "97": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "text",
+    "text": "Korean media reported that some victims\nlost homes, marriages, and their health.",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_korea_apartments_1.jpg",
+    "fx": "out"
+   }
+  ],
+  "98": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s11_chapter_why_it_keeps_coming_back.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_idea_never_did",
+    "args": {
+     "lines": [
+      "Cho's scheme collapsed in 2008.",
+      "The idea behind it never did."
+     ],
+     "red": [
+      "never",
+      "did."
+     ],
+     "dur": 3.0,
+     "stagger": 0.5,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "99": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/cards/zoom/card_10_fss_2024_reports_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s11_count_328_to_410_reports",
+    "args": {
+     "frm": 328,
+     "to": 410,
+     "kicker": "UP A QUARTER FROM THE YEAR BEFORE",
+     "label": "UNLICENSED DEPOSIT-TAKING REPORTS",
+     "sublabel": "to Korea's financial regulator  ·  2023: 328 / 2024: 410",
+     "dur": 4.0,
+     "count_time": 1.6,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s11_count_35_companies_police",
+    "args": {
+     "to": 35,
+     "label": "COMPANIES REFERRED TO POLICE",
+     "sublabel": "(2024)",
+     "dur": 3.0,
+     "count_time": 1.0,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "100": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "in",
+    "grade": "bw"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_new_packaging",
+    "args": {
+     "lines": [
+      "New technology,",
+      "crypto assets,",
+      "real estate."
+     ],
+     "kicker": "THE PACKAGING HAS CHANGED",
+     "dur": 3.0,
+     "stagger": 0.45,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_daegu_skyline_4.jpg",
+    "fx": "left"
+   }
+  ],
+  "101": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_check_1",
+    "args": {
+     "lines": [
+      "1. A fixed, guaranteed return"
+     ],
+     "kicker": "THE SHAPE",
+     "red": [
+      "guaranteed"
+     ],
+     "dur": 4.5,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_check_2",
+    "args": {
+     "lines": [
+      "1. A fixed, guaranteed return",
+      "2. Paid often, so it feels real"
+     ],
+     "kicker": "THE SHAPE",
+     "red": [
+      "often,"
+     ],
+     "dur": 4.0,
+     "stagger": 0.2,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/money_counting_1.mp4",
+    "grade": "bw",
+    "start": 0.8
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_check_3",
+    "args": {
+     "lines": [
+      "1. A fixed, guaranteed return",
+      "2. Paid often, so it feels real",
+      "3. A product story you can't check"
+     ],
+     "kicker": "THE SHAPE",
+     "red": [
+      "can't",
+      "check"
+     ],
+     "dur": 3.5,
+     "stagger": 0.2,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "A machine in a sauna\nyou'll never visit.",
+    "style": "quote"
+   }
+  ],
+  "102": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_check_4",
+    "args": {
+     "lines": [
+      "1. A fixed, guaranteed return",
+      "2. Paid often, so it feels real",
+      "3. A product story you can't check",
+      "4. Bonuses for bringing in others"
+     ],
+     "kicker": "THE SHAPE",
+     "red": [
+      "bonuses"
+     ],
+     "dur": 4.5,
+     "stagger": 0.2,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_check_5",
+    "args": {
+     "lines": [
+      "1. A fixed, guaranteed return",
+      "2. Paid often, so it feels real",
+      "3. A product story you can't check",
+      "4. Bonuses for bringing in others",
+      "5. Time — and someone who looks away"
+     ],
+     "kicker": "THE SHAPE",
+     "red": [
+      "Time",
+      "looks",
+      "away"
+     ],
+     "dur": 5.0,
+     "stagger": 0.3,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "The hole gets deeper,\nand the people inside it\nget more people involved.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/highway_night_2.mp4"
+   }
+  ],
+  "103": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_1.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_across_asia",
+    "args": {
+     "lines": [
+      "Versions of the same shape",
+      "have turned up across Asia",
+      "and around the world."
+     ],
+     "red": [
+      "Asia",
+      "world."
+     ],
+     "dur": 4.5,
+     "stagger": 1.3,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "That's not investment advice.\nIt's a pattern.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_patterns_cant_hide",
+    "args": {
+     "lines": [
+      "And patterns are the one thing",
+      "a Ponzi scheme can't hide."
+     ],
+     "red": [
+      "can't",
+      "hide."
+     ],
+     "dur": 5.0,
+     "stagger": 1.5,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "104": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep02_cho_hee_pal/motion/s12_chapter_outro.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/harbor_night_2.mp4",
+    "grade": "cold",
+    "start": 3.0
+   },
+   {
+    "kind": "text",
+    "text": "For many of the people who lost everything,\nit never ended at all.",
+    "style": "quote"
+   }
+  ],
+  "105": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_ran_on_trust",
+    "args": {
+     "lines": [
+      "The scheme didn't run on machines.",
+      "It ran on trust."
+     ],
+     "red": [
+      "trust."
+     ],
+     "dur": 4.0,
+     "stagger": 2.2,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s02_office_seminar_1.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep02_cho_hee_pal/stock/prison_corridor_2.mp4",
+    "grade": "cold",
+    "start": 2.0
+   }
+  ],
+  "106": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s03_busan_3.jpg",
+    "fx": "in",
+    "crop": "detail"
+   },
+   {
+    "kind": "text",
+    "text": "If a business pays you more\nthan any bank ever could,",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_where_is_the_money",
+    "args": {
+     "lines": [
+      "Where is that money",
+      "really coming from?"
+     ],
+     "red": [
+      "really"
+     ],
+     "dur": 4.0,
+     "stagger": 0.6,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "107": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s12_tw_next_time",
+    "args": {
+     "text": "NEXT TIME",
+     "sub": "ANOTHER COUNTRY, ANOTHER PROMISE THAT SOUNDED SAFE.",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s12_kp_simply_disappeared",
+    "args": {
+     "lines": [
+      "And another fortune",
+      "that simply disappeared."
+     ],
+     "red": [
+      "disappeared."
+     ],
+     "dur": 3.5,
+     "stagger": 0.8,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
+    }
+   }
+  ],
+  "108": [
+   {
+    "kind": "text",
+    "text": "Subscribe so you don't miss it.",
+    "style": "label"
+   },
+   {
+    "kind": "text",
+    "text": "Have you ever been offered a deal\nthat paid every single day?",
+    "style": "quote"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep02_cho_hee_pal/s01_massage_device_3.jpg",
+    "fx": "out",
+    "crop": "right",
+    "grade": "cold"
+   }
+  ]
+ },
+ "sfx": [
+  {
+   "chunk": 0,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -10
+  },
+  {
+   "chunk": 1,
+   "name": "heartbeat",
+   "offset": 5.6,
+   "gain_db": -11
+  },
+  {
+   "chunk": 2,
+   "name": "impact",
+   "offset": 8.8,
+   "gain_db": -12
+  },
+  {
+   "chunk": 4,
+   "name": "typewriter",
+   "offset": 9.1,
+   "gain_db": -10
+  },
+  {
+   "chunk": 14,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 16,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 16,
+   "name": "impact",
+   "offset": 3.2,
+   "gain_db": -6
+  },
+  {
+   "chunk": 18,
+   "name": "typewriter",
+   "offset": 0.8,
+   "gain_db": -12
+  },
+  {
+   "chunk": 21,
+   "name": "riser",
+   "offset": 1.75,
+   "gain_db": -12
+  },
+  {
+   "chunk": 21,
+   "name": "impact",
+   "offset": 4.25,
+   "gain_db": -8
+  },
+  {
+   "chunk": 23,
+   "name": "glitch",
+   "offset": 8.85,
+   "gain_db": -10
+  },
+  {
+   "chunk": 26,
+   "name": "impact",
+   "offset": 6.5,
+   "gain_db": -6
+  },
+  {
+   "chunk": 28,
+   "name": "whoosh",
+   "offset": 2.4,
+   "gain_db": -12
+  },
+  {
+   "chunk": 28,
+   "name": "whoosh",
+   "offset": 4.9,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 13.5,
+   "gain_db": -10
+  },
+  {
+   "chunk": 38,
+   "name": "impact",
+   "offset": 10.3,
+   "gain_db": -10
+  },
+  {
+   "chunk": 39,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 41,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 42,
+   "name": "heartbeat",
+   "offset": 2.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 44,
+   "name": "glitch",
+   "offset": 5.2,
+   "gain_db": -10
+  },
+  {
+   "chunk": 46,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 48,
+   "name": "impact",
+   "offset": 3.05,
+   "gain_db": -8
+  },
+  {
+   "chunk": 51,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -6
+  },
+  {
+   "chunk": 57,
+   "name": "impact",
+   "offset": 9.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 59,
+   "name": "stamp",
+   "offset": 5.55,
+   "gain_db": -6
+  },
+  {
+   "chunk": 63,
+   "name": "impact",
+   "offset": 1.65,
+   "gain_db": -13
+  },
+  {
+   "chunk": 63,
+   "name": "heartbeat",
+   "offset": 13.3,
+   "gain_db": -9
+  },
+  {
+   "chunk": 64,
+   "name": "whoosh",
+   "offset": 4.9,
+   "gain_db": -10
+  },
+  {
+   "chunk": 69,
+   "name": "typewriter",
+   "offset": 8.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 71,
+   "name": "glitch",
+   "offset": 2.85,
+   "gain_db": -12
+  },
+  {
+   "chunk": 78,
+   "name": "stamp",
+   "offset": 1.95,
+   "gain_db": -6
+  },
+  {
+   "chunk": 78,
+   "name": "impact",
+   "offset": 1.95,
+   "gain_db": -10
+  },
+  {
+   "chunk": 82,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 84,
+   "name": "stamp",
+   "offset": 14.95,
+   "gain_db": -6
+  },
+  {
+   "chunk": 84,
+   "name": "impact",
+   "offset": 14.95,
+   "gain_db": -10
+  },
+  {
+   "chunk": 86,
+   "name": "impact",
+   "offset": 8.1,
+   "gain_db": -13
+  },
+  {
+   "chunk": 88,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 88,
+   "name": "impact",
+   "offset": 14.3,
+   "gain_db": -10
+  },
+  {
+   "chunk": 89,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 90,
+   "name": "impact",
+   "offset": 11.52,
+   "gain_db": -13
+  },
+  {
+   "chunk": 93,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -14
+  },
+  {
+   "chunk": 93,
+   "name": "stamp",
+   "offset": 14.98,
+   "gain_db": -8
+  },
+  {
+   "chunk": 94,
+   "name": "impact",
+   "offset": 2.55,
+   "gain_db": -13
+  },
+  {
+   "chunk": 99,
+   "name": "impact",
+   "offset": 8.9,
+   "gain_db": -12
+  },
+  {
+   "chunk": 101,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 102,
+   "name": "stamp",
+   "offset": 5.8,
+   "gain_db": -10
+  },
+  {
+   "chunk": 103,
+   "name": "impact",
+   "offset": 14.1,
+   "gain_db": -12
+  },
+  {
+   "chunk": 105,
+   "name": "impact",
+   "offset": 2.5,
+   "gain_db": -15
+  },
+  {
+   "chunk": 107,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  },
+  {
+   "chunk": 107,
+   "name": "whoosh",
+   "offset": 3.5,
+   "gain_db": -15
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 2,
+   "dur": 4.5
+  },
+  {
+   "chunk": 16,
+   "dur": 3.2
+  },
+  {
+   "chunk": 25,
+   "dur": 1.5
+  },
+  {
+   "chunk": 26,
+   "dur": 6.5
+  },
+  {
+   "chunk": 35,
+   "dur": 7.6
+  },
+  {
+   "chunk": 42,
+   "dur": 6.8
+  },
+  {
+   "chunk": 48,
+   "dur": 2.8
+  },
+  {
+   "chunk": 51,
+   "dur": 5.0
+  },
+  {
+   "chunk": 57,
+   "dur": 2.0
+  },
+  {
+   "chunk": 63,
+   "dur": 17.4
+  },
+  {
+   "chunk": 74,
+   "dur": 2.0
+  },
+  {
+   "chunk": 80,
+   "dur": 3.0
+  },
+  {
+   "chunk": 86,
+   "dur": 11.7
+  },
+  {
+   "chunk": 96,
+   "dur": 5.8
+  },
+  {
+   "chunk": 103,
+   "dur": 1.5
+  },
+  {
+   "chunk": 106,
+   "dur": 11.0
+  }
+ ]
+}

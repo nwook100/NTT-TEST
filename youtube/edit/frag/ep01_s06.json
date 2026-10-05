@@ -1,0 +1,63 @@
+{
+  "section": "6",
+  "chunks": [
+    {"id": 40, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_chapter_the_bitcoin_war_chest.mp4"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_war_chest", "args": {"lines": ["Kwon's answer", "was a war chest."], "red": ["war", "chest."], "kicker": "BY EARLY 2022", "dur": 4.0, "stagger": 0.6, "size": 120}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s11_singapore_2.jpg", "fx": "in"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/crypto_coins_2.mp4"}
+    ]},
+    {"id": 41, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_goal_10b_bitcoin", "args": {"lines": ["10 billion dollars' worth", "of bitcoin."], "red": ["10", "billion"], "kicker": "KWON SAID THE GOAL WAS", "dur": 4.7, "stagger": 0.8, "size": 116}}
+    ]},
+    {"id": 42, "segments": [
+      {"kind": "motion", "fn": "count_up", "name": "s06_count_1b_luna_sale", "args": {"to": 1000000000, "prefix": "$", "kicker": "FEBRUARY 2022", "label": "A ONE-BILLION-DOLLAR SALE OF LUNA TO INVESTORS", "dur": 5.0, "count_time": 2.3}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_deal_card", "args": {"lines": ["Led by:", "Jump Crypto,", "Three Arrows Capital"], "kicker": "FEB 2022 — $1B LUNA SALE", "dur": 6.0, "stagger": 2.0, "size": 110}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_remember_three_arrows", "args": {"lines": ["Three Arrows Capital"], "red": ["three", "arrows", "capital"], "kicker": "REMEMBER THAT SECOND NAME.", "dur": 3.5, "size": 120}},
+      {"kind": "text", "text": "It comes back too.", "style": "quote"}
+    ]},
+    {"id": 43, "segments": [
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/trading_screens_dark_1.mp4"},
+      {"kind": "motion", "fn": "count_up", "name": "s06_count_100m_btc_buys", "args": {"to": 100, "prefix": "$", "suffix": "M+", "kicker": "ON SOME DAYS THAT SPRING", "label": "MORE THAN 100 MILLION DOLLARS OF BITCOIN AT A TIME", "dur": 4.5, "count_time": 2.0}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_3.webp", "fx": "right"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_target_q3", "args": {"lines": ["the 10-billion-dollar target", "by the end of the third quarter."], "red": ["third", "quarter."], "kicker": "KWON SAID HE EXPECTED TO REACH", "dur": 5.0, "stagger": 1.0, "size": 104}}
+    ]},
+    {"id": 44, "segments": [
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_countup_80394_BTC.mp4"},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_2.jpg", "fx": "out", "crop": "bottom"}
+    ]},
+    {"id": 45, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_missing_piece", "args": {"lines": ["the missing piece."], "red": ["piece."], "kicker": "TO MANY INVESTORS, THIS LOOKED LIKE", "dur": 4.0, "size": 124}},
+      {"kind": "motion", "fn": "timeline", "name": "s06_tl_war_chest", "args": {"title": "THE WAR CHEST", "events": [["Jan 2022", "Luna Foundation Guard set up in Singapore"], ["Feb 2022", "$1 billion LUNA sale"], ["Spring 2022", "Buying $100M+ of bitcoin at a time"], ["Early May 2022", "80,394 bitcoin, around $2.4 billion"]], "dur": 5.0}}
+    ]},
+    {"id": 46, "segments": [
+      {"kind": "text", "text": "But there was a catch.", "style": "quote"},
+      {"kind": "motion", "fn": "bar_chart", "name": "s06_bar_reserve_vs_ust", "args": {"title": "THE RESERVE WAS A FRACTION", "bars": [["Bitcoin reserve", 2.4], ["UST in circulation", 19, true]], "prefix": "$", "suffix": "B", "decimals": 1, "note": "Approximate: reserve around $2.4 billion · UST in circulation nearly $19 billion", "dur": 5.0}},
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s06_bitcoin_1.jpg", "fx": "left", "crop": "detail", "grade": "red"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_asset_could_fall", "args": {"lines": ["an asset that could fall", "at exactly the moment", "it was needed."], "red": ["fall"], "kicker": "AND IT WAS HELD IN BITCOIN", "dur": 4.0, "stagger": 0.8, "size": 108}}
+    ]},
+    {"id": 47, "segments": [
+      {"kind": "photo", "asset": "assets/ep01_terra_luna/s12_courthouse_ny_2.jpg", "fx": "right"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_prosecutors_controlled", "args": {"lines": ["Kwon presented the foundation", "as independent from Terraform,", "when, according to prosecutors,", "he controlled it."], "red": ["controlled"], "kicker": "U.S. PROSECUTORS LATER SAID", "dur": 6.0, "stagger": 1.0, "size": 88}}
+    ]},
+    {"id": 48, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_two_questions_intro", "args": {"lines": ["So before we watch the fall,", "here are two questions", "to carry with you."], "red": ["fall,"], "dur": 4.0, "stagger": 1.0, "size": 104}},
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s06_keyphrase_hook_questions.mp4"},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/phone_dark_hand_1.mp4"}
+    ]},
+    {"id": 49, "segments": [
+      {"kind": "text", "text": "Both get answered\nbefore the end of this video.", "style": "quote"},
+      {"kind": "motion", "fn": "key_phrase", "name": "s06_kp_jury_and_kwon", "args": {"lines": ["One by a jury.", "The other by Do Kwon himself."], "red": ["jury.", "himself."], "dur": 4.5, "stagger": 1.4, "size": 110}}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 44, "name": "impact", "offset": 8.95, "gain_db": -8},
+    {"chunk": 48, "name": "heartbeat", "offset": 4.0, "gain_db": -8},
+    {"chunk": 50, "name": "whoosh", "offset": -0.55, "gain_db": -12}
+  ],
+  "music_drops": [
+    {"chunk": 46, "dur": 2.0},
+    {"chunk": 48, "dur": 9.5}
+  ]
+}

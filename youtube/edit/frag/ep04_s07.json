@@ -1,0 +1,203 @@
+{
+ "section": "7",
+ "chunks": [
+  {
+   "id": 58,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s07_chapter_forty_cents_on_the_yuan.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_09_seized_assets_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s07_countup_136_9_kg_gold.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s07_gold_ov_4.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "timeline",
+     "name": "s07_timeline_payouts",
+     "args": {
+      "events": [
+       [
+        "July–Aug 2019",
+        "victims register"
+       ],
+       [
+        "Jan 16, 2020",
+        "1st payout (~35%, reported)"
+       ],
+       [
+        "Apr 2025",
+        "2nd payout (cumulative ~40%, reported)"
+       ]
+      ],
+      "title": "THEN CAME THE WAITING",
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s07_rural_china_ov_2.jpg",
+     "fx": "left"
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s07_count_35_percent",
+     "args": {
+      "to": 35,
+      "prefix": "~",
+      "suffix": "%",
+      "kicker": "ACCORDING TO CHINESE MEDIA AND VICTIMS",
+      "label": "OF THE MONEY THEY HAD LOST",
+      "sublabel": "the court didn't publish the ratio",
+      "dur": 4.5,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s07_typewriter_april_2025",
+     "args": {
+      "text": "APRIL 2025",
+      "sub": "— the second payout",
+      "dur": 3.5
+     }
+    },
+    {
+     "kind": "text",
+     "text": "Victims told Chinese reporters it added about five percent,\nbringing the total to roughly forty.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s07_rural_china_ov_4.jpg",
+     "fx": "right"
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s07_countup_40_cents.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 64,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s07_rural_china_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "text",
+     "text": "Others had not forgotten for a single day.",
+     "style": "quote"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/crowd_night_1.mp4",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_10_forty_cents_zoom.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 59,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 60,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 63,
+   "name": "impact",
+   "offset": 2.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 65,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 65,
+   "dur": 1.5
+  }
+ ]
+}

@@ -1,0 +1,1455 @@
+{
+ "voice": {
+  "speaker": "Aiden",
+  "instruct": "Calm, low, serious true-crime documentary narrator. Measured pace, clear American English, slight tension, no excitement.",
+  "language": "English",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+ },
+ "duration": 873.98,
+ "loudness_lufs": -16.0,
+ "chunks": [
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "Between 2019 and 2022, a driver in Ho Chi Minh City kept a notebook.",
+    "According to prosecutors, it recorded cash he carried out of one bank, on his boss's orders."
+   ],
+   "cues": [
+    "[AI-01] Night, a plain van idling in a basement garage, its rear doors open, stacks of shrink-wrapped banknote bricks being loaded by gloved hands, no faces"
+   ],
+   "gap_after": 0.55,
+   "id": 0,
+   "text": "Between 2019 and 2022, a driver in Ho Chi Minh City kept a notebook. According to prosecutors, it recorded cash he carried out of one bank, on his boss's orders.",
+   "wer": 0.135,
+   "asr": "Between twist this out as a 19 and 2022, a driver in Ho Chi Minh City kept a notebook.  According to prosecutors, it recorded cash he carried out of one bank on his boss's orders.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.36,
+   "start": 0.0,
+   "end": 11.293
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "The total: 108 trillion dong. More than four billion dollars. In cash."
+   ],
+   "cues": [
+    "[SCREEN] Count-up, red digits: \"108,000,000,000,000 ₫\" → sub-line \"≈ $4.4 billion — in cash\""
+   ],
+   "gap_after": 1.0,
+   "id": 1,
+   "text": "The total: 108 trillion dong. More than four billion dollars. In cash.",
+   "wer": 0.0,
+   "asr": "The total 108 trillion dong, more than 4 billion dollars in cash.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.2,
+   "start": 11.843,
+   "end": 18.989
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "At the same bank, tens of thousands of ordinary savers were being offered something that sounded as safe as a deposit.",
+    "It wasn't."
+   ],
+   "cues": [
+    "[AI-02] An elderly woman's hands at a bank counter, signing a glossy certificate under fluorescent light, a friendly staff hand pointing to the signature line, no faces"
+   ],
+   "gap_after": 0.25,
+   "id": 2,
+   "text": "At the same bank, tens of thousands of ordinary savers were being offered something that sounded as safe as a deposit. It wasn't.",
+   "wer": 0.0,
+   "asr": "At the same bank, tens of thousands of ordinary savers were being offered something that sounded  as safe as a deposit.  It wasn't.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.16,
+   "start": 19.989,
+   "end": 28.098
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "This is the story of Truong My Lan. A real estate tycoon who, a court found, secretly controlled a major Vietnamese bank, and used it as her own wallet."
+   ],
+   "cues": [],
+   "gap_after": 1.5,
+   "trailing_cues": [
+    "[SCREEN] Channel logo sting (under 3 seconds)"
+   ],
+   "id": 3,
+   "text": "This is the story of Truong My Lan. A real estate tycoon who, a court found, secretly controlled a major Vietnamese bank, and used it as her own wallet.",
+   "wer": 0.069,
+   "asr": "This is the story of Trung Mai Lan, a real estate tycoon who a court found,  secretly controlled a major Vietnamese bank and used it as her own wallet.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.24,
+   "start": 28.348,
+   "end": 38.528
+  },
+  {
+   "section": "1",
+   "section_title": "From a market stall to an empire",
+   "section_index": 1,
+   "lines": [
+    "Ho Chi Minh City. Vietnam's biggest city and its money capital.",
+    "In the 1980s and 90s, as Vietnam opened its economy, fortunes were made here fast."
+   ],
+   "cues": [
+    "[SCREEN] Map of Vietnam, zoom into Ho Chi Minh City. Caption: \"Ho Chi Minh City — Vietnam's financial capital\""
+   ],
+   "gap_after": 0.55,
+   "id": 4,
+   "text": "Ho Chi Minh City. Vietnam's biggest city and its money capital. In the 1980s and 90s, as Vietnam opened its economy, fortunes were made here fast.",
+   "wer": 0.061,
+   "asr": "Po Chi Minh City, Vietnam's biggest city in its money capital.  In the 1980s and 90s, as Vietnam opened its economy, fortunes were made here fast.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.24,
+   "start": 40.028,
+   "end": 50.217
+  },
+  {
+   "section": "1",
+   "section_title": "From a market stall to an empire",
+   "section_index": 1,
+   "lines": [
+    "Truong My Lan was born in Saigon in 1956, into a family of Chinese descent.",
+    "According to state media and international reporting, she started out selling cosmetics with her mother at a stall in Ben Thanh Market, the city's oldest market."
+   ],
+   "cues": [
+    "[AI-03] A busy covered market at dawn, stalls of cosmetics and hair accessories, warm light, shoppers seen from behind, no faces"
+   ],
+   "gap_after": 0.55,
+   "id": 5,
+   "text": "Truong My Lan was born in Saigon in 1956, into a family of Chinese descent. According to state media and international reporting, she started out selling cosmetics with her mother at a stall in Ben Thanh Market, the city's oldest market.",
+   "wer": 0.043,
+   "asr": "Trung My Lan was born in Saigon in 1956 into a family of Chinese descent.  According to state media and international reporting, she started out selling cosmetics  with her mother at a stall in Ben Tang Market, the city's oldest market.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.76,
+   "start": 50.767,
+   "end": 66.475
+  },
+  {
+   "section": "1",
+   "section_title": "From a market stall to an empire",
+   "section_index": 1,
+   "lines": [
+    "In 1992, she founded a company called Van Thinh Phat.",
+    "Over the next thirty years, it grew into one of the biggest property groups in the country.",
+    "Luxury hotels. Office towers. Shopping malls in the heart of District 1."
+   ],
+   "cues": [
+    "[SCREEN] Timeline card: \"1956 born · 1992 Van Thinh Phat founded · 2012 SCB formed · 2022 arrest\""
+   ],
+   "gap_after": 0.55,
+   "id": 6,
+   "text": "In 1992, she founded a company called Van Thinh Phat. Over the next thirty years, it grew into one of the biggest property groups in the country. Luxury hotels. Office towers. Shopping malls in the heart of District 1.",
+   "wer": 0.044,
+   "asr": "In 1992, she founded a company called Van Thyn Fat.  Over the next 30 years, it grew into one of the biggest property groups in the country  — luxury hotels, office towers, shopping malls in the heart of District 1.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.8,
+   "start": 67.025,
+   "end": 81.764
+  },
+  {
+   "section": "1",
+   "section_title": "From a market stall to an empire",
+   "section_index": 1,
+   "lines": [
+    "She married a Hong Kong businessman, and kept a low public profile.",
+    "To most Vietnamese, she was simply one more name in a booming property market."
+   ],
+   "cues": [
+    "[SCREEN] Self-made photo-strip of downtown landmarks (Wikimedia CC photos), labels: \"Times Square Saigon · Windsor Plaza Hotel · …\", stamp \"linked to Van Thinh Phat\""
+   ],
+   "gap_after": 0.25,
+   "id": 7,
+   "text": "She married a Hong Kong businessman, and kept a low public profile. To most Vietnamese, she was simply one more name in a booming property market.",
+   "wer": 0.0,
+   "asr": "She married a Hong Kong businessman and kept a low public profile.  To most Vietnamese, she was simply one more name in a booming property market.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.12,
+   "start": 82.314,
+   "end": 91.383
+  },
+  {
+   "section": "1",
+   "section_title": "From a market stall to an empire",
+   "section_index": 1,
+   "lines": [
+    "Her niece would later run the group as its chief executive. Her husband stood beside her in business. It was, in many ways, a family empire.",
+    "But building towers takes enormous amounts of money.",
+    "And the cheapest money, if you can get it, is a bank's."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 8,
+   "text": "Her niece would later run the group as its chief executive. Her husband stood beside her in business. It was, in many ways, a family empire. But building towers takes enormous amounts of money. And the cheapest money, if you can get it, is a bank's.",
+   "wer": 0.0,
+   "asr": "Her niece would later run the group as its chief executive.  Her husband stood beside her in business.  It was in many ways a family empire.  But building towers takes enormous amounts of money, and the cheapest money, if you can  get it, is a bank's.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.08,
+   "start": 91.633,
+   "end": 107.661
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "In late 2011, in a merger approved by the central bank, three struggling lenders became one: Saigon Commercial Bank, known as SCB.",
+    "It was supposed to be a rescue.",
+    "According to the court, it became something else."
+   ],
+   "cues": [
+    "[SCREEN] Three small bank icons merging into one: \"Dec 2011: three troubled banks → Saigon Commercial Bank (SCB)\""
+   ],
+   "gap_after": 0.55,
+   "id": 9,
+   "text": "In late 2011, in a merger approved by the central bank, three struggling lenders became one: Saigon Commercial Bank, known as SCB. It was supposed to be a rescue. According to the court, it became something else.",
+   "wer": 0.0,
+   "asr": "In late 2011, in a merger approved by the central bank, three struggling lenders became one.  Saigon Commercial Bank, known as SCB. It was supposed to be a rescue.  According to the court, it became something else.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.28,
+   "start": 108.861,
+   "end": 124.08
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "Vietnamese law limits how much of a bank any one person can own. On paper, Lan held a small stake. State media put it at about five percent.",
+    "But the Ho Chi Minh City court later found that she was the real owner of more than 91.5 percent of SCB's shares."
+   ],
+   "cues": [
+    "[SCREEN] Compare card: left \"On paper: Lan owns ~5%\" / right \"Court finding: controls more than 91.5%\""
+   ],
+   "gap_after": 0.55,
+   "id": 10,
+   "text": "Vietnamese law limits how much of a bank any one person can own. On paper, Lan held a small stake. State media put it at about five percent. But the Ho Chi Minh City court later found that she was the real owner of more than 91.5 percent of SCB's shares.",
+   "wer": 0.019,
+   "asr": "Vietnamese law limits how much of a bank any one person can own. On paper,  land held a small stake. State media put it at about 5 percent. But the Ho Chi Minh City Court  later found that she was the real owner of more than 91.5 percent of SCB's shares.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.56,
+   "start": 124.63,
+   "end": 143.139
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "How do you own nine-tenths of a bank while appearing to own almost nothing?",
+    "Proxies."
+   ],
+   "cues": [
+    "[AI-04] A conference table in a dim boardroom, a dozen empty leather chairs, name placards with no readable text, one chair at the head pulled back"
+   ],
+   "gap_after": 0.25,
+   "id": 11,
+   "text": "How do you own nine-tenths of a bank while appearing to own almost nothing? Proxies.",
+   "wer": 0.0,
+   "asr": "How do you own nine tenths of a bank while appearing to own almost nothing?  Proxies.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.36,
+   "start": 143.689,
+   "end": 148.996
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "According to investigators, relatives, employees and associates held shares in their own names. The court said the people holding more than 75 percent of the shares all admitted they were acting for her."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 12,
+   "text": "According to investigators, relatives, employees and associates held shares in their own names. The court said the people holding more than 75 percent of the shares all admitted they were acting for her.",
+   "wer": 0.029,
+   "asr": "According to investigators, relatives, employees, and associates held shares in their own names.  The court said the people holding more than 75% of the shares all admitted they were acting for her.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.32,
+   "start": 149.246,
+   "end": 161.505
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "And with the shares came the people.",
+    "The court found that from 2012 she picked the bank's key managers, set up special units to handle lending and payouts, and gave instructions directly.",
+    "Officially, she was not on SCB's board."
+   ],
+   "cues": [
+    "[SCREEN] Org-chart graphic: \"Truong My Lan\" at top, dotted lines to faceless \"proxy shareholder\" icons, then to \"SCB board & executives\""
+   ],
+   "gap_after": 0.25,
+   "id": 13,
+   "text": "And with the shares came the people. The court found that from 2012 she picked the bank's key managers, set up special units to handle lending and payouts, and gave instructions directly. Officially, she was not on SCB's board.",
+   "wer": 0.0,
+   "asr": "And with the shares came the people.  The court found that from 2012, she picked the bank's key managers,  set up special units to handle lending and payouts, and gave instructions directly.  Officially, she was not on SCB's board.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.04,
+   "start": 162.055,
+   "end": 177.033
+  },
+  {
+   "section": "2",
+   "section_title": "Buying a bank, quietly",
+   "section_index": 2,
+   "lines": [
+    "In practice, the court said, the bank answered to her."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 14,
+   "text": "In practice, the court said, the bank answered to her.",
+   "wer": 0.0,
+   "asr": "In practice, the court said, the bank answered to her.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.44,
+   "start": 177.283,
+   "end": 180.658
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "So how do you move billions of dollars out of a bank you secretly control, without anyone noticing?",
+    "The court laid out the method. Let's walk through it."
+   ],
+   "cues": [
+    "[SCREEN] Title card: \"HOW THE MONEY LEFT THE BANK\" (4 steps)"
+   ],
+   "gap_after": 0.55,
+   "id": 15,
+   "text": "So how do you move billions of dollars out of a bank you secretly control, without anyone noticing? The court laid out the method. Let's walk through it.",
+   "wer": 0.0,
+   "asr": "So how do you move billions of dollars out of a bank you secretly control?  Without anyone noticing?  The court laid out the method.  Let's walk through it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.44,
+   "start": 181.858,
+   "end": 191.246
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Step one. Companies.",
+    "According to state media, investigators counted more than a thousand companies in the Van Thinh Phat network. Many of them existed mainly on paper. Ghost companies, with people listed as directors who often didn't run anything."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram, step 1: \"Set up companies\" → icon grid filling to \"1,000+\""
+   ],
+   "gap_after": 0.55,
+   "id": 16,
+   "text": "Step one. Companies. According to state media, investigators counted more than a thousand companies in the Van Thinh Phat network. Many of them existed mainly on paper. Ghost companies, with people listed as directors who often didn't run anything.",
+   "wer": 0.051,
+   "asr": "Step 1. Companies According to state media,  investigators counted more than a thousand companies in the Van Thyn Fat Network.  Many of them existed mainly on paper. Ghost companies,  with people listed as directors who often didn't run anything,",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.0,
+   "start": 191.796,
+   "end": 207.743
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Step two. Loans.",
+    "Those companies applied to SCB for loans. Fake applications, the court found, approved by managers who knew where the money was going.",
+    "Between 2018 and 2022 alone, the court counted 916 such loan applications, worth around 545 trillion dong."
+   ],
+   "cues": [
+    "[SCREEN] Step 2: \"Ghost company → loan application → SCB\" with a stamp \"APPROVED\""
+   ],
+   "gap_after": 0.55,
+   "id": 17,
+   "text": "Step two. Loans. Those companies applied to SCB for loans. Fake applications, the court found, approved by managers who knew where the money was going. Between 2018 and 2022 alone, the court counted 916 such loan applications, worth around 545 trillion dong.",
+   "wer": 0.0,
+   "asr": "Step 2. Loans. Those companies applied to SCB for loans. Fake applications, the court found,  approved by managers who knew where the money was going. Between 2018 and 2022 alone,  the court counted 916 such loan applications, worth around 545 trillion dong.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 20.32,
+   "start": 208.293,
+   "end": 228.561
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Step three. Collateral.",
+    "Every loan needs security. According to the court, appraisal firms colluded to inflate the value of the assets pledged, so the paperwork looked covered."
+   ],
+   "cues": [
+    "[SCREEN] Step 3: a small apartment icon with a price tag inflating like a balloon: \"Collateral value inflated\""
+   ],
+   "gap_after": 0.55,
+   "id": 18,
+   "text": "Step three. Collateral. Every loan needs security. According to the court, appraisal firms colluded to inflate the value of the assets pledged, so the paperwork looked covered.",
+   "wer": 0.0,
+   "asr": "Step 3 Collateral Every loan needs security.  According to the court, appraisal firms colluded to inflate the value of the assets pledged,  so the paperwork looked covered.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.84,
+   "start": 229.111,
+   "end": 240.899
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Step four. The money moves on.",
+    "Once disbursed, the loan money was shuffled between accounts, used to pay off older loans, poured into Van Thinh Phat's projects, or taken out in cash."
+   ],
+   "cues": [
+    "[SCREEN] Step 4: arrows from SCB fanning out to \"Van Thinh Phat projects\", \"old loans\", \"cash\", \"other accounts\""
+   ],
+   "gap_after": 0.25,
+   "id": 19,
+   "text": "Step four. The money moves on. Once disbursed, the loan money was shuffled between accounts, used to pay off older loans, poured into Van Thinh Phat's projects, or taken out in cash.",
+   "wer": 0.094,
+   "asr": "Step 4. The money moves on. Once dispersed, the loan money was shuffled between accounts,  used to pay off older loans, poured into Van Thynn Fats projects, or taken out in cash.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.32,
+   "start": 241.449,
+   "end": 253.718
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Each step, on its own, looked like ordinary banking. A loan. A valuation. A transfer. Only together did they form a pipe that ran in one direction: out."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 20,
+   "text": "Each step, on its own, looked like ordinary banking. A loan. A valuation. A transfer. Only together did they form a pipe that ran in one direction: out.",
+   "wer": 0.071,
+   "asr": "Each step on its own looked like ordinary banking, a loan, evaluation, a transfer.  Only together did they form a pipe that ran in one direction.  Out.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.76,
+   "start": 253.968,
+   "end": 265.67
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "And here's where the driver comes in.",
+    "According to prosecutors, from February 2019 to 2022, Lan's driver carried cash from SCB to her company's headquarters and to her home. His notebook added up to 108 trillion dong, plus 14.7 million US dollars."
+   ],
+   "cues": [
+    "[AI-01 variant] Close-up of a worn notebook on a van dashboard, columns of handwritten numbers, a gloved hand turning the page, no readable names"
+   ],
+   "gap_after": 0.55,
+   "id": 21,
+   "text": "And here's where the driver comes in. According to prosecutors, from February 2019 to 2022, Lan's driver carried cash from SCB to her company's headquarters and to her home. His notebook added up to 108 trillion dong, plus 14.7 million US dollars.",
+   "wer": 0.037,
+   "asr": "And here's where the driver comes in.  According to prosecutors from February 2019 to 2022,  Lan's driver carried cash from SCB  to her company's headquarters into her home.  His notebook added up to 108 trillion dong  plus 14.7 million US dollars.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 20.64,
+   "start": 266.22,
+   "end": 286.796
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Even in Vietnam's largest banknote, that is more than two hundred million notes."
+   ],
+   "cues": [
+    "[SCREEN] Math card: \"Largest note: ₫500,000 → 108 trillion = 216 million notes\" (label \"our math\")"
+   ],
+   "gap_after": 0.55,
+   "id": 22,
+   "text": "Even in Vietnam's largest banknote, that is more than two hundred million notes.",
+   "wer": 0.0,
+   "asr": "Even in Vietnam's largest banknote, that is more than 200 million notes.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.6,
+   "start": 287.346,
+   "end": 292.885
+  },
+  {
+   "section": "3",
+   "section_title": "The piggy bank",
+   "section_index": 3,
+   "lines": [
+    "Over ten years, the court said, SCB made more than 2,500 loans into Lan's network.",
+    "It found that she had embezzled 304 trillion dong. About 12.5 billion dollars.",
+    "International media noted that was close to three percent of Vietnam's entire economy in 2022."
+   ],
+   "cues": [
+    "[SCREEN] Big number stack: \"2,500+ loans · 10 years · ₫304 trillion embezzled (≈ $12.5B)\""
+   ],
+   "gap_after": 1.2,
+   "id": 23,
+   "text": "Over ten years, the court said, SCB made more than 2,500 loans into Lan's network. It found that she had embezzled 304 trillion dong. About 12.5 billion dollars. International media noted that was close to three percent of Vietnam's entire economy in 2022.",
+   "wer": 0.036,
+   "asr": "Over 10 years, the court said, SCB made more than 2,500 loans into Lan's network.  It found that she had embezzled 304 trillion dong, about $12.5 billion.  International media noted that was close to 3% of Vietnam's entire economy in 2022.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 21.6,
+   "start": 293.435,
+   "end": 314.97
+  },
+  {
+   "section": "4",
+   "section_title": "Paying the referee",
+   "section_index": 4,
+   "lines": [
+    "A hole that big should be visible from the outside.",
+    "Banks in Vietnam are inspected by the State Bank, the central bank.",
+    "And SCB was inspected."
+   ],
+   "cues": [
+    "[AI-05] Three plain white foam boxes stacked on the floor of a dim office, tape on the lids, a desk lamp throwing a hard shadow, no people"
+   ],
+   "gap_after": 0.55,
+   "id": 24,
+   "text": "A hole that big should be visible from the outside. Banks in Vietnam are inspected by the State Bank, the central bank. And SCB was inspected.",
+   "wer": 0.0,
+   "asr": "A hole that big should be visible from the outside.  Banks in Vietnam are inspected by the state bank, the central bank, and SCB was inspected.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.28,
+   "start": 316.17,
+   "end": 325.386
+  },
+  {
+   "section": "4",
+   "section_title": "Paying the referee",
+   "section_index": 4,
+   "lines": [
+    "According to the court, the bank's general director paid the head of a central-bank inspection team 5.2 million dollars, in four payments.",
+    "International reporting from the trial described some of that cash being delivered in styrofoam boxes."
+   ],
+   "cues": [
+    "[SCREEN] Timeline: \"SBV inspection of SCB\" → red stamp \"RESULTS ALTERED\" → caption \"court finding\""
+   ],
+   "gap_after": 0.25,
+   "id": 25,
+   "text": "According to the court, the bank's general director paid the head of a central-bank inspection team 5.2 million dollars, in four payments. International reporting from the trial described some of that cash being delivered in styrofoam boxes.",
+   "wer": 0.025,
+   "asr": "According to the court, the bank's general director paid the head of a central bank inspection team  $5.2 million in four payments.  International reporting from the trial described some of that cash being delivered in styrofoam boxes.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.72,
+   "start": 325.936,
+   "end": 340.601
+  },
+  {
+   "section": "4",
+   "section_title": "Paying the referee",
+   "section_index": 4,
+   "lines": [
+    "In return, the court found, the inspection findings were softened. SCB's real condition stayed hidden.",
+    "So the bank kept looking healthy on paper. Depositors kept depositing. And the hole kept growing."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 26,
+   "text": "In return, the court found, the inspection findings were softened. SCB's real condition stayed hidden. So the bank kept looking healthy on paper. Depositors kept depositing. And the hole kept growing.",
+   "wer": 0.0,
+   "asr": "In return, the court found the inspection findings were softened.  SCB's real condition stayed hidden, so the bank kept looking healthy on paper.  Depositors kept depositing, and the hole kept growing.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.92,
+   "start": 340.851,
+   "end": 354.717
+  },
+  {
+   "section": "4",
+   "section_title": "Paying the referee",
+   "section_index": 4,
+   "lines": [
+    "The inspection chief was sentenced to life in prison. Her appeal was rejected.",
+    "She was one of fifteen former central-bank officials who stood trial alongside Lan, along with officials from the Government Inspectorate and the State Audit Office."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"Former central-bank inspection chief — bribery — LIFE IMPRISONMENT (upheld on appeal, Dec 2024)\""
+   ],
+   "gap_after": 1.0,
+   "id": 27,
+   "text": "The inspection chief was sentenced to life in prison. Her appeal was rejected. She was one of fifteen former central-bank officials who stood trial alongside Lan, along with officials from the Government Inspectorate and the State Audit Office.",
+   "wer": 0.0,
+   "asr": "The inspection chief was sentenced to life in prison.  Her appeal was rejected.  She was one of 15 former central bank officials who stood trial alongside  LAN along with officials from the government inspectorate and  the state audit office.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.52,
+   "start": 355.267,
+   "end": 372.721
+  },
+  {
+   "section": "4",
+   "section_title": "Paying the referee",
+   "section_index": 4,
+   "lines": [
+    "Think about what that means.",
+    "The people whose job was to check the bank were, according to the court, part of how the bank stayed unchecked."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 28,
+   "text": "Think about what that means. The people whose job was to check the bank were, according to the court, part of how the bank stayed unchecked.",
+   "wer": 0.0,
+   "asr": "Think about what that means.  The people whose job was to check the bank were,  according to the court, part of how the bank stayed unchecked.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.08,
+   "start": 373.721,
+   "end": 381.748
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "From 2018, the court found, Lan's group tapped a second source of cash: ordinary savers."
+   ],
+   "cues": [
+    "[AI-02 variant] A bank branch interior with glossy posters, an older couple seen from behind at a counter, a staff member in uniform smiling, no faces, no logos"
+   ],
+   "gap_after": 0.55,
+   "id": 29,
+   "text": "From 2018, the court found, Lan's group tapped a second source of cash: ordinary savers.",
+   "wer": 0.056,
+   "asr": "From 2018, the court found,  LANS group tapped a second source of cash,  ordinary savers.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.8,
+   "start": 382.948,
+   "end": 389.696
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "Four companies linked to Van Thinh Phat issued 25 batches of corporate bonds between 2018 and 2020.",
+    "The court found these were fake bonds, and the money raised was never used for the purposes stated."
+   ],
+   "cues": [
+    "[SCREEN] Flow diagram: \"4 companies → 25 bond issues (2018–2020) → sold through a securities firm & SCB branches → 35,824 buyers\""
+   ],
+   "gap_after": 0.25,
+   "id": 30,
+   "text": "Four companies linked to Van Thinh Phat issued 25 batches of corporate bonds between 2018 and 2020. The court found these were fake bonds, and the money raised was never used for the purposes stated.",
+   "wer": 0.048,
+   "asr": "Four companies linked to Van Dinfat issued 25 batches of corporate bonds between 2018  and 2020.  The court found these were fake bonds, and the money raised was never used for the purposes  stated.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.04,
+   "start": 390.246,
+   "end": 403.233
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "They were sold through a securities firm and SCB's own branches."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 31,
+   "text": "They were sold through a securities firm and SCB's own branches.",
+   "wer": 0.0,
+   "asr": "They were sold through a securities firm and SCB's own branches.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.76,
+   "start": 403.483,
+   "end": 407.187
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "To a saver, the difference between a deposit and a bond can look like a few lines of small print. A deposit is a claim on the bank, backed, up to a limit, by deposit insurance. A corporate bond is a loan to a company. If the company can't pay, you can lose it."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 32,
+   "text": "To a saver, the difference between a deposit and a bond can look like a few lines of small print. A deposit is a claim on the bank, backed, up to a limit, by deposit insurance. A corporate bond is a loan to a company. If the company can't pay, you can lose it.",
+   "wer": 0.0,
+   "asr": "To a saver, the difference between a deposit and a bond can look like a few lines of small print.  A deposit is a claim on the bank, backed up to a limit by deposit insurance.  A corporate bond is a loan to a company. If the company can't pay, you can lose it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.92,
+   "start": 407.437,
+   "end": 425.304
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "Most of the buyers were SCB depositors. According to state media, bank staff reassured them the bonds were safe, like a savings account."
+   ],
+   "cues": [
+    "[SCREEN] Key phrase: \"As safe as a deposit?\""
+   ],
+   "gap_after": 0.25,
+   "id": 33,
+   "text": "Most of the buyers were SCB depositors. According to state media, bank staff reassured them the bonds were safe, like a savings account.",
+   "wer": 0.0,
+   "asr": "Most of the buyers were SCB depositors. According to state media,  bank staff reassured them the bonds were safe, like a savings account.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.48,
+   "start": 425.854,
+   "end": 434.272
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "State media also reported that the bank's general director held training sessions for thousands of sales staff on how to sell them."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 34,
+   "text": "State media also reported that the bank's general director held training sessions for thousands of sales staff on how to sell them.",
+   "wer": 0.0,
+   "asr": "State media also reported that the bank's general director held training sessions for  thousands of sales staff on how to sell them.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.96,
+   "start": 434.522,
+   "end": 441.431
+  },
+  {
+   "section": "5",
+   "section_title": "The bonds sold at the counter",
+   "section_index": 5,
+   "lines": [
+    "The court counted 35,824 victims and more than 30 trillion dong taken, about 1.2 billion dollars.",
+    "Where did it go? Repaying bank loans. Paying interest on older bonds. Projects. Transfers abroad. And, the court said, Lan's personal spending."
+   ],
+   "cues": [
+    "[SCREEN] Count-up: \"35,824 victims · ₫30 trillion (≈ $1.2B)\""
+   ],
+   "gap_after": 1.2,
+   "id": 35,
+   "text": "The court counted 35,824 victims and more than 30 trillion dong taken, about 1.2 billion dollars. Where did it go? Repaying bank loans. Paying interest on older bonds. Projects. Transfers abroad. And, the court said, Lan's personal spending.",
+   "wer": 0.043,
+   "asr": "The court counted 35,824 victims and more than 30 trillion dong taken, about $1.2 billion.  Where did it go?  Repaying bank loans, paying interest on older bonds, projects, transfers abroad, and the  court said lands personal spending.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 20.0,
+   "start": 441.981,
+   "end": 461.927
+  },
+  {
+   "section": "6",
+   "section_title": "The run",
+   "section_index": 6,
+   "lines": [
+    "In October 2022, it all came apart.",
+    "Police arrested Truong My Lan."
+   ],
+   "cues": [
+    "[AI-06] Long queue of people outside a modern bank branch at dawn, seen from behind and from far away, umbrellas, uneasy mood, no logos"
+   ],
+   "gap_after": 0.55,
+   "id": 36,
+   "text": "In October 2022, it all came apart. Police arrested Truong My Lan.",
+   "wer": 0.062,
+   "asr": "In October 2022, it all came apart. Police arrested Truong Mai Lan.",
+   "tries": 2,
+   "sr": 24000,
+   "dur": 5.28,
+   "start": 463.127,
+   "end": 468.346
+  },
+  {
+   "section": "6",
+   "section_title": "The run",
+   "section_index": 6,
+   "lines": [
+    "Within days, worried depositors crowded SCB branches to pull out their savings.",
+    "For many families, SCB was simply the bank down the street. They had no idea who really controlled it."
+   ],
+   "cues": [
+    "[SCREEN] Timeline, Oct 2022: \"Lan arrested\" → \"crowds at SCB branches\" → \"State Bank places SCB under special control\""
+   ],
+   "gap_after": 0.25,
+   "id": 37,
+   "text": "Within days, worried depositors crowded SCB branches to pull out their savings. For many families, SCB was simply the bank down the street. They had no idea who really controlled it.",
+   "wer": 0.0,
+   "asr": "Within days, worried depositors crowded SCB branches to pull out their savings.  For many families, SCB was simply the bank down the street.  They had no idea who really controlled it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.92,
+   "start": 468.896,
+   "end": 480.756
+  },
+  {
+   "section": "6",
+   "section_title": "The run",
+   "section_index": 6,
+   "lines": [
+    "The State Bank placed SCB under special control and sent in managers from the big state-owned banks."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 38,
+   "text": "The State Bank placed SCB under special control and sent in managers from the big state-owned banks.",
+   "wer": 0.0,
+   "asr": "The state bank placed SCB under special control and sent in managers from the big state-owned  banks.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.88,
+   "start": 481.006,
+   "end": 487.831
+  },
+  {
+   "section": "6",
+   "section_title": "The run",
+   "section_index": 6,
+   "lines": [
+    "To keep the bank alive, the central bank kept lending to it.",
+    "By February 2025, Reuters reported, the central bank had lent SCB about 25.6 billion dollars.",
+    "And the bondholders discovered that the companies behind their bonds could not pay."
+   ],
+   "cues": [
+    "[SCREEN] Compare card: \"₫304T embezzled (court)\" vs \"≈ $25.6B lent to SCB by the central bank, Feb 2025 (Reuters)\""
+   ],
+   "gap_after": 0.25,
+   "id": 39,
+   "text": "To keep the bank alive, the central bank kept lending to it. By February 2025, Reuters reported, the central bank had lent SCB about 25.6 billion dollars. And the bondholders discovered that the companies behind their bonds could not pay.",
+   "wer": 0.021,
+   "asr": "To keep the bank alive, the central bank kept lending to it.  By February 2025, Reuters reported the central bank had lent SCB about $25.6 billion and  the bondholders discovered that the companies behind their bonds could not pay.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.52,
+   "start": 488.381,
+   "end": 503.848
+  },
+  {
+   "section": "6",
+   "section_title": "The run",
+   "section_index": 6,
+   "lines": [
+    "According to state media, they filed complaints with police and petitioned the authorities, asking for their money back.",
+    "In effect, central-bank money was keeping a private bank alive, because letting it fail risked spreading panic through the whole system."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 40,
+   "text": "According to state media, they filed complaints with police and petitioned the authorities, asking for their money back. In effect, central-bank money was keeping a private bank alive, because letting it fail risked spreading panic through the whole system.",
+   "wer": 0.0,
+   "asr": "According to state media, they filed complaints with police and petitioned the authorities asking for their money back.  In effect, central bank money was keeping a private bank alive because letting it fail risked spreading panic through the whole system.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.92,
+   "start": 504.098,
+   "end": 519.959
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "On March 5, 2024, the trial opened at the Ho Chi Minh City People's Court.",
+    "It was part of the Communist Party's long-running anti-corruption campaign, known as the \"blazing furnace\"."
+   ],
+   "cues": [
+    "[SCREEN] Exterior photo of the Ho Chi Minh City People's Court (Wikimedia CC), caption \"March 5, 2024\""
+   ],
+   "gap_after": 0.55,
+   "id": 41,
+   "text": "On March 5, 2024, the trial opened at the Ho Chi Minh City People's Court. It was part of the Communist Party's long-running anti-corruption campaign, known as the \"blazing furnace\".",
+   "wer": 0.028,
+   "asr": "On March 5th, 2024, the trial opened at the Ho Chi Minh City People's Court.  It was part of the Communist Party's long-running anti-corruption campaign,  known as the Blazing Furnace.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.0,
+   "start": 521.159,
+   "end": 533.093
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "Eighty-six defendants. About 2,700 people summoned as witnesses. Around 200 lawyers. And, according to the BBC, 104 boxes of case files weighing six tonnes.",
+    "Lan denied embezzling. She said she had only a small stake in the bank, and blamed her subordinates."
+   ],
+   "cues": [
+    "[SCREEN] Number wall, one after another: \"86 defendants · ~2,700 witnesses summoned · ~200 lawyers · 104 boxes of evidence, 6 tonnes\""
+   ],
+   "gap_after": 0.25,
+   "id": 42,
+   "text": "Eighty-six defendants. About 2,700 people summoned as witnesses. Around 200 lawyers. And, according to the BBC, 104 boxes of case files weighing six tonnes. Lan denied embezzling. She said she had only a small stake in the bank, and blamed her subordinates.",
+   "wer": 0.02,
+   "asr": "86 defendants, about 2,700 people summoned as witnesses,  around 200 lawyers, and according to the BBC,  104 boxes of case files weighing six tons.  Lan denied embezzling.  She said she had only a small stake in the bank  and blamed her subordinates.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 21.12,
+   "start": 533.643,
+   "end": 554.699
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "The court rejected that. It said she had orchestrated a sophisticated criminal enterprise."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 43,
+   "text": "The court rejected that. It said she had orchestrated a sophisticated criminal enterprise.",
+   "wer": 0.0,
+   "asr": "The court rejected that. It said she had orchestrated a sophisticated criminal enterprise.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.28,
+   "start": 554.949,
+   "end": 560.176
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "On April 11, 2024, the court gave its verdict."
+   ],
+   "cues": [
+    "[AI-07] Empty courtroom at dusk, rows of benches, a single shaft of light across an empty defendant's dock, no emblems, slow push-in"
+   ],
+   "gap_after": 0.55,
+   "id": 44,
+   "text": "On April 11, 2024, the court gave its verdict.",
+   "wer": 0.0,
+   "asr": "On April 11, 2024, the court gave its verdict.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.68,
+   "start": 560.726,
+   "end": 564.343
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "Truong My Lan: guilty of embezzlement, bribery, and violating banking rules.",
+    "The sentence: death.",
+    "The court ordered her to pay back around 674 trillion dong, about 27 billion dollars, to SCB.",
+    "It said there was little chance the money could all be recovered."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card: \"Truong My Lan — embezzlement: DEATH · bribery: 20 yrs · banking violations: 20 yrs\" + \"Pay SCB ≈ ₫674 trillion (≈ $27B)\""
+   ],
+   "gap_after": 0.55,
+   "id": 45,
+   "text": "Truong My Lan: guilty of embezzlement, bribery, and violating banking rules. The sentence: death. The court ordered her to pay back around 674 trillion dong, about 27 billion dollars, to SCB. It said there was little chance the money could all be recovered.",
+   "wer": 0.062,
+   "asr": "Trung Mai Lain, guilty of embezzlement, bribery, and violating banking rules, the sentence  – death – the court ordered her to pay back around 674 trillion dong, about 27 billion  dollars, to SCB.  It said there was little chance the money could all be recovered.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 20.88,
+   "start": 564.893,
+   "end": 585.717
+  },
+  {
+   "section": "7",
+   "section_title": "The trial",
+   "section_index": 7,
+   "lines": [
+    "Her husband got nine years. Her niece, who ran Van Thinh Phat, got seventeen.",
+    "Four defendants were sentenced to life: two former chairmen of the bank, its former general director, and the central-bank inspection chief.",
+    "Every one of the 86 was found guilty."
+   ],
+   "cues": [
+    "[SCREEN] Ruling card row: \"Husband — 9 yrs · Niece (Van Thinh Phat CEO) — 17 yrs · 4 defendants — life · others — 2 to 20 yrs, some suspended\""
+   ],
+   "gap_after": 1.2,
+   "id": 46,
+   "text": "Her husband got nine years. Her niece, who ran Van Thinh Phat, got seventeen. Four defendants were sentenced to life: two former chairmen of the bank, its former general director, and the central-bank inspection chief. Every one of the 86 was found guilty.",
+   "wer": 0.044,
+   "asr": "Her husband got nine years.  Her niece who ran Van Thyn Fat got 17.  Four defendants were sentenced to life, two former chairmen of the bank, its former general  director and the central bank inspection chief.  Every one of the 86 was found guilty.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.84,
+   "start": 586.267,
+   "end": 604.054
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "In the autumn of 2024, Lan was back in the same court, this time for the bonds.",
+    "On October 17, she was found guilty of fraud, money laundering, and illegally moving money across borders."
+   ],
+   "cues": [
+    "[SCREEN] Timeline: \"Oct 17, 2024 · 2nd trial: LIFE\" → \"Dec 3, 2024 · death sentence upheld\" → \"Apr 21, 2025 · bond fraud cut to 20 yrs\" → \"Jun 2025 · law changed\""
+   ],
+   "gap_after": 0.25,
+   "id": 47,
+   "text": "In the autumn of 2024, Lan was back in the same court, this time for the bonds. On October 17, she was found guilty of fraud, money laundering, and illegally moving money across borders.",
+   "wer": 0.026,
+   "asr": "In the autumn of 2024, Lan was back in the same court, this time for the bonds.  On October 17th, she was found guilty of fraud, money laundering, and illegally moving money  across borders.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.4,
+   "start": 605.254,
+   "end": 619.58
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "The court found she had laundered more than 445 trillion dong, and illegally moved more than 4.5 billion dollars across Vietnam's borders. She was sentenced to life."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 48,
+   "text": "The court found she had laundered more than 445 trillion dong, and illegally moved more than 4.5 billion dollars across Vietnam's borders. She was sentenced to life.",
+   "wer": 0.061,
+   "asr": "The court found she had laundered more than $445 trillion,  and illegally moved more than $4.5 billion across Vietnam's borders.  She was sentenced to life.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.84,
+   "start": 619.83,
+   "end": 633.617
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "In December 2024, an appeals court upheld her death sentence.",
+    "But under Vietnamese law, it noted, she could avoid execution if she paid back at least three-quarters of what she had taken."
+   ],
+   "cues": [
+    "[SCREEN] Key phrase: \"Repay ¾ → life instead of death\""
+   ],
+   "gap_after": 0.25,
+   "id": 49,
+   "text": "In December 2024, an appeals court upheld her death sentence. But under Vietnamese law, it noted, she could avoid execution if she paid back at least three-quarters of what she had taken.",
+   "wer": 0.0,
+   "asr": "In December 2024, an appeals court upheld her death sentence.  But under Vietnamese law, it noted she could avoid execution  if she paid back at least three quarters of what she had taken.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.12,
+   "start": 634.167,
+   "end": 647.229
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "International media called it a race against time: her life seemed to depend on how fast her empire could be sold."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 50,
+   "text": "International media called it a race against time: her life seemed to depend on how fast her empire could be sold.",
+   "wer": 0.0,
+   "asr": "International media called it a race against time.  Her life seemed to depend on how fast her empire could be sold.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.84,
+   "start": 647.479,
+   "end": 655.231
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "In April 2025, ruling on her appeal in the bond case, the court cut her fraud sentence from life to twenty years, after money began to be recovered for the bondholders."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 51,
+   "text": "In April 2025, ruling on her appeal in the bond case, the court cut her fraud sentence from life to twenty years, after money began to be recovered for the bondholders.",
+   "wer": 0.0,
+   "asr": "In April 2025, ruling on her appeal in the bond case, the court cut her fraud sentence  from life to 20 years after money began to be recovered for the bondholders.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.68,
+   "start": 655.481,
+   "end": 667.059
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "Then the law itself changed.",
+    "In June 2025, Vietnam's National Assembly abolished the death penalty for eight crimes, including embezzlement."
+   ],
+   "cues": [
+    "[SCREEN] Text card: \"June 2025 — National Assembly removes the death penalty for embezzlement (in force July 1, 2025)\""
+   ],
+   "gap_after": 0.25,
+   "id": 52,
+   "text": "Then the law itself changed. In June 2025, Vietnam's National Assembly abolished the death penalty for eight crimes, including embezzlement.",
+   "wer": 0.0,
+   "asr": "Then, the law itself changed. In June 2025, Vietnam's National Assembly abolished  the death penalty for eight crimes, including embezzlement.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.08,
+   "start": 668.059,
+   "end": 678.074
+  },
+  {
+   "section": "8",
+   "section_title": "Death row, then a second trial",
+   "section_index": 8,
+   "lines": [
+    "Death sentences already handed down for those crimes would not be carried out. Instead, the head of the Supreme People's Court would convert them to life in prison.",
+    "Her lawyer told AFP that Truong My Lan would be spared."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 53,
+   "text": "Death sentences already handed down for those crimes would not be carried out. Instead, the head of the Supreme People's Court would convert them to life in prison. Her lawyer told AFP that Truong My Lan would be spared.",
+   "wer": 0.051,
+   "asr": "Death sentences already handed down for those crimes would not be carried out.  Instead, the head of the Supreme People's Court would convert them to life in prison.  Her lawyer told AFP that Trong My Land would be spared.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.76,
+   "start": 678.324,
+   "end": 692.022
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "For the victims, the question was never her sentence. It was their money."
+   ],
+   "cues": [
+    "[AI-08] A warehouse of auction lots under harsh light: a luxury handbag in a glass case, a black limousine under a dust cover, numbered tags, no logos, no people"
+   ],
+   "gap_after": 0.55,
+   "id": 54,
+   "text": "For the victims, the question was never her sentence. It was their money.",
+   "wer": 0.0,
+   "asr": "For the victims, the question was never her sentence.  It was their money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.56,
+   "start": 693.222,
+   "end": 697.73
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "Investigators had frozen more than 1,200 properties linked to her, and hundreds of millions of SCB shares held in her name or her proxies' names.",
+    "Ho Chi Minh City's civil judgment enforcement office began paying bondholders in June 2025."
+   ],
+   "cues": [
+    "[SCREEN] Self-made bar: \"Owed to bondholders: ₫30.08T\" with a fill bar rising round by round: \"Jun 2025 → Jul 2026: 10 payouts ≈ ₫12.36T (~41%)\""
+   ],
+   "gap_after": 0.25,
+   "id": 55,
+   "text": "Investigators had frozen more than 1,200 properties linked to her, and hundreds of millions of SCB shares held in her name or her proxies' names. Ho Chi Minh City's civil judgment enforcement office began paying bondholders in June 2025.",
+   "wer": 0.022,
+   "asr": "Investigators had frozen more than 1200 properties linked to her and hundreds of millions of SCB  shares held in her name or her proxy's names. Ho Chi Minh City's Civil Judgment enforcement  office began paying bondholders in June 2025.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.12,
+   "start": 698.28,
+   "end": 715.337
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "By May 2026, according to the Vietnamese government's news portal, nine rounds had paid out about 12 trillion dong, roughly 40 percent of what was owed, to more than 42,000 creditors."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 56,
+   "text": "By May 2026, according to the Vietnamese government's news portal, nine rounds had paid out about 12 trillion dong, roughly 40 percent of what was owed, to more than 42,000 creditors.",
+   "wer": 0.027,
+   "asr": "By May 2026, according to the Vietnamese government's news portal, nine rounds had paid out about  12 trillion dong, roughly 40% of what was owed to more than 42,000 creditors.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.48,
+   "start": 715.587,
+   "end": 730.011
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "A tenth payment followed in July 2026. It was worth about one percent of what was owed.",
+    "For a retiree who put their savings into a bond they believed was a deposit, that means waiting, year after year, for a slice at a time."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 57,
+   "text": "A tenth payment followed in July 2026. It was worth about one percent of what was owed. For a retiree who put their savings into a bond they believed was a deposit, that means waiting, year after year, for a slice at a time.",
+   "wer": 0.021,
+   "asr": "A tenth payment followed in July 2026.  It was worth about 1% of what was owed.  For a retiree who put their savings into a bond they believed was a deposit.  That means waiting, year after year, for a slice at a time.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.44,
+   "start": 730.261,
+   "end": 745.639
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "Her possessions are being sold. Two designer handbags. A Maybach. A yacht that, after five auctions, still had no buyer.",
+    "She had asked the court to let her family keep the handbags. It refused."
+   ],
+   "cues": [
+    "[SCREEN] Auction cards: \"2 handbags ≈ $539,000 · Maybach ≈ $630,000 · yacht — 5 auctions, no buyer (Aug 2026)\""
+   ],
+   "gap_after": 0.55,
+   "id": 58,
+   "text": "Her possessions are being sold. Two designer handbags. A Maybach. A yacht that, after five auctions, still had no buyer. She had asked the court to let her family keep the handbags. It refused.",
+   "wer": 0.0,
+   "asr": "Her possessions are being sold.  Two designer handbags, a Maybach, a yacht that, after five auctions, still had no buyer.  She had asked the court to let her family keep the handbags.  It refused.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.96,
+   "start": 746.189,
+   "end": 759.087
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "But the bondholders are only part of the bill.",
+    "The 27 billion dollars owed to SCB is on another scale entirely. The court itself warned that much of it may never come back."
+   ],
+   "cues": [
+    "[SCREEN] Compare card: \"Bondholders: ~41% repaid\" vs \"SCB: ≈ $27B ordered — a fraction recovered\""
+   ],
+   "gap_after": 0.25,
+   "id": 59,
+   "text": "But the bondholders are only part of the bill. The 27 billion dollars owed to SCB is on another scale entirely. The court itself warned that much of it may never come back.",
+   "wer": 0.088,
+   "asr": "But the bond holders are only part of the bill.  The $27 billion owed to SCB is on another scale entirely.  The court itself warned that much of it may never come back.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.08,
+   "start": 759.637,
+   "end": 771.646
+  },
+  {
+   "section": "9",
+   "section_title": "Where's the money?",
+   "section_index": 9,
+   "lines": [
+    "And SCB? As of August 2026, state media reported, it was still under special control, and closing branches."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 60,
+   "text": "And SCB? As of August 2026, state media reported, it was still under special control, and closing branches.",
+   "wer": 0.0,
+   "asr": "And SCB? As of August 2026, state media reported it was still under special control and closing branches.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.52,
+   "start": 771.896,
+   "end": 781.349
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "Strip away the numbers, and the shape is simple.",
+    "One. The lender and the borrower are secretly the same person.",
+    "Two. The loans hide behind companies that exist mostly on paper.",
+    "Three. The collateral is inflated, so everything looks covered."
+   ],
+   "cues": [
+    "[SCREEN] Five-step checklist card, each line ticking on: \"1. The lender and the borrower are secretly the same person / 2. Loans hidden behind shell companies / 3. Inflated collateral / 4. Inspectors who look away / 5. Risky products sold as 'safe' to savers\""
+   ],
+   "gap_after": 0.25,
+   "id": 61,
+   "text": "Strip away the numbers, and the shape is simple. One. The lender and the borrower are secretly the same person. Two. The loans hide behind companies that exist mostly on paper. Three. The collateral is inflated, so everything looks covered.",
+   "wer": 0.0,
+   "asr": "Strip away the numbers and the shape is simple.  One, the lender and the borrower are secretly the same person.  Two, the loans hide behind companies that exist mostly on paper.  Three, the collateral is inflated so everything looks covered.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.2,
+   "start": 782.549,
+   "end": 797.698
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "Four. The people who are supposed to check, don't. Or are paid not to.",
+    "And five. When the hole grows, it gets filled with money from ordinary savers, sold something risky as if it were a deposit."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 62,
+   "text": "Four. The people who are supposed to check, don't. Or are paid not to. And five. When the hole grows, it gets filled with money from ordinary savers, sold something risky as if it were a deposit.",
+   "wer": 0.027,
+   "asr": "4. The people who are supposed to check don't, or are paid not to.  And 5. When the whole grows, it gets filled with money from ordinary savers, sold something  risky as if it were a deposit.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.08,
+   "start": 797.948,
+   "end": 809.975
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "In this case, one detail made it worse. The bonds were sold inside the bank, by people wearing the bank's uniform. The trust people had in the bank was the product.",
+    "This is not unique to Vietnam. Insider lending has broken banks all over the world."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 63,
+   "text": "In this case, one detail made it worse. The bonds were sold inside the bank, by people wearing the bank's uniform. The trust people had in the bank was the product. This is not unique to Vietnam. Insider lending has broken banks all over the world.",
+   "wer": 0.0,
+   "asr": "In this case, one detail made it worse.  The bonds were sold inside the bank by people wearing the bank's uniform.  The trust people had in the bank was the product.  This is not unique to Vietnam.  Insider lending has broken banks all over the world.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 18.64,
+   "start": 810.975,
+   "end": 829.549
+  },
+  {
+   "section": "10",
+   "section_title": "The pattern",
+   "section_index": 10,
+   "lines": [
+    "If someone at a bank counter offers you a product with a better rate than a deposit, ask one question: who is actually borrowing my money?"
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 64,
+   "text": "If someone at a bank counter offers you a product with a better rate than a deposit, ask one question: who is actually borrowing my money?",
+   "wer": 0.0,
+   "asr": "If someone at a bank counter offers you a product with a better rate than a deposit,  ask one question, who is actually borrowing my money?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.52,
+   "start": 829.799,
+   "end": 837.257
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "She began at a market stall. She ended with a court bill bigger than most companies will ever see.",
+    "Her empire was built on property. But what it really ran on was other people's trust.",
+    "And somewhere in between, a bank became a wallet."
+   ],
+   "cues": [
+    "[AI-03 variant] The same market at night, stalls shuttered, one light still on"
+   ],
+   "gap_after": 1.0,
+   "id": 65,
+   "text": "She began at a market stall. She ended with a court bill bigger than most companies will ever see. Her empire was built on property. But what it really ran on was other people's trust. And somewhere in between, a bank became a wallet.",
+   "wer": 0.0,
+   "asr": "She began at a market stall.  She ended with a court bill bigger than most companies will ever see.  Her empire was built on property, but  what it really ran on was other people's trust.  And somewhere in between, a bank became a wallet.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.92,
+   "start": 838.457,
+   "end": 854.326
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "Next time: China. An online platform that promised safety, backed by contracts and celebrity ads… and 900,000 investors who believed it."
+   ],
+   "cues": [
+    "[SCREEN] Teaser card: dark map of Asia, a red dot pulsing over China, text: \"900,000 investors\""
+   ],
+   "gap_after": 0.55,
+   "id": 66,
+   "text": "Next time: China. An online platform that promised safety, backed by contracts and celebrity ads… and 900,000 investors who believed it.",
+   "wer": 0.0,
+   "asr": "Next time, China, an online platform that promised safety, backed by contracts and  celebrity ads and 900,000 investors who believed it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.92,
+   "start": 855.326,
+   "end": 865.17
+  },
+  {
+   "section": "11",
+   "section_title": "Outro",
+   "section_index": 11,
+   "lines": [
+    "Subscribe so you don't miss it.",
+    "And tell me in the comments: would you know if your bank was selling you something that wasn't a deposit?"
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 67,
+   "text": "Subscribe so you don't miss it. And tell me in the comments: would you know if your bank was selling you something that wasn't a deposit?",
+   "wer": 0.0,
+   "asr": "Subscribe so you don't miss it. And tell me in the comments.  Would you know if your bank was selling you something that wasn't a deposit?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.12,
+   "start": 865.72,
+   "end": 872.776
+  }
+ ]
+}

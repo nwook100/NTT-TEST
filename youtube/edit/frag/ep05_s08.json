@@ -1,0 +1,260 @@
+{
+ "section": "8",
+ "chunks": [
+  {
+   "id": 47,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s08_chapter_the_verdicts.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s08_pc_najib",
+     "args": {
+      "photo": "assets/ep05_1mdb/people/najib_razak_2017.jpg",
+      "name": "NAJIB RAZAK",
+      "kicker": "FORMER PRIME MINISTER OF MALAYSIA",
+      "sub": "Convicted July 28, 2020 · 2025 conviction under appeal",
+      "credit": "Photo: U.S. Embassy Kuala Lumpur / Public domain",
+      "grade": "bw",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_kl_courts_2.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_03_src_guilty_12_years_zoom.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s08_stamp_guilty_src",
+     "args": {
+      "word": "TWELVE YEARS",
+      "sub": "IN PRISON — GUILTY ON ALL SEVEN CHARGES",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_palace_of_justice_2.jpg",
+     "fx": "in",
+     "crop": "top"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/prison_cell_bars_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_first_pm_jailed",
+     "args": {
+      "lines": ["The first former Malaysian", "prime minister to be jailed."],
+      "kicker": "AUGUST 2022",
+      "red": ["jailed."],
+      "dur": 4.5,
+      "stagger": 1.0,
+      "size": 88,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_04_pardons_board_6_years_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s08_kp_big_one",
+     "args": {
+      "lines": ["Then came the big one."],
+      "red": ["big"],
+      "dur": 3.5,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_kl_courts_1.jpg",
+     "fx": "right",
+     "crop": "top"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s08_tw_dec_26_2025",
+     "args": {
+      "text": "DECEMBER 26, 2025",
+      "sub": "after a trial that lasted more than six years",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_05_1mdb_guilty_25_charges_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s08_count_rm_11_38b",
+     "args": {
+      "to": 11.38,
+      "decimals": 2,
+      "prefix": "RM ",
+      "suffix": " BILLION",
+      "kicker": "FIFTEEN YEARS IN PRISON — AND A FINE OF",
+      "sublabel": "roughly 2.8 billion dollars",
+      "end_red": true,
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_06_judge_letters_forgeries_zoom.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Jho Low was not on trial there,\nand he denies wrongdoing.",
+     "style": "quote"
+    },
+    {
+     "kind": "text",
+     "text": "Najib is appealing,\nand maintains his innocence.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_07_royal_pardon_house_arrest_zoom.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_kajang_prison_1.jpg",
+     "fx": "left",
+     "crop": "top"
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s08_tw_aug_2028",
+     "args": {
+      "text": "AUGUST 2028",
+      "sub": "his fifteen-year 1MDB sentence is due to start",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "He has asked the court\nto suspend it pending appeal.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_brooklyn_court_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_08_goldman_2_9_billion_zoom.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_09_ng_10_years_leissner_2_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s08_brooklyn_court_2.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s08_stamp_two_years",
+     "args": {
+      "word": "TWO YEARS",
+      "sub": "TIM LEISSNER — PLEADED GUILTY, COOPERATED",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  { "chunk": 48, "name": "impact", "offset": 0.0, "gain_db": -12 },
+  { "chunk": 48, "name": "stamp", "offset": 7.4, "gain_db": -8 },
+  { "chunk": 51, "name": "impact", "offset": 12.3, "gain_db": -12 },
+  { "chunk": 53, "name": "heartbeat", "offset": 0.0, "gain_db": -14 },
+  { "chunk": 57, "name": "stamp", "offset": 2.8, "gain_db": -8 }
+ ],
+ "music_drops": [
+  { "chunk": 51, "dur": 1.5 }
+ ]
+}

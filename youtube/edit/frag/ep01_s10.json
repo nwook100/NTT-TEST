@@ -1,0 +1,45 @@
+{
+  "section": "10",
+  "chunks": [
+    {"id": 75, "segments": [
+      {"kind": "clip", "asset": "assets/ep01_terra_luna/motion/s10_chapter_terra_2_0.mp4"},
+      {"kind": "motion", "fn": "typewriter", "name": "s10_tw_may25_vote",
+       "args": {"text": "MAY 25", "sub": "Terra's community voted for a new blockchain.", "dur": 4.5}},
+      {"kind": "motion", "fn": "typewriter", "name": "s10_tw_may28_live",
+       "args": {"text": "MAY 28", "sub": "It went live.", "dur": 3.0}}
+    ]},
+    {"id": 76, "segments": [
+      {"kind": "text", "text": "The new coin\nwas also called LUNA.", "style": "quote"},
+      {"kind": "motion", "fn": "compare", "name": "s10_cmp_new_vs_classic",
+       "args": {"left": {"head": "New chain · May 28", "big": "LUNA", "sub": "The new coin was also called LUNA."},
+                "right": {"head": "Old chain, renamed", "big": "Terra Classic", "sub": "Old coins became LUNA Classic and USTC."},
+                "title": "TERRA 2.0", "dur": 6.0}}
+    ]},
+    {"id": 77, "segments": [
+      {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_airdrops_new_luna",
+       "args": {"lines": ["Holders of the old coins", "received airdrops of new LUNA,", "based on what they held and when."],
+                "red": ["airdrops"], "dur": 5.0, "stagger": 1.2, "size": 100}},
+      {"kind": "text", "text": "One thing was missing.", "style": "quote"},
+      {"kind": "motion", "fn": "stamp", "name": "s10_stamp_no_new_ust",
+       "args": {"word": "NO NEW UST", "dur": 3.3}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/server_room_2.mp4"}
+    ]},
+    {"id": 78, "segments": [
+      {"kind": "motion", "fn": "count_up", "name": "s10_count_new_luna_17",
+       "args": {"to": 17, "prefix": "$", "kicker": "THE NEW LUNA BRIEFLY TRADED ABOVE",
+                "dur": 3.3, "count_time": 1.6}},
+      {"kind": "motion", "fn": "key_phrase", "name": "s10_kp_quickly_fell",
+       "args": {"lines": ["Then quickly fell", "as people sold what they'd been given."],
+                "red": ["fell"], "dur": 3.5, "stagger": 0.9, "size": 104}},
+      {"kind": "video", "asset": "assets/ep01_terra_luna/stock/rain_window_night_1.mp4"}
+    ]}
+  ],
+  "sfx": [
+    {"chunk": 75, "name": "typewriter", "offset": 4.3, "gain_db": -16},
+    {"chunk": 77, "name": "stamp", "offset": 8.6, "gain_db": -8},
+    {"chunk": 78, "name": "glitch", "offset": 3.35, "gain_db": -18}
+  ],
+  "music_drops": [
+    {"chunk": 77, "dur": 10.0}
+  ]
+}

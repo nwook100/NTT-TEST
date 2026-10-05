@@ -1,0 +1,2278 @@
+{
+ "voice": {
+  "speaker": "Aiden",
+  "instruct": "Calm, low, serious true-crime documentary narrator. Measured pace, clear American English, slight tension, no excitement.",
+  "language": "English",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+ },
+ "duration": 1322.24,
+ "loudness_lufs": -16.0,
+ "chunks": [
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "May 2022.",
+    "In just a few days, a cryptocurrency worth around 40 billion dollars falls to almost zero.",
+    "Its price had been above 100 dollars only a month earlier. Now it's worth less than a cent."
+   ],
+   "cues": [
+    "[AI-01] Dark trading room, dozens of screens turning red one after another"
+   ],
+   "gap_after": 0.55,
+   "id": 0,
+   "text": "May 2022. In just a few days, a cryptocurrency worth around 40 billion dollars falls to almost zero. Its price had been above 100 dollars only a month earlier. Now it's worth less than a cent.",
+   "wer": 0.049,
+   "asr": "May 2022. In just a few days, a cryptocurrency worth around $40 billion falls to almost zero.  Its price had been above $100 only a month earlier. Now it's worth less than a cent.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.2,
+   "start": 0.0,
+   "end": 13.141
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "In apartments across Seoul, in Singapore, in the United States, hundreds of thousands of people watch their savings disappear in real time.",
+    "Many of them had been told this was the safe option."
+   ],
+   "cues": [
+    "[AI-02] Seoul apartment at night, a lone phone screen glowing in the dark, a hand trembling"
+   ],
+   "gap_after": 1.0,
+   "id": 1,
+   "text": "In apartments across Seoul, in Singapore, in the United States, hundreds of thousands of people watch their savings disappear in real time. Many of them had been told this was the safe option.",
+   "wer": 0.061,
+   "asr": "In apartments across Seoul and Singapore, in the United States,  hundreds of thousands of people watched their savings disappear in real time.  Many of them had been told this was the safe option.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.84,
+   "start": 13.691,
+   "end": 25.466
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "The man behind it had once mocked his critics online.",
+    "A year later, he would be arrested at an airport in the Balkans with a fake passport."
+   ],
+   "cues": [
+    "[SCREEN] Black screen, white text: \"I don't debate the poor on Twitter.\""
+   ],
+   "gap_after": 0.25,
+   "id": 2,
+   "text": "The man behind it had once mocked his critics online. A year later, he would be arrested at an airport in the Balkans with a fake passport.",
+   "wer": 0.0,
+   "asr": "The man behind it had once mocked his critics online.  A year later, he would be arrested at an airport in the Balkans with a fake passport.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.16,
+   "start": 26.466,
+   "end": 34.573
+  },
+  {
+   "section": "0",
+   "section_title": "Cold open",
+   "section_index": 0,
+   "lines": [
+    "And years after that, standing in a New York courtroom, he would finally admit what really happened the first time his coin nearly died.",
+    "This is the story of Terra-Luna."
+   ],
+   "cues": [],
+   "gap_after": 1.5,
+   "trailing_cues": [
+    "[SCREEN] Channel logo sting (under 3 seconds)"
+   ],
+   "id": 3,
+   "text": "And years after that, standing in a New York courtroom, he would finally admit what really happened the first time his coin nearly died. This is the story of Terra-Luna.",
+   "wer": 0.0,
+   "asr": "And years after that, standing in a New York courtroom, he would finally admit what really  happened the first time his coin nearly died.  This is the story of Terra Luna.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.12,
+   "start": 34.823,
+   "end": 45.881
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "Do Kwon grew up in Seoul, studied computer science at Stanford, and worked briefly as a software engineer at Microsoft and Apple.",
+    "Then he came home. In 2016, he started a small wireless networking company in Korea called Anyfi."
+   ],
+   "cues": [
+    "[AI-03] Stylized silhouette of a young man in a hoodie on a startup stage, spotlight, crowd silhouettes (no real face)"
+   ],
+   "gap_after": 0.25,
+   "id": 4,
+   "text": "Do Kwon grew up in Seoul, studied computer science at Stanford, and worked briefly as a software engineer at Microsoft and Apple. Then he came home. In 2016, he started a small wireless networking company in Korea called Anyfi.",
+   "wer": 0.048,
+   "asr": "Dukawon grew up in Seoul, studied computer science at Stanford, and worked briefly as  a software engineer at Microsoft and Apple.  Then he came home.  In 2016, he started a small wireless networking company in Korea called AnyFi.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.52,
+   "start": 47.381,
+   "end": 62.834
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "It was a modest startup. What came next was not."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 5,
+   "text": "It was a modest startup. What came next was not.",
+   "wer": 0.0,
+   "asr": "It was a modest startup. What came next was not.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.36,
+   "start": 63.084,
+   "end": 66.372
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "In early 2018, Kwon co-founded Terraform Labs with Daniel Shin, one of Korea's best-known startup founders.",
+    "Shin had built Ticket Monster, or TMON, one of the country's big e-commerce platforms, and he knew merchants all over Korea."
+   ],
+   "cues": [
+    "[SCREEN] Two dark silhouette cards side by side, names as text only: \"DO KWON — the coder\" / \"DANIEL SHIN — the dealmaker\""
+   ],
+   "gap_after": 0.25,
+   "id": 6,
+   "text": "In early 2018, Kwon co-founded Terraform Labs with Daniel Shin, one of Korea's best-known startup founders. Shin had built Ticket Monster, or TMON, one of the country's big e-commerce platforms, and he knew merchants all over Korea.",
+   "wer": 0.093,
+   "asr": "In early 2018, Kwon co-founded Terraform Labs with Daniel Shin, one of Korea's best-known startup  founders. Shin had built TicketMonster, or T-MAN, one of the country's big e-commerce platforms,  and he knew merchants all over Korea.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.6,
+   "start": 66.922,
+   "end": 84.462
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "The pairing made sense. Kwon had the code. Shin had the customers."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 7,
+   "text": "The pairing made sense. Kwon had the code. Shin had the customers.",
+   "wer": 0.083,
+   "asr": "The pairing made sense.  Kwan had the code, Shin had the customers.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 3.92,
+   "start": 84.712,
+   "end": 88.575
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "Kwon also had something else: a voice. On Twitter, he was sharp, funny, and supremely sure of himself.",
+    "By 2022, around a million people followed him. To many of them, he wasn't just a founder. He was the future."
+   ],
+   "cues": [
+    "[SCREEN] Follower counter ticking up toward \"~1,000,000\" over a dark silhouette of a phone (no real profile shown)"
+   ],
+   "gap_after": 0.55,
+   "id": 8,
+   "text": "Kwon also had something else: a voice. On Twitter, he was sharp, funny, and supremely sure of himself. By 2022, around a million people followed him. To many of them, he wasn't just a founder. He was the future.",
+   "wer": 0.0,
+   "asr": "Kwon also had something else. A voice. On Twitter, he was sharp, funny, and supremely sure of himself.  By 2022, around a million people followed him. To many of them, he wasn't just a founder,  he was the future.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.44,
+   "start": 89.125,
+   "end": 104.513
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "Terra's big idea was a stablecoin.",
+    "Most cryptocurrencies swing wildly in price. A stablecoin is supposed to stay at one dollar. Always.",
+    "That stability is what lets people use crypto like real money."
+   ],
+   "cues": [
+    "[SCREEN] Simple diagram: \"Bitcoin = price goes up and down\" vs \"Stablecoin = always $1\""
+   ],
+   "gap_after": 0.55,
+   "id": 9,
+   "text": "Terra's big idea was a stablecoin. Most cryptocurrencies swing wildly in price. A stablecoin is supposed to stay at one dollar. Always. That stability is what lets people use crypto like real money.",
+   "wer": 0.03,
+   "asr": "Terra's big idea was a stablecoin.  Most cryptocurrencies swing wildly in price.  A stablecoin is supposed to stay at $1.  Always.  That stability is what lets people use crypto like real money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.8,
+   "start": 105.063,
+   "end": 121.81
+  },
+  {
+   "section": "1",
+   "section_title": "The golden boy",
+   "section_index": 1,
+   "lines": [
+    "Most stablecoins do this the boring way. For every coin, they hold a real dollar, or something like it, in reserve.",
+    "Terra didn't."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 10,
+   "text": "Most stablecoins do this the boring way. For every coin, they hold a real dollar, or something like it, in reserve. Terra didn't.",
+   "wer": 0.0,
+   "asr": "Most stablecoins do this the boring way.  For every coin, they hold a real dollar or something like it in reserve.  Terra didn't.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.08,
+   "start": 122.36,
+   "end": 130.364
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "But before we look at how Terra worked, you need to see how it was sold.",
+    "Because in the beginning, the pitch wasn't about getting rich. It was about buying coffee."
+   ],
+   "cues": [
+    "[AI-09] Close-up of a hand tapping a smartphone at a small café counter, a payment terminal glowing, steam from a coffee cup, no logos, no faces"
+   ],
+   "gap_after": 0.55,
+   "id": 11,
+   "text": "But before we look at how Terra worked, you need to see how it was sold. Because in the beginning, the pitch wasn't about getting rich. It was about buying coffee.",
+   "wer": 0.0,
+   "asr": "But before we look at how Terra worked, you need to see how it was sold.  Because in the beginning, the pitch wasn't about getting rich, it was about buying coffee.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.44,
+   "start": 131.564,
+   "end": 140.952
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "In 2019, Shin's other company launched a mobile payments app in Korea called Chai.",
+    "Shoppers got discounts. Merchants paid lower fees than the card companies charged."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 12,
+   "text": "In 2019, Shin's other company launched a mobile payments app in Korea called Chai. Shoppers got discounts. Merchants paid lower fees than the card companies charged.",
+   "wer": 0.0,
+   "asr": "In 2019, Shin's other company launched a mobile payments app in Korea called Chai.  Shoppers got discounts.  Merchants paid lower fees than the card companies charged.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.96,
+   "start": 141.502,
+   "end": 152.401
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "And Terra told the world that, behind the scenes, those payments were running on the Terra blockchain."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 13,
+   "text": "And Terra told the world that, behind the scenes, those payments were running on the Terra blockchain.",
+   "wer": 0.0,
+   "asr": "And Terra told the world that behind the scenes, those payments were running on the Terra blockchain.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.16,
+   "start": 152.651,
+   "end": 158.747
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "Terra didn't only have a dollar coin. It also had a coin pegged to the Korean won, called KRT."
+   ],
+   "cues": [
+    "[SCREEN] Simple diagram: \"Customer pays in won\" → \"KRT (Terra's won-pegged coin)\" → \"Merchant\""
+   ],
+   "gap_after": 0.25,
+   "id": 14,
+   "text": "Terra didn't only have a dollar coin. It also had a coin pegged to the Korean won, called KRT.",
+   "wer": 0.0,
+   "asr": "Terra didn't only have a dollar coin, it also had a coin pegged to the Korean won,  called KRT.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.4,
+   "start": 159.297,
+   "end": 165.634
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "In 2019, Chai partnered with Terraform to bring that won coin into its app. Every coffee, every online order, was supposed to be a tiny proof that Terra worked as money."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 15,
+   "text": "In 2019, Chai partnered with Terraform to bring that won coin into its app. Every coffee, every online order, was supposed to be a tiny proof that Terra worked as money.",
+   "wer": 0.088,
+   "asr": "In 2019, Chai partnered with Terraform to bring that one coin into its app.  Every coffee, every online order was supposed to be a tiny proof that Terra work does money.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.48,
+   "start": 165.884,
+   "end": 178.3
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "Terra's own announcements boasted of hundreds of thousands of users and millions of transactions.",
+    "For investors, this was the killer argument.",
+    "Most crypto projects were just promises. Terra could point to real people, in a real country, paying for real things."
+   ],
+   "cues": [
+    "[SCREEN] Quote card, attributed: \"Terra said: 500,000 users, 2.7 million transactions\""
+   ],
+   "gap_after": 1.0,
+   "id": 16,
+   "text": "Terra's own announcements boasted of hundreds of thousands of users and millions of transactions. For investors, this was the killer argument. Most crypto projects were just promises. Terra could point to real people, in a real country, paying for real things.",
+   "wer": 0.0,
+   "asr": "Terra's own announcements boasted of hundreds of thousands of users and millions of transactions.  For investors, this was the killer argument. Most crypto projects were just promises.  Terra could point to real people in a real country, paying for real things.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.84,
+   "start": 178.85,
+   "end": 196.632
+  },
+  {
+   "section": "2",
+   "section_title": "Coffee paid in crypto",
+   "section_index": 2,
+   "lines": [
+    "Keep the name Chai in mind. It comes back later in this story. In a courtroom."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 17,
+   "text": "Keep the name Chai in mind. It comes back later in this story. In a courtroom.",
+   "wer": 0.0,
+   "asr": "Keep the name Chai in mind.  It comes back later in this story, in a courtroom.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.88,
+   "start": 197.632,
+   "end": 202.46
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "Terra had two coins.",
+    "UST, the stablecoin meant to stay at one dollar.",
+    "And LUNA, its sister coin, whose price could rise and fall."
+   ],
+   "cues": [
+    "[SCREEN] Animated infographic: two coins, UST and LUNA, connected by a two-way arrow labeled \"swap $1 worth\""
+   ],
+   "gap_after": 0.55,
+   "id": 18,
+   "text": "Terra had two coins. UST, the stablecoin meant to stay at one dollar. And LUNA, its sister coin, whose price could rise and fall.",
+   "wer": 0.083,
+   "asr": "Terra had two coins, USD, the stablecoin meant to stay at $1,  and Luna, its sister coin, whose price could rise and fall.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.28,
+   "start": 203.66,
+   "end": 212.887
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "The system promised that you could always swap one UST for one dollar's worth of LUNA, and back.",
+    "If UST dropped below a dollar, traders could buy it cheap, swap it for a dollar of LUNA, and pocket the difference."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 19,
+   "text": "The system promised that you could always swap one UST for one dollar's worth of LUNA, and back. If UST dropped below a dollar, traders could buy it cheap, swap it for a dollar of LUNA, and pocket the difference.",
+   "wer": 0.05,
+   "asr": "The system promised that you could always swap one UST for one dollar's worth of Loona and back.  If UST dropped below a dollar, traders could buy it cheap,  swap it for a dollar of Loona, and pocket the difference.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 213.437,
+   "end": 226.824
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "In theory, that buying pressure would push UST back to a dollar. Forever."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 20,
+   "text": "In theory, that buying pressure would push UST back to a dollar. Forever.",
+   "wer": 0.0,
+   "asr": "In theory that buying pressure would push UST back to a dollar forever.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.24,
+   "start": 227.074,
+   "end": 231.253
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "Here's what that looks like.",
+    "Say UST slips to 97 cents. You buy one. You hand it to the system, which destroys it, and gives you one dollar's worth of brand-new LUNA. You've made three cents."
+   ],
+   "cues": [
+    "[SCREEN] Worked example, step by step: \"Buy 1 UST for $0.97\" → \"Swap for $1.00 of new LUNA\" → \"Profit: 3¢\" → \"That UST is burned\""
+   ],
+   "gap_after": 0.25,
+   "id": 21,
+   "text": "Here's what that looks like. Say UST slips to 97 cents. You buy one. You hand it to the system, which destroys it, and gives you one dollar's worth of brand-new LUNA. You've made three cents.",
+   "wer": 0.0,
+   "asr": "Here's what that looks like. Say, UST slips to 97 cents. You buy one, you hand it to the  system which destroys it and gives you one dollar's worth of brand new Luna. You've  made three cents.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.32,
+   "start": 231.803,
+   "end": 246.072
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "Thousands of traders doing that at once remove UST from circulation, until the price climbs back to a dollar.",
+    "And if UST goes above a dollar, it works the other way: burn LUNA, create UST, sell it."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 22,
+   "text": "Thousands of traders doing that at once remove UST from circulation, until the price climbs back to a dollar. And if UST goes above a dollar, it works the other way: burn LUNA, create UST, sell it.",
+   "wer": 0.0,
+   "asr": "Thousands of traders doing that at once remove UST from circulation, until the price climbs  back to a dollar, and if UST goes above a dollar, it works the other way.  Burn Luna. Create UST. Sell it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.8,
+   "start": 246.322,
+   "end": 261.063
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "There was no vault of dollars behind it. Just code, and confidence.",
+    "And the whole thing depended on one assumption: that LUNA would always be worth something."
+   ],
+   "cues": [
+    "[AI-04] A tower of glowing coins balanced on a single thin glass pillar, slowly rotating"
+   ],
+   "gap_after": 0.55,
+   "id": 23,
+   "text": "There was no vault of dollars behind it. Just code, and confidence. And the whole thing depended on one assumption: that LUNA would always be worth something.",
+   "wer": 0.037,
+   "asr": "There is no vault of dollars behind it, just code and confidence.  And the whole thing depended on one assumption, that Luna would always be worth something.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.44,
+   "start": 262.063,
+   "end": 271.45
+  },
+  {
+   "section": "3",
+   "section_title": "The magic trick",
+   "section_index": 3,
+   "lines": [
+    "Critics called it what it looked like: a design that could spiral to zero if confidence ever broke.",
+    "Kwon's response to critics was famous for its arrogance.",
+    "When one of them challenged him online, he replied: \"I don't debate the poor on Twitter.\""
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 24,
+   "text": "Critics called it what it looked like: a design that could spiral to zero if confidence ever broke. Kwon's response to critics was famous for its arrogance. When one of them challenged him online, he replied: \"I don't debate the poor on Twitter.\"",
+   "wer": 0.023,
+   "asr": "Critics called it what it looked like, a design that could spiral to zero if confidence ever  broke.  Kwan's response to critics was famous for its arrogance.  When one of them challenged him online, he replied, I don't debate the poor on Twitter.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.56,
+   "start": 272.0,
+   "end": 286.505
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Then came the bait.",
+    "A lending platform built on Terra, called Anchor Protocol, offered close to 20 percent annual interest on UST deposits."
+   ],
+   "cues": [
+    "[SCREEN] Big number, slowly counting up: \"~20% per year\""
+   ],
+   "gap_after": 0.25,
+   "id": 25,
+   "text": "Then came the bait. A lending platform built on Terra, called Anchor Protocol, offered close to 20 percent annual interest on UST deposits.",
+   "wer": 0.043,
+   "asr": "Then came the bait. A lending platform built on Terra, called Anchor Protocol,  offered close to 20% annual interest on UST deposits.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.0,
+   "start": 287.705,
+   "end": 297.653
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Your bank was offering almost nothing. Anchor offered nearly 20 percent, on a coin that was supposed to be as stable as a dollar."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 26,
+   "text": "Your bank was offering almost nothing. Anchor offered nearly 20 percent, on a coin that was supposed to be as stable as a dollar.",
+   "wer": 0.083,
+   "asr": "Your bank was offering almost nothing.  Anker offered nearly 20% on a coin that was supposed to be as stable as a dollar.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.16,
+   "start": 297.903,
+   "end": 306.012
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Money poured in.",
+    "By early 2022, the vast majority of all UST in existence was sitting in Anchor, earning that yield.",
+    "LUNA's price soared above 100 dollars. Terra's total value reached tens of billions of dollars."
+   ],
+   "cues": [
+    "[AI-05] Crowd of faceless people walking toward a glowing golden door in the dark"
+   ],
+   "gap_after": 0.25,
+   "id": 27,
+   "text": "Money poured in. By early 2022, the vast majority of all UST in existence was sitting in Anchor, earning that yield. LUNA's price soared above 100 dollars. Terra's total value reached tens of billions of dollars.",
+   "wer": 0.073,
+   "asr": "Money poured in. By early 2022, the vast majority of all US tea in existence was sitting in anchor.  Earning that yield, Luna's price soared above $100.  Terra's total value reached tens of billions of dollars.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.2,
+   "start": 306.562,
+   "end": 323.699
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Terraform even signed a five-year sponsorship deal with the Washington Nationals baseball team, reported at about 38 million dollars.",
+    "In Korea, Kwon was hailed as a crypto genius. His fans called themselves \"Lunatics.\""
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 28,
+   "text": "Terraform even signed a five-year sponsorship deal with the Washington Nationals baseball team, reported at about 38 million dollars. In Korea, Kwon was hailed as a crypto genius. His fans called themselves \"Lunatics.\"",
+   "wer": 0.057,
+   "asr": "Terraform even signed a five-year sponsorship deal with the Washington Nationals baseball team,  reported at about $38 million. In Korea, Kwon was hailed as a crypto genius.  His fans call themselves lunatics.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.48,
+   "start": 323.949,
+   "end": 340.376
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "But where was that 20 percent actually coming from?",
+    "For a long time, the honest answer was: largely from Terra itself, subsidizing the payments to keep people in."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 29,
+   "text": "But where was that 20 percent actually coming from? For a long time, the honest answer was: largely from Terra itself, subsidizing the payments to keep people in.",
+   "wer": 0.036,
+   "asr": "But where was that 20% actually coming from?  For a long time, the honest answer was, largely from Terra itself, subsidizing the payments  to keep people in.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.12,
+   "start": 341.376,
+   "end": 352.445
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Anchor kept a reserve to cover the gap between what borrowers paid and what depositors were promised.",
+    "By early 2022, that reserve was draining by more than a million dollars a day."
+   ],
+   "cues": [
+    "[SCREEN] Self-made bar: \"Anchor yield reserve\" draining day by day, then a sudden \"+450M UST\" refill"
+   ],
+   "gap_after": 0.25,
+   "id": 30,
+   "text": "Anchor kept a reserve to cover the gap between what borrowers paid and what depositors were promised. By early 2022, that reserve was draining by more than a million dollars a day.",
+   "wer": 0.0,
+   "asr": "Anchor kept a reserve to cover the gap between what borrowers paid and what depositors were promised.  By early 2022, that reserve was draining by more than a million dollars a day.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.44,
+   "start": 352.995,
+   "end": 364.377
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "So in February 2022, the Luna Foundation Guard, an organization we'll meet properly in a minute, approved a top-up of 450 million dollars' worth of UST, just to keep the 20 percent going."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 31,
+   "text": "So in February 2022, the Luna Foundation Guard, an organization we'll meet properly in a minute, approved a top-up of 450 million dollars' worth of UST, just to keep the 20 percent going.",
+   "wer": 0.049,
+   "asr": "So, in February 2022, the Luna Foundation Guard, an organization we'll meet properly  in a minute, approved a top-up of $450 million worth of UST, just to keep the 20% going.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.4,
+   "start": 364.627,
+   "end": 378.976
+  },
+  {
+   "section": "4",
+   "section_title": "The 20% promise",
+   "section_index": 4,
+   "lines": [
+    "Shortly after, Anchor's community voted to let the rate slowly come down. But by then, the promise had already done its work."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 32,
+   "text": "Shortly after, Anchor's community voted to let the rate slowly come down. But by then, the promise had already done its work.",
+   "wer": 0.0,
+   "asr": "Shortly after, Anchor's community voted to let the rate slowly come down.  But by then, the promise had already done its work.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.2,
+   "start": 379.226,
+   "end": 386.374
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "Here's the twist most people never heard at the time.",
+    "In May 2021, a year before the final collapse, UST had already lost its one-dollar peg.",
+    "And then, mysteriously, it recovered."
+   ],
+   "cues": [
+    "[SCREEN] Timeline flashback graphic: \"May 2021 — one year earlier\""
+   ],
+   "gap_after": 0.55,
+   "id": 33,
+   "text": "Here's the twist most people never heard at the time. In May 2021, a year before the final collapse, UST had already lost its one-dollar peg. And then, mysteriously, it recovered.",
+   "wer": 0.028,
+   "asr": "Here's the twist most people never heard at the time.  In May 2021, a year before the final collapse,  UST had already lost its $1 peg.  And then, mysteriously, it recovered.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.88,
+   "start": 387.574,
+   "end": 402.403
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "The public story was that the code worked. The algorithm fixed itself.",
+    "But years later, U.S. regulators told a different story."
+   ],
+   "cues": [
+    "[AI-06] A shadowy hand reaching from behind a curtain to steady a falling coin"
+   ],
+   "gap_after": 0.25,
+   "id": 34,
+   "text": "The public story was that the code worked. The algorithm fixed itself. But years later, U.S. regulators told a different story.",
+   "wer": 0.091,
+   "asr": "The public story was that the code worked.  The algorithm fixed itself.  But years later, US regulators told a different story.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.12,
+   "start": 402.953,
+   "end": 410.015
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "According to the SEC, the recovery was driven by a large trading firm quietly buying UST behind the scenes, under a secret deal with Terraform."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 35,
+   "text": "According to the SEC, the recovery was driven by a large trading firm quietly buying UST behind the scenes, under a secret deal with Terraform.",
+   "wer": 0.0,
+   "asr": "According to the SEC, the recovery was driven by a large trading firm,  quietly buying UST behind the scenes, under a secret deal with Terraform.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.32,
+   "start": 410.265,
+   "end": 420.523
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "The SEC's account goes like this. On May 23, 2021, as UST slid, Terraform made a verbal agreement with the firm.",
+    "Terraform would loosen the restrictions on the firm's right to buy LUNA at a discount."
+   ],
+   "cues": [
+    "[SCREEN] SEC order on screen, key lines highlighted: \"May 23, 2021\", \"verbal agreement\", \"more than $20 million UST\""
+   ],
+   "gap_after": 0.25,
+   "id": 36,
+   "text": "The SEC's account goes like this. On May 23, 2021, as UST slid, Terraform made a verbal agreement with the firm. Terraform would loosen the restrictions on the firm's right to buy LUNA at a discount.",
+   "wer": 0.024,
+   "asr": "The SEC's account goes like this.  On May 23rd, 2021, as UST slid, Terraform made a verbal agreement with the firm.  Terraform would loosen the restrictions on the firm's right to buy Luna at a discount.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.12,
+   "start": 421.073,
+   "end": 436.13
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "In return, according to the SEC, the firm bought more than 20 million dollars of UST to push the price back up.",
+    "The SEC said that investors were misled into believing the algorithm had saved the peg."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 37,
+   "text": "In return, according to the SEC, the firm bought more than 20 million dollars of UST to push the price back up. The SEC said that investors were misled into believing the algorithm had saved the peg.",
+   "wer": 0.027,
+   "asr": "In return, according to the SEC, the firm bought more than $20 million of UST to push the price  back up. The SEC said that investors were misled into believing the algorithm had saved the peg.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.72,
+   "start": 436.38,
+   "end": 451.034
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "The trading firm's affiliate later settled with the SEC without admitting or denying the claims."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 38,
+   "text": "The trading firm's affiliate later settled with the SEC without admitting or denying the claims.",
+   "wer": 0.0,
+   "asr": "The trading firm's affiliate later settled with the SEC without admitting or denying  the claims.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.08,
+   "start": 451.284,
+   "end": 457.301
+  },
+  {
+   "section": "5",
+   "section_title": "The hidden rescue",
+   "section_index": 5,
+   "lines": [
+    "If that's true, the system hadn't passed its stress test. It had been rescued. And the rescue was hidden.",
+    "So who knew? And would anyone ever admit it? Hold on to that question."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 39,
+   "text": "If that's true, the system hadn't passed its stress test. It had been rescued. And the rescue was hidden. So who knew? And would anyone ever admit it? Hold on to that question.",
+   "wer": 0.0,
+   "asr": "If that's true, the system hadn't passed its stress test.  It had been rescued, and the rescue was hidden.  So who knew? And would anyone ever admit it? Hold on to that question.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.36,
+   "start": 458.301,
+   "end": 471.601
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "By early 2022, the warnings were getting louder. Kwon's answer was a war chest.",
+    "In January 2022, a nonprofit called the Luna Foundation Guard was set up in Singapore.",
+    "Its job was to build a reserve that could defend UST's peg in an emergency."
+   ],
+   "cues": [
+    "[AI-10] A vast dark vault, rows of glowing orange coins stacked on steel shelves, a heavy vault door slowly swinging open, teal rim light"
+   ],
+   "gap_after": 0.25,
+   "id": 40,
+   "text": "By early 2022, the warnings were getting louder. Kwon's answer was a war chest. In January 2022, a nonprofit called the Luna Foundation Guard was set up in Singapore. Its job was to build a reserve that could defend UST's peg in an emergency.",
+   "wer": 0.0,
+   "asr": "By early 2022, the warnings were getting louder.  Kwon's answer was a war chest.  In January 2022, a nonprofit called the Luna Foundation Guard was set up in Singapore.  Its job was to build a reserve that could defend UST's peg in an emergency.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 19.04,
+   "start": 472.801,
+   "end": 491.778
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "Kwon said the goal was 10 billion dollars' worth of bitcoin."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 41,
+   "text": "Kwon said the goal was 10 billion dollars' worth of bitcoin.",
+   "wer": 0.182,
+   "asr": "Kwan said the goal was $10 billion worth of Bitcoin.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.08,
+   "start": 492.028,
+   "end": 496.057
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "The first big chunk of money came in February: a one-billion-dollar sale of LUNA to investors, led by two heavyweight crypto firms, Jump Crypto and a hedge fund called Three Arrows Capital.",
+    "Remember that second name. It comes back too."
+   ],
+   "cues": [
+    "[SCREEN] Self-made deal card: \"Feb 2022 — $1B LUNA sale. Led by: Jump Crypto, Three Arrows Capital\""
+   ],
+   "gap_after": 0.55,
+   "id": 42,
+   "text": "The first big chunk of money came in February: a one-billion-dollar sale of LUNA to investors, led by two heavyweight crypto firms, Jump Crypto and a hedge fund called Three Arrows Capital. Remember that second name. It comes back too.",
+   "wer": 0.024,
+   "asr": "The first big chunk of money came in February, a $1 billion sale of Luna to investors, led  by two heavyweight crypto firms, Jump Crypto and a hedge fund called 3 Arrows Capital.  Remember that second name?  It comes back too.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.4,
+   "start": 496.607,
+   "end": 512.951
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "And it bought fast. On some days that spring, it was buying more than 100 million dollars of bitcoin at a time.",
+    "Kwon said he expected to reach the 10-billion-dollar target by the end of the third quarter."
+   ],
+   "cues": [
+    "[SCREEN] Counter climbing: \"0 → 80,394 BTC\" with a small \"≈ $2.4B (May 7, 2022)\" label"
+   ],
+   "gap_after": 0.25,
+   "id": 43,
+   "text": "And it bought fast. On some days that spring, it was buying more than 100 million dollars of bitcoin at a time. Kwon said he expected to reach the 10-billion-dollar target by the end of the third quarter.",
+   "wer": 0.073,
+   "asr": "and it bought fast. On some days that spring, it was buying more than $100 million of Bitcoin  at a time. Quan said he expected to reach the $10 billion target by the end of the third quarter.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.16,
+   "start": 513.501,
+   "end": 527.596
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "Anyone could watch the reserve wallets fill up on the blockchain, in real time.",
+    "By early May, it held 80,394 bitcoin, worth around 2.4 billion dollars. It had become one of the biggest bitcoin holders in the world."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 44,
+   "text": "Anyone could watch the reserve wallets fill up on the blockchain, in real time. By early May, it held 80,394 bitcoin, worth around 2.4 billion dollars. It had become one of the biggest bitcoin holders in the world.",
+   "wer": 0.022,
+   "asr": "Anyone could watch the reserve wallets fill up on the blockchain in real time.  By early May, it held 80,394 Bitcoin, worth around $2.4 billion.  It had become one of the biggest Bitcoin holders in the world.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.6,
+   "start": 527.846,
+   "end": 545.383
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "To many investors, this looked like the missing piece. The vault Terra never had, finally being filled."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 45,
+   "text": "To many investors, this looked like the missing piece. The vault Terra never had, finally being filled.",
+   "wer": 0.0,
+   "asr": "To many investors, this looked like the missing piece.  The vault Terra never had, finally being filled.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.24,
+   "start": 545.633,
+   "end": 553.814
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "But there was a catch.",
+    "The reserve was a fraction of the nearly 19 billion dollars of UST in circulation.",
+    "And it was held in bitcoin, an asset that could fall at exactly the moment it was needed."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 46,
+   "text": "But there was a catch. The reserve was a fraction of the nearly 19 billion dollars of UST in circulation. And it was held in bitcoin, an asset that could fall at exactly the moment it was needed.",
+   "wer": 0.026,
+   "asr": "But there was a catch.  The reserve was a fraction of the nearly $19 billion of UST in circulation, and it was  held in Bitcoin, an asset that could fall at exactly the moment it was needed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.52,
+   "start": 554.814,
+   "end": 568.283
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "U.S. prosecutors later said there was another problem: Kwon presented the foundation as independent from Terraform, when, according to prosecutors, he controlled it."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 47,
+   "text": "U.S. prosecutors later said there was another problem: Kwon presented the foundation as independent from Terraform, when, according to prosecutors, he controlled it.",
+   "wer": 0.125,
+   "asr": "US prosecutors later said there was another problem.  Quan presented the foundation as independent from terraform.  When?  According to prosecutors, he controlled it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.2,
+   "start": 568.533,
+   "end": 579.661
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "So before we watch the fall, here are two questions to carry with you.",
+    "Was the 2021 rescue really hidden from investors? And were those Chai payments really running on Terra?"
+   ],
+   "cues": [
+    "[SCREEN] RETENTION HOOK — two question cards appear one by one: \"1. Was the 2021 rescue hidden?\" / \"2. Did Chai really run on Terra?\""
+   ],
+   "gap_after": 0.25,
+   "id": 48,
+   "text": "So before we watch the fall, here are two questions to carry with you. Was the 2021 rescue really hidden from investors? And were those Chai payments really running on Terra?",
+   "wer": 0.029,
+   "asr": "So before we watch the fall, here are two questions to carry with you. Was the 2021  rescue really hidden from investors? And were those CHI payments really running on Terra?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.92,
+   "start": 580.211,
+   "end": 592.079
+  },
+  {
+   "section": "6",
+   "section_title": "The bitcoin war chest",
+   "section_index": 6,
+   "lines": [
+    "Both get answered before the end of this video. One by a jury. The other by Do Kwon himself."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 49,
+   "text": "Both get answered before the end of this video. One by a jury. The other by Do Kwon himself.",
+   "wer": 0.105,
+   "asr": "Both get answered before the end of this video.  One by a jury.  The other by Duquan himself.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.76,
+   "start": 592.329,
+   "end": 598.029
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Saturday, May 7, 2022.",
+    "Anchor is holding about 14 billion dollars' worth of UST.",
+    "Terraform pulls a large amount of UST out of a key trading pool on a platform called Curve, as part of a planned move to a new pool."
+   ],
+   "cues": [
+    "[AI-11] Calendar pages tearing off one by one in a dark room, each page glowing red at the edges, ticking clock sound",
+    "[SCREEN] Day stamp: \"SATURDAY, MAY 7, 2022\""
+   ],
+   "gap_after": 0.25,
+   "id": 50,
+   "text": "Saturday, May 7, 2022. Anchor is holding about 14 billion dollars' worth of UST. Terraform pulls a large amount of UST out of a key trading pool on a platform called Curve, as part of a planned move to a new pool.",
+   "wer": 0.022,
+   "asr": "Saturday, May 7, 2022. Anchor is holding about $14 billion worth of UST. Terraform pulls a  large amount of UST out of a key trading pool on a platform called Curve as part of a planned  move to a new pool.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.16,
+   "start": 599.229,
+   "end": 615.338
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Within minutes, other wallets dump tens of millions of UST into what's left.",
+    "The pool tilts. UST slips to 99 cents.",
+    "It sounds tiny. It isn't. For a coin whose whole promise is one dollar, a penny is a crack in the glass."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 51,
+   "text": "Within minutes, other wallets dump tens of millions of UST into what's left. The pool tilts. UST slips to 99 cents. It sounds tiny. It isn't. For a coin whose whole promise is one dollar, a penny is a crack in the glass.",
+   "wer": 0.023,
+   "asr": "Within minutes, other wallets dump tens of millions of UST into what's left.  The pool tilts. UST slips to 99 cents. It sounds tiny. It isn't.  For a coin whose whole promise is $1, a penny is a crack in the glass.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 19.68,
+   "start": 615.588,
+   "end": 635.205
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Sunday. Anchor depositors head for the exit. Billions of dollars of UST leave in a matter of days.",
+    "The Luna Foundation Guard says it will lend 1.5 billion dollars, half in bitcoin and half in UST, to defend the peg."
+   ],
+   "cues": [
+    "[SCREEN] Day stamp: \"SUNDAY, MAY 8\""
+   ],
+   "gap_after": 0.25,
+   "id": 52,
+   "text": "Sunday. Anchor depositors head for the exit. Billions of dollars of UST leave in a matter of days. The Luna Foundation Guard says it will lend 1.5 billion dollars, half in bitcoin and half in UST, to defend the peg.",
+   "wer": 0.024,
+   "asr": "Sunday Anchor depositors head for the exit. Billions of dollars of UST leave in a matter of days.  The Luna Foundation guard says it will lend $1.5 billion, half in Bitcoin and half in UST,  to defend the peg.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.52,
+   "start": 635.755,
+   "end": 653.224
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Kwon tweets: \"Deploying more capital. Steady lads.\""
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 53,
+   "text": "Kwon tweets: \"Deploying more capital. Steady lads.\"",
+   "wer": 0.0,
+   "asr": "Kwon tweets, deploying more capital, steady lads.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.0,
+   "start": 653.474,
+   "end": 657.421
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Monday. The defense isn't working.",
+    "The foundation's bitcoin starts leaving its wallets to be sold. Bitcoin itself slides toward 30,000 dollars.",
+    "Anchor deposits fall from 14 billion to under 9 billion. UST, at one point, drops to around 35 cents."
+   ],
+   "cues": [
+    "[SCREEN] Day stamp: \"MONDAY, MAY 9\"",
+    "[AI-07] Drone shot over a city at dawn, digital red rain falling between skyscrapers"
+   ],
+   "gap_after": 0.55,
+   "id": 54,
+   "text": "Monday. The defense isn't working. The foundation's bitcoin starts leaving its wallets to be sold. Bitcoin itself slides toward 30,000 dollars. Anchor deposits fall from 14 billion to under 9 billion. UST, at one point, drops to around 35 cents.",
+   "wer": 0.119,
+   "asr": "Monday. The defense isn't working. The Foundation's Bitcoin starts leaving its wallets to be sold.  Bitcoin itself slides toward $30,000. Anchor deposits fall from $14 billion to under $9  billion. UST at one point drops to around $0.35.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 19.36,
+   "start": 657.971,
+   "end": 677.271
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "And now the magic trick runs in reverse.",
+    "To defend the peg, the system creates more and more LUNA.",
+    "More LUNA means each LUNA is worth less. Which means less trust in UST. Which means more selling."
+   ],
+   "cues": [
+    "[SCREEN] Animated death-spiral diagram: UST falls → more LUNA printed → LUNA price falls → less trust → UST falls"
+   ],
+   "gap_after": 0.55,
+   "id": 55,
+   "text": "And now the magic trick runs in reverse. To defend the peg, the system creates more and more LUNA. More LUNA means each LUNA is worth less. Which means less trust in UST. Which means more selling.",
+   "wer": 0.0,
+   "asr": "And now the magic trick runs in reverse.  To defend the peg, the system creates more and more Luna.  More Luna means each Luna is worth less.  Which means less trust in UST.  Which means more selling.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.56,
+   "start": 677.821,
+   "end": 692.32
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Tuesday and Wednesday. Exchanges choke on the flood of transactions. The world's largest exchange, Binance, briefly pauses LUNA and UST withdrawals.",
+    "LUNA, worth around 80 dollars at the start of the month, falls below one dollar."
+   ],
+   "cues": [
+    "[SCREEN] Day stamp: \"TUESDAY–WEDNESDAY, MAY 10–11\""
+   ],
+   "gap_after": 0.55,
+   "id": 56,
+   "text": "Tuesday and Wednesday. Exchanges choke on the flood of transactions. The world's largest exchange, Binance, briefly pauses LUNA and UST withdrawals. LUNA, worth around 80 dollars at the start of the month, falls below one dollar.",
+   "wer": 0.056,
+   "asr": "Tuesday and Wednesday, exchanges choke on the flood of transactions.  The world's largest exchange, Binance, briefly pauses Luna and UST withdrawals.  Luna, worth around $80 at the start of the month, falls below $1.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.88,
+   "start": 692.87,
+   "end": 707.693
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "The supply of LUNA explodes from hundreds of millions of coins into the trillions."
+   ],
+   "cues": [
+    "[SCREEN] LUNA supply counter exploding from hundreds of millions into the trillions"
+   ],
+   "gap_after": 0.55,
+   "id": 57,
+   "text": "The supply of LUNA explodes from hundreds of millions of coins into the trillions.",
+   "wer": 0.0,
+   "asr": "The supply of Luna explodes from hundreds of millions of coins into the trillions.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.28,
+   "start": 708.243,
+   "end": 713.456
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Thursday. The Terra blockchain itself is halted. By Friday, it has been halted again.",
+    "Major exchanges pull LUNA and UST from trading. LUNA is now worth a tiny fraction of a cent."
+   ],
+   "cues": [
+    "[SCREEN] Day stamp: \"THURSDAY–FRIDAY, MAY 12–13\""
+   ],
+   "gap_after": 0.25,
+   "id": 58,
+   "text": "Thursday. The Terra blockchain itself is halted. By Friday, it has been halted again. Major exchanges pull LUNA and UST from trading. LUNA is now worth a tiny fraction of a cent.",
+   "wer": 0.0,
+   "asr": "Thursday. The Terra blockchain itself is halted. By Friday it has been halted again.  Major exchanges pull Luna and UST from trading. Luna is now worth a tiny fraction of a cent.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.16,
+   "start": 714.006,
+   "end": 726.115
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "That Friday, Kwon writes: \"I am heartbroken about the pain my invention has brought on all of you.\""
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 59,
+   "text": "That Friday, Kwon writes: \"I am heartbroken about the pain my invention has brought on all of you.\"",
+   "wer": 0.0,
+   "asr": "That Friday, Kwon writes, I am heartbroken about the pain my invention has brought on  all of you.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.4,
+   "start": 726.365,
+   "end": 732.704
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "The following Monday, the Luna Foundation Guard says it has 313 bitcoin left. Out of 80,394.",
+    "An audit the foundation released later put the total spent defending the peg at about 2.8 billion dollars."
+   ],
+   "cues": [
+    "[SCREEN] Counter falling: \"80,394 BTC → 313 BTC\""
+   ],
+   "gap_after": 1.0,
+   "id": 60,
+   "text": "The following Monday, the Luna Foundation Guard says it has 313 bitcoin left. Out of 80,394. An audit the foundation released later put the total spent defending the peg at about 2.8 billion dollars.",
+   "wer": 0.022,
+   "asr": "The following Monday, the Luna Foundation Guard says it has 313 Bitcoin left.  Out of 80,394, an audit the foundation released later put the total spent defending the peg  at about $2.8 billion.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.76,
+   "start": 733.254,
+   "end": 748.958
+  },
+  {
+   "section": "7",
+   "section_title": "Seven days in May",
+   "section_index": 7,
+   "lines": [
+    "Around 40 billion dollars of value, gone in a matter of days.",
+    "Some victims had put in their life savings. Many had trusted the word \"stable.\""
+   ],
+   "cues": [
+    "[AI-02 variant] Same dark apartment, now dawn light, phone face-down on the table"
+   ],
+   "gap_after": 1.2,
+   "id": 61,
+   "text": "Around 40 billion dollars of value, gone in a matter of days. Some victims had put in their life savings. Many had trusted the word \"stable.\"",
+   "wer": 0.038,
+   "asr": "Around $40 billion of value, gone in a matter of days. Some victims had put in their life savings.  Many had trusted the word stable.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.96,
+   "start": 749.958,
+   "end": 760.853
+  },
+  {
+   "section": "8",
+   "section_title": "The Lunatics",
+   "section_index": 8,
+   "lines": [
+    "Who were the Lunatics?",
+    "In Korea, they gathered in group chat rooms and online forums. Overseas, on Reddit, Discord and Twitter.",
+    "For two years, they shared memes, price targets, and a kind of belonging. Kwon was their captain."
+   ],
+   "cues": [
+    "[AI-12] A dark wall of hundreds of anonymous glowing chat bubbles and avatar placeholders, slowly dimming one by one, no readable names"
+   ],
+   "gap_after": 0.55,
+   "id": 62,
+   "text": "Who were the Lunatics? In Korea, they gathered in group chat rooms and online forums. Overseas, on Reddit, Discord and Twitter. For two years, they shared memes, price targets, and a kind of belonging. Kwon was their captain.",
+   "wer": 0.0,
+   "asr": "Who were the lunatics? In Korea. They gathered in group chat rooms and online forums,  overseas on Reddit, Discord and Twitter. For two years they shared memes,  price targets, and a kind of belonging. Kwon was their captain.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.96,
+   "start": 762.053,
+   "end": 778.96
+  },
+  {
+   "section": "8",
+   "section_title": "The Lunatics",
+   "section_index": 8,
+   "lines": [
+    "Many of them weren't gamblers.",
+    "The stories posted online came from office workers, retirees, young couples saving for a home, people who had moved money out of a bank because Anchor paid many times more."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 63,
+   "text": "Many of them weren't gamblers. The stories posted online came from office workers, retirees, young couples saving for a home, people who had moved money out of a bank because Anchor paid many times more.",
+   "wer": 0.0,
+   "asr": "Many of them weren't gamblers. The stories posted online came from office workers, retirees,  young couples saving for a home, people who had moved money out of a bank because  anchor paid many times more.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.64,
+   "start": 779.51,
+   "end": 792.084
+  },
+  {
+   "section": "8",
+   "section_title": "The Lunatics",
+   "section_index": 8,
+   "lines": [
+    "After the crash, those same communities changed overnight. The memes stopped.",
+    "Moderators of the biggest English-language forum pinned links to support helplines at the top of the page."
+   ],
+   "cues": [
+    "[SCREEN] Self-made forum mock-up (no real usernames): a pinned post labeled \"Support resources\""
+   ],
+   "gap_after": 0.25,
+   "id": 64,
+   "text": "After the crash, those same communities changed overnight. The memes stopped. Moderators of the biggest English-language forum pinned links to support helplines at the top of the page.",
+   "wer": 0.0,
+   "asr": "After the crash, those same communities changed overnight.  The memes stopped.  Moderators of the biggest English language forum  pinned links to support helplines at the top of the page.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.92,
+   "start": 792.634,
+   "end": 804.487
+  },
+  {
+   "section": "8",
+   "section_title": "The Lunatics",
+   "section_index": 8,
+   "lines": [
+    "In Korea, where LUNA had traded on the country's biggest exchanges, those exchanges moved to delist it.",
+    "Groups of Korean investors filed criminal complaints and lawsuits against Terra's founders."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 65,
+   "text": "In Korea, where LUNA had traded on the country's biggest exchanges, those exchanges moved to delist it. Groups of Korean investors filed criminal complaints and lawsuits against Terra's founders.",
+   "wer": 0.0,
+   "asr": "In Korea, where Luna had traded on the country's biggest exchanges,  those exchanges moved to delist it.  Groups of Korean investors filed criminal complaints and lawsuits against Terra's founders.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 804.737,
+   "end": 818.111
+  },
+  {
+   "section": "8",
+   "section_title": "The Lunatics",
+   "section_index": 8,
+   "lines": [
+    "We are not naming any of them here. Their losses are not entertainment.",
+    "But every number in this story was somebody's rent, somebody's savings, somebody's plan."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 66,
+   "text": "We are not naming any of them here. Their losses are not entertainment. But every number in this story was somebody's rent, somebody's savings, somebody's plan.",
+   "wer": 0.0,
+   "asr": "We are not naming any of them here. Their losses are not entertainment.  But every number in this story was somebody's rent. Somebody's savings. Somebody's plan.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.76,
+   "start": 819.111,
+   "end": 830.82
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "Terra did not fall alone.",
+    "Remember Three Arrows Capital, the Singapore-based hedge fund that helped lead that billion-dollar LUNA sale? It had made a large bet on LUNA. When LUNA went to zero, so did the bet."
+   ],
+   "cues": [
+    "[AI-13] Giant glass dominoes shaped like skyscrapers toppling one into the next across a dark, wet plaza, red light reflecting"
+   ],
+   "gap_after": 0.25,
+   "id": 67,
+   "text": "Terra did not fall alone. Remember Three Arrows Capital, the Singapore-based hedge fund that helped lead that billion-dollar LUNA sale? It had made a large bet on LUNA. When LUNA went to zero, so did the bet.",
+   "wer": 0.0,
+   "asr": "Terra did not fall alone.  Remember, Three Arrows Capital, the Singapore-based hedge fund, that helped lead that billion-dollar  Luna sale?  It had made a large bet on Luna.  When Luna went to zero, so did the bet.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.92,
+   "start": 832.02,
+   "end": 847.888
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "By the start of July, a court in the British Virgin Islands had ordered the fund liquidated."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 68,
+   "text": "By the start of July, a court in the British Virgin Islands had ordered the fund liquidated.",
+   "wer": 0.0,
+   "asr": "By the start of July, a court in the British Virgin Islands had ordered the fund liquidated",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 5.44,
+   "start": 848.138,
+   "end": 853.524
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "The firms that had lent to it were next.",
+    "Voyager Digital, which said Three Arrows had defaulted on a loan of about 650 million dollars, filed for bankruptcy on July 5."
+   ],
+   "cues": [
+    "[SCREEN] Domino timeline: \"Terra (May)\" → \"Three Arrows (June)\" → \"Voyager, Celsius (July)\" → \"FTX (November)\""
+   ],
+   "gap_after": 0.25,
+   "id": 69,
+   "text": "The firms that had lent to it were next. Voyager Digital, which said Three Arrows had defaulted on a loan of about 650 million dollars, filed for bankruptcy on July 5.",
+   "wer": 0.059,
+   "asr": "The firms that had lent to it were next.  Voyager Digital, which said three arrows had defaulted on a loan of about $650 million,  filed for bankruptcy on July 5th.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.68,
+   "start": 854.074,
+   "end": 865.695
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "Celsius Network, a crypto lender that had promised its users high yields, froze withdrawals in June and filed for bankruptcy on July 13."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 70,
+   "text": "Celsius Network, a crypto lender that had promised its users high yields, froze withdrawals in June and filed for bankruptcy on July 13.",
+   "wer": 0.043,
+   "asr": "Celsius Network, a crypto lender that had promised its users high yields,  froze withdrawals in June and filed for bankruptcy on July 13th.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.96,
+   "start": 865.945,
+   "end": 874.854
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "And then there was FTX."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 71,
+   "text": "And then there was FTX.",
+   "wer": 0.0,
+   "asr": "And then there was FTX.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 2.0,
+   "start": 875.404,
+   "end": 877.351
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "At the criminal trial of FTX founder Sam Bankman-Fried, a former top executive of his trading firm, Alameda Research, testified that after the crash, lenders started demanding their money back in June 2022, and that Alameda repaid them using money that came from FTX customers."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 72,
+   "text": "At the criminal trial of FTX founder Sam Bankman-Fried, a former top executive of his trading firm, Alameda Research, testified that after the crash, lenders started demanding their money back in June 2022, and that Alameda repaid them using money that came from FTX customers.",
+   "wer": 0.0,
+   "asr": "At the criminal trial of FTX founder Sam Bankman Fried, a former top executive of his trading  firm Alameda Research, testified that after the crash, lenders started demanding their  money back in June 2022 and that Alameda repaid them using money that came from FTX customers.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.68,
+   "start": 877.601,
+   "end": 895.216
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "FTX collapsed in November 2022. Bankman-Fried was convicted of fraud a year later."
+   ],
+   "cues": [],
+   "gap_after": 1.0,
+   "id": 73,
+   "text": "FTX collapsed in November 2022. Bankman-Fried was convicted of fraud a year later.",
+   "wer": 0.0,
+   "asr": "FTX collapsed in November 2022.  Bankman Fried was convicted of fraud a year later.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.56,
+   "start": 895.466,
+   "end": 901.959
+  },
+  {
+   "section": "9",
+   "section_title": "The dominoes",
+   "section_index": 9,
+   "lines": [
+    "Terra didn't commit FTX's fraud. A jury put that on Bankman-Fried.",
+    "But according to that testimony, the panic that began in May was part of what pushed customer money into the hole."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 74,
+   "text": "Terra didn't commit FTX's fraud. A jury put that on Bankman-Fried. But according to that testimony, the panic that began in May was part of what pushed customer money into the hole.",
+   "wer": 0.061,
+   "asr": "Tara didn't commit FTX's fraud, a jury put that on bankman fraud.  But according to that testimony, the panic that began in May  was part of what pushed customer money into the hole.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.32,
+   "start": 902.959,
+   "end": 915.226
+  },
+  {
+   "section": "10",
+   "section_title": "Terra 2.0",
+   "section_index": 10,
+   "lines": [
+    "While the dominoes fell, Kwon proposed a fix: start over.",
+    "On May 25, Terra's community voted for a new blockchain. On May 28, it went live."
+   ],
+   "cues": [
+    "[AI-14] A new glowing coin rising out of grey ash in a dark room, a thin crack already running across its surface"
+   ],
+   "gap_after": 0.25,
+   "id": 75,
+   "text": "While the dominoes fell, Kwon proposed a fix: start over. On May 25, Terra's community voted for a new blockchain. On May 28, it went live.",
+   "wer": 0.143,
+   "asr": "While the dominoes fell, Kwan proposed a fix.  Start over.  On May 25th, Terrorist community voted for a new blockchain.  On May 28th, it went live.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.88,
+   "start": 916.426,
+   "end": 927.251
+  },
+  {
+   "section": "10",
+   "section_title": "Terra 2.0",
+   "section_index": 10,
+   "lines": [
+    "The new coin was also called LUNA. The old chain was renamed Terra Classic, and the old coins became LUNA Classic and USTC."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 76,
+   "text": "The new coin was also called LUNA. The old chain was renamed Terra Classic, and the old coins became LUNA Classic and USTC.",
+   "wer": 0.0,
+   "asr": "The new coin was also called Luna.  The old chain was renamed Terra Classic, and the old coins became Luna Classic and USTC.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.8,
+   "start": 927.501,
+   "end": 936.25
+  },
+  {
+   "section": "10",
+   "section_title": "Terra 2.0",
+   "section_index": 10,
+   "lines": [
+    "Holders of the old coins received airdrops of new LUNA, based on what they held and when.",
+    "One thing was missing. There was no new UST. Terra 2.0 launched without an algorithmic stablecoin at all."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 77,
+   "text": "Holders of the old coins received airdrops of new LUNA, based on what they held and when. One thing was missing. There was no new UST. Terra 2.0 launched without an algorithmic stablecoin at all.",
+   "wer": 0.029,
+   "asr": "Holders of the old coins received airdrops of new Luna based on what they held and when.  One thing was missing. There was no new USD. Terra 2.0 launched without an algorithmic stablecoin at all.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.24,
+   "start": 936.8,
+   "end": 950.984
+  },
+  {
+   "section": "10",
+   "section_title": "Terra 2.0",
+   "section_index": 10,
+   "lines": [
+    "The new LUNA briefly traded above 17 dollars, then quickly fell as people sold what they'd been given.",
+    "For many old holders, it was nowhere near what they had lost."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 78,
+   "text": "The new LUNA briefly traded above 17 dollars, then quickly fell as people sold what they'd been given. For many old holders, it was nowhere near what they had lost.",
+   "wer": 0.1,
+   "asr": "The new Luna, briefly traded above $17, then quickly fell as people sold what they had  been given.  For many old holders, it was nowhere near what they had lost.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.0,
+   "start": 951.234,
+   "end": 961.175
+  },
+  {
+   "section": "11",
+   "section_title": "The chase",
+   "section_index": 11,
+   "lines": [
+    "When the collapse hit, Kwon was living in Singapore.",
+    "In September 2022, a Seoul court issued a warrant for his arrest, and Interpol issued a red notice.",
+    "He said he wasn't on the run. But nobody seemed to know where he was."
+   ],
+   "cues": [
+    "[SCREEN] Map animation: Seoul → Singapore → Serbia → Montenegro"
+   ],
+   "gap_after": 0.25,
+   "id": 79,
+   "text": "When the collapse hit, Kwon was living in Singapore. In September 2022, a Seoul court issued a warrant for his arrest, and Interpol issued a red notice. He said he wasn't on the run. But nobody seemed to know where he was.",
+   "wer": 0.065,
+   "asr": "When the collapse hit, Kwan was living in Singapore.  In September 2022, a sole court issued a warrant for his arrest.  An Interpol issued a red notice.  He said he wasn't on the run, but nobody seemed to know where he was.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.8,
+   "start": 962.375,
+   "end": 979.12
+  },
+  {
+   "section": "11",
+   "section_title": "The chase",
+   "section_index": 11,
+   "lines": [
+    "Days after the warrant, Singapore police said he was no longer in Singapore.",
+    "In October, Korea's foreign ministry invalidated his passport. Online, he kept posting as if nothing had changed."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 80,
+   "text": "Days after the warrant, Singapore police said he was no longer in Singapore. In October, Korea's foreign ministry invalidated his passport. Online, he kept posting as if nothing had changed.",
+   "wer": 0.0,
+   "asr": "Days after the warrant, Singapore police said he was no longer in Singapore.  In October, Korea's foreign ministry invalidated his passport.  Online, he kept posting as if nothing had changed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.12,
+   "start": 979.37,
+   "end": 992.429
+  },
+  {
+   "section": "11",
+   "section_title": "The chase",
+   "section_index": 11,
+   "lines": [
+    "In March 2023, at the airport in Podgorica, the capital of Montenegro, police stopped a man trying to board a private flight.",
+    "He was carrying a forged Costa Rican passport.",
+    "It was Do Kwon."
+   ],
+   "cues": [
+    "[AI-08] Airport departure gate at night, a lone traveler's silhouette from behind, passport in hand"
+   ],
+   "gap_after": 0.25,
+   "id": 81,
+   "text": "In March 2023, at the airport in Podgorica, the capital of Montenegro, police stopped a man trying to board a private flight. He was carrying a forged Costa Rican passport. It was Do Kwon.",
+   "wer": 0.053,
+   "asr": "In March 2023, at the airport in Podgorica, the capital of Montenegro, police stopped  a man trying to board a private flight.  He was carrying a forged Costa Rican passport.  It was Du Kwan.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.0,
+   "start": 992.979,
+   "end": 1004.927
+  },
+  {
+   "section": "11",
+   "section_title": "The chase",
+   "section_index": 11,
+   "lines": [
+    "A Montenegrin court sentenced him to four months in prison for the forged documents."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 82,
+   "text": "A Montenegrin court sentenced him to four months in prison for the forged documents.",
+   "wer": 0.0,
+   "asr": "A Montenegrin court sentenced him to four months in prison for the forged documents.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.72,
+   "start": 1005.177,
+   "end": 1009.834
+  },
+  {
+   "section": "11",
+   "section_title": "The chase",
+   "section_index": 11,
+   "lines": [
+    "Both South Korea and the United States wanted him.",
+    "For more than a year and a half, Montenegro's courts and ministers went back and forth over which country should get him first.",
+    "In the end, he was extradited to the United States, on the last day of 2024."
+   ],
+   "cues": [
+    "[SCREEN] Two flags, South Korea and the United States, pulling a single document in opposite directions"
+   ],
+   "gap_after": 1.2,
+   "id": 83,
+   "text": "Both South Korea and the United States wanted him. For more than a year and a half, Montenegro's courts and ministers went back and forth over which country should get him first. In the end, he was extradited to the United States, on the last day of 2024.",
+   "wer": 0.0,
+   "asr": "Both South Korea and the United States wanted him. For more than a year and a half, Montenegro's  courts and ministers went back and forth over which country should get him first.  In the end, he was extradited to the United States. On the last day of 2024,",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 15.76,
+   "start": 1010.384,
+   "end": 1026.084
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "America went after Kwon twice. Once in civil court. Once in criminal court."
+   ],
+   "cues": [
+    "[AI-15] An empty wood-paneled courtroom at night, a single desk lamp on, a gavel resting on a stack of papers, slow push-in"
+   ],
+   "gap_after": 0.55,
+   "id": 84,
+   "text": "America went after Kwon twice. Once in civil court. Once in criminal court.",
+   "wer": 0.077,
+   "asr": "America went after Quan twice. Once in civil court. Once in criminal court.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 6.56,
+   "start": 1027.284,
+   "end": 1033.783
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "The SEC sued Terraform and Kwon in February 2023.",
+    "Remember Chai? The SEC alleged that Chai's payments were not actually processed on the Terra blockchain, and that transactions were copied onto the chain to make it look as if they were."
+   ],
+   "cues": [
+    "[SCREEN] SEC document on screen, key lines highlighted"
+   ],
+   "gap_after": 0.25,
+   "id": 85,
+   "text": "The SEC sued Terraform and Kwon in February 2023. Remember Chai? The SEC alleged that Chai's payments were not actually processed on the Terra blockchain, and that transactions were copied onto the chain to make it look as if they were.",
+   "wer": 0.067,
+   "asr": "The SEC sued Terraform and QAN in February 2023.  Remember CHI?  The SEC alleged that CHI's payments  were not actually processed on the Terra blockchain,  and that transactions were copied onto the chain  to make it look as if they were.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.52,
+   "start": 1034.333,
+   "end": 1047.801
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "In April 2024, a jury in New York found Terraform and Kwon liable for fraud.",
+    "Afterwards, the SEC said the trial had exposed the defendants' lies about the use of the Terra blockchain to settle transactions."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 86,
+   "text": "In April 2024, a jury in New York found Terraform and Kwon liable for fraud. Afterwards, the SEC said the trial had exposed the defendants' lies about the use of the Terra blockchain to settle transactions.",
+   "wer": 0.05,
+   "asr": "In April 2024, a jury in New York found terraform and quanik liable for fraud.  Afterwards, the SEC said the trial had exposed the defendant's lies about the use of the  terra blockchain to settle transactions.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 1048.051,
+   "end": 1061.426
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "In June 2024, Terraform and Kwon agreed to a settlement of about 4.47 billion dollars, and Terraform agreed to wind down."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 87,
+   "text": "In June 2024, Terraform and Kwon agreed to a settlement of about 4.47 billion dollars, and Terraform agreed to wind down.",
+   "wer": 0.071,
+   "asr": "In June 2024, Terraform and Quan agreed to a settlement of about $4.47 billion,  and Terraform agreed to wind down.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 10.24,
+   "start": 1061.676,
+   "end": 1071.863
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "Then came the criminal case. In August 2025, Kwon pleaded guilty to two fraud charges. And in court, he said this:",
+    "\"In 2021, I made false and misleading statements about why UST regained its peg.\""
+   ],
+   "cues": [
+    "[SCREEN] Plea quote on black, white text, slow fade-in"
+   ],
+   "gap_after": 1.0,
+   "id": 88,
+   "text": "Then came the criminal case. In August 2025, Kwon pleaded guilty to two fraud charges. And in court, he said this: \"In 2021, I made false and misleading statements about why UST regained its peg.\"",
+   "wer": 0.023,
+   "asr": "Then came the criminal case. In August 2025, Juan pleaded guilty to two fraud charges,  and in court he said this,  In 2021, I made false and misleading statements about why UST regained its peg.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.6,
+   "start": 1072.413,
+   "end": 1089.953
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "That was the hidden rescue. The question from earlier, answered by the man himself."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 89,
+   "text": "That was the hidden rescue. The question from earlier, answered by the man himself.",
+   "wer": 0.0,
+   "asr": "That was the hidden rescue. The question from earlier, answered by the man himself.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.88,
+   "start": 1090.953,
+   "end": 1095.774
+  },
+  {
+   "section": "12",
+   "section_title": "The verdicts",
+   "section_index": 12,
+   "lines": [
+    "In December 2025, the judge sentenced him to 15 years in prison. That was longer than the 12 years prosecutors had asked for.",
+    "The judge called it a fraud on an \"epic, generational scale.\""
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 90,
+   "text": "In December 2025, the judge sentenced him to 15 years in prison. That was longer than the 12 years prosecutors had asked for. The judge called it a fraud on an \"epic, generational scale.\"",
+   "wer": 0.0,
+   "asr": "In December 2025, the judge sentenced him to 15 years in prison.  That was longer than the 12 years prosecutors had asked for.  The judge called it a fraud on an epic generational scale.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.04,
+   "start": 1096.324,
+   "end": 1109.307
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "Most English coverage stops there. But the biggest group of retail victims was in Korea.",
+    "According to figures from Korean financial authorities, about 280,000 people in Korea held LUNA when it collapsed."
+   ],
+   "cues": [
+    "[AI-02 variant] Rows of Seoul apartment windows at night, a few still lit"
+   ],
+   "gap_after": 0.25,
+   "id": 91,
+   "text": "Most English coverage stops there. But the biggest group of retail victims was in Korea. According to figures from Korean financial authorities, about 280,000 people in Korea held LUNA when it collapsed.",
+   "wer": 0.0,
+   "asr": "Most English coverage stops there, but the biggest group of retail victims was in Korea.  According to figures from Korean financial authorities, about 280,000 people in Korea  held luna when it collapsed.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 1110.507,
+   "end": 1123.885
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "Within days of the crash, Seoul prosecutors revived a financial-crimes unit nicknamed the \"Yeouido Grim Reaper,\" after the district where Korea's financial industry lives. Terra was one of its first cases."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 92,
+   "text": "Within days of the crash, Seoul prosecutors revived a financial-crimes unit nicknamed the \"Yeouido Grim Reaper,\" after the district where Korea's financial industry lives. Terra was one of its first cases.",
+   "wer": 0.062,
+   "asr": "Within days of the crash, sole prosecutors revived a financial crimes unit nicknamed the  Yowido Grim Reaper after the district where Korea's financial industry lives.  Terra was one of its first cases.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.28,
+   "start": 1124.135,
+   "end": 1137.356
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "In April 2023, Korean prosecutors indicted Daniel Shin and several others.",
+    "Prosecutors allege that Chai made ordinary payments look as if they were running on Terra."
+   ],
+   "cues": [
+    "[SCREEN] Korean newspaper-style headline graphic (self-made, no real mastheads), translated on screen"
+   ],
+   "gap_after": 0.25,
+   "id": 93,
+   "text": "In April 2023, Korean prosecutors indicted Daniel Shin and several others. Prosecutors allege that Chai made ordinary payments look as if they were running on Terra.",
+   "wer": 0.067,
+   "asr": "In April 2023, Korean prosecutors indicted Daniel Shin and several others.  Prosecutors allege that Chye made ordinary payments look as if they were running on Tara.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.76,
+   "start": 1137.906,
+   "end": 1149.603
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "Shin denies wrongdoing. His lawyers say he left Terra two years before the collapse and had nothing to do with it.",
+    "Korean courts twice turned down requests to arrest him, and his trial is still going on."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 94,
+   "text": "Shin denies wrongdoing. His lawyers say he left Terra two years before the collapse and had nothing to do with it. Korean courts twice turned down requests to arrest him, and his trial is still going on.",
+   "wer": 0.027,
+   "asr": "Shin denies wrongdoing. His liars say he left Terra two years before the collapse and had  nothing to do with it. Korean courts twice turned down requests to arrest him,  and his trial is still going on.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.04,
+   "start": 1149.853,
+   "end": 1162.842
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "And Do Kwon may not be done with Korean justice.",
+    "U.S. prosecutors said they would not oppose a transfer to Korea after he serves half his sentence."
+   ],
+   "cues": [
+    "[SCREEN] Map: New York prison icon → arrow → Seoul courthouse icon"
+   ],
+   "gap_after": 0.25,
+   "id": 95,
+   "text": "And Do Kwon may not be done with Korean justice. U.S. prosecutors said they would not oppose a transfer to Korea after he serves half his sentence.",
+   "wer": 0.143,
+   "asr": "And Du Kwan may not be done with Korean justice.  US prosecutors said they would not oppose a transfer to Korea after he serves half his sentence.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.36,
+   "start": 1163.392,
+   "end": 1172.691
+  },
+  {
+   "section": "13",
+   "section_title": "The Korean side of the story",
+   "section_index": 13,
+   "lines": [
+    "In Korea, he would still face separate charges, including under the capital markets law. Some Korean media have reported that a conviction there could mean more than 30 years."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 96,
+   "text": "In Korea, he would still face separate charges, including under the capital markets law. Some Korean media have reported that a conviction there could mean more than 30 years.",
+   "wer": 0.0,
+   "asr": "In Korea, he would still face separate charges, including under the capital markets law.  Some Korean media have reported that a conviction there could mean more than 30 years.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 11.2,
+   "start": 1172.941,
+   "end": 1184.077
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "Terra wasn't the first algorithmic stablecoin to break.",
+    "In June 2021, a project called Iron Finance saw its partly algorithmic stablecoin lose its peg, while its sister token fell from around 60 dollars to almost zero in less than a day."
+   ],
+   "cues": [
+    "[AI-16] A single glowing coin balanced on the tip of a spinning top, slowly wobbling over black water, teal and red reflections"
+   ],
+   "gap_after": 0.25,
+   "id": 97,
+   "text": "Terra wasn't the first algorithmic stablecoin to break. In June 2021, a project called Iron Finance saw its partly algorithmic stablecoin lose its peg, while its sister token fell from around 60 dollars to almost zero in less than a day.",
+   "wer": 0.022,
+   "asr": "Terra wasn't the first algorithmic stablecoin to break.  In June 2021, a project called Iron Finance saw its partly algorithmic stablecoin lose  its peg while its sister token fell from around $60 to almost zero in less than a day.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 16.4,
+   "start": 1185.277,
+   "end": 1201.625
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "Same design idea. Same spiral. Smaller scale."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 98,
+   "text": "Same design idea. Same spiral. Smaller scale.",
+   "wer": 0.0,
+   "asr": "Same design idea, same spiral, smaller scale.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 4.4,
+   "start": 1201.875,
+   "end": 1206.223
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "So why does the idea keep coming back?",
+    "Because the dream is powerful. Money as steady as a dollar, without anyone needing to hold the dollars."
+   ],
+   "cues": [],
+   "gap_after": 0.25,
+   "id": 99,
+   "text": "So why does the idea keep coming back? Because the dream is powerful. Money as steady as a dollar, without anyone needing to hold the dollars.",
+   "wer": 0.038,
+   "asr": "So why does the idea keep coming back?  Because the dream is powerful.  Money is steady as a dollar,  without anyone needing to hold the dollars.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.92,
+   "start": 1206.773,
+   "end": 1216.642
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "And because the mechanism works perfectly, right up until the moment people stop believing in it. Confidence is the collateral."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 100,
+   "text": "And because the mechanism works perfectly, right up until the moment people stop believing in it. Confidence is the collateral.",
+   "wer": 0.05,
+   "asr": "And because the mechanism works perfectly, right up until the moment people stopped believing in it, confidence is the collateral.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.6,
+   "start": 1216.892,
+   "end": 1224.426
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "And the yield makes the math look like magic. Run the numbers yourself.",
+    "Fourteen billion dollars of deposits, at nearly 20 percent, means roughly 2.7 billion dollars a year in promised interest."
+   ],
+   "cues": [
+    "[SCREEN] Self-made math card: \"14,000,000,000 UST × ~19.5% ≈ $2.7B a year in promised interest\""
+   ],
+   "gap_after": 0.25,
+   "id": 101,
+   "text": "And the yield makes the math look like magic. Run the numbers yourself. Fourteen billion dollars of deposits, at nearly 20 percent, means roughly 2.7 billion dollars a year in promised interest.",
+   "wer": 0.088,
+   "asr": "And the yield makes the math look like magic.  Run the numbers yourself.  $14 billion of deposits at nearly 20%  means roughly $2.7 billion a year in promised interest.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 14.64,
+   "start": 1224.976,
+   "end": 1239.547
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "Anchor's borrowers never paid anything close to that. The difference had to come from somewhere: reserves, subsidies, and new money coming in."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 102,
+   "text": "Anchor's borrowers never paid anything close to that. The difference had to come from somewhere: reserves, subsidies, and new money coming in.",
+   "wer": 0.045,
+   "asr": "Anchors borrowers never paid anything close to that.  The difference had to come from somewhere.  Reserves, subsidies, and new money coming in.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 9.84,
+   "start": 1239.797,
+   "end": 1249.569
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "Lawmakers noticed. In July 2025, the United States passed the GENIUS Act, which requires payment stablecoins to be backed one-for-one by reserves like cash and short-term Treasuries."
+   ],
+   "cues": [
+    "[SCREEN] Simple card: \"GENIUS Act (U.S., July 2025): payment stablecoins backed 1:1 by cash and short-term Treasuries\""
+   ],
+   "gap_after": 1.0,
+   "id": 103,
+   "text": "Lawmakers noticed. In July 2025, the United States passed the GENIUS Act, which requires payment stablecoins to be backed one-for-one by reserves like cash and short-term Treasuries.",
+   "wer": 0.029,
+   "asr": "Lawmakers noticed in July 2025, the United States passed the GINIUS Act,  which requires payment stablecoins to be backed one for one by reserves like  cash and short-term treasuries.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 13.44,
+   "start": 1250.119,
+   "end": 1263.501
+  },
+  {
+   "section": "14",
+   "section_title": "Why the dream keeps coming back",
+   "section_index": 14,
+   "lines": [
+    "This isn't investment advice. It's a pattern.",
+    "When a yield is far above what anything safe pays, the money is coming from somewhere. If you can't see where, it might be coming from you."
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 104,
+   "text": "This isn't investment advice. It's a pattern. When a yield is far above what anything safe pays, the money is coming from somewhere. If you can't see where, it might be coming from you.",
+   "wer": 0.0,
+   "asr": "This isn't investment advice. It's a pattern. When a yield is far above what anything safe  pays, the money is coming from somewhere. If you can't see where, it might be coming from you.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 12.88,
+   "start": 1264.501,
+   "end": 1277.327
+  },
+  {
+   "section": "15",
+   "section_title": "Outro",
+   "section_index": 15,
+   "lines": [
+    "Terra didn't fail because nobody warned it would.",
+    "It failed because a 20 percent promise was more convincing than every warning."
+   ],
+   "cues": [
+    "[AI-01 variant] The same trading room, now silent and dark, one screen flickering"
+   ],
+   "gap_after": 1.0,
+   "id": 105,
+   "text": "Terra didn't fail because nobody warned it would. It failed because a 20 percent promise was more convincing than every warning.",
+   "wer": 0.048,
+   "asr": "Terra didn't fail because nobody warned it would.  It failed because a 20% promise was more convincing than every warning.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.44,
+   "start": 1278.527,
+   "end": 1285.914
+  },
+  {
+   "section": "15",
+   "section_title": "Outro",
+   "section_index": 15,
+   "lines": [
+    "If something promises you high returns with no risk, ask one question: where is the money actually coming from?"
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 106,
+   "text": "If something promises you high returns with no risk, ask one question: where is the money actually coming from?",
+   "wer": 0.0,
+   "asr": "If something promises you high returns with no risk, ask one question.  Where is the money actually coming from?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 7.92,
+   "start": 1286.914,
+   "end": 1294.771
+  },
+  {
+   "section": "15",
+   "section_title": "Outro",
+   "section_index": 15,
+   "lines": [
+    "Terra was a Korean story the whole world watched.",
+    "Next time: a Korean story the world never heard. A man who took money from tens of thousands of people, fled the country, and was then reported dead. Many of his victims still don't believe it."
+   ],
+   "cues": [],
+   "gap_after": 0.55,
+   "id": 107,
+   "text": "Terra was a Korean story the whole world watched. Next time: a Korean story the world never heard. A man who took money from tens of thousands of people, fled the country, and was then reported dead. Many of his victims still don't believe it.",
+   "wer": 0.0,
+   "asr": "Terra was a Korean story the whole world watched.  Next time, a Korean story the world never heard.  A man who took money from tens of thousands of people fled the country and was then reported  dead.  Many of his victims still don't believe it.",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 17.2,
+   "start": 1295.321,
+   "end": 1312.461
+  },
+  {
+   "section": "15",
+   "section_title": "Outro",
+   "section_index": 15,
+   "lines": [
+    "Subscribe so you don't miss it.",
+    "And tell me in the comments: did you, or someone you know, ever get caught in a crypto collapse?"
+   ],
+   "cues": [],
+   "gap_after": 1.2,
+   "id": 108,
+   "text": "Subscribe so you don't miss it. And tell me in the comments: did you, or someone you know, ever get caught in a crypto collapse?",
+   "wer": 0.0,
+   "asr": "Subscribe so you don't miss it and tell me in the comments.  Did you or someone you know ever get caught in a crypto collapse?",
+   "tries": 1,
+   "sr": 24000,
+   "dur": 8.08,
+   "start": 1313.011,
+   "end": 1321.04
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "section": "6",
+ "chunks": [
+  {
+   "id": 36,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s06_chapter_the_run.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s06_typewriter_october_2022.mp4"
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/queue_people_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s06_saigon_motorbikes_ov_1.jpg",
+     "fx": "in",
+     "crop": "bottom"
+    },
+    {
+     "kind": "text",
+     "text": "They had no idea\nwho really controlled it.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "timeline",
+     "name": "s06_timeline_oct_2022",
+     "args": {
+      "events": [
+       [
+        "Oct 2022",
+        "Lan arrested"
+       ],
+       [
+        "Within days",
+        "crowds at SCB branches"
+       ],
+       [
+        "Oct 2022",
+        "State Bank places SCB under special control"
+       ]
+      ],
+      "title": "THE RUN",
+      "dur": 4.8,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s04_state_bank_1.jpg",
+     "fx": "out",
+     "crop": "detail"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/vault_door_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s06_countup_25_6B_central_bank.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "text",
+     "text": "And the bondholders discovered\nthat the companies behind their bonds\ncould not pay.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s06_saigon_rain_ov_3.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "flow_diagram",
+     "name": "s06_flow_central_bank_keeps_scb_alive",
+     "args": {
+      "nodes": [
+       {
+        "id": "cb",
+        "label": "Central bank",
+        "x": 0.12,
+        "y": 0.5
+       },
+       {
+        "id": "scb",
+        "label": "SCB",
+        "sub": "a private bank",
+        "x": 0.88,
+        "y": 0.5,
+        "red": true
+       }
+      ],
+      "edges": [
+       {
+        "from": "cb",
+        "to": "scb",
+        "label": "kept lending"
+       }
+      ],
+      "title": "IN EFFECT",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_panic_whole_system",
+     "args": {
+      "lines": [
+       "letting it fail risked spreading panic",
+       "through the whole system"
+      ],
+      "red": [
+       "panic"
+      ],
+      "dur": 4.5,
+      "stagger": 1.0,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 36,
+   "name": "typewriter",
+   "offset": 4.1,
+   "gain_db": -14
+  },
+  {
+   "chunk": 39,
+   "name": "impact",
+   "offset": 6.4,
+   "gain_db": -12
+  },
+  {
+   "chunk": 40,
+   "name": "riser",
+   "offset": 13.5,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": []
+}

@@ -1,0 +1,15 @@
+{
+  "source": "output/ep02/ep02_base_clean.mp4",
+  "manifest": "output/ep02/narration/manifest.json",
+  "captions": "subtitles/ep02/ep02_en.srt",
+  "caption_visible": "output/ep02/caption_visible.json",
+  "out_dir": "shorts/ep02",
+  "shorts": [
+    {"n": 1, "slug": "paid_every_day", "pieces": [[9, 13]], "hook": ["PAID", "EVERY SINGLE DAY"], "red": ["every", "day"], "card": ["Korea's Biggest", "Ponzi Scheme"]},
+    {"n": 2, "slug": "the_ladder", "pieces": [[17, 20], [22, 22]], "intro": 4.2, "hook": ["THE LADDER", "OF RECRUITS"], "red": ["ladder"], "card": ["Korea's Biggest", "Ponzi Scheme"]},
+    {"n": 3, "slug": "the_cop_on_the_case", "pieces": [[38, 39], [54, 55]], "hook": ["THE COP", "ON THE CASE"], "red": ["cop"], "card": ["Korea's Biggest", "Ponzi Scheme"]},
+    {"n": 4, "slug": "escape_by_boat", "pieces": [[43, 43], [45, 47]], "intro": 4.2, "hook": ["ESCAPE", "BY FISHING BOAT"], "red": ["escape"], "card": ["Korea's Biggest", "Ponzi Scheme"]},
+    {"n": 5, "slug": "is_he_dead", "pieces": [[64, 67]], "intro": 4.2, "hook": ["IS HE", "REALLY DEAD?"], "red": ["dead?"], "card": ["Korea's Biggest", "Ponzi Scheme"]},
+    {"n": 6, "slug": "22_years", "pieces": [[73, 74], [82, 82], [86, 86]], "hook": ["22 YEARS", "FOR THE RIGHT-HAND MAN"], "red": ["22", "years"], "card": ["Korea's Biggest", "Ponzi Scheme"]}
+  ]
+}

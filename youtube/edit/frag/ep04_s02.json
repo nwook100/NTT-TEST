@@ -1,0 +1,116 @@
+{
+ "section": "2",
+ "chunks": [
+  {"id": 11, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s02_chapter_the_leasing_machine.mp4"},
+   {"kind": "motion", "fn": "flow_diagram", "name": "s02_flow_the_pitch", "args": {
+    "nodes": [
+     {"id": "inv", "label": "Investor", "x": 0.12, "y": 0.12},
+     {"id": "ez", "label": "Ezubao platform", "x": 0.5, "y": 0.12, "red": true},
+     {"id": "lease", "label": "Yucheng leasing company", "x": 0.88, "y": 0.5},
+     {"id": "biz", "label": "Real business", "x": 0.5, "y": 1.0}
+    ],
+    "edges": [
+     {"from": "inv", "to": "ez"},
+     {"from": "ez", "to": "lease"},
+     {"from": "lease", "to": "biz", "label": "leases equipment"},
+     {"from": "biz", "to": "inv", "label": "rent flows back"}
+    ],
+    "title": "THE PITCH", "dur": 6.0, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}}
+  ]},
+  {"id": 12, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4"}
+  ]},
+  {"id": 13, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/cards/zoom/card_06_returns_9_to_14_6_zoom.mp4"},
+   {"kind": "motion", "fn": "compare", "name": "s02_cmp_ezubao_vs_bank", "args": {
+    "left": {"head": "EZUBAO", "big": "9%–14.6%", "sub": "a year"},
+    "right": {"head": "1-YR BANK DEPOSIT", "big": "3% → 1.5%", "sub": "official benchmark, 2014–15"},
+    "title": "THE COURT LATER FOUND", "dur": 5.0, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4"}
+  ]},
+  {"id": 14, "segments": [
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_1.jpg", "fx": "in"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_one_yuan", "args": {
+    "lines": ["You could start with just one yuan,", "and take your money out", "whenever you wanted."],
+    "kicker": "ACCORDING TO CHINESE PROSECUTORS", "red": ["one yuan,"], "dur": 4.5, "stagger": 0.9, "size": 96, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}}
+  ]},
+  {"id": 15, "segments": [
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_how_it_actually_worked", "args": {"lines": ["Now here's how", "it actually worked."], "red": ["actually"], "dur": 3.0, "stagger": 0.8, "size": 116, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}}
+  ]},
+  {"id": 16, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4", "grade": "cold"}
+  ]},
+  {"id": 17, "segments": [
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_paid_for_details", "args": {
+    "lines": ["One and a half to two percent", "of the “loan” amount,", "for each company's details."],
+    "kicker": "ON DING NING'S INSTRUCTIONS · TOLD TO XINHUA", "red": ["details."], "dur": 5.0, "stagger": 0.9, "size": 92, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4", "start": 2.0},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4", "grade": "cold"}
+  ]},
+  {"id": 18, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4", "start": 1.5}
+  ]},
+  {"id": 19, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/cards/zoom/card_05_95_percent_fake_zoom.mp4"},
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s04_renminbi_ov_2.jpg", "fx": "out"},
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s02_countup_800m_buying_details.mp4"}
+  ]},
+  {"id": 20, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s02_countup_207_borrowers.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4", "start": 1.5}
+  ]},
+  {"id": 21, "segments": [
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_bengbu_city_2.jpg", "fx": "in"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4", "start": 2.0},
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_listed_his_company", "args": {
+    "lines": ["Ezubao had listed his company online", "to raise money in its name."],
+    "kicker": "POLICE TOLD HIM · XINHUA", "red": ["in its name."], "dur": 5.0, "stagger": 1.2, "size": 92, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"}
+  ]},
+  {"id": 22, "segments": [
+   {"kind": "motion", "fn": "flow_diagram", "name": "s02_flow_fake_guarantees", "args": {
+    "nodes": [
+     {"id": "yc", "label": "Yucheng", "x": 0.5, "y": 0.1, "red": true},
+     {"id": "g", "label": "Three guarantee companies", "x": 0.2, "y": 0.55},
+     {"id": "f", "label": "A factoring company", "x": 0.8, "y": 0.55},
+     {"id": "ez", "label": "Ezubao's own projects", "x": 0.5, "y": 1.0}
+    ],
+    "edges": [
+     {"from": "yc", "to": "g", "label": "controlled"},
+     {"from": "yc", "to": "f", "label": "controlled"},
+     {"from": "g", "to": "ez", "label": "backed", "red": true},
+     {"from": "f", "to": "ez", "label": "backed", "red": true}
+    ],
+    "title": "WHO GUARANTEED THESE LOANS? · ACCORDING TO XINHUA", "dur": 6.0, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/towers_looking_down_night_1.mp4"},
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg", "fx": "left"}
+  ]},
+  {"id": 23, "segments": [
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_fake_fake_fake", "args": {
+    "lines": ["Fake projects.", "Fake third parties.", "Fake guarantees."],
+    "kicker": "XINHUA SUMMED UP THE TRICK", "red": ["fake"], "dur": 4.5, "stagger": 0.9, "size": 112, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/server_room_1.mp4", "start": 1.5}
+  ]},
+  {"id": 24, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s02_typewriter_july_2015_rule.mp4"},
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_beijing_cbd_2.jpg", "fx": "right"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_doing_both", "args": {
+    "lines": ["No pool of money of its own.", "No guarantees.", "Ezubao was doing both."],
+    "kicker": "UNDER THE JULY 2015 GUIDELINES · XINHUA", "red": ["both."], "dur": 5.0, "stagger": 1.0, "size": 98, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/beijing_dusk_skyline_1.mp4"}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 11, "name": "whoosh", "offset": 4.0, "gain_db": -12},
+  {"chunk": 15, "name": "impact", "offset": 0.3, "gain_db": -8},
+  {"chunk": 20, "name": "impact", "offset": 2.5, "gain_db": -9},
+  {"chunk": 23, "name": "stamp", "offset": 0.5, "gain_db": -10}
+ ],
+ "music_drops": [
+  {"chunk": 15, "dur": 1.5}
+ ]
+}

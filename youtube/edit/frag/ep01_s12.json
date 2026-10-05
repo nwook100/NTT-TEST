@@ -1,0 +1,227 @@
+{
+ "section": "12",
+ "chunks": [
+  {
+   "id": 84,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s12_chapter_the_verdicts.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s12_kp_civil_criminal",
+     "args": {
+      "lines": [
+       "Once in civil court.",
+       "Once in criminal court."
+      ],
+      "red": [
+       "civil",
+       "criminal"
+      ],
+      "kicker": "AMERICA WENT AFTER KWON TWICE",
+      "dur": 3.0,
+      "stagger": 0.6,
+      "size": 116
+     }
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/cards/card_01_sec_charges_2023-02-16.png",
+     "fx": "in"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/cards/zoom/card_03_sec_chai_allegation_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/s12_courthouse_ny_3.jpg",
+     "fx": "in",
+     "crop": "top"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s12_stamp_liable_for_fraud.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/cards/zoom/card_04_jury_verdict_2024-04-05_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep01_terra_luna/stock/legal_documents_2.mp4",
+     "start": 3.0,
+     "grade": "cold"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/cards/zoom/card_05_sec_settlement_2024-06-13_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "person_card",
+     "name": "s12_pc_kwon_pleaded",
+     "args": {
+      "photo": "assets/ep01_terra_luna/people/do_kwon_commons.png",
+      "name": "DO KWON",
+      "credit": "Photo: FAQX / CC BY 3.0",
+      "kicker": "AUGUST 2025 \u00b7 NEW YORK",
+      "sub": "Pleaded guilty to two fraud charges",
+      "stamp_word": "PLEADED GUILTY",
+      "grade": "bw",
+      "dur": 5.0
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/cards/card_06_kwon_plea_2025-08.png",
+     "fx": "in"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s12_wordbyword_plea_quote.mp4"
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s12_kp_question_from_earlier",
+     "args": {
+      "lines": [
+       "Was the 2021 rescue hidden?"
+      ],
+      "red": [
+       "hidden?"
+      ],
+      "kicker": "THE QUESTION FROM EARLIER",
+      "dur": 5.3,
+      "size": 116
+     }
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep01_terra_luna/motion/s12_stamp_15_years.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "bar_chart",
+     "name": "s12_bar_12_vs_15_years",
+     "args": {
+      "bars": [
+       [
+        "Prosecutors asked for",
+        12
+       ],
+       [
+        "Judge sentenced him to",
+        15,
+        true
+       ]
+      ],
+      "suffix": " years",
+      "title": "DECEMBER 2025 \u00b7 PRISON SENTENCE",
+      "dur": 3.6
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep01_terra_luna/cards/card_07_doj_sentence_2025-12-11.png",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s12_kp_epic_generational",
+     "args": {
+      "lines": [
+       "A fraud on an",
+       "\"epic, generational scale.\""
+      ],
+      "red": [
+       "epic,",
+       "generational"
+      ],
+      "kicker": "THE JUDGE CALLED IT",
+      "dur": 3.3,
+      "stagger": 0.7,
+      "size": 116
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 84,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 85,
+   "name": "whoosh",
+   "offset": 6.85,
+   "gain_db": -10
+  },
+  {
+   "chunk": 86,
+   "name": "impact",
+   "offset": 3.17,
+   "gain_db": -8
+  },
+  {
+   "chunk": 90,
+   "name": "stamp",
+   "offset": 0.55,
+   "gain_db": -8
+  },
+  {
+   "chunk": 90,
+   "name": "impact",
+   "offset": 0.55,
+   "gain_db": -7
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 88,
+   "dur": 18.5
+  },
+  {
+   "chunk": 90,
+   "dur": 1.5
+  }
+ ]
+}

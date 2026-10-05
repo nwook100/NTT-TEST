@@ -1,0 +1,266 @@
+{
+ "section": "9",
+ "chunks": [
+  {
+   "id": 54,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/motion/s09_chapter_where_s_the_money.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_their_money",
+     "args": {
+      "lines": [
+       "It was their money."
+      ],
+      "red": [
+       "money."
+      ],
+      "dur": 3.0,
+      "stagger": 0.0,
+      "size": 124,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s09_count_1200_properties",
+     "args": {
+      "to": 1200,
+      "suffix": "+",
+      "kicker": "FROZEN BY INVESTIGATORS",
+      "label": "PROPERTIES LINKED TO HER",
+      "sublabel": "+ hundreds of millions of SCB shares in her name or her proxies' names",
+      "dur": 4.5,
+      "count_time": 1.6,
+      "size": 230,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/document_files_2.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_skyline_1.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s09_tw_june_2025_payouts",
+     "args": {
+      "text": "JUNE 2025",
+      "sub": "— civil judgment enforcement office began paying bondholders",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s03_dong_banknotes_ov_2.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "bar_chart",
+     "name": "s09_bar_owed_vs_paid_may_2026",
+     "args": {
+      "bars": [
+       [
+        "Owed to bondholders",
+        30.08
+       ],
+       [
+        "Paid out · nine rounds",
+        12,
+        true
+       ]
+      ],
+      "prefix": "₫",
+      "suffix": "T",
+      "decimals": 2,
+      "title": "BY MAY 2026",
+      "note": "about ₫12 trillion, roughly 40% of what was owed · according to the Vietnamese government's news portal",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s09_count_42000_creditors",
+     "args": {
+      "to": 42000,
+      "suffix": "+",
+      "kicker": "BY MAY 2026 · NINE ROUNDS",
+      "label": "CREDITORS PAID",
+      "sublabel": "according to the Vietnamese government's news portal",
+      "dur": 4.5,
+      "count_time": 1.8,
+      "size": 230,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_10_repayments_41_percent_zoom.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/signing_document_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "text",
+     "text": "Waiting, year after year,\nfor a slice at a time.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 58,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_auction_lots",
+     "args": {
+      "lines": [
+       "2 handbags ≈ $539,000",
+       "Maybach ≈ $630,000",
+       "Yacht — 5 auctions, no buyer (Aug 2026)"
+      ],
+      "red": [
+       "buyer"
+      ],
+      "dur": 5.0,
+      "stagger": 1.2,
+      "size": 96,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN",
+      "kicker": "HER POSSESSIONS ARE BEING SOLD"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/yacht_2.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/courtroom_gavel_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s09_compare_bondholders_vs_scb",
+     "args": {
+      "left": {
+       "head": "Bondholders",
+       "big": "~41%",
+       "sub": "repaid"
+      },
+      "right": {
+       "head": "SCB",
+       "big": "≈ $27B",
+       "sub": "ordered — a fraction recovered"
+      },
+      "title": "ONLY PART OF THE BILL",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep03_truong_my_lan/cards/zoom/card_05_674_trillion_to_scb_zoom.mp4"
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep03_truong_my_lan/stock/lobby_blur_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s09_tw_august_2026_scb",
+     "args": {
+      "text": "AUGUST 2026",
+      "sub": "— SCB: still under special control, closing branches (state media)",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep03_truong_my_lan/s01_hcmc_towers_ov_1.jpg",
+     "fx": "out",
+     "crop": "left",
+     "grade": "cold"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 55,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 57,
+   "name": "whoosh",
+   "offset": 0.1,
+   "gain_db": -15
+  },
+  {
+   "chunk": 58,
+   "name": "stamp",
+   "offset": 12.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 60,
+   "name": "typewriter",
+   "offset": 3.5,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 59,
+   "dur": 2.0
+  }
+ ]
+}

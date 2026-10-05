@@ -1,0 +1,225 @@
+{
+ "section": "3",
+ "chunks": [
+  {
+   "id": 25,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s03_chapter_on_state_tv_on_the_bullet_train.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s03_kp_ad_montage",
+     "args": {
+      "lines": [
+       "National TV ✓",
+       "Regional TV ✓",
+       "Subway ✓",
+       "Airports ✓",
+       "Train stations ✓",
+       "A bullet train named after it ✓"
+      ],
+      "kicker": "ACCORDING TO THE COURT'S JUDGMENT",
+      "dur": 5.5,
+      "stagger": 0.7,
+      "size": 62,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_airport_china_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_bullet_train_ov_1.jpg",
+     "fx": "right"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_cctv_hq_2.jpg",
+     "fx": "in",
+     "overlay": "assets/ep04_ezubao/motion/s03_lowerthird_cctv.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_cctv_hq_3.jpg",
+     "crop": "top",
+     "fx": "out"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s03_countup_480m_advertising.mp4"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/speaker_stage_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_4.jpg",
+     "fx": "right"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "stamp",
+     "name": "s03_stamp_convicted",
+     "args": {
+      "word": "CONVICTED",
+      "sub": "FOUR AND A HALF YEARS",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/gavel_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s03_keyphrase_state_tv_safe.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_cctv_hq_2.jpg",
+     "fx": "out"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_crh_train_2.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_airport_china_ov_1.jpg",
+     "fx": "right"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_cctv_hq_3.jpg",
+     "crop": "top",
+     "fx": "in",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/crowd_night_1.mp4",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_1.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s03_shanghai_lujiazui_2.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s03_countup_31_provinces",
+     "args": {
+      "to": 31,
+      "kicker": "VICTIMS · REPORTED BY XINHUA",
+      "label": "PROVINCES AND REGIONS",
+      "sublabel": "In practice, most of China.",
+      "dur": 4.5,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 25,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 2.2,
+   "gain_db": -8
+  },
+  {
+   "chunk": 30,
+   "name": "stamp",
+   "offset": 0.9,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": []
+}
