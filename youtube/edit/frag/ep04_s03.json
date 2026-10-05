@@ -70,13 +70,13 @@
    "id": 28,
    "segments": [
     {
-     "kind": "clip",
-     "asset": "assets/ep04_ezubao/motion/s03_countup_480m_advertising.mp4"
-    },
-    {
      "kind": "photo",
      "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg",
      "fx": "left"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s03_countup_480m_advertising.mp4"
     }
    ]
   },
