@@ -1,0 +1,214 @@
+{
+ "section": "10",
+ "chunks": [
+  {
+   "id": 64,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s10_chapter_the_pattern.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_teach_us",
+     "args": {
+      "lines": [
+       "What does 1MDB teach us?"
+      ],
+      "red": [
+       "1MDB"
+      ],
+      "dur": 3.0,
+      "stagger": 0.0,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step1_no_checks",
+     "args": {
+      "kicker": "THE PATTERN · 1 OF 5",
+      "lines": [
+       "Approves the spending.",
+       "In charge of the checks.",
+       "No checks."
+      ],
+      "red": [
+       "No",
+       "checks."
+      ],
+      "dur": 4.5,
+      "stagger": 0.9,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step2_above_market",
+     "args": {
+      "kicker": "THE PATTERN · 2 OF 5",
+      "lines": [
+       "Raises billions. No clear business.",
+       "Pays bankers far above market rates."
+      ],
+      "red": [
+       "above",
+       "market",
+       "rates."
+      ],
+      "dur": 5.0,
+      "stagger": 0.6,
+      "size": 88,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step3_watch_the_names",
+     "args": {
+      "kicker": "THE PATTERN · 3 OF 5",
+      "lines": [
+       "Watch the names."
+      ],
+      "red": [
+       "names."
+      ],
+      "dur": 3.0,
+      "stagger": 0.0,
+      "size": 124,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step3_not_the_partner",
+     "args": {
+      "lines": [
+       "A company that sounds like a real partner",
+       "is not always the real partner."
+      ],
+      "red": [
+       "not"
+      ],
+      "dur": 4.5,
+      "stagger": 0.6,
+      "size": 76,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s01_petronas_ov_3.jpg",
+     "fx": "in",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step4_not_a_coincidence",
+     "args": {
+      "kicker": "THE PATTERN · 4 OF 5",
+      "lines": [
+       "An audit classified secret.",
+       "An attorney general replaced.",
+       "Newspapers suspended."
+      ],
+      "red": [
+       "secret."
+      ],
+      "dur": 6.0,
+      "stagger": 1.2,
+      "size": 88,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_step5_across_borders",
+     "args": {
+      "kicker": "THE PATTERN · 5 OF 5",
+      "lines": [
+       "Follow the money",
+       "across borders."
+      ],
+      "red": [
+       "across",
+       "borders."
+      ],
+      "dur": 3.5,
+      "stagger": 0.5,
+      "size": 112,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s06_zurich_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "A state fund is only as honest\nas the people allowed to question it.",
+     "style": "quote"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 64,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 65,
+   "name": "impact",
+   "offset": 5.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 66,
+   "name": "impact",
+   "offset": 6.0,
+   "gain_db": -15
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 67,
+   "dur": 1.5
+  }
+ ]
+}

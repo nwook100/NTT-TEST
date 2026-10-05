@@ -100,6 +100,10 @@
      "crop": "detail"
     },
     {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+    },
+    {
      "kind": "motion",
      "fn": "key_phrase",
      "name": "s06_kp_two_days",
@@ -112,10 +116,6 @@
       "size": 110,
       "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
      }
-    },
-    {
-     "kind": "video",
-     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
     },
     {
      "kind": "text",
