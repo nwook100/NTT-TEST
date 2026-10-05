@@ -1,0 +1,207 @@
+{
+ "section": "5",
+ "chunks": [
+  {
+   "id": 41,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s05_chapter_six_days_in_december.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s05_timeline_six_days.mp4"
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s05_typewriter_dec_3_shenzhen",
+     "args": {
+      "text": "DECEMBER 3, 2015 — SHENZHEN",
+      "sub": "according to Chinese media",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s05_shenzhen_ov_4.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/police_lights_bokeh_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg",
+     "fx": "out",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/airport_walkway_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s05_typewriter_dec_8_2015.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/police_lights_bokeh_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s01_beijing_cbd_2.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/crowd_night_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s05_world_trade_center_2.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s05_world_trade_center_1.jpg",
+     "crop": "top",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s05_typewriter_jan_14_2016.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "Jan 14, 2016\n21 people formally arrested\n(Beijing prosecutors)",
+     "style": "label"
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s05_keyphrase_complete_ponzi.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/excavator_bucket_rubble_1.mp4",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s00_countup_1200_volumes.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s00_hefei_skyline_1.jpg",
+     "fx": "out",
+     "grade": "cold"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/dig_site_night_1.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 41,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 42,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 44,
+   "name": "riser",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 47,
+   "name": "impact",
+   "offset": 6.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 49,
+   "name": "impact",
+   "offset": 0.4,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 47,
+   "dur": 1.5
+  }
+ ]
+}
