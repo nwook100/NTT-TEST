@@ -1,0 +1,182 @@
+{
+ "section": "4",
+ "chunks": [
+  {
+   "id": 35,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s04_chapter_where_the_money_went.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s04_kp_definition_ponzi",
+     "args": {
+      "lines": [
+       "The definition",
+       "of a Ponzi scheme."
+      ],
+      "red": [
+       "Ponzi"
+      ],
+      "kicker": "THE COURT'S FINDINGS · A FORENSIC AUDIT",
+      "dur": 3.5,
+      "stagger": 0.7,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "bar_chart",
+     "name": "s04_bars_where_money_went",
+     "args": {
+      "title": "COURT AUDIT · BILLION YUAN",
+      "bars": [
+       ["Paid back to earlier investors", 38.4, true],
+       ["Buying indebted companies & bad debts", 3.2],
+       ["Sent abroad", 2.3],
+       ["'Gifts' to executives", 1.2],
+       ["Luxury goods", 0.49]
+      ],
+      "decimals": 2,
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s04_kp_new_money_old_money",
+     "args": {
+      "lines": [
+       "New money,",
+       "paying old money."
+      ],
+      "red": [
+       "old"
+      ],
+      "dur": 3.5,
+      "stagger": 0.8,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/luxury_watch_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep04_ezubao/s04_renminbi_ov_2.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/diamond_ring_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/villa_aerial_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/towers_looking_down_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/cards/zoom/card_08_zhang_min_700m_gifts_zoom.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/villa_aerial_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/diamond_ring_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s04_compare_told_vs_audit",
+     "args": {
+      "left": {
+       "head": "Investors were told",
+       "big": "equipment leases"
+      },
+      "right": {
+       "head": "The audit found",
+       "big": "earlier investors, executives, luxury"
+      },
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 35,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 36,
+   "name": "impact",
+   "offset": 0.6,
+   "gain_db": -10
+  },
+  {
+   "chunk": 39,
+   "name": "impact",
+   "offset": 1.2,
+   "gain_db": -8
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 36,
+   "dur": 1.5
+  }
+ ]
+}

@@ -1,0 +1,1576 @@
+{
+ "episode": "ep04_ezubao",
+ "chunks": {
+  "0": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s00_typewriter_hefei.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/dig_site_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/construction_pit_aerial_night_1.mp4"
+   }
+  ],
+  "1": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s00_countup_6_meters.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/excavator_bucket_rubble_1.mp4",
+    "grade": "bw"
+   }
+  ],
+  "2": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/dig_site_night_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s00_countup_1200_volumes.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+   }
+  ],
+  "3": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_beijing_cbd_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_its_name_was_ezubao",
+    "args": {
+     "lines": [
+      "Its name was Ezubao."
+     ],
+     "red": [
+      "ezubao."
+     ],
+     "dur": 3.5,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s00_chapter_buried_six_meters_deep.mp4"
+   }
+  ],
+  "4": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s01_chapter_the_man_from_bengbu.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s01_typewriter_bengbu.mp4"
+   }
+  ],
+  "5": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_bengbu_street_1.jpg",
+    "fx": "in",
+    "overlay": "assets/ep04_ezubao/motion/s01_lowerthird_yucheng.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4"
+   }
+  ],
+  "6": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s01_flow_p2p_pitch",
+    "args": {
+     "nodes": [
+      {
+       "id": "savers",
+       "label": "People with savings",
+       "x": 0.14,
+       "y": 0.5
+      },
+      {
+       "id": "app",
+       "label": "An app or a website",
+       "x": 0.5,
+       "y": 0.12,
+       "red": true
+      },
+      {
+       "id": "biz",
+       "label": "Businesses that need loans",
+       "x": 0.86,
+       "y": 0.5
+      }
+     ],
+     "edges": [
+      {
+       "from": "savers",
+       "to": "app"
+      },
+      {
+       "from": "app",
+       "to": "biz"
+      }
+     ],
+     "title": "NO BANK IN THE MIDDLE",
+     "dur": 5.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_smartphone_ov_4.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"
+   }
+  ],
+  "7": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/older_hands_phone_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_somewhere_safe",
+    "args": {
+     "lines": [
+      "People wanted somewhere safe",
+      "that still paid something."
+     ],
+     "red": [
+      "safe"
+     ],
+     "dur": 4.5,
+     "stagger": 1.1,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"
+   }
+  ],
+  "8": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s01_countup_3769_platforms.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"
+   }
+  ],
+  "9": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_1.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s01_tl_feb_2014_july_2014",
+    "args": {
+     "events": [
+      [
+       "FEB 2014",
+       "Yucheng buys a Beijing web-finance company"
+      ],
+      [
+       "JULY 2014",
+       "'Ezubao' goes live"
+      ]
+     ],
+     "title": "ACCORDING TO XINHUA",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s01_typewriter_july_2014_ezubao.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/beijing_cbd_interchange_1.mp4"
+   }
+  ],
+  "10": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_that_word_leasing",
+    "args": {
+     "lines": [
+      "That word, leasing,",
+      "was the whole pitch."
+     ],
+     "red": [
+      "leasing,"
+     ],
+     "dur": 4.0,
+     "stagger": 1.0,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "11": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s02_chapter_the_leasing_machine.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s02_flow_the_pitch",
+    "args": {
+     "nodes": [
+      {
+       "id": "inv",
+       "label": "Investor",
+       "x": 0.12,
+       "y": 0.12
+      },
+      {
+       "id": "ez",
+       "label": "Ezubao platform",
+       "x": 0.5,
+       "y": 0.12,
+       "red": true
+      },
+      {
+       "id": "lease",
+       "label": "Yucheng leasing company",
+       "x": 0.88,
+       "y": 0.5
+      },
+      {
+       "id": "biz",
+       "label": "Real business",
+       "x": 0.5,
+       "y": 1.0
+      }
+     ],
+     "edges": [
+      {
+       "from": "inv",
+       "to": "ez"
+      },
+      {
+       "from": "ez",
+       "to": "lease"
+      },
+      {
+       "from": "lease",
+       "to": "biz",
+       "label": "leases equipment"
+      },
+      {
+       "from": "biz",
+       "to": "inv",
+       "label": "rent flows back"
+      }
+     ],
+     "title": "THE PITCH",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "12": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4"
+   }
+  ],
+  "13": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_06_returns_9_to_14_6_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s02_cmp_ezubao_vs_bank",
+    "args": {
+     "left": {
+      "head": "EZUBAO",
+      "big": "9%–14.6%",
+      "sub": "a year"
+     },
+     "right": {
+      "head": "1-YR BANK DEPOSIT",
+      "big": "3% → 1.5%",
+      "sub": "official benchmark, 2014–15"
+     },
+     "title": "THE COURT LATER FOUND",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4"
+   }
+  ],
+  "14": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_one_yuan",
+    "args": {
+     "lines": [
+      "You could start with just one yuan,",
+      "and take your money out",
+      "whenever you wanted."
+     ],
+     "kicker": "ACCORDING TO CHINESE PROSECUTORS",
+     "red": [
+      "one yuan,"
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "15": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_how_it_actually_worked",
+    "args": {
+     "lines": [
+      "Now here's how",
+      "it actually worked."
+     ],
+     "red": [
+      "actually"
+     ],
+     "dur": 3.0,
+     "stagger": 0.8,
+     "size": 116,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "16": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "17": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_paid_for_details",
+    "args": {
+     "lines": [
+      "One and a half to two percent",
+      "of the “loan” amount,",
+      "for each company's details."
+     ],
+     "kicker": "ON DING NING'S INSTRUCTIONS · TOLD TO XINHUA",
+     "red": [
+      "details."
+     ],
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "18": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4",
+    "start": 1.5
+   }
+  ],
+  "19": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_05_95_percent_fake_zoom.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_renminbi_ov_2.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s02_countup_800m_buying_details.mp4"
+   }
+  ],
+  "20": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s02_countup_207_borrowers.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4",
+    "start": 1.5
+   }
+  ],
+  "21": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_bengbu_city_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_listed_his_company",
+    "args": {
+     "lines": [
+      "Ezubao had listed his company online",
+      "to raise money in its name."
+     ],
+     "kicker": "POLICE TOLD HIM · XINHUA",
+     "red": [
+      "in its name."
+     ],
+     "dur": 5.0,
+     "stagger": 1.2,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+   }
+  ],
+  "22": [
+   {
+    "kind": "motion",
+    "fn": "flow_diagram",
+    "name": "s02_flow_fake_guarantees",
+    "args": {
+     "nodes": [
+      {
+       "id": "yc",
+       "label": "Yucheng",
+       "x": 0.5,
+       "y": 0.1,
+       "red": true
+      },
+      {
+       "id": "g",
+       "label": "Three guarantee companies",
+       "x": 0.2,
+       "y": 0.55
+      },
+      {
+       "id": "f",
+       "label": "A factoring company",
+       "x": 0.8,
+       "y": 0.55
+      },
+      {
+       "id": "ez",
+       "label": "Ezubao's own projects",
+       "x": 0.5,
+       "y": 1.0
+      }
+     ],
+     "edges": [
+      {
+       "from": "yc",
+       "to": "g",
+       "label": "controlled"
+      },
+      {
+       "from": "yc",
+       "to": "f",
+       "label": "controlled"
+      },
+      {
+       "from": "g",
+       "to": "ez",
+       "label": "backed",
+       "red": true
+      },
+      {
+       "from": "f",
+       "to": "ez",
+       "label": "backed",
+       "red": true
+      }
+     ],
+     "title": "WHO GUARANTEED THESE LOANS? · ACCORDING TO XINHUA",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/towers_looking_down_night_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg",
+    "fx": "left"
+   }
+  ],
+  "23": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_fake_fake_fake",
+    "args": {
+     "lines": [
+      "Fake projects.",
+      "Fake third parties.",
+      "Fake guarantees."
+     ],
+     "kicker": "XINHUA SUMMED UP THE TRICK",
+     "red": [
+      "fake"
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/server_room_1.mp4",
+    "start": 1.5
+   }
+  ],
+  "24": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s02_typewriter_july_2015_rule.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_beijing_cbd_2.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_doing_both",
+    "args": {
+     "lines": [
+      "No pool of money of its own.",
+      "No guarantees.",
+      "Ezubao was doing both."
+     ],
+     "kicker": "UNDER THE JULY 2015 GUIDELINES · XINHUA",
+     "red": [
+      "both."
+     ],
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 98,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/beijing_dusk_skyline_1.mp4"
+   }
+  ],
+  "25": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s03_chapter_on_state_tv_on_the_bullet_train.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+   }
+  ],
+  "26": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_ad_montage",
+    "args": {
+     "lines": [
+      "National TV ✓",
+      "Regional TV ✓",
+      "Subway ✓",
+      "Airports ✓",
+      "Train stations ✓",
+      "A bullet train named after it ✓"
+     ],
+     "kicker": "ACCORDING TO THE COURT'S JUDGMENT",
+     "dur": 5.5,
+     "stagger": 0.7,
+     "size": 62,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_airport_china_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_bullet_train_ov_1.jpg",
+    "fx": "right"
+   }
+  ],
+  "27": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_cctv_hq_2.jpg",
+    "fx": "in",
+    "overlay": "assets/ep04_ezubao/motion/s03_lowerthird_cctv.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_cctv_hq_3.jpg",
+    "crop": "top",
+    "fx": "out"
+   }
+  ],
+  "28": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s03_countup_480m_advertising.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_3.jpg",
+    "fx": "left"
+   }
+  ],
+  "29": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/speaker_stage_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_4.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+   }
+  ],
+  "30": [
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s03_stamp_convicted",
+    "args": {
+     "word": "CONVICTED",
+     "sub": "FOUR AND A HALF YEARS",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/gavel_1.mp4"
+   }
+  ],
+  "31": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s03_keyphrase_state_tv_safe.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_cctv_hq_2.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_crh_train_2.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_airport_china_ov_1.jpg",
+    "fx": "right"
+   }
+  ],
+  "32": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_cctv_hq_3.jpg",
+    "crop": "top",
+    "fx": "in",
+    "grade": "cold"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/crowd_night_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "33": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_1.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s03_shanghai_lujiazui_2.jpg",
+    "fx": "in"
+   }
+  ],
+  "34": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s03_countup_31_provinces",
+    "args": {
+     "to": 31,
+     "kicker": "VICTIMS · REPORTED BY XINHUA",
+     "label": "PROVINCES AND REGIONS",
+     "sublabel": "In practice, most of China.",
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"
+   }
+  ],
+  "50": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_chapter_the_verdict.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "51": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_typewriter_sept_12_2017.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s06_beijing_court_1.jpg",
+    "fx": "left",
+    "crop": "bottom",
+    "overlay": "assets/ep04_ezubao/motion/s06_lowerthird_beijing_court.mp4"
+   }
+  ],
+  "52": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_countup_76_2_billion.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_01_76_billion_1_15m_people_zoom.mp4"
+   }
+  ],
+  "53": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_countup_1_15m_people.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_yuan_banknotes_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "text",
+    "text": "More than 38 billion yuan,\nnearly six billion dollars, was lost.",
+    "style": "quote"
+   }
+  ],
+  "54": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_02_ding_ning_life_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_stamp_life_ding_ning.mp4"
+   }
+  ],
+  "55": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_03_ding_dian_zhang_min_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/gavel_1.mp4"
+   }
+  ],
+  "56": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_04_yucheng_fines_final_zoom.mp4"
+   }
+  ],
+  "57": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s06_beijing_high_court_1.jpg",
+    "fx": "in",
+    "crop": "top"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s06_stamp_final.mp4"
+   }
+  ],
+  "58": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s07_chapter_forty_cents_on_the_yuan.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "59": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_09_seized_assets_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s07_countup_136_9_kg_gold.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s07_gold_ov_4.jpg",
+    "fx": "in"
+   }
+  ],
+  "60": [
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s07_timeline_payouts",
+    "args": {
+     "events": [
+      [
+       "July–Aug 2019",
+       "victims register"
+      ],
+      [
+       "Jan 16, 2020",
+       "1st payout (~35%, reported)"
+      ],
+      [
+       "Apr 2025",
+       "2nd payout (cumulative ~40%, reported)"
+      ]
+     ],
+     "title": "THEN CAME THE WAITING",
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s07_rural_china_ov_2.jpg",
+    "fx": "left"
+   }
+  ],
+  "61": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_35_percent",
+    "args": {
+     "to": 35,
+     "prefix": "~",
+     "suffix": "%",
+     "kicker": "ACCORDING TO CHINESE MEDIA AND VICTIMS",
+     "label": "OF THE MONEY THEY HAD LOST",
+     "sublabel": "the court didn't publish the ratio",
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+   }
+  ],
+  "62": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s07_typewriter_april_2025",
+    "args": {
+     "text": "APRIL 2025",
+     "sub": "— the second payout",
+     "dur": 3.5
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Victims told Chinese reporters it added about five percent,\nbringing the total to roughly forty.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s07_rural_china_ov_4.jpg",
+    "fx": "right"
+   }
+  ],
+  "63": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s07_countup_40_cents.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"
+   }
+  ],
+  "64": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s07_rural_china_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "text",
+    "text": "Others had not forgotten for a single day.",
+    "style": "quote"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/crowd_night_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "65": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/cards/zoom/card_10_forty_cents_zoom.mp4"
+   }
+  ],
+  "66": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s08_chapter_the_day_the_p2p_industry_hit_zero.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "line_chart",
+    "name": "s08_line_p2p_cliff",
+    "args": {
+     "points": [
+      [
+       "peak",
+       5000
+      ],
+      [
+       "Nov 6, 2020",
+       3
+      ],
+      [
+       "mid-Nov 2020",
+       0
+      ]
+     ],
+     "title": "P2P PLATFORMS IN CHINA",
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "red_from": 1,
+     "note": "CBIRC",
+     "dur": 5.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/beijing_dusk_skyline_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s08_china_city_night_ov_1.jpg",
+    "fx": "in"
+   }
+  ],
+  "67": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s08_countup_5000_to_zero.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"
+   }
+  ],
+  "68": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s08_count_800b_owed",
+    "args": {
+     "to": 800,
+     "prefix": "¥",
+     "suffix": " BILLION+",
+     "kicker": "STILL OWED TO LENDERS BY FAILED PLATFORMS",
+     "label": "AROUND $115 BILLION",
+     "sublabel": "CBIRC chairman · three months earlier",
+     "end_red": true,
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s04_renminbi_ov_2.jpg",
+    "fx": "left",
+    "grade": "cold"
+   }
+  ],
+  "69": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/china_city_aerial_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s08_count_50m_investors",
+    "args": {
+     "to": 50,
+     "prefix": "~",
+     "suffix": " MILLION",
+     "kicker": "AT ITS PEAK, ACCORDING TO CAIXIN",
+     "label": "INVESTORS",
+     "sublabel": "many of them are still waiting for their money",
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep04_ezubao/s08_chongqing_night_ov_1.jpg",
+    "fx": "out",
+    "crop": "detail"
+   }
+  ],
+  "70": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s09_chapter_the_pattern.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_step1_high_returns",
+    "args": {
+     "lines": [
+      "High returns, called 'safe'"
+     ],
+     "red": [
+      "'safe'"
+     ],
+     "dur": 4.0,
+     "stagger": 0.0,
+     "size": 112,
+     "kicker": "THE PATTERN · 1 OF 5",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_step2_business_cant_check",
+    "args": {
+     "lines": [
+      "A real-sounding business",
+      "you can't check"
+     ],
+     "red": [
+      "can't"
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 108,
+     "kicker": "THE PATTERN · 2 OF 5",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_step3_money_back_any_time",
+    "args": {
+     "lines": [
+      "Your money back 'any time'"
+     ],
+     "red": [
+      "'any time'"
+     ],
+     "dur": 4.0,
+     "stagger": 0.0,
+     "size": 110,
+     "kicker": "THE PATTERN · 3 OF 5",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "71": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_step4_credibility_borrowed",
+    "args": {
+     "lines": [
+      "Credibility borrowed from",
+      "TV, trains, experts"
+     ],
+     "red": [
+      "borrowed"
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 108,
+     "kicker": "THE PATTERN · 4 OF 5",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_step5_same_company",
+    "args": {
+     "lines": [
+      "A guarantor that is really",
+      "the same company"
+     ],
+     "red": [
+      "same",
+      "company"
+     ],
+     "dur": 5.0,
+     "stagger": 0.5,
+     "size": 106,
+     "kicker": "THE PATTERN · 5 OF 5",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "72": [
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/china_city_aerial_night_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_korea_vietnam_world",
+    "args": {
+     "lines": [
+      "In Korea, in Vietnam,",
+      "across Asia and around the world."
+     ],
+     "red": [
+      "world."
+     ],
+     "dur": 4.0,
+     "stagger": 0.5,
+     "size": 96,
+     "kicker": "THE SAME SHAPE",
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_harder_to_bury",
+    "args": {
+     "lines": [
+      "A pattern is harder",
+      "to bury than paper."
+     ],
+     "red": [
+      "bury"
+     ],
+     "dur": 4.5,
+     "stagger": 0.6,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "73": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep04_ezubao/motion/s10_chapter_outro.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/construction_pit_aerial_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_dug_down_six_meters",
+    "args": {
+     "lines": [
+      "If you dug down six meters,",
+      "what would you find?"
+     ],
+     "red": [
+      "find?"
+     ],
+     "dur": 4.5,
+     "stagger": 0.6,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "74": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s10_tw_next_time",
+    "args": {
+     "text": "NEXT TIME",
+     "sub": "— a country's own investment fund",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_teaser_superyacht",
+    "args": {
+     "lines": [
+      "A superyacht, a Hollywood movie,",
+      "and billions that simply disappeared."
+     ],
+     "red": [
+      "disappeared."
+     ],
+     "dur": 5.0,
+     "stagger": 0.6,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+    }
+   }
+  ],
+  "75": [
+   {
+    "kind": "text",
+    "text": "Subscribe so you don't miss it.",
+    "style": "label"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "Have you ever trusted an investment\nbecause you saw it\nadvertised on TV?",
+    "style": "quote"
+   }
+  ]
+ },
+ "sfx": [
+  {
+   "chunk": 0,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 1,
+   "name": "impact",
+   "offset": 4.0,
+   "gain_db": -8
+  },
+  {
+   "chunk": 3,
+   "name": "riser",
+   "offset": 9.5,
+   "gain_db": -10
+  },
+  {
+   "chunk": 4,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 6,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 8,
+   "name": "impact",
+   "offset": 3.5,
+   "gain_db": -9
+  },
+  {
+   "chunk": 10,
+   "name": "impact",
+   "offset": 0.5,
+   "gain_db": -8
+  },
+  {
+   "chunk": 11,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 15,
+   "name": "impact",
+   "offset": 0.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 20,
+   "name": "impact",
+   "offset": 2.5,
+   "gain_db": -9
+  },
+  {
+   "chunk": 23,
+   "name": "stamp",
+   "offset": 0.5,
+   "gain_db": -10
+  },
+  {
+   "chunk": 25,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 2.2,
+   "gain_db": -8
+  },
+  {
+   "chunk": 30,
+   "name": "stamp",
+   "offset": 0.9,
+   "gain_db": -8
+  },
+  {
+   "chunk": 52,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 54,
+   "name": "stamp",
+   "offset": 7.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 57,
+   "name": "stamp",
+   "offset": 4.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 59,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 60,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 63,
+   "name": "impact",
+   "offset": 2.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 65,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 66,
+   "name": "impact",
+   "offset": 8.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 67,
+   "name": "impact",
+   "offset": 2.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 70,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 71,
+   "name": "impact",
+   "offset": 4.5,
+   "gain_db": -15
+  },
+  {
+   "chunk": 72,
+   "name": "stamp",
+   "offset": 13.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 73,
+   "name": "impact",
+   "offset": 9.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 74,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 3,
+   "dur": 1.5
+  },
+  {
+   "chunk": 15,
+   "dur": 1.5
+  },
+  {
+   "chunk": 52,
+   "dur": 1.5
+  },
+  {
+   "chunk": 65,
+   "dur": 1.5
+  },
+  {
+   "chunk": 72,
+   "dur": 1.5
+  },
+  {
+   "chunk": 74,
+   "dur": 1.5
+  }
+ ]
+}
