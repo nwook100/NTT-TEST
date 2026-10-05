@@ -1,0 +1,180 @@
+{
+ "section": "5",
+ "chunks": [
+  {
+   "id": 30,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s05_chapter_the_leak.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s05_typewriter_sarawak_edge",
+     "args": {
+      "text": "LONDON — SARAWAK REPORT",
+      "sub": "KUALA LUMPUR — THE EDGE",
+      "dur": 4.0,
+      "size": 72,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s05_kp_emails",
+     "args": {
+      "lines": [
+       "A huge cache of internal emails,",
+       "taken by a former employee."
+      ],
+      "kicker": "2015 · PETROSAUDI",
+      "red": ["emails,"],
+      "dur": 4.5,
+      "stagger": 0.9,
+      "size": 76,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s05_typewriter_july_2_2015",
+     "args": {
+      "text": "JULY 2, 2015",
+      "sub": "— Wall Street Journal: nearly $700 million traced into the prime minister's personal accounts",
+      "dur": 5.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s01_person_najib_2017.mp4"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "timeline",
+     "name": "s05_timeline_crackdown",
+     "args": {
+      "events": [
+       ["July 2015", "Attorney General removed"],
+       ["July 2015", "Deputy PM fired"],
+       ["July 2015", "Sarawak Report blocked"],
+       ["July 2015", "The Edge suspended 3 months"]
+      ],
+      "title": "WITHIN WEEKS",
+      "red_last": false,
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s01_putrajaya_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "word_by_word",
+     "name": "s05_wbw_saudi_donation",
+     "args": {
+      "text": "'$681 million was a personal donation from the Saudi royal family.' No charges.",
+      "attribution": "— the new Attorney General · January 2016",
+      "red": ["donation", "charges."],
+      "dur": 6.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "text",
+     "text": "Case closed.\nAt least in Malaysia.",
+     "style": "quote"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 30,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 32,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 35,
+   "name": "impact",
+   "offset": 10.0,
+   "gain_db": -10
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 32,
+   "dur": 1.5
+  }
+ ]
+}
