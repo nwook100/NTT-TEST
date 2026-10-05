@@ -1,0 +1,42 @@
+{
+ "section": "2",
+ "chunks": [
+  {"id": 9, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s02_chapter_the_first_billion.mp4"},
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s02_typewriter_sept_2009_petrosaudi.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"},
+   {"kind": "motion", "fn": "count_up", "name": "s02_countup_1_billion_in", "args": {"to": 1, "prefix": "$", "suffix": " BILLION", "kicker": "1MDB PUT IN", "sublabel": "1MDB + PetroSaudi joint venture · Sept 2009", "dur": 3.5, "count_time": 1.5, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}}
+  ]},
+  {"id": 10, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/geneva_rhone_1.mp4"},
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s02_flow_good_star.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/zurich_limmat_1.mp4"}
+  ]},
+  {"id": 11, "segments": [
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_good_star_jho_low", "args": {"lines": ["And Good Star, they say,", "was controlled by Jho Low."], "red": ["jho low."], "dur": 3.5, "stagger": 1.0, "size": 102, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}}
+  ]},
+  {"id": 12, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"},
+   {"kind": "text", "text": "US civil complaints: 'Good Star phase'\n— more than $1 billion (2009–2011, alleged)", "style": "label"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"}
+  ]},
+  {"id": 13, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/cards/zoom/card_02_swiss_petrosaudi_7_and_6_years_zoom.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/zurich_limmat_1.mp4", "start": 2.0},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s06_geneva_ov_1.jpg", "fx": "left"}
+  ]},
+  {"id": 14, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s02_kp_borrow_much_more", "args": {"lines": ["And the fund was about", "to borrow much more."], "red": ["much more."], "dur": 3.5, "stagger": 1.0, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 9, "name": "typewriter", "offset": 4.2, "gain_db": -12},
+  {"chunk": 11, "name": "impact", "offset": 0.3, "gain_db": -8},
+  {"chunk": 13, "name": "stamp", "offset": 0.5, "gain_db": -10},
+  {"chunk": 14, "name": "riser", "offset": 5.5, "gain_db": -11}
+ ],
+ "music_drops": [
+  {"chunk": 11, "dur": 1.5}
+ ]
+}

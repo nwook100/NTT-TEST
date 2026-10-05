@@ -1,0 +1,38 @@
+{
+ "section": "1",
+ "chunks": [
+  {"id": 4, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s01_chapter_a_fund_for_a_nation.mp4"},
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s01_typewriter_kuala_lumpur.mp4"},
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s01_person_najib_2008.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/putrajaya_perdana_putra_1.mp4"}
+  ]},
+  {"id": 5, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s01_typewriter_1mdb_founded.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/malaysia_flag_1.mp4"}
+  ]},
+  {"id": 6, "segments": [
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s01_kl_skyline_3.jpg", "fx": "in"},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s01_trx_1.jpg", "fx": "right"},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s01_trx_2.jpg", "fx": "left"}
+  ]},
+  {"id": 7, "segments": [
+   {"kind": "clip", "asset": "assets/ep05_1mdb/motion/s01_keyphrase_three_jobs.mp4"},
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_jho_low", "args": {"lines": ["A young Malaysian financier", "named Low Taek Jho,", "known as Jho Low."], "red": ["jho low."], "dur": 4.5, "stagger": 1.0, "size": 96, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s01_kl_city_ov_4.jpg", "fx": "in"}
+  ]},
+  {"id": 8, "segments": [
+   {"kind": "video", "asset": "assets/ep05_1mdb/stock/petronas_aerial_night_1.mp4"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_behind_the_scenes", "args": {"lines": ["He helped set it up", "and steered its money", "from behind the scenes."], "kicker": "ACCORDING TO THE US JUSTICE DEPARTMENT", "red": ["behind the scenes."], "dur": 5.0, "stagger": 1.0, "size": 96, "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"}},
+   {"kind": "photo", "asset": "assets/ep05_1mdb/s01_petronas_ov_1.jpg", "fx": "out"},
+   {"kind": "text", "text": "Jho Low has been charged in the United States and in Malaysia.\nHe has never stood trial, and he denies any wrongdoing.", "style": "quote"}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 4, "name": "whoosh", "offset": 0.0, "gain_db": -12},
+  {"chunk": 7, "name": "impact", "offset": 9.8, "gain_db": -9},
+  {"chunk": 8, "name": "heartbeat", "offset": 14.0, "gain_db": -11}
+ ],
+ "music_drops": []
+}
