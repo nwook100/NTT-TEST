@@ -1,0 +1,160 @@
+{
+ "section": "6",
+ "chunks": [
+  {
+   "id": 36,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s06_chapter_the_world_starts_digging.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_world_pins",
+     "args": {
+      "lines": ["USA · Switzerland · Singapore", "Luxembourg · Hong Kong · UAE"],
+      "kicker": "THE MONEY HAD FLOWED THROUGH BANKS ALL OVER THE WORLD",
+      "dur": 4.5,
+      "stagger": 1.0,
+      "size": 92,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s06_tw_july_2016",
+     "args": {
+      "text": "JULY 2016",
+      "sub": "the US Justice Department files civil lawsuits",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_kleptocracy",
+     "args": {
+      "lines": ["The largest single action", "ever brought under its", "Kleptocracy Asset Recovery Initiative"],
+      "kicker": "THE US JUSTICE DEPARTMENT CALLED IT",
+      "red": ["largest"],
+      "dur": 5.0,
+      "stagger": 0.9,
+      "size": 84,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4",
+     "grade": "cold"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_bsi_falcon",
+     "args": {
+      "lines": ["BSI Bank and Falcon Bank", "lose merchant-bank status"],
+      "kicker": "SINGAPORE, 2016 — OVER 1MDB-LINKED FUND FLOWS",
+      "red": ["lose"],
+      "dur": 4.5,
+      "stagger": 1.0,
+      "size": 88,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/singapore_cbd_night_1.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s06_zurich_ov_1.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s06_bersih_3.jpg",
+     "fx": "in",
+     "crop": "detail"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_two_days",
+     "args": {
+      "lines": ["Two days", "and two nights."],
+      "kicker": "AUGUST 2015 — KUALA LUMPUR",
+      "red": ["nights."],
+      "dur": 4.5,
+      "stagger": 1.1,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s06_bersih_3.jpg",
+     "fx": "right",
+     "crop": "left"
+    },
+    {
+     "kind": "text",
+     "text": "He did not.",
+     "style": "quote"
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s06_kp_ballot_box",
+     "args": {
+      "lines": ["The ballot box."],
+      "kicker": "THERE WAS ONLY ONE PLACE LEFT WHERE HE COULD LOSE",
+      "red": ["ballot"],
+      "dur": 3.5,
+      "size": 118,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  { "chunk": 36, "name": "whoosh", "offset": 4.0, "gain_db": -14 },
+  { "chunk": 39, "name": "heartbeat", "offset": 0.0, "gain_db": -14 },
+  { "chunk": 40, "name": "impact", "offset": 5.3, "gain_db": -12 }
+ ],
+ "music_drops": [
+  { "chunk": 40, "dur": 1.5 }
+ ]
+}
