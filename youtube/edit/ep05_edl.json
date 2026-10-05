@@ -1,0 +1,1976 @@
+{
+ "episode": "ep05_1mdb",
+ "chunks": {
+  "0": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s00_typewriter_dec_2013.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/red_carpet_cg_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s00_ziegfeld_1.jpg",
+    "fx": "in",
+    "crop": "right"
+   }
+  ],
+  "1": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s00_wordbyword_film_paid.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"
+   }
+  ],
+  "2": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/yacht_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/manhattan_skyline_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/private_jet_windows_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/merdeka_square_flag_1.mp4"
+   }
+  ],
+  "3": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s00_kp_story_of_1mdb",
+    "args": {
+     "lines": [
+      "1MDB"
+     ],
+     "kicker": "THIS IS THE STORY OF",
+     "dur": 3.5,
+     "size": 130,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s00_chapter_the_prime_minister_s_billions.mp4"
+   }
+  ],
+  "4": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_chapter_a_fund_for_a_nation.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_typewriter_kuala_lumpur.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_person_najib_2008.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/putrajaya_perdana_putra_1.mp4"
+   }
+  ],
+  "5": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_typewriter_1mdb_founded.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/malaysia_flag_1.mp4"
+   }
+  ],
+  "6": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_kl_skyline_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_trx_1.jpg",
+    "fx": "right"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_trx_2.jpg",
+    "fx": "left"
+   }
+  ],
+  "7": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_keyphrase_three_jobs.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_jho_low",
+    "args": {
+     "lines": [
+      "A young Malaysian financier",
+      "named Low Taek Jho,",
+      "known as Jho Low."
+     ],
+     "red": [
+      "jho low."
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_kl_city_ov_4.jpg",
+    "fx": "in"
+   }
+  ],
+  "8": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/petronas_aerial_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s01_kp_behind_the_scenes",
+    "args": {
+     "lines": [
+      "He helped set it up",
+      "and steered its money",
+      "from behind the scenes."
+     ],
+     "kicker": "ACCORDING TO THE US JUSTICE DEPARTMENT",
+     "red": [
+      "behind the scenes."
+     ],
+     "dur": 5.0,
+     "stagger": 1.0,
+     "size": 96,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_petronas_ov_1.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "text",
+    "text": "Jho Low has been charged in the United States and in Malaysia.\nHe has never stood trial, and he denies any wrongdoing.",
+    "style": "quote"
+   }
+  ],
+  "9": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s02_chapter_the_first_billion.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s02_typewriter_sept_2009_petrosaudi.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s02_countup_1_billion_in",
+    "args": {
+     "to": 1,
+     "prefix": "$",
+     "suffix": " BILLION",
+     "kicker": "1MDB PUT IN",
+     "sublabel": "1MDB + PetroSaudi joint venture · Sept 2009",
+     "dur": 3.5,
+     "count_time": 1.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "10": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/geneva_rhone_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s02_flow_good_star.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/zurich_limmat_1.mp4"
+   }
+  ],
+  "11": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_good_star_jho_low",
+    "args": {
+     "lines": [
+      "And Good Star, they say,",
+      "was controlled by Jho Low."
+     ],
+     "red": [
+      "jho low."
+     ],
+     "dur": 3.5,
+     "stagger": 1.0,
+     "size": 102,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "12": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "US civil complaints: 'Good Star phase'\n— more than $1 billion (2009–2011, alleged)",
+    "style": "label"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"
+   }
+  ],
+  "13": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_02_swiss_petrosaudi_7_and_6_years_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/zurich_limmat_1.mp4",
+    "start": 2.0
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s06_geneva_ov_1.jpg",
+    "fx": "left"
+   }
+  ],
+  "14": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s02_kp_borrow_much_more",
+    "args": {
+     "lines": [
+      "And the fund was about",
+      "to borrow much more."
+     ],
+     "red": [
+      "much more."
+     ],
+     "dur": 3.5,
+     "stagger": 1.0,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "15": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_chapter_follow_the_money.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_countup_6_5B_bonds.mp4"
+   }
+  ],
+  "16": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/manhattan_skyline_night_1.mp4"
+   }
+  ],
+  "17": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_flow_aabar_lookalike.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+   }
+  ],
+  "18": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_falling_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s03_kp_lookalike",
+    "args": {
+     "lines": [
+      "A lookalike.",
+      "Prosecutors say it was not",
+      "part of the real Aabar."
+     ],
+     "kicker": "BRITISH VIRGIN ISLANDS · ALMOST THE SAME NAME",
+     "red": [
+      "lookalike."
+     ],
+     "dur": 5.0,
+     "stagger": 0.8,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"
+   }
+  ],
+  "19": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_flow_tanore_mo1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/singapore_cbd_night_1.mp4"
+   }
+  ],
+  "20": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_countup_681M.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/petronas_aerial_night_1.mp4"
+   }
+  ],
+  "21": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_person_najib_2017.mp4"
+   }
+  ],
+  "22": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s03_countup_4_5B_doj.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_01_doj_4_5_billion_zoom.mp4"
+   }
+  ],
+  "23": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s03_ringgit_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s03_ringgit_2.png",
+    "fx": "out"
+   }
+  ],
+  "24": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s04_chapter_the_spending_spree.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s04_wbw_asset_wall",
+    "args": {
+     "text": "Film financing · Superyacht · Beverly Hills · New York · London · Private jet · Monet · Picasso · Basquiat",
+     "attribution": "according to US prosecutors",
+     "red": [
+      "Superyacht",
+      "Picasso"
+     ],
+     "dur": 6.0,
+     "size": 64,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/red_carpet_cg_1.mp4"
+   }
+  ],
+  "25": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_countup_60m_red_granite",
+    "args": {
+     "to": 60,
+     "prefix": "$",
+     "suffix": " MILLION",
+     "kicker": "2018 · RED GRANITE PICTURES",
+     "label": "PAID TO THE US GOVERNMENT",
+     "sublabel": "to settle the case",
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/usd_100_bundle_1.mp4"
+   }
+  ],
+  "26": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/gallery_hall_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s04_kp_picasso_basquiat",
+    "args": {
+     "lines": [
+      "A Picasso.",
+      "A Basquiat collage."
+     ],
+     "kicker": "ACCORDING TO THE JUSTICE DEPARTMENT · GIFTS FROM JHO LOW",
+     "dur": 4.0,
+     "stagger": 0.9,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "27": [
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s04_wbw_dicaprio",
+    "args": {
+     "text": "DiCaprio was never accused of any wrongdoing, and he handed them over to US authorities.",
+     "red": [
+      "never accused"
+     ],
+     "dur": 5.5,
+     "size": 72,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/empty_frames_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/gallery_hall_1.mp4"
+   }
+  ],
+  "28": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_countup_250m_yacht",
+    "args": {
+     "to": 250,
+     "prefix": "~$",
+     "suffix": " MILLION",
+     "kicker": "EQUANIMITY · ALLEGED, 1MDB FUNDS",
+     "label": "300 FT · HELIPAD · CINEMA · POOL",
+     "sublabel": "according to the US Justice Department",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_2.jpg",
+    "fx": "right"
+   }
+  ],
+  "29": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s04_countup_11b_debt",
+    "args": {
+     "to": 11,
+     "prefix": "$",
+     "suffix": " BILLION",
+     "kicker": "BY 2015",
+     "label": "1MDB'S DEBT",
+     "sublabel": "struggling to pay its bondholders · the bill fell to Malaysian taxpayers",
+     "end_red": true,
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_kl_skyline_ov_2.jpg",
+    "fx": "in"
+   }
+  ],
+  "30": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s05_chapter_the_leak.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s05_typewriter_sarawak_edge",
+    "args": {
+     "text": "LONDON — SARAWAK REPORT",
+     "sub": "KUALA LUMPUR — THE EDGE",
+     "dur": 4.0,
+     "size": 72,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+   }
+  ],
+  "31": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s05_kp_emails",
+    "args": {
+     "lines": [
+      "A huge cache of internal emails,",
+      "taken by a former employee."
+     ],
+     "kicker": "2015 · PETROSAUDI",
+     "red": [
+      "emails,"
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 76,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4"
+   }
+  ],
+  "32": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s05_typewriter_july_2_2015",
+    "args": {
+     "text": "JULY 2, 2015",
+     "sub": "— Wall Street Journal: nearly $700 million traced into the prime minister's personal accounts",
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s01_person_najib_2017.mp4"
+   }
+  ],
+  "33": [
+   {
+    "kind": "motion",
+    "fn": "timeline",
+    "name": "s05_timeline_crackdown",
+    "args": {
+     "events": [
+      [
+       "July 2015",
+       "Attorney General removed"
+      ],
+      [
+       "July 2015",
+       "Deputy PM fired"
+      ],
+      [
+       "July 2015",
+       "Sarawak Report blocked"
+      ],
+      [
+       "July 2015",
+       "The Edge suspended 3 months"
+      ]
+     ],
+     "title": "WITHIN WEEKS",
+     "red_last": false,
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"
+   }
+  ],
+  "34": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/laptop_night_1.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+   }
+  ],
+  "35": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_putrajaya_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "word_by_word",
+    "name": "s05_wbw_saudi_donation",
+    "args": {
+     "text": "'$681 million was a personal donation from the Saudi royal family.' No charges.",
+     "attribution": "— the new Attorney General · January 2016",
+     "red": [
+      "donation",
+      "charges."
+     ],
+     "dur": 6.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "Case closed.\nAt least in Malaysia.",
+    "style": "quote"
+   }
+  ],
+  "36": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s06_chapter_the_world_starts_digging.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_world_pins",
+    "args": {
+     "lines": [
+      "USA · Switzerland · Singapore",
+      "Luxembourg · Hong Kong · UAE"
+     ],
+     "kicker": "THE MONEY HAD FLOWED THROUGH BANKS ALL OVER THE WORLD",
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 92,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s06_tw_july_2016",
+    "args": {
+     "text": "JULY 2016",
+     "sub": "the US Justice Department files civil lawsuits",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "37": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_kleptocracy",
+    "args": {
+     "lines": [
+      "The largest single action",
+      "ever brought under its",
+      "Kleptocracy Asset Recovery Initiative"
+     ],
+     "kicker": "THE US JUSTICE DEPARTMENT CALLED IT",
+     "red": [
+      "largest"
+     ],
+     "dur": 5.0,
+     "stagger": 0.9,
+     "size": 84,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/archive_box_files_1.mp4",
+    "grade": "cold"
+   }
+  ],
+  "38": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_bsi_falcon",
+    "args": {
+     "lines": [
+      "BSI Bank and Falcon Bank",
+      "lose merchant-bank status"
+     ],
+     "kicker": "SINGAPORE, 2016 — OVER 1MDB-LINKED FUND FLOWS",
+     "red": [
+      "lose"
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 88,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/singapore_cbd_night_1.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s06_zurich_ov_1.jpg",
+    "fx": "in"
+   }
+  ],
+  "39": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s06_bersih_3.jpg",
+    "fx": "in",
+    "crop": "detail"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_two_days",
+    "args": {
+     "lines": [
+      "Two days",
+      "and two nights."
+     ],
+     "kicker": "AUGUST 2015 — KUALA LUMPUR",
+     "red": [
+      "nights."
+     ],
+     "dur": 4.5,
+     "stagger": 1.1,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "He did not.",
+    "style": "quote"
+   }
+  ],
+  "40": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_storm_night_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s06_kp_ballot_box",
+    "args": {
+     "lines": [
+      "The ballot box."
+     ],
+     "kicker": "THERE WAS ONLY ONE PLACE LEFT WHERE HE COULD LOSE",
+     "red": [
+      "ballot"
+     ],
+     "dur": 3.5,
+     "size": 118,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "41": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s07_chapter_the_fall.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s07_tw_may_9_2018",
+    "args": {
+     "text": "MAY 9, 2018",
+     "sub": "Malaysia holds a general election",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_it_lost",
+    "args": {
+     "lines": [
+      "It lost."
+     ],
+     "kicker": "IN POWER WITHOUT A BREAK SINCE INDEPENDENCE IN 1957",
+     "red": [
+      "lost."
+     ],
+     "dur": 3.5,
+     "size": 130,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "42": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_mahathir",
+    "args": {
+     "lines": [
+      "Mahathir Mohamad, aged 92.",
+      "Najib's former mentor."
+     ],
+     "kicker": "THE NEW PRIME MINISTER",
+     "red": [
+      "92."
+     ],
+     "dur": 5.0,
+     "stagger": 1.1,
+     "size": 88,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/putrajaya_perdana_putra_1.mp4"
+   }
+  ],
+  "43": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/handbags_display_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s07_kp_raid_haul",
+    "args": {
+     "lines": [
+      "567 handbags · 423 watches",
+      "12,000+ pieces of jewellery",
+      "~RM 116 million in cash"
+     ],
+     "kicker": "POLICE SAID THEY SEIZED",
+     "red": [
+      "cash"
+     ],
+     "dur": 5.5,
+     "stagger": 1.0,
+     "size": 80,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_rm_1_1b",
+    "args": {
+     "to": 1.1,
+     "decimals": 1,
+     "prefix": "RM ",
+     "suffix": " BILLION",
+     "kicker": "POLICE VALUED THE HAUL AT UP TO",
+     "end_red": true,
+     "dur": 4.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "44": [
+   {
+    "kind": "text",
+    "text": "Najib's side disputed that figure\nand said many items were gifts.",
+    "style": "quote"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s07_stamp_arrested",
+    "args": {
+     "word": "ARRESTED",
+     "sub": "JULY 3, 2018",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "45": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_2.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s07_tw_feb_2018",
+    "args": {
+     "text": "FEBRUARY 2018 — OFF BALI",
+     "sub": "Equanimity seized at the request of the United States",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "46": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s07_count_126m_sale",
+    "args": {
+     "to": 126,
+     "prefix": "$",
+     "suffix": " MILLION",
+     "kicker": "SOLD THE NEXT YEAR FOR",
+     "sublabel": "about half of what prosecutors say it had cost",
+     "end_red": true,
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_1.jpg",
+    "fx": "right"
+   }
+  ],
+  "47": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s08_chapter_the_verdicts.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "person_card",
+    "name": "s08_pc_najib",
+    "args": {
+     "photo": "assets/ep05_1mdb/people/najib_razak_2017.jpg",
+     "name": "NAJIB RAZAK",
+     "kicker": "FORMER PRIME MINISTER OF MALAYSIA",
+     "sub": "Convicted July 28, 2020 · 2025 conviction under appeal",
+     "credit": "Photo: U.S. Embassy Kuala Lumpur / Public domain",
+     "grade": "bw",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_kl_courts_2.jpg",
+    "fx": "in"
+   }
+  ],
+  "48": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_03_src_guilty_12_years_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s08_stamp_guilty_src",
+    "args": {
+     "word": "TWELVE YEARS",
+     "sub": "IN PRISON — GUILTY ON ALL SEVEN CHARGES",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "49": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_palace_of_justice_2.jpg",
+    "fx": "in",
+    "crop": "top"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/prison_cell_bars_1.mp4",
+    "grade": "cold"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_first_pm_jailed",
+    "args": {
+     "lines": [
+      "The first former Malaysian",
+      "prime minister to be jailed."
+     ],
+     "kicker": "AUGUST 2022",
+     "red": [
+      "jailed."
+     ],
+     "dur": 4.5,
+     "stagger": 1.0,
+     "size": 88,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "50": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_04_pardons_board_6_years_zoom.mp4"
+   }
+  ],
+  "51": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s08_kp_big_one",
+    "args": {
+     "lines": [
+      "Then came the big one."
+     ],
+     "red": [
+      "big"
+     ],
+     "dur": 3.5,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_kl_courts_1.jpg",
+    "fx": "right",
+    "crop": "top"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s08_tw_dec_26_2025",
+    "args": {
+     "text": "DECEMBER 26, 2025",
+     "sub": "after a trial that lasted more than six years",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_05_1mdb_guilty_25_charges_zoom.mp4"
+   }
+  ],
+  "52": [
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s08_count_rm_11_38b",
+    "args": {
+     "to": 11.38,
+     "decimals": 2,
+     "prefix": "RM ",
+     "suffix": " BILLION",
+     "kicker": "FIFTEEN YEARS IN PRISON — AND A FINE OF",
+     "sublabel": "roughly 2.8 billion dollars",
+     "end_red": true,
+     "dur": 5.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_06_judge_letters_forgeries_zoom.mp4"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"
+   }
+  ],
+  "53": [
+   {
+    "kind": "text",
+    "text": "Jho Low was not on trial there,\nand he denies wrongdoing.",
+    "style": "quote"
+   },
+   {
+    "kind": "text",
+    "text": "Najib is appealing,\nand maintains his innocence.",
+    "style": "quote"
+   }
+  ],
+  "54": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_07_royal_pardon_house_arrest_zoom.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_kajang_prison_1.jpg",
+    "fx": "left",
+    "crop": "top"
+   }
+  ],
+  "55": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s08_tw_aug_2028",
+    "args": {
+     "text": "AUGUST 2028",
+     "sub": "his fifteen-year 1MDB sentence is due to start",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "text",
+    "text": "He has asked the court\nto suspend it pending appeal.",
+    "style": "quote"
+   }
+  ],
+  "56": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_brooklyn_court_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_08_goldman_2_9_billion_zoom.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_09_ng_10_years_leissner_2_zoom.mp4"
+   }
+  ],
+  "57": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s08_brooklyn_court_2.jpg",
+    "fx": "out"
+   },
+   {
+    "kind": "motion",
+    "fn": "stamp",
+    "name": "s08_stamp_two_years",
+    "args": {
+     "word": "TWO YEARS",
+     "sub": "TIM LEISSNER — PLEADED GUILTY, COOPERATED",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "58": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s09_chapter_getting_the_money_back.mp4"
+   },
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/cards/zoom/card_10_doj_1_4_billion_returned_zoom.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "count_up",
+    "name": "s09_count_700m_given_up",
+    "args": {
+     "to": 700,
+     "prefix": "$",
+     "suffix": "M+",
+     "kicker": "2019 · JHO LOW AND HIS FAMILY AGREED",
+     "label": "ASSETS GIVEN UP",
+     "sublabel": "incl. properties in Beverly Hills, New York and London",
+     "dur": 4.5,
+     "count_time": 1.8,
+     "size": 230,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_beverly_hills_1.jpg",
+    "fx": "in"
+   }
+  ],
+  "59": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_not_admission",
+    "args": {
+     "kicker": "HE SAID",
+     "lines": [
+      "The deal was not",
+      "an admission of guilt."
+     ],
+     "red": [
+      "not"
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_us_said",
+    "args": {
+     "kicker": "THE US SAID",
+     "lines": [
+      "It did not end",
+      "any criminal charges."
+     ],
+     "red": [
+      "criminal",
+      "charges."
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "60": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s03_ringgit_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "compare",
+    "name": "s09_compare_recovered_vs_debts",
+    "args": {
+     "left": {
+      "head": "Recovered by Malaysia (to 2025)",
+      "big": "RM 31.3B"
+     },
+     "right": {
+      "head": "Paid into 1MDB debts (to July 2025)",
+      "big": "RM 42.2B",
+      "sub": "incl. RM 15.4 billion from the Finance Ministry"
+     },
+     "title": "RECOVERED VS PAID",
+     "dur": 5.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "61": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s03_ringgit_2.png",
+    "fx": "right"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_putrajaya_1.jpg",
+    "fx": "left"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_until_2039",
+    "args": {
+     "text": "UNTIL 2039",
+     "sub": "— repayments on the last 1MDB bonds",
+     "dur": 4.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "62": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_kl_skyline_ov_2.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/construction_cranes_dusk_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_public_money",
+    "args": {
+     "kicker": "PUBLIC MONEY",
+     "lines": [
+      "Schools, hospitals",
+      "and roads."
+     ],
+     "red": [
+      "roads."
+     ],
+     "dur": 4.5,
+     "stagger": 0.6,
+     "size": 110,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s09_kp_never_caught",
+    "args": {
+     "lines": [
+      "Jho Low, meanwhile,",
+      "has never been caught."
+     ],
+     "red": [
+      "never"
+     ],
+     "dur": 4.5,
+     "stagger": 0.6,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "63": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s09_tw_whereabouts",
+    "args": {
+     "text": "WHEREABOUTS",
+     "sub": "— never officially confirmed",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "64": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s10_chapter_the_pattern.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_teach_us",
+    "args": {
+     "lines": [
+      "What does 1MDB teach us?"
+     ],
+     "red": [
+      "1MDB"
+     ],
+     "dur": 3.0,
+     "stagger": 0.0,
+     "size": 104,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step1_no_checks",
+    "args": {
+     "kicker": "THE PATTERN · 1 OF 5",
+     "lines": [
+      "Approves the spending.",
+      "In charge of the checks.",
+      "No checks."
+     ],
+     "red": [
+      "No",
+      "checks."
+     ],
+     "dur": 4.5,
+     "stagger": 0.9,
+     "size": 100,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "65": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step2_above_market",
+    "args": {
+     "kicker": "THE PATTERN · 2 OF 5",
+     "lines": [
+      "Raises billions. No clear business.",
+      "Pays bankers far above market rates."
+     ],
+     "red": [
+      "above",
+      "market",
+      "rates."
+     ],
+     "dur": 5.0,
+     "stagger": 0.6,
+     "size": 88,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step3_watch_the_names",
+    "args": {
+     "kicker": "THE PATTERN · 3 OF 5",
+     "lines": [
+      "Watch the names."
+     ],
+     "red": [
+      "names."
+     ],
+     "dur": 3.0,
+     "stagger": 0.0,
+     "size": 124,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step3_not_the_partner",
+    "args": {
+     "lines": [
+      "A company that sounds like a real partner",
+      "is not always the real partner."
+     ],
+     "red": [
+      "not"
+     ],
+     "dur": 4.5,
+     "stagger": 0.6,
+     "size": 76,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s01_petronas_ov_3.jpg",
+    "fx": "in",
+    "grade": "cold"
+   }
+  ],
+  "66": [
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step4_not_a_coincidence",
+    "args": {
+     "kicker": "THE PATTERN · 4 OF 5",
+     "lines": [
+      "An audit classified secret.",
+      "An attorney general replaced.",
+      "Newspapers suspended."
+     ],
+     "red": [
+      "secret."
+     ],
+     "dur": 6.0,
+     "stagger": 1.2,
+     "size": 88,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s10_kp_step5_across_borders",
+    "args": {
+     "kicker": "THE PATTERN · 5 OF 5",
+     "lines": [
+      "Follow the money",
+      "across borders."
+     ],
+     "red": [
+      "across",
+      "borders."
+     ],
+     "dur": 3.5,
+     "stagger": 0.5,
+     "size": 112,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+   }
+  ],
+  "67": [
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s06_zurich_ov_1.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/printing_press_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "A state fund is only as honest\nas the people allowed to question it.",
+    "style": "quote"
+   }
+  ],
+  "68": [
+   {
+    "kind": "clip",
+    "asset": "assets/ep05_1mdb/motion/s11_chapter_outro.mp4"
+   },
+   {
+    "kind": "photo",
+    "asset": "assets/ep05_1mdb/s04_equanimity_3.jpg",
+    "fx": "in"
+   },
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s11_tw_tranquility",
+    "args": {
+     "text": "A NEW NAME: TRANQUILITY",
+     "sub": "— sold to a Malaysian casino operator",
+     "dur": 3.5,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   },
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/grey_sea_calm_1.mp4"
+   },
+   {
+    "kind": "text",
+    "text": "The question is not only\nwhere the money went.\nIt is how long everyone\nallowed it to go.",
+    "style": "quote"
+   }
+  ],
+  "69": [
+   {
+    "kind": "video",
+    "asset": "assets/ep05_1mdb/stock/gavel_courtroom_1.mp4"
+   },
+   {
+    "kind": "motion",
+    "fn": "key_phrase",
+    "name": "s11_kp_never_faced_courtroom",
+    "args": {
+     "kicker": "US PROSECUTORS PLACE HIM AT THE CENTER",
+     "lines": [
+      "Still never faced",
+      "a courtroom."
+     ],
+     "red": [
+      "never"
+     ],
+     "dur": 4.5,
+     "stagger": 0.5,
+     "size": 108,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ],
+  "70": [
+   {
+    "kind": "motion",
+    "fn": "typewriter",
+    "name": "s11_tw_next_time",
+    "args": {
+     "text": "NEXT TIME: ANOTHER CASE FILE.",
+     "sub": "Subscribe so you don't miss it.",
+     "dur": 3.0,
+     "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+    }
+   }
+  ]
+ },
+ "sfx": [
+  {
+   "chunk": 0,
+   "name": "typewriter",
+   "offset": 0.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 1,
+   "name": "impact",
+   "offset": 0.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 3,
+   "name": "riser",
+   "offset": 10.5,
+   "gain_db": -10
+  },
+  {
+   "chunk": 4,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 7,
+   "name": "impact",
+   "offset": 9.8,
+   "gain_db": -9
+  },
+  {
+   "chunk": 8,
+   "name": "heartbeat",
+   "offset": 14.0,
+   "gain_db": -11
+  },
+  {
+   "chunk": 9,
+   "name": "typewriter",
+   "offset": 4.2,
+   "gain_db": -12
+  },
+  {
+   "chunk": 11,
+   "name": "impact",
+   "offset": 0.3,
+   "gain_db": -8
+  },
+  {
+   "chunk": 13,
+   "name": "stamp",
+   "offset": 0.5,
+   "gain_db": -10
+  },
+  {
+   "chunk": 14,
+   "name": "riser",
+   "offset": 5.5,
+   "gain_db": -11
+  },
+  {
+   "chunk": 15,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 20,
+   "name": "riser",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 22,
+   "name": "impact",
+   "offset": 2.8,
+   "gain_db": -8
+  },
+  {
+   "chunk": 24,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 28,
+   "name": "impact",
+   "offset": 7.4,
+   "gain_db": -8
+  },
+  {
+   "chunk": 29,
+   "name": "impact",
+   "offset": 7.8,
+   "gain_db": -10
+  },
+  {
+   "chunk": 30,
+   "name": "whoosh",
+   "offset": 3.4,
+   "gain_db": -14
+  },
+  {
+   "chunk": 32,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 35,
+   "name": "impact",
+   "offset": 10.0,
+   "gain_db": -10
+  },
+  {
+   "chunk": 36,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 39,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 40,
+   "name": "impact",
+   "offset": 5.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 41,
+   "name": "impact",
+   "offset": 7.5,
+   "gain_db": -12
+  },
+  {
+   "chunk": 43,
+   "name": "whoosh",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 44,
+   "name": "stamp",
+   "offset": 4.6,
+   "gain_db": -8
+  },
+  {
+   "chunk": 46,
+   "name": "impact",
+   "offset": 3.8,
+   "gain_db": -12
+  },
+  {
+   "chunk": 48,
+   "name": "impact",
+   "offset": 0.0,
+   "gain_db": -12
+  },
+  {
+   "chunk": 48,
+   "name": "stamp",
+   "offset": 7.4,
+   "gain_db": -8
+  },
+  {
+   "chunk": 51,
+   "name": "impact",
+   "offset": 12.3,
+   "gain_db": -12
+  },
+  {
+   "chunk": 53,
+   "name": "heartbeat",
+   "offset": 0.0,
+   "gain_db": -14
+  },
+  {
+   "chunk": 57,
+   "name": "stamp",
+   "offset": 2.8,
+   "gain_db": -8
+  },
+  {
+   "chunk": 58,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 60,
+   "name": "impact",
+   "offset": 3.8,
+   "gain_db": -15
+  },
+  {
+   "chunk": 61,
+   "name": "typewriter",
+   "offset": 12.2,
+   "gain_db": -14
+  },
+  {
+   "chunk": 63,
+   "name": "typewriter",
+   "offset": 3.9,
+   "gain_db": -14
+  },
+  {
+   "chunk": 64,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 65,
+   "name": "impact",
+   "offset": 5.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 66,
+   "name": "impact",
+   "offset": 6.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 68,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 69,
+   "name": "impact",
+   "offset": 4.5,
+   "gain_db": -15
+  },
+  {
+   "chunk": 70,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 3,
+   "dur": 1.5
+  },
+  {
+   "chunk": 11,
+   "dur": 1.5
+  },
+  {
+   "chunk": 22,
+   "dur": 1.5
+  },
+  {
+   "chunk": 32,
+   "dur": 1.5
+  },
+  {
+   "chunk": 40,
+   "dur": 1.5
+  },
+  {
+   "chunk": 41,
+   "dur": 1.5
+  },
+  {
+   "chunk": 51,
+   "dur": 1.5
+  },
+  {
+   "chunk": 62,
+   "dur": 1.5
+  },
+  {
+   "chunk": 67,
+   "dur": 1.5
+  },
+  {
+   "chunk": 70,
+   "dur": 1.2
+  }
+ ]
+}
