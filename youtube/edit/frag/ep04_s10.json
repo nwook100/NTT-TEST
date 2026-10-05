@@ -1,0 +1,113 @@
+{
+ "section": "10",
+ "chunks": [
+  {
+   "id": 73,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep04_ezubao/motion/s10_chapter_outro.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/construction_pit_aerial_night_1.mp4"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/rain_night_reflection_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_dug_down_six_meters",
+     "args": {
+      "lines": [
+       "If you dug down six meters,",
+       "what would you find?"
+      ],
+      "red": [
+       "find?"
+      ],
+      "dur": 4.5,
+      "stagger": 0.6,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  },
+  {
+   "id": 74,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s10_tw_next_time",
+     "args": {
+      "text": "NEXT TIME",
+      "sub": "— a country's own investment fund",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s10_kp_teaser_superyacht",
+     "args": {
+      "lines": [
+       "A superyacht, a Hollywood movie,",
+       "and billions that simply disappeared."
+      ],
+      "red": [
+       "disappeared."
+      ],
+      "dur": 5.0,
+      "stagger": 0.6,
+      "size": 92,
+      "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+     }
+    }
+   ]
+  },
+  {
+   "id": 75,
+   "segments": [
+    {
+     "kind": "text",
+     "text": "Subscribe so you don't miss it.",
+     "style": "label"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep04_ezubao/stock/tv_living_room_1.mp4"
+    },
+    {
+     "kind": "text",
+     "text": "Have you ever trusted an investment\nbecause you saw it\nadvertised on TV?",
+     "style": "quote"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 73,
+   "name": "impact",
+   "offset": 9.0,
+   "gain_db": -15
+  },
+  {
+   "chunk": 74,
+   "name": "typewriter",
+   "offset": 0.3,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 74,
+   "dur": 1.5
+  }
+ ]
+}

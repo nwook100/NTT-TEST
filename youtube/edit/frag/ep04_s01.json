@@ -1,0 +1,56 @@
+{
+ "section": "1",
+ "chunks": [
+  {"id": 4, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s01_chapter_the_man_from_bengbu.mp4"},
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s01_typewriter_bengbu.mp4"}
+  ]},
+  {"id": 5, "segments": [
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_bengbu_street_1.jpg", "fx": "in", "overlay": "assets/ep04_ezubao/motion/s01_lowerthird_yucheng.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/factory_machine_1.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/welding_sparks_1.mp4"}
+  ]},
+  {"id": 6, "segments": [
+   {"kind": "motion", "fn": "flow_diagram", "name": "s01_flow_p2p_pitch", "args": {
+    "nodes": [
+     {"id": "savers", "label": "People with savings", "x": 0.14, "y": 0.5},
+     {"id": "app", "label": "An app or a website", "x": 0.5, "y": 0.12, "red": true},
+     {"id": "biz", "label": "Businesses that need loans", "x": 0.86, "y": 0.5}
+    ],
+    "edges": [
+     {"from": "savers", "to": "app"},
+     {"from": "app", "to": "biz"}
+    ],
+    "title": "NO BANK IN THE MIDDLE", "dur": 5.5, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_smartphone_ov_4.jpg", "fx": "left"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/smartphone_hands_dark_1.mp4"}
+  ]},
+  {"id": 7, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/older_hands_phone_1.mp4"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_somewhere_safe", "args": {"lines": ["People wanted somewhere safe", "that still paid something."], "red": ["safe"], "dur": 4.5, "stagger": 1.1, "size": 104, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/subway_platform_feet_1.mp4"}
+  ]},
+  {"id": 8, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s01_countup_3769_platforms.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/server_room_1.mp4"}
+  ]},
+  {"id": 9, "segments": [
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_beijing_cbd_ov_1.jpg", "fx": "right"},
+   {"kind": "motion", "fn": "timeline", "name": "s01_tl_feb_2014_july_2014", "args": {
+    "events": [["FEB 2014", "Yucheng buys a Beijing web-finance company"], ["JULY 2014", "'Ezubao' goes live"]],
+    "title": "ACCORDING TO XINHUA", "dur": 5.0, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s01_typewriter_july_2014_ezubao.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/beijing_cbd_interchange_1.mp4"}
+  ]},
+  {"id": 10, "segments": [
+   {"kind": "motion", "fn": "key_phrase", "name": "s01_kp_that_word_leasing", "args": {"lines": ["That word, leasing,", "was the whole pitch."], "red": ["leasing,"], "dur": 4.0, "stagger": 1.0, "size": 110, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 4, "name": "whoosh", "offset": 0.0, "gain_db": -12},
+  {"chunk": 6, "name": "whoosh", "offset": 0.0, "gain_db": -12},
+  {"chunk": 8, "name": "impact", "offset": 3.5, "gain_db": -9},
+  {"chunk": 10, "name": "impact", "offset": 0.5, "gain_db": -8}
+ ],
+ "music_drops": []
+}

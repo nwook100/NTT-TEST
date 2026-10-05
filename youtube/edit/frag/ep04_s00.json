@@ -1,0 +1,33 @@
+{
+ "section": "0",
+ "chunks": [
+  {"id": 0, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s00_typewriter_hefei.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/dig_site_night_1.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/construction_pit_aerial_night_1.mp4"}
+  ]},
+  {"id": 1, "segments": [
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s00_countup_6_meters.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/excavator_bucket_rubble_1.mp4", "grade": "bw"}
+  ]},
+  {"id": 2, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/dig_site_night_1.mp4", "start": 2.0},
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s00_countup_1200_volumes.mp4"},
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_desk_1.mp4"}
+  ]},
+  {"id": 3, "segments": [
+   {"kind": "video", "asset": "assets/ep04_ezubao/stock/documents_stack_1.mp4", "grade": "cold"},
+   {"kind": "photo", "asset": "assets/ep04_ezubao/s01_beijing_cbd_1.jpg", "fx": "in"},
+   {"kind": "motion", "fn": "key_phrase", "name": "s00_kp_its_name_was_ezubao", "args": {"lines": ["Its name was Ezubao."], "red": ["ezubao."], "dur": 3.5, "size": 118, "footer": "PAPER TIGER FILES  ·  EP.04  EZUBAO"}},
+   {"kind": "clip", "asset": "assets/ep04_ezubao/motion/s00_chapter_buried_six_meters_deep.mp4"}
+  ]}
+ ],
+ "sfx": [
+  {"chunk": 0, "name": "typewriter", "offset": 0.2, "gain_db": -12},
+  {"chunk": 1, "name": "impact", "offset": 4.0, "gain_db": -8},
+  {"chunk": 3, "name": "riser", "offset": 9.5, "gain_db": -10}
+ ],
+ "music_drops": [
+  {"chunk": 3, "dur": 1.5}
+ ]
+}
