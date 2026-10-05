@@ -766,6 +766,10 @@ F1 = "PAPER TIGER FILES  ·  EP.01  TERRA-LUNA"
 F2 = "PAPER TIGER FILES  ·  EP.02  CHO HEE-PAL"
 EP03_DIR = os.path.join(HERE, "ep03_truong_my_lan", "motion")
 F3 = "PAPER TIGER FILES  ·  EP.03  TRUONG MY LAN"
+EP04_DIR = os.path.join(HERE, "ep04_ezubao", "motion")
+F4 = "PAPER TIGER FILES  ·  EP.04  EZUBAO"
+EP05_DIR = os.path.join(HERE, "ep05_1mdb", "motion")
+F5 = "PAPER TIGER FILES  ·  EP.05  1MDB"
 
 EP01_CHAPTERS = [
     (0, "The $40 Billion Vanishing Act", "FILE No. 001"),
@@ -788,6 +792,20 @@ EP03_CHAPTERS = [
     (1, "From a market stall to an empire", None), (2, "Buying a bank, quietly", None), (3, "The piggy bank", None),
     (4, "Paying the referee", None), (5, "The bonds sold at the counter", None), (6, "The run", None),
     (7, "The trial", None), (8, "Death row, then a second trial", None), (9, "Where's the money?", None),
+    (10, "The pattern", None), (11, "Outro", "FINAL CHAPTER"),
+]
+EP04_CHAPTERS = [
+    (0, "Buried Six Meters Deep", "FILE No. 004"),
+    (1, "The man from Bengbu", None), (2, "The leasing machine", None), (3, "On state TV, on the bullet train", None),
+    (4, "Where the money went", None), (5, "Six days in December", None), (6, "The verdict", None),
+    (7, "Forty cents on the yuan", None), (8, "The day the P2P industry hit zero", None),
+    (9, "The pattern", None), (10, "Outro", "FINAL CHAPTER"),
+]
+EP05_CHAPTERS = [
+    (0, "The Prime Minister's Billions", "FILE No. 005"),
+    (1, "A fund for a nation", None), (2, "The first billion", None), (3, "Follow the money", None),
+    (4, "The spending spree", None), (5, "The leak", None), (6, "The world starts digging", None),
+    (7, "The fall", None), (8, "The verdicts", None), (9, "Getting the money back", None),
     (10, "The pattern", None), (11, "Outro", "FINAL CHAPTER"),
 ]
 
@@ -1358,10 +1376,211 @@ def ep03_jobs():
     ]
     return d, J
 
+def ep04_jobs():
+    # Wording from the [SCREEN] cues of fraud_ep04_ezubao_en.md. The Beijing No. 1 Intermediate People's Court verdict
+    # (Sept 12, 2017, upheld Nov 2017) is stated as fact; Xinhua-investigation statements and police figures keep their
+    # attribution; payout percentages were never published by the court and stay marked "reported".
+    d, F = EP04_DIR, F4
+    J = chapter_jobs(EP04_CHAPTERS, d, F)
+    J += [
+        ("s00_logo_sting.mp4", lambda o: logo_sting(o)),
+        # ---- key moments
+        ("s00_countup_6_meters.mp4", lambda o: count_up(o, 6, suffix=" m", kicker="THEY DIG FOR MORE THAN TWENTY HOURS",
+            label="1 m … 3 m … 6 m", sublabel="the outskirts of Hefei · winter", count_time=2.5, footer=F)),
+        ("s00_countup_1200_volumes.mp4", lambda o: count_up(o, 1200, suffix="+", kicker="80 SACKS", label="VOLUMES OF RECORDS",
+            sublabel="buried to destroy the evidence — Xinhua", end_red=True, footer=F)),
+        ("s01_countup_3769_platforms.mp4", lambda o: count_up(o, 3769, kicker="2013–2015: CHINA'S P2P LENDING BOOM",
+            label="PLATFORMS SET UP", sublabel="cumulative, Nov 2015, industry data", footer=F)),
+        ("s02_keyphrase_95_percent_fake.mp4", lambda o: key_phrase(o, ["“95% of the projects on", "Ezubao were fake.”"],
+            kicker="YUCHENG RISK-CONTROL HEAD, TO XINHUA", red=("fake.”",), stagger=0.7, dur=5.0, size=112, footer=F)),
+        ("s02_countup_800m_buying_details.mp4", lambda o: count_up(o, 800, prefix="¥", suffix=" MILLION+", kicker="DING NING, TO XINHUA",
+            label="SPENT BUYING REAL COMPANIES' DETAILS", sublabel="registration papers · licenses", footer=F)),
+        ("s02_countup_207_borrowers.mp4", lambda o: count_up(o, 207, kicker="POLICE CHECKED", label="'BORROWERS' → 1 REAL DEAL",
+            sublabel="police, via Xinhua", count_time=1.8, footer=F)),
+        ("s03_countup_480m_advertising.mp4", lambda o: count_up(o, 480, prefix="¥", suffix=" MILLION+", kicker="ON ADVERTISING (JUDGMENT)",
+            label="≈ $70M+", sublabel="national TV · subways · airports · a bullet train named after it", end_red=True, footer=F)),
+        ("s03_keyphrase_state_tv_safe.mp4", lambda o: key_phrase(o, ["If it's on state TV,", "it must be safe."],
+            red=("safe.",), stagger=0.9, dur=4.5, size=118, footer=F)),
+        ("s04_countup_700m_zhang_min.mp4", lambda o: count_up(o, 700, prefix="~¥", suffix=" MILLION", kicker="COURT FINDING",
+            label="IN ASSETS FROM DING NING TO ZHANG MIN, PRESIDENT", sublabel="Xinhua: incl. a villa in Singapore and a pink diamond ring", footer=F)),
+        ("s05_timeline_six_days.mp4", lambda o: timeline(o, [["Dec 3, 2015", "Shenzhen branch questioned"],
+            ["Dec 5", "cash running low (Xinhua)"], ["Dec 8", "nationwide operation · platform goes dark"],
+            ["Jan 14, 2016", "21 formally arrested"], ["Jan 31, 2016", "Xinhua investigation"]], title="SIX DAYS IN DECEMBER", footer=F)),
+        ("s05_keyphrase_complete_ponzi.mp4", lambda o: key_phrase(o, ["“Ezubao was a complete", "Ponzi scheme.”"],
+            kicker="ZHANG MIN, PRESIDENT, TO XINHUA", red=("Ponzi",), stagger=0.7, dur=5.0, size=116, footer=F)),
+        ("s06_countup_76_2_billion.mp4", lambda o: count_up(o, 76.2, prefix="¥", suffix=" BILLION", decimals=1, kicker="RAISED (GROSS) · COURT",
+            label="→ ¥59.8B EXCL. REINVESTMENT → ¥38B+ LOST", sublabel="June 2014 – December 2015 · Ezubao + Sesame Finance", end_red=True, footer=F)),
+        ("s06_countup_1_15m_people.mp4", lambda o: count_up(o, 1150000, suffix="+", kicker="COURT FINDING", label="PEOPLE",
+            sublabel="≈ $9B taken in, excluding reinvestment", footer=F)),
+        ("s06_stamp_life_ding_ning.mp4", lambda o: stamp(o, "LIFE", sub="DING NING · FUNDRAISING FRAUD · ¥100M FINE · SEPT 12, 2017", footer=F)),
+        ("s06_stamp_final.mp4", lambda o: stamp(o, "FINAL", sub="APPEALS REJECTED · BEIJING HIGH PEOPLE'S COURT · NOV 2017", footer=F)),
+        ("s07_countup_136_9_kg_gold.mp4", lambda o: count_up(o, 136.9, suffix=" KG", decimals=1, kicker="SEIZED (COURT, AS REPORTED)",
+            label="OF GOLD", sublabel="+ frozen ¥10.9B + $80M · cash ¥918M · 1,076 jade, art & jewelry items", footer=F)),
+        ("s07_countup_40_cents.mp4", lambda o: count_up(o, 40, prefix="~", suffix="%", kicker="REPORTED, NOT PUBLISHED BY THE COURT",
+            label="BACK FOR EVERY YUAN LOST — AFTER ALMOST 10 YEARS", sublabel="~35% Jan 2020 + ~5% Apr 2025", end_red=True, footer=F)),
+        ("s08_countup_5000_to_zero.mp4", lambda o: count_up(o, 0, frm=5000, kicker="P2P PLATFORMS IN CHINA · CBIRC",
+            label="PEAK ~5,000 → 0 · MID-NOV 2020", sublabel="still owed: ¥800B+ (≈ $115B) · CBIRC chairman, Aug 2020", end_red=True, footer=F)),
+        # ---- utility: date/location stamps and lower thirds
+        ("s00_typewriter_hefei.mp4", lambda o: typewriter(o, "THE OUTSKIRTS OF HEFEI", sub="— eastern China · winter", dur=3.5)),
+        ("s01_typewriter_bengbu.mp4", lambda o: typewriter(o, "BENGBU, ANHUI PROVINCE", sub="— a few hours from Shanghai", dur=3.5)),
+        ("s01_typewriter_july_2014_ezubao.mp4", lambda o: typewriter(o, "FEB 2014 — YUCHENG BUYS A BEIJING WEB-FINANCE COMPANY",
+            sub="July 2014 — 'Ezubao' goes live", dur=4.5, size=56)),
+        ("s02_typewriter_july_2015_rule.mp4", lambda o: typewriter(o, "JULY 2015 RULE",
+            sub="platforms must only match lenders and borrowers — no money pools, no guarantees", dur=4.5)),
+        ("s05_typewriter_dec_8_2015.mp4", lambda o: typewriter(o, "DECEMBER 8, 2015", sub="— Ezubao goes dark", dur=3.5)),
+        ("s05_typewriter_jan_14_2016.mp4", lambda o: typewriter(o, "JAN 14, 2016 — 21 PEOPLE FORMALLY ARRESTED",
+            sub="Beijing prosecutors", dur=4.0, size=64)),
+        ("s06_typewriter_sept_12_2017.mp4", lambda o: typewriter(o, "SEPTEMBER 12, 2017", sub="— Beijing No. 1 Intermediate People's Court", dur=3.5)),
+        ("s01_lowerthird_yucheng.mp4", lambda o: lower_third(o, "Yucheng Group", "Founded in Bengbu · manufacturing, then finance")),
+        ("s03_lowerthird_cctv.mp4", lambda o: lower_third(o, "China Central Television (CCTV)", "the state broadcaster")),
+        ("s06_lowerthird_beijing_court.mp4", lambda o: lower_third(o, "Beijing No. 1 Intermediate People's Court", "Verdict · September 12, 2017")),
+    ]
+    return d, J
+
+def ep05_jobs():
+    # Wording from the [SCREEN] cues and narration of fraud_ep05_1mdb_en.md, qualifiers kept verbatim ("according to the
+    # US Justice Department", "prosecutors say", "alleged"). Najib: SRC conviction final (2020, upheld 2022); the Dec 2025
+    # 1MDB conviction is UNDER APPEAL and is labelled so. Jho Low has never stood trial and denies wrongdoing: NO photo,
+    # he appears in text only with that caveat. The licensed Najib photos live in ep05_1mdb/people/ (see its CREDITS.md).
+    d, F = EP05_DIR, F5
+    J = chapter_jobs(EP05_CHAPTERS, d, F)
+    J += [
+        ("s00_logo_sting.mp4", lambda o: logo_sting(o)),
+        # ---- cold open
+        ("s00_wordbyword_film_paid.mp4", lambda o: word_by_word(o,
+            "According to the US Justice Department, this film was paid for with misappropriated money.",
+            red=("misappropriated",), dur=6.0, footer=F)),
+        ("s00_typewriter_dec_2013.mp4", lambda o: typewriter(o, "DECEMBER 2013", sub="— New York · a film premiere", dur=3.5)),
+        # ---- section 1: a fund for a nation
+        ("s01_typewriter_kuala_lumpur.mp4", lambda o: typewriter(o, "KUALA LUMPUR", sub="— Malaysia · population ~33 million", dur=3.5)),
+        ("s01_typewriter_1mdb_founded.mp4", lambda o: typewriter(o, "1MALAYSIA DEVELOPMENT BERHAD (1MDB)", sub="— founded 2009", dur=4.0, size=64)),
+        ("s01_keyphrase_three_jobs.mp4", lambda o: key_phrase(o, ["Prime Minister", "+ Finance Minister", "+ Chair, 1MDB board of advisers"],
+            kicker="NAJIB RAZAK", red=("1MDB",), stagger=0.8, dur=5.5, size=88, footer=F)),
+        ("s01_person_najib_2017.mp4", lambda o: person_card(o, "assets/ep05_1mdb/people/najib_razak_2017.jpg", "NAJIB RAZAK",
+            sub="Prime Minister 2009–2018 · convicted 2020; 2025 conviction under appeal", kicker="MALAYSIA · FILE No. 005",
+            stamp_word="CONVICTED", credit="Photo: U.S. Embassy Kuala Lumpur, 2017 (public domain)", footer=F)),
+        ("s01_person_najib_2008.mp4", lambda o: person_card(o, "assets/ep05_1mdb/people/najib_razak_2008.jpg", "NAJIB RAZAK",
+            sub="official portrait, 2008 · convicted 2020; 2025 conviction under appeal", kicker="POLITICAL ROYALTY",
+            credit="Photo: Government of Malaysia, CC BY-SA 3.0", footer=F)),
+        # ---- section 2: the first billion
+        ("s02_typewriter_sept_2009_petrosaudi.mp4", lambda o: typewriter(o, "SEPT 2009 — 1MDB + PETROSAUDI JOINT VENTURE",
+            sub="$1 billion invested", dur=4.0, size=58)),
+        ("s02_flow_good_star.mp4", lambda o: flow_diagram(o,
+            [{"id": "a", "label": "1MDB", "sub": "$1B in", "x": 0.16, "y": 0.5},
+             {"id": "b", "label": "JOINT VENTURE", "sub": "with PetroSaudi", "x": 0.5, "y": 0.5},
+             {"id": "c", "label": "'GOOD STAR LTD'", "sub": "Swiss bank account · alleged", "x": 0.84, "y": 0.5, "red": True}],
+            [{"from": "a", "to": "b"}, {"from": "b", "to": "c", "label": "$1B+ (2009–2011)", "red": True}],
+            title="ACCORDING TO THE US JUSTICE DEPARTMENT", footer=F)),
+        # ---- section 3: follow the money
+        ("s03_countup_6_5B_bonds.mp4", lambda o: count_up(o, 6.5, prefix="$", suffix=" BILLION", decimals=1,
+            kicker="2012–2013 · THREE BOND DEALS", label="$1.75B (MAY 2012) + $1.75B (OCT 2012) + $3B (MAR 2013)",
+            sublabel="arranged by Goldman Sachs · ≈ $600 million in fees", footer=F)),
+        ("s03_flow_aabar_lookalike.mp4", lambda o: flow_diagram(o,
+            [{"id": "a", "label": "BOND MONEY", "sub": "2012 · backed by IPIC/Aabar", "x": 0.18, "y": 0.5},
+             {"id": "b", "label": "'AABAR INVESTMENTS PJS LTD'", "sub": "British Virgin Islands · a lookalike", "x": 0.62, "y": 0.28, "red": True},
+             {"id": "c", "label": "REAL AABAR", "sub": "Abu Dhabi", "x": 0.62, "y": 0.74}],
+            [{"from": "a", "to": "b", "label": "$1B+ wired", "red": True}],
+            title="PROSECUTORS SAY: NOT PART OF THE REAL AABAR", footer=F)),
+        ("s03_flow_tanore_mo1.mp4", lambda o: flow_diagram(o,
+            [{"id": "a", "label": "$3B BOND", "sub": "2013", "x": 0.15, "y": 0.5},
+             {"id": "b", "label": "'TANORE FINANCE'", "sub": "Singapore account · ≈ $1.26B, prosecutors say", "x": 0.5, "y": 0.5},
+             {"id": "c", "label": "'MALAYSIAN OFFICIAL 1'", "sub": "private account, Kuala Lumpur", "x": 0.85, "y": 0.5, "red": True}],
+            [{"from": "a", "to": "b"}, {"from": "b", "to": "c", "label": "$681M · March 2013", "red": True}],
+            title="US CIVIL COMPLAINTS", footer=F)),
+        ("s03_countup_681M.mp4", lambda o: count_up(o, 681, prefix="$", suffix=" MILLION", kicker="MARCH 2013",
+            label="INTO THE ACCOUNT OF 'MALAYSIAN OFFICIAL 1'",
+            sublabel="a Malaysian government minister later said that official was Najib Razak", end_red=True, footer=F)),
+        ("s03_countup_4_5B_doj.mp4", lambda o: count_up(o, 4500000000, prefix="$", kicker="ACCORDING TO THE US JUSTICE DEPARTMENT",
+            label="MISAPPROPRIATED FROM 1MDB · 2009–2015", sublabel="Malaysia's anti-corruption agency: ≈ RM 42 billion (≈ $10B)",
+            end_red=True, dur=5.5, count_time=2.8, size=170, footer=F)),
+        # ---- section 4: the spending spree
+        ("s04_wordbyword_asset_wall.mp4", lambda o: word_by_word(o,
+            "Film financing · Superyacht · Beverly Hills · New York · London · Private jet · Monet · Picasso · Basquiat",
+            attribution="according to US prosecutors", red=("Superyacht", "Picasso"), dur=7.0, size=64, footer=F)),
+        ("s04_countup_250M_yacht.mp4", lambda o: count_up(o, 250, prefix="~$", suffix=" MILLION",
+            kicker="EQUANIMITY · ALLEGED, 1MDB FUNDS", label="300 FT · HELIPAD · CINEMA · POOL",
+            sublabel="according to the US Justice Department", footer=F)),
+        ("s04_countup_11B_debt.mp4", lambda o: count_up(o, 11, prefix="$", suffix=" BILLION", kicker="BY 2015",
+            label="1MDB'S DEBT", sublabel="struggling to pay its bondholders · the bill fell to Malaysian taxpayers",
+            end_red=True, footer=F)),
+        # ---- section 5: the leak
+        ("s05_typewriter_july_2_2015.mp4", lambda o: typewriter(o, "JULY 2, 2015",
+            sub="— Wall Street Journal: nearly $700 million traced into the prime minister's personal accounts", dur=5.0)),
+        ("s05_timeline_crackdown.mp4", lambda o: timeline(o, [["July 2015", "Attorney General removed"],
+            ["July 2015", "Deputy PM fired"], ["July 2015", "Sarawak Report blocked"], ["July 2015", "The Edge suspended 3 months"]],
+            title="WITHIN WEEKS", red_last=False, footer=F)),
+        ("s05_wordbyword_saudi_donation.mp4", lambda o: word_by_word(o,
+            "'$681 million was a personal donation from the Saudi royal family.' No charges.",
+            attribution="the new Attorney General · January 2016", red=("donation", "charges."), dur=6.0, footer=F)),
+        # ---- section 6: the world starts digging
+        ("s06_routemap_investigations.mp4", lambda o: route_map(o, [
+            ("USA", "DOJ civil suits · July 2016", 38.9, -77.0), ("SWITZERLAND", "criminal investigations", 46.9, 7.4),
+            ("LUXEMBOURG", None, 49.6, 6.1), ("UAE", None, 24.5, 54.4), ("SINGAPORE", "BSI & Falcon shut", 1.35, 103.8),
+            ("HONG KONG", None, 22.3, 114.2)], title="THE WORLD STARTS DIGGING", dur=6.5, footer=F)),
+        ("s06_stamp_shut_down.mp4", lambda o: stamp(o, "SHUT DOWN",
+            sub="SINGAPORE 2016 · BSI & FALCON LOCAL UNITS · 1MDB-LINKED FLOWS", footer=F)),
+        ("s06_keyphrase_kleptocracy.mp4", lambda o: key_phrase(o, ["The largest single action", "under the US Kleptocracy", "Asset Recovery Initiative"],
+            kicker="JULY 2016 · CIVIL SUITS TO SEIZE $1B+ IN ASSETS", red=("Kleptocracy",), stagger=0.7, dur=5.5, size=84, footer=F)),
+        # ---- section 7: the fall
+        ("s07_typewriter_may_9_2018.mp4", lambda o: typewriter(o, "MAY 9, 2018",
+            sub="— Barisan Nasional loses power for the first time since independence (1957)", dur=4.5)),
+        ("s07_countup_567_handbags.mp4", lambda o: count_up(o, 567, kicker="POLICE RAIDS · MAY 2018",
+            label="HANDBAGS · 423 WATCHES · 12,000+ PIECES OF JEWELLERY · ~RM 116M CASH",
+            sublabel="police estimate: up to RM 1.1 billion · Najib's side disputed the figure, said many were gifts",
+            count_time=1.8, size=280, footer=F)),
+        ("s07_typewriter_july_3_2018_arrest.mp4", lambda o: typewriter(o, "JULY 3, 2018", sub="— Najib arrested", dur=3.5)),
+        ("s07_typewriter_yacht_seized.mp4", lambda o: typewriter(o, "FEBRUARY 2018 — EQUANIMITY SEIZED OFF BALI",
+            sub="sold the next year for $126 million, about half what prosecutors say it cost", dur=5.0, size=56)),
+        # ---- section 8: the verdicts
+        ("s08_stamp_guilty_src.mp4", lambda o: stamp(o, "GUILTY", sub="SRC CASE · ALL 7 CHARGES · JULY 28, 2020 · 12 YEARS", footer=F)),
+        ("s08_timeline_verdicts.mp4", lambda o: timeline(o, [["Jul 2020", "SRC: guilty — 12 years"],
+            ["Aug 2022", "Federal Court upholds · prison"], ["Feb 2024", "Pardons Board: 12 → 6 years"],
+            ["Dec 2025", "1MDB trial: guilty — 15 years (under appeal)"]], title="THE VERDICTS", footer=F)),
+        ("s08_stamp_guilty_1mdb.mp4", lambda o: stamp(o, "GUILTY",
+            sub="1MDB MAIN TRIAL · ALL 25 CHARGES · DEC 26, 2025 · UNDER APPEAL", footer=F)),
+        ("s08_wordbyword_forgeries.mp4", lambda o: word_by_word(o,
+            "The judge ruled that the Saudi donation letters were forgeries.",
+            attribution="Jho Low was not on trial there, and he denies wrongdoing · Najib is appealing",
+            red=("forgeries.",), dur=6.0, footer=F)),
+        ("s08_typewriter_pardon_2026.mp4", lambda o: typewriter(o, "SEPT 18, 2026 — ROYAL CONDITIONAL PARDON (SRC ONLY)",
+            sub="house arrest until Aug 2028 once RM 50M fine paid · 1MDB sentence due Aug 2028; stay application pending",
+            dur=5.5, size=52)),
+        # ---- section 9: getting the money back
+        ("s09_countup_1_4B_returned.mp4", lambda o: count_up(o, 1.4, prefix="$", suffix=" BILLION", decimals=1,
+            kicker="US JUSTICE DEPARTMENT", label="RETURNED TO MALAYSIA",
+            sublabel="2019: Jho Low & family gave up $700M+ in assets — he said it was not an admission of guilt", footer=F)),
+        ("s09_compare_recovered_vs_paid.mp4", lambda o: compare(o,
+            {"head": "Recovered by Malaysia (to 2025)", "big": "RM 31.3B", "sub": "incl. $2.5B cash from Goldman Sachs"},
+            {"head": "Paid into 1MDB debts (to Jul 2025)", "big": "RM 42.2B", "sub": "incl. RM 15.4B from the Finance Ministry"},
+            title="THE BILL", footer=F)),
+        ("s09_typewriter_bonds_2039.mp4", lambda o: typewriter(o, "REPAYMENTS RUN UNTIL 2039", sub="— the last 1MDB bonds", dur=4.0, size=72)),
+        # ---- section 10: the pattern
+        ("s10_keyphrase_checklist.mp4", lambda o: key_phrase(o, ["1. Approver = checker → no checks", "2. Billions raised, no clear business",
+            "3. Watch the names", "4. Secret audits are not a coincidence", "5. Follow the money across borders"],
+            kicker="WHAT 1MDB TEACHES", red=("names", "borders"), stagger=1.0, dur=9.0, size=62, footer=F)),
+        ("s10_wordbyword_state_fund.mp4", lambda o: word_by_word(o,
+            "A state fund is only as honest as the people allowed to question it.", red=("question",), dur=6.0, footer=F)),
+        # ---- section 11: outro
+        ("s11_wordbyword_never_faced.mp4", lambda o: word_by_word(o,
+            "The man US prosecutors place at the center of it all has still never faced a courtroom.",
+            red=("never",), dur=6.0, footer=F)),
+        ("s11_typewriter_next_time.mp4", lambda o: typewriter(o, "NEXT TIME: ANOTHER CASE FILE", dur=3.5)),
+        # ---- utility: lower thirds
+        ("s01_lowerthird_perdana_putra.mp4", lambda o: lower_third(o, "Perdana Putra, Putrajaya", "Office of the Prime Minister")),
+        ("s01_lowerthird_trx.mp4", lambda o: lower_third(o, "Tun Razak Exchange (TRX)", "The financial district 1MDB was meant to build")),
+        ("s04_lowerthird_equanimity.mp4", lambda o: lower_third(o, "Equanimity", "300 ft · ~$250M of 1MDB money, per US DOJ (alleged)")),
+        ("s06_lowerthird_bersih.mp4", lambda o: lower_third(o, "Bersih rally, Kuala Lumpur", "August 2015 · two days and two nights")),
+        ("s08_lowerthird_kl_courts.mp4", lambda o: lower_third(o, "Kuala Lumpur Courts Complex", "Both Najib trials were heard here")),
+        ("s08_lowerthird_palace_of_justice.mp4", lambda o: lower_third(o, "Palace of Justice, Putrajaya", "Court of Appeal · Federal Court")),
+        ("s08_lowerthird_brooklyn.mp4", lambda o: lower_third(o, "US Courthouse, Brooklyn (E.D.N.Y.)", "Roger Ng convicted · Tim Leissner sentenced")),
+    ]
+    return d, J
+
 def main(argv):
     which = argv[1] if len(argv) > 1 else "all"
     only = argv[argv.index("--only") + 1] if "--only" in argv else None
-    sets = {"ep01": [ep01_jobs], "ep02": [ep02_jobs], "ep03": [ep03_jobs], "all": [ep01_jobs, ep02_jobs, ep03_jobs]}[which]
+    sets = {"ep01": [ep01_jobs], "ep02": [ep02_jobs], "ep03": [ep03_jobs], "ep04": [ep04_jobs], "ep05": [ep05_jobs],
+            "all": [ep01_jobs, ep02_jobs, ep03_jobs, ep04_jobs, ep05_jobs]}[which]
     for js in sets:
         d, jobs = js()
         for name, fn in jobs:
