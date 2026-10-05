@@ -114,10 +114,8 @@
      }
     },
     {
-     "kind": "photo",
-     "asset": "assets/ep05_1mdb/s06_bersih_3.jpg",
-     "fx": "right",
-     "crop": "left"
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
     },
     {
      "kind": "text",

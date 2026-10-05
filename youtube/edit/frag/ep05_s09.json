@@ -1,0 +1,246 @@
+{
+ "section": "9",
+ "chunks": [
+  {
+   "id": 58,
+   "segments": [
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/motion/s09_chapter_getting_the_money_back.mp4"
+    },
+    {
+     "kind": "clip",
+     "asset": "assets/ep05_1mdb/cards/zoom/card_10_doj_1_4_billion_returned_zoom.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "count_up",
+     "name": "s09_count_700m_given_up",
+     "args": {
+      "to": 700,
+      "prefix": "$",
+      "suffix": "M+",
+      "kicker": "2019 · JHO LOW AND HIS FAMILY AGREED",
+      "label": "ASSETS GIVEN UP",
+      "sublabel": "incl. properties in Beverly Hills, New York and London",
+      "dur": 4.5,
+      "count_time": 1.8,
+      "size": 230,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s04_beverly_hills_1.jpg",
+     "fx": "in"
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "segments": [
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_not_admission",
+     "args": {
+      "kicker": "HE SAID",
+      "lines": [
+       "The deal was not",
+       "an admission of guilt."
+      ],
+      "red": [
+       "not"
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_us_said",
+     "args": {
+      "kicker": "THE US SAID",
+      "lines": [
+       "It did not end",
+       "any criminal charges."
+      ],
+      "red": [
+       "criminal",
+       "charges."
+      ],
+      "dur": 4.5,
+      "stagger": 0.5,
+      "size": 104,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s03_ringgit_ov_1.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "motion",
+     "fn": "compare",
+     "name": "s09_compare_recovered_vs_debts",
+     "args": {
+      "left": {
+       "head": "Recovered by Malaysia (to 2025)",
+       "big": "RM 31.3B"
+      },
+      "right": {
+       "head": "Paid into 1MDB debts (to July 2025)",
+       "big": "RM 42.2B",
+       "sub": "incl. RM 15.4 billion from the Finance Ministry"
+      },
+      "title": "RECOVERED VS PAID",
+      "dur": 5.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/kl_skyline_night_2.mp4"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s03_ringgit_2.png",
+     "fx": "right"
+    },
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s01_putrajaya_1.jpg",
+     "fx": "left"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s09_tw_until_2039",
+     "args": {
+      "text": "UNTIL 2039",
+      "sub": "— repayments on the last 1MDB bonds",
+      "dur": 4.0,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "segments": [
+    {
+     "kind": "photo",
+     "asset": "assets/ep05_1mdb/s01_kl_skyline_ov_2.jpg",
+     "fx": "in"
+    },
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/construction_cranes_dusk_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_public_money",
+     "args": {
+      "kicker": "PUBLIC MONEY",
+      "lines": [
+       "Schools, hospitals",
+       "and roads."
+      ],
+      "red": [
+       "roads."
+      ],
+      "dur": 4.5,
+      "stagger": 0.6,
+      "size": 110,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    },
+    {
+     "kind": "motion",
+     "fn": "key_phrase",
+     "name": "s09_kp_never_caught",
+     "args": {
+      "lines": [
+       "Jho Low, meanwhile,",
+       "has never been caught."
+      ],
+      "red": [
+       "never"
+      ],
+      "dur": 4.5,
+      "stagger": 0.6,
+      "size": 100,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "segments": [
+    {
+     "kind": "video",
+     "asset": "assets/ep05_1mdb/stock/globe_route_1.mp4"
+    },
+    {
+     "kind": "motion",
+     "fn": "typewriter",
+     "name": "s09_tw_whereabouts",
+     "args": {
+      "text": "WHEREABOUTS",
+      "sub": "— never officially confirmed",
+      "dur": 3.5,
+      "footer": "PAPER TIGER FILES  ·  EP.05  1MDB"
+     }
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "chunk": 58,
+   "name": "whoosh",
+   "offset": 4.0,
+   "gain_db": -16
+  },
+  {
+   "chunk": 60,
+   "name": "impact",
+   "offset": 3.8,
+   "gain_db": -15
+  },
+  {
+   "chunk": 61,
+   "name": "typewriter",
+   "offset": 12.2,
+   "gain_db": -14
+  },
+  {
+   "chunk": 63,
+   "name": "typewriter",
+   "offset": 3.9,
+   "gain_db": -14
+  }
+ ],
+ "music_drops": [
+  {
+   "chunk": 62,
+   "dur": 1.5
+  }
+ ]
+}
