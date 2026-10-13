@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>독이 든 성배</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;600&family=Teko:wght@500;600&display=swap">
+<style>
+/* Layout: one narrow column styled as a hand-operated ballpark scoreboard; header plate, bulb gauges, stage, tab rail. */
+:root {
+  --board: #14302a;      /* painted scoreboard green */
+  --board-2: #1b3d35;    /* raised panel */
+  --line: #2e554a;       /* panel seams */
+  --chalk: #efe9d6;      /* stencil white */
+  --chalk-dim: #a3b3a4;  /* faded paint */
+  --bulb: #ffb33a;       /* lit bulb */
+  --bulb-off: #2a4a40;   /* dead bulb */
+  --red: #e5584b;        /* last place */
+  --win: #8ad694;        /* win mark */
+  --f-display: "Black Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-num: "Teko", "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--board); color: var(--chalk);
+  font: 15px/1.6 var(--f-body);
+  -webkit-tap-highlight-color: transparent;
+}
+html.native body { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.app { max-width: 480px; margin: 0 auto; padding-inline: 16px; padding-block: 12px 96px; display: flex; flex-direction: column; gap: 12px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: .01em; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; line-height: 1; }
+.label { font-size: 11px; letter-spacing: .14em; color: var(--chalk-dim); text-transform: uppercase; }
+
+/* Header plate */
+.plate { border: 2px solid var(--line); background: var(--board-2); padding: 10px 12px; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: end; }
+.plate h1 { font-size: 22px; }
+.plate .sub { font-size: 12px; color: var(--chalk-dim); }
+.plate .rec { text-align: right; }
+.plate .rec .num { font-size: 34px; }
+.rank-badge { display: inline-block; font-family: var(--f-num); font-size: 22px; padding: 0 8px; border: 2px solid currentColor; line-height: 1.1; }
+.rank-badge.bottom { color: var(--red); }
+.rank-badge.fall { color: var(--bulb); }
+
+/* Bulb gauges */
+.gauges { display: grid; gap: 6px; }
+.gauge { display: grid; grid-template-columns: 76px 1fr 30px; align-items: center; gap: 8px; }
+.gauge .name { font-size: 13px; }
+.bulbs { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
+.bulbs i { aspect-ratio: 1; border-radius: 50%; background: var(--bulb-off); }
+.bulbs i.on { background: var(--bulb); box-shadow: 0 0 6px var(--bulb); }
+.gauge.danger .bulbs i.on { background: var(--red); box-shadow: 0 0 6px var(--red); }
+.gauge .val { text-align: right; font-size: 20px; }
+
+.ratings { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--line); }
+.ratings > div { padding: 6px 8px; border-right: 2px solid var(--line); display: grid; gap: 2px; }
+.ratings > div:last-child { border-right: 0; }
+.ratings .num { font-size: 28px; }
+
+/* Stage */
+.stage { display: grid; gap: 12px; }
+.card { border: 2px solid var(--line); background: var(--board-2); padding: 16px; display: grid; gap: 12px; }
+.card .who { font-size: 12px; color: var(--bulb); letter-spacing: .08em; }
+.card h2 { font-size: 26px; }
+.card .text { color: var(--chalk); }
+.choices { display: grid; gap: 8px; }
+.choice { text-align: left; background: var(--board); border: 2px solid var(--chalk-dim); padding: 12px; min-height: 56px; cursor: pointer; display: grid; gap: 6px; }
+.choice:hover:not(:disabled), .choice:focus-visible { border-color: var(--bulb); outline: none; }
+.choice:disabled { opacity: .4; cursor: not-allowed; }
+.choice .t { font-weight: 600; }
+.fx { display: flex; flex-wrap: wrap; gap: 4px; }
+.fx span { font-size: 12px; padding: 1px 6px; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.fx .up { color: var(--win); border-color: currentColor; }
+.fx .down { color: var(--red); border-color: currentColor; }
+.fx .flag { color: var(--bulb); border-color: currentColor; }
+.train-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cta { background: var(--bulb); color: #1b1408; border: 0; font-family: var(--f-display); font-size: 20px; padding: 14px; min-height: 56px; cursor: pointer; width: 100%; }
+.cta:focus-visible { outline: 3px solid var(--chalk); outline-offset: 2px; }
+.ghost { background: transparent; border: 2px solid var(--chalk-dim); padding: 10px; min-height: 44px; cursor: pointer; width: 100%; }
+.odds { display: flex; justify-content: space-between; align-items: baseline; }
+.odds .num { font-size: 44px; color: var(--bulb); }
+
+/* Results scoreboard */
+.score { width: 100%; border-collapse: collapse; font-family: var(--f-num); font-size: 22px; }
+.score th { font-family: var(--f-body); font-size: 11px; font-weight: 400; color: var(--chalk-dim); text-align: left; padding: 2px 4px; letter-spacing: .08em; }
+.score td { padding: 4px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.score td.r { text-align: right; }
+.score .W { color: var(--win); }
+.score .L { color: var(--red); }
+.score tr.row { animation: flip .35s both; }
+@keyframes flip { from { transform: rotateX(90deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.msg { border-left: 4px solid var(--bulb); padding: 8px 12px; background: var(--board); }
+.msg .from { font-size: 12px; color: var(--bulb); }
+.delta { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Standings */
+.standings { width: 100%; border-collapse: collapse; }
+.standings th, .standings td { padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+.standings th { font-size: 11px; color: var(--chalk-dim); font-weight: 400; }
+.standings td:nth-child(2), .standings th:nth-child(2) { text-align: left; }
+.standings tr.me td { color: var(--bulb); font-weight: 600; }
+.standings tr.cut td { border-bottom: 2px dashed var(--bulb); }
+.log { display: grid; gap: 6px; }
+.log div { display: grid; grid-template-columns: 44px 1fr auto; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 6px; font-size: 14px; }
+
+/* Tabs */
+.tabs { position: fixed; left: 0; right: 0; bottom: 0; background: var(--board-2); border-top: 2px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.tabs .in { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+.tabs button { background: none; border: 0; padding: 14px 0; min-height: 52px; cursor: pointer; color: var(--chalk-dim); font-size: 14px; }
+.tabs button[aria-selected="true"] { color: var(--bulb); box-shadow: inset 0 3px 0 var(--bulb); }
+
+/* Title */
+.title { min-height: 100%; display: grid; align-content: center; gap: 20px; padding-block: 24px; }
+.title h1 { font-size: clamp(52px, 17vw, 84px); line-height: .95; }
+.title h1 em { font-style: normal; color: var(--red); }
+.title .tag { color: var(--chalk-dim); }
+.lore { border: 2px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); }
+.lore div { padding: 8px; border-right: 2px solid var(--line); display: grid; gap: 2px; }
+.lore div:last-child { border-right: 0; }
+.lore .num { font-size: 36px; color: var(--red); }
+.field { display: grid; gap: 4px; }
+.field input { background: var(--board-2); border: 2px solid var(--line); color: var(--chalk); padding: 12px; font: inherit; font-size: 16px; }
+.field input:focus { outline: none; border-color: var(--bulb); }
+.letter { white-space: pre-line; }
+.ending h2 { font-size: 34px; }
+.ending .big { font-size: 64px; color: var(--bulb); }
+.ending.bad .big { color: var(--red); }
+@media (prefers-reduced-motion: reduce) { .score tr.row { animation: none; } }
+</style>
+</head>
+<body>
+<div id="root" class="app"></div>
+<nav class="tabs" id="tabs" hidden>
+  <div class="in" role="tablist">
+    <button role="tab" data-tab="play" aria-selected="true">진행</button>
+    <button role="tab" data-tab="table" aria-selected="false">순위표</button>
+    <button role="tab" data-tab="log" aria-selected="false">시즌 기록</button>
+  </div>
+</nav>
+<script src="events-extra.js" onerror="window.EXTRA_EVENTS=[]"></script>
+<script>
+(function () {
+'use strict';
+if (window.Capacitor) document.documentElement.classList.add('native');
+
+var WEEKS = 16, GAMES = 6, SAVE_KEY = 'poisoned-chalice-v1';
+var TEAMS = [
+  ['반월 펠리컨스', '펠리컨스', 0], ['서울 블루윙즈', '블루윙즈', 62], ['광주 레드폭스', '레드폭스', 60],
+  ['인천 씨호크스', '씨호크스', 58], ['대구 아이언즈', '아이언즈', 57], ['수원 캐슬즈', '캐슬즈', 56],
+  ['부산 마린스타', '마린스타', 55], ['창원 스틸웨일', '스틸웨일', 54], ['대전 볼츠', '볼츠', 52], ['고양 스카이', '스카이', 50]
+];
+var FX_NAMES = { trust: '구단주', fans: '팬', morale: '사기', budget: '예산', bat: '타격', pit: '투수', def: '수비', boost: '이번 주 집중력' };
+
+var EVENTS = [
+  { id: 'nephew', title: '구단주의 조카', who: '구단주 비서실', text: '"회장님 조카 민재 군이 이번 주부터 1군 4번 타자로 나섰으면 하십니다. 2군 타율은 0.198입니다."',
+    choices: [{ label: '4번 타자로 기용한다', fx: { trust: 12, morale: -10, bat: -2 } }, { label: '정중히 거절한다', fx: { trust: -10, morale: 6 } }] },
+  { id: 'truck', when: function (s) { return s.fans < 40; }, title: '트럭 시위', who: '구장 앞 도로', text: '전광판 트럭이 구장을 돈다. "꼴찌는 전통이 아니다. 감독은 응답하라."',
+    choices: [{ label: '공개 사과문을 올린다', fx: { fans: 10, trust: -3 } }, { label: '무시하고 훈련에 집중', fx: { fans: -8, def: 2 } }] },
+  { id: 'foreign', title: '외국인 투수 영입', who: '스카우트팀', text: '도미니카 리그 다승왕이 시장에 나왔다. 몸값은 15억.',
+    choices: [{ label: '15억 들여 영입', fx: { budget: -15, pit: 8, fans: 4 } }, { label: '예산을 아낀다', fx: { trust: 5 } }] },
+  { id: 'ace', title: '에이스 연투 논란', who: '투수코치', text: '"에이스가 어제 110구를 던졌습니다. 그래도 내일 또 올리시겠습니까?"',
+    choices: [{ label: '올린다. 이번 주는 이겨야 한다', fx: { boost: 7, pit: -4, fans: -3 } }, { label: '쉬게 한다', fx: { morale: 4 } }] },
+  { id: 'fa', title: 'FA 베테랑 타자', who: '단장', text: '"38세 홈런왕 출신이 우리 팀에 관심 있답니다. 계약금 20억입니다."',
+    choices: [{ label: '20억에 계약한다', fx: { budget: -20, bat: 7, morale: 3 } }, { label: '유망주를 믿는다', fx: { morale: 5, bat: 1 } }] },
+  { id: 'trade', title: '트레이드 제안', who: '단장', text: '"팬들이 아끼는 프랜차이즈 유망주를 주면 즉시전력 셋업맨을 준답니다."',
+    choices: [{ label: '트레이드 단행', fx: { pit: 5, fans: -8 } }, { label: '유망주는 못 준다', fx: { fans: 4, trust: -4 } }] },
+  { id: 'interview', when: function (s) { return !s.promise; }, title: '시즌 각오 인터뷰', who: '스포츠 기자', text: '"감독님, 올해 목표 한마디만 부탁드립니다."',
+    choices: [{ label: '"올해는 가을야구 갑니다"', fx: { fans: 8, trust: 4, morale: 4, promise: true } }, { label: '"한 경기 한 경기 최선을"', fx: { fans: -2, morale: 2 } }] },
+  { id: 'brawl', title: '벤치클리어링', who: '원정 경기 7회', text: '상대 투수가 우리 4번 타자 머리 쪽으로 공을 던졌다. 양 팀 선수들이 뛰쳐나온다.',
+    choices: [{ label: '선수 편에 서서 함께 나간다', fx: { morale: 10, trust: -5, fans: 5 } }, { label: '우리 선수부터 진정시킨다', fx: { morale: -5, trust: 5 } }] },
+  { id: 'chicken', title: '연패 탈출 회식', who: '주장', text: '"감독님, 분위기가 너무 가라앉았습니다. 오늘 치킨이라도..."',
+    choices: [{ label: '구단 돈으로 치킨 50마리', fx: { morale: 9, budget: -1 } }, { label: '"이길 때 먹자"', fx: { morale: -4, boost: 2 } }] },
+  { id: 'data', title: '데이터 분석팀', who: '전력분석관', text: '"트래킹 장비와 분석팀에 10억이면 됩니다. 수비 시프트가 달라질 겁니다."',
+    choices: [{ label: '10억 투자', fx: { budget: -10, def: 6, pit: 2 } }, { label: '구단주 말대로 감으로 간다', fx: { trust: 4 } }] },
+  { id: 'rookie', title: '2군 신인의 맹타', who: '2군 감독', text: '"고졸 신인이 퓨처스에서 4할을 치고 있습니다. 올려볼까요?"',
+    choices: [{ label: '즉시 1군 콜업', fx: { bat: 4, fans: 5, morale: -2 } }, { label: '베테랑 자리를 지켜준다', fx: { morale: 5 } }] },
+  { id: 'rain', title: '장마철 우천 취소', who: '운영팀', text: '사흘 연속 비가 온다. 실내 훈련장은 비어 있다.',
+    choices: [{ label: '실내 수비 훈련', fx: { def: 3, morale: -2 } }, { label: '푹 쉬게 한다', fx: { morale: 7 } }] },
+  { id: 'golf', title: '구단주의 골프 초대', who: '구단주', text: '"감독님, 이번 월요일 골프 어떠세요? 경기 전날이긴 하지만."',
+    choices: [{ label: '간다. 라운딩이 곧 정치다', fx: { trust: 9, morale: -4 } }, { label: '경기 준비로 사양한다', fx: { trust: -6, morale: 3 } }] },
+  { id: 'youtube', title: '구단 유튜브 출연', who: '홍보팀', text: '"감독님 먹방 한 편만 찍어주시면 구독자가..."',
+    choices: [{ label: '출연한다', fx: { fans: 7, morale: -1 } }, { label: '감독은 야구로 말한다', fx: { morale: 2 } }] },
+  { id: 'cut', title: '모기업 예산 삭감', who: '재무팀', text: '모기업 실적 악화로 운영비 10억을 반납하라는 공문이 내려왔다.',
+    choices: [{ label: '수용한다', fx: { budget: -10, trust: 5 } }, { label: '구단주에게 직접 항의', fx: { trust: -8, morale: 4 } }] },
+  { id: 'ump', title: '오심 항의', who: '9회말 2사', text: '명백한 세이프가 아웃으로 선언됐다. 비디오 판독 기회도 이미 썼다.',
+    choices: [{ label: '뛰쳐나가 퇴장당한다', fx: { morale: 7, fans: 6, trust: -2 } }, { label: '참는다', fx: { morale: -4 } }] },
+  { id: 'mascot', title: '마스코트 리뉴얼', who: '마케팅팀', text: '"펠리컨 인형탈이 너무 낡았습니다. 5억이면 새로..."',
+    choices: [{ label: '5억 투자', fx: { budget: -5, fans: 8 } }, { label: '아직 쓸 만하다', fx: { trust: 2 } }] },
+  { id: 'injury', title: '주전 포수 부상', who: '트레이너', text: '"햄스트링입니다. 무리하면 시즌 아웃, 쉬면 3주입니다."',
+    choices: [{ label: '진통제 맞고 출전', fx: { boost: 4, def: -4 } }, { label: '회복에 전념', fx: { def: -1, morale: 3 } }] }
+];
+
+var TRAININGS = [
+  { id: 'bat', name: '타격 특훈', desc: '타격 +3, 사기 −2' },
+  { id: 'pit', name: '투수 집중', desc: '투수 +3, 사기 −2' },
+  { id: 'def', name: '수비 펑고', desc: '수비 +3, 사기 −2' },
+  { id: 'rest', name: '휴식·회복', desc: '사기 +8' }
+];
+
+var OWNER = [
+  ['감독님, 혹시 상대 팀에서 월급 받으십니까?', '6전 전패. 회장님이 TV를 끄셨습니다.'],
+  ['이번 주도 1승. 제 인내심도 1승 남았습니다.', '1승이면 작년이랑 똑같네요. 감독 바꾼 의미가 뭡니까.'],
+  ['2승이요? 그래도 꼴찌 냄새가 납니다.', '회장님 말씀 전합니다. "흠."'],
+  ['반타작. 나쁘지 않네요. 계속하세요.', '3승 3패. 회장님이 처음으로 하이라이트를 보셨답니다.'],
+  ['오! 이번 주 회장님 기분이 좋으십니다.', '4승이라니. 골프 약속 잡겠습니다.'],
+  ['감독님, 진심으로 존경합니다.', '5승! 회장님이 구장에 오시겠답니다. 부담 갖지 마세요.'],
+  ['6전 전승. 감독님 동상 세울 부지를 알아보고 있습니다.', '스윕! 회장님이 우셨습니다.']
+];
+var TRUST_BY_WINS = [-7, -4, -2, 1, 4, 6, 8];
+
+// ---------- helpers ----------
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function rnd(n) { return Math.floor(Math.random() * n); }
+function pick(a) { return a[rnd(a.length)]; }
+function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = rnd(i + 1), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function sign(n) { return n > 0 ? '+' + n : '−' + Math.abs(n); }
+
+var S = null, tab = 'play';
+var root = document.getElementById('root'), tabsEl = document.getElementById('tabs');
+
+function newGame(name) {
+  return {
+    name: name || '김감독', week: 1, phase: 'intro',
+    trust: 55, fans: 30, morale: 40, budget: 30, bat: 44, pit: 40, def: 42, boost: 0, promise: false,
+    teams: TEAMS.map(function (t, i) { return { name: t[0], short: t[1], power: t[2], w: 0, l: 0, me: i === 0 }; }),
+    used: [], card: null, train: null, last: null, log: [], ending: null
+  };
+}
+function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
+function load() { try { var d = JSON.parse(localStorage.getItem(SAVE_KEY)); return d && d.teams ? d : null; } catch (e) { return null; } }
+function wipe() { try { localStorage.removeItem(SAVE_KEY); } catch (e) {} }
+
+function myPower() { return (S.bat + S.pit + S.def) / 3 + (S.morale - 50) * 0.2 + S.boost; }
+function powerOf(i) { return S.teams[i].me ? myPower() : S.teams[i].power; }
+function winProb(a, b) { return 1 / (1 + Math.exp(-(a - b) / 11)); }
+function standings() {
+  return S.teams.map(function (t, i) { return { t: t, i: i, pct: t.w + t.l ? t.w / (t.w + t.l) : 0 }; })
+    .sort(function (a, b) { return b.pct - a.pct || b.t.w - a.t.w || (a.t.me ? 1 : 0) - (b.t.me ? 1 : 0); });
+}
+function myRank() { var st = standings(); for (var k = 0; k < st.length; k++) if (st[k].t.me) return k + 1; return 10; }
+function view() { return { week: S.week, trust: S.trust, fans: S.fans, morale: S.morale, budget: S.budget, bat: S.bat, pit: S.pit, def: S.def, rank: myRank(), wins: S.teams[0].w, losses: S.teams[0].l, promise: S.promise }; }
+
+function applyFx(fx) {
+  Object.keys(fx).forEach(function (k) {
+    var v = fx[k];
+    if (k === 'promise') { S.promise = !!v; return; }
+    if (k === 'boost') { S.boost += v; return; }
+    if (k === 'budget') { S.budget = Math.max(0, S.budget + v); return; }
+    if (k === 'bat' || k === 'pit' || k === 'def') { S[k] = clamp(S[k] + v, 20, 90); return; }
+    if (k in S) S[k] = clamp(S[k] + v, 0, 100);
+  });
+}
+function fxChips(fx) {
+  return '<div class="fx">' + Object.keys(fx).map(function (k) {
+    if (k === 'promise') return '<span class="flag">가을야구 공약</span>';
+    var v = fx[k], unit = k === 'budget' ? '억' : '';
+    return '<span class="' + (v >= 0 ? 'up' : 'down') + '">' + FX_NAMES[k] + ' ' + sign(v) + unit + '</span>';
+  }).join('') + '</div>';
+}
+
+// ---------- events ----------
+function allEvents() { return EVENTS.concat(Array.isArray(window.EXTRA_EVENTS) ? window.EXTRA_EVENTS : []); }
+function allstarCard() {
+  var r = myRank();
+  if (r <= 5) return { id: 'allstar', title: '올스타 브레이크 면담', who: '구단주', text: '"생각보다 잘하시네요. 후반기 보너스 예산 15억 드리겠습니다. 실망시키지 마세요."',
+    choices: [{ label: '감사히 받겠습니다', fx: { budget: 15, trust: 5 } }, { label: '선수단 포상금으로 돌린다', fx: { budget: 5, morale: 10 } }] };
+  if (r <= 8) return { id: 'allstar', title: '올스타 브레이크 면담', who: '구단주', text: '"중간은 하시네요. 꼴찌만 아니면 된다는 생각은 버리세요."',
+    choices: [{ label: '"후반기엔 5강 갑니다"', fx: { trust: 6, promise: true } }, { label: '"현실적으로 가겠습니다"', fx: { morale: 5 } }] };
+  return { id: 'allstar', title: '올스타 브레이크 면담', who: '구단주', text: '"감독님, 솔직하게 말할게요. 후보 감독 리스트를 받았습니다."',
+    choices: [{ label: '"제 거취를 걸겠습니다"', fx: { trust: 10, morale: -3 } }, { label: '"선수들을 믿어주십시오"', fx: { trust: -3, morale: 8 } }] };
+}
+function drawCard() {
+  if (S.week === 8) return allstarCard();
+  var v = view();
+  var pool = allEvents().filter(function (e) { return S.used.indexOf(e.id) < 0 && (!e.when || safeWhen(e, v)); });
+  if (!pool.length) { S.used = []; pool = allEvents().filter(function (e) { return !e.when || safeWhen(e, v); }); }
+  return pool.length ? pick(pool) : EVENTS[0];
+}
+function safeWhen(e, v) { try { return !!e.when(v); } catch (err) { return false; } }
+function findCard(id) { if (id === 'allstar') return allstarCard(); var all = allEvents(); for (var k = 0; k < all.length; k++) if (all[k].id === id) return all[k]; return null; }
+
+// ---------- simulation ----------
+function playWeek() {
+  var order = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), mine = null, opp = -1;
+  var rankBefore = myRank();
+  for (var k = 0; k < 10; k += 2) {
+    var a = order[k], b = order[k + 1], games = [];
+    for (var g = 0; g < GAMES; g++) {
+      var pa = powerOf(a) + (S.teams[a].me ? 0 : (Math.random() - 0.5) * 6);
+      var pb = powerOf(b) + (S.teams[b].me ? 0 : (Math.random() - 0.5) * 6);
+      var aWins = Math.random() < winProb(pa, pb);
+      var hi = 2 + rnd(9), lo = rnd(hi);
+      S.teams[aWins ? a : b].w++; S.teams[aWins ? b : a].l++;
+      if (a === 0 || b === 0) {
+        var weWin = (a === 0) === aWins;
+        games.push({ us: weWin ? hi : lo, them: weWin ? lo : hi, win: weWin });
+      }
+    }
+    if (a === 0) { mine = games; opp = b; }
+    if (b === 0) { mine = games; opp = a; }
+  }
+  var wins = mine.filter(function (x) { return x.win; }).length;
+  var before = { trust: S.trust, fans: S.fans, morale: S.morale };
+  var dTrust = TRUST_BY_WINS[wins] + (S.week >= 4 ? -1 : 0);
+  S.fans = clamp(S.fans + (wins - 3) * 2, 0, 100);
+  S.morale = clamp(S.morale + (wins - 3) * 2, 0, 100);
+  if (S.fans <= 10) dTrust -= 3;
+  S.trust = clamp(S.trust + dTrust, 0, 100);
+  S.teams.forEach(function (t) { if (!t.me) t.power = clamp(t.power + rnd(3) - 1, 44, 70); });
+  S.boost = 0;
+  var rank = myRank();
+  S.last = { week: S.week, opp: opp, games: mine, wins: wins, owner: pick(OWNER[wins]), rankBefore: rankBefore, rank: rank,
+    d: { trust: S.trust - before.trust, fans: S.fans - before.fans, morale: S.morale - before.morale }, fanRiot: S.fans <= 10 };
+  S.log.push({ week: S.week, opp: S.teams[opp].short, w: wins, l: GAMES - wins, rank: rank });
+  S.phase = 'result';
+  if (S.trust <= 0) finish('fired');
+}
+
+function finish(kind) {
+  var r = myRank(), t = S.teams[0], e;
+  if (kind === 'fired') e = { bad: true, big: S.week + '주차', title: '시즌 중 경질', text: '구단주 신뢰가 바닥났다. 구단은 짧은 보도자료를 냈다. "' + S.name + ' 감독과 상호 합의 하에 결별합니다." 상호는 없었다. 반월 펠리컨스 감독 경질 역사에 한 줄이 더해졌다.' };
+  else if (r === 1) e = { big: '1위', title: '성배를 비웠다', text: '7년 연속 꼴찌 팀이 정규시즌 1위. 반월공단 퇴근길 버스마다 응원가가 흘러나왔다. 구단주는 기자회견에서 "처음부터 믿었다"고 말했다. 아무도 믿지 않았지만, 아무도 신경 쓰지 않았다.' };
+  else if (r <= 5) e = { big: r + '위', title: '가을야구 진출', text: '꼴찌 팀이 가을에 야구를 한다. 구단주는 재계약서를 직접 들고 왔다. 연봉은 생각보다 적었지만 사인은 생각보다 빨랐다.' };
+  else if (r <= 8) e = { big: r + '위', title: '탈꼴찌', text: '7년 만의 탈꼴찌. 우승은 아니지만 팬들은 마지막 경기 후 자리를 뜨지 않았다. 구단주는 "1년 더 봅시다"라는 문자를 보냈다. 이모티콘은 없었다.' };
+  else if (r === 9 && S.trust >= 40) e = { big: '9위', title: '아슬아슬한 유임', text: '꼴찌는 면했다. 9위. 구단주는 한숨을 쉬며 말했다. "내년엔 숫자 하나만 줄여 봅시다."' };
+  else e = { bad: true, big: r + '위', title: r === 10 ? '또 꼴찌' : '9위, 그리고 경질', text: r === 10 ? '8년 연속 꼴찌. 성배의 독은 이번에도 감독에게 돌아갔다. 짐을 싸는 감독실 책상 서랍에 전임 감독들의 명함 여섯 장이 들어 있었다.' : '꼴찌는 면했지만 구단주의 마음은 이미 떠나 있었다. 후임 감독 발표는 시즌 종료 이틀 뒤였다.' };
+  if (S.promise && (kind === 'fired' || r > 5)) e.text += ' 시즌 초 "가을야구 간다"던 인터뷰 영상은 올해의 밈이 되었다.';
+  e.record = t.w + '승 ' + t.l + '패';
+  S.ending = e; S.phase = 'end'; save();
+}
+
+// ---------- render ----------
+function header() {
+  var r = myRank(), t = S.teams[0];
+  var cls = r === 10 ? 'bottom' : r <= 5 ? 'fall' : '';
+  return '<header class="plate"><div><div class="label">' + Math.min(S.week, WEEKS) + ' / ' + WEEKS + '주차</div><h1>반월 펠리컨스</h1>' +
+    '<div class="sub">' + esc(S.name) + ' 감독 · 예산 <span class="num" style="font-size:18px">' + S.budget + '</span>억</div></div>' +
+    '<div class="rec"><span class="rank-badge ' + cls + '">' + r + '위</span><div class="num">' + t.w + '–' + t.l + '</div></div></header>' +
+    '<section class="gauges" aria-label="구단 분위기">' + gauge('구단주 신뢰', S.trust) + gauge('팬 민심', S.fans) + gauge('선수단 사기', S.morale) + '</section>' +
+    '<section class="ratings" aria-label="팀 능력치">' + rating('타격', S.bat) + rating('투수', S.pit) + rating('수비', S.def) + rating('전력', Math.round(myPower())) + '</section>';
+}
+function gauge(name, v) {
+  var lit = Math.round(v / 10), b = '';
+  for (var k = 0; k < 10; k++) b += '<i class="' + (k < lit ? 'on' : '') + '"></i>';
+  return '<div class="gauge' + (v <= 20 ? ' danger' : '') + '"><span class="name">' + name + '</span><div class="bulbs" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + v + '" aria-label="' + name + '">' + b + '</div><span class="val num">' + v + '</span></div>';
+}
+function rating(n, v) { return '<div><span class="label">' + n + '</span><span class="num">' + v + '</span></div>'; }
+
+function stagePlay() {
+  if (S.phase === 'train') {
+    return '<div class="card"><div class="who">' + S.week + '주차 · 훈련 계획</div><h2>이번 주 훈련은?</h2>' +
+      '<div class="train-grid">' + TRAININGS.map(function (t) {
+        return '<button class="choice" data-act="train" data-id="' + t.id + '"><span class="t">' + t.name + '</span><span class="label" style="text-transform:none;letter-spacing:0">' + t.desc + '</span></button>';
+      }).join('') + '</div></div>';
+  }
+  if (S.phase === 'event') {
+    var c = findCard(S.card) || EVENTS[0];
+    return '<div class="card"><div class="who">' + esc(c.who) + '</div><h2>' + esc(c.title) + '</h2><p class="text">' + esc(c.text) + '</p><div class="choices">' +
+      c.choices.map(function (ch, i) {
+        var cost = ch.fx.budget < 0 ? -ch.fx.budget : 0, dis = cost > S.budget;
+        return '<button class="choice" data-act="choose" data-i="' + i + '"' + (dis ? ' disabled' : '') + '><span class="t">' + esc(ch.label) + (dis ? ' (예산 부족)' : '') + '</span>' + fxChips(ch.fx) + '</button>';
+      }).join('') + '</div></div>';
+  }
+  if (S.phase === 'ready') {
+    var others = S.teams.filter(function (t) { return !t.me; });
+    var avg = others.reduce(function (a, t) { return a + t.power; }, 0) / others.length;
+    var p = Math.round(winProb(myPower(), avg) * 100);
+    return '<div class="card"><div class="who">' + S.week + '주차 · 6연전</div><h2>플레이볼</h2>' +
+      '<div class="odds"><span>리그 평균 상대 예상 승률</span><span class="num">' + p + '%</span></div>' +
+      (S.boost ? '<p class="label" style="text-transform:none;letter-spacing:0">이번 주 집중력 ' + sign(S.boost) + ' 적용</p>' : '') +
+      '<button class="cta" data-act="play">경기 시작</button></div>';
+  }
+  if (S.phase === 'result') {
+    var L = S.last, opp = S.teams[L.opp];
+    var rows = L.games.map(function (g, i) {
+      return '<tr class="row" style="animation-delay:' + (i * 0.12) + 's"><td>G' + (i + 1) + '</td><td class="r">' + g.us + '</td><td class="r">' + g.them + '</td><td class="r ' + (g.win ? 'W' : 'L') + '">' + (g.win ? '승' : '패') + '</td></tr>';
+    }).join('');
+    var d = L.d, chips = '<div class="fx delta">' +
+      '<span class="' + (d.trust >= 0 ? 'up' : 'down') + '">구단주 ' + sign(d.trust) + '</span>' +
+      '<span class="' + (d.fans >= 0 ? 'up' : 'down') + '">팬 ' + sign(d.fans) + '</span>' +
+      '<span class="' + (d.morale >= 0 ? 'up' : 'down') + '">사기 ' + sign(d.morale) + '</span></div>';
+    var move = L.rank < L.rankBefore ? '순위 ' + L.rankBefore + '위 → ' + L.rank + '위 상승' : L.rank > L.rankBefore ? '순위 ' + L.rankBefore + '위 → ' + L.rank + '위 하락' : '순위 ' + L.rank + '위 유지';
+    return '<div class="card"><div class="who">' + L.week + '주차 결과 · vs ' + esc(opp.name) + '</div><h2>' + L.wins + '승 ' + (GAMES - L.wins) + '패</h2>' +
+      '<table class="score"><thead><tr><th></th><th style="text-align:right">펠리컨스</th><th style="text-align:right">' + esc(opp.short) + '</th><th></th></tr></thead><tbody>' + rows + '</tbody></table>' +
+      '<p class="label" style="text-transform:none;letter-spacing:0">' + move + '</p>' + chips +
+      '<div class="msg"><div class="from">구단주 메시지</div>' + esc(L.owner) + '</div>' +
+      (L.fanRiot ? '<div class="msg"><div class="from">홍보팀</div>팬 민심이 바닥입니다. 구단주 신뢰도 함께 깎였습니다.</div>' : '') +
+      '<button class="cta" data-act="next">' + (S.week >= WEEKS ? '시즌 종료' : (S.week + 1) + '주차로') + '</button></div>';
+  }
+  return '';
+}
+function stageTable() {
+  var st = standings();
+  return '<div class="card"><h2>순위표</h2><div style="overflow-x:auto"><table class="standings"><thead><tr><th>순위</th><th>팀</th><th>승</th><th>패</th><th>승률</th></tr></thead><tbody>' +
+    st.map(function (r, k) {
+      return '<tr class="' + (r.t.me ? 'me ' : '') + (k === 4 ? 'cut' : '') + '"><td>' + (k + 1) + '</td><td>' + esc(r.t.name) + '</td><td>' + r.t.w + '</td><td>' + r.t.l + '</td><td>' + (r.t.w + r.t.l ? r.pct.toFixed(3).replace(/^0/, '') : '.000') + '</td></tr>';
+    }).join('') + '</tbody></table></div><p class="label" style="text-transform:none;letter-spacing:0">점선 위 5개 팀이 가을야구에 진출합니다.</p></div>';
+}
+function stageLog() {
+  if (!S.log.length) return '<div class="card"><h2>시즌 기록</h2><p>아직 치른 경기가 없습니다. 첫 주 6연전을 마치면 여기에 주차별 성적이 쌓입니다.</p></div>';
+  return '<div class="card"><h2>시즌 기록</h2><div class="log">' + S.log.slice().reverse().map(function (x) {
+    return '<div><span class="num" style="font-size:20px">' + x.week + '주</span><span>vs ' + esc(x.opp) + ' · ' + x.w + '승 ' + x.l + '패</span><span>' + x.rank + '위</span></div>';
+  }).join('') + '</div></div>';
+}
+
+function renderTitle() {
+  tabsEl.hidden = true;
+  var saved = load();
+  root.innerHTML = '<section class="title"><div class="label">반월 펠리컨스 신임 감독 공고</div>' +
+    '<h1>독이 든<br><em>성배</em></h1><p class="tag">7년 연속 꼴찌 구단의 감독 자리. 받으시겠습니까?</p>' +
+    '<div class="lore"><div><span class="label">연속 꼴찌</span><span class="num">7</span></div><div><span class="label">5년간 경질</span><span class="num">6명</span></div><div><span class="label">작년 승률</span><span class="num">.312</span></div></div>' +
+    '<label class="field" for="mgr"><span class="label">감독 이름</span><input id="mgr" maxlength="8" value="' + esc(saved ? saved.name : '김감독') + '" autocomplete="off"></label>' +
+    '<button class="cta" data-act="start">감독직 수락</button>' +
+    (saved && saved.phase !== 'end' ? '<button class="ghost" data-act="resume">이어하기 · ' + Math.min(saved.week, WEEKS) + '주차</button>' : '') + '</section>';
+}
+function renderIntro() {
+  tabsEl.hidden = true;
+  root.innerHTML = '<section class="title"><div class="label">구단주 친필 서신</div><h2 style="font-size:30px">' + esc(S.name) + ' 감독님께</h2>' +
+    '<p class="letter">축하드립니다. 아니, 위로드립니다.\n\n우리 펠리컨스는 7년째 꼴찌입니다. 지난 5년간 감독님 여섯 분이 이 방을 거쳐 가셨습니다.\n\n저는 인내심이 많은 사람입니다. 대략 4주 정도.\n\n이기세요. 그러면 됩니다.\n\n— 반월그룹 회장 겸 구단주</p>' +
+    '<button class="cta" data-act="sign">계약서에 사인한다</button></section>';
+}
+function renderEnd() {
+  tabsEl.hidden = true;
+  var e = S.ending;
+  root.innerHTML = '<section class="title ending' + (e.bad ? ' bad' : '') + '"><div class="label">시즌 종료 · ' + esc(e.record) + '</div>' +
+    '<div class="num big">' + esc(e.big) + '</div><h2>' + esc(e.title) + '</h2><p>' + esc(e.text) + '</p>' + stageTable() +
+    '<button class="cta" data-act="again">다시 감독직에 도전</button></section>';
+}
+function render() {
+  if (!S) return renderTitle();
+  if (S.phase === 'intro') return renderIntro();
+  if (S.phase === 'end') return renderEnd();
+  tabsEl.hidden = false;
+  [].forEach.call(tabsEl.querySelectorAll('button'), function (b) { b.setAttribute('aria-selected', String(b.dataset.tab === tab)); });
+  root.innerHTML = header() + '<main class="stage">' + (tab === 'table' ? stageTable() : tab === 'log' ? stageLog() : stagePlay()) + '</main>';
+}
+
+// ---------- actions ----------
+root.addEventListener('click', function (ev) {
+  var el = ev.target.closest('[data-act]'); if (!el) return;
+  var act = el.dataset.act;
+  if (act === 'start') { var n = (document.getElementById('mgr').value || '').trim(); S = newGame(n); tab = 'play'; }
+  else if (act === 'resume') { S = load(); tab = 'play'; }
+  else if (act === 'sign') { S.phase = 'train'; }
+  else if (act === 'train') {
+    var id = el.dataset.id;
+    if (id === 'rest') S.morale = clamp(S.morale + 8, 0, 100);
+    else { S[id] = clamp(S[id] + (S[id] > 70 ? 1 : 3), 20, 90); S.morale = clamp(S.morale - 2, 0, 100); }
+    var c = drawCard(); S.card = c.id; if (c.id !== 'allstar') S.used.push(c.id); S.phase = 'event';
+  }
+  else if (act === 'choose') {
+    var card = findCard(S.card), ch = card && card.choices[+el.dataset.i];
+    if (ch) applyFx(ch.fx);
+    S.phase = 'ready';
+    if (S.trust <= 0) finish('fired');
+  }
+  else if (act === 'play') { playWeek(); }
+  else if (act === 'next') { if (S.week >= WEEKS) finish('season'); else { S.week++; S.phase = 'train'; } }
+  else if (act === 'again') { wipe(); S = null; }
+  if (S && S.phase !== 'end') save();
+  render(); window.scrollTo(0, 0);
+});
+tabsEl.addEventListener('click', function (ev) {
+  var b = ev.target.closest('[data-tab]'); if (!b) return; tab = b.dataset.tab; render();
+});
+
+window.claude && window.claude.hot && window.claude.hot.snapshot && window.claude.hot.snapshot(function () { return { S: S, tab: tab }; });
+function start(data) { if (data && data.S) { S = data.S; tab = data.tab || 'play'; } render(); }
+if (window.claude && window.claude.hot && window.claude.hot.ready) window.claude.hot.ready(start);
+else start(window.claude && window.claude.hot && window.claude.hot.data || {});
+})();
+</script>
+</body>
+</html>
