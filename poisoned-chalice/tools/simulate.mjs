@@ -28,13 +28,13 @@ const V01 = {
 const REC = {
   ...V01,
   name: '권장안 (v0.2)',
-  start: { ...V01.start, trust: 60, morale: 45, bat: 46, pit: 44, def: 45 },
-  opponents: [60, 58, 57, 56, 55, 54, 53, 52, 50],
-  logisticScale: 9,
-  trainGain: 4, trainGainHigh: 2, trainCap: 70,
-  trustTable: [-6, -4, -2, 0, 3, 5, 7],
+  start: { ...V01.start, morale: 50, bat: 45, pit: 41, def: 43 }, // trust 55 유지
+  opponents: [59, 58, 57, 56, 55, 54, 53, 52, 50], // 서울 62→59, 광주 60→58, 인천 58→57, 대구 57→56, 수원 56→55, 부산 55→54, 창원 54→53
+  minWeight: 3,                 // 전력 = (bat+pit+def + 3×최저)/6
+  logisticScale: 10,
+  trainGain: 5, trainCap: 60, trainGainHigh: 2,
+  restMorale: 8, restHighAt: 55, restMoraleHigh: 2,
   poisonFromWeek: 6,
-  moraleCoef: 0.25,
 };
 
 // ---------- 난수 ----------
