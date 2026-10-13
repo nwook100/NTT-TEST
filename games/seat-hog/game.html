@@ -1,0 +1,324 @@
+<title>돗자리 단속반</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&display=swap">
+<style>
+/* Layout: 한 화면 게임. 위 계기판(시간·점수·민원) → 잔디밭 돗자리 격자 → 하단 안내. 축제 밤 한 가지 룩으로 고정. */
+:root {
+  --night: #141a2e;       /* 축제 밤하늘 */
+  --grass: #1f3b2c;       /* 밤 잔디 */
+  --grass-line: #2a4d3a;
+  --lantern: #ffb347;     /* 청사초롱 주황 */
+  --lantern-red: #e8483b; /* 단속 빨강 */
+  --mat-blue: #3d7bd9;    /* 돗자리 파랑 */
+  --paper: #f3ecdc;
+  --ink: #e9e6f2;
+  --muted: #9aa3c0;
+  --ok: #5fd38d;
+  --font-display: "Black Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--night);
+  background-image: radial-gradient(circle at 15% -10%, rgba(255,179,71,.18), transparent 40%),
+                    radial-gradient(circle at 90% 0%, rgba(232,72,59,.14), transparent 35%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-inline: 16px;
+  padding-block: 12px 20px;
+  box-sizing: border-box;
+  -webkit-user-select: none; user-select: none;
+}
+*, *::before, *::after { box-sizing: inherit; }
+.wrap { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+.lanterns { display: flex; justify-content: space-between; height: 22px; position: relative; }
+.lanterns::before { content: ""; position: absolute; left: 0; right: 0; top: 4px; border-top: 1px dashed rgba(255,179,71,.4); }
+.lanterns span { width: 12px; height: 16px; margin-top: 4px; border-radius: 6px; background: var(--lantern); box-shadow: 0 0 12px var(--lantern); animation: sway 3s ease-in-out infinite; }
+.lanterns span:nth-child(even) { background: var(--lantern-red); box-shadow: 0 0 12px var(--lantern-red); animation-delay: -1.5s; }
+@keyframes sway { 50% { transform: rotate(8deg); } }
+
+header h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 8vw, 44px); line-height: 1; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+header h1 em { font-style: normal; color: var(--lantern); }
+header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+
+.hud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.hud div { background: rgba(255,255,255,.05); border-radius: 10px; padding: 8px 10px; }
+.hud small { display: block; font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+.hud b { font-family: var(--font-display); font-weight: 400; font-size: 24px; font-variant-numeric: tabular-nums; }
+.meter { height: 10px; border-radius: 5px; background: rgba(255,255,255,.08); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--lantern), var(--lantern-red)); transition: width .2s; }
+.meter-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+
+.field {
+  position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  padding: 10px; border-radius: 14px;
+  background: var(--grass);
+  background-image: repeating-linear-gradient(90deg, transparent 0 18px, var(--grass-line) 18px 19px);
+}
+.cell { aspect-ratio: 1 / 1; max-width: 100%; position: relative; border: 0; padding: 0; background: transparent; cursor: pointer; border-radius: 8px; font: inherit; color: inherit; }
+.cell:focus-visible { outline: 3px solid var(--lantern); outline-offset: 2px; }
+.mat {
+  position: absolute; inset: 6%; border-radius: 4px;
+  display: grid; place-items: center; align-content: center; gap: 2px;
+  font-size: clamp(18px, 6vw, 30px); line-height: 1;
+  animation: drop .25s ease-out;
+}
+.mat.hog { background: repeating-linear-gradient(45deg, var(--mat-blue) 0 8px, #2f66b8 8px 16px); }
+.mat.family { background: repeating-linear-gradient(45deg, #c9a04a 0 8px, #b08a3a 8px 16px); }
+.mat .tag {
+  position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(-4deg);
+  background: var(--paper); color: #3a2a12; font-size: 10px; padding: 2px 5px; border-radius: 2px; white-space: nowrap;
+  font-family: var(--font-body); box-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.mat .age { position: absolute; bottom: 3px; left: 4px; right: 4px; height: 3px; border-radius: 2px; background: rgba(0,0,0,.35); overflow: hidden; }
+.mat .age i { display: block; height: 100%; background: var(--paper); }
+.mat.cleared { animation: clear .35s ease-in forwards; }
+@keyframes drop { from { transform: scale(.6); opacity: 0; } }
+@keyframes clear { to { transform: scale(.2) rotate(30deg); opacity: 0; } }
+.pop { position: absolute; left: 50%; top: 30%; transform: translateX(-50%); font-family: var(--font-display); font-size: 18px; pointer-events: none; animation: pop .7s ease-out forwards; white-space: nowrap; z-index: 2; }
+.pop.good { color: var(--ok); } .pop.bad { color: var(--lantern-red); }
+@keyframes pop { to { transform: translate(-50%, -40px); opacity: 0; } }
+.field.shake { animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13px; }
+.legend div { display: flex; gap: 8px; align-items: center; background: rgba(255,255,255,.04); border-radius: 8px; padding: 8px; }
+.legend .sw { flex: none; width: 22px; height: 22px; border-radius: 3px; }
+.legend .sw.hog { background: repeating-linear-gradient(45deg, var(--mat-blue) 0 5px, #2f66b8 5px 10px); }
+.legend .sw.family { background: repeating-linear-gradient(45deg, #c9a04a 0 5px, #b08a3a 5px 10px); }
+
+.overlay { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(14,18,34,.86); border-radius: 14px; padding: 16px; text-align: center; z-index: 3; }
+.overlay h2 { font-family: var(--font-display); font-weight: 400; font-size: 30px; margin: 0 0 8px; color: var(--lantern); }
+.overlay p { margin: 0 0 6px; color: var(--ink); line-height: 1.6; max-width: 32ch; }
+.overlay .best { color: var(--muted); font-size: 13px; }
+.btn { margin-top: 12px; font-family: var(--font-display); font-size: 20px; padding: 12px 26px; border: 0; border-radius: 999px; background: var(--lantern-red); color: #fff; cursor: pointer; box-shadow: 0 4px 0 #9b2a20; }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #9b2a20; }
+.btn:focus-visible { outline: 3px solid var(--lantern); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <div class="lanterns" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <header>
+    <h1>돗자리 <em>단속반</em></h1>
+    <p>사람은 없고 짐만 깔아둔 선점 돗자리를 걷어내고, 기다리는 관람객에게 자리를 돌려주세요.</p>
+  </header>
+
+  <div class="hud">
+    <div><small>남은 시간</small><b id="time">90</b></div>
+    <div><small>점수</small><b id="score">0</b></div>
+    <div><small>콤보</small><b id="combo">x1</b></div>
+  </div>
+  <div>
+    <div class="meter-label"><span>관람객 민원 게이지</span><span id="queue">대기 0명</span></div>
+    <div class="meter"><i id="anger"></i></div>
+  </div>
+
+  <div class="field" id="field">
+    <div class="overlay" id="overlay">
+      <div>
+        <h2>개막 30분 전</h2>
+        <p>파란 돗자리는 <b>짐만 있고 사람이 없는</b> 선점 자리입니다. 눌러서 걷어내세요.</p>
+        <p>노란 돗자리엔 진짜 관람객이 앉아 있어요. 잘못 누르면 민원이 폭발합니다.</p>
+        <p class="best" id="best"></p>
+        <button class="btn" id="start" type="button">단속 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div><span class="sw hog"></span><span>짐만 있는 선점 자리<br><b>걷어내기 +100</b></span></div>
+    <div><span class="sw family"></span><span>실제 앉아있는 관람객<br><b>건드리면 -150</b></span></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const COLS = 4, ROWS = 5, N = COLS * ROWS, GAME_SEC = 90;
+  const HOG_ITEMS = ["🎒", "🧺", "⛱️", "🧳", "🥤", "🪑", "📦", "🧴"];
+  const HOG_TAGS = ["맡아둔 자리", "자리 있음", "일행 옴", "곧 와요", "건들지마세요", "예약석(?)"];
+  const PEOPLE = ["👨‍👩‍👧", "🧑‍🤝‍🧑", "👵", "👨‍👦", "👩‍👧‍👦", "🧒"];
+  const $ = (id) => document.getElementById(id);
+  const field = $("field"), overlay = $("overlay");
+
+  const cells = [];
+  for (let i = 0; i < N; i++) {
+    const b = document.createElement("button");
+    b.className = "cell"; b.type = "button"; b.id = "cell-" + i;
+    b.setAttribute("aria-label", "빈 잔디");
+    b.addEventListener("pointerdown", (e) => { e.preventDefault(); hit(i); });
+    b.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); hit(i); } });
+    field.appendChild(b);
+    cells.push({ el: b, kind: null, born: 0, life: 0 });
+  }
+
+  let best = 0;
+  try { best = +localStorage.getItem("seathog-best") || 0; } catch (e) {}
+  const showBest = () => { $("best").textContent = best ? `최고 기록 ${best.toLocaleString()}점` : ""; };
+  showBest();
+
+  let state = null, raf = 0, audio = null;
+
+  function beep(freq, dur = 0.08, type = "square") {
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      const o = audio.createOscillator(), g = audio.createGain();
+      o.type = type; o.frequency.value = freq;
+      g.gain.setValueAtTime(0.06, audio.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + dur);
+      o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + dur);
+    } catch (e) {}
+  }
+
+  const pick = (a) => a[Math.floor(Math.random() * a.length)];
+
+  function render(i) {
+    const c = cells[i];
+    c.el.innerHTML = "";
+    if (!c.kind) { c.el.setAttribute("aria-label", "빈 잔디"); return; }
+    const m = document.createElement("div");
+    m.className = "mat " + c.kind;
+    if (c.kind === "hog") {
+      const items = Array.from({ length: 1 + Math.floor(Math.random() * 2) }, () => pick(HOG_ITEMS)).join("");
+      m.innerHTML = `<span class="tag">${pick(HOG_TAGS)}</span><span>${items}</span>`;
+      c.el.setAttribute("aria-label", "선점 돗자리, 짐만 있음");
+    } else {
+      m.innerHTML = `<span>${pick(PEOPLE)}</span><span class="age"><i></i></span>`;
+      c.el.setAttribute("aria-label", "관람객이 앉아있는 돗자리");
+    }
+    c.el.appendChild(m);
+  }
+
+  function popText(i, text, cls) {
+    const p = document.createElement("span");
+    p.className = "pop " + cls; p.textContent = text;
+    cells[i].el.appendChild(p);
+    setTimeout(() => p.remove(), 700);
+  }
+
+  function place(kind, now, at) {
+    const empty = at != null ? [at] : cells.map((c, i) => (c.kind ? -1 : i)).filter((i) => i >= 0);
+    if (!empty.length) return;
+    const i = pick(empty), c = cells[i];
+    c.kind = kind; c.born = now;
+    c.life = kind === "family" ? 6000 + Math.random() * 6000 : Infinity;
+    render(i);
+  }
+
+  function hit(i) {
+    if (!state || state.over) return;
+    const c = cells[i];
+    if (!c.kind) return;
+    const now = performance.now();
+    if (c.kind === "hog") {
+      const gain = 100 * state.combo;
+      state.score += gain; state.cleared++;
+      state.combo = Math.min(state.combo + 1, 5);
+      state.anger = Math.max(0, state.anger - 6);
+      beep(660 + state.combo * 80);
+      c.kind = null;
+      const m = c.el.querySelector(".mat"); if (m) m.classList.add("cleared");
+      popText(i, "+" + gain, "good");
+      // 기다리던 관람객이 바로 앉음
+      setTimeout(() => {
+        if (!state || state.over || c.kind) return;
+        if (state.queue > 0) { state.queue--; place("family", performance.now(), i); } else render(i);
+      }, 350);
+    } else {
+      state.score = Math.max(0, state.score - 150);
+      state.combo = 1; state.mistakes++;
+      state.anger = Math.min(100, state.anger + 15);
+      beep(140, 0.25, "sawtooth");
+      popText(i, "-150 실례!", "bad");
+      field.classList.remove("shake"); void field.offsetWidth; field.classList.add("shake");
+    }
+    hud();
+  }
+
+  function hud() {
+    $("time").textContent = Math.ceil(state.left);
+    $("score").textContent = state.score.toLocaleString();
+    $("combo").textContent = "x" + state.combo;
+    $("anger").style.width = state.anger + "%";
+    $("queue").textContent = `대기 ${state.queue}명`;
+  }
+
+  function start() {
+    cells.forEach((c, i) => { c.kind = null; render(i); });
+    state = { score: 0, combo: 1, anger: 0, queue: 0, cleared: 0, mistakes: 0,
+              left: GAME_SEC, last: performance.now(), spawnT: 0, queueT: 0, over: false };
+    const now = performance.now();
+    for (let k = 0; k < 4; k++) place("hog", now);
+    for (let k = 0; k < 3; k++) place("family", now);
+    overlay.hidden = true;
+    hud();
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(loop);
+  }
+
+  function loop(now) {
+    const dt = Math.min(0.1, (now - state.last) / 1000);
+    state.last = now;
+    state.left -= dt;
+    const progress = 1 - state.left / GAME_SEC; // 0 → 1, 갈수록 빨라짐
+
+    // 선점꾼 / 관람객 등장
+    state.spawnT -= dt;
+    if (state.spawnT <= 0) {
+      state.spawnT = 1.3 - progress * 0.75;
+      place(Math.random() < 0.55 + progress * 0.15 ? "hog" : "family", now);
+    }
+    // 대기 관람객 증가
+    state.queueT -= dt;
+    if (state.queueT <= 0) { state.queueT = 2; state.queue = Math.min(state.queue + 1, 30); }
+
+    // 관람객은 구경 끝나면 떠남, 진행바 갱신
+    let hogs = 0;
+    cells.forEach((c, i) => {
+      if (c.kind === "hog") hogs++;
+      if (c.kind === "family") {
+        const t = (now - c.born) / c.life;
+        if (t >= 1) { c.kind = null; render(i); return; }
+        const bar = c.el.querySelector(".age i"); if (bar) bar.style.width = (1 - t) * 100 + "%";
+      }
+    });
+
+    // 선점 자리가 많을수록 민원 증가
+    state.anger = Math.min(100, state.anger + hogs * dt * (1.1 + progress * 1.2) - dt * 1.5);
+    state.anger = Math.max(0, state.anger);
+    hud();
+
+    if (state.anger >= 100) return end(false);
+    if (state.left <= 0) return end(true);
+    raf = requestAnimationFrame(loop);
+  }
+
+  function end(survived) {
+    state.over = true;
+    const s = state.score;
+    const isBest = s > best;
+    if (isBest) { best = s; try { localStorage.setItem("seathog-best", String(s)); } catch (e) {} }
+    let rank = "수습 단속원";
+    if (s >= 15000) rank = "축제의 전설, 자리 정의 구현자";
+    else if (s >= 9000) rank = "베테랑 단속 반장";
+    else if (s >= 4000) rank = "믿음직한 안전요원";
+    overlay.innerHTML = `<div>
+      <h2>${survived ? "축제 무사 개막!" : "민원 폭발…"}</h2>
+      <p>${survived ? "관람객들이 자리를 찾았습니다." : "기다리던 관람객들이 운영본부로 몰려갔어요."}</p>
+      <p><b>${s.toLocaleString()}점</b> · 걷어낸 돗자리 ${state.cleared}개 · 오인 단속 ${state.mistakes}회</p>
+      <p>칭호: <b>${rank}</b></p>
+      <p class="best">${isBest ? "새 최고 기록!" : `최고 기록 ${best.toLocaleString()}점`}</p>
+      <button class="btn" id="again" type="button">다시 단속</button>
+    </div>`;
+    overlay.hidden = false;
+    $("again").addEventListener("click", start);
+    beep(survived ? 880 : 110, 0.4, survived ? "triangle" : "sawtooth");
+  }
+
+  $("start").addEventListener("click", start);
+})();
+</script>
