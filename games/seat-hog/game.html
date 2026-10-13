@@ -178,26 +178,45 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 
 .mat { position: absolute; inset: 6%; border-radius: 4px; display: grid; place-items: center; align-content: center; animation: drop .25s ease-out; overflow: visible; }
 @keyframes drop { from { transform: scale(.6); opacity: 0; } }
-/* 선점용: 파란·흰 깅엄 체크 비닐 + 광택 */
-.mat.hog {
-  background-color: var(--mat-hog);
-  background-image:
-    linear-gradient(135deg, rgba(255,255,255,.22), transparent 38%),
-    linear-gradient(90deg, rgba(255,255,255,.26) 50%, transparent 0),
-    linear-gradient(0deg,  rgba(255,255,255,.26) 50%, transparent 0);
-  background-size: 100% 100%, 14px 14px, 14px 14px;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.16), 0 3px 0 rgba(0,0,0,.35);
-  outline: 2px dashed rgba(255,255,255,.45); outline-offset: -5px;
-}
-/* 관람객용: 왕골 세로 짜임 + 팥색 테두리 천 */
-.mat.family {
-  background-color: var(--mat-family);
-  background-image:
-    radial-gradient(120% 80% at 20% 0%, rgba(255,214,140,.35), transparent 60%),
-    repeating-linear-gradient(0deg, rgba(90,50,10,.22) 0 1px, transparent 1px 11px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.10) 0 2px, transparent 2px 5px);
-  box-shadow: inset 0 0 0 3px var(--mat-family-deep), inset 0 0 0 5px rgba(0,0,0,.15), 0 3px 0 rgba(0,0,0,.35);
-}
+/* 돗자리 8종 — 선점/관람객 구분 없이 무작위. 색·무늬는 정답 힌트가 아니다. (판단 근거는 사람 유무뿐) */
+.mat { box-shadow: inset 0 0 0 2px rgba(255,255,255,.16), 0 3px 0 rgba(0,0,0,.35); }
+.mat.p0 { background-color: #3d7bd9; background-image: linear-gradient(135deg, rgba(255,255,255,.22), transparent 38%), linear-gradient(90deg, rgba(255,255,255,.26) 50%, transparent 0), linear-gradient(0deg, rgba(255,255,255,.26) 50%, transparent 0); background-size: 100% 100%, 14px 14px, 14px 14px; }   /* 파랑 체크 */
+.mat.p1 { background-color: #d9433b; background-image: linear-gradient(135deg, rgba(255,255,255,.18), transparent 38%), linear-gradient(90deg, rgba(255,255,255,.28) 50%, transparent 0), linear-gradient(0deg, rgba(255,255,255,.28) 50%, transparent 0); background-size: 100% 100%, 12px 12px, 12px 12px; }   /* 빨강 체크 */
+.mat.p2 { background-color: #2f9e6e; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.35) 0 5px, transparent 5px 12px); }   /* 초록 줄무늬 */
+.mat.p3 { background-color: #7c5cc4; background-image: radial-gradient(circle at 8px 8px, #f7d6ff 0 2.5px, #ffb3e6 2.5px 4.5px, transparent 5px), radial-gradient(circle at 20px 18px, #ffe08a 0 2px, transparent 2.5px); background-size: 24px 24px, 24px 24px; }   /* 보라 꽃무늬 */
+.mat.p4 { background-color: #c9ced8; background-image: linear-gradient(115deg, rgba(255,255,255,.8) 0 12%, transparent 12% 30%, rgba(255,255,255,.6) 30% 36%, transparent 36% 60%, rgba(255,255,255,.7) 60% 66%, transparent 66%), repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 1px, transparent 1px 8px); box-shadow: inset 0 0 0 2px rgba(255,255,255,.5), 0 3px 0 rgba(0,0,0,.35); }   /* 은박 */
+.mat.p5 { background-color: #d9a441; background-image: radial-gradient(120% 80% at 20% 0%, rgba(255,214,140,.35), transparent 60%), repeating-linear-gradient(0deg, rgba(90,50,10,.22) 0 1px, transparent 1px 11px), repeating-linear-gradient(90deg, rgba(0,0,0,.10) 0 2px, transparent 2px 5px); box-shadow: inset 0 0 0 3px #a8452f, 0 3px 0 rgba(0,0,0,.35); }   /* 왕골 */
+.mat.p6 { background-color: #f08fb6; background-image: radial-gradient(circle, #fff 0 3px, transparent 3.5px); background-size: 14px 14px; background-position: 0 0; }   /* 분홍 땡땡이 */
+.mat.p7 { background-color: #6b7280; background-image: radial-gradient(circle at 6px 6px, rgba(0,0,0,.28) 0 2px, transparent 2.5px), radial-gradient(circle at 12px 12px, rgba(255,255,255,.12) 0 1.5px, transparent 2px); background-size: 12px 12px, 12px 12px; box-shadow: inset 0 0 0 3px #4b5160, 0 3px 0 rgba(0,0,0,.35); }   /* 회색 캠핑매트 */
+/* 황금 돗자리 */
+.mat.gold { background-color: #f6c431; background-image: linear-gradient(115deg, rgba(255,255,255,.85) 0 10%, transparent 10% 40%, rgba(255,255,255,.6) 40% 46%, transparent 46%), repeating-linear-gradient(45deg, rgba(180,120,0,.25) 0 4px, transparent 4px 10px); box-shadow: inset 0 0 0 3px #b8860b, 0 0 18px 4px rgba(246,196,49,.7); animation: drop .25s ease-out, goldGlow .8s ease-in-out infinite alternate; }
+@keyframes goldGlow { to { box-shadow: inset 0 0 0 3px #b8860b, 0 0 28px 8px rgba(255,230,120,.95); } }
+.mat.gold .tag { background: #fff8d0; font-weight: bold; }
+/* 곧 돌아오는 주인: 2초 전 예고 (걸어오는 실루엣 + 배지) */
+.walker { position: absolute; left: -22%; bottom: 0; width: 46%; z-index: 3; pointer-events: none; opacity: .85; animation: walk 2s linear forwards; }
+@keyframes walk { 0% { transform: translateX(0) rotate(-6deg); } 25% { transform: translateX(10%) rotate(6deg); } 50% { transform: translateX(20%) rotate(-6deg); } 75% { transform: translateX(30%) rotate(6deg); } 100% { transform: translateX(40%) rotate(0); } }
+.soon { position: absolute; top: -6px; right: -4px; z-index: 3; background: var(--lantern-red); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 999px; pointer-events: none; animation: blinkSoon .5s steps(2) infinite; }
+@keyframes blinkSoon { 50% { opacity: .35; } }
+/* 강아지 */
+.dog { position: absolute; width: calc(var(--cell) * .7); height: calc(var(--cell) * .7); z-index: 6; pointer-events: none; animation: dogBounce .25s ease-in-out infinite alternate; }
+@keyframes dogBounce { to { transform: translateY(-14%) rotate(-6deg); } }
+/* 돌풍: 쪽지 돗자리 날아감 */
+.mat.blown { animation: blown .7s ease-in forwards !important; transform-origin: 50% 50%; }
+@keyframes blown { 40% { transform: translate(30%, -30%) rotate(25deg); opacity: 1; } 100% { transform: translate(220%, -160%) rotate(140deg); opacity: 0; } }
+.windwarn { position: absolute; left: 50%; top: 40%; transform: translateX(-50%); padding: 10px 18px; border-radius: 12px; background: rgba(14,18,34,.85); border: 2px solid #7fd6ff; color: #7fd6ff; font-family: var(--font-display); font-size: 24px; white-space: nowrap; pointer-events: none; z-index: 5; animation: windwarn 3s steps(1) forwards; }
+@keyframes windwarn { 0%, 30%, 60% { opacity: 1; } 15%, 45%, 75% { opacity: .3; } 100% { opacity: 0; } }
+/* 피버 타임: 화면 가장자리 무지개 */
+#feverRing { position: fixed; inset: 0; z-index: 20; pointer-events: none; border: 7px solid transparent; border-image: conic-gradient(#ff5e5e, #ffb347, #ffe66d, #5fd38d, #7fd6ff, #c08cff, #ff8fc7, #ff5e5e) 1; animation: hue 1.2s linear infinite; }
+@keyframes hue { to { filter: hue-rotate(360deg); } }
+.fever-tag { position: absolute; left: 50%; top: -14px; transform: translateX(-50%); background: linear-gradient(90deg, #ff5e5e, #ffb347, #5fd38d, #7fd6ff, #c08cff); color: #fff; font-family: var(--font-display); font-size: 14px; padding: 3px 12px; border-radius: 999px; z-index: 5; white-space: nowrap; text-shadow: 0 1px 2px #000; }
+/* 흰 플래시 + 화면 흔들림 */
+#flash { position: fixed; inset: 0; z-index: 50; pointer-events: none; background: #fff; opacity: 0; }
+#flash.on { animation: flash .12s ease-out; }
+@keyframes flash { from { opacity: .55; } to { opacity: 0; } }
+.app.sh1 { animation: sh1 .22s; } .app.sh2 { animation: sh2 .26s; } .app.sh3 { animation: sh3 .3s; }
+@keyframes sh1 { 25% { transform: translate(3px, -2px); } 50% { transform: translate(-3px, 2px); } 75% { transform: translate(2px, 1px); } }
+@keyframes sh2 { 20% { transform: translate(6px, -4px) rotate(.3deg); } 40% { transform: translate(-6px, 4px); } 60% { transform: translate(5px, 2px) rotate(-.3deg); } 80% { transform: translate(-3px, -2px); } }
+@keyframes sh3 { 15% { transform: translate(11px, -7px) rotate(.6deg); } 30% { transform: translate(-11px, 7px) rotate(-.6deg); } 45% { transform: translate(9px, 4px); } 60% { transform: translate(-8px, -5px) rotate(.4deg); } 80% { transform: translate(4px, 2px); } }
 .spr { width: 44%; height: auto; aspect-ratio: 1; display: block; flex: none; }
 .mat .items { display: flex; align-items: flex-end; justify-content: center; width: 100%; }
 .mat .items .spr + .spr { margin-left: -8%; }
@@ -220,7 +239,7 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 @keyframes flutter { 50% { transform: translate(-50%, -50%) rotate(2deg); } }
 .mat.about .tag.big { animation: blinkRed .5s steps(2) infinite; }
 @keyframes blinkRed { 50% { background-color: #ff8a7a; color: #fff; } }
-.mat.trap .tag { font-size: 10px; background-color: var(--paper); transform: translateX(-50%) rotate(0); }
+.mat.away .tag { background-color: var(--paper); transform: translateX(-50%) rotate(0); }
 
 .mat .age { position: absolute; bottom: 3px; left: 4px; right: 4px; height: 3px; border-radius: 2px; background: rgba(0,0,0,.35); overflow: hidden; }
 .mat .age i { display: block; height: 100%; background: var(--paper); }
@@ -234,8 +253,7 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 .pebble.a { left: 3%; top: 3%; } .pebble.b { right: 3%; bottom: 3%; }
 .cup { position: absolute; right: 8%; top: 36%; width: 14%; height: 20%; background: #f4f1e8; border-radius: 2px 2px 3px 3px; }
 
-/* 함정 단서 */
-.clue-shoes { position: absolute; right: 2%; bottom: -3%; width: 36%; z-index: 2; pointer-events: none; }
+/* 자리비움 돗자리 소품(김 나는 떡볶이, 깜빡이는 폰) */
 .food { position: relative; width: 44%; }
 .food .spr { width: 100%; }
 .food .steam { position: absolute; left: 50%; top: 4%; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: 0; animation: steam 1.6s ease-out infinite; box-shadow: -7px 0 0 #fff, 7px 0 0 #fff; }
@@ -248,10 +266,11 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 /* 연출: 걷어내기 */
 .mat.cleared { transform-origin: 0% 100%; animation: yank .35s cubic-bezier(.5,-.4,.7,.6) forwards; }
 @keyframes yank { 30% { transform: skewX(-10deg) scaleY(.9); } 100% { transform: translate(45%, -75%) rotate(-30deg) scale(.4); opacity: 0; } }
-.stamp { position: absolute; left: 50%; top: 50%; z-index: 2; pointer-events: none; width: 56%; aspect-ratio: 1; display: grid; place-items: center;
-  border: 3px solid var(--lantern-red); border-radius: 50%; color: var(--lantern-red); font-family: var(--font-display); font-size: clamp(13px, 4vw, 18px);
-  transform: translate(-50%, -50%) rotate(-14deg); animation: stamp .5s cubic-bezier(.2,1.6,.4,1) forwards; }
-@keyframes stamp { 0% { transform: translate(-50%, -50%) rotate(-14deg) scale(2); opacity: 0; } 35% { transform: translate(-50%, -50%) rotate(-14deg) scale(1); opacity: 1; } 100% { transform: translate(-50%, -50%) rotate(-14deg) scale(1); opacity: 0; } }
+.stamp { position: absolute; left: 50%; top: 50%; z-index: 7; pointer-events: none; width: 96%; aspect-ratio: 1; display: grid; place-items: center;
+  border: 4px solid var(--lantern-red); border-radius: 50%; color: var(--lantern-red); font-family: var(--font-display); font-size: clamp(18px, 6vw, 28px); letter-spacing: .04em;
+  background: rgba(232,72,59,.12); text-shadow: 0 1px 0 #fff;
+  transform: translate(-50%, -50%) rotate(-14deg); animation: stamp .6s cubic-bezier(.2,1.4,.4,1) forwards; }
+@keyframes stamp { 0% { transform: translate(-50%, -50%) rotate(-14deg) scale(3.2); opacity: 0; } 25% { transform: translate(-50%, -50%) rotate(-14deg) scale(1); opacity: 1; } 70% { opacity: 1; } 100% { transform: translate(-50%, -50%) rotate(-14deg) scale(.7); opacity: 0; } }
 .spark { position: absolute; left: 50%; top: 50%; width: 6px; height: 4px; border-radius: 1px; background: var(--c); pointer-events: none; z-index: 2; animation: spark .55s ease-out forwards; }
 @keyframes spark { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
 /* 연출: 오인 단속 */
@@ -261,8 +280,10 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 .anger-mark { position: absolute; right: 4%; top: 2%; width: 38%; z-index: 2; pointer-events: none; animation: angerPop .6s cubic-bezier(.2,1.8,.4,1) forwards; }
 @keyframes angerPop { 0% { transform: scale(0); } 25% { transform: scale(1.15); } 80% { opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
 
-.pop { position: absolute; left: 50%; top: 30%; transform: translateX(-50%); font-family: var(--font-display); font-size: 16px; pointer-events: none; animation: fadeUp .8s ease-out forwards; white-space: nowrap; z-index: 4; text-shadow: 0 1px 2px #000; }
-.pop.good { color: var(--ok); } .pop.bad { color: var(--lantern-red); } .pop.max { font-size: 22px; } .pop.info { color: var(--paper); font-size: 13px; }
+.pop { position: absolute; left: 50%; top: 30%; transform: translateX(-50%); font-family: var(--font-display); font-size: 22px; pointer-events: none; animation: popBig .9s cubic-bezier(.2,1.4,.4,1) forwards; white-space: nowrap; z-index: 8; text-shadow: 0 2px 0 #000, 0 0 8px rgba(0,0,0,.8); text-align: center; line-height: 1.1; }
+.pop small { display: block; font-size: 14px; color: var(--lantern); }
+.pop.good { color: var(--ok); } .pop.bad { color: var(--lantern-red); } .pop.max { font-size: 30px; } .pop.info { color: var(--paper); font-size: 14px; animation: fadeUp .7s forwards; } .pop.gold { color: #ffe066; font-size: 30px; }
+@keyframes popBig { 0% { transform: translate(-50%, 0) scale(.4); opacity: 0; } 20% { transform: translate(-50%, -10px) scale(1.4); opacity: 1; } 60% { transform: translate(-50%, -30px) scale(1); opacity: 1; } 100% { transform: translate(-50%, -60px) scale(1); opacity: 0; } }
 @keyframes fadeUp { to { transform: translate(-50%, -40px); opacity: 0; } }
 
 .banner { position: absolute; left: 50%; top: 40%; transform: translateX(-50%); padding: 10px 18px; border-radius: 12px; background: rgba(14,18,34,.85); border: 2px solid var(--lantern); color: var(--lantern); font-family: var(--font-display); font-size: 24px; white-space: nowrap; pointer-events: none; z-index: 5; animation: bannerIn 2.4s ease-out forwards; }
@@ -321,8 +342,12 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 @media (min-width: 768px) { .hud b { font-size: 28px; } }
+.pals { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin: 4px 0 0; }
+.pals .cell { width: clamp(36px, 10vw, 48px); pointer-events: none; }
+.pals .mat .tag { display: none; } .pals .spr { width: 60%; } .pals .mat { animation: none; }
+.pals-cap { text-align: center; font-size: 12px; color: var(--muted); margin: 4px 0 0; }
 @media (prefers-reduced-motion: reduce) {
-  .lanterns span, .mat, .spot, .meter-row .meter i, .field.shake, .hud .time.low b, .combo, .mat .tag.big, .food .steam, .phone .glow { animation: none !important; }
+  .lanterns span, .mat, .spot, .meter-row .meter i, .field.shake, .hud .time.low b, .combo, .mat .tag.big, .food .steam, .phone .glow, .app.sh1, .app.sh2, .app.sh3, #flash.on, #feverRing, .mat.gold, .dog, .soon { animation: none !important; }
   section[data-screen].on { animation: none; }
   .mat.cleared { animation: fadeOut .15s forwards !important; }
   @keyframes fadeOut { to { opacity: 0; } }
@@ -444,6 +469,32 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     <symbol id="spr-warn" viewBox="0 0 48 48"><path d="M24 4L46 42H2z"/><path d="M24 18v12M24 34v4" stroke="#121833" stroke-width="4" stroke-linecap="round"/></symbol>
     <symbol id="spr-check" viewBox="0 0 48 48"><path d="M8 26l10 10 22-24" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="spr-fw" viewBox="0 0 48 48"><g stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M24 6v8M24 34v8M6 24h8M34 24h8M11 11l6 6M31 31l6 6M37 11l-6 6M17 31l-6 6"/></g><circle cx="24" cy="24" r="4"/></symbol>
+    <!-- 강아지(달리는 포즈) -->
+    <symbol id="spr-dog" viewBox="0 0 48 48">
+      <ellipse cx="24" cy="44" rx="16" ry="2.5" fill="#000" opacity=".25"/>
+      <path d="M6 30q-4-6 2-8l4 6z" fill="#c98a4b"/>
+      <rect x="8" y="22" width="24" height="14" rx="7" fill="#e0a35f"/>
+      <path d="M10 34l-4 8M18 35l-2 8M26 35l2 8M32 33l6 7" stroke="#c98a4b" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="34" cy="20" r="8" fill="#e0a35f"/>
+      <path d="M28 14q-2-8 4-8q2 4 1 7z" fill="#a8652f"/>
+      <path d="M40 24q6 1 5 5" fill="none" stroke="#e0a35f" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="37" cy="19" r="1.6" fill="#2b2233"/><circle cx="42" cy="23" r="2" fill="#2b2233"/>
+      <path d="M38 27q3 1 5-1" stroke="#2b2233" stroke-width="1.2" fill="none"/>
+      <rect x="18" y="26" width="12" height="4" rx="2" fill="#e8483b"/>
+    </symbol>
+    <!-- 걸어오는 사람 실루엣(자리 주인 복귀 예고) -->
+    <symbol id="spr-walker" viewBox="0 0 48 48">
+      <g fill="#1a1f3a" opacity=".9">
+        <circle cx="24" cy="9" r="6"/>
+        <path d="M17 17h14l3 14h-4l-2-8v22h-5V33h-2v12h-5V23l-2 8h-4z"/>
+      </g>
+    </symbol>
+    <!-- 황금 티켓/메달 -->
+    <symbol id="spr-medal" viewBox="0 0 48 48">
+      <path d="M16 4h16l-6 14h-4z" fill="#e8483b"/><path d="M22 4h4l-2 14z" fill="#f3ecdc"/>
+      <circle cx="24" cy="30" r="13" fill="#f6c431"/><circle cx="24" cy="30" r="9" fill="#ffe08a"/>
+      <path d="M24 23l2.2 4.6 5 .6-3.7 3.5.9 5-4.4-2.4-4.4 2.4.9-5-3.7-3.5 5-.6z" fill="#b8860b"/>
+    </symbol>
     <symbol id="spr-boom" viewBox="0 0 48 48"><path d="M24 2l5 10 11-4-4 11 10 5-10 5 4 11-11-4-5 10-5-10-11 4 4-11-10-5 10-5-4-11 11 4z"/></symbol>
   </defs>
 </svg>
@@ -456,7 +507,9 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     <div class="lanterns" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <h1>돗자리 <em>단속반</em></h1>
     <div class="hero" id="hero" aria-hidden="true"></div>
-    <p class="title-p">짐만 둔 선점 자리는 걷어내고<br>사람이 앉은 자리는 그대로 두세요.</p>
+    <p class="title-p"><b>사람이 없는</b> 돗자리는 걷어내고(+)<br><b>사람이 앉은</b> 돗자리는 그대로(−).</p>
+    <div class="pals" id="pals" aria-hidden="true"></div>
+    <p class="pals-cap">돗자리 색과 무늬는 힌트가 아니에요. 사람만 보세요.</p>
     <button class="btn" id="btn-start" type="button">단속 시작</button>
     <div class="chips" id="chips-title"></div>
     <p class="record" id="record"></p>
@@ -513,6 +566,8 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   </section>
 </div>
 
+<div id="flash" aria-hidden="true"></div>
+<div id="feverRing" aria-hidden="true" hidden></div>
 <!-- 브리핑(스테이지 시작 대사) -->
 <div class="veil" id="intro" hidden>
   <div class="panel">
@@ -656,13 +711,20 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
       });
       this._noise(0.03, { filter: "highpass", freq: 4000, gain: (o.gain ?? 0.18) * 0.8, delay: o.delay || 0, out: o.out });
     },
+    // v3: 꽹과리 볼륨·길이 키움(0.16/0.22s → 0.28/0.4s), x5는 징(낮고 긴 금속음) + 더블 스트로크
     clear(combo = 1) {
       const k = Math.max(1, Math.min(5, combo)) - 1;
       const base = [660, 740, 880, 990, 1175][k];
-      this._metal(base, 0.22 + k * 0.03, { gain: 0.16 + k * 0.015 });
-      if (k >= 2) this._tone(base * 2, 0.12, { type: "sine", gain: 0.05, delay: 0.03 });
-      if (k === 4) this._metal(base * 1.5, 0.3, { delay: 0.07, gain: 0.12 });
+      this._metal(base, 0.4 + k * 0.05, { gain: 0.28 + k * 0.02 });
+      this._noise(0.05, { filter: "highpass", freq: 3500, gain: 0.12 });
+      if (k >= 2) this._tone(base * 2, 0.18, { type: "sine", gain: 0.08, delay: 0.03 });
+      if (k === 4) { this._metal(196, 1.4, { gain: 0.3 }); this._metal(base * 1.5, 0.35, { delay: 0.09, gain: 0.16 }); }
     },
+    gong() { this._metal(165, 1.8, { gain: 0.34 }); this._tone(82, 0.9, { type: "sine", gain: 0.2, to: 60 }); },
+    gold() { [1047, 1319, 1568, 2093].forEach((f, i) => this._tone(f, 0.3, { type: "triangle", gain: 0.1, delay: i * 0.07 })); this._metal(1568, 0.6, { delay: 0.3, gain: 0.14 }); },
+    bark() { this._tone(520, 0.08, { type: "square", gain: 0.07, to: 380 }); this._tone(620, 0.08, { type: "square", gain: 0.07, to: 420, delay: 0.12 }); },
+    wind() { this._noise(1.2, { filter: "bandpass", freq: 600, to: 2400, q: 0.8, gain: 0.14, attack: 0.3 }); },
+    setTempo(bpm) { this._song.bpm = bpm; },
     wrong() {
       const c = this._c(); if (!c) return;
       const t0 = c.currentTime;
@@ -752,9 +814,10 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
         this.bgm.gain.connect(this.master);
       }
       this.bgm.on = true; this.bgm.step = 0; this.bgm.nextTime = c.currentTime + 0.05;
-      const LOOKAHEAD = 0.12, eighth = 60 / this._song.bpm / 2;
+      const LOOKAHEAD = 0.12;
       const tick = () => {
         if (!this.bgm.on) return;
+        const eighth = 60 / this._song.bpm / 2;   // 템포는 매 스텝 읽음(피버 타임 템포 업)
         while (this.bgm.nextTime < c.currentTime + LOOKAHEAD) {
           this._scheduleStep(this.bgm.step, this.bgm.nextTime);
           this.bgm.step = (this.bgm.step + 1) % this._song.melody.length;
@@ -839,33 +902,37 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   const STAGES = [
     { id: "s1", n: 1, name: "동네 벚꽃축제", when: "오후 2시 · 벚꽃 흩날림", sec: 60, cols: 4, rows: 4, start: [3, 2],
       spawn: [1.5, 1.0], hog: [.6, .7], life: [8000, 14000], anger: { a: .8, b: .8, c: 1.8 },
-      mix: { A: 70, B: 30 }, lateMix: { A: 55, B: 25, C: 20 }, lateAt: 30, minClear: 15, stars: [2500, 5000, 8000], clues: 0,
+      mix: { A: 70, B: 30 }, lateMix: { A: 55, B: 25, C: 20 }, lateAt: 30, minClear: 15, stars: [2500, 5000, 8000],
       intro: { h: "벚꽃 개화 30분 전", lines: [["팀장(무전)", "도윤 씨, 첫 현장이지? 가방은 걷고 사람은 두고. 그게 다야."], ["도윤", "가방은 걷고, 사람은 두고… 쉬운데요?"]] },
       win: { h: "벚꽃, 무사 개화!", lines: [["할머니 관람객", "젊은이 덕에 꽃구경 앉아서 하네."], ["도윤", "의자 접는 손맛… 이거 재능인가?"]] },
       lose: { h: "꽃보다 민원", lines: [["팀장", "벚꽃은 피었는데 앉을 데가 없대. 다시 가 봐."]] } },
     { id: "s2", n: 2, name: "대학 축제", when: "저녁 6시 · 무대 조명", sec: 75, cols: 4, rows: 5, start: [4, 3],
       spawn: [1.3, .7], hog: [.55, .65], life: [6000, 12000], anger: { a: 1.1, b: 1.2, c: 1.5 },
-      mix: { A: 35, B: 20, C: 20, E: 25 }, minClear: 25, stars: [4500, 8500, 13000], clues: 3, encoreAt: 40,
-      intro: { h: "헤드라이너 입장 1시간 전", lines: [["팀장", "오늘부터 진짜야. 파란 돗자리라고 다 빈 게 아니다. 신발 보이면 손 떼."], ["도윤", "떡볶이 김 나는 자리는… 사람 있는 자리!"]] },
+      mix: { A: 35, B: 20, C: 20, E: 25 }, minClear: 25, stars: [4500, 8500, 13000], encoreAt: 40,
+      intro: { h: "헤드라이너 입장 1시간 전", lines: [["팀장", "오늘부터 진짜야. 잠깐 자리 비운 사람도 있다. 걸어오는 사람 보이면 손 떼."], ["도윤", "주인이 앉기 전에 걷으면… 아슬아슬 보너스!"]] },
       win: { h: "앵콜! 앵콜!", lines: [["학생회장", "안전요원님 학생증 있으세요? 명예 재학생 드릴게요."], ["도윤", "졸업한 지 3년인데 또 입학했네."]] },
       lose: { h: "에브리타임 박제…", lines: [["팀장", "'화장실 간 사이 자리 사라짐' 글이 인기글 1위야. 눈치, 눈치."]] } },
     { id: "s3", n: 3, name: "한강 불꽃축제 메인 잔디", when: "밤 8시 · 첫 불꽃 카운트다운", sec: 90, cols: 5, rows: 6, start: [6, 4],
       spawn: [1.1, .5], hog: [.5, .65], life: [5000, 10000], anger: { a: 1.3, b: 1.6, c: 1.2 },
-      mix: { A: 25, B: 15, C: 15, E: 20, D: 25 }, minClear: 40, stars: [7000, 12000, 18000], clues: 2, finaleLast: 30,
+      mix: { A: 25, B: 15, C: 15, E: 20, D: 25 }, minClear: 40, stars: [7000, 12000, 18000], finaleLast: 30,
       intro: { h: "첫 불꽃까지 90초", lines: [["팀장", "메인 잔디야. 텐트까지 쳐놨대. 도윤 씨, 오늘 밤은 네 거다."], ["도윤", "100만 명이 기다린다. 가방 말고 사람이 앉을 차례야."]] },
       win: { h: "펑! 축제 무사 개막", lines: [["군중", "와아아—"], ["팀장", "수고했어. 내년 벚꽃축제도 부탁… 아니, 반장으로 부탁해."]] },
       lose: { h: "불꽃은 텐트 위로", lines: [["도윤", "불꽃은 터졌는데… 다들 텐트 지붕만 보고 있어."], ["팀장", "숨 고르고, 한 번 더."]] } },
   ];
-  // 선점꾼 유형: A 짐보따리 / B 의자 / C 쪽지 / D 텐트. (E 함정은 kind="trap")
+  // 빈 돗자리 유형: A 짐보따리 / B 의자 / C 쪽지 / D 텐트 / G 황금.
+  // 믹스의 E 는 "곧 돌아오는 주인" 돗자리 = A형 + away 플래그 (4~7초 뒤 주인이 앉으면 사람 돗자리가 됨)
   const HOG = {
-    A: { taps: 1, score: 100, label: "정리!", aria: "짐만 있는 선점 돗자리" },
-    B: { taps: 2, score: 150, label: "접었다!", aria: "의자만 둔 선점 돗자리, 2번 탭" },
+    A: { taps: 1, score: 100, label: "정리!", aria: "짐만 있는 빈 돗자리" },
+    B: { taps: 2, score: 150, label: "접었다!", aria: "의자만 둔 빈 돗자리, 2번 탭" },
     C: { taps: 1, score: 120, label: "쪽지 회수", aria: "일행 와요 쪽지 돗자리, 방치하면 번식" },
     D: { taps: 3, score: 250, label: "철거 완료", aria: "텐트 설치 돗자리, 3번 탭" },
+    G: { taps: 1, score: 500, label: "황금!", aria: "황금 돗자리, 5초 뒤 사라짐" },
   };
+  const PATS = ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"];   // 돗자리 8종, 선점/관람객 공통 무작위
+  const FEVER_HOLD = 5000, FEVER_LEN = 8000;
   const HOG_TAGS = ["일행 12명 옴", "3시간 뒤 옴", "어제부터 맡음", "여기 제 땅임", "눈치껏 비켜요", "엄마가 맡으래요", "곧 와요(진짜임)", "회사 단체석", "앉으면 저주함", "오늘 영업 끝",
                     "제 영혼이 앉아있음", "치킨 오는 중", "강아지 자리임", "등기 완료된 자리", "내년 자리도 맡음", "투명인간 착석 중", "앉으면 연락주세요", "VIP석(셀프 지정)", "마음만은 와있음", "불꽃 끝나면 옴"];
-  const TRAP_TAGS = ["화장실 1분", "떡볶이 사러감", "애 기저귀 갈러", "바로 옴! 진짜"];
+  const AWAY_TAGS = ["화장실 1분", "떡볶이 사러감", "애 기저귀 갈러", "바로 옴! 진짜"];
   const BAG_ITEMS = ["backpack", "icebox", "parasol"];
   const PEOPLE = [["who-a"], ["who-b"], ["who-c"], ["who-a", "who-c"], ["who-b", "who-kid"]];
   // 칭호 5단계: [합계 기준, 단일 판(90초 환산) 기준, 칭호, 대사]
@@ -920,12 +987,14 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
 
   // 돗자리 미니 마크업 (타이틀/범례용)
-  function miniMat(kind) {
-    if (kind === "hog") return `<div class="cell"><div class="mat hog"><span class="tag">곧 와요</span><span class="items">${spr("backpack")}${spr("icebox")}</span></div></div>`;
-    return `<div class="cell"><div class="mat family"><span class="items">${spr("person", "who-a")}</span><span class="age"><i style="width:70%"></i></span></div></div>`;
+  function miniMat(kind, pat = "p0", who = "who-a") {
+    if (kind === "hog") return `<div class="cell"><div class="mat hog ${pat}"><span class="tag">곧 와요</span><span class="items">${spr("backpack")}${spr("icebox")}</span></div></div>`;
+    return `<div class="cell"><div class="mat family ${pat}"><span class="items">${spr("person", who)}</span><span class="age"><i style="width:70%"></i></span></div></div>`;
   }
   function renderTitle() {
-    $("hero").innerHTML = miniMat("hog").replace('class="cell"', 'class="cell" data-cap="걷어내기"') + miniMat("family").replace('class="cell"', 'class="cell" data-cap="그대로 두기"');
+    $("hero").innerHTML = miniMat("hog", "p5").replace('class="cell"', 'class="cell" data-cap="걷어내기 (+)"') + miniMat("family", "p0").replace('class="cell"', 'class="cell" data-cap="그대로 (−)"');
+    // 돗자리 8종 도감: 같은 무늬가 빈 자리에도, 사람 자리에도 쓰인다는 것을 보여줌
+    $("pals").innerHTML = PATS.map((p, k) => miniMat(k % 2 ? "family" : "hog", p, ["who-a", "who-b", "who-c"][k % 3])).join("");
     syncChips();
     const best = totalBest(), t = titleFor(best, 0);
     $("record").textContent = best ? `최고 기록 합계 ${fmt(best)}점 · 별 ${totalStars()}/9 · ${t[2]}` : "첫 단속을 기다리는 중";
@@ -995,7 +1064,7 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
       render(i);
     }
     $("legend").hidden = stage.n !== 1;
-    $("legend").innerHTML = `<div>${miniMat("hog")}<span>쪽지·짐만 = <b>걷기</b></span></div><div>${miniMat("family")}<span>사람 있음 = <b>그대로</b></span></div>`;
+    $("legend").innerHTML = `<div>${miniMat("hog", "p1")}<span>사람 없음 = <b>걷기 (+)</b></span></div><div>${miniMat("family", "p1", "who-b")}<span>사람 있음 = <b>그대로 (−)</b></span></div>`;
     fit();
   }
 
@@ -1008,7 +1077,7 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     pointers.set(e.pointerId, { i: +el.dataset.i, x: e.clientX, y: e.clientY });
     el.classList.add("pressed");
     const c = cells[+el.dataset.i];
-    if (c && (c.kind === "family" || c.kind === "trap")) el.classList.add("warnpress"); // 오인 단속 완충 표시
+    if (c && c.kind === "family") el.classList.add("warnpress"); // 오인 단속 완충 표시
   });
   const release = (e, judge) => {
     const p = pointers.get(e.pointerId); if (!p) return;
@@ -1025,9 +1094,8 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   function label(i) {
     const c = cells[i], r = Math.floor(i / stage.cols) + 1, col = (i % stage.cols) + 1;
     let s = "빈 잔디";
-    if (c.kind === "hog") s = `${HOG[c.type].aria}${c.tag ? `, 쪽지: ${c.tag}` : ""}`;
+    if (c.kind === "hog") s = `${c.away ? "주인이 잠깐 비운 빈 돗자리" : HOG[c.type].aria}${c.tag ? `, 쪽지: ${c.tag}` : ""}`;
     else if (c.kind === "family") s = "관람객 앉아 있음";
-    else if (c.kind === "trap") s = `잠깐 자리 비운 관람객, 쪽지: ${c.tag}`;
     c.el.setAttribute("aria-label", `${r}행 ${col}열, ${s}`);
   }
 
@@ -1040,22 +1108,20 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     if (!c.kind) return;
     const m = document.createElement("div");
     if (c.kind === "family") {
-      m.className = "mat family";
+      m.className = "mat family " + c.pat;
       m.innerHTML = `<span class="items">${c.who.map((w) => spr("person", w)).join("")}</span><span class="age"><i style="width:${Math.round((1 - (state.t - c.born) / c.life) * 100)}%"></i></span>`;
-    } else if (c.kind === "trap") {
-      m.className = "mat hog trap";
-      let inner = "";
-      if (c.clues.includes("ghost")) inner += spr("person", "ghost who-b");
-      if (c.clues.includes("food")) inner += `<span class="food">${spr("food")}<i class="steam"></i></span>`;
-      if (c.clues.includes("phone")) inner += `<span class="phone">${spr("phone")}<i class="glow"></i></span>`;
-      if (!c.clues.includes("food") && !c.clues.includes("phone")) inner += spr("backpack");
-      m.innerHTML = `<span class="tag">${c.tag}</span><span class="items">${inner}</span>`;
-      if (c.clues.includes("shoes")) c.el.insertAdjacentHTML("beforeend", `<svg class="spr clue-shoes" aria-hidden="true"><use href="#spr-shoes"/></svg>`);
+    } else if (c.type === "G") {
+      m.className = "mat hog gold";
+      m.innerHTML = `<span class="tag">황금 돗자리</span><span class="items">${spr("medal")}</span><span class="age"><i style="width:100%"></i></span>`;
     } else {
-      m.className = "mat hog type" + c.type;
+      m.className = "mat hog type" + c.type + " " + c.pat + (c.away ? " away" : "");
       const max = HOG[c.type].taps;
       let inner = "", extra = "";
-      if (c.type === "A") inner = c.items.map((it) => spr(it)).join("");
+      if (c.away) {
+        // 잠깐 자리 비운 주인의 짐: 김 나는 떡볶이 / 깜빡이는 폰 / 가방 (규칙상 여전히 "사람 없음" = 걷으면 +)
+        inner = c.items.map((it) => it === "food" ? `<span class="food">${spr("food")}<i class="steam"></i></span>` : it === "phone" ? `<span class="phone">${spr("phone")}<i class="glow"></i></span>` : spr(it)).join("");
+        if (c.coming) { c.el.insertAdjacentHTML("beforeend", `<svg class="spr walker" aria-hidden="true"><use href="#spr-walker"/></svg><span class="soon">곧 와요</span>`); }
+      } else if (c.type === "A") inner = c.items.map((it) => spr(it)).join("");
       else if (c.type === "B") { inner = Array.from({ length: c.taps }, () => spr("chair")).join(""); extra = `<i class="pebble a"></i><i class="pebble b"></i><i class="cup"></i>`; }
       else if (c.type === "C") inner = "";
       else if (c.type === "D") { inner = `<span class="pegs">${spr("tent")}${"<i></i>".repeat(c.taps)}</span>`; }
@@ -1067,24 +1133,34 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     c.el.appendChild(m);
   }
 
-  function popText(i, text, cls) {
+  function popText(i, text, cls, sub) {
     const p = document.createElement("span");
     p.className = "pop " + cls; p.textContent = text;
+    if (sub) { const s = document.createElement("small"); s.textContent = sub; p.appendChild(s); }
     cells[i].el.appendChild(p);
-    setTimeout(() => p.remove(), 800);
+    setTimeout(() => p.remove(), 900);
   }
-  const SPARK_COLORS = ["#ffb347", "#e8483b", "#f3ecdc", "#ffe08a"];
-  function clearFx(i) {
+  const SPARK_COLORS = ["#ffb347", "#e8483b", "#f3ecdc", "#ffe08a", "#7fd6ff"];
+  const app = document.querySelector(".app");
+  function shakeScreen(level) {   // 1~3, reduced-motion 이면 생략
+    if (REDUCE) return;
+    app.classList.remove("sh1", "sh2", "sh3"); void app.offsetWidth; app.classList.add("sh" + level);
+    setTimeout(() => app.classList.remove("sh" + level), 320);
+  }
+  function flash() { if (REDUCE) return; const f = $("flash"); f.classList.remove("on"); void f.offsetWidth; f.classList.add("on"); }
+  function clearFx(i, level = 1) {
     const el = cells[i].el;
     const s = document.createElement("span");
-    s.className = "stamp"; s.textContent = "단속";
-    el.appendChild(s); setTimeout(() => s.remove(), 500);
+    s.className = "stamp"; s.textContent = "압수!";
+    el.appendChild(s); setTimeout(() => s.remove(), 600);
+    shakeScreen(level); flash();
     if (REDUCE) return;
-    for (let k = 0; k < 8; k++) {
+    const n = 20;
+    for (let k = 0; k < n; k++) {
       const p = document.createElement("i");
-      const a = (k / 8) * Math.PI * 2 + Math.random() * .5, d = 28 + Math.random() * 22;
+      const a = (k / n) * Math.PI * 2 + Math.random() * .4, d = 30 + Math.random() * 40 + level * 8;
       p.className = "spark";
-      p.style.cssText = `--c:${SPARK_COLORS[k % 4]};--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d - 10}px;--r:${Math.random() * 360}deg`;
+      p.style.cssText = `--c:${SPARK_COLORS[k % 5]};--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d - 14}px;--r:${Math.random() * 360}deg;width:${4 + Math.random() * 5}px`;
       el.appendChild(p); setTimeout(() => p.remove(), 550);
     }
   }
@@ -1112,24 +1188,24 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     const list = at != null ? [at] : emptyCells();
     if (!list.length) return -1;
     const i = pick(list), c = cells[i], t = state.t;
-    Object.assign(c, { kind, born: t, taps: 0, lastTap: 0, bred: 0, about: false, clearedAt: 0, returnAt: 0, tag: "", items: null, who: null, clues: null });
+    Object.assign(c, { kind, born: t, taps: 0, lastTap: 0, bred: 0, about: false, clearedAt: 0, returnAt: 0, tag: "", items: null, who: null, away: false, coming: false, pat: pick(PATS) });
     if (kind === "family") {
       c.life = rnd(stage.life[0], stage.life[1]);
       if (c.shadedBy) c.life *= .5;   // 텐트 그늘 아래는 체류시간 절반
       c.who = pick(PEOPLE);
-    } else if (kind === "trap") {
-      c.tag = pick(TRAP_TAGS);
-      let pool = ["shoes", "food", "phone", "ghost"];
-      if (stage.n >= 3 && Math.random() < .5) pool = pool.filter((x) => x !== "ghost");
-      c.clues = []; const want = stage.clues || 3;
-      while (c.clues.length < want && pool.length) { const k = pick(pool); pool = pool.filter((x) => x !== k); c.clues.push(k); }
-      c.returnAt = t + rnd(4000, 7000);
     } else {
-      // 유형 미지정이면 현재 믹스에서 뽑되 E(함정)는 제외 (함정은 kind="trap" 으로만 생성)
+      // 유형 미지정이면 현재 믹스에서 뽑되 E(자리비움)는 시작 배치에서 제외
       if (!type) { const m = Object.assign({}, currentMix()); delete m.E; type = weighted(m); }
+      if (type === "E") {
+        // 곧 돌아오는 주인: 겉보기엔 빈 A형 돗자리. 4~7초 뒤 주인이 앉으면 사람 돗자리(−)가 된다.
+        type = "A"; c.away = true; c.returnAt = t + rnd(4000, 7000);
+        c.items = [pick(["food", "phone", "backpack"])]; c.tag = pick(AWAY_TAGS);
+      }
       c.type = type;
       c.taps = HOG[c.type].taps;
-      if (c.type === "A") { c.items = Array.from({ length: 1 + Math.floor(Math.random() * 2) }, () => pick(BAG_ITEMS)); c.tag = Math.random() < .6 ? pick(HOG_TAGS) : ""; }
+      if (c.type === "G") { c.life = 5000; c.tag = "황금 돗자리"; }
+      else if (c.away) { /* 위에서 설정 */ }
+      else if (c.type === "A") { c.items = Array.from({ length: 1 + Math.floor(Math.random() * 2) }, () => pick(BAG_ITEMS)); c.tag = Math.random() < .6 ? pick(HOG_TAGS) : ""; }
       else if (c.type === "B") c.tag = Math.random() < .5 ? pick(HOG_TAGS) : "";
       else if (c.type === "C") c.tag = "일행 와요";
       else c.tag = pick(HOG_TAGS);
@@ -1162,26 +1238,37 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     if (state.t - c.born < 250) return;   // 등장 직후 250ms 보호
     if (c.kind === "hog") {
       c.lastTap = state.t; c.taps--;
-      if (c.taps > 0) { SFX.tap(); vibrate(10); render(i); popText(i, c.type === "D" ? "팩 뽑기" : "짤깍", "info"); return; }
-      const gain = HOG[c.type].score * state.combo;
-      state.score += gain; state.cleared++;
-      SFX.clear(state.combo); vibrate(state.combo === 5 ? [15, 30, 15] : 15);
-      const was = state.combo;
+      if (c.taps > 0) { SFX.tap(); vibrate(10); render(i); popText(i, c.type === "D" ? "팩 뽑기" : "짤깍", "info"); state.comboAt = state.t; return; }   // 중간 탭도 입력으로 인정
+      const was = state.combo, mul = state.fever ? 2 : 1;
+      let gain = HOG[c.type].score * was * mul;
+      let bonus = 0;
+      if (c.away) { bonus = 50 * mul; }   // 주인 돌아오기 전에 걷음 → 아슬아슬 보너스
+      state.score += gain + bonus; state.cleared++;
+      if (c.type === "G") SFX.gold(); else SFX.clear(was);
+      if (was === 5) SFX.gong();
+      vibrate(was === 5 ? [15, 30, 15] : 15);
       state.combo = Math.min(state.combo + 1, 5); state.comboAt = state.t; state.maxCombo = Math.max(state.maxCombo, state.combo);
+      if (state.combo === 5 && was < 5) state.c5Since = state.t;
       state.anger = Math.max(0, state.anger - 5);
       if (c.type === "D") unshade(i);
-      c.kind = null; c.clearedAt = state.t; c.about = false;
+      const type = c.type, away = c.away;
+      c.kind = null; c.clearedAt = state.t; c.about = false; c.away = false; c.coming = false;
       const m = c.el.querySelector(".mat"); if (m) m.classList.add("cleared");
-      clearFx(i);
-      popText(i, `+${gain} ${HOG[c.type].label}${was > 1 ? ` (x${was})` : ""}`, was === 5 ? "good max" : "good");
-      if (state.combo === 5 && was < 5) { const r = c.el.getBoundingClientRect(); Fireworks.burst(r.left + r.width / 2, r.top); }
+      c.el.querySelectorAll(".walker, .soon").forEach((e) => e.remove());
+      // 임팩트: 도장 + 파편 20 + 플래시 + 화면 흔들림(콤보 비례, 텐트는 2배)
+      clearFx(i, type === "D" ? 3 : was >= 4 ? 3 : was >= 2 ? 2 : 1);
+      let text = type === "G" ? `+${gain} 황금!` : `+${gain} ${HOG[type].label}${was > 1 ? ` (x${was})` : ""}`;
+      let sub = was >= 3 ? "연속 단속!!" : "";
+      if (away) sub = `아슬아슬! +${bonus}` + (sub ? " · " + sub : "");
+      if (state.fever) sub = "FEVER x2" + (sub ? " · " + sub : "");
+      popText(i, text, type === "G" ? "gold" : was === 5 ? "good max" : "good", sub);
+      const r = c.el.getBoundingClientRect();
+      if (type === "G") { Fireworks.burst(r.left + r.width / 2, r.top, "#ffe066"); Fireworks.burst(r.left + r.width / 2, r.top - 40, "#fff6dc"); }
+      else if (type === "D") Fireworks.launch();
+      else if (state.combo === 5 && was < 5) Fireworks.burst(r.left + r.width / 2, r.top);
       bumpCombo();
     } else if (c.kind === "family") {
-      penalty(i, 150, 15, "-150 실례!");
-    } else if (c.kind === "trap") {
-      penalty(i, 200, 20, "-200 사람 있어요!");
-      // 주인이 돌아와 앉음(보너스 없음)
-      c.kind = "family"; c.born = state.t; c.life = rnd(stage.life[0], stage.life[1]); c.who = pick(PEOPLE); render(i);
+      penalty(i, 150, 15, "-150 사람 있어요!");
     }
     hud();
     // B-2: 오인 단속으로 100% 도달 시 즉시 종료
@@ -1224,9 +1311,20 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   // ── 스테이지 시작 흐름
   function newState() {
     return { score: 0, combo: 1, comboAt: 0, maxCombo: 1, anger: 0, maxAnger: 0, queue: 0, cleared: 0, mistakes: 0,
-             left: stage.sec, elapsed: 0, t: 0, last: 0, spawnT: .6, queueT: 2, danger: 0, warnAt: 0, lastSec: 99, encoreDone: false, finaleDone: false, over: false };
+             left: stage.sec, elapsed: 0, t: 0, last: 0, spawnT: .6, queueT: 2, danger: 0, warnAt: 0, lastSec: 99, encoreDone: false, finaleDone: false, over: false,
+             c5Since: 0, fever: false, feverUntil: 0, fevers: 0,
+             goldT: 9000 + Math.random() * 8000, dogT: 14000 + Math.random() * 8000, dog: null,
+             windT: 18000 + Math.random() * 10000, windAt: 0 };
+  }
+  // 피버 테두리/태그, 강아지 등 판 밖에 남는 연출 정리 (재시작·그만두기·새 스테이지 진입 시)
+  function cleanupFx() {
+    if (state && state.fever) endFever();
+    if (state && state.dog) { state.dog.el.remove(); state.dog = null; }
+    document.querySelectorAll(".fever-tag, .dog, .banner, .windwarn").forEach((e) => e.remove());
+    $("feverRing").hidden = true; SFX.setTempo(108);
   }
   function startStage(i, opt = {}) {
+    cleanupFx();
     stage = STAGES[i]; state = newState(); phase = "idle";
     cancelAnimationFrame(raf); raf = 0;
     buildGrid(); hud();
@@ -1291,10 +1389,8 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     if (state.spawnT <= 0) {
       state.spawnT = lerp(stage.spawn[0], stage.spawn[1], progress) * spawnMul;
       const hogRatio = lerp(stage.hog[0], stage.hog[1], progress) / famBoost;
-      if (Math.random() < hogRatio) {
-        const type = weighted(currentMix());
-        place(type === "E" ? "trap" : "hog", null, type === "E" ? undefined : type);
-      } else place("family");
+      if (Math.random() < hogRatio) place("hog", null, weighted(currentMix()));   // E 는 place() 안에서 자리비움(away) 돗자리로
+      else place("family");
     }
     // 대기 관람객 증가
     state.queueT -= dt;
@@ -1304,7 +1400,10 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     let hogs = 0;
     cells.forEach((c, i) => {
       if (c.clearedAt) {
-        if (state.t - c.clearedAt >= 350) { c.clearedAt = 0; if (state.queue > 0) { state.queue--; place("family", i); SFX.seat(); } else render(i); }
+        if (state.t - c.clearedAt >= 350) {
+          c.clearedAt = 0;
+          if (state.queue > 0 || c.seatAfterWind) { if (state.queue > 0) state.queue--; c.seatAfterWind = false; place("family", i); SFX.seat(); } else render(i);
+        }
         return;
       }
       if (c.kind === "family") {
@@ -1323,16 +1422,46 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
             c.bred++; c.born = state.t; c.about = false; render(i);
           } else if (age >= 8000 && c.bred < 2 && !c.about) { c.about = true; render(i); }
         } else if (c.type === "D" && !c.shaded && state.t - c.born >= 8000) shade(i);
-      } else if (c.kind === "trap") {
-        if (state.t >= c.returnAt) {
-          c.kind = "family"; c.born = state.t; c.life = rnd(stage.life[0], stage.life[1]); c.who = pick(PEOPLE); render(i);
-          state.score += 50; popText(i, "+50 눈치 보너스", "good"); SFX.seat();
+        // 곧 돌아오는 주인: 2초 전 예고 → 복귀하면 사람 돗자리로
+        if (c.away) {
+          if (state.t >= c.returnAt) {
+            c.away = false; c.coming = false; c.kind = "family"; c.born = state.t; c.life = rnd(stage.life[0], stage.life[1]); c.who = pick(PEOPLE); c.el.querySelectorAll(".walker, .soon").forEach((e) => e.remove()); render(i);
+            popText(i, "주인 복귀", "info"); SFX.seat();
+          } else if (!c.coming && state.t >= c.returnAt - 2000) { c.coming = true; render(i); }
+        }
+        // 황금 돗자리는 5초 뒤 사라짐
+        if (c.type === "G") {
+          const p = (state.t - c.born) / c.life;
+          if (p >= 1) { c.kind = null; render(i); return; }
+          const bar = c.el.querySelector(".age i"); if (bar) bar.style.width = (1 - p) * 100 + "%";
         }
       }
     });
 
-    // 콤보 감쇠: 2초간 성공 없으면 x1
+    // 콤보 감쇠: 2초간 입력 없으면 x1. 단, 걷을 돗자리가 하나도 없는 동안은 타이머를 멈춤(플레이어 잘못이 아니므로)
+    if (hogs === 0) state.comboAt = state.t;
     if (state.combo > 1 && state.t - state.comboAt > 2000) { state.combo = 1; comboBreak(); }
+
+    // ── 피버 타임: x5 를 5초 유지 → 8초간 점수 2배
+    if (!state.fever && state.combo === 5 && state.c5Since && state.t - state.c5Since >= FEVER_HOLD) startFever();
+    if (state.fever && state.t >= state.feverUntil) endFever();
+    if (state.combo < 5) state.c5Since = 0;
+
+    // ── 황금 돗자리: 9~17초마다 1개 (빈칸 있을 때)
+    state.goldT -= dtMs;
+    if (state.goldT <= 0) { state.goldT = 12000 + Math.random() * 8000; if (emptyCells().length) place("hog", null, "G"); }
+
+    // ── 강아지: 14~22초마다 한 줄을 가로질러 달리며 빈 돗자리 짐을 하나씩 물고 감
+    state.dogT -= dtMs;
+    if (!state.dog && state.dogT <= 0) { state.dogT = 16000 + Math.random() * 8000; startDog(); }
+    if (state.dog) runDog();
+
+    // ── 돌풍(S2 이상): 3초 예고 후 쪽지 돗자리 1~2개가 날아가 자동 정리, 그 칸에 관람객 착석
+    if (stage.n >= 2) {
+      state.windT -= dtMs;
+      if (!state.windAt && state.windT <= 0) { state.windAt = state.t + 3000; state.windT = 22000 + Math.random() * 10000; windWarn(); }
+      if (state.windAt && state.t >= state.windAt) { state.windAt = 0; blowWind(); }
+    }
 
     // 민원 게이지: 선점 칸 수 + 대기 인원이 올리고, 시간이 조금씩 내림. 종료 판정을 먼저 (B-2)
     if (state.anger >= 100) return end(false);
@@ -1361,6 +1490,78 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
   function banner(text) { const b = document.createElement("div"); b.className = "banner"; b.textContent = text; $("fieldWrap").appendChild(b); setTimeout(() => b.remove(), 2400); }
 
+  // ── 재미 요소: 피버 / 강아지 / 돌풍
+  function startFever() {
+    state.fever = true; state.feverUntil = state.t + FEVER_LEN; state.fevers++;
+    $("feverRing").hidden = false; app.classList.add("fever");
+    const t = document.createElement("span"); t.className = "fever-tag"; t.id = "feverTag"; t.textContent = "FEVER TIME x2"; $("fieldWrap").appendChild(t);
+    SFX.setTempo(140); SFX.fanfare(); vibrate([30, 30, 30, 30, 60]);
+    banner("피버 타임! 점수 2배");
+    for (let k = 0; k < 3; k++) setTimeout(Fireworks.launch, k * 200);
+  }
+  function endFever() {
+    state.fever = false; $("feverRing").hidden = true; app.classList.remove("fever");
+    const t = $("feverTag"); if (t) t.remove();
+    SFX.setTempo(108);
+  }
+  function cellLeft(col) { return 10 + col * (cellPx() + 8); }
+  function cellPx() { return parseFloat(getComputedStyle(field).getPropertyValue("--cell")) || 78; }
+  function startDog() {
+    const row = Math.floor(Math.random() * stage.rows);
+    const d = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    d.setAttribute("class", "dog"); d.setAttribute("aria-hidden", "true"); d.innerHTML = '<use href="#spr-dog"/>';
+    d.style.top = (10 + row * (cellPx() + 8) + cellPx() * .22) + "px"; d.style.left = "-" + cellPx() + "px";
+    field.appendChild(d);
+    state.dog = { row, el: d, start: state.t, dur: 900 + stage.cols * 260, passed: new Set() };
+    SFX.bark();
+  }
+  function runDog() {
+    const dg = state.dog, w = field.clientWidth, cell = cellPx();
+    const p = (state.t - dg.start) / dg.dur;
+    const x = -cell + p * (w + cell * 1.2);
+    dg.el.style.left = x + "px";
+    for (let col = 0; col < stage.cols; col++) {
+      const i = dg.row * stage.cols + col;
+      if (dg.passed.has(i)) continue;
+      if (x + cell * .5 >= cellLeft(col) + cell * .5) {
+        dg.passed.add(i);
+        const c = cells[i];
+        if (c.kind === "hog" && !c.clearedAt && c.type !== "G") {   // 사람 있는 돗자리는 그냥 지나감
+          c.taps--;
+          if (c.taps > 0) { render(i); popText(i, "멍!", "info"); }
+          else {
+            state.score += 50 * (state.fever ? 2 : 1); state.cleared++;
+            if (c.type === "D") unshade(i);
+            c.kind = null; c.clearedAt = state.t; c.about = false; c.away = false; c.coming = false;
+            const m = c.el.querySelector(".mat"); if (m) m.classList.add("cleared");
+            c.el.querySelectorAll(".walker, .soon").forEach((e) => e.remove());
+            popText(i, "+50 멍멍 정리", "good"); SFX.tap();
+          }
+        }
+      }
+    }
+    if (p >= 1) { dg.el.remove(); state.dog = null; }
+  }
+  function windWarn() {
+    const b = document.createElement("div"); b.className = "windwarn"; b.textContent = "돌풍! 3초 뒤"; $("fieldWrap").appendChild(b); setTimeout(() => b.remove(), 3000);
+    SFX.wind();
+  }
+  function blowWind() {
+    let targets = cells.map((c, i) => (c.kind === "hog" && c.type === "C" && !c.clearedAt ? i : -1)).filter((i) => i >= 0);
+    if (!targets.length) targets = cells.map((c, i) => (c.kind === "hog" && c.type === "A" && !c.clearedAt ? i : -1)).filter((i) => i >= 0);
+    targets.sort(() => Math.random() - .5);
+    targets.slice(0, 1 + Math.floor(Math.random() * 2)).forEach((i) => {
+      const c = cells[i];
+      state.score += 50 * (state.fever ? 2 : 1); state.cleared++;
+      c.kind = null; c.clearedAt = state.t + 350; c.about = false; c.away = false; c.coming = false;   // 날아가는 연출 0.7초 뒤 착석
+      const m = c.el.querySelector(".mat"); if (m) m.classList.add("blown");
+      c.el.querySelectorAll(".walker, .soon").forEach((e) => e.remove());
+      popText(i, "+50 날아감!", "good");
+      c.seatAfterWind = true;   // 날아간 자리에 관람객이 앉음
+    });
+    banner("돌풍!"); shakeScreen(2); SFX.wind();
+  }
+
   // ── 일시정지
   function pause(auto) {
     if (phase !== "play") return;
@@ -1379,8 +1580,8 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
   $("btn-pause").addEventListener("click", () => { SFX.tap(); pause(false); });
   $("btn-resume").addEventListener("click", () => { SFX.init(); SFX.tap(); resume(); });
-  $("btn-restart").addEventListener("click", () => { SFX.init(); SFX.tap(); $("pauseSheet").hidden = true; phase = "idle"; layoutStart(); countdown(beginPlay); });
-  $("btn-quit").addEventListener("click", () => { SFX.tap(); $("pauseSheet").hidden = true; phase = "idle"; show("select"); });
+  $("btn-restart").addEventListener("click", () => { SFX.init(); SFX.tap(); $("pauseSheet").hidden = true; phase = "idle"; cleanupFx(); layoutStart(); countdown(beginPlay); });
+  $("btn-quit").addEventListener("click", () => { SFX.tap(); $("pauseSheet").hidden = true; phase = "idle"; cleanupFx(); show("select"); });
   document.addEventListener("visibilitychange", () => { if (document.hidden) { pause(true); SFX.stopBgm(); } });
   addEventListener("popstate", () => { if (phase === "play") pause(true); });
   document.addEventListener("keydown", (e) => {
@@ -1394,8 +1595,9 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     cells.forEach((c, i) => { c.kind = null; c.clearedAt = 0; render(i); });
     const hogI = stage.cols + 1, famI = stage.cols + 2;
     const t = state.t = 1000;
-    const h = cells[hogI]; Object.assign(h, { kind: "hog", type: "A", taps: 1, born: 0, items: ["backpack", "icebox"], tag: "맡아둔 자리" }); render(hogI);
-    const f = cells[famI]; Object.assign(f, { kind: "family", born: 0, life: 1e9, who: ["who-a"] }); render(famI);
+    // 같은 무늬(p5 왕골)를 둘 다 써서 "색은 힌트가 아님"을 보여줌
+    const h = cells[hogI]; Object.assign(h, { kind: "hog", type: "A", taps: 1, born: 0, items: ["backpack", "icebox"], tag: "맡아둔 자리", pat: "p5", away: false }); render(hogI);
+    const f = cells[famI]; Object.assign(f, { kind: "family", born: 0, life: 1e9, who: ["who-a"], pat: "p5" }); render(famI);
     tut = { step: 1, hogI, famI };
     $("tutor").hidden = false;
     tutStep();
@@ -1405,10 +1607,10 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
     const B = $("bubble");
     if (tut.step === 1) {
       cells[tut.hogI].el.classList.add("spot");
-      B.innerHTML = `<b>쪽지만 붙고 사람이 없는</b> 돗자리예요. 톡 눌러서 걷어내세요!<span class="step">1 / 3</span>`;
+      B.innerHTML = `<b>사람이 없는</b> 돗자리예요(짐·쪽지만 있음). 톡 눌러서 걷어내세요! 색과 무늬는 힌트가 아니에요.<span class="step">1 / 3</span>`;
     } else if (tut.step === 2) {
       cells[tut.famI].el.classList.add("spot");
-      B.innerHTML = `<b>사람이 앉아 있는</b> 자리는 건드리면 안 돼요. 민원이 올라가요.<button class="btn" id="btn-tut-ok" type="button">알겠어요</button><span class="step">2 / 3</span>`;
+      B.innerHTML = `<b>사람이 앉아 있는</b> 자리는 건드리면 마이너스! 민원도 올라가요. 잠깐 비운 자리는 주인이 걸어오기 전에 걷으면 보너스.<button class="btn" id="btn-tut-ok" type="button">알겠어요</button><span class="step">2 / 3</span>`;
       $("btn-tut-ok").addEventListener("click", () => { SFX.tap(); tut.step = 3; tutStep(); });
     } else {
       meterRow.classList.add("spot");
@@ -1439,6 +1641,8 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   // ── 종료 / 결과
   function end(survived) {
     phase = "over"; state.over = true; cancelAnimationFrame(raf); raf = 0;
+    if (state.fever) endFever();
+    if (state.dog) { state.dog.el.remove(); state.dog = null; }
     SFX.stopBgm(); Fireworks.setRate(1400, 3400);
     pointers.clear();
     const s = state.score, cleared = survived && state.cleared >= stage.minClear;
@@ -1465,11 +1669,11 @@ h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
       `<div><svg class="star ${k < stars ? "on" : ""}" style="animation-delay:${k * .3}s"><use href="#spr-star"/></svg>${lab}</div>`).join("");
     $("res-score").textContent = `${fmt(s)}점`;
     $("res-best").innerHTML = isBest && s > 0 ? `<span class="badge">새 최고 기록!</span>` : `<span class="muted">최고 ${fmt(progress[st.id].best)}점</span>`;
-    $("res-stats").textContent = `걷어낸 돗자리 ${state.cleared} · 오인 단속 ${state.mistakes} · 최고 콤보 x${state.maxCombo} · ${survived ? `최고 민원 ${Math.round(state.maxAnger)}%` : `${Math.round(state.elapsed)}초에 폭발`}`;
+    $("res-stats").textContent = `걷어낸 돗자리 ${state.cleared} · 오인 단속 ${state.mistakes} · 최고 콤보 x${state.maxCombo} · 피버 ${state.fevers}회 · ${survived ? `최고 민원 ${Math.round(state.maxAnger)}%` : `${Math.round(state.elapsed)}초에 폭발`}`;
     const t1 = titleFor(Math.round(s * 90 / st.sec), 1), tAll = titleFor(totalBest(), 0);
     $("res-title").innerHTML = `<small>이번 판 칭호</small><b>${t1[2]}</b><i>“${t1[3]}”</i><small style="margin-top:8px">통합 칭호 (최고점 합계 ${fmt(totalBest())}) · ${tAll[2]}</small>`;
     let tip = "";
-    if (!cleared) tip = state.mistakes >= 3 ? "팁: 신발·떡볶이·사람이 보이면 손을 떼세요!" : survived ? "팁: 2탭·3탭 돗자리는 연타로 빠르게!" : "팁: 쪽지 붙은 돗자리부터 걷어요. 대기 인원이 쌓이면 민원이 빨라져요.";
+    if (!cleared) tip = state.mistakes >= 3 ? "팁: 사람이 앉아 있으면 손 떼세요! 걸어오는 실루엣이 보이면 곧 사람 자리예요." : survived ? "팁: 2탭·3탭 돗자리는 연타로 빠르게! 황금 돗자리는 +500." : "팁: 색은 힌트가 아니에요. 사람 없는 돗자리부터 걷어요. 대기 인원이 쌓이면 민원이 빨라져요.";
     $("res-tip").textContent = tip;
     const hasNext = idx < STAGES.length - 1, nextOk = hasNext && unlocked(idx + 1);
     $("btn-next").hidden = !hasNext;
