@@ -184,14 +184,15 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
       members: ledger.members.filter((m) => m.role === role && (!q || m.name.includes(q))),
     }));
     const lastClosedRegular = ledger.raids.find((r) => r.closed && r.id !== raid.id);
+    const compact = ledger.members.length > 12;
     return (
       <div>
-        <div className="flex items-center justify-between mb-2">
-          <Label>
-            참석 · {raid.attendeeIds.length}명 (탱 {rc.TANK} / 힐 {rc.HEALER} / 딜 {rc.DPS})
-            <span className={`ml-1.5 ${headcountStatus(raid).ok ? 'text-zinc-500' : 'text-amber-300'}`}>공대 {headcount(raid)}/{RAID_MAX}</span>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <Label className="min-w-0">
+            <span className="block">참석 {raid.attendeeIds.length}명 · 탱 {rc.TANK} / 힐 {rc.HEALER} / 딜 {rc.DPS}</span>
+            <span className={`block ${headcountStatus(raid).ok ? 'text-zinc-500' : 'text-amber-300'}`}>공대 {headcount(raid)}/{RAID_MAX}</span>
           </Label>
-          <div className="flex gap-1">
+          <div className="flex gap-1 shrink-0 whitespace-nowrap">
             <Btn variant="ghost" size="sm" onClick={() => {
               const cap = RAID_MAX - raid.guests.length;
               api.setAttendees(raid.id, ledger.members.map((m) => m.id));
@@ -212,7 +213,7 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
                   <span className={`w-1.5 h-1.5 rounded-full ${ROLE_COLOR[g.role].dot}`} />
                   {ROLE_LABEL[g.role]} {g.members.filter((m) => raid.attendeeIds.includes(m.id)).length}/{g.members.length}
                 </div>
-                <div className={`grid gap-1.5 ${ledger.members.length > 12 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                <div className={`grid gap-1.5 ${compact ? 'grid-cols-3' : 'grid-cols-2'}`}>
                   {g.members.map((m) => {
                     const on = raid.attendeeIds.includes(m.id);
                     return (
@@ -223,15 +224,15 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
                           api.toggleAttendee(raid.id, m.id);
                         }}
                         aria-pressed={on}
-                        className={`flex items-center justify-between gap-1 px-3 py-2 rounded-xl border text-left transition-all active:scale-95 ${
+                        className={`flex items-center justify-between gap-1 ${compact ? 'px-2 py-1.5' : 'px-3 py-2'} rounded-xl border text-left transition-all active:scale-95 ${
                           on ? `${ROLE_COLOR[m.role].bg} ${ROLE_COLOR[m.role].border}` : 'bg-white/[0.02] border-white/10 hover:border-white/25'
                         }`}
                       >
                         <div className="min-w-0">
-                          <div className="font-bold text-sm truncate">{m.name}</div>
-                          {ledger.members.length <= 12 && <div className="text-[11px] text-zinc-400">{m.cls}</div>}
+                          <div className={`font-bold truncate ${compact ? 'text-[13px]' : 'text-sm'}`}>{m.name}</div>
+                          {!compact && <div className="text-[11px] text-zinc-400">{m.cls}</div>}
                         </div>
-                        <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-xs shrink-0 ${on ? 'bg-white text-black border-white' : 'border-white/20 text-transparent'}`}>✓</span>
+                        <span className={`${compact ? 'w-3.5 h-3.5 text-[9px]' : 'w-5 h-5 text-xs'} rounded-full border flex items-center justify-center shrink-0 ${on ? 'bg-white text-black border-white' : 'border-white/20 text-transparent'}`}>✓</span>
                       </button>
                     );
                   })}
