@@ -1,4 +1,4 @@
-import { Ledger, Member, Raid } from './types';
+import { Ledger, Member, Raid, RAID_MAX, RAID_MIN } from './types';
 
 export interface MemberSummary {
   member: Member;
@@ -137,4 +137,14 @@ export const fmtDate = (iso: string): string => {
   if (Number.isNaN(d.getTime())) return iso;
   const day = ['일', '월', '화', '수', '목', '금', '토'][d.getDay()];
   return `${d.getMonth() + 1}월 ${d.getDate()}일 (${day})`;
+};
+
+/** 공대 인원 (길드원 참석 + 외부 참여자) */
+export const headcount = (raid: Raid): number => raid.attendeeIds.length + raid.guests.length;
+
+export const headcountStatus = (raid: Raid): { n: number; ok: boolean; reason: string | null } => {
+  const n = headcount(raid);
+  if (n < RAID_MIN) return { n, ok: false, reason: `최소 ${RAID_MIN}명 필요 (${RAID_MIN - n}명 더)` };
+  if (n > RAID_MAX) return { n, ok: false, reason: `최대 ${RAID_MAX}명 (${n - RAID_MAX}명 초과)` };
+  return { n, ok: true, reason: null };
 };

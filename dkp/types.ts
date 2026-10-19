@@ -35,6 +35,10 @@ export interface SaleEntry {
   buyer: string;
 }
 
+/** 공대 인원 범위 (길드원 + 외부 참여자 합산) */
+export const RAID_MIN = 5;
+export const RAID_MAX = 30;
+
 export type RaidKind = 'REGULAR' | 'PUG';
 
 export const RAID_KIND_LABEL: Record<RaidKind, string> = {

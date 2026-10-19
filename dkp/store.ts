@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { DEFAULT_SETTINGS, Ledger, LootEntry, Member, Raid, RaidKind, SaleEntry, Settings } from './types';
+import { DEFAULT_SETTINGS, Ledger, LootEntry, Member, Raid, RAID_MAX, RaidKind, SaleEntry, Settings } from './types';
 
 const STORAGE_KEY = 'gongdae-ledger-v1';
 
@@ -165,13 +165,15 @@ export const useLedger = () => {
   const patchRaid = (id: string, patch: Partial<Raid>) => patchRaidFn(id, (r) => ({ ...r, ...patch }));
 
   const toggleAttendee = (raidId: string, memberId: string) =>
-    patchRaidFn(raidId, (r) => ({
-      ...r,
-      attendeeIds: r.attendeeIds.includes(memberId) ? r.attendeeIds.filter((x) => x !== memberId) : [...r.attendeeIds, memberId],
-    }));
+    patchRaidFn(raidId, (r) => {
+      if (r.attendeeIds.includes(memberId)) return { ...r, attendeeIds: r.attendeeIds.filter((x) => x !== memberId) };
+      if (r.attendeeIds.length + r.guests.length >= RAID_MAX) return r; // 상한 초과는 무시 (화면에서 안내)
+      return { ...r, attendeeIds: [...r.attendeeIds, memberId] };
+    });
 
+  /** 상한을 넘기면 앞에서부터 잘라 넣음 */
   const setAttendees = (raidId: string, memberIds: string[]) =>
-    patchRaidFn(raidId, (r) => ({ ...r, attendeeIds: [...new Set(memberIds)] }));
+    patchRaidFn(raidId, (r) => ({ ...r, attendeeIds: [...new Set(memberIds)].slice(0, Math.max(0, RAID_MAX - r.guests.length)) }));
 
   const addLoot = (raidId: string, loot: Omit<LootEntry, 'id'>) =>
     patchRaidFn(raidId, (r) => ({ ...r, loot: [...r.loot, { ...loot, id: uid() }] }));
@@ -181,7 +183,9 @@ export const useLedger = () => {
 
   // ---- 골팟 ----
   const addGuest = (raidId: string, name: string) =>
-    patchRaidFn(raidId, (r) => (r.guests.includes(name) ? r : { ...r, guests: [...r.guests, name] }));
+    patchRaidFn(raidId, (r) =>
+      r.guests.includes(name) || r.attendeeIds.length + r.guests.length >= RAID_MAX ? r : { ...r, guests: [...r.guests, name] },
+    );
 
   const removeGuest = (raidId: string, name: string) =>
     patchRaidFn(raidId, (r) => ({ ...r, guests: r.guests.filter((g) => g !== name) }));

@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import { fmtDate, fmtGold, knownGuests, knownItemNames, knownRaidNames, raidPoints, roleCount, settlePug, summarize } from '../calc';
+import { fmtDate, fmtGold, headcount, headcountStatus, knownGuests, knownItemNames, knownRaidNames, raidPoints, roleCount, settlePug, summarize } from '../calc';
 import { buildRaidEmbed, isDiscordWebhook, postToDiscord } from '../integrations/discord';
 import { downloadBackup, downloadLootCsv, readBackupFile } from '../integrations/share';
 import { LedgerApi, today } from '../store';
-import { Raid, RaidKind, Role, ROLE_LABEL, WOW_CLASSES, WowClass } from '../types';
+import { Raid, RAID_MAX, RAID_MIN, RaidKind, Role, ROLE_LABEL, WOW_CLASSES, WowClass } from '../types';
 import { Btn, Card, Chip, Collapsible, ConfirmSheet, Empty, Input, Label, Points, ROLE_COLOR, RoleBadge, SectionTitle, Select, Sheet, Textarea, Toggle } from '../ui';
 
 const COST_PRESETS = [5, 10, 15, 20, 30];
@@ -80,6 +80,8 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
 
   const closeRaid = async () => {
     if (!openRaid) return;
+    const hc = headcountStatus(openRaid);
+    if (!hc.ok) { notify(`마감할 수 없습니다. ${hc.reason}`); return; }
     const closed = { ...openRaid, closed: true };
     api.patchRaid(openRaid.id, { closed: true });
     let posted = false;
@@ -109,7 +111,10 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
   const submitGuest = (e: React.FormEvent) => {
     e.preventDefault();
     if (!openRaid || !guestName.trim()) return;
-    guestName.split(/[,\n]/).map((s) => s.trim()).filter(Boolean).forEach((g) => api.addGuest(openRaid.id, g));
+    const names = guestName.split(/[,\n]/).map((s) => s.trim()).filter(Boolean);
+    const room = RAID_MAX - headcount(openRaid);
+    names.slice(0, Math.max(0, room)).forEach((g) => api.addGuest(openRaid.id, g));
+    if (names.length > room) notify(`공대 인원은 최대 ${RAID_MAX}명입니다. ${Math.max(0, room)}명만 추가했습니다.`);
     setGuestName('');
   };
 
@@ -182,9 +187,16 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
     return (
       <div>
         <div className="flex items-center justify-between mb-2">
-          <Label>참석 · {raid.attendeeIds.length}명 (탱 {rc.TANK} / 힐 {rc.HEALER} / 딜 {rc.DPS})</Label>
+          <Label>
+            참석 · {raid.attendeeIds.length}명 (탱 {rc.TANK} / 힐 {rc.HEALER} / 딜 {rc.DPS})
+            <span className={`ml-1.5 ${headcountStatus(raid).ok ? 'text-zinc-500' : 'text-amber-300'}`}>공대 {headcount(raid)}/{RAID_MAX}</span>
+          </Label>
           <div className="flex gap-1">
-            <Btn variant="ghost" size="sm" onClick={() => api.setAttendees(raid.id, ledger.members.map((m) => m.id))}>전원</Btn>
+            <Btn variant="ghost" size="sm" onClick={() => {
+              const cap = RAID_MAX - raid.guests.length;
+              api.setAttendees(raid.id, ledger.members.map((m) => m.id));
+              if (ledger.members.length > cap) notify(`최대 ${RAID_MAX}명까지만 체크됩니다. 앞에서 ${cap}명을 넣었습니다.`);
+            }}>전원</Btn>
             {lastClosedRegular && <Btn variant="ghost" size="sm" onClick={() => api.setAttendees(raid.id, lastClosedRegular.attendeeIds)}>지난번</Btn>}
             <Btn variant="ghost" size="sm" onClick={() => api.setAttendees(raid.id, [])}>해제</Btn>
           </div>
@@ -206,7 +218,10 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
                     return (
                       <button
                         key={m.id}
-                        onClick={() => api.toggleAttendee(raid.id, m.id)}
+                        onClick={() => {
+                          if (!raid.attendeeIds.includes(m.id) && headcount(raid) >= RAID_MAX) { notify(`공대 인원은 최대 ${RAID_MAX}명입니다.`); return; }
+                          api.toggleAttendee(raid.id, m.id);
+                        }}
                         aria-pressed={on}
                         className={`flex items-center justify-between gap-1 px-3 py-2 rounded-xl border text-left transition-all active:scale-95 ${
                           on ? `${ROLE_COLOR[m.role].bg} ${ROLE_COLOR[m.role].border}` : 'bg-white/[0.02] border-white/10 hover:border-white/25'
@@ -365,7 +380,7 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
       <div>
         <SectionTitle
           title={openRaid ? (openRaid.kind === 'PUG' ? '진행 중 골팟' : '진행 중 레이드') : '새 레이드'}
-          hint={openRaid ? (openRaid.kind === 'PUG' ? '참여자 → 판매 입력 → 마감 → 와우 채팅에 정산 붙여넣기' : '참석 체크 → 보스 킬 → 분배 입력 → 마감') : undefined}
+          hint={openRaid ? (openRaid.kind === 'PUG' ? '참여자 → 판매 입력 → 마감 → 와우 채팅에 정산 붙여넣기' : '참석 체크 → 보스 킬 → 분배 입력 → 마감') : `공대 인원 ${RAID_MIN}~${RAID_MAX}명`}
         />
         {openRaid ? (
           <Card className="p-4 space-y-5 border-l-[3px] border-l-[#ff6b35]">
@@ -563,10 +578,12 @@ const AdminPanel: React.FC<Props> = ({ api, notify, goRaids }) => {
       {openRaid && (
         <div className="fixed inset-x-0 z-30 px-4" style={{ bottom: 'calc(64px + env(safe-area-inset-bottom))' }}>
           <div className="max-w-xl mx-auto">
-            <Btn size="lg" className="w-full shadow-2xl shadow-black/60 flex items-center justify-between" onClick={closeRaid} disabled={posting}>
-              <span>{posting ? '전송 중…' : ledger.settings.autoPostOnClose && webhookReady ? '마감 + 디스코드 전송' : '마감'}</span>
+            <Btn size="lg" className="w-full shadow-2xl shadow-black/60 flex items-center justify-between" onClick={closeRaid} disabled={posting || !headcountStatus(openRaid).ok}>
+              <span>{posting ? '전송 중…' : !headcountStatus(openRaid).ok ? headcountStatus(openRaid).reason : ledger.settings.autoPostOnClose && webhookReady ? '마감 + 디스코드 전송' : '마감'}</span>
               <span className="text-xs font-bold opacity-80">
-                {openRaid.kind === 'PUG'
+                {!headcountStatus(openRaid).ok
+                  ? `공대 ${headcount(openRaid)}/${RAID_MAX}`
+                  : openRaid.kind === 'PUG'
                   ? `${openRaid.attendeeIds.length + openRaid.guests.length}명 · 판매 ${openRaid.sales.length}건 · 1인 ${fmtGold(settlePug(ledger, openRaid).cutPerPerson)}`
                   : `참석 ${openRaid.attendeeIds.length}명 · 분배 ${openRaid.loot.length}건`}
               </span>
