@@ -1,15 +1,32 @@
 import React from 'react';
 import { raidPoints, roleCount } from '../calc';
 import { Ledger } from '../types';
-import { Card, Empty, Points, SectionTitle } from '../ui';
+import { buildRaidEmbed, isDiscordWebhook, postToDiscord } from '../integrations/discord';
+import { downloadLootCsv, raidToText, shareText } from '../integrations/share';
+import { Btn, Card, Empty, Points, SectionTitle } from '../ui';
 
-const RaidLog: React.FC<{ ledger: Ledger }> = ({ ledger }) => {
+const RaidLog: React.FC<{ ledger: Ledger; notify: (msg: string) => void }> = ({ ledger, notify }) => {
+  const webhookReady = isDiscordWebhook(ledger.settings.discordWebhookUrl);
+  const toDiscord = async (raidId: string) => {
+    const raid = ledger.raids.find((r) => r.id === raidId);
+    if (!raid) return;
+    try {
+      await postToDiscord(ledger.settings.discordWebhookUrl, buildRaidEmbed(ledger, raid));
+      notify('디스코드 채널에 레이드 결과를 보냈습니다.');
+    } catch (e) {
+      notify((e as Error).message);
+    }
+  };
   const nameOf = (id: string) => ledger.members.find((m) => m.id === id)?.name ?? '(탈퇴)';
   const raids = [...ledger.raids].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div className="space-y-6">
-      <SectionTitle title="레이드 기록" hint="누가 왔고, 무엇이 누구에게 갔는지" />
+      <SectionTitle
+        title="레이드 기록"
+        hint="누가 왔고, 무엇이 누구에게 갔는지"
+        right={ledger.raids.length > 0 ? <Btn variant="ghost" onClick={() => { downloadLootCsv(ledger); notify('분배 내역 CSV를 내려받습니다.'); }}>분배 CSV</Btn> : undefined}
+      />
       {raids.length === 0 ? (
         <Empty>아직 레이드 기록이 없습니다.</Empty>
       ) : (
@@ -61,6 +78,11 @@ const RaidLog: React.FC<{ ledger: Ledger }> = ({ ledger }) => {
                     ))}
                   </div>
                 )}
+              </div>
+
+              <div className="flex gap-2 pt-1">
+                <Btn variant="ghost" className="flex-1" onClick={() => shareText(raid.name, raidToText(ledger, raid)).then(notify)}>공유</Btn>
+                <Btn variant="ghost" className="flex-1" onClick={() => toDiscord(raid.id)} disabled={!webhookReady}>디스코드로 보내기</Btn>
               </div>
             </Card>
           );

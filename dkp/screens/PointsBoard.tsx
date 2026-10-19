@@ -1,9 +1,22 @@
 import React, { useMemo } from 'react';
 import { summarize } from '../calc';
 import { Ledger } from '../types';
-import { Card, Empty, Points, RoleBadge, SectionTitle } from '../ui';
+import { buildBoardEmbed, isDiscordWebhook, postToDiscord } from '../integrations/discord';
+import { boardToText, downloadBoardCsv, shareText } from '../integrations/share';
+import { Btn, Card, Empty, Points, RoleBadge, SectionTitle } from '../ui';
 
-const PointsBoard: React.FC<{ ledger: Ledger }> = ({ ledger }) => {
+const PointsBoard: React.FC<{ ledger: Ledger; notify: (msg: string) => void }> = ({ ledger, notify }) => {
+  const webhookReady = isDiscordWebhook(ledger.settings.discordWebhookUrl);
+
+  const toDiscord = async () => {
+    try {
+      await postToDiscord(ledger.settings.discordWebhookUrl, buildBoardEmbed(ledger));
+      notify('디스코드 채널에 포인트 현황을 보냈습니다.');
+    } catch (e) {
+      notify((e as Error).message);
+    }
+  };
+
   const rows = useMemo(() => summarize(ledger), [ledger]);
   const totalRaids = ledger.raids.length;
 
@@ -26,6 +39,11 @@ const PointsBoard: React.FC<{ ledger: Ledger }> = ({ ledger }) => {
 
       <div>
         <SectionTitle title="포인트 현황" hint="참석으로 쌓고, 아이템으로 씁니다. 잔여 포인트 순" />
+        <div className="flex gap-2 mb-3">
+          <Btn variant="ghost" className="flex-1" onClick={() => shareText('포인트 현황', boardToText(ledger)).then(notify)}>공유</Btn>
+          <Btn variant="ghost" className="flex-1" onClick={toDiscord} disabled={!webhookReady} title={webhookReady ? '' : '공대장 탭에서 디스코드 웹훅을 먼저 설정하세요'}>디스코드</Btn>
+          <Btn variant="ghost" className="flex-1" onClick={() => { downloadBoardCsv(ledger); notify('CSV 파일을 내려받습니다. 엑셀·구글시트에서 여세요.'); }}>CSV</Btn>
+        </div>
         {rows.length === 0 ? (
           <Empty>아직 길드원이 없습니다. 공대장 탭에서 길드원을 추가하세요.</Empty>
         ) : (

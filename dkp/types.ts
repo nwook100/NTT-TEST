@@ -38,8 +38,21 @@ export interface Raid {
   closed: boolean;
 }
 
+export interface Settings {
+  /** 디스코드 채널 웹훅 URL. 비어 있으면 연동 안 함 */
+  discordWebhookUrl: string;
+  /** 레이드 마감 시 디스코드로 자동 전송 */
+  autoPostOnClose: boolean;
+}
+
+export const DEFAULT_SETTINGS: Settings = {
+  discordWebhookUrl: '',
+  autoPostOnClose: true,
+};
+
 export interface Ledger {
   guildName: string;
   members: Member[];
   raids: Raid[];
+  settings: Settings;
 }

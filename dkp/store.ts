@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Ledger, LootEntry, Member, Raid } from './types';
+import { DEFAULT_SETTINGS, Ledger, LootEntry, Member, Raid, Settings } from './types';
 
 const STORAGE_KEY = 'gongdae-ledger-v1';
 
@@ -49,15 +49,24 @@ export const sampleLedger = (): Ledger => {
       closed: true,
     },
   ];
-  return { guildName: 'NTT 길드', members, raids };
+  return { guildName: 'NTT 길드', members, raids, settings: { ...DEFAULT_SETTINGS } };
 };
 
-const emptyLedger = (): Ledger => ({ guildName: '우리 길드', members: [], raids: [] });
+const emptyLedger = (): Ledger => ({ guildName: '우리 길드', members: [], raids: [], settings: { ...DEFAULT_SETTINGS } });
 
 const load = (): Ledger => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw) as Ledger;
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<Ledger>;
+      // 예전 버전 저장분에도 settings가 있도록 보정
+      return {
+        guildName: parsed.guildName ?? '우리 길드',
+        members: parsed.members ?? [],
+        raids: parsed.raids ?? [],
+        settings: { ...DEFAULT_SETTINGS, ...(parsed.settings ?? {}) },
+      };
+    }
   } catch {
     /* ignore corrupt storage */
   }
@@ -138,6 +147,13 @@ export const useLedger = () => {
 
   const setGuildName = (guildName: string) => update((l) => ({ ...l, guildName }));
 
+  const setSettings = (patch: Partial<Settings>) =>
+    update((l) => ({ ...l, settings: { ...l.settings, ...patch } }));
+
+  /** 백업 파일에서 통째로 복원 */
+  const importLedger = (incoming: Ledger) =>
+    setLedger({ ...incoming, settings: { ...DEFAULT_SETTINGS, ...(incoming.settings ?? {}) } });
+
   const resetToSample = () => setLedger(sampleLedger());
   const resetToEmpty = () => setLedger(emptyLedger());
 
@@ -152,6 +168,8 @@ export const useLedger = () => {
     removeLoot,
     deleteRaid,
     setGuildName,
+    setSettings,
+    importLedger,
     resetToSample,
     resetToEmpty,
   };

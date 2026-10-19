@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useLedger } from './store';
 import AdminPanel from './screens/AdminPanel';
 import PointsBoard from './screens/PointsBoard';
 import RaidLog from './screens/RaidLog';
+import { Toast } from './ui';
 
 type Tab = 'board' | 'raids' | 'admin';
 
@@ -15,6 +16,13 @@ const TABS: { key: Tab; label: string; icon: string }[] = [
 const DkpApp: React.FC = () => {
   const api = useLedger();
   const [tab, setTab] = useState<Tab>('board');
+  const [toast, setToast] = useState<string | null>(null);
+  const timer = useRef<number | undefined>(undefined);
+  const notify = useCallback((msg: string) => {
+    setToast(msg);
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setToast(null), 2600);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
@@ -32,10 +40,12 @@ const DkpApp: React.FC = () => {
       </header>
 
       <main className="max-w-xl mx-auto px-4 pt-5 pb-28">
-        {tab === 'board' && <PointsBoard ledger={api.ledger} />}
-        {tab === 'raids' && <RaidLog ledger={api.ledger} />}
-        {tab === 'admin' && <AdminPanel api={api} />}
+        {tab === 'board' && <PointsBoard ledger={api.ledger} notify={notify} />}
+        {tab === 'raids' && <RaidLog ledger={api.ledger} notify={notify} />}
+        {tab === 'admin' && <AdminPanel api={api} notify={notify} />}
       </main>
+
+      <Toast message={toast} />
 
       <nav className="fixed bottom-0 inset-x-0 z-20 bg-[#0a0a0a]/95 backdrop-blur border-t border-white/10" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="max-w-xl mx-auto grid grid-cols-3">

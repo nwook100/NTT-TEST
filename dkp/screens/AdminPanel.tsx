@@ -2,10 +2,61 @@ import React, { useState } from 'react';
 import { raidPoints, roleCount } from '../calc';
 import { LedgerApi } from '../store';
 import { Role, ROLE_LABEL, WOW_CLASSES, WowClass } from '../types';
-import { Btn, Card, Empty, Input, Points, RoleBadge, SectionTitle, Select } from '../ui';
+import { buildRaidEmbed, isDiscordWebhook, postToDiscord } from '../integrations/discord';
+import { downloadBackup, readBackupFile } from '../integrations/share';
+import { Btn, Card, Empty, Input, Points, RoleBadge, SectionTitle, Select, Toggle } from '../ui';
 
-const AdminPanel: React.FC<{ api: LedgerApi }> = ({ api }) => {
+const AdminPanel: React.FC<{ api: LedgerApi; notify: (msg: string) => void }> = ({ api, notify }) => {
   const { ledger } = api;
+  const webhookReady = isDiscordWebhook(ledger.settings.discordWebhookUrl);
+  const [posting, setPosting] = useState(false);
+
+  const closeRaid = async () => {
+    if (!openRaid) return;
+    const closed = { ...openRaid, closed: true };
+    api.patchRaid(openRaid.id, { closed: true });
+    if (ledger.settings.autoPostOnClose && webhookReady) {
+      setPosting(true);
+      try {
+        await postToDiscord(ledger.settings.discordWebhookUrl, buildRaidEmbed(ledger, closed));
+        notify('레이드를 마감하고 디스코드에 결과를 보냈습니다.');
+      } catch (e) {
+        notify(`마감은 됐지만 디스코드 전송 실패: ${(e as Error).message}`);
+      } finally {
+        setPosting(false);
+      }
+    } else {
+      notify('레이드를 마감했습니다.');
+    }
+  };
+
+  const testWebhook = async () => {
+    setPosting(true);
+    try {
+      await postToDiscord(ledger.settings.discordWebhookUrl, {
+        username: '공대장부',
+        embeds: [{ title: '✅ 공대장부 연동 완료', description: `${ledger.guildName} 채널에 레이드 결과가 여기로 옵니다.`, color: 0xff6b35 }],
+      });
+      notify('디스코드 채널에 테스트 메시지를 보냈습니다.');
+    } catch (e) {
+      notify((e as Error).message);
+    } finally {
+      setPosting(false);
+    }
+  };
+
+  const onBackupFile = async (file: File | undefined) => {
+    if (!file) return;
+    try {
+      const data = await readBackupFile(file);
+      if (confirm(`'${data.guildName}' 백업으로 덮어쓸까요? 현재 기록은 사라집니다.`)) {
+        api.importLedger(data);
+        notify('백업을 복원했습니다.');
+      }
+    } catch (e) {
+      notify((e as Error).message);
+    }
+  };
   const openRaid = ledger.raids.find((r) => !r.closed) ?? null;
 
   // 레이드 생성 폼
@@ -149,7 +200,9 @@ const AdminPanel: React.FC<{ api: LedgerApi }> = ({ api }) => {
             </div>
 
             <div className="flex gap-2 pt-2 border-t border-white/5">
-              <Btn className="flex-1" onClick={() => api.patchRaid(openRaid.id, { closed: true })}>레이드 마감</Btn>
+              <Btn className="flex-1" onClick={closeRaid} disabled={posting}>
+                {posting ? '전송 중…' : ledger.settings.autoPostOnClose && webhookReady ? '마감 + 디스코드 전송' : '레이드 마감'}
+              </Btn>
               <Btn variant="danger" onClick={() => { if (confirm('이 레이드를 삭제할까요?')) api.deleteRaid(openRaid.id); }}>삭제</Btn>
             </div>
           </Card>
@@ -212,6 +265,48 @@ const AdminPanel: React.FC<{ api: LedgerApi }> = ({ api }) => {
               ))}
             </div>
           )}
+        </Card>
+      </div>
+
+      {/* 연동 */}
+      <div>
+        <SectionTitle title="연동" hint="디스코드는 기본, 나머지는 파일로" />
+        <Card className="p-4 space-y-4">
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <label className="text-sm font-bold">디스코드 채널 웹훅</label>
+              <span className={`text-[11px] font-bold ${webhookReady ? 'text-emerald-300' : 'text-zinc-500'}`}>{webhookReady ? '연결됨' : '미설정'}</span>
+            </div>
+            <Input
+              placeholder="https://discord.com/api/webhooks/..."
+              value={ledger.settings.discordWebhookUrl}
+              onChange={(e) => api.setSettings({ discordWebhookUrl: e.target.value })}
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
+            />
+            <p className="text-xs text-zinc-500 mt-1.5">
+              디스코드 채널 설정 → 연동 → 웹훅 → 새 웹훅 → URL 복사. 이 URL을 아는 사람은 채널에 글을 쓸 수 있으니 공대장만 보관하세요.
+            </p>
+            <Btn variant="ghost" className="mt-2 w-full" onClick={testWebhook} disabled={!webhookReady || posting}>테스트 메시지 보내기</Btn>
+          </div>
+          <Toggle
+            checked={ledger.settings.autoPostOnClose}
+            onChange={(v) => api.setSettings({ autoPostOnClose: v })}
+            label="레이드 마감 시 자동 전송"
+            hint="참석자·분배·포인트 요약을 채널에 올립니다"
+          />
+          <div className="border-t border-white/5 pt-4 space-y-2">
+            <div className="text-sm font-bold">파일로 주고받기</div>
+            <p className="text-xs text-zinc-500">현황·레이드 탭의 CSV 버튼은 엑셀·구글시트용입니다. 아래 백업은 기기를 옮길 때 씁니다.</p>
+            <div className="flex gap-2">
+              <Btn variant="ghost" className="flex-1" onClick={() => { downloadBackup(ledger); notify('백업 파일을 내려받습니다.'); }}>백업 내려받기</Btn>
+              <label className="flex-1">
+                <span className="block text-center px-4 py-2.5 rounded-xl text-sm font-bold bg-white/5 text-zinc-200 hover:bg-white/10 border border-white/10 cursor-pointer active:scale-95 transition-all">백업 복원</span>
+                <input type="file" accept="application/json,.json" className="hidden" onChange={(e) => { onBackupFile(e.target.files?.[0]); e.target.value = ''; }} />
+              </label>
+            </div>
+          </div>
         </Card>
       </div>
 
