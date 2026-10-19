@@ -31,6 +31,13 @@ const initApp = () => {
   }
 };
 
+// PWA: 프로덕션 빌드에서만 서비스워커 등록 (개발 중 캐시 혼란 방지)
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => console.warn('SW 등록 실패:', err));
+  });
+}
+
 // DOM이 완전히 준비된 후 실행되도록 보장
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);

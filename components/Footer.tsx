@@ -4,6 +4,7 @@ import { NAV_ITEMS } from '../constants';
 
 const Footer: React.FC = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#/')) return; // 앱 라우트는 브라우저 기본 동작에 맡김
     if (href.startsWith('#')) {
       e.preventDefault();
       const targetId = href.replace('#', '');
