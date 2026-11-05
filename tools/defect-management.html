@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영업부 불량 관리 시스템</title>
+<style>
+  /* =========================================================================
+     디자인 토큰 (색상/간격 변수)
+     - 차분한 블루/슬레이트 톤 + 흰 배경, 상태별 색상 구분
+     ========================================================================= */
+  :root {
+    --bg: #f4f6f9;
+    --panel: #ffffff;
+    --ink: #1e293b;        /* 기본 글자색 (slate-800) */
+    --ink-soft: #64748b;   /* 보조 글자색 (slate-500) */
+    --line: #e2e8f0;       /* 테두리 (slate-200) */
+    --brand: #2563eb;      /* 메인 블루 */
+    --brand-dark: #1d4ed8;
+    --brand-soft: #eff6ff;
+    --shadow: 0 1px 3px rgba(15,23,42,.08), 0 1px 2px rgba(15,23,42,.04);
+    --radius: 10px;
+
+    /* 상태 색상 */
+    --st-received: #64748b;   /* 접수 */
+    --st-analyze: #d97706;    /* 분석중 */
+    --st-action: #7c3aed;     /* 조치중 */
+    --st-done: #16a34a;       /* 완료 */
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    /* 한글 포함 시스템 폰트 스택 */
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+  /* ---------- 헤더 ---------- */
+  header.app-header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    padding: 22px 0;
+    box-shadow: var(--shadow);
+  }
+  header.app-header .wrap { padding-top: 0; padding-bottom: 0; }
+  .app-header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .app-header p { margin: 4px 0 0; font-size: 13px; opacity: .85; }
+
+  /* ---------- 요약 카드 (대시보드) ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+  .stat-tile {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 18px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  .stat-tile::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background: var(--brand); }
+  .stat-tile.t-progress::before { background: var(--st-analyze); }
+  .stat-tile.t-done::before { background: var(--st-done); }
+  .stat-tile.t-month::before { background: var(--st-action); }
+  .stat-tile .label { font-size: 12px; color: var(--ink-soft); font-weight: 600; }
+  .stat-tile .value { font-size: 30px; font-weight: 800; margin-top: 4px; letter-spacing: -1px; }
+  .stat-tile .unit { font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-left: 3px; }
+
+  /* ---------- 공통 패널 ---------- */
+  .panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); margin-bottom: 20px;
+  }
+  .panel-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; border-bottom: 1px solid var(--line);
+  }
+  .panel-head h2 { margin: 0; font-size: 15px; font-weight: 700; }
+  .panel-body { padding: 18px; }
+
+  /* ---------- 버튼 ---------- */
+  button { font-family: inherit; cursor: pointer; }
+  .btn {
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+    padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    transition: background .12s, border-color .12s; white-space: nowrap;
+  }
+  .btn:hover { background: #f8fafc; }
+  .btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .btn-primary:hover { background: var(--brand-dark); }
+  .btn-sm { padding: 5px 10px; font-size: 12px; }
+  .btn-danger { color: #dc2626; border-color: #fecaca; background: #fef2f2; }
+  .btn-danger:hover { background: #fee2e2; }
+  .btn-ghost { background: transparent; border-color: transparent; color: var(--ink-soft); }
+  .btn-ghost:hover { background: #f1f5f9; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* ---------- 필터 바 ---------- */
+  .filters { display: grid; grid-template-columns: 1fr 1fr 1fr 2fr; gap: 12px; }
+  .filters .field { display: flex; flex-direction: column; gap: 4px; }
+  .field label { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+  select, input[type="text"], input[type="number"], input[type="date"], textarea {
+    font-family: inherit; font-size: 13px; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #fff; width: 100%;
+  }
+  select:focus, input:focus, textarea:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); }
+  textarea { resize: vertical; min-height: 64px; }
+
+  /* ---------- 테이블 ---------- */
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; font-size: 12px; color: var(--ink-soft); font-weight: 700;
+    padding: 10px 12px; border-bottom: 2px solid var(--line); white-space: nowrap; background: #f8fafc;
+  }
+  tbody td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--brand-soft); }
+  .row-actions { display: flex; gap: 6px; }
+  .empty-msg { text-align: center; color: var(--ink-soft); padding: 40px 0; }
+
+  /* ---------- 상태 배지 ---------- */
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    color: #fff; white-space: nowrap;
+  }
+  .badge.s-접수   { background: var(--st-received); }
+  .badge.s-분석중 { background: var(--st-analyze); }
+  .badge.s-조치중 { background: var(--st-action); }
+  .badge.s-완료   { background: var(--st-done); }
+  .tag {
+    display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 12px; font-weight: 600;
+    background: #f1f5f9; color: var(--ink-soft); border: 1px solid var(--line);
+  }
+
+  /* ---------- 통계 (CSS 막대) ---------- */
+  .stat-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .stat-block h3 { font-size: 13px; margin: 0 0 12px; color: var(--ink); }
+  .bar-row { display: grid; grid-template-columns: 84px 1fr 42px; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .bar-row .bar-label { font-size: 12px; color: var(--ink-soft); text-align: right; }
+  .bar-track { background: #f1f5f9; border-radius: 6px; height: 18px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--brand); border-radius: 6px; min-width: 2px; transition: width .3s; }
+  .bar-fill.c0 { background: #2563eb; }
+  .bar-fill.c1 { background: #7c3aed; }
+  .bar-fill.c2 { background: #d97706; }
+  .bar-fill.c3 { background: #16a34a; }
+  .bar-fill.c4 { background: #0891b2; }
+  .bar-row .bar-val { font-size: 12px; font-weight: 700; }
+  .rank-list { list-style: none; margin: 0; padding: 0; }
+  .rank-list li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+  .rank-list li:last-child { border-bottom: none; }
+  .rank-list .rk { color: var(--ink-soft); font-weight: 700; margin-right: 8px; }
+
+  /* ---------- 모달 ---------- */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(15,23,42,.45); display: none;
+    align-items: flex-start; justify-content: center; padding: 30px 16px; z-index: 50; overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 12px; width: 100%; max-width: 720px; box-shadow: 0 20px 50px rgba(15,23,42,.25);
+  }
+  .modal-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+  .modal-head h2 { margin: 0; font-size: 16px; }
+  .modal-body { padding: 20px; }
+  .modal-foot { padding: 14px 20px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 10px; }
+  .close-x { border: none; background: none; font-size: 22px; line-height: 1; color: var(--ink-soft); padding: 2px 6px; }
+
+  /* 폼 그리드 */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-grid .full { grid-column: 1 / -1; }
+  .form-grid .field { display: flex; flex-direction: column; gap: 5px; }
+  .req::after { content: " *"; color: #dc2626; }
+  .field .hint { font-size: 11px; color: var(--ink-soft); }
+  .field.error input, .field.error textarea { border-color: #dc2626; }
+  .err-text { color: #dc2626; font-size: 11px; display: none; }
+  .field.error .err-text { display: block; }
+
+  /* 상세 보기 */
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+  .detail-grid .full { grid-column: 1 / -1; }
+  .detail-item .dk { font-size: 11px; color: var(--ink-soft); font-weight: 700; text-transform: none; }
+  .detail-item .dv { font-size: 14px; margin-top: 2px; white-space: pre-wrap; word-break: break-word; }
+  .flow {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 6px;
+  }
+  .flow-step { background: #f8fafc; border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+  .flow-step .fs-title { font-size: 12px; font-weight: 800; margin-bottom: 6px; display:flex; align-items:center; gap:6px; }
+  .flow-step .fs-body { font-size: 13px; white-space: pre-wrap; word-break: break-word; min-height: 20px; color: var(--ink); }
+  .flow-step.p::before { content:"①"; }
+  .flow .arrow { display:none; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display:inline-block; }
+  .dot.p { background:#dc2626; } .dot.c { background:#d97706; } .dot.a { background:#16a34a; }
+
+  /* ---------- 반응형 ---------- */
+  @media (max-width: 860px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .filters { grid-template-columns: 1fr 1fr; }
+    .stat-cols { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- 인쇄 전용 CSS ---------- */
+  @media print {
+    body { background: #fff; }
+    header.app-header { background: #fff !important; color: #000; box-shadow: none; border-bottom: 2px solid #000; }
+    .app-header p { color: #333; }
+    .no-print, .toolbar, .filters, .panel-head .toolbar, .row-actions, .modal-overlay .modal-foot { display: none !important; }
+    .panel { box-shadow: none; border-color: #999; break-inside: avoid; }
+    .stat-tile { box-shadow: none; }
+    tbody tr { cursor: default; }
+    .modal-overlay.open { position: static; background: none; display: block; padding: 0; }
+    .modal { max-width: none; box-shadow: none; }
+    .close-x { display: none; }
+    a[href]::after { content: ""; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= 헤더 ======================= -->
+<header class="app-header">
+  <div class="wrap">
+    <h1>영업부 불량 관리 시스템</h1>
+    <p>반도체 부품(magazine / cassette / ring / pin boat) 고객 불량 접수 → 원인분석 → 조치 → 완료 추적</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ======================= 요약 카드 ======================= -->
+  <section class="stats" aria-label="요약 통계">
+    <div class="stat-tile t-total">
+      <div class="label">전체 불량 건수</div>
+      <div class="value"><span id="stat-total">0</span><span class="unit">건</span></div>
+    </div>
+    <div class="stat-tile t-progress">
+      <div class="label">처리중 (접수+분석중+조치중)</div>
+      <div class="value"><span id="stat-progress">0</span><span class="unit">건</span></div>
+    </div>
+    <div class="stat-tile t-done">
+      <div class="label">완료</div>
+      <div class="value"><span id="stat-done">0</span><span class="unit">건</span></div>
+    </div>
+    <div class="stat-tile t-month">
+      <div class="label">이번달 접수</div>
+      <div class="value"><span id="stat-month">0</span><span class="unit">건</span></div>
+    </div>
+  </section>
+
+  <!-- ======================= 상단 작업 버튼 ======================= -->
+  <div class="toolbar no-print" style="margin-bottom:16px;">
+    <button class="btn btn-primary" id="btn-new">+ 불량 등록</button>
+    <button class="btn" id="btn-export">엑셀 내보내기(CSV)</button>
+    <button class="btn" id="btn-import">CSV 가져오기</button>
+    <input type="file" id="file-import" accept=".csv" style="display:none">
+    <button class="btn" id="btn-print">인쇄</button>
+    <span style="flex:1"></span>
+    <button class="btn btn-ghost" id="btn-seed">샘플 데이터 초기화</button>
+    <button class="btn btn-danger" id="btn-clear">전체 삭제</button>
+  </div>
+
+  <!-- ======================= 필터 & 검색 ======================= -->
+  <section class="panel no-print">
+    <div class="panel-body">
+      <div class="filters">
+        <div class="field">
+          <label for="f-status">상태</label>
+          <select id="f-status">
+            <option value="">전체</option>
+            <option>접수</option><option>분석중</option><option>조치중</option><option>완료</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-product">제품구분</label>
+          <select id="f-product">
+            <option value="">전체</option>
+            <option>magazine</option><option>cassette</option><option>ring</option><option>pin boat</option><option>기타</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-customer">고객사</label>
+          <select id="f-customer"><option value="">전체</option></select>
+        </div>
+        <div class="field">
+          <label for="f-search">검색 (불량내용·조치내용·고객사)</label>
+          <input type="text" id="f-search" placeholder="예) 스크래치, 치수, 삼성...">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 목록 테이블 ======================= -->
+  <section class="panel">
+    <div class="panel-head">
+      <h2>불량 목록 <span id="list-count" style="color:var(--ink-soft);font-weight:500;font-size:13px;"></span></h2>
+    </div>
+    <div class="panel-body" style="padding:0;">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>접수번호</th><th>접수일</th><th>고객사</th><th>제품</th>
+              <th>불량유형</th><th>불량내용</th><th>담당자</th><th>상태</th>
+              <th class="no-print">관리</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 통계 섹션 ======================= -->
+  <section class="panel">
+    <div class="panel-head"><h2>통계</h2></div>
+    <div class="panel-body">
+      <div class="stat-cols">
+        <div class="stat-block"><h3>제품구분별</h3><div id="chart-product"></div></div>
+        <div class="stat-block"><h3>불량유형별</h3><div id="chart-type"></div></div>
+        <div class="stat-block"><h3>상태별</h3><div id="chart-status"></div></div>
+      </div>
+      <div style="margin-top:22px; max-width:480px;">
+        <div class="stat-block"><h3>고객사별 불량 건수 (상위)</h3><ol class="rank-list" id="rank-customer"></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="color:var(--ink-soft); font-size:12px; text-align:center; padding:10px 0 30px;" class="no-print">
+    데이터는 이 브라우저(localStorage)에만 저장됩니다. 백업은 'CSV 내보내기'를 이용하세요.
+  </footer>
+</div>
+
+<!-- ======================= 등록/수정 모달 ======================= -->
+<div class="modal-overlay" id="modal-form" role="dialog" aria-modal="true" aria-labelledby="form-title">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="form-title">불량 등록</h2>
+      <button class="close-x" data-close aria-label="닫기">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="defect-form" novalidate>
+        <input type="hidden" id="fld-id">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fld-no">접수번호</label>
+            <input type="text" id="fld-no" readonly>
+            <span class="hint">자동 생성 (YYYYMMDD-NNN)</span>
+          </div>
+          <div class="field">
+            <label for="fld-date">접수일</label>
+            <input type="date" id="fld-date">
+          </div>
+          <div class="field">
+            <label for="fld-customer" class="req">고객사</label>
+            <input type="text" id="fld-customer" placeholder="예) 삼성전자">
+            <span class="err-text">고객사를 입력하세요.</span>
+          </div>
+          <div class="field">
+            <label for="fld-product">제품구분</label>
+            <select id="fld-product">
+              <option>magazine</option><option>cassette</option><option>ring</option><option>pin boat</option><option>기타</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fld-lot">LOT</label>
+            <input type="text" id="fld-lot" placeholder="예) L240115-02">
+          </div>
+          <div class="field">
+            <label for="fld-qty">수량</label>
+            <input type="number" id="fld-qty" min="0" step="1" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="fld-type">불량유형</label>
+            <select id="fld-type">
+              <option>치수불량</option><option>외관불량</option><option>재질불량</option><option>포장불량</option><option>기타</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fld-owner">담당자</label>
+            <input type="text" id="fld-owner" placeholder="예) 김영업">
+          </div>
+          <div class="field full">
+            <label for="fld-desc" class="req">불량내용 (무슨 문제인지)</label>
+            <textarea id="fld-desc" placeholder="고객이 접수한 불량 증상을 구체적으로 기재"></textarea>
+            <span class="err-text">불량내용을 입력하세요.</span>
+          </div>
+          <div class="field full">
+            <label for="fld-cause">발생원인 (원인 분석)</label>
+            <textarea id="fld-cause" placeholder="원인 분석 결과"></textarea>
+          </div>
+          <div class="field">
+            <label for="fld-action">조치방법</label>
+            <select id="fld-action">
+              <option>교체</option><option>재작업</option><option>반품</option><option>특채(수락)</option><option>기타</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fld-status">상태</label>
+            <select id="fld-status">
+              <option>접수</option><option>분석중</option><option>조치중</option><option>완료</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="fld-actiondesc">조치내용 (어떻게 해결했는지)</label>
+            <textarea id="fld-actiondesc" placeholder="실제 조치 결과 및 고객 회신 내용"></textarea>
+          </div>
+          <div class="field">
+            <label for="fld-donedate">완료일</label>
+            <input type="date" id="fld-donedate">
+            <span class="hint">완료 시에만 입력</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>취소</button>
+      <button class="btn btn-primary" id="btn-save">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= 상세 보기 모달 ======================= -->
+<div class="modal-overlay" id="modal-detail" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="detail-title">불량 상세</h2>
+      <button class="close-x" data-close aria-label="닫기">&times;</button>
+    </div>
+    <div class="modal-body" id="detail-body"></div>
+    <div class="modal-foot no-print">
+      <button class="btn" data-close>닫기</button>
+      <button class="btn btn-primary" id="btn-detail-edit">수정</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   영업부 불량 관리 시스템 - 메인 로직 (순수 바닐라 JS)
+   데이터는 localStorage 에 JSON 으로 저장됩니다.
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "ntt_defects_v1";
+
+  // 선택 옵션 상수
+  var PRODUCTS = ["magazine", "cassette", "ring", "pin boat", "기타"];
+  var TYPES    = ["치수불량", "외관불량", "재질불량", "포장불량", "기타"];
+  var STATUSES = ["접수", "분석중", "조치중", "완료"];
+
+  // 현재 메모리상의 데이터
+  var records = [];
+
+  /* ---------------------------------------------------------------------
+     유틸 함수
+     --------------------------------------------------------------------- */
+
+  // 오늘 날짜를 YYYY-MM-DD 로 반환 (로컬 기준)
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  // 접수번호 자동 생성: YYYYMMDD-NNN (해당 날짜의 일련번호)
+  function genReceiptNo(dateStr) {
+    var ymd = (dateStr || todayStr()).replace(/-/g, ""); // YYYYMMDD
+    var prefix = ymd + "-";
+    var maxSeq = 0;
+    records.forEach(function (r) {
+      if (r.no && r.no.indexOf(prefix) === 0) {
+        var seq = parseInt(r.no.slice(prefix.length), 10);
+        if (!isNaN(seq) && seq > maxSeq) maxSeq = seq;
+      }
+    });
+    return prefix + String(maxSeq + 1).padStart(3, "0");
+  }
+
+  // 고유 ID (내부용)
+  function uid() {
+    return "id" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  }
+
+  // HTML 이스케이프 (XSS 방지 + 안전한 렌더링)
+  function esc(s) {
+    s = (s == null) ? "" : String(s);
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // 숫자에 천단위 콤마 (한국식)
+  function numfmt(n) {
+    if (n === "" || n == null || isNaN(n)) return "";
+    return Number(n).toLocaleString("ko-KR");
+  }
+
+  /* ---------------------------------------------------------------------
+     저장 / 불러오기
+     --------------------------------------------------------------------- */
+  function save() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    } catch (e) {
+      alert("저장 중 오류가 발생했습니다: " + e.message);
+    }
+  }
+
+  function load() {
+    var raw = null;
+    try { raw = localStorage.getItem(STORAGE_KEY); } catch (e) { raw = null; }
+    if (raw) {
+      try {
+        var parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) { records = parsed; return; }
+      } catch (e) { /* 파싱 실패 시 샘플로 */ }
+    }
+    // 최초 실행(빈 저장소)이면 샘플 데이터 시드
+    seedSample();
+    save();
+  }
+
+  /* ---------------------------------------------------------------------
+     초기 샘플 데이터 (문제→원인→조치 흐름이 보이도록)
+     --------------------------------------------------------------------- */
+  function seedSample() {
+    records = [
+      {
+        id: uid(), no: "20260902-001", date: "2026-09-02", customer: "삼성전자",
+        product: "magazine", lot: "L260828-11", qty: 500, type: "치수불량",
+        desc: "매거진 슬롯 간 피치가 규격(2.54mm) 대비 +0.08mm 초과하여 자동 핸들러 로딩 시 걸림 발생.",
+        cause: "사출 금형 냉각 불균일로 수축률 편차 발생. 특정 캐비티(3번) 치수 산포 큼.",
+        action: "반품", actiondesc: "불량 LOT 전량 반품 회수 후 금형 3번 캐비티 보정·재작업하여 양품 재납품 완료. 고객 수입검사 합격.",
+        owner: "김영업", status: "완료", doneDate: "2026-09-18"
+      },
+      {
+        id: uid(), no: "20260915-001", date: "2026-09-15", customer: "SK하이닉스",
+        product: "cassette", lot: "L260910-04", qty: 120, type: "외관불량",
+        desc: "카세트 측면에 길이 3~5mm 스크래치 다수 확인. 웨이퍼 접촉면은 아니나 외관 클레임.",
+        cause: "포장 공정에서 제품 간 완충재 미흡으로 운송 중 마찰 스크래치 발생 추정.",
+        action: "특채(수락)", actiondesc: "기능·클린도 영향 없음을 데이터로 설명, 고객 품질팀 특채 수락. 차기 LOT부터 개별 비닐 포장 적용키로 합의.",
+        owner: "이수출", status: "완료", doneDate: "2026-09-24"
+      },
+      {
+        id: uid(), no: "20261012-001", date: "2026-10-12", customer: "DB하이텍",
+        product: "ring", lot: "L261005-02", qty: 80, type: "포장불량",
+        desc: "링 포장 트레이 고정 불량으로 입고 시 제품 3개 이탈·접촉. 고객 입고검사에서 지적.",
+        cause: "트레이 규격과 제품 외경 매칭 오류. 구형 트레이 재고 혼입.",
+        action: "재작업", actiondesc: "전용 트레이로 재포장하여 재발송 진행 중. 구형 트레이 재고 폐기 조치.",
+        owner: "박품질", status: "조치중", doneDate: ""
+      },
+      {
+        id: uid(), no: "20261028-001", date: "2026-10-28", customer: "앰코테크놀로지",
+        product: "pin boat", lot: "L261020-07", qty: 30, type: "재질불량",
+        desc: "핀보트 사용 중 고온 공정(1100℃)에서 핀 변색 및 미세 크랙 발생 클레임.",
+        cause: "석영 순도 분석 진행 중. 원소재 입고 스펙 및 열처리 이력 조사 필요.",
+        action: "교체", actiondesc: "",
+        owner: "최기술", status: "분석중", doneDate: ""
+      },
+      {
+        id: uid(), no: "20261103-001", date: "2026-11-03", customer: "삼성전자",
+        product: "magazine", lot: "L261030-15", qty: 200, type: "외관불량",
+        desc: "매거진 표면 백화 현상(흰 얼룩) 접수. 세정 후에도 일부 잔존한다는 고객 피드백.",
+        cause: "",
+        action: "교체", actiondesc: "",
+        owner: "김영업", status: "접수", doneDate: ""
+      }
+    ];
+  }
+
+  /* ---------------------------------------------------------------------
+     DOM 참조
+     --------------------------------------------------------------------- */
+  var $ = function (id) { return document.getElementById(id); };
+  var tbody = $("tbody");
+
+  /* ---------------------------------------------------------------------
+     필터 상태 반영된 레코드 목록 반환
+     --------------------------------------------------------------------- */
+  function getFiltered() {
+    var fs = $("f-status").value;
+    var fp = $("f-product").value;
+    var fc = $("f-customer").value;
+    var q  = $("f-search").value.trim().toLowerCase();
+
+    var list = records.filter(function (r) {
+      if (fs && r.status !== fs) return false;
+      if (fp && r.product !== fp) return false;
+      if (fc && r.customer !== fc) return false;
+      if (q) {
+        var hay = (r.desc + " " + r.actiondesc + " " + r.customer + " " + r.cause).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    // 최신순 정렬 (접수일 내림차순, 같으면 접수번호 내림차순)
+    list.sort(function (a, b) {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return a.no < b.no ? 1 : -1;
+    });
+    return list;
+  }
+
+  /* ---------------------------------------------------------------------
+     전체 렌더링
+     --------------------------------------------------------------------- */
+  function renderAll() {
+    renderCustomerFilter();
+    var list = getFiltered();
+    renderTable(list);
+    renderStats();     // 요약 카드는 전체 기준
+    renderCharts();    // 통계는 전체 기준
+  }
+
+  // 고객사 필터 옵션 채우기 (현재 선택값 유지)
+  function renderCustomerFilter() {
+    var sel = $("f-customer");
+    var cur = sel.value;
+    var names = [];
+    records.forEach(function (r) { if (r.customer && names.indexOf(r.customer) === -1) names.push(r.customer); });
+    names.sort();
+    sel.innerHTML = '<option value="">전체</option>' +
+      names.map(function (n) { return '<option value="' + esc(n) + '">' + esc(n) + '</option>'; }).join("");
+    // 기존 선택값이 아직 존재하면 유지
+    if (names.indexOf(cur) !== -1) sel.value = cur;
+  }
+
+  // 목록 테이블 렌더
+  function renderTable(list) {
+    $("list-count").textContent = "(" + list.length + "건)";
+    if (!list.length) {
+      tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">표시할 불량 내역이 없습니다.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = list.map(function (r) {
+      var shortDesc = r.desc.length > 36 ? r.desc.slice(0, 36) + "…" : r.desc;
+      return '<tr data-id="' + r.id + '">' +
+        '<td><strong>' + esc(r.no) + '</strong></td>' +
+        '<td>' + esc(r.date) + '</td>' +
+        '<td>' + esc(r.customer) + '</td>' +
+        '<td><span class="tag">' + esc(r.product) + '</span></td>' +
+        '<td><span class="tag">' + esc(r.type) + '</span></td>' +
+        '<td>' + esc(shortDesc) + '</td>' +
+        '<td>' + esc(r.owner) + '</td>' +
+        '<td><span class="badge s-' + esc(r.status) + '">' + esc(r.status) + '</span></td>' +
+        '<td class="no-print"><div class="row-actions">' +
+          '<button class="btn btn-sm" data-act="edit" data-id="' + r.id + '">수정</button>' +
+          '<button class="btn btn-sm btn-danger" data-act="del" data-id="' + r.id + '">삭제</button>' +
+        '</div></td>' +
+      '</tr>';
+    }).join("");
+  }
+
+  /* ---------------------------------------------------------------------
+     요약 카드 (전체 기준)
+     --------------------------------------------------------------------- */
+  function renderStats() {
+    var total = records.length;
+    var progress = 0, done = 0, month = 0;
+    var now = new Date();
+    var ymPrefix = now.getFullYear() + "-" + pad(now.getMonth() + 1); // YYYY-MM
+    records.forEach(function (r) {
+      if (r.status === "완료") done++; else progress++;
+      if (r.date && r.date.indexOf(ymPrefix) === 0) month++;
+    });
+    $("stat-total").textContent = total;
+    $("stat-progress").textContent = progress;
+    $("stat-done").textContent = done;
+    $("stat-month").textContent = month;
+  }
+
+  /* ---------------------------------------------------------------------
+     통계 막대 (CSS width 기반, 차트 라이브러리 없음)
+     --------------------------------------------------------------------- */
+  function countBy(keyFn, keys) {
+    var map = {};
+    keys.forEach(function (k) { map[k] = 0; });
+    records.forEach(function (r) {
+      var k = keyFn(r);
+      if (map[k] == null) map[k] = 0;
+      map[k]++;
+    });
+    return map;
+  }
+
+  function barChart(containerId, map, orderKeys) {
+    var max = 0;
+    orderKeys.forEach(function (k) { if (map[k] > max) max = map[k]; });
+    var html = orderKeys.map(function (k, i) {
+      var v = map[k] || 0;
+      var pct = max > 0 ? Math.round((v / max) * 100) : 0;
+      return '<div class="bar-row">' +
+        '<span class="bar-label">' + esc(k) + '</span>' +
+        '<span class="bar-track"><span class="bar-fill c' + (i % 5) + '" style="width:' + pct + '%"></span></span>' +
+        '<span class="bar-val">' + v + '</span>' +
+      '</div>';
+    }).join("");
+    $(containerId).innerHTML = html;
+  }
+
+  function renderCharts() {
+    barChart("chart-product", countBy(function (r) { return r.product; }, PRODUCTS), PRODUCTS);
+    barChart("chart-type",    countBy(function (r) { return r.type; }, TYPES), TYPES);
+    barChart("chart-status",  countBy(function (r) { return r.status; }, STATUSES), STATUSES);
+
+    // 고객사별 랭킹
+    var byCust = {};
+    records.forEach(function (r) { if (r.customer) byCust[r.customer] = (byCust[r.customer] || 0) + 1; });
+    var arr = Object.keys(byCust).map(function (k) { return { name: k, n: byCust[k] }; });
+    arr.sort(function (a, b) { return b.n - a.n; });
+    arr = arr.slice(0, 8);
+    var rankEl = $("rank-customer");
+    if (!arr.length) {
+      rankEl.innerHTML = '<li style="color:var(--ink-soft)">데이터 없음</li>';
+    } else {
+      rankEl.innerHTML = arr.map(function (x, i) {
+        return '<li><span><span class="rk">' + (i + 1) + '.</span>' + esc(x.name) + '</span>' +
+               '<strong>' + x.n + '건</strong></li>';
+      }).join("");
+    }
+  }
+
+  /* ---------------------------------------------------------------------
+     등록/수정 모달
+     --------------------------------------------------------------------- */
+  var formModal = $("modal-form");
+  var detailModal = $("modal-detail");
+
+  function openModal(el) { el.classList.add("open"); }
+  function closeModal(el) { el.classList.remove("open"); }
+
+  // 모든 .field 의 에러 표시 제거
+  function clearErrors() {
+    var fields = document.querySelectorAll("#defect-form .field");
+    fields.forEach(function (f) { f.classList.remove("error"); });
+  }
+
+  // 신규 등록 폼 열기
+  function openNew() {
+    clearErrors();
+    $("form-title").textContent = "불량 등록";
+    $("fld-id").value = "";
+    $("fld-date").value = todayStr();
+    $("fld-no").value = genReceiptNo(todayStr());
+    $("fld-customer").value = "";
+    $("fld-product").value = "magazine";
+    $("fld-lot").value = "";
+    $("fld-qty").value = "";
+    $("fld-type").value = "치수불량";
+    $("fld-owner").value = "";
+    $("fld-desc").value = "";
+    $("fld-cause").value = "";
+    $("fld-action").value = "교체";
+    $("fld-status").value = "접수";
+    $("fld-actiondesc").value = "";
+    $("fld-donedate").value = "";
+    openModal(formModal);
+    $("fld-customer").focus();
+  }
+
+  // 기존 레코드 수정 폼 열기
+  function openEdit(id) {
+    var r = records.find(function (x) { return x.id === id; });
+    if (!r) return;
+    clearErrors();
+    $("form-title").textContent = "불량 수정";
+    $("fld-id").value = r.id;
+    $("fld-date").value = r.date;
+    $("fld-no").value = r.no;
+    $("fld-customer").value = r.customer;
+    $("fld-product").value = r.product;
+    $("fld-lot").value = r.lot;
+    $("fld-qty").value = (r.qty === "" || r.qty == null) ? "" : r.qty;
+    $("fld-type").value = r.type;
+    $("fld-owner").value = r.owner;
+    $("fld-desc").value = r.desc;
+    $("fld-cause").value = r.cause;
+    $("fld-action").value = r.action;
+    $("fld-status").value = r.status;
+    $("fld-actiondesc").value = r.actiondesc;
+    $("fld-donedate").value = r.doneDate || "";
+    closeModal(detailModal);
+    openModal(formModal);
+    $("fld-customer").focus();
+  }
+
+  // 저장 처리 (등록 또는 수정)
+  function saveForm() {
+    clearErrors();
+    var id = $("fld-id").value;
+    var customer = $("fld-customer").value.trim();
+    var desc = $("fld-desc").value.trim();
+
+    // 필수 검증: 고객사, 불량내용
+    var ok = true;
+    if (!customer) { $("fld-customer").closest(".field").classList.add("error"); ok = false; }
+    if (!desc)     { $("fld-desc").closest(".field").classList.add("error"); ok = false; }
+    if (!ok) return;
+
+    var qtyRaw = $("fld-qty").value;
+    var payload = {
+      date: $("fld-date").value || todayStr(),
+      customer: customer,
+      product: $("fld-product").value,
+      lot: $("fld-lot").value.trim(),
+      qty: qtyRaw === "" ? "" : Number(qtyRaw),
+      type: $("fld-type").value,
+      desc: desc,
+      cause: $("fld-cause").value.trim(),
+      action: $("fld-action").value,
+      actiondesc: $("fld-actiondesc").value.trim(),
+      owner: $("fld-owner").value.trim(),
+      status: $("fld-status").value,
+      doneDate: $("fld-donedate").value || ""
+    };
+
+    if (id) {
+      // 수정
+      var idx = records.findIndex(function (x) { return x.id === id; });
+      if (idx !== -1) {
+        payload.id = id;
+        payload.no = records[idx].no; // 접수번호 유지
+        records[idx] = payload;
+      }
+    } else {
+      // 신규
+      payload.id = uid();
+      payload.no = genReceiptNo(payload.date);
+      records.push(payload);
+    }
+    save();
+    closeModal(formModal);
+    renderAll();
+  }
+
+  // 삭제
+  function removeRecord(id) {
+    var r = records.find(function (x) { return x.id === id; });
+    if (!r) return;
+    if (!confirm("접수번호 " + r.no + " (" + r.customer + ") 내역을 삭제하시겠습니까?")) return;
+    records = records.filter(function (x) { return x.id !== id; });
+    save();
+    renderAll();
+  }
+
+  /* ---------------------------------------------------------------------
+     상세 보기
+     --------------------------------------------------------------------- */
+  function openDetail(id) {
+    var r = records.find(function (x) { return x.id === id; });
+    if (!r) return;
+    var body = $("detail-body");
+    body.setAttribute("data-id", r.id);
+
+    function item(k, v, full) {
+      return '<div class="detail-item' + (full ? ' full' : '') + '">' +
+        '<div class="dk">' + esc(k) + '</div><div class="dv">' + (v || '<span style="color:var(--ink-soft)">-</span>') + '</div></div>';
+    }
+
+    body.innerHTML =
+      '<div class="detail-grid">' +
+        item("접수번호", "<strong>" + esc(r.no) + "</strong>") +
+        item("상태", '<span class="badge s-' + esc(r.status) + '">' + esc(r.status) + '</span>') +
+        item("접수일", esc(r.date)) +
+        item("완료일", esc(r.doneDate)) +
+        item("고객사", esc(r.customer)) +
+        item("담당자", esc(r.owner)) +
+        item("제품구분", esc(r.product)) +
+        item("불량유형", esc(r.type)) +
+        item("LOT", esc(r.lot)) +
+        item("수량", r.qty === "" || r.qty == null ? "" : numfmt(r.qty) + " 개") +
+      '</div>' +
+      '<div style="margin-top:18px;"><div class="dk" style="font-size:12px;color:var(--ink-soft);font-weight:700;margin-bottom:6px;">처리 흐름 (문제 → 원인 → 조치)</div>' +
+      '<div class="flow">' +
+        '<div class="flow-step"><div class="fs-title"><span class="dot p"></span>① 불량내용 (문제)</div><div class="fs-body">' + esc(r.desc) + '</div></div>' +
+        '<div class="flow-step"><div class="fs-title"><span class="dot c"></span>② 발생원인 (분석)</div><div class="fs-body">' + (esc(r.cause) || '<span style="color:var(--ink-soft)">분석 전</span>') + '</div></div>' +
+        '<div class="flow-step"><div class="fs-title"><span class="dot a"></span>③ 조치 [' + esc(r.action) + ']</div><div class="fs-body">' + (esc(r.actiondesc) || '<span style="color:var(--ink-soft)">조치 전</span>') + '</div></div>' +
+      '</div></div>';
+
+    openModal(detailModal);
+  }
+
+  /* ---------------------------------------------------------------------
+     CSV 내보내기 / 가져오기
+     --------------------------------------------------------------------- */
+  var CSV_HEADERS = [
+    ["no", "접수번호"], ["date", "접수일"], ["customer", "고객사"], ["product", "제품구분"],
+    ["lot", "LOT"], ["qty", "수량"], ["type", "불량유형"], ["desc", "불량내용"],
+    ["cause", "발생원인"], ["action", "조치방법"], ["actiondesc", "조치내용"],
+    ["owner", "담당자"], ["status", "상태"], ["doneDate", "완료일"]
+  ];
+
+  // CSV 한 셀 이스케이프
+  function csvCell(v) {
+    v = (v == null) ? "" : String(v);
+    if (/[",\n\r]/.test(v)) return '"' + v.replace(/"/g, '""') + '"';
+    return v;
+  }
+
+  function exportCSV() {
+    var list = getFiltered(); // 현재 필터된 목록 내보내기
+    var lines = [];
+    lines.push(CSV_HEADERS.map(function (h) { return csvCell(h[1]); }).join(","));
+    list.forEach(function (r) {
+      lines.push(CSV_HEADERS.map(function (h) { return csvCell(r[h[0]]); }).join(","));
+    });
+    // UTF-8 BOM 추가 → Excel 에서 한글 깨짐 방지
+    var csv = "﻿" + lines.join("\r\n");
+    var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "불량관리_" + todayStr() + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // 간단한 CSV 파서 (따옴표/개행 포함 처리)
+  function parseCSV(text) {
+    // BOM 제거
+    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+    var rows = [];
+    var row = [];
+    var cur = "";
+    var inQ = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (inQ) {
+        if (ch === '"') {
+          if (text[i + 1] === '"') { cur += '"'; i++; }
+          else inQ = false;
+        } else cur += ch;
+      } else {
+        if (ch === '"') inQ = true;
+        else if (ch === ",") { row.push(cur); cur = ""; }
+        else if (ch === "\n") { row.push(cur); rows.push(row); row = []; cur = ""; }
+        else if (ch === "\r") { /* 무시 */ }
+        else cur += ch;
+      }
+    }
+    // 마지막 셀/행 반영
+    if (cur !== "" || row.length) { row.push(cur); rows.push(row); }
+    return rows;
+  }
+
+  function importCSV(file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      try {
+        var rows = parseCSV(e.target.result);
+        if (!rows.length) { alert("CSV 내용이 비어 있습니다."); return; }
+
+        // 헤더 행으로 컬럼 매핑 (한글 라벨 또는 영문 키 모두 허용)
+        var header = rows[0];
+        var colIndex = {};
+        header.forEach(function (label, idx) {
+          var trimmed = label.trim();
+          CSV_HEADERS.forEach(function (h) {
+            if (trimmed === h[1] || trimmed === h[0]) colIndex[h[0]] = idx;
+          });
+        });
+
+        if (colIndex.desc == null && colIndex.customer == null) {
+          alert("CSV 헤더를 인식할 수 없습니다. 내보내기한 파일 형식을 사용하세요.");
+          return;
+        }
+
+        var imported = [];
+        for (var r = 1; r < rows.length; r++) {
+          var cells = rows[r];
+          if (!cells || cells.join("").trim() === "") continue; // 빈 줄 skip
+          function get(key) { return colIndex[key] != null ? (cells[colIndex[key]] || "").trim() : ""; }
+          var rec = {
+            id: uid(),
+            no: get("no"),
+            date: get("date") || todayStr(),
+            customer: get("customer"),
+            product: get("product") || "기타",
+            lot: get("lot"),
+            qty: get("qty") === "" ? "" : Number(get("qty").replace(/,/g, "")),
+            type: get("type") || "기타",
+            desc: get("desc"),
+            cause: get("cause"),
+            action: get("action") || "기타",
+            actiondesc: get("actiondesc"),
+            owner: get("owner"),
+            status: get("status") || "접수",
+            doneDate: get("doneDate")
+          };
+          if (!rec.no) rec.no = genReceiptNo(rec.date);
+          imported.push(rec);
+        }
+
+        if (!imported.length) { alert("가져올 데이터 행이 없습니다."); return; }
+
+        var mode = confirm(
+          imported.length + "건을 가져옵니다.\n\n[확인] = 기존 데이터에 병합(추가)\n[취소] = 기존 데이터를 모두 지우고 교체"
+        );
+        if (mode) {
+          // 병합: 동일 접수번호는 교체, 신규는 추가
+          imported.forEach(function (ni) {
+            var idx = records.findIndex(function (x) { return x.no === ni.no; });
+            if (idx !== -1) { ni.id = records[idx].id; records[idx] = ni; }
+            else records.push(ni);
+          });
+        } else {
+          records = imported;
+        }
+        save();
+        renderAll();
+        alert("가져오기 완료: " + imported.length + "건 처리되었습니다.");
+      } catch (err) {
+        alert("CSV 가져오기 실패: " + err.message);
+      }
+    };
+    reader.readAsText(file, "utf-8");
+  }
+
+  /* ---------------------------------------------------------------------
+     이벤트 바인딩
+     --------------------------------------------------------------------- */
+  function bindEvents() {
+    // 상단 버튼
+    $("btn-new").addEventListener("click", openNew);
+    $("btn-save").addEventListener("click", saveForm);
+    $("btn-export").addEventListener("click", exportCSV);
+    $("btn-print").addEventListener("click", function () { window.print(); });
+
+    $("btn-import").addEventListener("click", function () { $("file-import").click(); });
+    $("file-import").addEventListener("change", function (e) {
+      if (e.target.files && e.target.files[0]) importCSV(e.target.files[0]);
+      e.target.value = ""; // 같은 파일 재선택 가능하도록 초기화
+    });
+
+    $("btn-seed").addEventListener("click", function () {
+      if (confirm("현재 데이터를 모두 지우고 샘플 데이터로 초기화하시겠습니까?")) {
+        seedSample(); save(); renderAll();
+      }
+    });
+    $("btn-clear").addEventListener("click", function () {
+      if (confirm("정말로 모든 불량 데이터를 삭제하시겠습니까? (복구 불가)")) {
+        records = []; save(); renderAll();
+      }
+    });
+
+    // 필터/검색
+    ["f-status", "f-product", "f-customer"].forEach(function (idc) {
+      $(idc).addEventListener("change", function () { renderTable(getFiltered()); });
+    });
+    $("f-search").addEventListener("input", function () { renderTable(getFiltered()); });
+
+    // 테이블 클릭 (행=상세, 버튼=수정/삭제) - 이벤트 위임
+    tbody.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-act]");
+      if (btn) {
+        e.stopPropagation();
+        var bid = btn.getAttribute("data-id");
+        if (btn.getAttribute("data-act") === "edit") openEdit(bid);
+        else if (btn.getAttribute("data-act") === "del") removeRecord(bid);
+        return;
+      }
+      var tr = e.target.closest("tr[data-id]");
+      if (tr) openDetail(tr.getAttribute("data-id"));
+    });
+
+    // 상세 → 수정 버튼
+    $("btn-detail-edit").addEventListener("click", function () {
+      var id = $("detail-body").getAttribute("data-id");
+      if (id) openEdit(id);
+    });
+
+    // 접수일 변경 시 신규 등록이면 접수번호 재생성
+    $("fld-date").addEventListener("change", function () {
+      if (!$("fld-id").value) $("fld-no").value = genReceiptNo($("fld-date").value);
+    });
+    // 상태를 완료로 바꾸면 완료일 기본값 세팅
+    $("fld-status").addEventListener("change", function () {
+      if (this.value === "완료" && !$("fld-donedate").value) $("fld-donedate").value = todayStr();
+    });
+
+    // 모달 닫기 (data-close 버튼 + 오버레이 바깥 클릭)
+    document.querySelectorAll("[data-close]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        closeModal(formModal); closeModal(detailModal);
+      });
+    });
+    [formModal, detailModal].forEach(function (m) {
+      m.addEventListener("click", function (e) { if (e.target === m) closeModal(m); });
+    });
+    // ESC 로 모달 닫기
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { closeModal(formModal); closeModal(detailModal); }
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     시작
+     --------------------------------------------------------------------- */
+  load();
+  bindEvents();
+  renderAll();
+
+})();
+</script>
+</body>
+</html>
