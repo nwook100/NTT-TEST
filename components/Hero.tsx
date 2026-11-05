@@ -30,11 +30,6 @@ const Hero: React.FC = () => {
           <p className="text-xl text-zinc-400 mb-10 max-w-xl">
             최고의 PUBG 경쟁을 경험해 보세요. NTT는 여러분의 게임 실력을 한 단계 끌어올릴 수 있는 플랫폼, 전략, 그리고 커뮤니티를 제공합니다.
           </p>
-          
-          <a 
-            href="#about" 
-          >
-          </a>
         </div>
       </div>
 
