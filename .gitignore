@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Daum→Slack 로컬 설정/상태 파일
+daum-to-slack/.env
+daum-to-slack/state.json
+daum-to-slack/run.log
