@@ -27,12 +27,14 @@ const Hero: React.FC = () => {
       {/* Spline Background */}
       <div className="absolute inset-0 z-0">
         <spline-viewer url="https://prod.spline.design/XiXJtCsetFhRc5wj/scene.splinecode"></spline-viewer>
+        {/* Darken the left side so the headline and copy stay readable over the 3D scene */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-[#050505]/40 to-transparent pointer-events-none"></div>
       </div>
 
       {/* Hero Content Overlay */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] tracking-tight mb-8 break-words">
             WE TURN <span className="text-[#ff6b35]">SKILL</span> <br />
             INTO GLOBAL <br />
             <span className="text-zinc-700">DOMINANCE</span>

@@ -17,6 +17,8 @@ const FAQ: React.FC = () => {
         <img 
           src="https://cafeptthumb-phinf.pstatic.net/MjAyNjAxMTFfMjY3/MDAxNzY4MDk1NTcwODAx.nKZv04kqHjfifZ4LgYArboyHFFok7qCDAoNmNDQ6l5Mg.i-KYFGQFn6cJiPm9CekniCGvlrgdcHiQsaf-pnlCNaMg.JPEG/unnamed_%284%29.jpg?type=w1600" 
           className="rounded-2xl grayscale object-cover w-full h-full min-h-[400px]" 
+          loading="lazy"
+          
           alt="FAQ Illustration"
         />
       </div>
@@ -27,16 +29,19 @@ const FAQ: React.FC = () => {
             className="border-b border-white/10 pb-4"
           >
             <button 
+              type="button"
               className="w-full flex justify-between items-center py-4 text-left group"
+              aria-expanded={openIndex === idx}
+              aria-controls={`faq-answer-${idx}`}
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
             >
               <span className={`text-xl font-bold ${openIndex === idx ? 'text-[#ff6b35]' : 'text-white'} group-hover:text-[#ff6b35] transition-colors`}>
                 {item.q}
               </span>
-              <span className="text-2xl">{openIndex === idx ? '−' : '+'}</span>
+              <span className="text-2xl" aria-hidden="true">{openIndex === idx ? '−' : '+'}</span>
             </button>
             {openIndex === idx && (
-              <div className="pb-4 text-zinc-400 leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
+              <div id={`faq-answer-${idx}`} className="pb-4 text-zinc-400 leading-relaxed">
                 {item.a}
               </div>
             )}

@@ -16,19 +16,12 @@ export interface FeatureItem {
   icon?: string;
 }
 
-export interface PlanItem {
-  name: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  isHighlighted?: boolean;
-}
-
 export interface ArticleItem {
   id: string;
   title: string;
   category: string;
   date: string;
   image: string;
+  /** Optional external link (e.g. a cafe post). The card is only clickable when set. */
+  href?: string;
 }

@@ -55,11 +55,12 @@ const App: React.FC = () => {
             </div>
             
             {/* Image Collage Side */}
-            <div className="relative grid grid-cols-2 gap-4 h-[500px] items-center">
+            <div className="relative grid grid-cols-2 gap-4 h-[380px] sm:h-[500px] items-center">
               <div className="relative z-10 group mt-[-40px]">
                 <img 
                   src="https://cafeptthumb-phinf.pstatic.net/MjAyNjAxMTFfMTQg/MDAxNzY4MTAyNTk0NzEx.ouzBLHMwC9oTDr1PamwQ6o4U8zeprNViBUYya1OVUJgg.V7xWET6XfHMCKjG2PyHCuWlQAEKGx4rwQ4PaCQDTow4g.JPEG/unnamed_%2810%29.jpg?type=w1600" 
                   alt="NTT Activity"
+                  loading="lazy"
                   className="rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700 w-full aspect-[3/4] object-cover shadow-2xl border border-white/10"
                 />
               </div>
@@ -67,6 +68,7 @@ const App: React.FC = () => {
                 <img 
                   src="https://cafeptthumb-phinf.pstatic.net/MjAyNjAxMTFfMjgz/MDAxNzY4MTAyNTk0NzA4.rBiEQaDSDQ7ATFoFTQNuLHmnT8w6bpekASUC150c6tcg.O4pBLfMJed9u1zGuQd1myo34eBgIW7CdBNxTmhmUc3Yg.JPEG/unnamed_%289%29.jpg?type=w1600" 
                   alt="NTT Players"
+                  loading="lazy"
                   className="rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700 w-full aspect-[3/4] object-cover shadow-2xl border border-white/10"
                 />
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#ff6b35]/20 rounded-full blur-2xl -z-10 group-hover:bg-[#ff6b35]/40 transition-colors"></div>
