@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
             NTT CLAN
           </h2>
           <div className="flex flex-col md:flex-row justify-between w-full text-zinc-600 text-[10px] uppercase tracking-[0.2em] gap-4 text-center md:text-left">
-            <p>&copy; 2025 NTT CLAN. ALL RIGHTS RESERVED. BATTLEGROUNDS COMPETITIVE TEAM.</p>
+            <p>&copy; {new Date().getFullYear()} NTT CLAN. ALL RIGHTS RESERVED. BATTLEGROUNDS COMPETITIVE TEAM.</p>
             <p className="hover:text-white transition-colors cursor-help">DESIGNED BY NTT STUDIO IN SEOUL</p>
           </div>
         </div>

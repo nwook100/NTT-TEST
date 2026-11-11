@@ -1,21 +1,31 @@
-
 import React from 'react';
 
-// Declare the custom element for TypeScript to recognize 'spline-viewer' in JSX
-declare global {
+// Register the <spline-viewer> custom element with React 19's JSX namespace.
+// (A global `JSX` namespace declaration would shadow React's own and break every intrinsic tag.)
+declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
-      'spline-viewer': any;
+      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        url?: string;
+      };
     }
   }
 }
+
+const scrollToId = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  e.preventDefault();
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+    window.history.pushState(null, '', `#${id}`);
+  }
+};
 
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen w-full flex flex-col justify-center overflow-hidden">
       {/* Spline Background */}
       <div className="absolute inset-0 z-0">
-        {/* @ts-ignore: Custom element 'spline-viewer' may not be detected by some TS configurations despite the declaration */}
         <spline-viewer url="https://prod.spline.design/XiXJtCsetFhRc5wj/scene.splinecode"></spline-viewer>
       </div>
 
@@ -30,25 +40,43 @@ const Hero: React.FC = () => {
           <p className="text-xl text-zinc-400 mb-10 max-w-xl">
             최고의 PUBG 경쟁을 경험해 보세요. NTT는 여러분의 게임 실력을 한 단계 끌어올릴 수 있는 플랫폼, 전략, 그리고 커뮤니티를 제공합니다.
           </p>
-          
-          <a 
-            href="#about" 
-          >
-          </a>
+
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#about"
+              onClick={(e) => scrollToId(e, 'about')}
+              className="bg-[#ff6b35] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors"
+            >
+              클랜 소개 보기
+            </a>
+            <a
+              href="#faq"
+              onClick={(e) => scrollToId(e, 'faq')}
+              className="border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:border-[#ff6b35] hover:text-[#ff6b35] transition-colors"
+            >
+              가입 문의
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Labeling like the reference */}
-      <div className="absolute bottom-10 left-6 flex items-center gap-10">
+      {/* Bottom label */}
+      <div className="absolute bottom-10 left-6 hidden sm:flex items-center gap-10">
         <div className="flex items-center gap-4">
           <div className="flex -space-x-3">
-             <img src="https://picsum.photos/seed/p1/100" className="w-10 h-10 rounded-full border-2 border-black" alt="Player 1 avatar" />
-             <img src="https://picsum.photos/seed/p2/100" className="w-10 h-10 rounded-full border-2 border-black" alt="Player 2 avatar" />
-             <img src="https://picsum.photos/seed/p3/100" className="w-10 h-10 rounded-full border-2 border-black" alt="Player 3 avatar" />
+            {['N', 'T', 'T'].map((letter, idx) => (
+              <div
+                key={idx}
+                className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center text-xs font-black text-[#ff6b35]"
+                aria-hidden="true"
+              >
+                {letter}
+              </div>
+            ))}
           </div>
           <div className="text-sm">
-            <p className="font-bold">1.2k+</p>
-            <p className="text-zinc-500">Active Applications</p>
+            <p className="font-bold">Since 2020</p>
+            <p className="text-zinc-500">PUBG Kakao Battlegrounds Clan</p>
           </div>
         </div>
       </div>

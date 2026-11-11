@@ -1,5 +1,5 @@
 
-import { NavItem, StatItem, FeatureItem, PlanItem, ArticleItem } from './types';
+import { NavItem, StatItem, FeatureItem, ArticleItem } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: '처음', href: '#home' },
@@ -9,9 +9,9 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const STATS: StatItem[] = [
-  { value: 'Clan level 15', label: '' },
-  { value: 'Clan 보급  S  class', label: '' },
-  { value: '전문 Order 양성 및 운영 ', label: '' },
+  { value: 'Lv. 15', label: 'Clan Level' },
+  { value: 'S', label: 'Clan 보급 등급' },
+  { value: 'Order', label: '전문 오더 양성 및 운영' },
 ];
 
 export const FEATURES: FeatureItem[] = [

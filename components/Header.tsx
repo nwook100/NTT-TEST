@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { NAV_ITEMS } from '../constants';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +11,16 @@ const Header: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close the mobile menu when switching to the desktop layout
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (e.matches) setIsMenuOpen(false);
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -26,10 +36,13 @@ const Header: React.FC = () => {
         window.history.pushState(null, '', '#home');
       }
     }
+    setIsMenuOpen(false);
   };
 
+  const solid = isScrolled || isMenuOpen;
+
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-8'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${solid ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a 
           href="#home" 
@@ -55,15 +68,48 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        <a 
-          href="https://discord.com/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-[#ff6b35] hover:text-white transition-all inline-block"
-        >
-          디스코드 &rarr;
-        </a>
+        <div className="flex items-center gap-3">
+          <a 
+            href="https://discord.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-[#ff6b35] hover:text-white transition-all inline-block"
+          >
+            디스코드 &rarr;
+          </a>
+
+          <button
+            type="button"
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-full border border-white/10 hover:border-[#ff6b35] transition-colors"
+            aria-label={isMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span className={`block h-0.5 w-5 bg-white transition-transform ${isMenuOpen ? 'translate-y-2 rotate-45' : ''}`}></span>
+            <span className={`block h-0.5 w-5 bg-white transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-5 bg-white transition-transform ${isMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}></span>
+          </button>
+        </div>
       </div>
+
+      {isMenuOpen && (
+        <nav id="mobile-nav" className="md:hidden border-t border-white/10 mt-4">
+          <ul className="max-w-7xl mx-auto px-6 py-4 flex flex-col">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={(e) => handleLinkClick(e, item.href)}
+                  className="block py-3 text-lg font-bold text-zinc-200 hover:text-[#ff6b35] transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
