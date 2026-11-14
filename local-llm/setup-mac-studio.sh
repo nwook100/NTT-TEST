@@ -73,6 +73,40 @@ done
 curl -fsS http://127.0.0.1:11434/api/version >/dev/null || die "Ollama 서버가 응답하지 않습니다. 'ollama serve'로 직접 확인하세요."
 ok "Ollama 서버 실행 중 (http://localhost:11434)"
 
+# ---------- 2.5 GPU 메모리 한도 상향 (64GB 이상 기기) ----------
+# macOS 는 기본적으로 통합 메모리의 약 75% 만 GPU 에 허용합니다.
+# 96GB 기기면 72GB 만 쓸 수 있어 gpt-oss:120b(65GB) 같은 큰 모델이 빡빡합니다.
+# 시스템용 12GB 를 남기고 나머지를 GPU 에 허용합니다. (관리자 비밀번호 필요)
+if (( MEM_GB >= 64 )); then
+  log "GPU 메모리 한도 상향"
+  WIRED_MB=$(( (MEM_GB - 12) * 1024 ))
+  CUR_LIMIT="$(sysctl -n iogpu.wired_limit_mb 2>/dev/null || echo 0)"
+  DO_LIMIT=1
+  if (( AUTO_YES == 0 )); then
+    read -r -p "  GPU 사용 가능 메모리를 ${WIRED_MB}MB 로 올릴까요? (sudo 필요) [Y/n] " ans
+    [[ -z "$ans" || "$ans" =~ ^[Yy]$ ]] || DO_LIMIT=0
+  fi
+  if (( DO_LIMIT == 1 )); then
+    sudo sysctl -w iogpu.wired_limit_mb="$WIRED_MB" >/dev/null && ok "현재 세션 적용: ${CUR_LIMIT} → ${WIRED_MB}MB"
+    DAEMON="/Library/LaunchDaemons/com.local.gpu-wired-limit.plist"
+    sudo tee "$DAEMON" >/dev/null <<DAEMON_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.local.gpu-wired-limit</string>
+  <key>ProgramArguments</key>
+  <array><string>/usr/sbin/sysctl</string><string>-w</string><string>iogpu.wired_limit_mb=${WIRED_MB}</string></array>
+  <key>RunAtLoad</key><true/>
+</dict></plist>
+DAEMON_EOF
+    sudo chown root:wheel "$DAEMON" && sudo chmod 644 "$DAEMON"
+    sudo launchctl bootstrap system "$DAEMON" 2>/dev/null || true
+    ok "재부팅 후에도 유지되도록 LaunchDaemon 등록"
+  else
+    warn "GPU 한도 상향을 건너뜁니다. 120B급 모델은 느리거나 로드가 안 될 수 있습니다."
+  fi
+fi
+
 # ---------- 3. 메모리 기준 추천 모델 ----------
 log "메모리 ${MEM_GB}GB 기준 추천 모델 선택"
 MODELS=()

@@ -71,6 +71,22 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 - PPT 목차 짜기, 슬라이드별 핵심 문장 다듬기
 - 개발 공부: 코딩 모델에게 코드 설명 요청, 에러 메시지 붙여 넣고 원인 질문
 
+## 4.5 M5 Ultra 96GB 기준 점검 메모
+
+- 스크립트는 96GB 를 **90GB 이상 구간**으로 판단해 아래 5개를 받습니다. 총 다운로드 약 130GB.
+
+| 모델 | 용량 | 용도 |
+|---|---|---|
+| gpt-oss:120b | 65GB | 복잡한 추론, 긴 문서 분석 (주력) |
+| qwen3.6:35b | 23GB | 한국어 메일, 요약, 번역 (빠름) |
+| qwen3-coder:30b | 19GB | 코딩 공부 |
+| gemma4:31b | 20GB | 한국어 범용, 이미지 입력 가능 |
+| bge-m3 | 1.2GB | PDF 검색용 임베딩 |
+
+- macOS 기본값은 GPU 가 메모리의 약 75%(72GB)만 쓸 수 있습니다. 스크립트가 GPU 한도를 **84GB** 로 올려 gpt-oss:120b 가 여유 있게 올라가도록 합니다. 관리자 비밀번호를 한 번 묻습니다.
+- 모델은 한 번에 하나만 메모리에 올라갑니다. gpt-oss:120b(65GB) 와 qwen3.6:35b(23GB) 를 동시에 쓰면 88GB 로 한도를 넘으니, Open WebUI 에서 모델을 바꾸면 Ollama 가 자동으로 이전 모델을 내립니다.
+- 예상 속도는 gpt-oss:120b 기준 초당 15~30 토큰(추정치, 실측 자료 아직 없음). 일상 업무에는 qwen3.6:35b 가 체감상 훨씬 빠릅니다.
+
 ## 5. 문제 해결
 
 | 증상 | 조치 |
@@ -80,6 +96,7 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 | Open WebUI 3000번 안 열림 | 첫 실행은 2~5분 소요. `tail -f ~/.open-webui/webui.err` 로 로그 확인 |
 | 모델이 너무 느림 | `ollama ps` 로 메모리 확인. 더 작은 모델로 교체 |
 | 디스크 부족 | `ollama rm <모델>` 로 안 쓰는 모델 삭제. 모델은 `~/.ollama/models` 에 저장 |
+| GPU 한도 되돌리기 | `sudo sysctl -w iogpu.wired_limit_mb=0` 후 `sudo rm /Library/LaunchDaemons/com.local.gpu-wired-limit.plist` |
 | 다른 PC에서 접속 안 됨 | 맥 시스템 설정 → 네트워크 → 방화벽에서 포트 허용. `OLLAMA_HOST=0.0.0.0` 설정은 스크립트가 처리 |
 
 ## 6. 삭제 (되돌리기)
