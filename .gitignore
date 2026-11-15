@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# video-auto
+video-auto/.venv/
+video-auto/uv.lock
+__pycache__/
+.pytest_cache/
+_vauto/
