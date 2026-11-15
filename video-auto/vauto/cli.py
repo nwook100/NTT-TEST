@@ -377,6 +377,7 @@ def cmd_voice(args) -> int:
     cfg = config.load(Path(args.project) if args.project else None)
     from . import voice
 
+    voice.load_voice(args.voice or cfg["voice"]["name"])  # 목소리 등록 여부를 먼저 확인 (없으면 여기서 안내)
     langs = args.langs.split(",") if args.langs else list(cfg["project"]["languages"])
     src = args.script_lang or langs[0]
     if src not in langs:
