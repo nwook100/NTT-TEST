@@ -156,6 +156,19 @@ vauto voice ~/Desktop/대본.txt --video ~/Desktop/_vauto/exports/youtube.mp4
 - 한 언어만 다시 만들려면 저장된 대본을 그대로 씁니다: `vauto voice ~/_voice/script.ja.txt --script-lang ja --langs ja --out ~/_voice`
 - MLX 방식에서 오류가 나면 `setup-voice.sh --torch` 로 바꿔 설치하세요. 같은 모델을 PyTorch 로 돌립니다.
 
+## 6.7 말로 시키기 (Hermes Agent)
+
+채팅창의 LLM 은 글로 답만 하지만, [Hermes Agent](https://github.com/NousResearch/hermes-agent) 같은
+에이전트는 터미널 명령을 대신 실행할 수 있습니다. 아래 기술 파일을 넣어 두면
+"이 대본을 내 목소리로 만들어 줘" 같은 말로 `vauto` 를 부를 수 있습니다.
+
+```bash
+mkdir -p ~/.hermes/skills && cp -R ~/NTT-TEST/video-auto/hermes-skill/vauto ~/.hermes/skills/
+```
+
+에이전트는 맥에서 실제 명령을 실행하므로 승인 설정은 기본값(smart)이나 manual 로 두고,
+승인 요청이 뜨면 내용을 읽고 허용하세요.
+
 ## 7. 자동으로 하는 일과 하지 않는 일
 
 **합니다**
