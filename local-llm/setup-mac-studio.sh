@@ -190,7 +190,8 @@ MODELS=()
 if   (( MEM_GB >= 180 )); then
   MODELS=(gpt-oss:120b qwen3.6:35b qwen3.5:122b qwen3-coder:30b gemma4:31b bge-m3)
 elif (( MEM_GB >= 90 )); then
-  MODELS=(gpt-oss:120b qwen3.6:35b qwen3-coder:30b gemma4:31b bge-m3)
+  # 작은 최신 모델부터 받아 바로 쓸 수 있게 하고, 65GB 대형 모델은 마지막에 받습니다.
+  MODELS=(qwen3.8:27b qwen3.6:35b gemma4:31b qwen3-coder:30b bge-m3 gpt-oss:120b)
 elif (( MEM_GB >= 60 )); then
   MODELS=(gpt-oss:20b qwen3.6:35b qwen3-coder:30b gemma4:26b bge-m3)
 elif (( MEM_GB >= 44 )); then
