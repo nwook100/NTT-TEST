@@ -19,11 +19,17 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 ./setup-mac-studio.sh
 ```
 
+모델을 **외장 SSD** 에 저장하려면 볼륨 이름을 넣어 실행합니다. (Finder 에서 보이는 이름, 띄어쓰기 있으면 따옴표)
+
+```bash
+./setup-mac-studio.sh --models-dir "/Volumes/외장SSD이름/ollama"
+```
+
 스크립트가 하는 일:
 
 1. 칩 종류, 통합 메모리, 디스크 여유 확인
 2. Homebrew 설치 (없을 때만)
-3. Ollama 설치 후 백그라운드 서비스로 등록 (재부팅해도 자동 실행)
+3. Ollama 설치 후 백그라운드 서비스로 등록 (재부팅해도 자동 실행, 외장 SSD 마운트를 기다렸다가 시작)
 4. **메모리 용량에 맞는 모델 자동 추천** 후 다운로드 (확인 질문 있음)
 5. Open WebUI 설치 및 로그인 시 자동 시작 등록
 6. 첫 모델로 한국어 응답 테스트
@@ -71,6 +77,27 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 - PPT 목차 짜기, 슬라이드별 핵심 문장 다듬기
 - 개발 공부: 코딩 모델에게 코드 설명 요청, 에러 메시지 붙여 넣고 원인 질문
 
+## 4.3 외장 SSD(Thunderbolt 5) 에 모델 저장하기
+
+모델 파일은 **실행 시작 때 한 번 메모리로 읽어 올리고** 그 뒤로는 디스크를 거의 안 씁니다.
+그래서 외장 SSD 에 두어도 대화 속도(토큰/초)는 내장과 차이가 없고, 모델을 처음 띄울 때 걸리는 시간만 조금 늘어납니다.
+
+| 항목 | 내장 SSD | Thunderbolt 5 NVMe 외장 |
+|---|---|---|
+| 65GB 모델(gpt-oss:120b) 첫 로드 | 약 10~15초 | 약 15~30초 |
+| 로드 후 대화 속도 | 동일 | 동일 |
+| 모델 다운로드 속도 | 인터넷 속도가 병목 | 인터넷 속도가 병목 |
+
+꼭 지킬 것:
+
+1. **APFS 로 포맷** (디스크 유틸리티 → 지우기 → 포맷 APFS). exFAT 는 느리고 권한 오류가 납니다. 스크립트가 포맷을 확인해 경고합니다.
+2. **부팅 전에 연결**해 두기. 스크립트가 등록한 서비스는 SSD 가 올라올 때까지 최대 2분 기다렸다가 Ollama 를 시작합니다.
+3. **사용 중 뽑지 않기.** 모델이 메모리에 올라간 뒤에는 뽑아도 대화는 되지만, 다음 모델을 띄울 때 오류가 납니다.
+4. 시스템 설정 → 에너지 → "가능할 때 하드 디스크 잠자기" 끄기. 켜져 있으면 첫 응답이 수 초 늦어질 수 있습니다.
+5. 외장 하나에 **모델만** 두고, Open WebUI 데이터(계정, 대화 기록)는 내장에 그대로 둡니다. 스크립트 기본값입니다.
+
+이미 내장에 받은 모델이 있으면 스크립트가 외장으로 옮겨 줍니다.
+
 ## 4.5 M5 Ultra 96GB 기준 점검 메모
 
 - 스크립트는 96GB 를 **90GB 이상 구간**으로 판단해 아래 5개를 받습니다. 총 다운로드 약 130GB.
@@ -92,7 +119,8 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 | 증상 | 조치 |
 |---|---|
 | `ollama: command not found` | 터미널 새로 열기. 그래도 안 되면 `eval "$(/opt/homebrew/bin/brew shellenv)"` |
-| 서버 응답 없음 | `brew services restart ollama` |
+| 서버 응답 없음 | `launchctl unload ~/Library/LaunchAgents/com.local.ollama.plist; launchctl load ~/Library/LaunchAgents/com.local.ollama.plist` 또는 로그 `cat ~/.ollama/server.err` |
+| 외장 SSD 를 뺐다 꽂은 뒤 모델 목록이 빔 | 위 명령으로 Ollama 재시작 |
 | Open WebUI 3000번 안 열림 | 첫 실행은 2~5분 소요. `tail -f ~/.open-webui/webui.err` 로 로그 확인 |
 | 모델이 너무 느림 | `ollama ps` 로 메모리 확인. 더 작은 모델로 교체 |
 | 디스크 부족 | `ollama rm <모델>` 로 안 쓰는 모델 삭제. 모델은 `~/.ollama/models` 에 저장 |
@@ -106,10 +134,16 @@ launchctl unload ~/Library/LaunchAgents/com.local.open-webui.plist && rm ~/Libra
 ```
 
 ```bash
-brew services stop ollama && brew uninstall ollama && rm -rf ~/.ollama ~/.open-webui
+launchctl unload ~/Library/LaunchAgents/com.local.ollama.plist && rm ~/Library/LaunchAgents/com.local.ollama.plist ~/.local/bin/ollama-serve.sh
 ```
+
+```bash
+brew uninstall ollama && rm -rf ~/.ollama ~/.open-webui
+```
+
+외장 SSD 에 둔 모델 폴더(`--models-dir` 로 지정한 경로)는 직접 삭제하세요.
 
 ## 파일 설명
 
-- `setup-mac-studio.sh` : 설치 스크립트. `-y` 옵션은 확인 없이 진행, `--no-webui` 는 Ollama만 설치
+- `setup-mac-studio.sh` : 설치 스크립트. `-y` 는 확인 없이 진행, `--no-webui` 는 Ollama만 설치, `--models-dir 경로` 는 모델을 외장 SSD 에 저장
 - `check.sh` : 설치 상태와 모델 목록 점검

@@ -6,17 +6,24 @@
 #    ./setup-mac-studio.sh            # 대화형 (추천 모델 확인 후 설치)
 #    ./setup-mac-studio.sh -y         # 묻지 않고 바로 설치
 #    ./setup-mac-studio.sh --no-webui # Open WebUI 생략, Ollama만
+#    ./setup-mac-studio.sh --models-dir /Volumes/외장SSD/ollama
+#                                     # 모델을 외장 SSD 에 저장 (APFS 권장)
 # =============================================================
 set -euo pipefail
 
 AUTO_YES=0
 INSTALL_WEBUI=1
-for arg in "$@"; do
-  case "$arg" in
+MODELS_DIR=""
+while (( $# )); do
+  case "$1" in
     -y|--yes) AUTO_YES=1 ;;
     --no-webui) INSTALL_WEBUI=0 ;;
-    -h|--help) sed -n '2,10p' "$0"; exit 0 ;;
+    --models-dir) [[ $# -ge 2 ]] || { echo "--models-dir 뒤에 경로가 필요합니다"; exit 1; }; shift; MODELS_DIR="$1" ;;
+    --models-dir=*) MODELS_DIR="${1#*=}" ;;
+    -h|--help) sed -n '2,12p' "$0"; exit 0 ;;
+    *) echo "알 수 없는 옵션: $1"; exit 1 ;;
   esac
+  shift
 done
 
 log()  { printf '\n\033[1;34m[%s]\033[0m %s\n' "$(date +%H:%M:%S)" "$*"; }
@@ -60,18 +67,88 @@ if ! command -v ollama >/dev/null 2>&1; then
 fi
 ok "ollama $(ollama --version 2>/dev/null | head -1)"
 
-# 외부(같은 네트워크 PC)에서도 접속 가능하도록 0.0.0.0 바인딩
-# 로컬 전용으로만 쓸 거면 아래 두 줄을 주석 처리하세요.
-launchctl setenv OLLAMA_HOST "0.0.0.0:11434" 2>/dev/null || true
-grep -q 'OLLAMA_HOST' "$HOME/.zshrc" 2>/dev/null || echo 'export OLLAMA_HOST=0.0.0.0:11434' >> "$HOME/.zshrc"
+# 모델 저장 위치 (기본: ~/.ollama/models, 옵션으로 외장 SSD 지정 가능)
+if [[ -n "$MODELS_DIR" ]]; then
+  VOL="$(df "$(dirname "$MODELS_DIR")" 2>/dev/null | awk 'NR==2 {print $NF}' || true)"
+  [[ -n "$VOL" && -d "$VOL" ]] || die "경로를 찾을 수 없습니다: $MODELS_DIR (외장 SSD 가 연결돼 있나요?)"
+  FS="$(diskutil info "$VOL" 2>/dev/null | awk -F': *' '/File System Personality/ {print $2}' || true)"
+  if [[ "$FS" == *APFS* ]]; then
+    ok "모델 저장 볼륨: $VOL ($FS)"
+  else
+    warn "볼륨 $VOL 포맷이 '${FS:-알 수 없음}' 입니다. exFAT/NTFS 는 느리고 권한 문제가 생깁니다."
+    warn "디스크 유틸리티에서 APFS 로 포맷한 뒤 쓰는 것을 권장합니다."
+    if (( AUTO_YES == 0 )); then
+      read -r -p "  그래도 이 볼륨을 쓸까요? [y/N] " ans
+      [[ "$ans" =~ ^[Yy]$ ]] || die "중단합니다. APFS 포맷 후 다시 실행하세요."
+    fi
+  fi
+  mkdir -p "$MODELS_DIR"
+  VOL_FREE_GB="$(df -g "$VOL" | awk 'NR==2 {print $4}')"
+  ok "외장 볼륨 여유: ${VOL_FREE_GB}GB"
+  DISK_FREE_GB="$VOL_FREE_GB"
+  # 내장에 이미 받은 모델이 있으면 옮기기
+  if [[ -d "$HOME/.ollama/models" && -n "$(ls -A "$HOME/.ollama/models" 2>/dev/null)" ]]; then
+    warn "내장 디스크에 기존 모델이 있습니다. 외장으로 이동합니다 (시간 소요)."
+    rsync -a --remove-source-files "$HOME/.ollama/models/" "$MODELS_DIR/" && find "$HOME/.ollama/models" -type d -empty -delete
+  fi
+else
+  MODELS_DIR="$HOME/.ollama/models"
+fi
 
-brew services restart ollama >/dev/null
-for i in $(seq 1 20); do
+# Ollama 를 우리 LaunchAgent 로 실행 (환경변수를 재부팅 후에도 유지하기 위해 brew services 대신 사용)
+brew services stop ollama >/dev/null 2>&1 || true
+mkdir -p "$HOME/.local/bin" "$HOME/.ollama"
+cat > "$HOME/.local/bin/ollama-serve.sh" <<WRAP_EOF
+#!/bin/bash
+# 외장 SSD 가 마운트될 때까지 최대 120초 대기 후 Ollama 실행
+MODELS_DIR="${MODELS_DIR}"
+for i in \$(seq 1 120); do
+  [[ -d "\$MODELS_DIR" ]] && break
+  sleep 1
+done
+[[ -d "\$MODELS_DIR" ]] || { echo "모델 폴더 없음: \$MODELS_DIR" >&2; exit 1; }
+exec "$(command -v ollama)" serve
+WRAP_EOF
+chmod +x "$HOME/.local/bin/ollama-serve.sh"
+
+# 외부(같은 네트워크 PC)에서도 접속 가능하도록 0.0.0.0 바인딩.
+# 로컬 전용으로만 쓸 거면 OLLAMA_HOST 를 127.0.0.1:11434 로 바꾸세요.
+OLLAMA_PLIST="$HOME/Library/LaunchAgents/com.local.ollama.plist"
+cat > "$OLLAMA_PLIST" <<PLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.local.ollama</string>
+  <key>ProgramArguments</key>
+  <array><string>${HOME}/.local/bin/ollama-serve.sh</string></array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>OLLAMA_HOST</key><string>0.0.0.0:11434</string>
+    <key>OLLAMA_MODELS</key><string>${MODELS_DIR}</string>
+    <key>OLLAMA_KEEP_ALIVE</key><string>30m</string>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>${HOME}/.ollama/server.log</string>
+  <key>StandardErrorPath</key><string>${HOME}/.ollama/server.err</string>
+</dict></plist>
+PLIST_EOF
+launchctl unload "$OLLAMA_PLIST" 2>/dev/null || true
+launchctl load "$OLLAMA_PLIST"
+
+# 터미널에서 'ollama pull/list' 를 칠 때도 같은 모델 폴더를 보도록 셸 환경에도 기록
+grep -q 'OLLAMA_MODELS=' "$HOME/.zshrc" 2>/dev/null && sed -i '' '/OLLAMA_MODELS=/d' "$HOME/.zshrc"
+echo "export OLLAMA_MODELS=\"$MODELS_DIR\"" >> "$HOME/.zshrc"
+export OLLAMA_MODELS="$MODELS_DIR"
+
+for i in $(seq 1 30); do
   curl -fsS http://127.0.0.1:11434/api/version >/dev/null 2>&1 && break
   sleep 1
 done
-curl -fsS http://127.0.0.1:11434/api/version >/dev/null || die "Ollama 서버가 응답하지 않습니다. 'ollama serve'로 직접 확인하세요."
+curl -fsS http://127.0.0.1:11434/api/version >/dev/null || die "Ollama 서버가 응답하지 않습니다. 로그: ~/.ollama/server.err"
 ok "Ollama 서버 실행 중 (http://localhost:11434)"
+ok "모델 저장 위치: $MODELS_DIR"
 
 # ---------- 2.5 GPU 메모리 한도 상향 (64GB 이상 기기) ----------
 # macOS 는 기본적으로 통합 메모리의 약 75% 만 GPU 에 허용합니다.
@@ -190,6 +267,7 @@ cat <<SUMMARY
 
   ───────────────────────────────────────────
    Ollama API   : http://localhost:11434
+   모델 저장 위치 : $MODELS_DIR
    Open WebUI   : http://localhost:3000
    모델 목록     : ollama list
    터미널 채팅   : ollama run <모델명>

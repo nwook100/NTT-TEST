@@ -13,7 +13,7 @@ if command -v ollama >/dev/null 2>&1; then
     echo; echo "-- 설치된 모델 --"; ollama list
     echo; echo "-- 메모리에 올라온 모델 --"; ollama ps
   else
-    echo "서버    : 꺼져 있음 → brew services start ollama"
+    echo "서버    : 꺼져 있음 → launchctl load ~/Library/LaunchAgents/com.local.ollama.plist"
   fi
 else
   echo "미설치 → ./setup-mac-studio.sh"
@@ -26,5 +26,13 @@ else
   echo "응답 없음 (첫 실행은 수 분 소요). 로그: tail -f ~/.open-webui/webui.err"
 fi
 echo
-echo "== 모델 저장 용량 =="
-du -sh ~/.ollama/models 2>/dev/null || echo "모델 폴더 없음"
+echo "== 모델 저장 위치 =="
+MD="$(defaults read ~/Library/LaunchAgents/com.local.ollama.plist EnvironmentVariables 2>/dev/null | awk -F'"' '/OLLAMA_MODELS/ {print $2}')"
+MD="${MD:-${OLLAMA_MODELS:-$HOME/.ollama/models}}"
+echo "경로    : $MD"
+if [[ -d "$MD" ]]; then
+  echo "볼륨    : $(df -h "$MD" | awk 'NR==2 {print $NF" ("$4" 여유)"}')"
+  echo "사용량  : $(du -sh "$MD" 2>/dev/null | cut -f1)"
+else
+  echo "폴더 없음 (외장 SSD 가 빠져 있나요?)"
+fi
