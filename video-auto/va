@@ -3,6 +3,7 @@
 SELF="$0"
 [ -L "$SELF" ] && SELF="$(readlink "$SELF")"
 DIR="$(cd "$(dirname "$SELF")" && pwd)"
+[ -d /opt/homebrew/bin ] && case ":$PATH:" in *":/opt/homebrew/bin:"*) ;; *) PATH="/opt/homebrew/bin:$PATH" ;; esac
 # Homebrew 기본 ffmpeg 에 자막·HDR 필터가 빠져 있을 때 설치하는 전체판을 먼저 찾는다
 [ -d /opt/homebrew/opt/ffmpeg-full/bin ] && PATH="/opt/homebrew/opt/ffmpeg-full/bin:$PATH"
 command -v uv >/dev/null 2>&1 || { echo "uv 가 없습니다. ./setup-video.sh 를 먼저 실행하세요." >&2; exit 1; }

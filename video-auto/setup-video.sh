@@ -12,11 +12,18 @@ warn() { printf '\033[1;33m  ! %s\033[0m\n' "$*"; }
 die()  { printf '\033[1;31m  ✖ %s\033[0m\n' "$*"; exit 1; }
 
 [[ "$(uname -s)" == "Darwin" && "$(uname -m)" == "arm64" ]] || die "Apple Silicon Mac 전용입니다."
+# 설치 직후의 터미널 창은 Homebrew 위치를 아직 모를 수 있다
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 command -v brew >/dev/null 2>&1 || die "Homebrew 가 없습니다. ../local-llm/setup-mac-studio.sh 를 먼저 실행하세요."
 
 log "ffmpeg 설치"
 command -v ffmpeg >/dev/null 2>&1 || brew install ffmpeg
-has_filters() { "$1" -hide_banner -filters 2>/dev/null | grep -q " zscale " && "$1" -hide_banner -filters 2>/dev/null | grep -q " ass "; }
+# 출력을 변수에 담아 검사한다 (파이프로 바로 grep -q 하면 pipefail 때문에 있는 필터도 없다고 나올 수 있음)
+has_filters() {
+  local list
+  list="$("$1" -hide_banner -filters 2>/dev/null || true)"
+  [[ "$list" == *" zscale "* && "$list" == *" ass "* ]]
+}
 if has_filters ffmpeg; then
   ok "ffmpeg 필터 확인 (자막, HDR 변환)"
 else
