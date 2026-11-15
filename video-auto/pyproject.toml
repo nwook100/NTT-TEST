@@ -8,6 +8,21 @@ dependencies = [
   "faster-whisper>=1.0; sys_platform != 'darwin'",
 ]
 
+[project.optional-dependencies]
+# 내 목소리 내레이션. 두 방식은 서로 다른 transformers 버전이 필요해 한 번에 하나만 설치한다.
+voice-mlx = [    # 애플 MLX (Apple Silicon 전용, 빠름)
+  "mlx-audio>=0.6.2; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "soundfile>=0.12",
+  "pykakasi>=2.2",
+]
+voice-torch = [  # PyTorch (어디서나 동작, 느림)
+  "qwen-tts>=0.1",
+  "torch>=2.4",
+  "torchaudio>=2.4",
+  "soundfile>=0.12",
+  "pykakasi>=2.2",
+]
+
 [project.scripts]
 vauto = "vauto.cli:main"
 
@@ -17,3 +32,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["vauto"]
+
+[tool.uv]
+conflicts = [[{ extra = "voice-mlx" }, { extra = "voice-torch" }]]

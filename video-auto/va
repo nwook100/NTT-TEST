@@ -7,4 +7,7 @@ DIR="$(cd "$(dirname "$SELF")" && pwd)"
 # Homebrew 기본 ffmpeg 에 자막·HDR 필터가 빠져 있을 때 설치하는 전체판을 먼저 찾는다
 [ -d /opt/homebrew/opt/ffmpeg-full/bin ] && PATH="/opt/homebrew/opt/ffmpeg-full/bin:$PATH"
 command -v uv >/dev/null 2>&1 || { echo "uv 가 없습니다. ./setup-video.sh 를 먼저 실행하세요." >&2; exit 1; }
-exec uv run --quiet --project "$DIR" vauto "$@"
+# setup-voice.sh 가 고른 목소리 방식(voice-mlx 또는 voice-torch)을 함께 불러온다
+EXTRA=()
+[ -f "$DIR/.voice-extra" ] && EXTRA=(--extra "$(cat "$DIR/.voice-extra")")
+exec uv run --quiet --project "$DIR" "${EXTRA[@]}" vauto "$@"

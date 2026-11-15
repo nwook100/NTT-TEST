@@ -67,6 +67,16 @@ def _run_faster(wav: Path, cfg: dict, language: str | None) -> dict:
     return {"language": info.language if segments else "", "segments": segments}
 
 
+def run_once(wav: Path, cfg: dict, language: str | None = None) -> dict:
+    """저장하지 않고 한 번 받아쓴다 (16kHz 모노 WAV)."""
+    backend = pick_backend(cfg.get("backend", "auto"))
+    if backend == "mlx":
+        return _run_mlx(wav, cfg, language)
+    if backend == "faster":
+        return _run_faster(wav, cfg, language)
+    raise VautoError("음성 인식 엔진이 없습니다 (mlx-whisper 또는 faster-whisper 필요).")
+
+
 def _confidence(result: dict) -> float:
     segs = result["segments"]
     return sum(s.get("lp", 0.0) for s in segs) / len(segs) if segs else -99.0

@@ -62,6 +62,19 @@ DEFAULTS: dict = {
         "title_template_uid": ".../Titles.localized/Bumper:Opener.localized/Basic Title.localized/Basic Title.moti",
         "title_template_name": "Basic Title",
     },
+    "voice": {
+        "backend": "auto",    # auto | mlx (애플 MLX) | torch
+        "mlx_model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+        "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",  # torch 방식용. 가볍게: ...-0.6B-Base
+        "device": "auto",     # auto | mps | cpu
+        "name": "me",         # vauto voice-add 로 등록한 목소리 이름
+        "takes": 3,           # 발음이 대본과 다르면 다시 만드는 횟수
+        "min_match": 0.82,    # 받아쓴 글이 대본과 이만큼 같아야 통과
+        "pause": 0.35,        # 문장 사이 쉼(초)
+        "para_pause": 0.8,    # 문단 사이 쉼(초)
+        "lufs": -16.0,
+        "bg_volume": 0.15,    # 영상에 입힐 때 원래 소리 크기 (0 = 끔)
+    },
     "render": {"enabled": True, "audio_lufs": -14.0, "keep_segments": False},
     "targets": {
         "youtube": {"edit": "main", "size": "source", "fit": "fit", "codec": "hevc",

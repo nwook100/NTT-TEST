@@ -360,6 +360,66 @@ def cmd_run(args) -> int:
     return 0
 
 
+def cmd_voice_add(args) -> int:
+    cfg = config.load(Path(args.project) if args.project else None)
+    from . import voice
+
+    home = voice.add_voice(Path(args.audio).expanduser(), args.name, cfg, args.text or "", args.lang)
+    info = read_json(home / "voice.json")
+    print(f"목소리 '{args.name}' 등록 완료: {home}")
+    print(f"  기준 구간: {info['start']}~{info['end']}초")
+    print(f"  기준 글  : {info['text']}")
+    print("  글이 실제로 읽은 말과 다르면 --text \"정확한 문장\" 을 붙여 다시 등록하세요.")
+    return 0
+
+
+def cmd_voice(args) -> int:
+    cfg = config.load(Path(args.project) if args.project else None)
+    from . import voice
+
+    langs = args.langs.split(",") if args.langs else list(cfg["project"]["languages"])
+    src = args.script_lang or langs[0]
+    if src not in langs:
+        langs.insert(0, src)
+    model = None
+    if not args.no_llm:
+        candidate = llm_mod.LLM(cfg["llm"])
+        ok, msg = candidate.available()
+        if ok:
+            model = candidate
+        elif args.topic or len(langs) > 1:
+            log(f"  LLM 사용 불가: {msg}")
+    if args.script:
+        path = Path(args.script).expanduser()
+        if not path.is_file():
+            raise VautoError(f"대본 파일이 없습니다: {path}")
+        script = path.read_text(encoding="utf-8")
+        out = Path(args.out).expanduser() if args.out else path.parent / "_voice"
+    elif args.topic:
+        if not model:
+            raise VautoError("주제로 대본을 쓰려면 로컬 LLM 이 필요합니다 (ollama 실행 확인).")
+        log("  LLM 이 대본 쓰는 중")
+        script = voice.write_script(model, args.topic, args.seconds, src)
+        out = Path(args.out).expanduser() if args.out else Path.cwd() / "_voice"
+    else:
+        raise VautoError("대본 파일을 주거나 --topic \"주제\" 를 적어 주세요.")
+    video = Path(args.video).expanduser() if args.video else None
+    if video and not video.is_file():
+        raise VautoError(f"영상 파일이 없습니다: {video}")
+    result = voice.run_voice(script, src, langs, args.voice or cfg["voice"]["name"], cfg, out.resolve(),
+                             model, video, verify=not args.no_verify)
+    print(f"\n완료: {out.resolve()}")
+    for lang, sec in result["seconds"].items():
+        print(f"  {lang}: {clock(sec)}")
+    for path in result["files"]:
+        print(f"  {path}")
+    if result["warnings"]:
+        print("확인할 점:")
+        for w in result["warnings"]:
+            print(f"  - {w}")
+    return 0
+
+
 def cmd_doctor(args) -> int:
     cfg = config.load(Path(args.project) if args.project else None)
     ok = True
@@ -404,6 +464,26 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--no-render", action="store_true", help="완성 파일은 만들지 않고 FCPXML·자막만")
     run.add_argument("--open-fcp", action="store_true", help="끝나면 Final Cut Pro 로 열기")
     run.set_defaults(func=cmd_run)
+    va = sub.add_parser("voice-add", help="내 목소리 등록 (녹음 파일 한 번)")
+    va.add_argument("audio", help="내 목소리 녹음 파일 (m4a, wav 등)")
+    va.add_argument("--name", default="me", help="목소리 이름 (기본 me)")
+    va.add_argument("--text", help="녹음에서 읽은 문장. 생략하면 자동으로 받아씀")
+    va.add_argument("--lang", default="ko", help="녹음 언어 (기본 ko)")
+    va.add_argument("--project", help="project.toml 경로")
+    va.set_defaults(func=cmd_voice_add)
+    vo = sub.add_parser("voice", help="대본을 내 목소리 내레이션으로")
+    vo.add_argument("script", nargs="?", help="대본 텍스트 파일")
+    vo.add_argument("--topic", help="대본 대신 주제만 주면 LLM 이 대본을 씀")
+    vo.add_argument("--seconds", type=int, default=40, help="--topic 대본의 목표 길이(초)")
+    vo.add_argument("--script-lang", help="대본 언어 (기본: 첫 번째 언어)")
+    vo.add_argument("--langs", help="만들 언어. 예: ko,en,ja")
+    vo.add_argument("--voice", help="등록한 목소리 이름 (기본 me)")
+    vo.add_argument("--video", help="내레이션을 입힐 영상 파일")
+    vo.add_argument("--out", help="결과 폴더")
+    vo.add_argument("--no-llm", action="store_true", help="번역 없이 대본 언어만")
+    vo.add_argument("--no-verify", action="store_true", help="받아쓰기 검수 생략 (빠름)")
+    vo.add_argument("--project", help="project.toml 경로")
+    vo.set_defaults(func=cmd_voice)
     doc = sub.add_parser("doctor", help="설치 상태 점검")
     doc.add_argument("--project", help="project.toml 경로")
     doc.set_defaults(func=cmd_doctor)

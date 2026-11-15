@@ -29,3 +29,4 @@ video-auto/uv.lock
 __pycache__/
 .pytest_cache/
 _vauto/
+video-auto/.voice-extra

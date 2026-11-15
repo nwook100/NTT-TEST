@@ -223,3 +223,35 @@ def test_translation_must_be_in_target_language():
     assert llm._plausible("Hello", "こんにちは", "ja") and not llm._plausible("Hello", "안녕하세요", "ja")
     assert llm._plausible("2026", "2026", "ko")                                    # 숫자뿐이면 통과
     assert llm._plausible("COEX 전시장", "COEX展示場", "ja")
+
+
+# ---------- 목소리 ----------
+
+def test_split_script_into_sentences():
+    from vauto import voice
+
+    text = "안녕하세요. 오늘은 삿포로입니다!\n눈이 많이 왔어요.\n\n# 메모는 읽지 않는다\n다음에 또 만나요."
+    assert voice.split_script(text) == [["안녕하세요. 오늘은 삿포로입니다!", "눈이 많이 왔어요."], ["다음에 또 만나요."]]
+    long = "첫 번째로 항구를 걷고, 두 번째로 시장에서 해산물을 먹고, 세 번째로 전망대에 올라가서, 마지막으로 온천에 들러 하루를 마무리했습니다."
+    parts = voice.split_script(long, max_units=60)[0]
+    assert len(parts) >= 2 and "".join(parts).replace(" ", "") == long.replace(" ", "")
+    assert voice.split_script("  \n\n ") == []
+
+
+def test_match_ratio_tolerates_spelling_but_catches_wrong_words():
+    from vauto import voice
+
+    assert voice.match_ratio("오늘은 홋카이도의 작은 항구 마을을 걸어 봤습니다.", "오늘은 호카이도의 작은 항구마을을 걸어봤습니다", "ko") > 0.9
+    assert voice.match_ratio("아침 일곱 시, 창밖으로 산이 보였습니다.", "아침 7시 창밖으로 산이 보였습니다", "ko") > 0.82
+    assert voice.match_ratio("The wind was cold, but the sea was beautiful.", "the wind was cold but the sea was beautiful", "en") == 1.0
+    assert voice.match_ratio("바다는 정말 아름다웠어요.", "완전히 다른 말을 하고 있습니다", "ko") < 0.5
+
+
+def test_pick_reference_window():
+    from vauto import voice
+
+    segs = [{"start": 1.0, "end": 4.5, "text": "가", "lp": -0.2}, {"start": 4.8, "end": 9.4, "text": "나", "lp": -0.2},
+            {"start": 11.5, "end": 14.7, "text": "다", "lp": -0.6}, {"start": 20.0, "end": 22.0, "text": "라", "lp": -0.1}]
+    start, end, text = voice.pick_window(segs)
+    assert 6.0 <= end - start <= 12.0 and text == "가 나"
+    assert voice.pick_window([{"start": 0, "end": 2.0, "text": "짧다", "lp": -0.1}]) is None
