@@ -255,3 +255,44 @@ def test_pick_reference_window():
     start, end, text = voice.pick_window(segs)
     assert 6.0 <= end - start <= 12.0 and text == "가 나"
     assert voice.pick_window([{"start": 0, "end": 2.0, "text": "짧다", "lp": -0.1}]) is None
+
+
+def test_llm_falls_back_when_server_rejects_structured_output():
+    """Ollama 의 MLX 엔진 모델처럼 response_format 을 501 로 거부하는 서버."""
+    import json as jsonlib
+    import threading
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+
+    seen = []
+
+    class Handler(BaseHTTPRequestHandler):
+        def do_POST(self):
+            body = jsonlib.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            seen.append(body.get("response_format", {}).get("type") if body.get("response_format") else None)
+            if "response_format" in body:
+                payload, code = {"error": {"message": "structured output is unavailable"}}, 501
+            else:
+                assert "JSON schema" in body["messages"][0]["content"]
+                text = 'Here you go:\n```json\n{"lines": ["첫 문장입니다.", "둘째 문장입니다."]}\n```'
+                payload, code = {"choices": [{"message": {"content": text}}]}, 200
+            data = jsonlib.dumps(payload).encode()
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+
+        def log_message(self, *args):
+            pass
+
+    server = HTTPServer(("127.0.0.1", 0), Handler)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    try:
+        model = llm.LLM({"base_url": f"http://127.0.0.1:{server.server_port}/v1", "model": "x", "timeout": 10})
+        schema = {"type": "object", "properties": {"lines": {"type": "array"}}}
+        assert model.json("sys", "user", schema)["lines"] == ["첫 문장입니다.", "둘째 문장입니다."]
+        assert seen == ["json_schema", "json_object", None]
+        assert model.json("sys", "user", schema)["lines"][0] == "첫 문장입니다."
+        assert seen[3:] == [None]                    # 두 번째 호출부터는 안 되는 방식을 건너뛴다
+    finally:
+        server.shutdown()

@@ -493,6 +493,9 @@ def main(argv: list[str] | None = None) -> int:
     except VautoError as exc:
         print(f"오류: {exc}", file=sys.stderr)
         return 1
+    except llm_mod.LLMError as exc:
+        print(f"오류: 로컬 LLM 호출 실패 — {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

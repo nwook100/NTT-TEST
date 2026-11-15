@@ -22,7 +22,7 @@ class LLM:
         self.model = cfg["model"]
         self.timeout = cfg.get("timeout", 600)
         self.batch = cfg.get("batch", 30)
-        self._schema_ok = True
+        self._level = 0  # 0 스키마 강제, 1 JSON 모드, 2 일반 글
 
     def _post(self, path: str, body: dict) -> dict:
         req = urllib.request.Request(
@@ -55,34 +55,39 @@ class LLM:
         return re.sub(r"<think>.*?</think>", "", content, flags=re.S).strip()
 
     def json(self, system: str, user: str, schema: dict, temperature: float = 0.2) -> dict:
-        """JSON 응답을 받는다. 스키마 강제를 지원하지 않는 서버면 일반 JSON 모드로 재시도."""
-        messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
-        attempts = []
-        if self._schema_ok:
-            attempts.append({"type": "json_schema",
-                             "json_schema": {"name": "result", "schema": schema, "strict": True}})
-        attempts.append({"type": "json_object", "schema": schema})  # llama.cpp 계열은 이 형태로 스키마를 강제
+        """JSON 응답을 받는다.
+
+        서버마다 지원이 달라 세 단계로 시도한다: 스키마 강제 → JSON 모드 → 일반 글(지시문으로만 요청).
+        한 번 안 되는 단계는 이후 호출에서 건너뛴다. (Ollama 의 MLX 엔진 모델은 앞의 둘을 거부한다.)
+        """
+        modes = [
+            {"type": "json_schema", "json_schema": {"name": "result", "schema": schema, "strict": True}},
+            {"type": "json_object", "schema": schema},  # llama.cpp 계열은 이 형태로 스키마를 강제
+            None,
+        ]
+        hint = ("\nReply with a single JSON object only, no other text, matching this JSON schema:\n"
+                + json.dumps(schema, ensure_ascii=False))
         last = ""
-        for fmt in attempts:
-            body = {"model": self.model, "messages": list(messages), "temperature": temperature,
-                    "response_format": fmt, "stream": False, "max_tokens": 8192}
-            if fmt["type"] == "json_object":
-                body["messages"][0] = {"role": "system", "content": system +
-                                       "\nReply with JSON only, matching this JSON schema:\n" +
-                                       json.dumps(schema, ensure_ascii=False)}
+        for level in range(self._level, len(modes)):
+            fmt = modes[level]
+            body = {"model": self.model, "temperature": temperature, "stream": False, "max_tokens": 8192,
+                    "messages": [{"role": "system", "content": system + ("" if level == 0 else hint)},
+                                 {"role": "user", "content": user}]}
+            if fmt is not None:
+                body["response_format"] = fmt
             try:
                 data = self._post("/chat/completions", body)
             except urllib.error.HTTPError as exc:
                 last = f"HTTP {exc.code}: {exc.read().decode('utf-8', 'replace')[:300]}"
-                if fmt["type"] == "json_schema" and exc.code in (400, 404, 415, 422, 500, 501):
-                    self._schema_ok = False
+                if fmt is not None and 400 <= exc.code < 600:
+                    self._level = level + 1  # 이 서버는 이 방식을 지원하지 않는다
                     continue
                 raise LLMError(last) from exc
             except Exception as exc:
                 raise LLMError(str(exc)) from exc
             content = data["choices"][0]["message"].get("content") or ""
             parsed = parse_json(content)
-            if parsed is not None:
+            if isinstance(parsed, dict):
                 return parsed
             last = f"JSON 해석 실패: {content[:200]}"
         raise LLMError(last)
