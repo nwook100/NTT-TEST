@@ -235,6 +235,7 @@ if (( INSTALL_WEBUI == 1 )); then
     <string>open-webui@latest</string><string>serve</string>
     <string>--port</string><string>3000</string>
   </array>
+  <key>WorkingDirectory</key><string>${HOME}/.open-webui</string>
   <key>EnvironmentVariables</key>
   <dict>
     <key>DATA_DIR</key><string>${HOME}/.open-webui</string>

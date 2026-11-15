@@ -137,6 +137,7 @@ cd ~/NTT-TEST/local-llm && git checkout claude/funny-euler-jl40rl
 | `ollama: command not found` | 터미널 새로 열기. 그래도 안 되면 `eval "$(/opt/homebrew/bin/brew shellenv)"` |
 | 서버 응답 없음 | `launchctl unload ~/Library/LaunchAgents/com.local.ollama.plist; launchctl load ~/Library/LaunchAgents/com.local.ollama.plist` 또는 로그 `cat ~/.ollama/server.err` |
 | 외장 SSD 를 뺐다 꽂은 뒤 모델 목록이 빔 | 위 명령으로 Ollama 재시작 |
+| `ollama: command not found` (설치 직후) | 설치하던 터미널 창을 닫고 새 창을 열기 |
 | Open WebUI 3000번 안 열림 | 첫 실행은 2~5분 소요. `tail -f ~/.open-webui/webui.err` 로 로그 확인 |
 | 모델이 너무 느림 | `ollama ps` 로 메모리 확인. 더 작은 모델로 교체 |
 | 디스크 부족 | `ollama rm <모델>` 로 안 쓰는 모델 삭제. 모델은 `~/.ollama/models` 에 저장 |
