@@ -104,7 +104,7 @@ Text only (no image) also works:
 | Option | Meaning |
 |---|---|
 | `--model ltx` | Default. LTX-2.3, generates sound together with the picture. |
-| `--model wan` | Wan 2.2 5B. No sound. |
+| `--model wan` | Wan 2.2 5B. Do NOT use: it currently crashes at the last step on this Mac. |
 | `--model wan14` | Wan 2.2 14B image-to-video, higher quality, slower. Needs `--image`. Experimental. |
 | `--seconds 5` | Length. Keep between 2 and 10. |
 | `--vertical` | 9:16 for Shorts. |

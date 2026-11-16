@@ -175,7 +175,7 @@ vauto clip "slow camera push in, steam rising" --image ~/Documents/vauto/gen/사
 | 옵션 | 뜻 |
 |---|---|
 | `--model ltx` (기본) | LTX-2.3. 소리까지 함께 생성 |
-| `--model wan` | Wan 2.2 5B. 소리 없음 |
+| `--model wan` | Wan 2.2 5B. 소리 없음. **현재 맥스튜디오에서 마지막 단계 오류로 실패** |
 | `--model wan14` | Wan 2.2 14B 사진→영상. 화질 위주, 시험적 |
 | `--seconds 5` | 길이. 2~10초 권장 |
 | `--vertical` | 세로(쇼츠용) |
@@ -234,7 +234,7 @@ mkdir -p ~/.hermes/skills && cp -R ~/NTT-TEST/video-auto/hermes-skill/vauto ~/.h
 | Motion 템플릿 자막(`titles`) | **미확인** |
 | AI 그림 (`vauto image`) | 맥스튜디오(M5 Ultra)에서 확인. FLUX.2 klein 4B, 생성 28초 |
 | AI 영상 (`vauto clip`, LTX-2.3) | 맥스튜디오에서 확인. `fix-draw-things-cli.sh` 적용 후 720p 3초 클립에 169초 (모델 불러오기 포함) |
-| AI 영상 (Wan 2.2 5B) | **미해결.** 생성 마지막 단계에서 도구 내부 오류로 종료됨 (우회 적용 전 기준) |
+| AI 영상 (Wan 2.2 5B) | **미해결.** 우회 적용 후에도 생성 96% 지점(영상으로 풀어내는 단계)에서 도구 내부 오류로 종료됨 |
 | 내 목소리 내레이션 (PyTorch 방식) | 리눅스 CPU 에서 등록, 번역, 합성, 받아쓰기 검수, 영상 입히기까지 실행해 확인 |
 | 내 목소리 내레이션 (MLX 방식) | 맥스튜디오(M5 Ultra)에서 실행 확인. 한국어·영어 90~100%, 일본어 74~100% 일치 |
 
