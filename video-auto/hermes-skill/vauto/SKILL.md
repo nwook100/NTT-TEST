@@ -1,6 +1,6 @@
 ---
 name: vauto
-description: Make narration in the user's own cloned voice (Korean, English, Japanese) from a script or a topic, mix it onto a video, and auto-edit a folder of raw footage. Use when the user says things like "내 목소리로 만들어 줘", "대본 읽어 줘", "내레이션 만들어 줘", "영상에 목소리 입혀 줘", "영상 편집해 줘", "자막 만들어 줘".
+description: Make narration in the user's own cloned voice (Korean, English, Japanese), generate AI images and short AI video clips, mix narration onto a video, and auto-edit a folder of raw footage. Use when the user says things like "내 목소리로 만들어 줘", "내레이션 만들어 줘", "그림 만들어 줘", "이 사진 움직이게 해 줘", "AI 영상 만들어 줘", "분위기 컷 만들어 줘", "영상 편집해 줘", "자막 만들어 줘".
 ---
 
 # vauto: local video editing and voice narration
@@ -77,7 +77,48 @@ YouTube, Shorts, Reels, X and Threads plus a Final Cut Pro project.
 Results go to a `_vauto` folder inside the footage folder. Read `_vauto/report.md` and summarize it for the user.
 Add `--no-render` to produce only subtitles and the Final Cut project (much faster).
 
-## 6. Check the installation
+## 6. AI image (scene still)
+
+Write the prompt in English: subject, setting, light, style. Takes under a few minutes.
+
+```bash
+/opt/homebrew/bin/vauto image "a chrome toaster on a wooden kitchen table, soft morning light, product photo" --out ~/Documents/vauto/gen/toaster.png
+```
+
+Add `--vertical` for a 9:16 image. Add `--ref photo.jpg` to use a reference photo.
+
+## 7. AI video clip (5 to 10 seconds, mood shots only)
+
+Best results come from animating a still image: make or pick an image first, then:
+
+```bash
+/opt/homebrew/bin/vauto clip "slow camera push in, steam rising, warm light" --image ~/Documents/vauto/gen/toaster.png --seconds 5 --out ~/Documents/vauto/gen/toaster.mp4
+```
+
+Text only (no image) also works:
+
+```bash
+/opt/homebrew/bin/vauto clip "a quiet harbor town at dawn, snow falling, cinematic" --seconds 5
+```
+
+| Option | Meaning |
+|---|---|
+| `--model ltx` | Default. LTX-2.3, generates sound together with the picture. |
+| `--model wan` | Wan 2.2 5B. No sound. |
+| `--model wan14` | Wan 2.2 14B image-to-video, higher quality, slower. Needs `--image`. Experimental. |
+| `--seconds 5` | Length. Keep between 2 and 10. |
+| `--vertical` | 9:16 for Shorts. |
+| `--seed 7` | Same number gives the same result again. |
+
+A clip can take many minutes. Use a timeout of at least 3600 seconds, or start it with
+`nohup ... > ~/Documents/vauto/gen/job.log 2>&1 &` and check the log later. Run one clip at a time.
+The first use of each model downloads tens of GB.
+
+Never use AI clips to show how a mechanism works inside: the result looks plausible but is wrong.
+Use them for intros, transitions and scenery. When a clip comes out badly, change the prompt or
+the seed and try again; tell the user how many tries it took.
+
+## 8. Check the installation
 
 ```bash
 /opt/homebrew/bin/vauto doctor
@@ -89,3 +130,4 @@ Add `--no-render` to produce only subtitles and the Final Cut project (much fast
 - If a command fails, show the user the last lines of the error instead of guessing a fix.
 - Clips with no speech are not understood by content: `vauto run` simply uses the middle 5 seconds of each.
 - vauto does not add background music and does not upload to any platform.
+- Run only one heavy job at a time (a clip, a narration, or a footage edit): they share the same memory.

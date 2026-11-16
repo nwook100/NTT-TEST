@@ -156,6 +156,37 @@ vauto voice ~/Desktop/대본.txt --video ~/Desktop/_vauto/exports/youtube.mp4
 - 한 언어만 다시 만들려면 저장된 대본을 그대로 씁니다: `vauto voice ~/_voice/script.ja.txt --script-lang ja --langs ja --out ~/_voice`
 - MLX 방식에서 오류가 나면 `setup-voice.sh --torch` 로 바꿔 설치하세요. 같은 모델을 PyTorch 로 돌립니다.
 
+## 6.6 AI 그림과 짧은 영상 (`vauto image`, `vauto clip`)
+
+Draw Things 의 명령줄 도구를 감싼 명령입니다. 모델 파일 이름과 프레임 수를 외울 필요가 없습니다.
+
+```bash
+brew install draw-things-cli
+```
+
+```bash
+vauto image "a chrome toaster on a wooden kitchen table, soft morning light"
+```
+
+```bash
+vauto clip "slow camera push in, steam rising" --image ~/Documents/vauto/gen/사진.png --seconds 5
+```
+
+| 옵션 | 뜻 |
+|---|---|
+| `--model ltx` (기본) | LTX-2.3. 소리까지 함께 생성 |
+| `--model wan` | Wan 2.2 5B. 소리 없음 |
+| `--model wan14` | Wan 2.2 14B 사진→영상. 화질 위주, 시험적 |
+| `--seconds 5` | 길이. 2~10초 권장 |
+| `--vertical` | 세로(쇼츠용) |
+| `--dry-run` | 실행하지 않고 실제 명령만 보여 주기 |
+
+- 결과는 `~/Documents/vauto/gen/` 에 저장되고, 끝나면 만드는 데 걸린 시간을 알려 줍니다.
+- 모델은 처음 쓸 때 자동으로 내려받습니다 (수십 GB).
+- 설명은 영어로 쓰면 더 잘 나옵니다.
+- 구조를 설명하는 장면에는 쓰지 마세요. 그럴듯하지만 틀린 그림이 나옵니다. 분위기 컷 전용입니다.
+- 쓰는 모델은 `project.toml` 의 `[gen]` 에서 바꿀 수 있습니다.
+
 ## 6.7 말로 시키기 (Hermes Agent)
 
 채팅창의 LLM 은 글로 답만 하지만, [Hermes Agent](https://github.com/NousResearch/hermes-agent) 같은
@@ -196,6 +227,7 @@ mkdir -p ~/.hermes/skills && cp -R ~/NTT-TEST/video-auto/hermes-skill/vauto ~/.h
 | Final Cut 가져오기 | **미확인.** 파일 구조와 프레임 정렬은 자동 테스트로 검사했지만 실제 Final Cut 에서 열어 보지 못함 |
 | mlx-whisper, VideoToolbox 인코더 | **미확인.** 맥 전용이라 리눅스에서 실행 불가 |
 | Motion 템플릿 자막(`titles`) | **미확인** |
+| AI 그림·영상 (`vauto image`, `vauto clip`) | **미확인.** 명령 조립은 실제 도움말과 모델 목록에 맞춰 시험했지만, 맥에서 생성까지 돌려 보지는 못함 |
 | 내 목소리 내레이션 (PyTorch 방식) | 리눅스 CPU 에서 등록, 번역, 합성, 받아쓰기 검수, 영상 입히기까지 실행해 확인 |
 | 내 목소리 내레이션 (MLX 방식) | 맥스튜디오(M5 Ultra)에서 실행 확인. 한국어·영어 90~100%, 일본어 74~100% 일치 |
 

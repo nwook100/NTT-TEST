@@ -336,3 +336,66 @@ def test_run_voice_writes_all_outputs_with_fake_engine(tmp_path):
     scenes = jsonlib.loads((tmp_path / "out" / "scenes.ko.json").read_text(encoding="utf-8"))
     assert [s["scene"] for s in scenes] == [1, 2] and scenes[0]["end"] < scenes[1]["start"]
     assert abs(result["seconds"]["ko"] - scenes[1]["end"]) < 0.11
+
+
+# ---------- AI 그림·영상 ----------
+
+def test_gen_frame_counts_and_sizes():
+    from vauto import gen
+
+    assert gen.frames_for(5, 24, 8) == 121          # LTX: 8n+1
+    assert gen.frames_for(2, 24, 8) == 49           # 도구의 예시와 같은 값
+    assert gen.frames_for(5, 16, 4) == 81           # Wan 14B: 4n+1, 16fps
+    assert gen.frames_for(5, 24, 4) == 121
+    assert gen.frames_for(0.1, 24, 8) == 9          # 너무 짧아도 최소 프레임
+    for kind in ("video", "image"):
+        for vertical in (False, True):
+            w, h = gen.size_for(kind, vertical)
+            assert w % 64 == 0 and h % 64 == 0 and (h > w) == vertical
+
+
+def test_gen_builds_documented_cli_arguments(tmp_path):
+    from vauto import gen
+
+    cfg = config.load(None)["gen"]
+    photo = tmp_path / "my photo.jpg"
+    photo.write_bytes(b"x")
+    cmd = gen.build_clip_cmd(cfg, "ocean waves at sunset", tmp_path / "c.mp4", "ltx", 5, False, str(photo), 7)
+    assert cmd[:2] == ["draw-things-cli", "generate"]
+    pairs = dict(zip(cmd[2::], cmd[3::]))
+    assert pairs["--model"] == "ltx_2.3_22b_distilled_1.1_i8x.ckpt"
+    assert pairs["--frames"] == "121" and pairs["--width"] == "1280" and pairs["--height"] == "704"
+    assert pairs["--image"] == str(photo) and "--crop" in cmd and pairs["--seed"] == "7"
+    assert pairs["--video-format"] == "h264" and pairs["--output"].endswith("c.mp4")
+    vertical = gen.build_clip_cmd(cfg, "x", tmp_path / "v.mp4", "wan", 5, True)
+    pairs = dict(zip(vertical[2::], vertical[3::]))
+    assert pairs["--model"] == "wan_v2.2_5b_ti2v_q8p.ckpt" and (pairs["--width"], pairs["--height"]) == ("704", "1280")
+    image = gen.build_image_cmd(cfg, "a toaster on a kitchen table", tmp_path / "i.png")
+    assert "flux_2_klein_4b_q8p.ckpt" in image and "--frames" not in image and "--video-format" not in image
+    import pytest
+
+    with pytest.raises(Exception):
+        gen.build_clip_cmd(cfg, "x", tmp_path / "w.mp4", "wan14")           # 사진 없이 wan14
+    with pytest.raises(Exception):
+        gen.build_clip_cmd(dict(cfg, video_format="prores422hq"), "x", tmp_path / "p.mp4")
+
+
+def test_gen_runs_cli_and_reports_missing_output(tmp_path, monkeypatch):
+    """가짜 draw-things-cli 로 실행 흐름을 확인한다."""
+    import os
+    import stat
+
+    from vauto import cli, gen
+
+    fake = tmp_path / "bin" / "draw-things-cli"
+    fake.parent.mkdir()
+    fake.write_text('#!/bin/bash\nwhile [ $# -gt 0 ]; do if [ "$1" = "--output" ]; then out="$2"; fi; shift; done\n'
+                    'echo "$out" > "$FAKE_LOG"; [ -n "$FAKE_SKIP" ] || echo data > "$out"\n')
+    fake.chmod(fake.stat().st_mode | stat.S_IEXEC)
+    monkeypatch.setenv("PATH", f"{fake.parent}{os.pathsep}{os.environ['PATH']}")
+    monkeypatch.setenv("FAKE_LOG", str(tmp_path / "log.txt"))
+    out = tmp_path / "result" / "clip.mp4"
+    assert cli.main(["clip", "ocean", "--seconds", "2", "--out", str(out)]) == 0
+    assert out.exists() and (tmp_path / "log.txt").read_text().strip() == str(out)
+    monkeypatch.setenv("FAKE_SKIP", "1")
+    assert cli.main(["image", "toaster", "--out", str(tmp_path / "none.png")]) == 1   # 파일이 안 생기면 실패로 알림

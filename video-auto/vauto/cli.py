@@ -421,6 +421,32 @@ def cmd_voice(args) -> int:
     return 0
 
 
+def cmd_image(args) -> int:
+    cfg = config.load(Path(args.project) if args.project else None)["gen"]
+    from . import gen
+
+    out = Path(args.out).expanduser() if args.out else gen.default_output(cfg["out_dir"], "image", "png")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    cmd = gen.build_image_cmd(cfg, args.prompt, out, args.vertical, args.ref, args.seed)
+    elapsed = gen.run_cli(cmd, out, args.dry_run)
+    if not args.dry_run:
+        print(f"완료: {out}  ({elapsed:.0f}초)")
+    return 0
+
+
+def cmd_clip(args) -> int:
+    cfg = config.load(Path(args.project) if args.project else None)["gen"]
+    from . import gen
+
+    out = Path(args.out).expanduser() if args.out else gen.default_output(cfg["out_dir"], f"clip-{args.model}", "mp4")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    cmd = gen.build_clip_cmd(cfg, args.prompt, out, args.model, args.seconds, args.vertical, args.image, args.seed)
+    elapsed = gen.run_cli(cmd, out, args.dry_run)
+    if not args.dry_run:
+        print(f"완료: {out}  ({args.seconds:g}초 영상, 만드는 데 {elapsed:.0f}초)")
+    return 0
+
+
 def cmd_doctor(args) -> int:
     cfg = config.load(Path(args.project) if args.project else None)
     ok = True
@@ -485,6 +511,27 @@ def main(argv: list[str] | None = None) -> int:
     vo.add_argument("--no-verify", action="store_true", help="받아쓰기 검수 생략 (빠름)")
     vo.add_argument("--project", help="project.toml 경로")
     vo.set_defaults(func=cmd_voice)
+    im = sub.add_parser("image", help="AI 로 장면 그림 만들기")
+    im.add_argument("prompt", help="그림 설명 (영어로 쓰면 더 잘 나옴)")
+    im.add_argument("--vertical", action="store_true", help="세로 그림")
+    im.add_argument("--ref", action="append", help="참고 사진 (여러 번 쓸 수 있음)")
+    im.add_argument("--seed", type=int, help="같은 숫자를 주면 같은 결과")
+    im.add_argument("--out", help="저장할 파일 (.png)")
+    im.add_argument("--dry-run", action="store_true", help="실행하지 않고 명령만 보여 주기")
+    im.add_argument("--project", help="project.toml 경로")
+    im.set_defaults(func=cmd_image)
+    cl = sub.add_parser("clip", help="AI 로 짧은 영상 만들기 (글 또는 사진에서)")
+    cl.add_argument("prompt", help="영상 설명 (영어로 쓰면 더 잘 나옴)")
+    cl.add_argument("--image", help="이 사진을 첫 화면으로 삼아 움직이게 함")
+    cl.add_argument("--model", default="ltx", choices=["ltx", "wan", "wan14"],
+                    help="ltx = 소리 포함(기본), wan = Wan 2.2 5B, wan14 = Wan 2.2 14B 사진→영상")
+    cl.add_argument("--seconds", type=float, default=5.0, help="길이(초). 기본 5")
+    cl.add_argument("--vertical", action="store_true", help="세로 영상")
+    cl.add_argument("--seed", type=int, help="같은 숫자를 주면 같은 결과")
+    cl.add_argument("--out", help="저장할 파일 (.mp4 또는 .mov)")
+    cl.add_argument("--dry-run", action="store_true", help="실행하지 않고 명령만 보여 주기")
+    cl.add_argument("--project", help="project.toml 경로")
+    cl.set_defaults(func=cmd_clip)
     doc = sub.add_parser("doctor", help="설치 상태 점검")
     doc.add_argument("--project", help="project.toml 경로")
     doc.set_defaults(func=cmd_doctor)
