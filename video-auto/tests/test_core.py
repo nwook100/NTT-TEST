@@ -296,3 +296,43 @@ def test_llm_falls_back_when_server_rejects_structured_output():
         assert seen[3:] == [None]                    # 두 번째 호출부터는 안 되는 방식을 건너뛴다
     finally:
         server.shutdown()
+
+
+def test_scene_table_groups_sentences_by_paragraph():
+    from vauto import voice
+
+    cues = [{"start": 0.0, "end": 4.0, "text": "가.", "scene": 1}, {"start": 4.35, "end": 8.4, "text": "나.", "scene": 1},
+            {"start": 9.2, "end": 13.3, "text": "다.", "scene": 2}]
+    table = voice.scene_table(cues)
+    assert [t["scene"] for t in table] == [1, 2]
+    assert table[0] == {"scene": 1, "start": 0.0, "end": 8.4, "seconds": 8.4, "text": "가. 나."}
+    assert table[1]["seconds"] == 4.1
+
+
+def test_run_voice_writes_all_outputs_with_fake_engine(tmp_path):
+    """합성 엔진만 가짜로 바꿔 대본 → 음성·자막·장면표 흐름을 확인한다 (ffmpeg 필요)."""
+    import shutil
+
+    import pytest
+
+    np = pytest.importorskip("numpy")
+    pytest.importorskip("soundfile")
+    if not shutil.which("ffmpeg"):
+        pytest.skip("ffmpeg 없음")
+    from vauto import voice
+
+    class Fake:
+        def speak(self, text, lang):
+            t = np.arange(int(24000 * 0.05 * max(4, len(text)))) / 24000
+            return (0.2 * np.sin(2 * np.pi * 220 * t)).astype(np.float32), 24000
+
+    cfg = config.load(None)
+    script = "첫 장면 첫 문장입니다. 첫 장면 둘째 문장입니다.\n\n둘째 장면입니다."
+    result = voice.run_voice(script, "ko", ["ko"], "none", cfg, tmp_path / "out", None, verify=False, engine=Fake())
+    names = {p.name for p in (tmp_path / "out").iterdir()}
+    assert {"narration.ko.wav", "narration.ko.srt", "scenes.ko.json", "script.ko.txt"} <= names
+    import json as jsonlib
+
+    scenes = jsonlib.loads((tmp_path / "out" / "scenes.ko.json").read_text(encoding="utf-8"))
+    assert [s["scene"] for s in scenes] == [1, 2] and scenes[0]["end"] < scenes[1]["start"]
+    assert abs(result["seconds"]["ko"] - scenes[1]["end"]) < 0.11

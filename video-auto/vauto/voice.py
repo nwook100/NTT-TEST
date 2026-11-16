@@ -323,7 +323,7 @@ def synthesize(engine, paragraphs: list[list[str]], lang: str, cfg: dict, whispe
                 warnings.append(f"[{lang}] 발음이 대본과 다를 수 있음 (일치 {best_ratio:.0%}): "
                                 f"\"{sentence}\" → 들린 말 \"{heard}\"")
             dur = len(best_wave) / sr_out
-            cues.append({"start": pos, "end": pos + dur, "text": sentence, "lang": lang})
+            cues.append({"start": pos, "end": pos + dur, "text": sentence, "lang": lang, "scene": pi + 1})
             pieces.append(best_wave)
             last_sentence = si == len(para) - 1
             last_all = last_sentence and pi == len(paragraphs) - 1
@@ -344,6 +344,21 @@ def finish_audio(raw: Path, out_wav: Path, lufs: float = -16.0) -> None:
     out_wav.parent.mkdir(parents=True, exist_ok=True)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-af", f"loudnorm=I={lufs}:TP=-1.5:LRA=11",
          "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(out_wav)])
+
+
+def scene_table(cues: list[dict]) -> list[dict]:
+    """문단(=장면)별 시작·끝·길이. 화면을 내레이션 길이에 맞춰 준비할 때 쓴다."""
+    scenes: dict[int, dict] = {}
+    for cue in cues:
+        sc = scenes.setdefault(cue.get("scene", 1), {"scene": cue.get("scene", 1), "start": cue["start"],
+                                                    "end": cue["end"], "text": ""})
+        sc["end"] = cue["end"]
+        sc["text"] = (sc["text"] + " " + cue["text"]).strip()
+    out = []
+    for sc in sorted(scenes.values(), key=lambda x: x["scene"]):
+        out.append({"scene": sc["scene"], "start": round(sc["start"], 2), "end": round(sc["end"], 2),
+                    "seconds": round(sc["end"] - sc["start"], 2), "text": sc["text"]})
+    return out
 
 
 def write_srt(path: Path, cues: list[dict], lang: str, sub_cfg: dict) -> None:
@@ -429,7 +444,8 @@ def run_voice(script: str, src_lang: str, langs: list[str], voice_name: str, cfg
         wav = out / f"narration.{lang}.wav"
         finish_audio(raw, wav, vcfg["lufs"])
         write_srt(out / f"narration.{lang}.srt", cues, lang, cfg["subtitles"])
-        results["files"] += [str(wav), str(out / f"narration.{lang}.srt")]
+        write_json(out / f"scenes.{lang}.json", scene_table(cues))
+        results["files"] += [str(wav), str(out / f"narration.{lang}.srt"), str(out / f"scenes.{lang}.json")]
         results["seconds"][lang] = round(cues[-1]["end"], 1)
         if video:
             target = out / f"{video.stem}.{lang}.mp4"
