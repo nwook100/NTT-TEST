@@ -186,6 +186,7 @@ vauto clip "slow camera push in, steam rising" --image ~/Documents/vauto/gen/사
 - 설명은 영어로 쓰면 더 잘 나옵니다.
 - 구조를 설명하는 장면에는 쓰지 마세요. 그럴듯하지만 틀린 그림이 나옵니다. 분위기 컷 전용입니다.
 - 쓰는 모델은 `project.toml` 의 `[gen]` 에서 바꿀 수 있습니다.
+- 이름에 `i8x`(8-bit S)가 붙은 모델은 명령줄 도구 26.1023.0 에서 `unknown type name 'bfloat'` 오류로 실패했습니다. `q8p` 판을 쓰세요.
 
 ## 6.7 말로 시키기 (Hermes Agent)
 

@@ -363,7 +363,7 @@ def test_gen_builds_documented_cli_arguments(tmp_path):
     cmd = gen.build_clip_cmd(cfg, "ocean waves at sunset", tmp_path / "c.mp4", "ltx", 5, False, str(photo), 7)
     assert cmd[:2] == ["draw-things-cli", "generate"]
     pairs = dict(zip(cmd[2::], cmd[3::]))
-    assert pairs["--model"] == "ltx_2.3_22b_distilled_1.1_i8x.ckpt"
+    assert pairs["--model"] == "ltx_2.3_22b_distilled_1.1_q8p.ckpt"
     assert pairs["--frames"] == "121" and pairs["--width"] == "1280" and pairs["--height"] == "704"
     assert pairs["--image"] == str(photo) and "--crop" in cmd and pairs["--seed"] == "7"
     assert pairs["--video-format"] == "h264" and pairs["--output"].endswith("c.mp4")

@@ -78,7 +78,8 @@ DEFAULTS: dict = {
     "gen": {  # AI 그림·영상 만들기 (Draw Things 명령줄 도구)
         "cli": "draw-things-cli",
         "image_model": "flux_2_klein_4b_q8p.ckpt",              # 장면 그림
-        "ltx_model": "ltx_2.3_22b_distilled_1.1_i8x.ckpt",      # 영상 + 소리 (M5 에서 빠른 8-bit S)
+        # 영상 + 소리. "8-bit S"(i8x) 판은 명령줄 도구 26.1023.0 에서 Metal 오류(bfloat)로 죽어서 일반 8-bit 판을 쓴다.
+        "ltx_model": "ltx_2.3_22b_distilled_1.1_q8p.ckpt",
         "wan_model": "wan_v2.2_5b_ti2v_q8p.ckpt",               # 글 또는 사진 → 영상
         "wan14_model": "wan_v2.2_a14b_hne_i2v_q8p.ckpt",        # 사진 → 영상, 화질 위주 (시험적)
         "video_format": "h264",                                 # h264 | hevc | prores422hq | prores4444 (.mov)
