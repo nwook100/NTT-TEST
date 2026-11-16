@@ -232,7 +232,9 @@ mkdir -p ~/.hermes/skills && cp -R ~/NTT-TEST/video-auto/hermes-skill/vauto ~/.h
 | Final Cut 가져오기 | **미확인.** 파일 구조와 프레임 정렬은 자동 테스트로 검사했지만 실제 Final Cut 에서 열어 보지 못함 |
 | mlx-whisper, VideoToolbox 인코더 | **미확인.** 맥 전용이라 리눅스에서 실행 불가 |
 | Motion 템플릿 자막(`titles`) | **미확인** |
-| AI 그림·영상 (`vauto image`, `vauto clip`) | **미확인.** 명령 조립은 실제 도움말과 모델 목록에 맞춰 시험했지만, 맥에서 생성까지 돌려 보지는 못함 |
+| AI 그림 (`vauto image`) | 맥스튜디오(M5 Ultra)에서 확인. FLUX.2 klein 4B, 생성 28초 |
+| AI 영상 (`vauto clip`, LTX-2.3) | 맥스튜디오에서 확인. `fix-draw-things-cli.sh` 적용 후 720p 3초 클립에 169초 (모델 불러오기 포함) |
+| AI 영상 (Wan 2.2 5B) | **미해결.** 생성 마지막 단계에서 도구 내부 오류로 종료됨 (우회 적용 전 기준) |
 | 내 목소리 내레이션 (PyTorch 방식) | 리눅스 CPU 에서 등록, 번역, 합성, 받아쓰기 검수, 영상 입히기까지 실행해 확인 |
 | 내 목소리 내레이션 (MLX 방식) | 맥스튜디오(M5 Ultra)에서 실행 확인. 한국어·영어 90~100%, 일본어 74~100% 일치 |
 
