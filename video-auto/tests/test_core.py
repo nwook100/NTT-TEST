@@ -399,3 +399,19 @@ def test_gen_runs_cli_and_reports_missing_output(tmp_path, monkeypatch):
     assert out.exists() and (tmp_path / "log.txt").read_text().strip() == str(out)
     monkeypatch.setenv("FAKE_SKIP", "1")
     assert cli.main(["image", "toaster", "--out", str(tmp_path / "none.png")]) == 1   # 파일이 안 생기면 실패로 알림
+
+
+def test_gen_prefers_patched_cli_when_present(tmp_path, monkeypatch):
+    import os
+    import stat
+
+    from vauto import gen
+
+    monkeypatch.setenv("PATH", str(tmp_path))
+    assert gen.resolve_cli("draw-things-cli") == "draw-things-cli"
+    fake = tmp_path / "draw-things-cli-sdk26"
+    fake.write_text("#!/bin/sh\n")
+    fake.chmod(fake.stat().st_mode | stat.S_IEXEC)
+    assert gen.resolve_cli("draw-things-cli") == "draw-things-cli-sdk26"
+    assert gen.resolve_cli("/custom/path/cli") == "/custom/path/cli"       # 직접 지정한 경로는 그대로
+    assert os.environ["PATH"] == str(tmp_path)

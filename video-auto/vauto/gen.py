@@ -78,8 +78,19 @@ def build_clip_cmd(cfg: dict, prompt: str, out: Path, model: str = "ltx", second
     return cmd
 
 
+PATCHED_CLI = "draw-things-cli-sdk26"
+
+
+def resolve_cli(name: str) -> str:
+    """기본 도구 이름이면, fix-draw-things-cli.sh 가 만든 고친 사본을 먼저 쓴다."""
+    if name == "draw-things-cli" and shutil.which(PATCHED_CLI):
+        return PATCHED_CLI
+    return name
+
+
 def run_cli(cmd: list[str], out: Path, dry_run: bool = False) -> float:
     """명령을 실행하고 걸린 시간(초)을 돌려준다. 진행 상황은 그대로 화면에 보인다."""
+    cmd = [resolve_cli(cmd[0]), *cmd[1:]]
     shown = " ".join(f'"{c}"' if " " in c else c for c in cmd)
     if dry_run:
         print(shown)
@@ -91,7 +102,11 @@ def run_cli(cmd: list[str], out: Path, dry_run: bool = False) -> float:
     proc = subprocess.run(cmd)
     elapsed = time.time() - started
     if proc.returncode != 0:
-        raise VautoError(f"생성 실패 (종료 코드 {proc.returncode}). 위 오류 문구를 확인하세요.")
+        hint = ""
+        if cmd[0] == "draw-things-cli":
+            hint = ("\n  'bfloat' 오류라면 Homebrew 판의 알려진 문제입니다. 한 번만 실행하세요: "
+                    "~/NTT-TEST/video-auto/fix-draw-things-cli.sh")
+        raise VautoError(f"생성 실패 (종료 코드 {proc.returncode}). 위 오류 문구를 확인하세요.{hint}")
     if not out.exists():
         raise VautoError(f"명령은 끝났지만 결과 파일이 없습니다: {out}")
     return elapsed
