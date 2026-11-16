@@ -415,3 +415,44 @@ def test_gen_prefers_patched_cli_when_present(tmp_path, monkeypatch):
     assert gen.resolve_cli("draw-things-cli") == "draw-things-cli-sdk26"
     assert gen.resolve_cli("/custom/path/cli") == "/custom/path/cli"       # 직접 지정한 경로는 그대로
     assert os.environ["PATH"] == str(tmp_path)
+
+
+def test_gen_quality_and_size_options(tmp_path):
+    import pytest
+
+    from vauto import gen
+
+    cfg = config.load(None)["gen"]
+    cmd = gen.build_clip_cmd(cfg, "x", tmp_path / "h.mp4", "ltx", 5, False, None, None, "high", 1080)
+    pairs = dict(zip(cmd[2::], cmd[3::]))
+    assert pairs["--model"] == "ltx_2.3_22b_dev_q8p.ckpt"
+    assert (pairs["--width"], pairs["--height"]) == ("1920", "1088") and pairs["--frames"] == "121"
+    assert "--steps" not in cmd and "--cfg" not in cmd          # 단계 수와 강도는 도구 권장값에 맡긴다
+    tall = gen.build_clip_cmd(cfg, "x", tmp_path / "v.mp4", "ltx", 5, True, None, None, "fast", 1080)
+    pairs = dict(zip(tall[2::], tall[3::]))
+    assert (pairs["--width"], pairs["--height"]) == ("1088", "1920")
+    with pytest.raises(Exception):
+        gen.build_clip_cmd(cfg, "x", tmp_path / "w.mp4", "wan", 5, False, None, None, "high")
+
+
+def test_gen_enhance_prompt_uses_llm_text():
+    from vauto import gen
+
+    class Fake:
+        def __init__(self, reply):
+            self.reply, self.seen = reply, None
+
+        def text(self, system, user, temperature=0.2):
+            self.seen = (system, user)
+            return self.reply
+
+    good = '"Snow drifts across a small harbor at dawn.\n A fishing boat rocks against the pier while a gull lands on a rope."'
+    fake = Fake(good)
+    out = gen.enhance_prompt(fake, "눈 내리는 새벽 항구", has_image=True)
+    assert out.startswith("Snow drifts") and "\n" not in out and not out.endswith('"')
+    assert "Do NOT describe what the image looks like" in fake.seen[0] and fake.seen[1] == "눈 내리는 새벽 항구"
+    assert "Do NOT describe" not in (Fake(good).seen or ("", ""))[0]
+    import pytest
+
+    with pytest.raises(Exception):
+        gen.enhance_prompt(Fake("ok"), "x")

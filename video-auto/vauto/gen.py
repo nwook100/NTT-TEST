@@ -26,10 +26,38 @@ def frames_for(seconds: float, fps: int, step: int) -> int:
     return max(step + 1, step * round(seconds * fps / step) + 1)
 
 
-def size_for(kind: str, vertical: bool) -> tuple[int, int]:
-    """64의 배수인 화면 크기. 영상은 720p급, 그림은 조금 더 크게."""
-    w, h = (1280, 704) if kind == "video" else (1344, 768)
+def size_for(kind: str, vertical: bool, size: int = 720) -> tuple[int, int]:
+    """64의 배수인 화면 크기. 영상은 720p급(기본) 또는 1080p급, 그림은 조금 더 크게."""
+    if kind == "video":
+        w, h = (1920, 1088) if size >= 1080 else (1280, 704)
+    else:
+        w, h = (1344, 768)
     return (h, w) if vertical else (w, h)
+
+
+ENHANCE_SYSTEM = (
+    "You write prompts for the LTX-2.3 video model. Rewrite the user's idea as ONE flowing paragraph "
+    "in English, present tense, 4 to 6 sentences, for a single continuous shot with no cuts. Cover, in "
+    "this order: the subject and what it concretely does (use plain verbs: 'snow drifts', 'a gull lands'), "
+    "the camera (static tripod, slow push in, handheld) and lens, the light (time of day, direction, "
+    "colour), surface textures and small imperfections, and the ambient sound. Make it look like real "
+    "footage from a mirrorless camera: natural light, mild film grain, slightly imperfect framing. "
+    "Do not use the words cinematic, masterpiece, stunning, 4K, or hyperrealistic. No lists, no quotes, "
+    "no explanations: reply with the paragraph only."
+)
+ENHANCE_IMAGE_NOTE = (
+    " The clip starts from a given still image that already fixes the scene. Do NOT describe what the "
+    "image looks like. Describe only what happens next: how things move, how the camera moves, and the sound."
+)
+
+
+def enhance_prompt(model, idea: str, has_image: bool = False) -> str:
+    """짧은 설명(한국어도 가능)을 영상 모델이 잘 알아듣는 자세한 영어 설명으로 바꾼다."""
+    text = model.text(ENHANCE_SYSTEM + (ENHANCE_IMAGE_NOTE if has_image else ""), idea, 0.6)
+    text = " ".join(text.replace("\n", " ").split()).strip('"“” ')
+    if len(text) < 40:
+        raise VautoError("LLM 이 영상 설명을 쓰지 못했습니다.")
+    return text
 
 
 def default_output(out_dir: str, prefix: str, ext: str) -> Path:
@@ -53,13 +81,18 @@ def build_image_cmd(cfg: dict, prompt: str, out: Path, vertical: bool = False, r
 
 
 def build_clip_cmd(cfg: dict, prompt: str, out: Path, model: str = "ltx", seconds: float = 5.0,
-                   vertical: bool = False, image: str | None = None, seed: int | None = None) -> list[str]:
+                   vertical: bool = False, image: str | None = None, seed: int | None = None,
+                   quality: str = "fast", size: int = 720) -> list[str]:
     if model not in VIDEO_MODELS:
         raise VautoError(f"모르는 영상 모델: {model} (ltx, wan, wan14 중에서 고르세요)")
     key, fps, step = VIDEO_MODELS[model]
     if model == "wan14" and not image:
         raise VautoError("wan14 는 사진을 움직이는 모델입니다. --image 로 사진을 주세요.")
-    w, h = size_for("video", vertical)
+    if quality == "high":
+        if model != "ltx":
+            raise VautoError("--quality high 는 ltx 모델에서만 쓸 수 있습니다.")
+        key = "ltx_hq_model"  # 축약하지 않은 원본 모델. 단계 수와 강도는 도구의 권장값을 따른다
+    w, h = size_for("video", vertical, size)
     cmd = [cfg["cli"], "generate", "--model", cfg[key], "--prompt", prompt,
            "--width", str(w), "--height", str(h), "--frames", str(frames_for(seconds, fps, step)),
            "--disable-preview", "--output", str(out)]

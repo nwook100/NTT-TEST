@@ -109,10 +109,16 @@ Text only (no image) also works:
 | `--seconds 5` | Length. Keep between 2 and 10. |
 | `--vertical` | 9:16 for Shorts. |
 | `--seed 7` | Same number gives the same result again. |
+| `--enhance` | The tool rewrites a short idea (Korean is fine) into a detailed English prompt. Use it unless you already wrote 4-6 detailed sentences. |
+| `--size 1080` | 1080p instead of 720p. More than twice as slow. |
+| `--quality high` | Full (non-distilled) LTX model. Much slower. Only when the user asks for higher quality. |
 
 A clip can take many minutes. Use a timeout of at least 3600 seconds, or start it with
 `nohup ... > ~/Documents/vauto/gen/job.log 2>&1 &` and check the log later. Run one clip at a time.
 The first use of each model downloads tens of GB.
+
+To make a clip look less "AI-made": start from a real photo the user took (`--image`), and describe
+only the motion, the camera move and the sound in concrete terms. Avoid words like cinematic or stunning.
 
 Never use AI clips to show how a mechanism works inside: the result looks plausible but is wrong.
 Use them for intros, transitions and scenery. When a clip comes out badly, change the prompt or

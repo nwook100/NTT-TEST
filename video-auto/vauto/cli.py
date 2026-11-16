@@ -440,7 +440,19 @@ def cmd_clip(args) -> int:
 
     out = Path(args.out).expanduser() if args.out else gen.default_output(cfg["out_dir"], f"clip-{args.model}", "mp4")
     out.parent.mkdir(parents=True, exist_ok=True)
-    cmd = gen.build_clip_cmd(cfg, args.prompt, out, args.model, args.seconds, args.vertical, args.image, args.seed)
+    prompt = args.prompt
+    if args.enhance:
+        full = config.load(Path(args.project) if args.project else None)
+        model = llm_mod.LLM(full["llm"])
+        ok, msg = model.available()
+        if not ok:
+            raise VautoError(f"--enhance 에는 로컬 LLM 이 필요합니다: {msg}")
+        log("  LLM 이 영상 설명을 자세히 쓰는 중")
+        prompt = gen.enhance_prompt(model, args.prompt, bool(args.image))
+        print(f"영상 설명:\n  {prompt}\n")
+        out.with_suffix(".prompt.txt").write_text(prompt + "\n", encoding="utf-8")
+    cmd = gen.build_clip_cmd(cfg, prompt, out, args.model, args.seconds, args.vertical, args.image, args.seed,
+                             args.quality, args.size)
     elapsed = gen.run_cli(cmd, out, args.dry_run)
     if not args.dry_run:
         print(f"완료: {out}  ({args.seconds:g}초 영상, 만드는 데 {elapsed:.0f}초)")
@@ -526,6 +538,11 @@ def main(argv: list[str] | None = None) -> int:
     cl.add_argument("--model", default="ltx", choices=["ltx", "wan", "wan14"],
                     help="ltx = 소리 포함(기본), wan = Wan 2.2 5B, wan14 = Wan 2.2 14B 사진→영상")
     cl.add_argument("--seconds", type=float, default=5.0, help="길이(초). 기본 5")
+    cl.add_argument("--quality", default="fast", choices=["fast", "high"],
+                    help="fast = 축약판(기본, 빠름), high = 원본 모델(느림, ltx 전용)")
+    cl.add_argument("--size", type=int, default=720, choices=[720, 1080], help="화면 크기. 기본 720")
+    cl.add_argument("--enhance", action="store_true",
+                    help="짧은 설명(한국어 가능)을 로컬 LLM 이 자세한 영어 설명으로 바꿔 줌")
     cl.add_argument("--vertical", action="store_true", help="세로 영상")
     cl.add_argument("--seed", type=int, help="같은 숫자를 주면 같은 결과")
     cl.add_argument("--out", help="저장할 파일 (.mp4 또는 .mov)")
